@@ -1,0 +1,66 @@
+﻿{
+    "schemaVersion":  1,
+    "channel":  "alpha",
+    "generatedAt":  "2026-06-07T23:03:14.3229246Z",
+    "releaseManifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index-Public-Alpha/main/channels/alpha/release-manifest.json",
+    "repositoryCatalogUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index-Public-Alpha/main/channels/alpha/repositories.json",
+    "sourceRepos":  {
+                        "nativePlatform":  "https://github.com/knoxhack/ECHO-Native-Platform-Public-Alpha",
+                        "sdk":  "https://github.com/knoxhack/ECHO-SDK-Public-Alpha",
+                        "standaloneRuntime":  "https://github.com/knoxhack/ECHO-Standalone-Runtime-Public-Alpha",
+                        "modules":  "https://github.com/knoxhack/ECHO-Modules-Public-Alpha",
+                        "ashfallNativeEdition":  "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition-Public-Alpha",
+                        "launcher":  "https://github.com/knoxhack/ECHO-Launcher-Public-Alpha",
+                        "website":  "https://github.com/knoxhack/ECHO-Platform-Website-Public-Alpha",
+                        "releaseIndex":  "https://github.com/knoxhack/ECHO-Release-Index-Public-Alpha"
+                    },
+    "launcherUpdateFeed":  {
+                               "provider":  "github",
+                               "owner":  "knoxhack",
+                               "repo":  "ECHO-Launcher-Public-Alpha",
+                               "includePrereleases":  true,
+                               "releaseType":  "release"
+                           },
+    "launcherAssets":  [
+                           {
+                               "name":  "ECHO-Launcher-1.0.1-Setup.exe",
+                               "size":  106893405,
+                               "sha256":  "3733e49c91e1904e00265b5c9dfbf264db35b71d684919dd9188eeacf54da451",
+                               "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Launcher-Public-Alpha/releases/download/untagged-5beab25150b40d7e296e/ECHO-Launcher-1.0.1-Setup.exe"
+                           },
+                           {
+                               "name":  "ECHO-Launcher-1.0.1-Setup.exe.blockmap",
+                               "size":  111951,
+                               "sha256":  "60af6ee99faabd4abb1ac404d3471fa873d995daab55c67f420ad1fc33218642",
+                               "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Launcher-Public-Alpha/releases/download/untagged-5beab25150b40d7e296e/ECHO-Launcher-1.0.1-Setup.exe.blockmap"
+                           },
+                           {
+                               "name":  "ECHOLauncher.exe",
+                               "size":  226659328,
+                               "sha256":  "675e7e02c0bc4e21e228a1d34b2a94494e0ceba36dce42f48b1b6447e28c59b6",
+                               "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Launcher-Public-Alpha/releases/download/untagged-5beab25150b40d7e296e/ECHOLauncher.exe"
+                           },
+                           {
+                               "name":  "latest.yml",
+                               "size":  355,
+                               "sha256":  "5c3fbe831d22b8b0ade9ded79213c790580401bea38079f935c61ce70dc83471",
+                               "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Launcher-Public-Alpha/releases/download/untagged-5beab25150b40d7e296e/latest.yml"
+                           }
+                       ],
+    "packs":  [
+                  {
+                      "id":  "ashfall-native-edition",
+                      "name":  "Ashfall Native Edition",
+                      "channel":  "alpha",
+                      "loader":  "echo-native-loader",
+                      "manifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index-Public-Alpha/main/packs/ashfall-native-edition.json"
+                  },
+                  {
+                      "id":  "standalone-runtime-showcase",
+                      "name":  "ECHO Standalone Runtime Showcase",
+                      "channel":  "experimental",
+                      "loader":  "echo-standalone-runtime",
+                      "manifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index-Public-Alpha/main/packs/standalone-runtime-showcase.json"
+                  }
+              ]
+}
