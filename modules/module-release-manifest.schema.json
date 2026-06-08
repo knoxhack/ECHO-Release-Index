@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modules/module-release-manifest.schema.json",
+  "title": "ECHO Module Release Manifest",
+  "type": "object",
+  "required": ["schemaVersion", "releaseId", "generatedAt", "modules"],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "releaseId": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "sourceRepo": {
+      "const": "https://github.com/knoxhack/ECHO-Modules"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["moduleId", "version", "artifacts"],
+        "properties": {
+          "moduleId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "descriptor": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {
+                "const": "META-INF/echo.mod.json"
+              },
+              "sha256": {
+                "type": "string"
+              }
+            }
+          },
+          "requires": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "optional": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["kind", "filename", "sha256", "size", "downloadUrl"],
+              "properties": {
+                "kind": {
+                  "enum": ["echo-addon", "neoforge", "standalone", "sources"]
+                },
+                "filename": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "downloadUrl": {
+                  "type": "string"
+                },
+                "runtimeTarget": {
+                  "enum": ["echo-native", "neoforge", "standalone", "sources"]
+                },
+                "contains": {
+                  "type": "array",
+                  "items": {
+                    "enum": ["META-INF/echo.mod.json", "META-INF/neoforge.mods.toml", "echo-addon-package.json"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

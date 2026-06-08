@@ -11,7 +11,9 @@
                         "modules":  "https://github.com/knoxhack/ECHO-Modules",
                         "sdk":  "https://github.com/knoxhack/ECHO-SDK"
                     },
-    "updatePolicy":  "Use this manifest for launcher pack updates. NeoForge packs are intentionally excluded from the public launcher alpha.",
+    "moduleArtifactFamily":  "echo-addon",
+    "moduleArtifactPattern":  "<module>-<version>.echo-addon",
+    "updatePolicy":  "Use this manifest for Ashfall Native Edition launcher pack updates. Module entries must pin .echo-addon artifacts from ECHO-Modules.",
     "assets":  [
                    {
                        "name":  "checksums.txt",

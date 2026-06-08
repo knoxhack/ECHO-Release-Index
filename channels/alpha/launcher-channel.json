@@ -10,6 +10,8 @@
                         "standaloneRuntime":  "https://github.com/knoxhack/ECHO-Standalone-Runtime",
                         "modules":  "https://github.com/knoxhack/ECHO-Modules",
                         "ashfallNativeEdition":  "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition",
+                        "ashfallNeoForgeEdition":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
+                        "ashfallStandaloneEdition":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
                         "launcher":  "https://github.com/knoxhack/ECHO-Launcher",
                         "website":  "https://github.com/knoxhack/ECHO-Platform-Website",
                         "releaseIndex":  "https://github.com/knoxhack/ECHO-Release-Index"
@@ -53,14 +55,24 @@
                       "name":  "Ashfall Native Edition",
                       "channel":  "alpha",
                       "loader":  "echo-native-loader",
+                      "moduleArtifactFamily":  "echo-addon",
                       "manifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-native-edition.json"
                   },
                   {
-                      "id":  "standalone-runtime-showcase",
-                      "name":  "ECHO Standalone Runtime Showcase",
+                      "id":  "ashfall-neoforge-edition",
+                      "name":  "Ashfall NeoForge Edition",
+                      "channel":  "alpha",
+                      "loader":  "neoforge",
+                      "moduleArtifactFamily":  "neoforge",
+                      "manifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-neoforge-edition.json"
+                  },
+                  {
+                      "id":  "ashfall-standalone-edition",
+                      "name":  "Ashfall Standalone Edition",
                       "channel":  "experimental",
                       "loader":  "echo-standalone-runtime",
-                      "manifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/standalone-runtime-showcase.json"
+                      "moduleArtifactFamily":  "standalone",
+                      "manifestUrl":  "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-standalone-edition.json"
                   }
               ]
 }

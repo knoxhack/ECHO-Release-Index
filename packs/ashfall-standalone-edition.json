@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "ashfall-standalone-edition",
+  "name": "Ashfall Standalone Edition",
+  "channel": "experimental",
+  "loader": "echo-standalone-runtime",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
+    "standaloneRuntime": "https://github.com/knoxhack/ECHO-Standalone-Runtime",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "standalone",
+  "moduleArtifactPattern": "<module>-<version>-standalone.jar",
+  "updatePolicy": "Use this manifest for Ashfall Standalone Edition updates. Module entries must pin -standalone.jar artifacts from ECHO-Modules.",
+  "assets": [
+    {
+      "name": "alpha-readiness-gate.json",
+      "size": 313,
+      "sha256": "0fbc52682d928f6cff7dab4ef6881870aeaca71b88fe6492b44d723a93212fef",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/untagged-ce95550d55c5750b5a27/alpha-readiness-gate.json"
+    },
+    {
+      "name": "ashfall-parity-matrix.json",
+      "size": 7224,
+      "sha256": "d49209927cb05cd3abb2246d9e9571aa8e19e09721de40b6b269e13d1d7cd6b3",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/untagged-ce95550d55c5750b5a27/ashfall-parity-matrix.json"
+    },
+    {
+      "name": "beta-readiness-gate.json",
+      "size": 2518,
+      "sha256": "1c2c6b2c569501e5d7a22370c996fbdc799e41064092de3108920688334f7929",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/untagged-ce95550d55c5750b5a27/beta-readiness-gate.json"
+    },
+    {
+      "name": "myaddon-0.1.0-standalone.jar",
+      "size": 3299,
+      "sha256": "687e61614a54be55178a80f87273e34a4176b44e2ba9aa62a61469569386791a",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/untagged-ce95550d55c5750b5a27/myaddon-0.1.0-standalone.jar"
+    }
+  ]
+}

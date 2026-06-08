@@ -10,7 +10,9 @@ Generated files are written under:
 - `channels/alpha/launcher-channel.json`
 - `channels/alpha/repositories.json`
 - `packs/ashfall-native-edition.json`
-- `packs/standalone-runtime-showcase.json`
+- `packs/ashfall-neoforge-edition.json`
+- `packs/ashfall-standalone-edition.json`
+- `modules/module-release-manifest.schema.json`
 
 ## Canonical Repo Layout
 
@@ -24,9 +26,21 @@ The public alpha is split by ownership so each product can release, update, and 
 | `ECHO-Standalone-Runtime` | Standalone Runtime source, experimental showcase runtime, runtime modules, and standalone addon compatibility surface. |
 | `ECHO-Modules` | Public addon module source and module release assets for Native, NeoForge, and Standalone targets. |
 | `ECHO-Ashfall-Native-Edition` | Ashfall Native Edition pack metadata, pack assets, and launcher pack-update source. |
+| `ECHO-Ashfall-NeoForge-Edition` | Ashfall NeoForge Edition pack metadata, NeoForge pack assets, and NeoForge module composition source. |
+| `ECHO-Ashfall-Standalone-Edition` | Ashfall Standalone Edition pack metadata, standalone runtime pack assets, and standalone module composition source. |
 | `ECHO-Launcher` | Launcher source, installer releases, auto-update feed, and public alpha catalog integration. |
 | `ECHO-Addons-Studio` | Addon creation app for Native and Standalone addons. |
 | `ECHO-Developer-Studio` | Developer operations app for release validation, metadata checks, and publishing workflows. |
 | `ECHO-Platform-Website` | Official website source and public download hub surface. |
 
 The launcher should read `channels/alpha/launcher-channel.json`. The website should read `channels/alpha/release-manifest.json` and `channels/alpha/repositories.json`. The studios should read the release manifest plus the SDK and module repo entries.
+
+## Ashfall Edition Module Artifacts
+
+Each Ashfall edition is composed from the same module inventory, but consumes a different artifact family from `ECHO-Modules`:
+
+| Edition | Pack repo | Module artifact |
+| --- | --- | --- |
+| Ashfall Native Edition | `ECHO-Ashfall-Native-Edition` | `<module>-<version>.echo-addon` |
+| Ashfall NeoForge Edition | `ECHO-Ashfall-NeoForge-Edition` | `<module>-<version>-neoforge.jar` |
+| Ashfall Standalone Edition | `ECHO-Ashfall-Standalone-Edition` | `<module>-<version>-standalone.jar` |

@@ -207,7 +207,7 @@
                              "repoName":  "ECHO-Ashfall-Native-Edition",
                              "product":  "Ashfall Native Edition",
                              "releaseKind":  "pack",
-                             "publicRole":  "Official public pack source and metadata for launcher pack updates. NeoForge launcher packs are intentionally excluded from this public alpha.",
+                             "publicRole":  "Official Ashfall Native Edition pack source and metadata for launcher pack updates. Consumes .echo-addon artifacts from ECHO-Modules.",
                              "localPath":  "Echo",
                              "repoUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition",
                              "snapshotPath":  "C:\\Experimental\\Codex\\ECHONATIVEPLATFORM\\tmp\\github-public-release\\staging\\ECHO-Ashfall-Native-Edition",
@@ -240,10 +240,36 @@
                                         ]
                          },
                          {
+                             "repoName":  "ECHO-Ashfall-NeoForge-Edition",
+                             "product":  "Ashfall NeoForge Edition",
+                             "releaseKind":  "pack",
+                             "publicRole":  "Official Ashfall NeoForge Edition pack source and metadata. Consumes -neoforge.jar artifacts from ECHO-Modules.",
+                             "localPath":  "Echo",
+                             "repoUrl":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
+                             "snapshotPath":  "C:\\Experimental\\Codex\\ECHONATIVEPLATFORM\\tmp\\github-public-release\\staging\\ECHO-Ashfall-NeoForge-Edition",
+                             "release":  null,
+                             "assets":  [
+
+                                        ]
+                         },
+                         {
+                             "repoName":  "ECHO-Ashfall-Standalone-Edition",
+                             "product":  "Ashfall Standalone Edition",
+                             "releaseKind":  "pack",
+                             "publicRole":  "Official Ashfall Standalone Edition pack source and metadata. Consumes -standalone.jar artifacts from ECHO-Modules.",
+                             "localPath":  "Echo/echo-standalone-runtime",
+                             "repoUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
+                             "snapshotPath":  "C:\\Experimental\\Codex\\ECHONATIVEPLATFORM\\tmp\\github-public-release\\staging\\ECHO-Ashfall-Standalone-Edition",
+                             "release":  null,
+                             "assets":  [
+
+                                        ]
+                         },
+                         {
                              "repoName":  "ECHO-Launcher",
                              "product":  "ECHO Launcher",
                              "releaseKind":  "launcher",
-                             "publicRole":  "Launcher app source, installer releases, auto-update feed, and public alpha catalog integration for Ashfall Native Edition and the Standalone Runtime Showcase.",
+                             "publicRole":  "Launcher app source, installer releases, auto-update feed, and catalog integration for Ashfall Native, NeoForge, and Standalone editions.",
                              "localPath":  "ECHOLauncher",
                              "repoUrl":  "https://github.com/knoxhack/ECHO-Launcher",
                              "snapshotPath":  "C:\\Experimental\\Codex\\ECHONATIVEPLATFORM\\tmp\\github-public-release\\staging\\ECHO-Launcher",
