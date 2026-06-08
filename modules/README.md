@@ -38,4 +38,30 @@ Applicability:
 | Ashfall NeoForge Edition | `knoxhack/ECHO-Ashfall-NeoForge-Edition` | `<module>-<version>-neoforge.jar` |
 | Ashfall Standalone Edition | `knoxhack/ECHO-Ashfall-Standalone-Edition` | `<module>-<version>-standalone.jar` |
 
-Pack manifests should pin direct download URLs, SHA-256 hashes, sizes, module IDs, and versions for each module artifact. Direct URLs are required when the artifact is attached to a release in `ECHO-Modules` rather than the same pack release.
+Pack manifests can still pin direct download URLs, SHA-256 hashes, sizes, module IDs, and versions for each module artifact. They can also declare module requirements and let ECHO Launcher resolve the correct artifact from the `knoxhack/ECHO-Modules` GitHub release feed.
+
+## Launcher Module Resolution
+
+Use `moduleRequirements` when a pack should update modules individually without hard-coding every module artifact URL:
+
+```json
+{
+  "moduleArtifactFamily": "neoforge",
+  "moduleRequirements": [
+    {
+      "id": "echocore",
+      "version": "1.0.0"
+    }
+  ]
+}
+```
+
+Default artifact names are derived from the pack family:
+
+| Family | Default artifact |
+| --- | --- |
+| `echo-addon` | `<module>-<version>.echo-addon` |
+| `neoforge` | `<module>-<version>-neoforge.jar` |
+| `standalone` | `<module>-<version>-standalone.jar` |
+
+Each requirement can override `assetName`, `path`, `sha256`, `size`, `required`, `side`, or `artifactFamily`. During install/update, the launcher expands those requirements into normal manifest `files`, downloads only changed module files when URLs are resolved, and falls back to the full pack archive only when a changed file has no individual release asset URL.
