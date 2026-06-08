@@ -1,18 +1,44 @@
 {
-  "schemaVersion": 1,
-  "id": "ashfall-neoforge-edition",
-  "name": "Ashfall NeoForge Edition",
-  "channel": "alpha",
-  "loader": "neoforge",
-  "publicDownloadHub": "official-echo-website",
-  "sourceRepos": {
-    "pack": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
-    "nativePlatform": "https://github.com/knoxhack/ECHO-Native-Platform",
-    "modules": "https://github.com/knoxhack/ECHO-Modules",
-    "sdk": "https://github.com/knoxhack/ECHO-SDK"
-  },
-  "moduleArtifactFamily": "neoforge",
-  "moduleArtifactPattern": "<module>-<version>-neoforge.jar",
-  "updatePolicy": "Use this manifest for the Minecraft/NeoForge Ashfall distribution. Module entries must pin -neoforge.jar artifacts from ECHO-Modules.",
-  "assets": []
+    "schemaVersion":  1,
+    "id":  "ashfall-neoforge-edition",
+    "name":  "Ashfall NeoForge Edition",
+    "channel":  "alpha",
+    "loader":  "neoforge",
+    "publicDownloadHub":  "official-echo-website",
+    "sourceRepos":  {
+                        "pack":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
+                        "nativePlatform":  "https://github.com/knoxhack/ECHO-Native-Platform",
+                        "modules":  "https://github.com/knoxhack/ECHO-Modules",
+                        "sdk":  "https://github.com/knoxhack/ECHO-SDK"
+                    },
+    "moduleArtifactFamily":  "neoforge",
+    "moduleArtifactPattern":  "\u003cmodule\u003e-\u003cversion\u003e-neoforge.jar",
+    "updatePolicy":  "Use this manifest for the Minecraft/NeoForge Ashfall distribution. Module entries must pin -neoforge.jar artifacts from ECHO-Modules.",
+    "assets":  [
+                   {
+                       "name":  "echo-release.json",
+                       "size":  1189,
+                       "sha256":  "400066dccef216c841c070b51a7175a15b4cbe9d1618a2795f84c870dab44310",
+                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json"
+                   },
+                   {
+                       "name":  "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+                       "size":  1129,
+                       "sha256":  "1375e84142d3bdfe1caa9706d4a15ac01b65f0274d32cf706858df9716b59a9e",
+                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json"
+                   },
+                   {
+                       "name":  "ashfall-neoforge-edition-0.1.0.zip",
+                       "size":  229,
+                       "sha256":  "59df0c7c4d544943a4dfea496ebee89a6829ce7695790d12ba6339f91ef0ca9d",
+                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip"
+                   },
+                   {
+                       "name":  "checksums.txt",
+                       "size":  298,
+                       "sha256":  "6702e85173965161946540a6c260229412f3b6789c9da596a10293785ee67853",
+                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt"
+                   }
+               ],
+    "releaseUrl":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
 }
