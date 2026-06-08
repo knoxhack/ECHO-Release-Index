@@ -1,46 +1,48 @@
 # ECHO Release Index
 
-This repository is the machine-readable public alpha index for ECHO launcher updates, pack updates, release assets, checksums, and website download metadata.
+Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling.
 
-The official ECHO website is the public download hub. This repo exists so products can read stable JSON manifests during alpha testing.
+## Purpose
 
-Generated files are written under:
+Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling.
 
-- `channels/alpha/release-manifest.json`
-- `channels/alpha/launcher-channel.json`
-- `channels/alpha/repositories.json`
-- `packs/ashfall-native-edition.json`
-- `packs/ashfall-neoforge-edition.json`
-- `packs/ashfall-standalone-edition.json`
-- `modules/module-release-manifest.schema.json`
+## What Lives Here
 
-## Canonical Repo Layout
+Release catalog JSON, channel metadata, public status docs, validation notes, and download/index references.
 
-The public alpha is split by ownership so each product can release, update, and receive issues without mixing concerns.
+## Release And Update Role
 
-| Repo | Owns |
-| --- | --- |
-| `ECHO-Release-Index` | Launcher channel JSON, pack update JSON, website download metadata, and release catalog metadata. |
-| `ECHO-Native-Platform` | Native Platform source, Native Loader, PackOS, diagnostics, native contracts, and core platform release assets. |
-| `ECHO-SDK` | SDK source, Gradle plugin, templates, samples, schemas, authoring tools, and addon developer docs. |
-| `ECHO-Standalone-Runtime` | Standalone Runtime source, experimental showcase runtime, runtime modules, and standalone addon compatibility surface. |
-| `ECHO-Modules` | Public addon module source and module release assets for Native, NeoForge, and Standalone targets. |
-| `ECHO-Ashfall-Native-Edition` | Ashfall Native Edition pack metadata, pack assets, and launcher pack-update source. |
-| `ECHO-Ashfall-NeoForge-Edition` | Ashfall NeoForge Edition pack metadata, NeoForge pack assets, and NeoForge module composition source. |
-| `ECHO-Ashfall-Standalone-Edition` | Ashfall Standalone Edition pack metadata, standalone runtime pack assets, and standalone module composition source. |
-| `ECHO-Launcher` | Launcher source, installer releases, auto-update feed, and public alpha catalog integration. |
-| `ECHO-Addons-Studio` | Addon creation app for Native and Standalone addons. |
-| `ECHO-Developer-Studio` | Developer operations app for release validation, metadata checks, and publishing workflows. |
-| `ECHO-Platform-Website` | Official website source and public download hub surface. |
+Does not own binaries. It points clients at the correct launcher, pack, module, studio, and website release feeds.
 
-The launcher should read `channels/alpha/launcher-channel.json`. The website should read `channels/alpha/release-manifest.json` and `channels/alpha/repositories.json`. The studios should read the release manifest plus the SDK and module repo entries.
+## Public Or Private
 
-## Ashfall Edition Module Artifacts
+Public is strongly recommended. A private release index prevents unauthenticated launcher and website update discovery.
 
-Each Ashfall edition is composed from the same module inventory, but consumes a different artifact family from `ECHO-Modules`:
+## Build And Dev Commands
 
-| Edition | Pack repo | Module artifact |
-| --- | --- | --- |
-| Ashfall Native Edition | `ECHO-Ashfall-Native-Edition` | `<module>-<version>.echo-addon` |
-| Ashfall NeoForge Edition | `ECHO-Ashfall-NeoForge-Edition` | `<module>-<version>-neoforge.jar` |
-| Ashfall Standalone Edition | `ECHO-Ashfall-Standalone-Edition` | `<module>-<version>-standalone.jar` |
+Run commands from the repository root.
+
+- `No build command is currently tracked in this repo.`
+
+## Artifact Ownership
+
+Index JSON and catalog metadata belong here. Binary release assets stay in their owning source repos.
+
+## Docs Index
+
+- [README.md](README.md)
+- [PUBLIC_ALPHA_RELEASE_STATUS.md](PUBLIC_ALPHA_RELEASE_STATUS.md)
+
+## Related Repos
+
+- [knoxhack/ECHO-Launcher](https://github.com/knoxhack/ECHO-Launcher)
+- [knoxhack/ECHO-Modules](https://github.com/knoxhack/ECHO-Modules)
+- [knoxhack/ECHO-Ashfall-Native-Edition](https://github.com/knoxhack/ECHO-Ashfall-Native-Edition)
+- [knoxhack/ECHO-Ashfall-NeoForge-Edition](https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition)
+- [knoxhack/ECHO-Ashfall-Standalone-Edition](https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition)
+- [knoxhack/ECHO-Native-Platform](https://github.com/knoxhack/ECHO-Native-Platform)
+- [knoxhack/ECHO-Standalone-Runtime](https://github.com/knoxhack/ECHO-Standalone-Runtime)
+- [knoxhack/ECHO-SDK](https://github.com/knoxhack/ECHO-SDK)
+- [knoxhack/ECHO-Developer-Studio](https://github.com/knoxhack/ECHO-Developer-Studio)
+- [knoxhack/ECHO-Addons-Studio](https://github.com/knoxhack/ECHO-Addons-Studio)
+- [knoxhack/ECHO-Platform-Website](https://github.com/knoxhack/ECHO-Platform-Website)
