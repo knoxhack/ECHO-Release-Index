@@ -21,3 +21,6 @@ jobs:
       - run: node --check scripts/ingest-release.mjs
       - run: node --check scripts/ingest-webhook-service.mjs
       - run: node --check scripts/import-module-release.mjs
+      - run: node --check scripts/public-alpha-common.mjs
+      - run: node --check scripts/build-public-alpha-assets.mjs
+      - run: node --check scripts/publish-public-alpha.mjs

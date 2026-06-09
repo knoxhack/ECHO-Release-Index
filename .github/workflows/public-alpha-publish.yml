@@ -1,0 +1,133 @@
+name: Public Alpha Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Perform GitHub writes. Leave false for dry-run validation.'
+        required: true
+        type: boolean
+        default: false
+      make_public:
+        description: 'Patch manifest repositories to public visibility.'
+        required: true
+        type: boolean
+        default: false
+      strict_assets:
+        description: 'Fail when any manifest asset is missing.'
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  public-alpha:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ECHO-Release-Index
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Release-Index
+          path: ECHO-Release-Index
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Native-Platform
+          path: ECHO-Native-Platform
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-SDK
+          path: ECHO-SDK
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Standalone-Runtime
+          path: ECHO-Standalone-Runtime
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Modules
+          path: ECHO-Modules
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Ashfall-Native-Edition
+          path: ECHO-Ashfall-Native-Edition
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Ashfall-NeoForge-Edition
+          path: ECHO-Ashfall-NeoForge-Edition
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Ashfall-Standalone-Edition
+          path: ECHO-Ashfall-Standalone-Edition
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Launcher
+          path: ECHO-Launcher
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Addons-Studio
+          path: ECHO-Addons-Studio
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Developer-Studio
+          path: ECHO-Developer-Studio
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: knoxhack/ECHO-Platform-Website
+          path: ECHO-Platform-Website
+          token: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build public alpha asset staging
+        shell: pwsh
+        run: |
+          $args = @('scripts/build-public-alpha-assets.mjs', '--workspace-root', '..')
+          if ('${{ inputs.strict_assets }}' -eq 'true') { $args += '--strict-assets' }
+          node @args
+
+      - name: Publish public alpha releases
+        env:
+          ECHO_PUBLIC_ALPHA_TOKEN: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+        shell: pwsh
+        run: |
+          $args = @('scripts/publish-public-alpha.mjs')
+          if ('${{ inputs.publish }}' -eq 'true') { $args += '--publish' }
+          if ('${{ inputs.make_public }}' -eq 'true') { $args += '--make-public' }
+          if ('${{ inputs.strict_assets }}' -eq 'true') { $args += '--strict-assets' }
+          node @args
+
+      - name: Validate public alpha metadata
+        env:
+          ECHO_PUBLIC_ALPHA_TOKEN: ${{ secrets.ECHO_PUBLIC_ALPHA_TOKEN }}
+        shell: pwsh
+        run: |
+          $args = @('scripts/validate-public-alpha.mjs', '--live-github')
+          if ('${{ inputs.strict_assets }}' -eq 'true') { $args += '--strict-assets' }
+          node @args

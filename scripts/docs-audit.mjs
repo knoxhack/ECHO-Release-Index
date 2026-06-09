@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const repoName = path.basename(root);
-const ignoredDirs = new Set([".git", "node_modules", "dist", "build", "target", ".gradle", ".next", "installer-artifacts", "release-artifacts", "coverage"]);
+const ignoredDirs = new Set([".git", "node_modules", "dist", "build", "target", ".gradle", ".next", "installer-artifacts", "release-artifacts", "coverage", "tmp"]);
 const errors = [];
 
 function exists(file) {
