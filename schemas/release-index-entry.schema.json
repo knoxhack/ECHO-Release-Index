@@ -20,6 +20,7 @@
     "validation"
   ],
   "properties": {
+    "schemaVersion": { "const": "echo.release.index.entry.v1" },
     "id": { "type": "string", "minLength": 1 },
     "kind": { "enum": ["product", "modpack", "module", "addon", "runtime", "studio", "website"] },
     "version": { "type": "string", "minLength": 1 },

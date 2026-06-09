@@ -387,6 +387,7 @@ async function main() {
   ])
   const mismatchedAddonSha = sha256(mismatchedAddonBytes)
   const metadata = {
+    schemaVersion: 'echo.release.index.entry.v1',
     id: 'fixture-addon',
     kind: 'addon',
     version: '1.0.0',

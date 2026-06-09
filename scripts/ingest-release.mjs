@@ -206,6 +206,8 @@ function validateReleaseMetadata(metadata) {
         reasons.push(`Module release metadata ${moduleId} must include artifacts.`)
       }
     }
+  } else if (metadata.schemaVersion !== 'echo.release.index.entry.v1') {
+    reasons.push('Release entry metadata must use schemaVersion echo.release.index.entry.v1.')
   }
   return reasons
 }

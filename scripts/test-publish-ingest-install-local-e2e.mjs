@@ -197,7 +197,7 @@ async function writePublishedReleaseAssets(assetRoot, version) {
   const addonBytes = addonArchive(version)
   const addonSha = sha256(addonBytes)
   const releaseMetadata = {
-    schemaVersion: 1,
+    schemaVersion: 'echo.release.index.entry.v1',
     id: moduleId,
     kind: 'module',
     version,
