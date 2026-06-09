@@ -14,7 +14,9 @@ jobs:
           node-version: 22
       - run: node scripts/docs-audit.mjs
       - run: node scripts/validate-index.mjs --strict
+      - run: node scripts/sync-public-alpha-index.mjs --check
       - run: node scripts/test-validate-index.mjs
+      - run: node scripts/test-sync-public-alpha-index.mjs
       - run: node scripts/test-ingest-release-local-e2e.mjs
       - run: node scripts/test-ingest-webhook-service.mjs
       - run: node scripts/validate-public-alpha.mjs
@@ -22,5 +24,6 @@ jobs:
       - run: node --check scripts/ingest-webhook-service.mjs
       - run: node --check scripts/import-module-release.mjs
       - run: node --check scripts/public-alpha-common.mjs
+      - run: node --check scripts/sync-public-alpha-index.mjs
       - run: node --check scripts/build-public-alpha-assets.mjs
       - run: node --check scripts/publish-public-alpha.mjs
