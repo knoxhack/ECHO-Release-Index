@@ -40,6 +40,7 @@ Run commands from the repository root.
 - `node scripts/sync-public-alpha-index.mjs --check`
 - `node scripts/test-validate-index.mjs`
 - `node scripts/test-sync-public-alpha-index.mjs`
+- `node scripts/test-verify-artifact-urls.mjs`
 - `node scripts/test-build-public-alpha-assets.mjs`
 - `node scripts/test-ingest-release-local-e2e.mjs`
 - `node scripts/test-publish-ingest-install-local-e2e.mjs`
