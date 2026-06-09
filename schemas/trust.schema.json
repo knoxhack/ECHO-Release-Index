@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/trust.schema.json",
+  "title": "ECHO Trust Tier",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "rank", "description", "playable"],
+  "properties": {
+    "id": {
+      "enum": [
+        "official",
+        "reproducible-build",
+        "echo-workflow-built",
+        "provenance-attested",
+        "source-linked",
+        "community",
+        "unverified",
+        "deprecated",
+        "blocked"
+      ]
+    },
+    "rank": { "type": "integer", "minimum": 0 },
+    "description": { "type": "string", "minLength": 1 },
+    "playable": { "type": "boolean" }
+  }
+}

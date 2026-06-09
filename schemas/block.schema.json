@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/block.schema.json",
+  "title": "ECHO Block Entry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "scope", "reason", "createdAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "scope": { "enum": ["publisher", "addon", "module", "product", "version", "artifact"] },
+    "target": { "type": "string" },
+    "reason": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "minLength": 1 }
+  }
+}

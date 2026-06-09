@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/echo-pack.schema.json",
+  "title": "ECHO Pack Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "id", "version", "target", "requiredArtifacts"],
+  "properties": {
+    "schemaVersion": { "const": "echo.pack.v1" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_-]*$" },
+    "version": { "type": "string", "minLength": 1 },
+    "target": { "enum": ["native", "neoforge", "standalone"] },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "requiredArtifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "kind", "version"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["module", "addon", "runtime", "product"] },
+          "version": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/publisher.schema.json",
+  "title": "ECHO Publisher",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "name", "githubOwner", "trust"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "githubOwner": { "type": "string", "minLength": 1 },
+    "trust": { "type": "string", "minLength": 1 }
+  }
+}

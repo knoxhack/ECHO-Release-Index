@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/release-index-entry.schema.json",
+  "title": "ECHO Release Index Entry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "kind",
+    "version",
+    "channel",
+    "publisher",
+    "sourceRepo",
+    "releaseTag",
+    "commitSha",
+    "artifacts",
+    "dependencies",
+    "compatibility",
+    "trust",
+    "validation"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "kind": { "enum": ["product", "modpack", "module", "addon", "runtime", "studio", "website"] },
+    "version": { "type": "string", "minLength": 1 },
+    "channel": { "type": "string", "minLength": 1 },
+    "publisher": { "type": "string", "minLength": 1 },
+    "sourceRepo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+    "releaseTag": { "type": "string", "minLength": 1 },
+    "commitSha": { "type": "string", "pattern": "^[a-fA-F0-9]{7,40}$" },
+    "artifacts": { "type": ["object", "array"] },
+    "dependencies": { "type": "array" },
+    "compatibility": { "type": "array" },
+    "trust": { "type": "string", "minLength": 1 },
+    "validation": { "type": "string", "minLength": 1 }
+  }
+}

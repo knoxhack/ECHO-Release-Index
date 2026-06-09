@@ -13,3 +13,11 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/docs-audit.mjs
+      - run: node scripts/validate-index.mjs --strict
+      - run: node scripts/test-validate-index.mjs
+      - run: node scripts/test-ingest-release-local-e2e.mjs
+      - run: node scripts/test-ingest-webhook-service.mjs
+      - run: node scripts/validate-public-alpha.mjs
+      - run: node --check scripts/ingest-release.mjs
+      - run: node --check scripts/ingest-webhook-service.mjs
+      - run: node --check scripts/import-module-release.mjs

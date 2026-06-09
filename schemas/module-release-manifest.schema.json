@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/module-release-manifest.schema.json",
+  "title": "ECHO Module Release Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "modules"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "releaseId": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourceRepo": { "type": "string", "minLength": 1 },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["moduleId", "version", "descriptor", "requires", "optional", "artifacts"],
+        "properties": {
+          "moduleId": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "descriptor": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": { "const": "META-INF/echo.mod.json" },
+              "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" }
+            }
+          },
+          "requires": { "type": "array" },
+          "optional": { "type": "array" },
+          "artifacts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": ["kind", "filename", "sha256", "size"],
+              "properties": {
+                "kind": { "enum": ["echo-addon", "neoforge", "standalone", "sources"] },
+                "filename": { "type": "string", "minLength": 1 },
+                "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+                "size": { "type": "integer", "minimum": 0 },
+                "downloadUrl": { "type": "string" },
+                "runtimeTarget": { "type": "string" },
+                "buildMode": { "enum": ["compiled-runtime", "source-packaged", null] },
+                "contains": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

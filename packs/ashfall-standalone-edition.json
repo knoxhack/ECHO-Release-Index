@@ -1,44 +1,44 @@
 {
-    "schemaVersion":  1,
-    "id":  "ashfall-standalone-edition",
-    "name":  "Ashfall Standalone Edition",
-    "channel":  "experimental",
-    "loader":  "echo-standalone-runtime",
-    "publicDownloadHub":  "official-echo-website",
-    "sourceRepos":  {
-                        "pack":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
-                        "standaloneRuntime":  "https://github.com/knoxhack/ECHO-Standalone-Runtime",
-                        "modules":  "https://github.com/knoxhack/ECHO-Modules",
-                        "sdk":  "https://github.com/knoxhack/ECHO-SDK"
-                    },
-    "moduleArtifactFamily":  "standalone",
-    "moduleArtifactPattern":  "\u003cmodule\u003e-\u003cversion\u003e-standalone.jar",
-    "updatePolicy":  "Use this manifest for Ashfall Standalone Edition updates. Module entries must pin -standalone.jar artifacts from ECHO-Modules.",
-    "assets":  [
-                   {
-                       "name":  "echo-release.json",
-                       "size":  1224,
-                       "sha256":  "13d11ca2eea9ec3e32a13b98844591fe76835b2bed19a12b0f0329f45961d3f1",
-                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json"
-                   },
-                   {
-                       "name":  "ashfall-standalone-edition-experimental-0.1.0.pack.json",
-                       "size":  744,
-                       "sha256":  "a438ad29fa9cce7a2f9c6ebdb5229428e3bb1a4e848bac4aed88871da9df6af3",
-                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json"
-                   },
-                   {
-                       "name":  "ashfall-standalone-edition-0.1.0.zip",
-                       "size":  229,
-                       "sha256":  "39b55c89f44ec9ae91ad05aaf5e2a3e60745f35f69c72c90c04300b8757ecd79",
-                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip"
-                   },
-                   {
-                       "name":  "checksums.txt",
-                       "size":  309,
-                       "sha256":  "2751d27786c00e13eb85a2f43ed6221fa3bc9fb1ff0ec008198880f2885fe4ab",
-                       "browserDownloadUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt"
-                   }
-               ],
-    "releaseUrl":  "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
+  "schemaVersion": 1,
+  "id": "ashfall-standalone-edition",
+  "name": "Ashfall Standalone Edition",
+  "channel": "experimental",
+  "loader": "echo-standalone-runtime",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
+    "standaloneRuntime": "https://github.com/knoxhack/ECHO-Standalone-Runtime",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "standalone",
+  "moduleArtifactPattern": "<module>-<version>-standalone.jar",
+  "updatePolicy": "Use this manifest for Ashfall Standalone Edition updates. Module entries must pin -standalone.jar artifacts from ECHO-Modules.",
+  "assets": [
+    {
+      "name": "echo-release.json",
+      "size": 1224,
+      "sha256": "13d11ca2eea9ec3e32a13b98844591fe76835b2bed19a12b0f0329f45961d3f1",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json"
+    },
+    {
+      "name": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+      "size": 744,
+      "sha256": "a438ad29fa9cce7a2f9c6ebdb5229428e3bb1a4e848bac4aed88871da9df6af3",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json"
+    },
+    {
+      "name": "ashfall-standalone-edition-0.1.0.zip",
+      "size": 229,
+      "sha256": "39b55c89f44ec9ae91ad05aaf5e2a3e60745f35f69c72c90c04300b8757ecd79",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip"
+    },
+    {
+      "name": "checksums.txt",
+      "size": 309,
+      "sha256": "2751d27786c00e13eb85a2f43ed6221fa3bc9fb1ff0ec008198880f2885fe4ab",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt"
+    }
+  ],
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
 }

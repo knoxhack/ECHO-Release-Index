@@ -1,0 +1,11 @@
+[
+  { "id": "official", "rank": 100, "description": "First-party ECHO release with approved provenance.", "playable": true },
+  { "id": "reproducible-build", "rank": 90, "description": "Build reproduced from source and verified.", "playable": true },
+  { "id": "echo-workflow-built", "rank": 80, "description": "Built by the standard ECHO workflow.", "playable": true },
+  { "id": "provenance-attested", "rank": 70, "description": "GitHub artifact attestation is present and matches the source release.", "playable": true },
+  { "id": "source-linked", "rank": 60, "description": "Source repository and release are linked, with basic metadata verification.", "playable": true },
+  { "id": "community", "rank": 50, "description": "Community release accepted by policy.", "playable": true },
+  { "id": "unverified", "rank": 20, "description": "Metadata is visible but not installable by default.", "playable": false },
+  { "id": "deprecated", "rank": 10, "description": "Release is kept for rollback or compatibility only.", "playable": false },
+  { "id": "blocked", "rank": 0, "description": "Release is explicitly blocked.", "playable": false }
+]

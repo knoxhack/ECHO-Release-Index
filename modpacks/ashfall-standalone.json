@@ -1,0 +1,36 @@
+{
+  "id": "ashfall-standalone-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "experimental",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
+  "releaseTag": "v0.1.0-ashfall-standalone-edition",
+  "commitSha": "0000000",
+  "artifacts": {
+    "pack": {
+      "file": "ashfall-standalone-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
+      "sha256": "39b55c89f44ec9ae91ad05aaf5e2a3e60745f35f69c72c90c04300b8757ecd79",
+      "size": 229
+    },
+    "manifest": {
+      "file": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+      "sha256": "a438ad29fa9cce7a2f9c6ebdb5229428e3bb1a4e848bac4aed88871da9df6af3",
+      "size": 744
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echo-standalone-runtime",
+      "kind": "runtime",
+      "version": ">=0.1.0"
+    }
+  ],
+  "compatibility": [
+    "standalone"
+  ],
+  "trust": "official",
+  "validation": "warning"
+}
