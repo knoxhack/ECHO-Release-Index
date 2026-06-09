@@ -147,6 +147,74 @@ await runFixture('warning', async (root) => {
   }))
 }, 0, 'has no indexed artifacts')
 
+await runFixture('approved-windows-product-missing-updater-role', async (root) => {
+  await writeJson(root, 'products/fixture-product.json', approvedEntry({
+    id: 'fixture-product',
+    kind: 'product',
+    artifacts: {
+      windowsSetup: {
+        file: 'fixture-product-setup.exe',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/fixture-product-setup.exe',
+      },
+    },
+    compatibility: ['windows-x64'],
+  }))
+}, 1, 'has no exact indexed artifact for role latestYml')
+
+await runFixture('approved-windows-studio-missing-installer-role', async (root) => {
+  await writeJson(root, 'products/fixture-studio.json', approvedEntry({
+    id: 'fixture-studio',
+    kind: 'studio',
+    artifacts: {
+      latestYml: {
+        file: 'latest.yml',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/latest.yml',
+      },
+    },
+    compatibility: ['windows-x64'],
+  }))
+}, 1, 'has no exact indexed artifact for role windowsSetup')
+
+await runFixture('approved-runtime-missing-archive-role', async (root) => {
+  await writeJson(root, 'products/fixture-runtime.json', approvedEntry({
+    id: 'fixture-runtime',
+    kind: 'runtime',
+    artifacts: {
+      checksums: {
+        file: 'checksums.txt',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/checksums.txt',
+      },
+    },
+  }))
+}, 1, 'has no exact indexed artifact for role archive')
+
+await runFixture('approved-modpack-missing-manifest-role', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedEntry({
+    id: 'fixture-pack',
+    kind: 'modpack',
+    artifacts: {
+      pack: {
+        file: 'fixture-pack.zip',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/fixture-pack.zip',
+      },
+    },
+  }))
+}, 1, 'has no exact indexed artifact for role manifest')
+
+await runFixture('warning-runtime-missing-archive-role', async (root) => {
+  await writeJson(root, 'products/fixture-runtime.json', approvedEntry({
+    id: 'fixture-runtime',
+    kind: 'runtime',
+    artifacts: {},
+    validation: 'warning',
+    trust: 'community',
+  }))
+}, 0, 'has no exact indexed artifact for role archive')
+
 await runFixture('rejected', async (root) => {
   await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
     artifacts: {

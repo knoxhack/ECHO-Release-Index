@@ -186,6 +186,55 @@ function validateArtifacts(errors, warnings, filePath, entry) {
   })
 }
 
+function artifactRoleRecords(artifacts) {
+  const records = []
+  function visit(node, role = 'asset') {
+    if (Array.isArray(node)) {
+      node.forEach((item) => visit(item, role))
+      return
+    }
+    if (!node || typeof node !== 'object') return
+    if (node.file || node.name || node.filename || node.url || node.sha256 || node.downloadUrl) {
+      records.push({
+        role,
+        name: String(node.file ?? node.name ?? node.filename ?? role),
+        url: node.url ?? node.downloadUrl,
+        sha256: node.sha256,
+      })
+    }
+    Object.entries(node).forEach(([key, value]) => visit(value, key))
+  }
+  visit(artifacts)
+  return records
+}
+
+function hasExactArtifactRole(entry, role) {
+  return artifactRoleRecords(entry.artifacts).some((artifact) =>
+    artifact.role === role &&
+    artifact.url &&
+    /^https:\/\/github\.com\/|^https:\/\/raw\.githubusercontent\.com\//.test(String(artifact.url)) &&
+    sha256Pattern.test(String(artifact.sha256 ?? ''))
+  )
+}
+
+function requiredArtifactRolesForEntry(entry) {
+  if (entry.kind === 'modpack') return ['manifest']
+  if (entry.kind === 'runtime') return ['archive']
+  if (['product', 'studio'].includes(entry.kind) && Array.isArray(entry.compatibility) && entry.compatibility.includes('windows-x64')) {
+    return ['latestYml', 'windowsSetup']
+  }
+  return []
+}
+
+function validateRequiredArtifactRoles(errors, warnings, filePath, entry) {
+  for (const role of requiredArtifactRolesForEntry(entry)) {
+    if (hasExactArtifactRole(entry, role)) continue
+    const message = `${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no exact indexed artifact for role ${role}`
+    if (entry.validation === 'approved') errors.push(message)
+    else warnings.push(message)
+  }
+}
+
 function validateAttestedProvenance(errors, filePath, entry) {
   if (entry.validation !== 'approved' || !attestedTrustTiers.has(entry.trust)) return
   const provenance = entry.provenance
@@ -326,6 +375,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   if (!Array.isArray(entry.dependencies)) errors.push(`${rel(filePath)} dependencies must be an array`)
   if (!Array.isArray(entry.compatibility)) errors.push(`${rel(filePath)} compatibility must be an array`)
   validateArtifacts(errors, warnings, filePath, entry)
+  validateRequiredArtifactRoles(errors, warnings, filePath, entry)
   validateAttestedProvenance(errors, filePath, entry)
 }
 

@@ -153,7 +153,7 @@ async function writeBaseIndex(root) {
     releaseTag: 'v1.0.0',
     commitSha: 'abc1234',
     artifacts: {
-      updater: {
+      archive: {
         file: 'fixture-runtime-1.0.0.zip',
         sha256: 'b'.repeat(64),
         url: 'https://github.com/knoxhack/ECHO-Fixture-Runtime/releases/download/v1.0.0/fixture-runtime-1.0.0.zip',
