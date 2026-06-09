@@ -217,6 +217,16 @@ await runFixture('approved-depends-on-warning', async (root) => {
   }))
 }, 1, 'fixture-addon approved entry depends on warning dependency fixture-core')
 
+await runFixture('dependency-kind-mismatch', async (root) => {
+  await writeJson(root, 'modules/fixture-core.json', approvedEntry({
+    id: 'fixture-core',
+    kind: 'module',
+  }))
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    dependencies: [{ id: 'fixture-core', kind: 'runtime', version: '*' }],
+  }))
+}, 1, 'fixture-addon dependency fixture-core declares kind runtime but indexed entry is module')
+
 await runFixture('approved-depends-on-blocked', async (root) => {
   await writeJson(root, 'blocks/fixture-core.json', [{
     id: 'block-fixture-core',

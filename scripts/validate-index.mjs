@@ -409,6 +409,9 @@ function main() {
         continue
       }
       const dependencyEntry = entryById.get(dependency?.id)
+      if (dependency?.kind && dependencyEntry?.kind && dependency.kind !== dependencyEntry.kind) {
+        errors.push(`${entry.id} dependency ${dependency.id} declares kind ${dependency.kind} but indexed entry is ${dependencyEntry.kind}`)
+      }
       if (entry.validation === 'approved' && dependencyEntry?.validation !== 'approved') {
         errors.push(`${entry.id} approved entry depends on ${dependencyEntry?.validation ?? 'missing'} dependency ${dependency.id}`)
       }
