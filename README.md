@@ -40,6 +40,7 @@ Run commands from the repository root.
 - `node scripts/test-validate-index.mjs`
 - `node scripts/test-sync-public-alpha-index.mjs`
 - `node scripts/test-ingest-release-local-e2e.mjs`
+- `node scripts/test-publish-ingest-install-local-e2e.mjs`
 - `node scripts/test-ingest-webhook-service.mjs`
 - `node scripts/import-module-release.mjs --manifest ../ECHO-Modules/dist/echo-module-release/echo-release.json --release-tag <tag> --commit-sha <sha>`
 - `node scripts/ingest-release.mjs --owner knoxhack --repo ECHO-Modules --tag <tag> --write-index-entry --out validation-result.json`
@@ -59,7 +60,7 @@ Approved module imports require `echo-release.json` provenance from `scripts/gen
 
 `scripts/ingest-release.mjs` accepts `GITHUB_APP_ID`, `GITHUB_APP_PRIVATE_KEY`, and `GITHUB_APP_INSTALLATION_ID` to mint an installation token. `GITHUB_TOKEN`/`GH_TOKEN` remains supported for local validation. Releases declaring `official`, `reproducible-build`, `echo-workflow-built`, or `provenance-attested` trust must use `--require-attestation` with `--attestation-commit` and `--attestation-workflow`; those values are enforced through GitHub CLI release-asset and provenance verification against downloaded asset bytes. Approved releases without a declared trust tier default to `source-linked` unless attestation verification runs. Set `ECHO_INGEST_GH_EXECUTABLE` when CI or a fixture needs to use a specific `gh` executable. Use `--write-index-entry` to write approved or rejected catalog entries after release, checksum, archive, dependency closure, block, and attestation policy checks finish.
 
-For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a GitHub-compatible fixture API, and `ECHO_INGEST_DOWNLOAD_MIRROR_BASE_URL` can mirror asset bytes while preserving GitHub HTTPS `browser_download_url` values in approved index entries. `scripts/test-ingest-release-local-e2e.mjs` uses those hooks to prove webhook HMAC verification, release/asset fetches, checksum checks, archive metadata inspection, dependency closure, block rejection, approved index writes, required attestation verification through a fake `gh`, and strict index validation without external network calls.
+For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a GitHub-compatible fixture API, and `ECHO_INGEST_DOWNLOAD_MIRROR_BASE_URL` can mirror asset bytes while preserving GitHub HTTPS `browser_download_url` values in approved index entries. `scripts/test-ingest-release-local-e2e.mjs` uses those hooks to prove webhook HMAC verification, release/asset fetches, checksum checks, archive metadata inspection, dependency closure, block rejection, approved index writes, required attestation verification through a fake `gh`, and strict index validation without external network calls. `scripts/test-publish-ingest-install-local-e2e.mjs` composes fake published releases, real ingestion writes, strict index validation, launcher-style deep link install, update, corrupt-file repair, and rollback planning in one local end-to-end path.
 
 `scripts/ingest-webhook-service.mjs` exposes the same ingestion path as an HTTP service:
 
