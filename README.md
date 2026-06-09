@@ -64,7 +64,7 @@ The required schema inventory is enforced by `scripts/validate-index.mjs` and in
 
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 
-Approved module imports require `echo-release.json` provenance from `scripts/generate-module-release.mjs`, including the module release workflow ref, commit SHA, `actions/attest@v4`, and `checksums.sha256` attestation subject.
+Approved module imports require `echo-release.json` using `schemaVersion: "echo.module.release.v1"` with provenance from `scripts/generate-module-release.mjs`, including the module release workflow ref, commit SHA, `actions/attest@v4`, and `checksums.sha256` attestation subject.
 
 `scripts/ingest-release.mjs` accepts `GITHUB_APP_ID`, `GITHUB_APP_PRIVATE_KEY`, and `GITHUB_APP_INSTALLATION_ID` to mint an installation token. `GITHUB_TOKEN`/`GH_TOKEN` remains supported for local validation. Releases declaring `official`, `reproducible-build`, `echo-workflow-built`, or `provenance-attested` trust must use `--require-attestation` with `--attestation-commit` and `--attestation-workflow`; those values are enforced through GitHub CLI release-asset and provenance verification against downloaded asset bytes. Approved releases without a declared trust tier default to `source-linked` unless attestation verification runs. Set `ECHO_INGEST_GH_EXECUTABLE` when CI or a fixture needs to use a specific `gh` executable. Use `--write-index-entry` to write approved or rejected catalog entries after release, checksum, archive, dependency closure, block, and attestation policy checks finish.
 

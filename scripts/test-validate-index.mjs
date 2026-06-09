@@ -261,7 +261,7 @@ await runFixture('approved-depends-on-blocked', async (root) => {
 await runFixture('module-import', async (root) => {
   const manifestPath = path.join(root, 'fixture-module-release.json')
   await writeJson(root, 'fixture-module-release.json', {
-    schemaVersion: 1,
+    schemaVersion: 'echo.module.release.v1',
     releaseId: 'modules-fixture',
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
@@ -306,7 +306,7 @@ await runFixture('module-import', async (root) => {
 await runFixture('module-import-approved', async (root) => {
   const manifestPath = path.join(root, 'fixture-compiled-module-release.json')
   await writeJson(root, 'fixture-compiled-module-release.json', {
-    schemaVersion: 1,
+    schemaVersion: 'echo.module.release.v1',
     releaseId: 'modules-compiled-fixture',
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
@@ -346,7 +346,7 @@ await runFixture('module-import-approved', async (root) => {
 await runFixture('module-import-approved-missing-provenance', async (root) => {
   const manifestPath = path.join(root, 'fixture-missing-provenance-module-release.json')
   await writeJson(root, 'fixture-missing-provenance-module-release.json', {
-    schemaVersion: 1,
+    schemaVersion: 'echo.module.release.v1',
     releaseId: 'modules-missing-provenance-fixture',
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',

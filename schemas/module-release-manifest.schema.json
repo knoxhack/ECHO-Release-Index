@@ -6,7 +6,7 @@
   "additionalProperties": true,
   "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "provenance", "modules"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": "echo.module.release.v1" },
     "releaseId": { "type": "string", "minLength": 1 },
     "generatedAt": { "type": "string", "format": "date-time" },
     "sourceRepo": { "type": "string", "minLength": 1 },

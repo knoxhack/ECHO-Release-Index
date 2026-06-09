@@ -126,8 +126,8 @@ function moduleEntry(moduleRecord, manifest, args) {
 async function main() {
   const args = parseArgs(process.argv.slice(2))
   const manifest = await readJson(path.resolve(args.manifest))
-  if (manifest.schemaVersion !== 1 || !Array.isArray(manifest.modules)) {
-    throw new Error('Module release manifest must use schemaVersion 1 and include modules[].')
+  if (manifest.schemaVersion !== 'echo.module.release.v1' || !Array.isArray(manifest.modules)) {
+    throw new Error('Module release manifest must use schemaVersion echo.module.release.v1 and include modules[].')
   }
   if (args.approved) validateProvenanceForApproval(manifest)
   const written = []
