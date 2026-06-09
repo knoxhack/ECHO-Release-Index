@@ -528,6 +528,7 @@ function resolvedTrust(args, metadata, validation) {
 
 function attestationProvenance(args, validation, commitSha, owner, repo) {
   if (validation !== 'approved' || !args.requireAttestation) return null
+  const signerWorkflow = normalizedSignerWorkflow(args.attestationWorkflow, owner, repo)
   return {
     sourceRepo: `${owner}/${repo}`,
     commitSha,
@@ -537,7 +538,7 @@ function attestationProvenance(args, validation, commitSha, owner, repo) {
       action: 'gh attestation verify',
       releaseAssetAction: 'gh release verify-asset',
       sourceDigest: args.attestationCommit ?? commitSha,
-      signerWorkflow: args.attestationWorkflow,
+      signerWorkflow,
     },
   }
 }
@@ -554,6 +555,19 @@ function resolveReleaseCommitSha({ args, metadata, release }) {
 function attestationTextIncludes(output, expected, label) {
   if (!expected) return []
   return output.includes(expected) ? [] : [`attestation does not reference ${label} ${expected}`]
+}
+
+function normalizedSignerWorkflow(workflow, owner, repo) {
+  const value = String(workflow ?? '').trim()
+  if (!value) return ''
+  if (/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/\.github\/workflows\/[^/?#\s]+$/u.test(value)) return value
+  if (/^github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/\.github\/workflows\/[^/?#\s]+$/u.test(value)) return value
+  if (/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/\.github\/workflows\/[^/?#\s]+$/u.test(value)) {
+    return value.replace(/^https:\/\//u, '')
+  }
+  const workflowPath = value.replace(/^\/+/u, '')
+  if (/^\.github\/workflows\/[^/?#\s]+$/u.test(workflowPath)) return `${owner}/${repo}/${workflowPath}`
+  return value
 }
 
 function runGhAttestation(args) {
@@ -583,6 +597,7 @@ function runGhAttestation(args) {
 
 function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, options = {}) {
   const reasons = []
+  const signerWorkflow = normalizedSignerWorkflow(options.attestationWorkflow, owner, repo)
   const releaseResult = runGhAttestation(['release', 'verify-asset', tag, localPath, '--repo', `${owner}/${repo}`, '--format', 'json'])
   if (releaseResult.status !== 0) {
     reasons.push(releaseResult.stderr || releaseResult.stdout || 'gh release verify-asset failed')
@@ -608,7 +623,7 @@ function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, opt
     'json',
   ]
   if (options.attestationCommit) attestArgs.push('--source-digest', options.attestationCommit)
-  if (options.attestationWorkflow) attestArgs.push('--signer-workflow', options.attestationWorkflow)
+  if (signerWorkflow) attestArgs.push('--signer-workflow', signerWorkflow)
 
   const result = runGhAttestation(attestArgs)
   if (result.status !== 0) {
@@ -619,7 +634,7 @@ function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, opt
       const text = JSON.stringify(payload)
       reasons.push(...attestationTextIncludes(text, actualSha256, 'asset digest'))
       reasons.push(...attestationTextIncludes(text, options.attestationCommit, 'commit'))
-      reasons.push(...attestationTextIncludes(text, options.attestationWorkflow, 'workflow'))
+      reasons.push(...attestationTextIncludes(text, signerWorkflow || options.attestationWorkflow, 'workflow'))
     } catch (error) {
       reasons.push(`Unable to parse attestation JSON: ${error.message}`)
     }

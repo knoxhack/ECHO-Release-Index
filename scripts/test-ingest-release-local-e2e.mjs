@@ -33,6 +33,11 @@ function sha256(buffer) {
   return crypto.createHash('sha256').update(buffer).digest('hex')
 }
 
+function normalizedFixtureWorkflow(workflow) {
+  const value = String(workflow ?? '').replace(/^\/+/u, '')
+  return value.startsWith('.github/workflows/') ? `knoxhack/ECHO-Fixture/${value}` : value
+}
+
 function decodeJwtSegment(segment) {
   return JSON.parse(Buffer.from(segment, 'base64url').toString('utf8'))
 }
@@ -294,7 +299,7 @@ async function runIngestionCase({
         ECHO_INGEST_GH_EXECUTABLE: ghExecutableOverride ?? fakeGhExecutable,
         FAKE_ATTESTED_SHA: addonSha,
         ...(attestationCommit ? { FAKE_ATTESTED_COMMIT: attestationCommit } : {}),
-        ...(attestationWorkflow ? { FAKE_ATTESTED_WORKFLOW: attestationWorkflow } : {}),
+        ...(attestationWorkflow ? { FAKE_ATTESTED_WORKFLOW: normalizedFixtureWorkflow(attestationWorkflow) } : {}),
       } : {}),
     }
     if (requireAttestation) {
@@ -338,7 +343,8 @@ async function runIngestionCase({
       assert.equal(entry.trust, 'provenance-attested')
       assert.equal(entry.provenance?.attestation?.action, 'gh attestation verify')
       assert.equal(entry.provenance?.attestation?.sourceDigest, attestationCommit)
-      assert.equal(entry.provenance?.attestation?.signerWorkflow, attestationWorkflow)
+      assert.equal(entry.provenance?.workflow, attestationWorkflow)
+      assert.equal(entry.provenance?.attestation?.signerWorkflow, normalizedFixtureWorkflow(attestationWorkflow))
       const log = await fs.readFile(fakeGhLog, 'utf8')
       assert.match(log, /release verify-asset/)
       assert.match(log, /attestation verify/)
