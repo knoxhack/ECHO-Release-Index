@@ -19,6 +19,7 @@ jobs:
       - run: node scripts/test-sync-public-alpha-index.mjs
       - run: node scripts/test-verify-artifact-urls.mjs
       - run: node scripts/test-build-public-alpha-assets.mjs
+      - run: node scripts/test-publish-public-alpha.mjs
       - run: node scripts/test-ingest-release-local-e2e.mjs
       - run: node scripts/test-publish-ingest-install-local-e2e.mjs
       - run: node scripts/test-ingest-webhook-service.mjs
@@ -33,4 +34,5 @@ jobs:
       - run: node --check scripts/build-public-alpha-assets.mjs
       - run: node --check scripts/test-build-public-alpha-assets.mjs
       - run: node --check scripts/publish-public-alpha.mjs
+      - run: node --check scripts/test-publish-public-alpha.mjs
       - run: node --check scripts/test-publish-ingest-install-local-e2e.mjs

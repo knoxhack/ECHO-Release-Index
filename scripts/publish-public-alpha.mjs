@@ -76,15 +76,19 @@ async function githubUpload(uploadUrl, filePath, name, options) {
 async function stagedAssets(assetRoot, repository) {
   const stage = path.join(assetRoot, repository.repoName)
   const out = []
-  for (const name of expectedAssetNames(repository)) {
-    const filePath = path.join(stage, name)
-    try {
-      const stats = await fs.stat(filePath)
-      if (stats.isFile()) out.push({ name, path: filePath, size: stats.size })
-    } catch {
-      // Missing assets are handled by the caller.
-    }
+  let entries = []
+  try {
+    entries = await fs.readdir(stage, { withFileTypes: true })
+  } catch {
+    return out
   }
+  for (const entry of entries) {
+    if (!entry.isFile()) continue
+    const filePath = path.join(stage, entry.name)
+    const stats = await fs.stat(filePath)
+    out.push({ name: entry.name, path: filePath, size: stats.size })
+  }
+  out.sort((a, b) => a.name.localeCompare(b.name))
   return out
 }
 
