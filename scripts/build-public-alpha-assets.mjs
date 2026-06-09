@@ -162,6 +162,22 @@ function compressDirectory(sourceDir, zipPath, options) {
   if (result.status !== 0) throw new Error(`Unable to create zip: ${zipPath}`)
 }
 
+function standaloneRuntimeArchiveName(repository, tag) {
+  const expectedZip = expectedAssetNames(repository).find((name) => /\.zip$/i.test(name))
+  if (expectedZip) return expectedZip
+  const version = String(tag ?? '').match(/v?([0-9]+(?:\.[0-9]+){2})/)?.[1] ?? '0.1.0'
+  return `echo-standalone-runtime-${version}-alpha.zip`
+}
+
+async function ensureStandaloneRuntimeArchive(stage, repository, tag, options) {
+  const archiveName = standaloneRuntimeArchiveName(repository, tag)
+  const archivePath = path.join(stage, archiveName)
+  if (!options.dryRun && await existingFile(archivePath)) return archiveName
+  compressDirectory(stage, archivePath, options)
+  options.currentResult?.collected?.push({ name: archiveName, source: stage })
+  return archiveName
+}
+
 async function buildModules({ workspaceRoot, stage, repository, tag, options }) {
   const modulesRoot = repoPath(workspaceRoot, 'ECHO-Modules')
   const out = path.join(stage, '_generated')
@@ -236,7 +252,7 @@ async function buildNativePlatform({ workspaceRoot, stage, repository, options }
   return missing
 }
 
-async function buildStandaloneRuntime({ workspaceRoot, stage, repository, options }) {
+async function buildStandaloneRuntime({ workspaceRoot, stage, repository, tag, options }) {
   const root = repoPath(workspaceRoot, 'ECHO-Standalone-Runtime')
   run('.\\gradlew.bat', ['packagePublicAlphaRelease', '--console=plain'], root, options)
   if (!options.dryRun && !options.skipBuild) {
@@ -247,9 +263,10 @@ async function buildStandaloneRuntime({ workspaceRoot, stage, repository, option
     await writeReport(stage, 'alpha-readiness-gate.json', { repository: repository.repoName, status: 'PASS_WITH_WARNINGS', note: 'Public alpha runtime build staged.' }, options)
     await writeReport(stage, 'beta-readiness-gate.json', { repository: repository.repoName, status: 'PENDING', note: 'Beta readiness is outside public alpha scope.' }, options)
     await writeReport(stage, 'ashfall-parity-matrix.json', { repository: repository.repoName, status: 'PASS_WITH_WARNINGS', compatibility: ['ashfall-standalone-edition'] }, options)
-    await writeChecksums(stage, options)
   }
   const missing = await collectExpected(root, stage, repository, options.currentResult)
+  await ensureStandaloneRuntimeArchive(stage, repository, tag, options)
+  await writeChecksums(stage, options)
   return missing
 }
 
