@@ -191,6 +191,12 @@ await runFixture('approved-non-playable-trust', async (root) => {
   }))
 }, 1, 'approved entry uses non-playable trust tier unverified')
 
+await runFixture('placeholder-commit-sha', async (root) => {
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    commitSha: '0000000',
+  }))
+}, 1, 'commitSha must not be an all-zero placeholder')
+
 await runFixture('blocked-trust-without-blocked-validation', async (root) => {
   await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
     trust: 'blocked',

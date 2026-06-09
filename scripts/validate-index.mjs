@@ -290,6 +290,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   }
   if (entry.sourceRepo && !repoPattern.test(entry.sourceRepo)) errors.push(`${rel(filePath)} sourceRepo must be owner/name`)
   if (entry.commitSha && !commitPattern.test(entry.commitSha)) errors.push(`${rel(filePath)} commitSha must be 7-40 hex characters`)
+  if (entry.commitSha && /^0{7,40}$/.test(entry.commitSha)) errors.push(`${rel(filePath)} commitSha must not be an all-zero placeholder`)
   if (!Array.isArray(entry.dependencies)) errors.push(`${rel(filePath)} dependencies must be an array`)
   if (!Array.isArray(entry.compatibility)) errors.push(`${rel(filePath)} compatibility must be an array`)
   validateArtifacts(errors, warnings, filePath, entry)

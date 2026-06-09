@@ -27,7 +27,7 @@
     "publisher": { "type": "string", "minLength": 1 },
     "sourceRepo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
     "releaseTag": { "type": "string", "minLength": 1 },
-    "commitSha": { "type": "string", "pattern": "^[a-fA-F0-9]{7,40}$" },
+    "commitSha": { "type": "string", "pattern": "^(?!0{7,40}$)[a-fA-F0-9]{7,40}$" },
     "artifacts": {
       "type": "object",
       "additionalProperties": {
