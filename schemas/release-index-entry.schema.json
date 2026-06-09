@@ -35,7 +35,7 @@
         "additionalProperties": true,
         "required": ["file", "sha256"],
         "properties": {
-          "file": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.)(?!.*[/\\\\]).+$" },
           "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
           "url": { "type": "string", "pattern": "^https://(github\\.com|raw\\.githubusercontent\\.com)/" },
           "size": { "type": "integer", "minimum": 0 }
