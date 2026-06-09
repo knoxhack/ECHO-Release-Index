@@ -265,7 +265,9 @@ async function runIngestionCase({
     ]
     if (requireAttestation) {
       await writeFakeGh(fakeGhBin)
-      args.push('--require-attestation', '--attestation-commit', attestationCommit, '--attestation-workflow', attestationWorkflow)
+      args.push('--require-attestation')
+      if (attestationCommit) args.push('--attestation-commit', attestationCommit)
+      if (attestationWorkflow) args.push('--attestation-workflow', attestationWorkflow)
       args.push('--trust', 'provenance-attested')
     }
     const fakeGhExecutable = process.platform === 'win32' ? path.join(fakeGhBin, 'gh.cmd') : path.join(fakeGhBin, 'gh')
@@ -286,8 +288,8 @@ async function runIngestionCase({
         FAKE_GH_LOG: fakeGhLog,
         ECHO_INGEST_GH_EXECUTABLE: fakeGhExecutable,
         FAKE_ATTESTED_SHA: addonSha,
-        FAKE_ATTESTED_COMMIT: attestationCommit,
-        FAKE_ATTESTED_WORKFLOW: attestationWorkflow,
+        ...(attestationCommit ? { FAKE_ATTESTED_COMMIT: attestationCommit } : {}),
+        ...(attestationWorkflow ? { FAKE_ATTESTED_WORKFLOW: attestationWorkflow } : {}),
       } : {}),
     }
     if (requireAttestation) {
@@ -379,8 +381,9 @@ async function main() {
   let requireGitHubAppToken = false
   let installationTokenRequests = 0
   let authenticatedApiRequests = 0
-  const setMetadataDependencies = (dependencies = [{ id: 'fixture-runtime', kind: 'runtime' }]) => {
+  const setMetadataDependencies = (dependencies = [{ id: 'fixture-runtime', kind: 'runtime' }], trust = 'community') => {
     metadata.dependencies = dependencies
+    metadata.trust = trust
     const metadataBytes = Buffer.from(JSON.stringify(metadata, null, 2))
     assetsByName = new Map([
       ['echo-release.json', metadataBytes],
@@ -456,6 +459,23 @@ async function main() {
       requireAttestation: true,
       attestationCommit: 'abc1234',
       attestationWorkflow: '.github/workflows/release-fixture.yml',
+    })
+    await runIngestionCase({
+      name: 'rejected-official-trust-without-attestation',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setMetadataDependencies([{ id: 'fixture-runtime', kind: 'runtime' }], 'official'),
+      expectedValidation: 'rejected',
+      expectedReason: 'official trust requires GitHub artifact attestation verification',
+    })
+    await runIngestionCase({
+      name: 'rejected-verified-attestation-without-commit-workflow',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setMetadataDependencies([{ id: 'fixture-runtime', kind: 'runtime' }]),
+      requireAttestation: true,
+      expectedValidation: 'rejected',
+      expectedReason: 'Attestation verification for verified trust requires --attestation-commit',
     })
     requireGitHubAppToken = true
     const tokenRequestsBefore = installationTokenRequests

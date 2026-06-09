@@ -9,6 +9,7 @@ const root = process.cwd()
 const sha256Pattern = /^[a-f0-9]{64}$/i
 const githubApiBaseUrl = process.env.GITHUB_API_BASE_URL || 'https://api.github.com'
 const downloadMirrorBaseUrl = process.env.ECHO_INGEST_DOWNLOAD_MIRROR_BASE_URL
+const attestationRequiredTrust = new Set(['official', 'reproducible-build', 'echo-workflow-built', 'provenance-attested'])
 
 function withTrailingSlash(value) {
   return value.endsWith('/') ? value : `${value}/`
@@ -375,7 +376,7 @@ async function writeIndexEntries({ args, owner, repo, tag, release, metadata, as
     sourceRepo: `${owner}/${repo}`,
     releaseTag: tag,
     commitSha,
-    trust: args.trust ?? metadata?.trust ?? (validation === 'approved' ? 'provenance-attested' : 'unverified'),
+    trust: resolvedTrust(args, metadata, validation),
     validation,
   }
   const entries = []
@@ -478,6 +479,17 @@ function dependencyIdsFromMetadata(metadata) {
     .map(String)
 }
 
+function declaredTrust(args, metadata) {
+  return args.trust ?? metadata?.trust
+}
+
+function resolvedTrust(args, metadata, validation) {
+  const declared = declaredTrust(args, metadata)
+  if (declared) return declared
+  if (validation !== 'approved') return 'unverified'
+  return args.requireAttestation ? 'provenance-attested' : 'source-linked'
+}
+
 function attestationTextIncludes(output, expected, label) {
   if (!expected) return []
   return output.includes(expected) ? [] : [`attestation does not reference ${label} ${expected}`]
@@ -577,6 +589,15 @@ async function ingest(args) {
     metadata = JSON.parse(await fetchText(metadataAsset.browser_download_url, token))
   } else {
     reasons.push('Missing echo-release.json release metadata.')
+  }
+  const trust = declaredTrust(args, metadata)
+  const trustRequiresAttestation = !trust || attestationRequiredTrust.has(trust)
+  if (trust && attestationRequiredTrust.has(trust) && !args.requireAttestation) {
+    reasons.push(`${trust} trust requires GitHub artifact attestation verification.`)
+  }
+  if (args.requireAttestation && trustRequiresAttestation) {
+    if (!args.attestationCommit) reasons.push('Attestation verification for verified trust requires --attestation-commit.')
+    if (!args.attestationWorkflow) reasons.push('Attestation verification for verified trust requires --attestation-workflow.')
   }
 
   const checksumsAsset = assets.find((asset) => asset.name === 'checksums.sha256' || asset.name === 'checksums.txt')
