@@ -28,7 +28,20 @@
     "sourceRepo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
     "releaseTag": { "type": "string", "minLength": 1 },
     "commitSha": { "type": "string", "pattern": "^(?!0{7,40}$)[a-fA-F0-9]{7,40}$" },
-    "artifacts": { "type": ["object", "array"] },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["file", "sha256"],
+        "properties": {
+          "file": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "url": { "type": "string" },
+          "size": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
     "dependencies": {
       "type": "array",
       "items": {
