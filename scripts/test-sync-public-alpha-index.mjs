@@ -68,6 +68,26 @@ try {
           },
         ],
       },
+      {
+        repoName: 'ECHO-Standalone-Runtime',
+        release: {
+          htmlUrl: 'https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.0-standalone-runtime-alpha',
+        },
+        assets: [
+          {
+            name: 'alpha-readiness-gate.json',
+            size: 30,
+            sha256: sha,
+            browserDownloadUrl: 'https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/alpha-readiness-gate.json',
+          },
+          {
+            name: 'echo-standalone-runtime-0.1.0-alpha.zip',
+            size: 300,
+            sha256: sha,
+            browserDownloadUrl: 'https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/echo-standalone-runtime-0.1.0-alpha.zip',
+          },
+        ],
+      },
     ],
   })
   await writeJson(root, 'products/fixture-studio.json', {
@@ -100,10 +120,25 @@ try {
     trust: 'official',
     validation: 'warning',
   })
+  await writeJson(root, 'products/standalone-runtime.json', {
+    id: 'echo-standalone-runtime',
+    kind: 'runtime',
+    version: '0.1.0',
+    channel: 'experimental',
+    publisher: 'knoxhack',
+    sourceRepo: 'knoxhack/ECHO-Standalone-Runtime',
+    releaseTag: 'v0.1.0-standalone-runtime-alpha',
+    commitSha: 'abc1234',
+    artifacts: {},
+    dependencies: [],
+    compatibility: ['ashfall-standalone-edition'],
+    trust: 'source-linked',
+    validation: 'warning',
+  })
 
   const drift = run(root, ['--check'])
   assert.equal(drift.status, 1)
-  assert.match(`${drift.stdout}\n${drift.stderr}`, /2 drift/)
+  assert.match(`${drift.stdout}\n${drift.stderr}`, /3 drift/)
 
   const write = run(root, ['--write'])
   assert.equal(write.status, 0, `${write.stdout}\n${write.stderr}`)
@@ -116,6 +151,11 @@ try {
   const modpack = JSON.parse(await fs.readFile(path.join(root, 'modpacks', 'fixture-pack.json'), 'utf8'))
   assert.equal(modpack.artifacts.pack.file, 'fixture-pack-0.1.0.zip')
   assert.equal(modpack.artifacts.manifest.file, 'fixture-pack-alpha-0.1.0.pack.json')
+
+  const runtime = JSON.parse(await fs.readFile(path.join(root, 'products', 'standalone-runtime.json'), 'utf8'))
+  assert.equal(runtime.artifacts.alphaReadinessGate.file, 'alpha-readiness-gate.json')
+  assert.equal(runtime.artifacts.archive.file, 'echo-standalone-runtime-0.1.0-alpha.zip')
+  assert.equal(runtime.artifacts.archive.url, 'https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/echo-standalone-runtime-0.1.0-alpha.zip')
 
   const clean = run(root, ['--check'])
   assert.equal(clean.status, 0, `${clean.stdout}\n${clean.stderr}`)
