@@ -74,6 +74,7 @@ For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a Gi
 ## Docs Index
 
 - [README.md](README.md)
+- [docs/ecosystem-artifact-ownership.md](docs/ecosystem-artifact-ownership.md)
 - [PUBLIC_ALPHA_RELEASE_STATUS.md](PUBLIC_ALPHA_RELEASE_STATUS.md)
 
 ## Related Repos

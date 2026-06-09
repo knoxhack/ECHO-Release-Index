@@ -83,6 +83,37 @@ if (!exists(path.join(root, "README.md"))) {
   errors.push("Missing root README.md");
 }
 
+if (repoName === "ECHO-Release-Index") {
+  const ownershipPath = path.join(root, "docs", "ecosystem-artifact-ownership.md");
+  if (!exists(ownershipPath)) {
+    errors.push("Missing docs/ecosystem-artifact-ownership.md");
+  } else {
+    const ownership = fs.readFileSync(ownershipPath, "utf8");
+    const requiredOwnershipTerms = [
+      "knoxhack/ECHO-Launcher",
+      "knoxhack/ECHO-Modules",
+      "knoxhack/ECHO-Addons-Studio",
+      "knoxhack/ECHO-Developer-Studio",
+      "knoxhack/ECHO-Native-Platform",
+      "knoxhack/ECHO-Standalone-Runtime",
+      "knoxhack/ECHO-Platform-Website",
+      "knoxhack/ECHO-SDK",
+      "products/",
+      "modpacks/",
+      "modules/",
+      "addons/",
+      "publishers/",
+      "channels/",
+      "trust/",
+      "blocks/",
+      "schemas/",
+    ];
+    for (const term of requiredOwnershipTerms) {
+      if (!ownership.includes(term)) errors.push("docs/ecosystem-artifact-ownership.md missing " + term);
+    }
+  }
+}
+
 const stalePatterns = [/echolabs/i, /ECHOLauncher/, /ECHODEVELOPERSTUDIO/, /standalone showcase/i];
 for (const file of markdownFiles()) {
   const text = fs.readFileSync(file, "utf8");
