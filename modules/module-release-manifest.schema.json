@@ -7,6 +7,7 @@
     "schemaVersion",
     "releaseId",
     "generatedAt",
+    "provenance",
     "modules"
   ],
   "properties": {
@@ -21,6 +22,58 @@
     },
     "sourceRepo": {
       "const": "https://github.com/knoxhack/ECHO-Modules"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "sourceRepo",
+        "generatedBy",
+        "attestation"
+      ],
+      "properties": {
+        "sourceRepo": {
+          "const": "https://github.com/knoxhack/ECHO-Modules"
+        },
+        "commitSha": {
+          "type": "string"
+        },
+        "workflow": {
+          "type": "string"
+        },
+        "workflowRef": {
+          "type": "string"
+        },
+        "runId": {
+          "type": "string"
+        },
+        "runAttempt": {
+          "type": "string"
+        },
+        "refName": {
+          "type": "string"
+        },
+        "eventName": {
+          "type": "string"
+        },
+        "generatedBy": {
+          "const": "scripts/generate-module-release.mjs"
+        },
+        "attestation": {
+          "type": "object",
+          "required": [
+            "action",
+            "subjectChecksums"
+          ],
+          "properties": {
+            "action": {
+              "const": "actions/attest@v4"
+            },
+            "subjectChecksums": {
+              "const": "checksums.sha256"
+            }
+          }
+        }
+      }
     },
     "modules": {
       "type": "array",

@@ -8,6 +8,21 @@ const repoRoot = process.cwd()
 const validator = path.join(repoRoot, 'scripts', 'validate-index.mjs')
 const importer = path.join(repoRoot, 'scripts', 'import-module-release.mjs')
 const sha = 'a'.repeat(64)
+const moduleReleaseProvenance = {
+  sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+  commitSha: 'abc1234',
+  workflow: 'Release Modules',
+  workflowRef: 'knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/tags/modules-fixture',
+  runId: '12345',
+  runAttempt: '1',
+  refName: 'modules-fixture',
+  eventName: 'workflow_dispatch',
+  generatedBy: 'scripts/generate-module-release.mjs',
+  attestation: {
+    action: 'actions/attest@v4',
+    subjectChecksums: 'checksums.sha256',
+  },
+}
 
 async function writeJson(root, relPath, value) {
   const filePath = path.join(root, relPath)
@@ -222,6 +237,7 @@ await runFixture('module-import', async (root) => {
     releaseId: 'modules-fixture',
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+    provenance: moduleReleaseProvenance,
     modules: [
       {
         moduleId: 'echocore',
@@ -266,6 +282,7 @@ await runFixture('module-import-approved', async (root) => {
     releaseId: 'modules-compiled-fixture',
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+    provenance: moduleReleaseProvenance,
     modules: [
       {
         moduleId: 'echocore',
@@ -292,6 +309,35 @@ await runFixture('module-import-approved', async (root) => {
   const imported = JSON.parse(await fs.readFile(path.join(root, 'modules', 'echocore.json'), 'utf8'))
   if (imported.validation !== 'approved' || imported.trust !== 'provenance-attested') {
     throw new Error('compiled approved module import must be approved/provenance-attested')
+  }
+}, 0, 'validation passed')
+
+await runFixture('module-import-approved-missing-provenance', async (root) => {
+  const manifestPath = path.join(root, 'fixture-missing-provenance-module-release.json')
+  await writeJson(root, 'fixture-missing-provenance-module-release.json', {
+    schemaVersion: 1,
+    releaseId: 'modules-missing-provenance-fixture',
+    generatedAt: '2026-06-09T00:00:00Z',
+    sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+    modules: [
+      {
+        moduleId: 'echocore',
+        version: '1.0.0',
+        descriptor: { path: 'META-INF/echo.mod.json', sha256: sha },
+        requires: [],
+        optional: [],
+        artifacts: [
+          { kind: 'echo-addon', filename: 'echocore-1.0.0.echo-addon', sha256: sha, size: 10, runtimeTarget: 'echo-native', buildMode: 'compiled-runtime' },
+        ],
+      },
+    ],
+  })
+  const result = spawnSync(process.execPath, [importer, '--root', root, '--manifest', manifestPath, '--release-tag', 'modules-missing-provenance-fixture', '--approved'], {
+    encoding: 'utf8',
+    windowsHide: true,
+  })
+  if (result.status === 0 || !`${result.stdout}\n${result.stderr}`.includes('Approved module imports require generated release provenance')) {
+    throw new Error(`approved import without provenance should fail: ${result.stdout}\n${result.stderr}`)
   }
 }, 0, 'validation passed')
 

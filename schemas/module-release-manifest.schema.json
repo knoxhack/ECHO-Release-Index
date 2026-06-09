@@ -4,12 +4,37 @@
   "title": "ECHO Module Release Manifest",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "modules"],
+  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "provenance", "modules"],
   "properties": {
     "schemaVersion": { "const": 1 },
     "releaseId": { "type": "string", "minLength": 1 },
     "generatedAt": { "type": "string", "format": "date-time" },
     "sourceRepo": { "type": "string", "minLength": 1 },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["sourceRepo", "generatedBy", "attestation"],
+      "properties": {
+        "sourceRepo": { "type": "string", "minLength": 1 },
+        "commitSha": { "type": "string" },
+        "workflow": { "type": "string" },
+        "workflowRef": { "type": "string" },
+        "runId": { "type": "string" },
+        "runAttempt": { "type": "string" },
+        "refName": { "type": "string" },
+        "eventName": { "type": "string" },
+        "generatedBy": { "const": "scripts/generate-module-release.mjs" },
+        "attestation": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["action", "subjectChecksums"],
+          "properties": {
+            "action": { "const": "actions/attest@v4" },
+            "subjectChecksums": { "const": "checksums.sha256" }
+          }
+        }
+      }
+    },
     "modules": {
       "type": "array",
       "minItems": 1,

@@ -7,7 +7,7 @@ function parseArgs(argv) {
     root: process.cwd(),
     channel: 'alpha',
     publisher: 'knoxhack',
-    commitSha: '0000000',
+    commitSha: null,
     approved: false,
   }
   for (let index = 0; index < argv.length; index += 1) {
@@ -57,6 +57,24 @@ function compatibilityFromArtifacts(artifacts) {
   return [...compatibility]
 }
 
+function commitShaFromManifest(manifest, args) {
+  return args.commitSha ?? manifest.provenance?.commitSha ?? '0000000'
+}
+
+function validateProvenanceForApproval(manifest) {
+  const provenance = manifest.provenance ?? {}
+  const attestation = provenance.attestation ?? {}
+  const errors = []
+  if (provenance.generatedBy !== 'scripts/generate-module-release.mjs') errors.push('generatedBy')
+  if (attestation.action !== 'actions/attest@v4') errors.push('attestation.action')
+  if (attestation.subjectChecksums !== 'checksums.sha256') errors.push('attestation.subjectChecksums')
+  if (!/^[a-f0-9]{7,40}$/i.test(String(provenance.commitSha ?? ''))) errors.push('commitSha')
+  if (!String(provenance.workflowRef ?? '').includes('.github/workflows/release-modules.yml@')) errors.push('workflowRef')
+  if (errors.length) {
+    throw new Error(`Approved module imports require generated release provenance: missing or invalid ${errors.join(', ')}.`)
+  }
+}
+
 function moduleEntry(moduleRecord, manifest, args) {
   const hasSourcePackaged = (moduleRecord.artifacts ?? []).some((artifact) => artifact.buildMode === 'source-packaged')
   const validation = hasSourcePackaged ? 'warning' : args.approved ? 'approved' : 'warning'
@@ -85,7 +103,7 @@ function moduleEntry(moduleRecord, manifest, args) {
     publisher: args.publisher,
     sourceRepo: sourceRepoFromManifest(manifest),
     releaseTag: args.releaseTag ?? manifest.releaseId,
-    commitSha: args.commitSha,
+    commitSha: commitShaFromManifest(manifest, args),
     artifacts,
     dependencies: (moduleRecord.requires ?? []).map((id) => ({ id, kind: 'module', version: '*' })),
     compatibility: compatibilityFromArtifacts(moduleRecord.artifacts ?? []),
@@ -100,6 +118,7 @@ async function main() {
   if (manifest.schemaVersion !== 1 || !Array.isArray(manifest.modules)) {
     throw new Error('Module release manifest must use schemaVersion 1 and include modules[].')
   }
+  if (args.approved) validateProvenanceForApproval(manifest)
   const written = []
   for (const moduleRecord of manifest.modules) {
     if (!moduleRecord.moduleId || !moduleRecord.version) {
