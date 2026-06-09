@@ -33,6 +33,10 @@ function sha256(buffer) {
   return crypto.createHash('sha256').update(buffer).digest('hex')
 }
 
+function decodeJwtSegment(segment) {
+  return JSON.parse(Buffer.from(segment, 'base64url').toString('utf8'))
+}
+
 function dosTimeDate() {
   return { time: 0, date: 33 }
 }
@@ -419,7 +423,17 @@ async function main() {
       installationTokenRequests += 1
       assert.equal(request.method, 'POST')
       const auth = request.headers.authorization ?? ''
-      assert.match(Array.isArray(auth) ? auth[0] : auth, /^Bearer [A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/)
+      const token = String(Array.isArray(auth) ? auth[0] : auth).replace(/^Bearer\s+/i, '')
+      assert.match(token, /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/)
+      const [headerSegment, payloadSegment] = token.split('.')
+      const header = decodeJwtSegment(headerSegment)
+      const payload = decodeJwtSegment(payloadSegment)
+      assert.deepEqual(header, { alg: 'RS256', typ: 'JWT' })
+      assert.equal(payload.iss, '12345')
+      assert.equal(typeof payload.iat, 'number')
+      assert.equal(typeof payload.exp, 'number')
+      assert(payload.exp > payload.iat, 'GitHub App JWT exp must be after iat.')
+      assert(payload.exp - payload.iat <= 600, 'GitHub App JWT must expire within 10 minutes.')
       jsonAssetResponse(response, { token: 'fixture-installation-token' })
       return
     }
