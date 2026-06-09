@@ -20,7 +20,7 @@ on:
         default: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   public-alpha:
@@ -119,9 +119,17 @@ jobs:
         run: |
           $args = @('scripts/publish-public-alpha.mjs')
           if ('${{ inputs.publish }}' -eq 'true') { $args += '--publish' }
+          if ('${{ inputs.publish }}' -eq 'true') { $args += '--write-manifest' }
           if ('${{ inputs.make_public }}' -eq 'true') { $args += '--make-public' }
           if ('${{ inputs.strict_assets }}' -eq 'true') { $args += '--strict-assets' }
           node @args
+
+      - name: Sync Release Index catalog from public alpha manifest
+        if: ${{ inputs.publish }}
+        shell: pwsh
+        run: |
+          node scripts/sync-public-alpha-index.mjs --write
+          node scripts/validate-index.mjs --strict
 
       - name: Validate public alpha metadata
         env:
@@ -131,3 +139,17 @@ jobs:
           $args = @('scripts/validate-public-alpha.mjs', '--live-github')
           if ('${{ inputs.strict_assets }}' -eq 'true') { $args += '--strict-assets' }
           node @args
+
+      - name: Commit refreshed public alpha metadata
+        if: ${{ inputs.publish }}
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add channels/alpha/release-manifest.json products modpacks
+          if (git diff --cached --quiet) {
+            Write-Host "No public alpha metadata changes to commit."
+          } else {
+            git commit -m "Refresh public alpha release metadata"
+            git push
+          }

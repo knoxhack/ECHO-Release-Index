@@ -60,7 +60,7 @@ The required schema inventory is enforced by `scripts/validate-index.mjs` and in
 
 `scripts/sync-public-alpha-index.mjs --check` compares product and modpack catalog artifacts with `channels/alpha/release-manifest.json`; use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
-`scripts/publish-public-alpha.mjs` uploads every generated file in each repository's public-alpha staging directory. `--strict-assets` still enforces the manifest-listed required assets, but generated assets such as the Standalone Runtime archive are not dropped just because the live manifest has not been refreshed yet.
+`scripts/publish-public-alpha.mjs` uploads every generated file in each repository's public-alpha staging directory. `--strict-assets` still enforces the manifest-listed required assets, but generated assets such as the Standalone Runtime archive are not dropped just because the live manifest has not been refreshed yet. The `Public Alpha Publish` workflow runs this with `--write-manifest` during real publish runs, then runs catalog sync and commits refreshed manifest/product/modpack artifact metadata back to the index.
 
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 
