@@ -6,6 +6,7 @@ import {
   DEFAULT_ASSET_ROOT,
   DEFAULT_MANIFEST,
   expectedAssetNames,
+  fileSha256,
   githubApiUrl,
   githubHeaders,
   parseCommonArgs,
@@ -177,8 +178,22 @@ async function uploadAssets(owner, repository, release, args, authToken, result)
     }
     const existing = liveByName.get(asset.name)
     if (existing) {
-      await githubJson(`/repos/${owner}/${repository.repoName}/releases/assets/${existing.id}`, { method: 'DELETE', token: authToken })
-      result.actions.push({ action: 'delete-existing-asset', name: asset.name, id: existing.id })
+      const stagedSha256 = await fileSha256(asset.path)
+      const existingSha256 = existing.digest?.startsWith('sha256:') ? existing.digest.slice('sha256:'.length) : ''
+      if (existing.size === asset.size && existingSha256 === stagedSha256) {
+        result.actions.push({ action: 'skip-matching-asset', name: asset.name, id: existing.id })
+        continue
+      }
+      const deleted = await githubJson(`/repos/${owner}/${repository.repoName}/releases/assets/${existing.id}`, {
+        method: 'DELETE',
+        token: authToken,
+        allow404: true,
+      })
+      result.actions.push({
+        action: deleted === null ? 'delete-existing-asset-or-already-gone' : 'delete-existing-asset',
+        name: asset.name,
+        id: existing.id,
+      })
     }
     const uploaded = await githubUpload(release.upload_url, asset.path, asset.name, { token: authToken })
     result.actions.push({ action: 'upload-asset', name: asset.name, id: uploaded.id })
@@ -263,4 +278,3 @@ main().catch((error) => {
   console.error(error instanceof Error ? error.stack || error.message : String(error))
   process.exit(1)
 })
-

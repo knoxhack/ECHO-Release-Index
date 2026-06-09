@@ -54,8 +54,17 @@ function run(command, commandArgs, cwd, options) {
   const executable = process.platform === 'win32' && command === 'npm' ? 'npm.cmd'
     : process.platform === 'win32' && command === 'npx' ? 'npx.cmd'
       : command
-  const result = spawnSync(executable, commandArgs, { cwd, stdio: 'inherit' })
-  if (result.status !== 0) throw new Error(`Command failed in ${cwd}: ${display}`)
+  const useShell = process.platform === 'win32' && (
+    command === 'npm' ||
+    command === 'npx' ||
+    command.endsWith('.bat') ||
+    command.endsWith('.cmd')
+  )
+  const result = spawnSync(executable, commandArgs, { cwd, stdio: 'inherit', shell: useShell })
+  if (result.error || result.status !== 0) {
+    const detail = result.error ? ` (${result.error.message})` : ''
+    throw new Error(`Command failed in ${cwd}: ${display}${detail}`)
+  }
 }
 
 async function ensureDir(dir) {
@@ -68,19 +77,29 @@ async function copyFile(source, destination) {
 }
 
 async function findByName(root, name) {
+  const rootMatch = path.join(root, name)
+  if (await existingFile(rootMatch)) return rootMatch
   const files = await listFiles(root)
-  return files.find((file) => path.basename(file).toLowerCase() === name.toLowerCase()) || null
+  const exact = files.find((file) => path.basename(file).toLowerCase() === name.toLowerCase())
+  if (exact) return exact
+  const normalizedName = normalizeAssetName(name)
+  return files.find((file) => normalizeAssetName(path.basename(file)) === normalizedName) || null
+}
+
+function normalizeAssetName(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '')
 }
 
 async function collectExpected(repoRoot, stage, repository, result) {
   const missing = []
   for (const name of expectedAssetNames(repository)) {
     const staged = path.join(stage, name)
-    if (await existingFile(staged)) continue
     const source = await findByName(repoRoot, name)
     if (source) {
       await copyFile(source, staged)
       result.collected.push({ name, source })
+    } else if (await existingFile(staged)) {
+      continue
     } else {
       missing.push(name)
     }
@@ -201,7 +220,7 @@ async function buildWebsite({ workspaceRoot, stage, repository, options }) {
   const root = repoPath(workspaceRoot, 'ECHO-Platform-Website')
   run('npm', ['ci'], root, options)
   run('npm', ['run', 'build'], root, options)
-  return collectExpected(root, stage, repository, options.currentResult)
+  return collectExpected(path.join(root, 'out'), stage, repository, options.currentResult)
 }
 
 async function buildNativePlatform({ workspaceRoot, stage, repository, options }) {
