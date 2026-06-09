@@ -32,6 +32,7 @@
         "required": ["id", "version"],
         "properties": {
           "id": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["product", "modpack", "module", "addon", "runtime", "studio", "website"] },
           "version": { "type": "string", "minLength": 1 }
         }
       }
