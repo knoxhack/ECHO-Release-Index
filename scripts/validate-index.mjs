@@ -24,7 +24,7 @@ const auxiliaryDirs = ['publishers', 'channels', 'trust', 'blocks']
 const rawIndexPrefix = 'https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/'
 const validKinds = new Set(['product', 'modpack', 'module', 'addon', 'runtime', 'studio', 'website'])
 const validValidationStates = new Set(['approved', 'warning', 'rejected', 'blocked'])
-const attestedTrustTiers = new Set(['provenance-attested'])
+const attestedTrustTiers = new Set(['official', 'reproducible-build', 'echo-workflow-built', 'provenance-attested'])
 const requiredSchemas = [
   'block.schema.json',
   'channel.schema.json',

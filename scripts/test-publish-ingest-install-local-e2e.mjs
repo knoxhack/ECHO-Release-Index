@@ -149,10 +149,11 @@ async function writeBaseIndex(root) {
     id: publisher,
     name: 'Knoxhack',
     githubOwner: 'knoxhack',
-    trust: 'official',
+    trust: 'source-linked',
   })
   await writeJson(root, 'trust/tiers.json', [
     { id: 'official', rank: 100, description: 'Official fixture trust.', playable: true },
+    { id: 'source-linked', rank: 60, description: 'Source-linked fixture trust.', playable: true },
     { id: 'community', rank: 40, description: 'Community fixture trust.', playable: true },
     { id: 'blocked', rank: 0, description: 'Blocked fixture trust.', playable: false },
   ])
@@ -345,7 +346,7 @@ async function writePackAndChannel(indexRoot, release) {
     },
     dependencies: [{ id: moduleId, kind: 'module', version: '*' }],
     compatibility: [packId],
-    trust: 'official',
+    trust: 'source-linked',
     validation: 'approved',
   })
   await writeJson(indexRoot, 'channels/alpha/launcher-channel.json', {

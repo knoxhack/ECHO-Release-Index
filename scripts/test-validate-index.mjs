@@ -40,7 +40,7 @@ async function baseCatalog(root) {
     id: 'knoxhack',
     name: 'Knoxhack',
     githubOwner: 'knoxhack',
-    trust: 'official',
+    trust: 'source-linked',
   })
   await writeJson(root, 'trust/tiers.json', [
     { id: 'official', rank: 100, description: 'Official fixture trust.', playable: true },
@@ -71,7 +71,7 @@ function approvedEntry(overrides = {}) {
     },
     dependencies: [],
     compatibility: ['ashfall-native-edition'],
-    trust: 'official',
+    trust: 'source-linked',
     validation: 'approved',
     ...overrides,
   }
@@ -196,6 +196,12 @@ await runFixture('approved-attested-missing-provenance', async (root) => {
     trust: 'provenance-attested',
   }))
 }, 1, 'approved provenance-attested entry missing provenance metadata')
+
+await runFixture('approved-official-missing-provenance', async (root) => {
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    trust: 'official',
+  }))
+}, 1, 'approved official entry missing provenance metadata')
 
 await runFixture('placeholder-commit-sha', async (root) => {
   await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
