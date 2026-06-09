@@ -27,6 +27,13 @@ const extraArgs = new Map([
   ['--allow-missing', (args) => { args.allowMissing = true }],
 ])
 
+const crcTable = new Uint32Array(256)
+for (let index = 0; index < crcTable.length; index += 1) {
+  let value = index
+  for (let bit = 0; bit < 8; bit += 1) value = value & 1 ? 0xedb88320 ^ (value >>> 1) : value >>> 1
+  crcTable[index] = value >>> 0
+}
+
 function usage() {
   return `Usage: node scripts/build-public-alpha-assets.mjs [options]
 
@@ -90,6 +97,85 @@ function normalizeAssetName(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '')
 }
 
+function crc32(buffer) {
+  let value = 0xffffffff
+  for (const byte of buffer) value = crcTable[(value ^ byte) & 0xff] ^ (value >>> 8)
+  return (value ^ 0xffffffff) >>> 0
+}
+
+function u16(value) {
+  const buffer = Buffer.alloc(2)
+  buffer.writeUInt16LE(value)
+  return buffer
+}
+
+function u32(value) {
+  const buffer = Buffer.alloc(4)
+  buffer.writeUInt32LE(value >>> 0)
+  return buffer
+}
+
+function storedZip(entries) {
+  const localParts = []
+  const centralParts = []
+  let offset = 0
+  for (const entry of entries) {
+    const nameBuffer = Buffer.from(entry.name.replace(/\\/g, '/'), 'utf8')
+    const data = Buffer.isBuffer(entry.data) ? entry.data : Buffer.from(String(entry.data), 'utf8')
+    const checksum = crc32(data)
+    const localHeader = Buffer.concat([
+      u32(0x04034b50),
+      u16(20),
+      u16(0),
+      u16(0),
+      u16(0),
+      u16(0),
+      u32(checksum),
+      u32(data.length),
+      u32(data.length),
+      u16(nameBuffer.length),
+      u16(0),
+      nameBuffer,
+    ])
+    const centralHeader = Buffer.concat([
+      u32(0x02014b50),
+      u16(20),
+      u16(20),
+      u16(0),
+      u16(0),
+      u16(0),
+      u16(0),
+      u32(checksum),
+      u32(data.length),
+      u32(data.length),
+      u16(nameBuffer.length),
+      u16(0),
+      u16(0),
+      u16(0),
+      u16(0),
+      u32(0),
+      u32(offset),
+      nameBuffer,
+    ])
+    localParts.push(localHeader, data)
+    centralParts.push(centralHeader)
+    offset += localHeader.length + data.length
+  }
+  const centralDirectory = Buffer.concat(centralParts)
+  return Buffer.concat([
+    ...localParts,
+    centralDirectory,
+    u32(0x06054b50),
+    u16(0),
+    u16(0),
+    u16(entries.length),
+    u16(entries.length),
+    u32(centralDirectory.length),
+    u32(offset),
+    u16(0),
+  ])
+}
+
 async function collectExpected(repoRoot, stage, repository, result) {
   const missing = []
   for (const name of expectedAssetNames(repository)) {
@@ -146,20 +232,23 @@ async function writeReport(stage, name, payload, options = {}) {
   })
 }
 
-function compressDirectory(sourceDir, zipPath, options) {
+async function writeDeterministicZip(sourceDir, zipPath, options) {
   if (options.dryRun) {
-    options.actions.push({ command: `Compress-Archive ${sourceDir} -> ${zipPath}` })
+    options.actions.push({ command: `write deterministic zip ${sourceDir} -> ${zipPath}` })
     return
   }
-  const ps = [
-    '$ErrorActionPreference = "Stop"',
-    `$source = ${JSON.stringify(path.join(sourceDir, '*'))}`,
-    `$dest = ${JSON.stringify(zipPath)}`,
-    'if (Test-Path $dest) { Remove-Item -Force $dest }',
-    'Compress-Archive -Path $source -DestinationPath $dest -Force',
-  ].join('; ')
-  const result = spawnSync('powershell', ['-NoProfile', '-Command', ps], { stdio: 'inherit' })
-  if (result.status !== 0) throw new Error(`Unable to create zip: ${zipPath}`)
+  const zipName = path.basename(zipPath).toLowerCase()
+  const entries = []
+  for (const file of await listFiles(sourceDir)) {
+    const name = path.basename(file)
+    if (name.toLowerCase() === zipName || /^checksums\.(txt|sha256)$/i.test(name)) continue
+    entries.push({
+      name,
+      data: await fs.readFile(file),
+    })
+  }
+  entries.sort((a, b) => a.name.localeCompare(b.name))
+  await fs.writeFile(zipPath, storedZip(entries))
 }
 
 function standaloneRuntimeArchiveName(repository, tag) {
@@ -173,7 +262,7 @@ async function ensureStandaloneRuntimeArchive(stage, repository, tag, options) {
   const archiveName = standaloneRuntimeArchiveName(repository, tag)
   const archivePath = path.join(stage, archiveName)
   if (!options.dryRun && await existingFile(archivePath)) return archiveName
-  compressDirectory(stage, archivePath, options)
+  await writeDeterministicZip(stage, archivePath, options)
   options.currentResult?.collected?.push({ name: archiveName, source: stage })
   return archiveName
 }
