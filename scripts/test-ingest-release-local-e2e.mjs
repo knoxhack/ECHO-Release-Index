@@ -233,6 +233,7 @@ async function runIngestionCase({
   requireAttestation = false,
   attestationCommit,
   attestationWorkflow,
+  ghExecutableOverride,
   setupIndex,
   expectedValidation = 'approved',
   expectedReason,
@@ -286,7 +287,7 @@ async function runIngestionCase({
       } : {}),
       ...(requireAttestation ? {
         FAKE_GH_LOG: fakeGhLog,
-        ECHO_INGEST_GH_EXECUTABLE: fakeGhExecutable,
+        ECHO_INGEST_GH_EXECUTABLE: ghExecutableOverride ?? fakeGhExecutable,
         FAKE_ATTESTED_SHA: addonSha,
         ...(attestationCommit ? { FAKE_ATTESTED_COMMIT: attestationCommit } : {}),
         ...(attestationWorkflow ? { FAKE_ATTESTED_WORKFLOW: attestationWorkflow } : {}),
@@ -299,7 +300,7 @@ async function runIngestionCase({
       }
       childEnv[pathKey] = `${fakeGhBin}${path.delimiter}${childEnv[pathKey] ?? ''}`
     }
-    if (requireAttestation) {
+    if (requireAttestation && !ghExecutableOverride) {
       const smoke = await runNode(['-e', "const { spawnSync } = require('node:child_process'); const r = spawnSync(process.env.ECHO_INGEST_GH_EXECUTABLE, ['release', 'verify-asset', 'v1.0.0', 'fixture.echo-addon', '--repo', 'knoxhack/ECHO-Fixture', '--format', 'json'], { encoding: 'utf8', shell: process.platform === 'win32' }); process.stdout.write(JSON.stringify({ status: r.status, stdout: r.stdout, stderr: r.stderr, error: r.error && r.error.message })); process.exit(r.status ?? 1)"], {
         cwd: tempRoot,
         env: childEnv,
@@ -495,6 +496,18 @@ async function main() {
       requireAttestation: true,
       expectedValidation: 'rejected',
       expectedReason: 'Attestation verification for verified trust requires --attestation-commit',
+    })
+    await runIngestionCase({
+      name: 'rejected-missing-gh-attestation-executable',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setMetadataDependencies([{ id: 'fixture-runtime', kind: 'runtime' }]),
+      requireAttestation: true,
+      attestationCommit: 'abc1234',
+      attestationWorkflow: '.github/workflows/release-fixture.yml',
+      ghExecutableOverride: path.join(os.tmpdir(), 'echo-missing-gh-executable', 'gh-missing'),
+      expectedValidation: 'rejected',
+      expectedReason: 'Unable to run GitHub CLI',
     })
     await runIngestionCase({
       name: 'rejected-missing-commit-sha',

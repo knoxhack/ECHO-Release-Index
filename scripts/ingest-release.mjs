@@ -1,5 +1,6 @@
 import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { spawnSync } from 'node:child_process'
@@ -538,11 +539,27 @@ function attestationTextIncludes(output, expected, label) {
 
 function runGhAttestation(args) {
   const override = process.env.ECHO_INGEST_GH_EXECUTABLE
-  return spawnSync(override || 'gh', args, {
+  const executable = override || 'gh'
+  if (override && !existsSync(override)) {
+    return {
+      status: 1,
+      stdout: '',
+      stderr: `Unable to run GitHub CLI '${executable}': executable does not exist`,
+    }
+  }
+  const result = spawnSync(executable, args, {
     encoding: 'utf8',
     shell: Boolean(override && process.platform === 'win32'),
     windowsHide: true,
   })
+  if (result.error) {
+    return {
+      status: result.status ?? 1,
+      stdout: result.stdout ?? '',
+      stderr: `${result.stderr ?? ''}${result.stderr ? '\n' : ''}Unable to run GitHub CLI '${executable}': ${result.error.message}`,
+    }
+  }
+  return result
 }
 
 function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, options = {}) {
