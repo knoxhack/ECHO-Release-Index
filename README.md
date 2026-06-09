@@ -36,6 +36,7 @@ Run commands from the repository root.
 
 - `node scripts/docs-audit.mjs`
 - `node scripts/validate-index.mjs --strict`
+- `node scripts/verify-artifact-urls.mjs`
 - `node scripts/sync-public-alpha-index.mjs --check`
 - `node scripts/test-validate-index.mjs`
 - `node scripts/test-sync-public-alpha-index.mjs`
@@ -56,6 +57,8 @@ Each installable entry must include stable fields for `id`, `kind`, `version`, `
 The required schema inventory is enforced by `scripts/validate-index.mjs` and includes addon package, pack manifest, module release manifest, product update entry, Release Index entry, publisher, channel, trust, and block schemas.
 
 `scripts/sync-public-alpha-index.mjs --check` compares product and modpack catalog artifacts with `channels/alpha/release-manifest.json`; use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
+
+`scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 
 Approved module imports require `echo-release.json` provenance from `scripts/generate-module-release.mjs`, including the module release workflow ref, commit SHA, `actions/attest@v4`, and `checksums.sha256` attestation subject.
 
