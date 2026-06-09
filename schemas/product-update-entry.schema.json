@@ -60,7 +60,19 @@
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
     },
-    "trust": { "type": "string", "minLength": 1 },
+    "trust": {
+      "enum": [
+        "official",
+        "reproducible-build",
+        "echo-workflow-built",
+        "provenance-attested",
+        "source-linked",
+        "community",
+        "unverified",
+        "deprecated",
+        "blocked"
+      ]
+    },
     "validation": { "enum": ["approved", "warning", "rejected", "blocked"] }
   }
 }
