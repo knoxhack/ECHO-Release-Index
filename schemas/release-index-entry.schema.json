@@ -60,6 +60,28 @@
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
     },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "sourceRepo": { "type": "string", "minLength": 1 },
+        "commitSha": { "type": "string", "pattern": "^(?!0{7,40}$)[a-fA-F0-9]{7,40}$" },
+        "workflow": { "type": "string", "minLength": 1 },
+        "workflowRef": { "type": "string", "minLength": 1 },
+        "verifiedBy": { "type": "string", "minLength": 1 },
+        "generatedBy": { "type": "string", "minLength": 1 },
+        "attestation": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "action": { "type": "string", "minLength": 1 },
+            "subjectChecksums": { "type": "string", "minLength": 1 },
+            "sourceDigest": { "type": "string", "minLength": 1 },
+            "signerWorkflow": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
     "trust": {
       "enum": [
         "official",

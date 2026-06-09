@@ -403,14 +403,17 @@ function artifactMapFromModule(moduleRecord, assets, metadata, checksums) {
 
 async function writeIndexEntries({ args, owner, repo, tag, metadata, assets, checksums, validation, commitSha }) {
   if (!args.writeIndexEntry) return []
+  const trust = resolvedTrust(args, metadata, validation)
+  const provenance = attestationProvenance(args, validation, commitSha, owner, repo)
   const common = {
     channel: args.channel ?? metadata?.channel ?? 'alpha',
     publisher: args.publisher ?? metadata?.publisher ?? owner.toLowerCase(),
     sourceRepo: `${owner}/${repo}`,
     releaseTag: tag,
     commitSha,
-    trust: resolvedTrust(args, metadata, validation),
+    trust,
     validation,
+    ...(provenance ? { provenance } : {}),
   }
   const entries = []
 
@@ -521,6 +524,22 @@ function resolvedTrust(args, metadata, validation) {
   if (declared) return declared
   if (validation !== 'approved') return 'unverified'
   return args.requireAttestation ? 'provenance-attested' : 'source-linked'
+}
+
+function attestationProvenance(args, validation, commitSha, owner, repo) {
+  if (validation !== 'approved' || !args.requireAttestation) return null
+  return {
+    sourceRepo: `${owner}/${repo}`,
+    commitSha,
+    workflow: args.attestationWorkflow,
+    verifiedBy: 'scripts/ingest-release.mjs',
+    attestation: {
+      action: 'gh attestation verify',
+      releaseAssetAction: 'gh release verify-asset',
+      sourceDigest: args.attestationCommit ?? commitSha,
+      signerWorkflow: args.attestationWorkflow,
+    },
+  }
 }
 
 function realCommitSha(value) {

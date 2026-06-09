@@ -24,6 +24,7 @@ const auxiliaryDirs = ['publishers', 'channels', 'trust', 'blocks']
 const rawIndexPrefix = 'https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/'
 const validKinds = new Set(['product', 'modpack', 'module', 'addon', 'runtime', 'studio', 'website'])
 const validValidationStates = new Set(['approved', 'warning', 'rejected', 'blocked'])
+const attestedTrustTiers = new Set(['provenance-attested'])
 const requiredSchemas = [
   'block.schema.json',
   'channel.schema.json',
@@ -185,6 +186,37 @@ function validateArtifacts(errors, warnings, filePath, entry) {
   })
 }
 
+function validateAttestedProvenance(errors, filePath, entry) {
+  if (entry.validation !== 'approved' || !attestedTrustTiers.has(entry.trust)) return
+  const provenance = entry.provenance
+  if (!provenance || typeof provenance !== 'object' || Array.isArray(provenance)) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry missing provenance metadata`)
+    return
+  }
+  const attestation = provenance.attestation
+  if (!attestation || typeof attestation !== 'object' || Array.isArray(attestation)) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry missing provenance.attestation metadata`)
+    return
+  }
+  const provenanceCommit = String(provenance.commitSha ?? '').trim()
+  if (!commitPattern.test(provenanceCommit) || /^0{7,40}$/.test(provenanceCommit)) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry provenance.commitSha must be a real 7-40 hex commit`)
+  }
+  if (entry.commitSha && provenanceCommit && entry.commitSha !== provenanceCommit) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry provenance.commitSha must match commitSha`)
+  }
+  const action = String(attestation.action ?? '').trim()
+  if (!['actions/attest@v4', 'gh attestation verify'].includes(action)) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry provenance.attestation.action must be actions/attest@v4 or gh attestation verify`)
+  }
+  if (!attestation.subjectChecksums && !attestation.sourceDigest) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry provenance.attestation must include subjectChecksums or sourceDigest`)
+  }
+  if (!provenance.workflow && !provenance.workflowRef && !attestation.signerWorkflow) {
+    errors.push(`${rel(filePath)} approved ${entry.trust} entry provenance must include workflow, workflowRef, or attestation.signerWorkflow`)
+  }
+}
+
 function loadChannels(errors) {
   const channels = new Set()
   for (const filePath of jsonFiles('channels')) {
@@ -294,6 +326,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   if (!Array.isArray(entry.dependencies)) errors.push(`${rel(filePath)} dependencies must be an array`)
   if (!Array.isArray(entry.compatibility)) errors.push(`${rel(filePath)} compatibility must be an array`)
   validateArtifacts(errors, warnings, filePath, entry)
+  validateAttestedProvenance(errors, filePath, entry)
 }
 
 function rawIndexUrlToPath(url) {

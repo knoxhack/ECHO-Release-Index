@@ -191,6 +191,12 @@ await runFixture('approved-non-playable-trust', async (root) => {
   }))
 }, 1, 'approved entry uses non-playable trust tier unverified')
 
+await runFixture('approved-attested-missing-provenance', async (root) => {
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    trust: 'provenance-attested',
+  }))
+}, 1, 'approved provenance-attested entry missing provenance metadata')
+
 await runFixture('placeholder-commit-sha', async (root) => {
   await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
     commitSha: '0000000',
@@ -325,6 +331,9 @@ await runFixture('module-import-approved', async (root) => {
   const imported = JSON.parse(await fs.readFile(path.join(root, 'modules', 'echocore.json'), 'utf8'))
   if (imported.validation !== 'approved' || imported.trust !== 'provenance-attested') {
     throw new Error('compiled approved module import must be approved/provenance-attested')
+  }
+  if (imported.provenance?.attestation?.action !== 'actions/attest@v4') {
+    throw new Error('compiled approved module import must preserve attestation provenance')
   }
 }, 0, 'validation passed')
 

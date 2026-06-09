@@ -79,6 +79,7 @@ function moduleEntry(moduleRecord, manifest, args) {
   const hasSourcePackaged = (moduleRecord.artifacts ?? []).some((artifact) => artifact.buildMode === 'source-packaged')
   const validation = hasSourcePackaged ? 'warning' : args.approved ? 'approved' : 'warning'
   const trust = hasSourcePackaged ? 'unverified' : args.approved ? 'provenance-attested' : 'source-linked'
+  const commitSha = commitShaFromManifest(manifest, args)
   const artifacts = {}
   for (const artifact of moduleRecord.artifacts ?? []) {
     const filename = artifact.filename ?? artifact.file ?? artifact.name
@@ -103,10 +104,20 @@ function moduleEntry(moduleRecord, manifest, args) {
     publisher: args.publisher,
     sourceRepo: sourceRepoFromManifest(manifest),
     releaseTag: args.releaseTag ?? manifest.releaseId,
-    commitSha: commitShaFromManifest(manifest, args),
+    commitSha,
     artifacts,
     dependencies: (moduleRecord.requires ?? []).map((id) => ({ id, kind: 'module', version: '*' })),
     compatibility: compatibilityFromArtifacts(moduleRecord.artifacts ?? []),
+    ...(trust === 'provenance-attested' ? {
+      provenance: {
+        sourceRepo: sourceRepoFromManifest(manifest),
+        commitSha,
+        workflow: manifest.provenance?.workflow,
+        workflowRef: manifest.provenance?.workflowRef,
+        generatedBy: manifest.provenance?.generatedBy,
+        attestation: manifest.provenance?.attestation,
+      },
+    } : {}),
     trust,
     validation,
   }

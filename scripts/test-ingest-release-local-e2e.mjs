@@ -336,6 +336,9 @@ async function runIngestionCase({
     assert.deepEqual(entry.compatibility, ['ashfall-native-edition'])
     if (requireAttestation) {
       assert.equal(entry.trust, 'provenance-attested')
+      assert.equal(entry.provenance?.attestation?.action, 'gh attestation verify')
+      assert.equal(entry.provenance?.attestation?.sourceDigest, attestationCommit)
+      assert.equal(entry.provenance?.attestation?.signerWorkflow, attestationWorkflow)
       const log = await fs.readFile(fakeGhLog, 'utf8')
       assert.match(log, /release verify-asset/)
       assert.match(log, /attestation verify/)
