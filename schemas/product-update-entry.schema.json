@@ -55,7 +55,11 @@
         }
       }
     },
-    "compatibility": { "type": "array" },
+    "compatibility": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
     "trust": { "type": "string", "minLength": 1 },
     "validation": { "enum": ["approved", "warning", "rejected", "blocked"] }
   }
