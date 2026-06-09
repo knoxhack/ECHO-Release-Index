@@ -375,8 +375,6 @@ async function writeIndexEntries({ args, owner, repo, tag, release, metadata, as
     sourceRepo: `${owner}/${repo}`,
     releaseTag: tag,
     commitSha,
-    dependencies: [],
-    compatibility: metadata?.compatibility ?? [],
     trust: args.trust ?? metadata?.trust ?? (validation === 'approved' ? 'provenance-attested' : 'unverified'),
     validation,
   }
@@ -385,6 +383,7 @@ async function writeIndexEntries({ args, owner, repo, tag, release, metadata, as
   if (Array.isArray(metadata?.modules)) {
     for (const moduleRecord of metadata.modules) {
       entries.push({
+        ...common,
         id: moduleRecord.moduleId,
         kind: 'module',
         version: moduleRecord.version,
@@ -393,17 +392,17 @@ async function writeIndexEntries({ args, owner, repo, tag, release, metadata, as
           ...(moduleRecord.requires ?? []).map((id) => ({ id, kind: 'module' })),
         ],
         compatibility: ['ashfall-native-edition', 'ashfall-neoforge-edition', 'ashfall-standalone-edition'],
-        ...common,
       })
     }
   } else {
     entries.push({
+      ...common,
       id: args.entryId ?? metadata?.id ?? safeId(repo),
       kind: args.entryKind ?? metadata?.kind ?? 'product',
       version: metadata?.version ?? release.tag_name ?? tag,
       artifacts: assetArtifactMap(assets, metadata, checksums),
       dependencies: metadata?.dependencies ?? [],
-      ...common,
+      compatibility: metadata?.compatibility ?? [],
     })
   }
 

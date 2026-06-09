@@ -325,6 +325,8 @@ async function runIngestionCase({
     const entry = JSON.parse(await fs.readFile(path.join(tempRoot, 'addons', 'fixture-addon.json'), 'utf8'))
     assert.equal(entry.artifacts.native.sha256, addonSha)
     assert.equal(entry.artifacts.native.url, 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/fixture-addon-1.0.0.echo-addon')
+    assert.deepEqual(entry.dependencies, [{ id: 'fixture-runtime', kind: 'runtime' }])
+    assert.deepEqual(entry.compatibility, ['ashfall-native-edition'])
     if (requireAttestation) {
       assert.equal(entry.trust, 'provenance-attested')
       const log = await fs.readFile(fakeGhLog, 'utf8')
