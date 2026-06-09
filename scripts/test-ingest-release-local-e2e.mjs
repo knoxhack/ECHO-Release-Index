@@ -378,12 +378,20 @@ async function main() {
   }
   const checksumsBytes = Buffer.from(`${addonSha} fixture-addon-1.0.0.echo-addon\n`)
   let assetsByName = new Map()
+  let releaseTargetCommitish = 'abc1234'
   let requireGitHubAppToken = false
   let installationTokenRequests = 0
   let authenticatedApiRequests = 0
-  const setMetadataDependencies = (dependencies = [{ id: 'fixture-runtime', kind: 'runtime' }], trust = 'community') => {
+  const setMetadataDependencies = (dependencies = [{ id: 'fixture-runtime', kind: 'runtime' }], trust = 'community', options = {}) => {
     metadata.dependencies = dependencies
     metadata.trust = trust
+    releaseTargetCommitish = options.releaseTargetCommitish ?? 'abc1234'
+    if (Object.prototype.hasOwnProperty.call(options, 'commitSha')) {
+      if (options.commitSha === null) delete metadata.commitSha
+      else metadata.commitSha = options.commitSha
+    } else {
+      metadata.commitSha = 'abc1234'
+    }
     const metadataBytes = Buffer.from(JSON.stringify(metadata, null, 2))
     assetsByName = new Map([
       ['echo-release.json', metadataBytes],
@@ -412,7 +420,7 @@ async function main() {
       jsonAssetResponse(response, {
         tag_name: 'v1.0.0',
         draft: false,
-        target_commitish: 'abc1234',
+        target_commitish: releaseTargetCommitish,
         html_url: 'https://github.com/knoxhack/ECHO-Fixture/releases/tag/v1.0.0',
         assets_url: `${baseUrl}/repos/knoxhack/ECHO-Fixture/releases/1/assets`,
       })
@@ -476,6 +484,17 @@ async function main() {
       requireAttestation: true,
       expectedValidation: 'rejected',
       expectedReason: 'Attestation verification for verified trust requires --attestation-commit',
+    })
+    await runIngestionCase({
+      name: 'rejected-missing-commit-sha',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setMetadataDependencies([{ id: 'fixture-runtime', kind: 'runtime' }], 'community', {
+        commitSha: null,
+        releaseTargetCommitish: 'main',
+      }),
+      expectedValidation: 'rejected',
+      expectedReason: 'Release ingestion requires a real commitSha',
     })
     requireGitHubAppToken = true
     const tokenRequestsBefore = installationTokenRequests

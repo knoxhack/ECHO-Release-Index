@@ -367,9 +367,8 @@ function artifactMapFromModule(moduleRecord, assets, metadata, checksums) {
   return out
 }
 
-async function writeIndexEntries({ args, owner, repo, tag, release, metadata, assets, checksums, validation }) {
+async function writeIndexEntries({ args, owner, repo, tag, metadata, assets, checksums, validation, commitSha }) {
   if (!args.writeIndexEntry) return []
-  const commitSha = metadata?.commitSha ?? (/^[a-f0-9]{7,40}$/i.test(release.target_commitish ?? '') ? release.target_commitish : '0000000')
   const common = {
     channel: args.channel ?? metadata?.channel ?? 'alpha',
     publisher: args.publisher ?? metadata?.publisher ?? owner.toLowerCase(),
@@ -490,6 +489,15 @@ function resolvedTrust(args, metadata, validation) {
   return args.requireAttestation ? 'provenance-attested' : 'source-linked'
 }
 
+function realCommitSha(value) {
+  const sha = String(value ?? '').trim()
+  return /^[a-f0-9]{7,40}$/i.test(sha) && !/^0{7,40}$/.test(sha) ? sha : null
+}
+
+function resolveReleaseCommitSha({ args, metadata, release }) {
+  return realCommitSha(metadata?.commitSha) ?? realCommitSha(args.attestationCommit) ?? realCommitSha(release.target_commitish)
+}
+
 function attestationTextIncludes(output, expected, label) {
   if (!expected) return []
   return output.includes(expected) ? [] : [`attestation does not reference ${label} ${expected}`]
@@ -590,6 +598,10 @@ async function ingest(args) {
   } else {
     reasons.push('Missing echo-release.json release metadata.')
   }
+  const releaseCommitSha = resolveReleaseCommitSha({ args, metadata, release })
+  if (!releaseCommitSha) {
+    reasons.push('Release ingestion requires a real commitSha from echo-release.json, attestation commit, or GitHub release target_commitish.')
+  }
   const trust = declaredTrust(args, metadata)
   const trustRequiresAttestation = !trust || attestationRequiredTrust.has(trust)
   if (trust && attestationRequiredTrust.has(trust) && !args.requireAttestation) {
@@ -677,6 +689,7 @@ async function ingest(args) {
     assets,
     checksums: releaseChecksums,
     validation,
+    commitSha: releaseCommitSha,
   })
 
   return {
