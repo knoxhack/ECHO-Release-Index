@@ -424,6 +424,51 @@ async function main() {
       ['fixture-addon-1.0.0.echo-addon', selectedAddonBytes],
     ])
   }
+  const setModuleReleaseMetadata = (schemaVersion = 'echo.module.release.v1') => {
+    const selectedChecksumsBytes = Buffer.from(`${addonSha} fixture-addon-1.0.0.echo-addon\n`)
+    const moduleReleaseMetadata = {
+      schemaVersion,
+      releaseId: 'modules-fixture',
+      generatedAt: '2026-06-09T00:00:00Z',
+      sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+      provenance: {
+        sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+        commitSha: 'abc1234',
+        workflowRef: 'knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/tags/modules-fixture',
+        generatedBy: 'scripts/generate-module-release.mjs',
+        attestation: {
+          action: 'actions/attest@v4',
+          subjectChecksums: 'checksums.sha256',
+        },
+      },
+      modules: [
+        {
+          moduleId: 'fixture-addon',
+          version: '1.0.0',
+          descriptor: { path: 'META-INF/echo.mod.json', sha256: sha256(moduleJson) },
+          requires: ['fixture-runtime'],
+          optional: [],
+          artifacts: [
+            {
+              kind: 'echo-addon',
+              filename: 'fixture-addon-1.0.0.echo-addon',
+              sha256: addonSha,
+              size: addonBytes.length,
+              runtimeTarget: 'echo-native',
+              buildMode: 'compiled-runtime',
+              contains: ['META-INF/echo.mod.json', 'echo-addon-package.json'],
+            },
+          ],
+        },
+      ],
+    }
+    releaseTargetCommitish = 'abc1234'
+    assetsByName = new Map([
+      ['echo-release.json', Buffer.from(JSON.stringify(moduleReleaseMetadata, null, 2))],
+      ['checksums.sha256', selectedChecksumsBytes],
+      ['fixture-addon-1.0.0.echo-addon', addonBytes],
+    ])
+  }
   setMetadataDependencies()
 
   const server = http.createServer((request, response) => {
@@ -553,6 +598,14 @@ async function main() {
       }),
       expectedValidation: 'rejected',
       expectedReason: 'META-INF/echo.mod.json id other-addon does not match release metadata id fixture-addon',
+    })
+    await runIngestionCase({
+      name: 'rejected-old-module-release-schema',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setModuleReleaseMetadata(1),
+      expectedValidation: 'rejected',
+      expectedReason: 'Module release metadata must use schemaVersion echo.module.release.v1',
     })
     requireGitHubAppToken = true
     const tokenRequestsBefore = installationTokenRequests

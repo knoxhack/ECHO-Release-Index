@@ -190,6 +190,26 @@ function assetSha(asset, metadata, checksums = new Map()) {
   return match?.[1]
 }
 
+function validateReleaseMetadata(metadata) {
+  const reasons = []
+  if (!metadata || typeof metadata !== 'object') return reasons
+  if (Array.isArray(metadata.modules)) {
+    if (metadata.schemaVersion !== 'echo.module.release.v1') {
+      reasons.push('Module release metadata must use schemaVersion echo.module.release.v1.')
+    }
+    if (metadata.modules.length === 0) reasons.push('Module release metadata must include at least one module record.')
+    for (const moduleRecord of metadata.modules) {
+      const moduleId = moduleRecord?.moduleId ?? '(missing)'
+      if (!moduleRecord?.moduleId) reasons.push('Module release metadata module record is missing moduleId.')
+      if (!moduleRecord?.version) reasons.push(`Module release metadata ${moduleId} is missing version.`)
+      if (!Array.isArray(moduleRecord?.artifacts) || moduleRecord.artifacts.length === 0) {
+        reasons.push(`Module release metadata ${moduleId} must include artifacts.`)
+      }
+    }
+  }
+  return reasons
+}
+
 function flattenArtifacts(value) {
   const artifacts = []
   function walk(node) {
@@ -679,6 +699,7 @@ async function ingest(args) {
   let metadata = null
   if (metadataAsset?.browser_download_url) {
     metadata = JSON.parse(await fetchText(metadataAsset.browser_download_url, token))
+    reasons.push(...validateReleaseMetadata(metadata))
   } else {
     reasons.push('Missing echo-release.json release metadata.')
   }
