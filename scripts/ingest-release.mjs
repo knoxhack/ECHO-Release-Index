@@ -251,7 +251,30 @@ function parseJsonEntry(buffer, entryMap, name) {
   return JSON.parse(readZipEntry(buffer, entry).toString('utf8'))
 }
 
-function inspectArchive(asset, bytes) {
+function artifactFileName(asset) {
+  return asset.name ?? asset.filename ?? asset.file
+}
+
+function localId(value) {
+  const id = String(value ?? '').trim()
+  return id.includes(':') ? id.split(':').pop() : id
+}
+
+function sameEmbeddedId(expected, actual) {
+  return String(expected ?? '') === String(actual ?? '') || localId(expected) === localId(actual)
+}
+
+function expectedEmbeddedIdentity(asset, metadata) {
+  if (Array.isArray(metadata?.modules)) {
+    const moduleRecord = metadata.modules.find((record) =>
+      (record.artifacts ?? []).some((artifact) => artifactFileName(artifact) === asset.name)
+    )
+    return moduleRecord ? { id: moduleRecord.moduleId, version: moduleRecord.version } : null
+  }
+  return metadata?.id || metadata?.version ? { id: metadata?.id, version: metadata?.version } : null
+}
+
+function inspectArchive(asset, bytes, metadata) {
   const reasons = []
   const warnings = []
   if (!/\.(zip|jar|echo-addon)$/i.test(asset.name)) return { reasons, warnings }
@@ -285,6 +308,13 @@ function inspectArchive(asset, bytes) {
     if (packageJson && packageJson.schemaVersion !== 'echo.addon.package.v1') {
       reasons.push(`${asset.name} echo-addon-package.json must use schemaVersion echo.addon.package.v1.`)
     }
+    const expected = expectedEmbeddedIdentity(asset, metadata)
+    if (packageJson && expected?.id && !sameEmbeddedId(expected.id, packageJson.id)) {
+      reasons.push(`${asset.name} echo-addon-package.json id ${packageJson.id ?? '(missing)'} does not match release metadata id ${expected.id}.`)
+    }
+    if (packageJson && expected?.version && packageJson.version !== expected.version) {
+      reasons.push(`${asset.name} echo-addon-package.json version ${packageJson.version ?? '(missing)'} does not match release metadata version ${expected.version}.`)
+    }
   } catch (error) {
     reasons.push(`${asset.name} has invalid echo-addon-package.json: ${error.message}`)
   }
@@ -293,6 +323,13 @@ function inspectArchive(asset, bytes) {
     const moduleJson = parseJsonEntry(bytes, entryMap, 'META-INF/echo.mod.json')
     if (moduleJson && (!moduleJson.id || !moduleJson.version)) {
       reasons.push(`${asset.name} META-INF/echo.mod.json must include id and version.`)
+    }
+    const expected = expectedEmbeddedIdentity(asset, metadata)
+    if (moduleJson && expected?.id && !sameEmbeddedId(expected.id, moduleJson.id)) {
+      reasons.push(`${asset.name} META-INF/echo.mod.json id ${moduleJson.id ?? '(missing)'} does not match release metadata id ${expected.id}.`)
+    }
+    if (moduleJson && expected?.version && moduleJson.version !== expected.version) {
+      reasons.push(`${asset.name} META-INF/echo.mod.json version ${moduleJson.version ?? '(missing)'} does not match release metadata version ${expected.version}.`)
     }
   } catch (error) {
     reasons.push(`${asset.name} has invalid META-INF/echo.mod.json: ${error.message}`)
@@ -319,10 +356,6 @@ function inspectArchive(asset, bytes) {
 
 function safeId(value) {
   return String(value ?? '').trim().toLowerCase().replace(/[^a-z0-9_.-]+/g, '-').replace(/^-+|-+$/g, '')
-}
-
-function artifactFileName(asset) {
-  return asset.name ?? asset.filename ?? asset.file
 }
 
 function artifactKindFromName(name) {
@@ -652,7 +685,7 @@ async function ingest(args) {
         if (expectedSha && actualSha !== String(expectedSha).toLowerCase()) {
           reasons.push(`${asset.name} SHA-256 mismatch: expected ${expectedSha}, got ${actualSha}.`)
         }
-        const inspection = inspectArchive(asset, bytes)
+        const inspection = inspectArchive(asset, bytes, metadata)
         reasons.push(...inspection.reasons)
         warnings.push(...inspection.warnings)
       } catch (error) {

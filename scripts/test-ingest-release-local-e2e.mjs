@@ -364,6 +364,14 @@ async function main() {
     { name: 'checksums.sha256', content: internalChecksums },
   ])
   const addonSha = sha256(addonBytes)
+  const mismatchedModuleJson = Buffer.from(JSON.stringify({ id: 'other-addon', version: '1.0.0' }, null, 2))
+  const mismatchedInternalChecksums = Buffer.from(`${sha256(packageJson)} echo-addon-package.json\n${sha256(mismatchedModuleJson)} META-INF/echo.mod.json\n`)
+  const mismatchedAddonBytes = createZip([
+    { name: 'echo-addon-package.json', content: packageJson },
+    { name: 'META-INF/echo.mod.json', content: mismatchedModuleJson },
+    { name: 'checksums.sha256', content: mismatchedInternalChecksums },
+  ])
+  const mismatchedAddonSha = sha256(mismatchedAddonBytes)
   const metadata = {
     id: 'fixture-addon',
     kind: 'addon',
@@ -376,15 +384,18 @@ async function main() {
     dependencies: [{ id: 'fixture-runtime', kind: 'runtime' }],
     assets: [{ name: 'fixture-addon-1.0.0.echo-addon', sha256: addonSha }],
   }
-  const checksumsBytes = Buffer.from(`${addonSha} fixture-addon-1.0.0.echo-addon\n`)
   let assetsByName = new Map()
   let releaseTargetCommitish = 'abc1234'
   let requireGitHubAppToken = false
   let installationTokenRequests = 0
   let authenticatedApiRequests = 0
   const setMetadataDependencies = (dependencies = [{ id: 'fixture-runtime', kind: 'runtime' }], trust = 'community', options = {}) => {
+    const selectedAddonBytes = options.addonBytes ?? addonBytes
+    const selectedAddonSha = options.addonSha ?? sha256(selectedAddonBytes)
+    const selectedChecksumsBytes = Buffer.from(`${selectedAddonSha} fixture-addon-1.0.0.echo-addon\n`)
     metadata.dependencies = dependencies
     metadata.trust = trust
+    metadata.assets = [{ name: 'fixture-addon-1.0.0.echo-addon', sha256: selectedAddonSha }]
     releaseTargetCommitish = options.releaseTargetCommitish ?? 'abc1234'
     if (Object.prototype.hasOwnProperty.call(options, 'commitSha')) {
       if (options.commitSha === null) delete metadata.commitSha
@@ -395,8 +406,8 @@ async function main() {
     const metadataBytes = Buffer.from(JSON.stringify(metadata, null, 2))
     assetsByName = new Map([
       ['echo-release.json', metadataBytes],
-      ['checksums.sha256', checksumsBytes],
-      ['fixture-addon-1.0.0.echo-addon', addonBytes],
+      ['checksums.sha256', selectedChecksumsBytes],
+      ['fixture-addon-1.0.0.echo-addon', selectedAddonBytes],
     ])
   }
   setMetadataDependencies()
@@ -495,6 +506,17 @@ async function main() {
       }),
       expectedValidation: 'rejected',
       expectedReason: 'Release ingestion requires a real commitSha',
+    })
+    await runIngestionCase({
+      name: 'rejected-embedded-module-id-mismatch',
+      baseUrl,
+      addonSha: mismatchedAddonSha,
+      setMetadataDependencies: () => setMetadataDependencies([{ id: 'fixture-runtime', kind: 'runtime' }], 'community', {
+        addonBytes: mismatchedAddonBytes,
+        addonSha: mismatchedAddonSha,
+      }),
+      expectedValidation: 'rejected',
+      expectedReason: 'META-INF/echo.mod.json id other-addon does not match release metadata id fixture-addon',
     })
     requireGitHubAppToken = true
     const tokenRequestsBefore = installationTokenRequests
