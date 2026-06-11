@@ -62,13 +62,19 @@ const captureKitFiles = [
   'fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md',
 ]
 
-function pngFixture(width = 1280, height = 720) {
+function pngFixture(width = 1280, height = 720, shade = 0) {
   const ihdr = Buffer.alloc(13)
   ihdr.writeUInt32BE(width, 0)
   ihdr.writeUInt32BE(height, 4)
   ihdr[8] = 8
   ihdr[9] = 0
   const rawScanlines = Buffer.alloc((width + 1) * height)
+  const pixel = shade & 0xff
+  for (let row = 0; row < height; row += 1) {
+    const rowStart = row * (width + 1)
+    rawScanlines[rowStart] = 0
+    rawScanlines.fill(pixel, rowStart + 1, rowStart + 1 + width)
+  }
   return Buffer.concat([
     pngSignature,
     pngChunk('IHDR', ihdr),
@@ -472,9 +478,11 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
     }
 
     for (const relPath of supportingFiles) await writeText(root, relPath, noteFixture(relPath))
-    for (const relPath of screenshots) await writeBytes(root, relPath, pngFixture())
+    for (const [index, relPath] of screenshots.entries()) await writeBytes(root, relPath, pngFixture(1280, 720, index + 1))
     for (const relPath of logs) await writeText(root, relPath, logFixture({ packId: edition.packId, run }, relPath))
-    for (const relPath of saveSnapshots) await writeBytes(root, relPath, zipFixture())
+    for (const [index, relPath] of saveSnapshots.entries()) {
+      await writeBytes(root, relPath, zipFixture('save/level.dat', `fixture save snapshot ${index + 1}: ${relPath}\n`))
+    }
 
     await writeJson(root, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json', {
       schemaVersion: 'echo.skyrelay.gameplay-qa.manual.v1',
@@ -520,6 +528,7 @@ try {
   assert.ok(nativeEvidence.checked.supportingFiles[0].size > 100)
   assert.ok(nativeEvidence.checked.screenshots[0].size > 33)
   assert.match(nativeEvidence.checked.screenshots[0].sha256, /^[a-f0-9]{64}$/u)
+  assert.equal(new Set(nativeEvidence.checked.screenshots.map((screenshot) => screenshot.sha256)).size, 4)
   assert.deepEqual(nativeEvidence.checked.screenshots[0].dimensions, { width: 1280, height: 720 })
   assert.equal(nativeEvidence.checked.screenshots[0].idatChunks, 1)
   assert.ok(nativeEvidence.checked.screenshots[0].chunks >= 3)
@@ -527,6 +536,7 @@ try {
   assert.ok(nativeEvidence.checked.logs[0].lineCount >= 1)
   assert.deepEqual(nativeEvidence.checked.logs[0].provenanceMatches, ['packId', 'releaseTag', 'artifactAsset', 'artifactSha256', 'artifactSize'])
   assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 1)
+  assert.equal(new Set(nativeEvidence.checked.saveSnapshots.map((snapshot) => snapshot.sha256)).size, 3)
 
   const badClaimRoot = path.join(tmp, 'bad-claim-release-index')
   const badClaimWorkspace = path.join(tmp, 'bad-claim-workspace')
@@ -677,6 +687,32 @@ try {
     `${earlyGenerated.stdout}\n${earlyGenerated.stderr}`,
     /native manual evidence generatedAt must be at or after native manual evidence sessions\.signal_crown_completion\.endedAt/u,
   )
+
+  const duplicateScreenshotRoot = path.join(tmp, 'duplicate-screenshot-release-index')
+  const duplicateScreenshotWorkspace = path.join(tmp, 'duplicate-screenshot-workspace')
+  await writeRouteReport(duplicateScreenshotRoot)
+  await writeGameplayEvidence(duplicateScreenshotWorkspace)
+  await writeBytes(
+    path.join(duplicateScreenshotWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png',
+    pngFixture(1280, 720, 1),
+  )
+  const duplicateScreenshot = run(duplicateScreenshotRoot, duplicateScreenshotWorkspace, ['--require-release-ready'])
+  assert.equal(duplicateScreenshot.status, 1)
+  assert.match(`${duplicateScreenshot.stdout}\n${duplicateScreenshot.stderr}`, /native\.screenshots must contain unique file content/u)
+
+  const duplicateSaveRoot = path.join(tmp, 'duplicate-save-release-index')
+  const duplicateSaveWorkspace = path.join(tmp, 'duplicate-save-workspace')
+  await writeRouteReport(duplicateSaveRoot)
+  await writeGameplayEvidence(duplicateSaveWorkspace)
+  await writeBytes(
+    path.join(duplicateSaveWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip',
+    zipFixture('save/level.dat', 'fixture save snapshot 1: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip\n'),
+  )
+  const duplicateSave = run(duplicateSaveRoot, duplicateSaveWorkspace, ['--require-release-ready'])
+  assert.equal(duplicateSave.status, 1)
+  assert.match(`${duplicateSave.stdout}\n${duplicateSave.stderr}`, /native\.saveSnapshots must contain unique file content/u)
 
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
   const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')

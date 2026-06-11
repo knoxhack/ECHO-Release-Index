@@ -779,6 +779,18 @@ async function validateFileList({ root, label, values, minItems, requiredPattern
   return checked
 }
 
+function validateUniqueCheckedHashes({ label, records, blockers }) {
+  const seen = new Map()
+  for (const record of records) {
+    const existingPath = seen.get(record.sha256)
+    if (existingPath) {
+      blockers.push(`${label} must contain unique file content; ${record.path} matches ${existingPath}.`)
+    } else {
+      seen.set(record.sha256, record.path)
+    }
+  }
+}
+
 async function validateManualEvidence(args, edition, expectedArtifact, blockers) {
   const source = EVIDENCE_SOURCE_REPOS[edition]
   const root = evidenceRoot(args, edition)
@@ -850,6 +862,7 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
       validateMarkdownNote({ text, relPath, label, index, blockers: fileBlockers })
     },
   })
+  validateUniqueCheckedHashes({ label: `${edition}.supportingFiles`, records: result.checked.supportingFiles, blockers })
   result.checked.screenshots = await validateFileList({
     root,
     label: `${edition}.screenshots`,
@@ -870,6 +883,7 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
       return pngInfo
     },
   })
+  validateUniqueCheckedHashes({ label: `${edition}.screenshots`, records: result.checked.screenshots, blockers })
   result.checked.logs = await validateFileList({
     root,
     label: `${edition}.logs`,
@@ -895,6 +909,7 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
       })
     },
   })
+  validateUniqueCheckedHashes({ label: `${edition}.logs`, records: result.checked.logs, blockers })
   result.checked.saveSnapshots = await validateFileList({
     root,
     label: `${edition}.saveSnapshots`,
@@ -911,6 +926,7 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
       return zipInfo
     },
   })
+  validateUniqueCheckedHashes({ label: `${edition}.saveSnapshots`, records: result.checked.saveSnapshots, blockers })
 
   return result
 }
