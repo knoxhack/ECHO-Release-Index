@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "echo.skyrelay.edition-pack-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-11T11:37:28.453Z",
+  "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-download",
+  "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-smoke",
+  "editions": [
+    {
+      "repoName": "ECHO-Sky-Relay-Native-Edition",
+      "pack": "sky-relay-native-edition",
+      "releaseTag": "sky-relay-native-0.1.0-alpha",
+      "releaseDraft": true,
+      "manifestAsset": "sky-relay-native-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "sky-relay-native-edition-0.1.0.zip",
+      "artifactSha256": "22155f6ab42ee073248ea9ca30fed7c42bfa8443afd494293dc0bf3d05d02fdd",
+      "artifactSize": 39163200,
+      "topLevelChecksums": [
+        "sky-relay-native-edition-0.1.0.zip",
+        "echo-release.json",
+        "sky-relay-native-edition-alpha-0.1.0.pack.json",
+        "sky-relay-pack-build-report.json"
+      ],
+      "installedFiles": 12,
+      "verifiedAfterInstall": 12,
+      "repairedPath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+      "rolledBackPath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+      "verifiedAfterRollback": 12,
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-smoke\\ECHO-Sky-Relay-Native-Edition\\install"
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
+      "pack": "sky-relay-neoforge-edition",
+      "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
+      "releaseDraft": true,
+      "manifestAsset": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "sky-relay-neoforge-edition-0.1.0.zip",
+      "artifactSha256": "f7f1fb25e96a004cc85fcdc65da0e95f247d128018d7dc4695d095c8d7434068",
+      "artifactSize": 40132235,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+        "sky-relay-pack-build-report.json",
+        "sky-relay-neoforge-edition-0.1.0.zip"
+      ],
+      "installedFiles": 12,
+      "verifiedAfterInstall": 12,
+      "repairedPath": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
+      "rolledBackPath": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
+      "verifiedAfterRollback": 12,
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-smoke\\ECHO-Sky-Relay-NeoForge-Edition\\install"
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-Standalone-Edition",
+      "pack": "sky-relay-standalone-edition",
+      "releaseTag": "sky-relay-standalone-0.1.0-alpha",
+      "releaseDraft": true,
+      "manifestAsset": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "sky-relay-standalone-edition-0.1.0.zip",
+      "artifactSha256": "a423dd690a66c21eed5fdcbc2e4a6c2c5e9440464bb7342203ba54b25404309b",
+      "artifactSize": 40131817,
+      "topLevelChecksums": [
+        "sky-relay-pack-build-report.json",
+        "sky-relay-standalone-edition-0.1.0.zip",
+        "echo-release.json",
+        "sky-relay-standalone-edition-alpha-0.1.0.pack.json"
+      ],
+      "installedFiles": 12,
+      "verifiedAfterInstall": 12,
+      "repairedPath": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
+      "rolledBackPath": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
+      "verifiedAfterRollback": 12,
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-smoke\\ECHO-Sky-Relay-Standalone-Edition\\install"
+    }
+  ],
+  "gates": {
+    "downloadedDraftAssetsVerified": "passed",
+    "installFromPackZip": "passed",
+    "repairCorruptFile": "passed",
+    "rollbackSimulatedReplacement": "passed",
+    "realVersionUpdate": "blocked",
+    "electronLauncherEndToEnd": "blocked"
+  },
+  "blockers": [
+    "Only one Sky Relay pack version exists, so real version-to-version update remains blocked.",
+    "This smoke uses the Launcher pack manifest and archive contract directly; a desktop Electron install/update/repair/rollback pass is still required before catalog promotion."
+  ]
+}

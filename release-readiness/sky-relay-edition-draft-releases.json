@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "echo.skyrelay.edition-draft-releases.v1",
+  "generatedAt": "2026-06-11T07:10:58.2368659-04:00",
+  "project": {
+    "name": "ECHO: Sky Relay",
+    "packIds": [
+      "sky-relay-native-edition",
+      "sky-relay-neoforge-edition",
+      "sky-relay-standalone-edition"
+    ]
+  },
+  "releases": [
+    {
+      "packId": "sky-relay-native-edition",
+      "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "releaseTag": "sky-relay-native-0.1.0-alpha",
+      "releaseTitle": "Sky Relay Native Edition 0.1.0 Alpha",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/untagged-5f9217cc3d72b129c38a",
+      "draft": true,
+      "prerelease": true,
+      "targetCommitish": "main",
+      "downloadBack": {
+        "downloadDir": "tmp/sky-relay-edition-draft-download/ECHO-Sky-Relay-Native-Edition",
+        "assets": [
+          {
+            "name": "native-harness-driver-manifest.template.json",
+            "size": 1101,
+            "sha256": "b6caa117c45e8acc8fbd7a6a2e144ed4f914aa2b3670a48fe9c112ac1da1d949"
+          },
+          {
+            "name": "release-manifest.template.json",
+            "size": 1575,
+            "sha256": "537426873b56335d2eb86fbae9e3a04ac592f3f3235931732b0eaa99f5434955"
+          }
+        ]
+      }
+    },
+    {
+      "packId": "sky-relay-neoforge-edition",
+      "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
+      "releaseTitle": "Sky Relay NeoForge Edition 0.1.0 Alpha",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/untagged-b48f95f3aee09d089f3c",
+      "draft": true,
+      "prerelease": true,
+      "targetCommitish": "main",
+      "downloadBack": {
+        "downloadDir": "tmp/sky-relay-edition-draft-download/ECHO-Sky-Relay-NeoForge-Edition",
+        "assets": [
+          {
+            "name": "neoforge-harness-driver-manifest.template.json",
+            "size": 1118,
+            "sha256": "b8eba58f2dd511b4962b3cb2cf82503870bf606cf34f635811905eacac5ab34a"
+          },
+          {
+            "name": "release-manifest.template.json",
+            "size": 1570,
+            "sha256": "5f38f873f8d6bcdba2b9cd1adabb2fd3d6c2d0956ab8cd1e3f82ac53821d5575"
+          }
+        ]
+      }
+    },
+    {
+      "packId": "sky-relay-standalone-edition",
+      "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "releaseTag": "sky-relay-standalone-0.1.0-alpha",
+      "releaseTitle": "Sky Relay Standalone Edition 0.1.0 Alpha",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/untagged-e10509c02641c4b88f8f",
+      "draft": true,
+      "prerelease": true,
+      "targetCommitish": "main",
+      "downloadBack": {
+        "downloadDir": "tmp/sky-relay-edition-draft-download/ECHO-Sky-Relay-Standalone-Edition",
+        "assets": [
+          {
+            "name": "release-manifest.template.json",
+            "size": 1575,
+            "sha256": "498fbd8cf9260c1c16777b742128cea0ced835702f76cebb760cdf4215c1e8ea"
+          },
+          {
+            "name": "standalone-harness-driver-manifest.template.json",
+            "size": 1153,
+            "sha256": "a7ff5bb4763f26717d9f70e424d8f9a3dc664cfe0fd66a39156fa372f58fb6e3"
+          }
+        ]
+      }
+    }
+  ],
+  "gates": {
+    "editionRepositoriesCreated": "passed",
+    "editionManifestValidators": "passed",
+    "draftReleasesCreated": "passed",
+    "draftDownloadBack": "passed",
+    "packZipsBuilt": "not_started",
+    "releaseReadyPackManifests": "not_started",
+    "launcherInstallUpdateRepairRollback": "not_started"
+  },
+  "promotionBlockers": [
+    "Draft edition releases currently contain template manifests only; they do not include installable Sky Relay pack archives.",
+    "Release Index modpack entries must remain planned/warning until pack manifest and pack zip assets exist with stable public release URLs.",
+    "The Launcher can display Sky Relay preview cards, but install/update/repair/rollback cannot be validated until real pack assets exist.",
+    "Gameplay smoke evidence has not been produced for the first 30 minutes, first 2 hours, or Signal Crown completion."
+  ]
+}

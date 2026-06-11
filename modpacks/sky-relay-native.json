@@ -1,0 +1,30 @@
+{
+  "id": "sky-relay-native-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+  "releaseTag": "planned-sky-relay-native-0.1.0-alpha",
+  "commitSha": "5c1a101",
+  "artifacts": {},
+  "dependencies": [
+    {
+      "id": "echo-native-platform",
+      "kind": "runtime",
+      "version": ">=1.0.0"
+    },
+    {
+      "id": "echoskyrelayprotocol",
+      "kind": "addon",
+      "version": "0.1.0"
+    }
+  ],
+  "compatibility": [
+    "native",
+    "sky-relay"
+  ],
+  "trust": "source-linked",
+  "validation": "warning",
+  "notes": "Planned Sky Relay Native Edition. Keep warning until pack manifest and .echo-addon artifacts exist."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sky-relay-standalone-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "experimental",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+  "releaseTag": "planned-sky-relay-standalone-0.1.0-alpha",
+  "commitSha": "5c1a303",
+  "artifacts": {},
+  "dependencies": [
+    {
+      "id": "echo-standalone-runtime",
+      "kind": "runtime",
+      "version": ">=0.1.0"
+    },
+    {
+      "id": "echoskyrelayprotocol",
+      "kind": "addon",
+      "version": "0.1.0"
+    }
+  ],
+  "compatibility": [
+    "standalone",
+    "sky-relay"
+  ],
+  "trust": "source-linked",
+  "validation": "warning",
+  "notes": "Planned Sky Relay Standalone Edition. Keep warning until pack manifest and -standalone.jar artifacts exist."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "echoskyrelayprotocol",
+  "kind": "addon",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "planned-sky-relay-0.1.0-alpha",
+  "commitSha": "5c1a0de",
+  "artifacts": {},
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module",
+      "version": ">=1.0.0"
+    }
+  ],
+  "compatibility": [
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition"
+  ],
+  "trust": "source-linked",
+  "validation": "warning",
+  "notes": "Planned Sky Relay protocol addon. Keep warning until Native, NeoForge, Standalone, and sources artifacts are published with checksums and launcher install/update/repair/rollback evidence. Full module dependency requirements are declared in ECHO-Modules/addons/echoskyrelayprotocol/src/main/resources/META-INF/echo.mod.json; this catalog entry lists only dependencies already indexed in Release Index."
+}
