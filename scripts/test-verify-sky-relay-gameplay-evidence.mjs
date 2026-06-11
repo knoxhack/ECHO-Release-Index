@@ -171,10 +171,23 @@ function sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }) {
       },
     },
     {
+      id: 'save_reload_verification',
+      claim: 'saveReloadVerified',
+      startedAt: '2026-06-11T02:20:00Z',
+      endedAt: '2026-06-11T02:22:00Z',
+      durationMinutes: 2,
+      evidence: {
+        first30SaveSnapshot: find(saveSnapshots, /first[-_]?30[-_]?minutes/i),
+        first2HourSaveSnapshot: find(saveSnapshots, /first[-_]?2[-_]?hours/i),
+        signalCrownSaveSnapshot: find(saveSnapshots, /signal[-_]?crown/i),
+        clientLog,
+      },
+    },
+    {
       id: 'no_crash_review',
       claim: 'noCrashEvidence',
-      startedAt: '2026-06-11T02:20:00Z',
-      endedAt: '2026-06-11T02:21:00Z',
+      startedAt: '2026-06-11T02:22:00Z',
+      endedAt: '2026-06-11T02:23:00Z',
       durationMinutes: 1,
       evidence: {
         notes: find(supportingFiles, /no[-_]?crash/i),
@@ -345,11 +358,11 @@ try {
     'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
   )
   const missingSessionEvidence = JSON.parse(await fs.readFile(missingSessionEvidencePath, 'utf8'))
-  missingSessionEvidence.sessions = missingSessionEvidence.sessions.filter((session) => session.id !== 'first_2_hours')
+  missingSessionEvidence.sessions = missingSessionEvidence.sessions.filter((session) => session.id !== 'save_reload_verification')
   await fs.writeFile(missingSessionEvidencePath, `${JSON.stringify(missingSessionEvidence, null, 2)}\n`, 'utf8')
   const missingSession = run(missingSessionRoot, missingSessionWorkspace, ['--require-release-ready'])
   assert.equal(missingSession.status, 1)
-  assert.match(`${missingSession.stdout}\n${missingSession.stderr}`, /native manual evidence sessions must include first_2_hours/u)
+  assert.match(`${missingSession.stdout}\n${missingSession.stderr}`, /native manual evidence sessions must include save_reload_verification/u)
 
   const shortSessionRoot = path.join(tmp, 'short-session-release-index')
   const shortSessionWorkspace = path.join(tmp, 'short-session-workspace')

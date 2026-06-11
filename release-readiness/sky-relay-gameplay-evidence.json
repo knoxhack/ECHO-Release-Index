@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T16:35:31.125Z",
+  "generatedAt": "2026-06-11T16:42:24.036Z",
   "moduleId": "echoskyrelayprotocol",
   "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
   "manualEvidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
@@ -62,6 +62,17 @@
           "notes": "/(^|\\/)signal[-_]?crown[^/]*\\.md$/iu",
           "screenshot": "/(^|\\/)signal[-_]?crown[^/]*\\.png$/iu",
           "saveSnapshot": "/(^|\\/)signal[-_]?crown[^/]*\\.zip$/iu",
+          "clientLog": "/(^|\\/)client[^/]*\\.log$/iu"
+        }
+      },
+      {
+        "id": "save_reload_verification",
+        "claim": "saveReloadVerified",
+        "minDurationMinutes": 1,
+        "evidence": {
+          "first30SaveSnapshot": "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.zip$/iu",
+          "first2HourSaveSnapshot": "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.zip$/iu",
+          "signalCrownSaveSnapshot": "/(^|\\/)signal[-_]?crown[^/]*\\.zip$/iu",
           "clientLog": "/(^|\\/)client[^/]*\\.log$/iu"
         }
       },
@@ -266,10 +277,23 @@
           }
         },
         {
-          "id": "no_crash_review",
-          "claim": "noCrashEvidence",
+          "id": "save_reload_verification",
+          "claim": "saveReloadVerified",
           "startedAt": "1970-01-01T02:01:00Z",
           "endedAt": "1970-01-01T02:02:00Z",
+          "durationMinutes": 1,
+          "evidence": {
+            "first30SaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "first2HourSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "signalCrownSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
+            "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
+          }
+        },
+        {
+          "id": "no_crash_review",
+          "claim": "noCrashEvidence",
+          "startedAt": "1970-01-01T02:02:00Z",
+          "endedAt": "1970-01-01T02:03:00Z",
           "durationMinutes": 1,
           "evidence": {
             "notes": "fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
@@ -348,10 +372,23 @@
           }
         },
         {
-          "id": "no_crash_review",
-          "claim": "noCrashEvidence",
+          "id": "save_reload_verification",
+          "claim": "saveReloadVerified",
           "startedAt": "1970-01-01T02:01:00Z",
           "endedAt": "1970-01-01T02:02:00Z",
+          "durationMinutes": 1,
+          "evidence": {
+            "first30SaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "first2HourSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "signalCrownSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
+            "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
+          }
+        },
+        {
+          "id": "no_crash_review",
+          "claim": "noCrashEvidence",
+          "startedAt": "1970-01-01T02:02:00Z",
+          "endedAt": "1970-01-01T02:03:00Z",
           "durationMinutes": 1,
           "evidence": {
             "notes": "fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
@@ -430,10 +467,23 @@
           }
         },
         {
-          "id": "no_crash_review",
-          "claim": "noCrashEvidence",
+          "id": "save_reload_verification",
+          "claim": "saveReloadVerified",
           "startedAt": "1970-01-01T02:01:00Z",
           "endedAt": "1970-01-01T02:02:00Z",
+          "durationMinutes": 1,
+          "evidence": {
+            "first30SaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "first2HourSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "signalCrownSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
+            "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
+          }
+        },
+        {
+          "id": "no_crash_review",
+          "claim": "noCrashEvidence",
+          "startedAt": "1970-01-01T02:02:00Z",
+          "endedAt": "1970-01-01T02:03:00Z",
           "durationMinutes": 1,
           "evidence": {
             "notes": "fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
@@ -457,6 +507,7 @@
     "native manual evidence sessions.first_30_minutes must not use template timestamps.",
     "native manual evidence sessions.first_2_hours must not use template timestamps.",
     "native manual evidence sessions.signal_crown_completion must not use template timestamps.",
+    "native manual evidence sessions.save_reload_verification must not use template timestamps.",
     "native manual evidence sessions.no_crash_review must not use template timestamps.",
     "native manual evidence claim realFirst30Playthrough must be true.",
     "native manual evidence claim realFirst2HourPlaythrough must be true.",
@@ -482,6 +533,7 @@
     "neoforge manual evidence sessions.first_30_minutes must not use template timestamps.",
     "neoforge manual evidence sessions.first_2_hours must not use template timestamps.",
     "neoforge manual evidence sessions.signal_crown_completion must not use template timestamps.",
+    "neoforge manual evidence sessions.save_reload_verification must not use template timestamps.",
     "neoforge manual evidence sessions.no_crash_review must not use template timestamps.",
     "neoforge manual evidence claim realFirst30Playthrough must be true.",
     "neoforge manual evidence claim realFirst2HourPlaythrough must be true.",
@@ -507,6 +559,7 @@
     "standalone manual evidence sessions.first_30_minutes must not use template timestamps.",
     "standalone manual evidence sessions.first_2_hours must not use template timestamps.",
     "standalone manual evidence sessions.signal_crown_completion must not use template timestamps.",
+    "standalone manual evidence sessions.save_reload_verification must not use template timestamps.",
     "standalone manual evidence sessions.no_crash_review must not use template timestamps.",
     "standalone manual evidence claim realFirst30Playthrough must be true.",
     "standalone manual evidence claim realFirst2HourPlaythrough must be true.",
