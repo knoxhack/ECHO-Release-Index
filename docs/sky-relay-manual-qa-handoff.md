@@ -143,7 +143,9 @@ Save snapshots must be ZIP archives with at least one entry.
 Logs must not contain blocking crash or corruption signatures such as
 `crash report`, `fatal`, `uncaught exception`, `unhandled exception`,
 `exception in thread`, Java stack trace lines, `failed to load world`, or
-world/save corruption markers.
+world/save corruption markers. Logs must also include the same pack ID, release
+tag, artifact asset name, artifact SHA-256, and artifact byte size recorded in
+the `run` object.
 
 The central Release Index verifier records byte size and SHA-256 for every
 accepted notes, log, screenshot, and save file. Screenshot entries also record

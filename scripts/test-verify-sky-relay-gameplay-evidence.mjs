@@ -351,6 +351,19 @@ function sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }) {
   ]
 }
 
+function logFixture({ packId, run }, relPath) {
+  const kind = /launcher|pack/u.test(relPath) ? 'launcher install' : 'client playthrough'
+  return [
+    `Sky Relay ${kind} log`,
+    `Pack ID: ${packId}`,
+    `Release tag: ${run.releaseTag}`,
+    `Artifact asset: ${run.artifactAsset}`,
+    `Artifact SHA-256: ${run.artifactSha256}`,
+    `Artifact size: ${run.artifactSize}`,
+    'Status: completed without blocking crash',
+  ].join('\n')
+}
+
 async function writeBytes(root, relPath, value) {
   const filePath = path.join(root, relPath)
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -438,11 +451,6 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
       `${base}/saves/signal-crown-save.zip`,
     ]
 
-    for (const relPath of supportingFiles) await writeText(root, relPath, noteFixture(relPath))
-    for (const relPath of screenshots) await writeBytes(root, relPath, pngFixture())
-    for (const relPath of logs) await writeText(root, relPath)
-    for (const relPath of saveSnapshots) await writeBytes(root, relPath, zipFixture())
-
     const claims = {
       realFirst30Playthrough: true,
       realFirst2HourPlaythrough: true,
@@ -453,19 +461,26 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
       ...(options.claimsByEdition?.[edition.key] ?? {}),
     }
 
+    const run = {
+      tester: 'test fixture',
+      releaseTag: edition.releaseTag,
+      ...artifactByEdition[edition.key],
+      launcherChannel: 'alpha',
+      worldOrProfile: 'fixture-world',
+      installedFrom: 'ECHO Launcher',
+      startedAt: '2026-06-11T00:00:00Z',
+    }
+
+    for (const relPath of supportingFiles) await writeText(root, relPath, noteFixture(relPath))
+    for (const relPath of screenshots) await writeBytes(root, relPath, pngFixture())
+    for (const relPath of logs) await writeText(root, relPath, logFixture({ packId: edition.packId, run }, relPath))
+    for (const relPath of saveSnapshots) await writeBytes(root, relPath, zipFixture())
+
     await writeJson(root, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json', {
       schemaVersion: 'echo.skyrelay.gameplay-qa.manual.v1',
       packId: edition.packId,
       generatedAt: '2026-06-11T00:00:00Z',
-      run: {
-        tester: 'test fixture',
-        releaseTag: edition.releaseTag,
-        ...artifactByEdition[edition.key],
-        launcherChannel: 'alpha',
-        worldOrProfile: 'fixture-world',
-        installedFrom: 'ECHO Launcher',
-        startedAt: '2026-06-11T00:00:00Z',
-      },
+      run,
       claims,
       sessions: sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }),
       supportingFiles,
@@ -510,6 +525,7 @@ try {
   assert.ok(nativeEvidence.checked.screenshots[0].chunks >= 3)
   assert.equal(nativeEvidence.checked.logs[0].blockingSignatures, 0)
   assert.ok(nativeEvidence.checked.logs[0].lineCount >= 1)
+  assert.deepEqual(nativeEvidence.checked.logs[0].provenanceMatches, ['packId', 'releaseTag', 'artifactAsset', 'artifactSha256', 'artifactSize'])
   assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 1)
 
   const badClaimRoot = path.join(tmp, 'bad-claim-release-index')
@@ -654,6 +670,19 @@ try {
   const blockingLog = run(blockingLogRoot, blockingLogWorkspace, ['--require-release-ready'])
   assert.equal(blockingLog.status, 1)
   assert.match(`${blockingLog.stdout}\n${blockingLog.stderr}`, /blocking log signature.*crash report/u)
+
+  const missingLogProvenanceRoot = path.join(tmp, 'missing-log-provenance-release-index')
+  const missingLogProvenanceWorkspace = path.join(tmp, 'missing-log-provenance-workspace')
+  await writeRouteReport(missingLogProvenanceRoot)
+  await writeGameplayEvidence(missingLogProvenanceWorkspace)
+  await writeText(
+    path.join(missingLogProvenanceWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log',
+    'Sky Relay launcher install log\nStatus: completed without blocking crash\n',
+  )
+  const missingLogProvenance = run(missingLogProvenanceRoot, missingLogProvenanceWorkspace, ['--require-release-ready'])
+  assert.equal(missingLogProvenance.status, 1)
+  assert.match(`${missingLogProvenance.stdout}\n${missingLogProvenance.stderr}`, /missing required provenance artifactSha256/u)
 
   const incompletePngRoot = path.join(tmp, 'incomplete-png-release-index')
   const incompletePngWorkspace = path.join(tmp, 'incomplete-png-workspace')
