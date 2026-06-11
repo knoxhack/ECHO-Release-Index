@@ -208,6 +208,8 @@ node scripts\verify-sky-relay-gameplay-evidence.mjs --write
 node scripts\verify-sky-relay-public-alpha-readiness.mjs --require-release-ready
 node scripts\verify-sky-relay-public-alpha-readiness.mjs --write
 node scripts\generate-sky-relay-manual-gameplay-work-order.mjs --write
+node scripts\promote-sky-relay-public-alpha.mjs
+node scripts\promote-sky-relay-public-alpha.mjs --write
 node scripts\validate-index.mjs --strict
 node scripts\sync-public-alpha-index.mjs --check
 ```
@@ -234,6 +236,10 @@ The manual gameplay work-order generator turns the current gameplay evidence
 report into `release-readiness/sky-relay-manual-gameplay-work-order.json` and
 `docs/sky-relay-manual-gameplay-work-order.md`, listing the exact remaining
 claim, session, note, screenshot, log, and save-snapshot tasks per edition.
+The Sky Relay promotion script is dry-run by default and refuses to write
+catalog approvals unless the public-alpha readiness report is `PASS`, the
+gameplay evidence report is `PASS`, and the manual gameplay work order is
+`COMPLETE`.
 
 ## Promotion Boundary
 
