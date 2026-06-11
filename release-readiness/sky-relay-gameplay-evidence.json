@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T20:16:47.458Z",
+  "generatedAt": "2026-06-11T20:31:02.855Z",
   "moduleId": "echoskyrelayprotocol",
   "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
   "editionPackAssets": "release-readiness/sky-relay-edition-pack-assets.json",
@@ -10,7 +10,7 @@
     "releaseIndex": {
       "repository": "knoxhack/ECHO-Release-Index",
       "workspaceDir": "ECHO-Release-Index",
-      "commit": "530784928194976983537313905a9f927658b66a",
+      "commit": "301461da3d03986593cd47229f8b7f05d9ffa661",
       "branch": "feature/sky-relay-protocol",
       "dirty": true,
       "cleanForEvidence": false,
@@ -29,6 +29,7 @@
         " M scripts/test-promote-ashfall-native-catalog.mjs",
         " M scripts/test-publish-public-alpha.mjs",
         "?? addons/echoopenlandsprotocol.json",
+        "?? docs/sky-relay-manual-gameplay-work-order.md",
         "?? modpacks/openlands-native.json",
         "?? modpacks/openlands-neoforge.json",
         "?? modpacks/openlands-standalone.json",
@@ -38,6 +39,7 @@
         "?? release-readiness/ashfall-draft-download.json",
         "?? release-readiness/ashfall-native-public-alpha.json",
         "?? release-readiness/ashfall-rc-smoke.json",
+        "?? release-readiness/sky-relay-manual-gameplay-work-order.json",
         "?? scripts/download-ashfall-draft-release.mjs",
         "?? scripts/test-download-ashfall-draft-release.mjs",
         "?? scripts/test-verify-ashfall-artifact-truth.mjs",
@@ -47,7 +49,9 @@
       ],
       "ignoredStatusLines": [
         " M release-readiness/sky-relay-gameplay-evidence.json",
-        " M release-readiness/sky-relay-public-alpha-readiness.json"
+        " M release-readiness/sky-relay-public-alpha-readiness.json",
+        "?? docs/sky-relay-manual-gameplay-work-order.md",
+        "?? release-readiness/sky-relay-manual-gameplay-work-order.json"
       ],
       "blockingStatusLines": [
         " M PUBLIC_ALPHA_RELEASE_STATUS.md",
