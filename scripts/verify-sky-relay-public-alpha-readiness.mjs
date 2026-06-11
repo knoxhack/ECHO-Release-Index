@@ -393,6 +393,10 @@ function isSha256(value) {
   return typeof value === 'string' && /^[a-f0-9]{64}$/u.test(value)
 }
 
+function isGitCommit(value) {
+  return typeof value === 'string' && /^[a-f0-9]{40}$/u.test(value)
+}
+
 function checkedPathSet(records) {
   return new Set((Array.isArray(records) ? records : []).map((record) => normalizeRel(record?.path ?? '')))
 }
@@ -486,6 +490,40 @@ function requireDetailedGameplayEvidence(item, editionKey, evidence) {
   requireGameplaySessionCoverage(item, editionKey, evidence)
 }
 
+function requireGameplaySourceRevision(item, report, label, revision, expected) {
+  requireCondition(item, Boolean(revision), `${label} source revision is recorded`, `${label} source revision must be recorded`)
+  if (!revision) return
+  if (expected.repository) {
+    requireCondition(item, revision.repository === expected.repository, `${label} source repository is recorded`, `${label} source repository must be ${expected.repository}`)
+  }
+  if (expected.workspaceDir) {
+    requireCondition(item, revision.workspaceDir === expected.workspaceDir, `${label} source workspace is recorded`, `${label} source workspaceDir must be ${expected.workspaceDir}`)
+  }
+  requireCondition(item, isGitCommit(revision.commit), `${label} source commit is recorded`, `${label} source commit must be a 40-character Git SHA`)
+  requireCondition(item, typeof revision.branch === 'string' && revision.branch.trim() !== '', `${label} source branch is recorded`, `${label} source branch must be recorded`)
+  requireCondition(item, typeof revision.dirty === 'boolean', `${label} source dirty state is recorded`, `${label} source dirty state must be recorded`)
+  requireCondition(item, Array.isArray(revision.statusLines), `${label} source status lines are recorded`, `${label} source statusLines must be an array`)
+  if (report.status === 'PASS') {
+    requireCondition(item, revision.dirty === false, `${label} source revision is clean`, `${label} source revision must be clean for PASS`)
+  }
+}
+
+function requireGameplaySourceRevisions(item, report) {
+  requireCondition(item, Boolean(report.sourceRevisions), 'gameplay evidence report includes source revisions', 'gameplay evidence report must include sourceRevisions')
+  const revisions = report.sourceRevisions
+  if (!revisions) return
+  requireGameplaySourceRevision(item, report, 'gameplay evidence Release Index', revisions.releaseIndex, {
+    repository: 'knoxhack/ECHO-Release-Index',
+    workspaceDir: 'ECHO-Release-Index',
+  })
+  for (const edition of EDITIONS) {
+    requireGameplaySourceRevision(item, report, `gameplay evidence ${edition.key}`, revisions.editions?.[edition.key], {
+      repository: `knoxhack/${edition.repoDir}`,
+      workspaceDir: edition.repoDir,
+    })
+  }
+}
+
 function requireGameplayEvidenceReport(item, report, editionPackAssets) {
   requireReport(item, report, 'gameplay evidence report', 'echo.skyrelay.gameplay-evidence.v1')
   if (!report) return
@@ -500,6 +538,7 @@ function requireGameplayEvidenceReport(item, report, editionPackAssets) {
   requireCondition(item, report.routeContractReport === REPORTS.gameplayRouteSmoke, 'gameplay evidence report references the route smoke report', `gameplay evidence report routeContractReport must be ${REPORTS.gameplayRouteSmoke}`)
   requireCondition(item, report.editionPackAssets === REPORTS.editionPackAssets, 'gameplay evidence report references the edition pack assets report', `gameplay evidence report editionPackAssets must be ${REPORTS.editionPackAssets}`)
   requireCondition(item, report.manualEvidencePath === 'fixtures/sky-relay/gameplay-qa/manual-evidence.json', 'gameplay evidence report manual evidence path is recorded', 'gameplay evidence report manualEvidencePath must be fixtures/sky-relay/gameplay-qa/manual-evidence.json')
+  requireGameplaySourceRevisions(item, report)
   for (const gate of REQUIRED_GAMEPLAY_EVIDENCE_GATES) {
     requireGate(item, report, 'gameplay evidence report', gate)
   }

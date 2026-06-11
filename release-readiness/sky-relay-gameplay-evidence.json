@@ -1,11 +1,84 @@
 {
   "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T19:22:26.271Z",
+  "generatedAt": "2026-06-11T19:52:18.545Z",
   "moduleId": "echoskyrelayprotocol",
   "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
   "editionPackAssets": "release-readiness/sky-relay-edition-pack-assets.json",
   "manualEvidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+  "sourceRevisions": {
+    "releaseIndex": {
+      "repository": "knoxhack/ECHO-Release-Index",
+      "workspaceDir": "ECHO-Release-Index",
+      "commit": "505e4acbb5da4a7719b835082e927a36c8c3ecfb",
+      "branch": "feature/sky-relay-protocol",
+      "dirty": true,
+      "statusLines": [
+        " M PUBLIC_ALPHA_RELEASE_STATUS.md",
+        " M README.md",
+        " M channels/alpha/launcher-channel.json",
+        " M channels/alpha/release-manifest.json",
+        " M channels/alpha/repositories.json",
+        " M docs/sky-relay-manual-qa-handoff.md",
+        " M release-readiness/sky-relay-gameplay-evidence.json",
+        " M release-readiness/sky-relay-public-alpha-readiness.json",
+        " M scripts/generate-ashfall-rc-smoke.mjs",
+        " M scripts/promote-ashfall-native-catalog.mjs",
+        " M scripts/publish-public-alpha.mjs",
+        " M scripts/test-generate-ashfall-rc-smoke.mjs",
+        " M scripts/test-promote-ashfall-native-catalog.mjs",
+        " M scripts/test-publish-public-alpha.mjs",
+        " M scripts/test-verify-sky-relay-public-alpha-readiness.mjs",
+        " M scripts/verify-sky-relay-gameplay-evidence.mjs",
+        " M scripts/verify-sky-relay-public-alpha-readiness.mjs",
+        "?? addons/echoopenlandsprotocol.json",
+        "?? modpacks/openlands-native.json",
+        "?? modpacks/openlands-neoforge.json",
+        "?? modpacks/openlands-standalone.json",
+        "?? packs/openlands-native-edition.json",
+        "?? packs/openlands-neoforge-edition.json",
+        "?? packs/openlands-standalone-edition.json",
+        "?? release-readiness/ashfall-draft-download.json",
+        "?? release-readiness/ashfall-native-public-alpha.json",
+        "?? release-readiness/ashfall-rc-smoke.json",
+        "?? scripts/download-ashfall-draft-release.mjs",
+        "?? scripts/test-download-ashfall-draft-release.mjs",
+        "?? scripts/test-verify-ashfall-artifact-truth.mjs",
+        "?? scripts/test-verify-ashfall-release-readiness.mjs",
+        "?? scripts/verify-ashfall-artifact-truth.mjs",
+        "?? scripts/verify-ashfall-release-readiness.mjs"
+      ]
+    },
+    "editions": {
+      "native": {
+        "source": "sky-relay-native",
+        "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+        "workspaceDir": "ECHO-Sky-Relay-Native-Edition",
+        "commit": "d2b0e38d3a9ac4a49601d3bd735f7cbf92dc1d0e",
+        "branch": "feature/sky-relay-gameplay-evidence",
+        "dirty": false,
+        "statusLines": []
+      },
+      "neoforge": {
+        "source": "sky-relay-neoforge",
+        "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+        "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition",
+        "commit": "f9d7e1a2d1953e901953887c642478f56bdd728c",
+        "branch": "feature/sky-relay-gameplay-evidence",
+        "dirty": false,
+        "statusLines": []
+      },
+      "standalone": {
+        "source": "sky-relay-standalone",
+        "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+        "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition",
+        "commit": "f1051cf95dd1a3207ca78177236ae1b6f9ff26dc",
+        "branch": "feature/sky-relay-gameplay-evidence",
+        "dirty": false,
+        "statusLines": []
+      }
+    }
+  },
   "requiredEvidence": {
     "editions": [
       {

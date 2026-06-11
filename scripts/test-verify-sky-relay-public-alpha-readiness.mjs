@@ -226,6 +226,37 @@ function shaFixture(seed) {
   return seed.toString(16).padStart(2, '0').repeat(32).slice(0, 64)
 }
 
+function gitShaFixture(seed) {
+  return seed.toString(16).padStart(2, '0').repeat(20).slice(0, 40)
+}
+
+function sourceRevisionFixture(metadata, seed) {
+  return {
+    ...metadata,
+    commit: gitShaFixture(seed),
+    branch: 'feature/sky-relay-protocol',
+    dirty: false,
+    statusLines: [],
+  }
+}
+
+function sourceRevisionsFixture() {
+  return {
+    releaseIndex: sourceRevisionFixture({
+      repository: 'knoxhack/ECHO-Release-Index',
+      workspaceDir: 'ECHO-Release-Index',
+    }, 1),
+    editions: Object.fromEntries(editions.map(([key, repoDir], index) => [
+      key,
+      sourceRevisionFixture({
+        source: `sky-relay-${key}`,
+        repository: `knoxhack/${repoDir}`,
+        workspaceDir: repoDir,
+      }, index + 2),
+    ])),
+  }
+}
+
 function evidencePaths() {
   const base = 'fixtures/sky-relay/gameplay-qa/evidence'
   return {
@@ -394,6 +425,7 @@ function gameplayEvidenceReport(status = 'PASS') {
     routeContractReport: 'release-readiness/sky-relay-gameplay-route-smoke.json',
     editionPackAssets: 'release-readiness/sky-relay-edition-pack-assets.json',
     manualEvidencePath: 'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+    sourceRevisions: sourceRevisionsFixture(),
     requiredEvidence: {
       packArtifacts: artifactByEdition,
     },
@@ -596,6 +628,21 @@ try {
   const thinChecked = run(thinCheckedRoot, thinCheckedWorkspace, ['--require-release-ready'])
   assert.equal(thinChecked.status, 1)
   assert.match(thinChecked.stdout, /gameplay evidence native screenshots\[0\] must record dimensions at least 640x360/u)
+
+  const dirtySourceRoot = path.join(tmp, 'dirty-source-release-index')
+  const dirtySourceWorkspace = path.join(tmp, 'dirty-source-workspace')
+  const dirtySourceReport = JSON.parse(JSON.stringify(gameplayEvidenceReport('PASS')))
+  dirtySourceReport.sourceRevisions.editions.native.dirty = true
+  dirtySourceReport.sourceRevisions.editions.native.statusLines = [' M fixtures/sky-relay/gameplay-qa/manual-evidence.json']
+  await writeModuleFixture(dirtySourceWorkspace)
+  await writeEditionRepos(dirtySourceWorkspace)
+  await writeCatalogFiles(dirtySourceRoot)
+  await writeReports(dirtySourceRoot, {
+    gameplayReport: dirtySourceReport,
+  })
+  const dirtySource = run(dirtySourceRoot, dirtySourceWorkspace, ['--require-release-ready'])
+  assert.equal(dirtySource.status, 1)
+  assert.match(dirtySource.stdout, /gameplay evidence native source revision must be clean for PASS/u)
 
   const blockedRoot = path.join(tmp, 'blocked-release-index')
   const blockedWorkspace = path.join(tmp, 'blocked-workspace')

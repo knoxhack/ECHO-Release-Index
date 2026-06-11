@@ -219,8 +219,11 @@ blocker list when status is `PASS`, and pack artifact names, hashes, and sizes
 that match `release-readiness/sky-relay-edition-pack-assets.json`. A `PASS`
 gameplay report must also preserve detailed checked-artifact metadata from the
 gameplay verifier, including session evidence coverage, PNG dimensions and pixel
-variation, log provenance and session markers, and structured save ZIP state. A
-stub report with only `status: PASS` is not release-ready.
+variation, log provenance and session markers, structured save ZIP state, and
+Git source revisions for Release Index plus all three edition repos. When status
+is `PASS`, those source revisions must be clean so the captured evidence can be
+traced back to committed repository state. A stub report with only
+`status: PASS` is not release-ready.
 
 ## Promotion Boundary
 

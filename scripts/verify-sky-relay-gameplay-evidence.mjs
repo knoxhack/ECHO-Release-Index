@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { spawnSync } from 'node:child_process'
 import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -580,6 +581,31 @@ function matchesAny(values, pattern) {
 
 function normalizeRel(value) {
   return String(value).replace(/\\/g, '/')
+}
+
+function gitOutput(root, args, options = {}) {
+  const result = spawnSync('git', ['-C', root, ...args], {
+    encoding: 'utf8',
+    windowsHide: true,
+  })
+  if (result.status !== 0) return null
+  const output = result.stdout.replace(/\r?\n$/u, '')
+  return options.trim === false ? output : output.trim()
+}
+
+function repositoryRevision(root, metadata = {}) {
+  const commit = gitOutput(root, ['rev-parse', 'HEAD'])
+  const branch = gitOutput(root, ['rev-parse', '--abbrev-ref', 'HEAD'])
+  const status = gitOutput(root, ['status', '--short', '--untracked-files=all'], { trim: false })
+  const statusLines = status ? status.split(/\r?\n/u).filter(Boolean) : []
+  return {
+    ...metadata,
+    workspaceDir: path.basename(root),
+    commit,
+    branch,
+    dirty: statusLines.length > 0,
+    statusLines,
+  }
 }
 
 function hasPath(values, relPath) {
@@ -1257,6 +1283,18 @@ async function buildReport(args) {
     routeContractReport: args.routeReport,
     editionPackAssets: args.editionPackAssets,
     manualEvidencePath: args.manualEvidence,
+    sourceRevisions: {
+      releaseIndex: repositoryRevision(path.resolve(args.root), {
+        repository: 'knoxhack/ECHO-Release-Index',
+      }),
+      editions: Object.fromEntries(Object.entries(EVIDENCE_SOURCE_REPOS).map(([edition, source]) => [
+        edition,
+        repositoryRevision(evidenceRoot(args, edition), {
+          source: source.source,
+          repository: source.repository,
+        }),
+      ])),
+    },
     requiredEvidence: {
       editions: Object.values(EVIDENCE_SOURCE_REPOS).map(({ source, repository, workspaceDir }) => ({ source, repository, workspaceDir })),
       claims: REQUIRED_CLAIMS,
