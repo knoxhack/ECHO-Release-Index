@@ -26,21 +26,26 @@ async function writeFixtureRuntime(workspaceRoot) {
   await fs.writeFile(path.join(publicAlpha, 'checksums.txt'), 'fixture  checksums.txt\n')
 }
 
-function runBuilder(workspaceRoot, assetRoot) {
+function runBuilder(workspaceRoot, assetRoot, options = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, [
+    const childArgs = [
       builder,
       '--only',
-      'ECHO-Standalone-Runtime',
-      '--skip-build',
+      options.only ?? 'ECHO-Standalone-Runtime',
+    ]
+    if (options.skipBuild ?? true) childArgs.push('--skip-build')
+    childArgs.push(
       '--workspace-root',
       workspaceRoot,
       '--asset-root',
       assetRoot,
       '--strict-assets',
-    ], {
+      ...(options.extraArgs ?? []),
+    )
+    const child = spawn(process.execPath, childArgs, {
       cwd: repoRoot,
       windowsHide: true,
+      env: { ...process.env, ...(options.env ?? {}) },
       stdio: ['ignore', 'pipe', 'pipe'],
     })
     let stdout = ''
@@ -96,6 +101,141 @@ async function buildOnce(root, workspaceRoot, label) {
   return archiveDigest
 }
 
+async function writeFixtureModuleGenerator(workspaceRoot) {
+  const scriptsDir = path.join(workspaceRoot, 'ECHO-Modules', 'scripts')
+  await fs.mkdir(scriptsDir, { recursive: true })
+  await fs.writeFile(path.join(scriptsDir, 'generate-module-release.mjs'), `
+import { promises as fs } from 'node:fs'
+import path from 'node:path'
+
+const modules = []
+let out = 'dist/echo-module-release'
+let releaseId = 'fixture'
+let packageFromSource = false
+for (let index = 2; index < process.argv.length; index += 1) {
+  const arg = process.argv[index]
+  if (arg === '--module') modules.push(process.argv[++index])
+  else if (arg === '--out') out = process.argv[++index]
+  else if (arg === '--release-id') releaseId = process.argv[++index]
+  else if (arg === '--package-from-source') packageFromSource = true
+}
+if (!packageFromSource) {
+  console.error('compiled runtime jars are required for fixture modules')
+  process.exit(2)
+}
+await fs.rm(out, { recursive: true, force: true })
+await fs.mkdir(out, { recursive: true })
+const release = { schemaVersion: 'echo.module.release.v1', releaseId, modules: [] }
+for (const moduleId of modules) {
+  const version = '1.0.0'
+  const moduleDir = path.join(out, moduleId)
+  await fs.mkdir(moduleDir, { recursive: true })
+  const filenames = [
+    \`\${moduleId}-\${version}.echo-addon\`,
+    \`\${moduleId}-\${version}-neoforge.jar\`,
+    \`\${moduleId}-\${version}-standalone.jar\`,
+    \`\${moduleId}-\${version}-sources.jar\`,
+  ]
+  for (const filename of filenames) {
+    await fs.writeFile(path.join(moduleDir, filename), \`fixture artifact \${filename}\\n\`)
+  }
+  await fs.mkdir(path.join(moduleDir, 'META-INF'), { recursive: true })
+  await fs.writeFile(path.join(moduleDir, 'META-INF', 'echo.mod.json'), JSON.stringify({ id: moduleId, version }))
+  release.modules.push({
+    moduleId,
+    version,
+    artifacts: filenames.map((filename) => ({ filename, buildMode: filename.endsWith('-sources.jar') ? undefined : 'source-packaged' })),
+  })
+}
+await fs.writeFile(path.join(out, 'echo-release.json'), JSON.stringify(release, null, 2))
+`, 'utf8')
+}
+
+async function verifyModuleBuilderSourcePackagingGuard(root) {
+  const workspaceRoot = path.join(root, 'module-workspace')
+  await writeFixtureModuleGenerator(workspaceRoot)
+  await assert.rejects(
+    () => runBuilder(workspaceRoot, path.join(root, 'module-assets-strict'), {
+      only: 'ECHO-Modules',
+      skipBuild: false,
+    }),
+    /builder exited 1|builder exited 2/u,
+  )
+
+  const assetRoot = path.join(root, 'module-assets-source')
+  await runBuilder(workspaceRoot, assetRoot, {
+    only: 'ECHO-Modules',
+    skipBuild: false,
+    extraArgs: ['--allow-source-packaged-modules'],
+  })
+  const stage = path.join(assetRoot, 'ECHO-Modules')
+  const staged = await fs.readdir(stage)
+  assert.ok(staged.includes('echo-release.json'), 'module release metadata must be staged')
+  assert.ok(staged.includes('echocore-1.0.0.echo-addon'), 'expected manifest module artifact must be staged')
+  assert.ok(staged.includes('echoashfallprotocol-1.0.0.echo-addon'), 'Ashfall protocol module artifact must be staged')
+  assert.ok(staged.includes('echoplatformcore-1.0.0-neoforge.jar'), 'required dependency NeoForge artifact must be staged')
+  assert.ok(staged.includes('echoruntimeguard-1.0.0.echo-addon'), 'runtime guard native artifact must be staged')
+  assert.ok(staged.includes('echolens-1.0.0.echo-addon'), 'Lens native artifact must be staged')
+  assert.ok(staged.includes('echopresencelink-1.0.0.echo-addon'), 'PresenceLink native artifact must be staged')
+  assert.ok(staged.includes('echoterminal-1.0.0.echo-addon'), 'Terminal native artifact must be staged')
+  assert.ok(!staged.includes('echo.mod.json'), 'module descriptor sidecars must not be flattened into release assets')
+  const checksums = await fs.readFile(path.join(stage, 'checksums.txt'), 'utf8')
+  assert.match(checksums, /echoashfallprotocol-1\.0\.0\.echo-addon/u)
+  assert.doesNotMatch(checksums, /META-INF\/echo\.mod\.json/u)
+}
+
+async function writeFixtureNativeWorkspace(workspaceRoot) {
+  await fs.mkdir(path.join(workspaceRoot, 'ECHO-Ashfall-Native-Edition'), { recursive: true })
+}
+
+async function verifyNativeBuilderUsesEchoAddons(root) {
+  const workspaceRoot = path.join(root, 'native-workspace')
+  await writeFixtureNativeWorkspace(workspaceRoot)
+  await writeFixtureModuleGenerator(workspaceRoot)
+
+  const assetRoot = path.join(root, 'native-assets')
+  await runBuilder(workspaceRoot, assetRoot, {
+    only: 'ECHO-Modules',
+    skipBuild: false,
+    extraArgs: ['--allow-source-packaged-modules'],
+  })
+  const nativePlatformStage = path.join(assetRoot, 'ECHO-Native-Platform')
+  await fs.mkdir(nativePlatformStage, { recursive: true })
+  const legacyZipName = 'echo-native-product-1.0.0-existing-layout-rc.zip'
+  await fs.writeFile(path.join(nativePlatformStage, legacyZipName), 'platform placeholder zip')
+
+  await runBuilder(workspaceRoot, assetRoot, {
+    only: 'ECHO-Ashfall-Native-Edition',
+    skipBuild: false,
+  })
+
+  const stage = path.join(assetRoot, 'ECHO-Ashfall-Native-Edition')
+  const releaseZipName = 'ashfall-native-edition-0.1.0.zip'
+  const zipEntries = readZipEntryNames(await fs.readFile(path.join(stage, releaseZipName)))
+  assert.ok(zipEntries.includes('addons/echocore-1.0.0.echo-addon'), 'Native pack zip must include ECHO addon artifacts')
+  assert.ok(zipEntries.includes('addons/echoashfallprotocol-1.0.0.echo-addon'), 'Native pack zip must include Ashfall protocol addon')
+  assert.ok(!zipEntries.some((entry) => /^mods\//u.test(entry)), 'Native pack zip must not contain NeoForge mod jars')
+  await assert.rejects(
+    () => fs.access(path.join(stage, legacyZipName)),
+    /ENOENT/u,
+    'Native pack staging must not keep using the Native Platform placeholder zip name',
+  )
+  const packManifest = JSON.parse(await fs.readFile(path.join(stage, 'ashfall-native-edition-alpha-0.1.0.pack.json'), 'utf8'))
+  assert.equal(packManifest.pack, 'ashfall-native-edition')
+  assert.equal(packManifest.moduleArtifactFamily, 'echo-addon')
+  assert.equal(packManifest.loader, undefined, 'Native pack manifest must not include NeoForge loader metadata')
+  assert.ok(packManifest.files.every((file) => /^addons\/.+\.echo-addon$/u.test(file.path)), 'Native manifest files must be ECHO addons')
+  assert.ok(packManifest.moduleRequirements.every((requirement) => requirement.artifactFamily === 'echo-addon'), 'Native module requirements must pin .echo-addon artifacts')
+  const manifest = JSON.parse(await fs.readFile(path.join(stage, 'manifest.json'), 'utf8'))
+  assert.ok(manifest.assets.length >= 3, 'Native public-alpha manifest must list generated assets')
+  assert.ok(manifest.assets.some((asset) => asset.name === releaseZipName), 'Native manifest must include the pack zip')
+  assert.ok(manifest.assets.some((asset) => asset.name === 'ashfall-native-edition-alpha-0.1.0.pack.json'), 'Native manifest must include the pack sidecar')
+  assert.ok(manifest.assets.some((asset) => asset.name === 'echo-release.json'), 'Native manifest must include release metadata')
+  const checksums = await fs.readFile(path.join(stage, 'checksums.txt'), 'utf8')
+  assert.match(checksums, /ashfall-native-edition-0\.1\.0\.zip/u)
+  assert.doesNotMatch(checksums, /echo-native-product/u)
+}
+
 const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-public-alpha-build-test-'))
 try {
   const workspaceRoot = path.join(root, 'workspace')
@@ -103,6 +243,8 @@ try {
   const first = await buildOnce(root, workspaceRoot, 'assets-a')
   const second = await buildOnce(root, workspaceRoot, 'assets-b')
   assert.equal(second, first, 'standalone runtime archive must be deterministic')
+  await verifyModuleBuilderSourcePackagingGuard(root)
+  await verifyNativeBuilderUsesEchoAddons(root)
   console.log('Public alpha asset builder fixtures passed.')
 } finally {
   await fs.rm(root, { recursive: true, force: true })

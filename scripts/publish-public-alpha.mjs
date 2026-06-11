@@ -18,6 +18,13 @@ import {
 
 const extraArgs = new Map([
   ['--publish', (args) => { args.dryRun = false; args.publish = true }],
+  ['--only', (args, next) => {
+    args.only ??= new Set()
+    next().split(',').map((item) => item.trim()).filter(Boolean).forEach((item) => args.only.add(item))
+  }],
+  ['--draft', (args) => { args.draft = true }],
+  ['--convert-existing-public-release-to-draft', (args) => { args.convertExistingPublicReleaseToDraft = true }],
+  ['--prune-unlisted', (args) => { args.pruneUnlisted = true }],
   ['--make-public', (args) => { args.makePublic = true }],
   ['--write-manifest', (args) => { args.writeManifest = true }],
   ['--token-env', (args, next) => { args.tokenEnv = next() }],
@@ -31,7 +38,12 @@ Publishes the public alpha manifest to GitHub Releases. Dry run is the default.
 Options:
   --manifest <path>        Manifest to publish. Defaults to ${DEFAULT_MANIFEST}.
   --asset-root <path>      Asset staging root. Defaults to ${DEFAULT_ASSET_ROOT}.
+  --only <repo[,repo]>     Limit publishing to one or more repository names.
   --publish                Perform GitHub writes. Without this, no writes occur.
+  --draft                  Create or update releases as GitHub draft releases.
+  --convert-existing-public-release-to-draft
+                           Allow --draft to convert an existing public release back to draft.
+  --prune-unlisted         Delete live release assets that are not present in local staging.
   --make-public            Patch manifest repositories to private:false.
   --strict-assets          Fail if any manifest asset is missing from staging or live release.
   --write-manifest         Rewrite manifest release IDs/assets from live GitHub state after publish.
@@ -120,7 +132,7 @@ async function ensureRelease(owner, repository, tag, repo, args, authToken, resu
     target_commitish: repo?.default_branch || 'main',
     name: `${repository.product || repository.repoName} ${tag}`,
     body: releaseBody(repository, tag),
-    draft: false,
+    draft: Boolean(args.draft),
     prerelease: true,
     make_latest: 'false',
   }
@@ -132,7 +144,7 @@ async function ensureRelease(owner, repository, tag, repo, args, authToken, resu
         tag_name: tag,
         html_url: `https://github.com/${owner}/${repository.repoName}/releases/tag/${encodeURIComponent(tag)}`,
         upload_url: `https://uploads.github.com/repos/${owner}/${repository.repoName}/releases/dry-run/assets{?name,label}`,
-        draft: false,
+        draft: Boolean(args.draft),
         prerelease: true,
         assets: [],
       }
@@ -140,6 +152,10 @@ async function ensureRelease(owner, repository, tag, repo, args, authToken, resu
     release = await githubJson(`/repos/${owner}/${repository.repoName}/releases`, { method: 'POST', token: authToken, body })
     result.actions.push({ action: 'create-release', id: release.id, tag })
   } else {
+    if (args.draft && release.draft === false && !args.convertExistingPublicReleaseToDraft) {
+      result.actions.push({ action: 'refuse-public-to-draft-conversion', id: release.id, tag })
+      throw new Error(`${repository.repoName} release ${tag} is already public. Refusing to convert it back to draft without --convert-existing-public-release-to-draft.`)
+    }
     if (args.dryRun) {
       result.actions.push({ action: 'update-release', id: release.id, dryRun: true })
     } else {
@@ -168,13 +184,37 @@ async function listAssets(owner, repoName, release, authToken) {
 }
 
 async function uploadAssets(owner, repository, release, args, authToken, result) {
-  const staged = await stagedAssets(args.assetRootPath, repository)
+  const allStaged = await stagedAssets(args.assetRootPath, repository)
+  const publishNames = new Set(expectedNamesForPublish(repository))
+  const staged = repository.repoName === 'ECHO-Ashfall-Native-Edition'
+    ? allStaged.filter((asset) => publishNames.has(asset.name))
+    : allStaged
+  const skipped = allStaged.filter((asset) => !staged.some((candidate) => candidate.name === asset.name))
+  if (skipped.length) {
+    result.skippedStagedAssets = skipped.map((asset) => asset.name)
+  }
   const stagedByName = new Map(staged.map((asset) => [asset.name, asset]))
-  const missing = expectedAssetNames(repository).filter((name) => !stagedByName.has(name))
+  const missing = [...publishNames].filter((name) => !stagedByName.has(name))
   result.missingStagedAssets = missing
 
   const liveAssets = await listAssets(owner, repository.repoName, release, authToken)
   const liveByName = new Map(liveAssets.map((asset) => [asset.name, asset]))
+  if (args.pruneUnlisted) {
+    for (const asset of liveAssets) {
+      if (stagedByName.has(asset.name)) continue
+      if (args.dryRun) {
+        result.actions.push({ action: 'delete-unlisted-asset', name: asset.name, id: asset.id, dryRun: true })
+        continue
+      }
+      await githubJson(`/repos/${owner}/${repository.repoName}/releases/assets/${asset.id}`, {
+        method: 'DELETE',
+        token: authToken,
+        allow404: true,
+      })
+      result.actions.push({ action: 'delete-unlisted-asset', name: asset.name, id: asset.id })
+      liveByName.delete(asset.name)
+    }
+  }
   for (const asset of staged) {
     if (args.dryRun) {
       result.actions.push({ action: 'upload-asset', name: asset.name, dryRun: true })
@@ -203,6 +243,20 @@ async function uploadAssets(owner, repository, release, args, authToken, result)
     result.actions.push({ action: 'upload-asset', name: asset.name, id: uploaded.id })
   }
   return missing
+}
+
+const ASHFALL_NATIVE_RELEASE_READY_ASSETS = [
+  'checksums.txt',
+  'echo-release.json',
+  'ashfall-native-edition-alpha-0.1.0.pack.json',
+  'ashfall-native-edition-0.1.0.zip',
+]
+
+function expectedNamesForPublish(repository) {
+  const expected = expectedAssetNames(repository)
+  if (repository.repoName !== 'ECHO-Ashfall-Native-Edition') return expected
+  const usesNativePlaceholder = expected.some((name) => /echo-native-product|existing-layout|^manifest\.json$/iu.test(name))
+  return usesNativePlaceholder ? ASHFALL_NATIVE_RELEASE_READY_ASSETS : expected
 }
 
 function releaseToManifestRecord(release) {
@@ -238,6 +292,7 @@ async function main() {
   const results = []
   const missing = []
   for (const repository of manifest.repositories) {
+    if (args.only && !args.only.has(repository.repoName)) continue
     const tag = releaseTagForRepository(manifest, repository)
     const result = { repoName: repository.repoName, tag, actions: [] }
     const repo = await ensureRepository(owner, repository, args, authToken, result)
@@ -268,6 +323,10 @@ async function main() {
   const summary = {
     ok: missing.length === 0 || !args.strictAssets,
     dryRun: args.dryRun,
+    draft: Boolean(args.draft),
+    only: args.only ? [...args.only] : null,
+    pruneUnlisted: Boolean(args.pruneUnlisted),
+    convertExistingPublicReleaseToDraft: Boolean(args.convertExistingPublicReleaseToDraft),
     makePublic: Boolean(args.makePublic),
     strictAssets: Boolean(args.strictAssets),
     missing,
@@ -280,5 +339,5 @@ async function main() {
 
 main().catch((error) => {
   console.error(error instanceof Error ? error.stack || error.message : String(error))
-  process.exit(1)
+  process.exitCode = 1
 })

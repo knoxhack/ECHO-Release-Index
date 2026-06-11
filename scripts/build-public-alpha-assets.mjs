@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
@@ -25,7 +26,28 @@ const extraArgs = new Map([
   ['--skip-build', (args) => { args.skipBuild = true }],
   ['--clean', (args) => { args.clean = true }],
   ['--allow-missing', (args) => { args.allowMissing = true }],
+  ['--allow-source-packaged-modules', (args) => { args.allowSourcePackagedModules = true }],
 ])
+
+const ASHFALL_REQUIRED_MODULES = [
+  'echocore',
+  'echoplatformcore',
+  'echoadaptercore',
+  'echonetcore',
+  'echoruntimeguard',
+  'echolens',
+  'echopresencelink',
+  'echoterminal',
+  'echoblockworks',
+  'echoashfallprotocol',
+]
+
+const ASHFALL_NATIVE_RELEASE_READY_ASSETS = [
+  'checksums.txt',
+  'echo-release.json',
+  'ashfall-native-edition-alpha-0.1.0.pack.json',
+  'ashfall-native-edition-0.1.0.zip',
+]
 
 const crcTable = new Uint32Array(256)
 for (let index = 0; index < crcTable.length; index += 1) {
@@ -48,6 +70,8 @@ Options:
   --skip-build             Only collect existing outputs; do not run build/package commands.
   --strict-assets          Fail if any manifest asset is missing from staging.
   --allow-missing          Finish with warnings even when assets are missing.
+  --allow-source-packaged-modules
+                           Allow ECHO-Modules staging to emit source-packaged runtime artifacts.
   --clean                  Remove the asset staging root before building.
 `
 }
@@ -76,6 +100,18 @@ function run(command, commandArgs, cwd, options) {
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true })
+}
+
+async function listTopLevelFiles(root) {
+  const out = []
+  try {
+    for (const entry of await fs.readdir(root, { withFileTypes: true })) {
+      if (entry.isFile()) out.push(path.join(root, entry.name))
+    }
+  } catch {
+    return []
+  }
+  return out
 }
 
 async function copyFile(source, destination) {
@@ -178,11 +214,13 @@ function storedZip(entries) {
 
 async function collectExpected(repoRoot, stage, repository, result) {
   const missing = []
-  for (const name of expectedAssetNames(repository)) {
+  for (const name of result?.expected ?? expectedAssetNames(repository)) {
     const staged = path.join(stage, name)
     const source = await findByName(repoRoot, name)
     if (source) {
-      await copyFile(source, staged)
+      if (path.resolve(source) !== path.resolve(staged)) {
+        await copyFile(source, staged)
+      }
       result.collected.push({ name, source })
     } else if (await existingFile(staged)) {
       continue
@@ -193,9 +231,18 @@ async function collectExpected(repoRoot, stage, repository, result) {
   return missing
 }
 
+function expectedNamesForBuild(repository) {
+  if (repository.repoName !== 'ECHO-Ashfall-Native-Edition') {
+    return expectedAssetNames(repository)
+  }
+  const expected = expectedAssetNames(repository)
+  const usesNativePlaceholder = expected.some((name) => /echo-native-product|existing-layout|^manifest\.json$/iu.test(name))
+  return usesNativePlaceholder ? ASHFALL_NATIVE_RELEASE_READY_ASSETS : expected
+}
+
 async function writeChecksums(stage, options = {}) {
   if (options.dryRun) return
-  const files = (await listFiles(stage))
+  const files = (await listTopLevelFiles(stage))
     .filter((file) => path.basename(file) !== 'checksums.txt')
     .sort((a, b) => path.basename(a).localeCompare(path.basename(b)))
   const records = []
@@ -204,6 +251,18 @@ async function writeChecksums(stage, options = {}) {
     records.push(`${record.sha256}  ${path.basename(file)}`)
   }
   await fs.writeFile(path.join(stage, 'checksums.txt'), `${records.join('\n')}\n`, 'utf8')
+}
+
+function jsonBytes(value) {
+  return Buffer.from(`${JSON.stringify(value, null, 2)}\n`, 'utf8')
+}
+
+function sha256Bytes(bytes) {
+  return crypto.createHash('sha256').update(bytes).digest('hex')
+}
+
+async function sha256File(filePath) {
+  return sha256Bytes(await fs.readFile(filePath))
 }
 
 async function writeManifestAsset(stage, repository, tag, assets, options = {}) {
@@ -223,6 +282,227 @@ async function writeManifestAsset(stage, repository, tag, assets, options = {}) 
   })
 }
 
+function nativeLoaderManifest(minecraftVersion) {
+  const version = String(process.env.ECHO_NATIVE_LOADER_VERSION || '1.0.0').trim()
+  const versionId = String(process.env.ECHO_NATIVE_LOADER_VERSION_ID || `echo-native-loader-${version}`).trim()
+  return {
+    version,
+    minecraftLauncherVersionId: versionId,
+    versionJson: {
+      id: versionId,
+      inheritsFrom: minecraftVersion,
+      mainClass: process.env.ECHO_NATIVE_LOADER_MAIN_CLASS || 'com.echo.NativeLoaderClient',
+      arguments: {
+        game: [],
+        jvm: [],
+      },
+      libraries: [
+        {
+          name: process.env.ECHO_NATIVE_LOADER_LIBRARY || `com.echo:native-loader:${version}`,
+        },
+      ],
+    },
+  }
+}
+
+function moduleArtifactsById(moduleRelease) {
+  const records = new Map()
+  for (const moduleRecord of moduleRelease?.modules ?? []) {
+    const moduleId = String(moduleRecord?.moduleId ?? '').trim().toLowerCase()
+    if (!moduleId) continue
+    const artifact = (moduleRecord.artifacts ?? []).find((candidate) => {
+      const filename = String(candidate?.filename ?? '').trim().toLowerCase()
+      return filename === `${moduleId}-${moduleRecord.version}.echo-addon` || filename.endsWith('.echo-addon')
+    })
+    if (!artifact) continue
+    records.set(moduleId, {
+      moduleId,
+      version: String(moduleRecord.version ?? '').trim(),
+      artifactName: String(artifact.filename ?? '').trim(),
+    })
+  }
+  return records
+}
+
+async function nativeModuleRequirements(moduleStage) {
+  const moduleRelease = await readJson(path.join(moduleStage, 'echo-release.json'))
+  const artifactsById = moduleArtifactsById(moduleRelease)
+  const requirements = []
+  for (const moduleId of ASHFALL_REQUIRED_MODULES) {
+    const artifact = artifactsById.get(moduleId)
+    if (!artifact?.version || !artifact.artifactName) {
+      throw new Error(`ECHO-Modules stage is missing ${moduleId} .echo-addon release metadata.`)
+    }
+    const artifactPath = path.join(moduleStage, artifact.artifactName)
+    if (!(await existingFile(artifactPath))) {
+      throw new Error(`ECHO-Modules stage is missing ${artifact.artifactName}. Build ECHO-Modules before ECHO-Ashfall-Native-Edition.`)
+    }
+    const stats = await fs.stat(artifactPath)
+    requirements.push({
+      id: moduleId,
+      moduleId,
+      version: artifact.version,
+      artifactFamily: 'echo-addon',
+      assetName: artifact.artifactName,
+      artifactName: artifact.artifactName,
+      path: `addons/${artifact.artifactName}`,
+      sha256: await sha256File(artifactPath),
+      size: stats.size,
+      required: true,
+      side: 'both',
+      sourcePath: artifactPath,
+    })
+  }
+  return requirements
+}
+
+async function writeNativePackAssets({ stage, repository, tag, options }) {
+  const pack = 'ashfall-native-edition'
+  const name = 'Ashfall Native Edition'
+  const version = '0.1.0'
+  const channel = 'alpha'
+  const minecraftVersion = process.env.ECHO_ASHFALL_NATIVE_MINECRAFT_VERSION || '26.1.2'
+  const zipName = expectedNamesForBuild(repository).find((assetName) => /\.zip$/i.test(assetName)) ?? `${pack}-${version}.zip`
+  const packManifestName = `${pack}-${channel}-${version}.pack.json`
+  const moduleStage = path.join(options.assetRootPath, 'ECHO-Modules')
+  const requirements = await nativeModuleRequirements(moduleStage)
+  const packFiles = requirements.map(({ sourcePath, ...requirement }) => ({
+    path: requirement.path,
+    assetName: requirement.assetName,
+    sha256: requirement.sha256,
+    size: requirement.size,
+    required: requirement.required,
+    moduleId: requirement.moduleId,
+    side: requirement.side,
+  }))
+  const moduleRequirements = requirements.map(({ sourcePath, ...requirement }) => requirement)
+  const baseManifest = {
+    pack,
+    name,
+    version,
+    channel,
+    minecraft: minecraftVersion,
+    minecraftVersion,
+    artifactMode: 'zip',
+    artifactName: zipName,
+    moduleArtifactFamily: 'echo-addon',
+    moduleRequirements,
+    nativeLoader: nativeLoaderManifest(minecraftVersion),
+    runtime: {
+      requiredJava: '25+',
+      minecraftVersion,
+      assetIndex: minecraftVersion,
+    },
+    launch: {
+      mainClass: process.env.ECHO_NATIVE_LOADER_MAIN_CLASS || 'com.echo.NativeLoaderClient',
+      gameArgs: [],
+      jvmArgs: [],
+    },
+    modules: requirements.map((requirement) => requirement.moduleId),
+    files: packFiles,
+    changelog: [
+      'Ashfall Native Edition public alpha assembled from ECHO .echo-addon modules.',
+      'Published as a prerelease alpha artifact for Native Loader testing.',
+    ],
+    worldgenWarning: true,
+    ramMb: 8192,
+  }
+  const embeddedManifestBytes = jsonBytes(baseManifest)
+  const exportReport = {
+    ok: true,
+    pack,
+    name,
+    version,
+    channel,
+    generatedAt: new Date().toISOString(),
+    moduleCount: requirements.length,
+    artifactMode: 'zip',
+  }
+  const zipEntries = []
+  const embeddedChecksumLines = []
+  for (const requirement of requirements) {
+    const data = await fs.readFile(requirement.sourcePath)
+    zipEntries.push({ name: requirement.path, data })
+    embeddedChecksumLines.push(`${requirement.sha256}  ${requirement.path}`)
+  }
+  zipEntries.push({ name: '.echo/pack-manifest.json', data: embeddedManifestBytes })
+  zipEntries.push({ name: '.echo/export-report.json', data: jsonBytes(exportReport) })
+  const sidecarChecksumLines = [
+    ...embeddedChecksumLines,
+    `${sha256Bytes(embeddedManifestBytes)}  .echo/pack-manifest.json`,
+    `${sha256Bytes(jsonBytes(exportReport))}  .echo/export-report.json`,
+  ]
+  zipEntries.push({ name: '.echo/checksums.sha256', data: Buffer.from(`${sidecarChecksumLines.join('\n')}\n`, 'utf8') })
+  zipEntries.sort((a, b) => a.name.localeCompare(b.name))
+
+  const zipBytes = storedZip(zipEntries)
+  const zipPath = path.join(stage, zipName)
+  await fs.writeFile(zipPath, zipBytes)
+  const zipSha = sha256Bytes(zipBytes)
+  const packManifest = {
+    ...baseManifest,
+    artifactSha256: zipSha,
+    artifactSize: zipBytes.length,
+  }
+  await writeJson(path.join(stage, packManifestName), packManifest)
+
+  const packManifestPath = path.join(stage, packManifestName)
+  const packManifestSha = await sha256File(packManifestPath)
+  const packManifestSize = (await fs.stat(packManifestPath)).size
+  const releaseManifest = {
+    formatVersion: 2,
+    pack,
+    name,
+    version,
+    channel,
+    releasedAt: new Date().toISOString(),
+    manifestAsset: packManifestName,
+    manifestSha256: packManifestSha,
+    artifactMode: 'zip',
+    artifactAsset: zipName,
+    artifactSha256: zipSha,
+    artifactSize: zipBytes.length,
+    packs: [
+      {
+        pack,
+        name,
+        version,
+        channel,
+        manifestAsset: packManifestName,
+        artifactAsset: zipName,
+      },
+    ],
+    assets: [
+      {
+        name: packManifestName,
+        role: 'pack-manifest',
+        sha256: packManifestSha,
+        size: packManifestSize,
+      },
+      {
+        name: zipName,
+        role: 'pack-artifact',
+        sha256: zipSha,
+        size: zipBytes.length,
+      },
+      ...packFiles.map((file) => ({
+        name: file.assetName,
+        role: 'pack-file',
+        path: file.path,
+        sha256: file.sha256,
+        size: file.size,
+      })),
+    ],
+    notes: [
+      'Ashfall Native Edition public alpha assembled from ECHO .echo-addon modules.',
+      'Fresh installs use the verified full pack archive; module assets remain pinned by SHA-256.',
+    ],
+  }
+  await writeJson(path.join(stage, 'echo-release.json'), releaseManifest)
+  const manifestAssets = await stageAssetRecords(stage, repository, tag, new Set(['checksums.txt', 'manifest.json']))
+  await writeManifestAsset(stage, repository, tag, manifestAssets, options)
+}
+
 async function writeReport(stage, name, payload, options = {}) {
   if (options.dryRun) return
   await writeJson(path.join(stage, name), {
@@ -230,6 +510,17 @@ async function writeReport(stage, name, payload, options = {}) {
     generatedAt: new Date().toISOString(),
     ...payload,
   })
+}
+
+async function stageAssetRecords(stage, repository, tag, exclude = new Set()) {
+  const files = (await listTopLevelFiles(stage))
+    .filter((file) => !exclude.has(path.basename(file)))
+    .sort((a, b) => path.basename(a).localeCompare(path.basename(b)))
+  const records = []
+  for (const file of files) {
+    records.push(await assetRecord(file, repository.repoName, tag))
+  }
+  return records
 }
 
 async function writeDeterministicZip(sourceDir, zipPath, options) {
@@ -270,15 +561,27 @@ async function ensureStandaloneRuntimeArchive(stage, repository, tag, options) {
 async function buildModules({ workspaceRoot, stage, repository, tag, options }) {
   const modulesRoot = repoPath(workspaceRoot, 'ECHO-Modules')
   const out = path.join(stage, '_generated')
-  run('node', ['scripts/generate-module-release.mjs', '--module', 'echocore', '--package-from-source', '--release-id', tag, '--out', out], modulesRoot, options)
+  const commandArgs = ['scripts/generate-module-release.mjs', '--release-id', tag, '--out', out]
+  for (const moduleId of ASHFALL_REQUIRED_MODULES) {
+    commandArgs.push('--module', moduleId)
+  }
+  if (options.allowSourcePackagedModules) {
+    commandArgs.push('--package-from-source')
+  }
+  run('node', commandArgs, modulesRoot, options)
   if (!options.dryRun && !options.skipBuild) {
     for (const file of await listFiles(out)) {
-      if (['.jar', '.echo-addon', '.json', '.txt', '.sha256'].some((suffix) => file.endsWith(suffix))) {
+      const relative = path.relative(out, file).replace(/\\/g, '/')
+      const basename = path.basename(file)
+      const isTopLevelReleaseFile = !relative.includes('/') && basename === 'echo-release.json'
+      const isModuleArtifact = ['.jar', '.echo-addon'].some((suffix) => basename.endsWith(suffix))
+      if (isTopLevelReleaseFile || isModuleArtifact) {
         await copyFile(file, path.join(stage, path.basename(file)))
       }
     }
   }
-  return collectExpected(modulesRoot, stage, repository, options.currentResult)
+  await writeChecksums(stage, options)
+  return collectExpected(options.skipBuild ? modulesRoot : stage, stage, repository, options.currentResult)
 }
 
 async function buildSdk({ workspaceRoot, stage, repository, tag, options }) {
@@ -354,9 +657,11 @@ async function buildStandaloneRuntime({ workspaceRoot, stage, repository, tag, o
     await writeReport(stage, 'ashfall-parity-matrix.json', { repository: repository.repoName, status: 'PASS_WITH_WARNINGS', compatibility: ['ashfall-standalone-edition'] }, options)
   }
   const missing = await collectExpected(root, stage, repository, options.currentResult)
-  await ensureStandaloneRuntimeArchive(stage, repository, tag, options)
+  const archiveName = await ensureStandaloneRuntimeArchive(stage, repository, tag, options)
   await writeChecksums(stage, options)
-  return missing
+  return await existingFile(path.join(stage, archiveName))
+    ? missing.filter((name) => name !== archiveName)
+    : missing
 }
 
 async function buildPackWithLauncher({ workspaceRoot, stage, repository, tag, options, pack, channel, version, name, sourcePath }) {
@@ -392,12 +697,11 @@ async function buildPackWithLauncher({ workspaceRoot, stage, repository, tag, op
 
 async function buildNativeEdition({ workspaceRoot, stage, repository, tag, options }) {
   const root = repoPath(workspaceRoot, 'ECHO-Ashfall-Native-Edition')
-  const nativeStage = path.join(options.assetRootPath, 'ECHO-Native-Platform')
-  const nativeZip = path.join(nativeStage, 'echo-native-product-1.0.0-existing-layout-rc.zip')
-  if (await existingFile(nativeZip)) await copyFile(nativeZip, path.join(stage, path.basename(nativeZip)))
-  await writeManifestAsset(stage, repository, tag, [], options)
+  if (!options.dryRun && !options.skipBuild) {
+    await writeNativePackAssets({ stage, repository, tag, options })
+  }
   await writeChecksums(stage, options)
-  const missing = await collectExpected(root, stage, repository, options.currentResult)
+  const missing = await collectExpected(options.skipBuild ? root : stage, stage, repository, options.currentResult)
   return missing
 }
 
@@ -446,6 +750,7 @@ async function main() {
     const stage = path.join(args.assetRootPath, repository.repoName)
     await ensureDir(stage)
     const result = { repoName: repository.repoName, tag, stage, expected: expectedAssetNames(repository), collected: [], missing: [], actions: [] }
+    result.expected = expectedNamesForBuild(repository)
     args.currentResult = result
     args.actions = result.actions
     const builder = builders[repository.repoName]
