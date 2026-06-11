@@ -11,6 +11,7 @@ The current Release Index gate is:
 ```powershell
 node scripts\verify-sky-relay-gameplay-evidence.mjs
 node scripts\verify-sky-relay-public-alpha-readiness.mjs
+node scripts\generate-sky-relay-manual-gameplay-work-order.mjs --write
 ```
 
 Expected current state:
@@ -201,10 +202,12 @@ After all three edition repos have passing local evidence verification, run from
 `ECHO-Release-Index`:
 
 ```powershell
+node scripts\generate-sky-relay-manual-gameplay-work-order.mjs --write
 node scripts\verify-sky-relay-gameplay-evidence.mjs --require-release-ready
 node scripts\verify-sky-relay-gameplay-evidence.mjs --write
 node scripts\verify-sky-relay-public-alpha-readiness.mjs --require-release-ready
 node scripts\verify-sky-relay-public-alpha-readiness.mjs --write
+node scripts\generate-sky-relay-manual-gameplay-work-order.mjs --write
 node scripts\validate-index.mjs --strict
 node scripts\sync-public-alpha-index.mjs --check
 ```
@@ -227,6 +230,10 @@ raw Git status separately from blocking status; generated Sky Relay readiness
 JSON outputs may be ignored, but manual evidence, capture tooling, manifests, and
 source files may not be dirty. A stub report with only `status: PASS` is not
 release-ready.
+The manual gameplay work-order generator turns the current gameplay evidence
+report into `release-readiness/sky-relay-manual-gameplay-work-order.json` and
+`docs/sky-relay-manual-gameplay-work-order.md`, listing the exact remaining
+claim, session, note, screenshot, log, and save-snapshot tasks per edition.
 
 ## Promotion Boundary
 

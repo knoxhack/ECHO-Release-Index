@@ -14,6 +14,8 @@ const DEFAULT_OUT = 'release-readiness/sky-relay-gameplay-evidence.json'
 const RELEASE_INDEX_PROVENANCE_IGNORES = [
   DEFAULT_OUT,
   'release-readiness/sky-relay-public-alpha-readiness.json',
+  'release-readiness/sky-relay-manual-gameplay-work-order.json',
+  'docs/sky-relay-manual-gameplay-work-order.md',
 ]
 const TEMPLATE_MARKER = 'ECHO_SKY_RELAY_TEMPLATE_ONLY'
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])

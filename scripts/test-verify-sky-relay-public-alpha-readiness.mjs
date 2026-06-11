@@ -581,6 +581,8 @@ try {
   generatedOnlyDirtyReport.sourceRevisions.releaseIndex.statusLines = [
     ' M release-readiness/sky-relay-gameplay-evidence.json',
     ' M release-readiness/sky-relay-public-alpha-readiness.json',
+    ' M release-readiness/sky-relay-manual-gameplay-work-order.json',
+    ' M docs/sky-relay-manual-gameplay-work-order.md',
   ]
   generatedOnlyDirtyReport.sourceRevisions.releaseIndex.ignoredStatusLines =
     generatedOnlyDirtyReport.sourceRevisions.releaseIndex.statusLines
