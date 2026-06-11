@@ -98,6 +98,9 @@ screenshot, save snapshot, and log paths. The fresh-world session must link to
 its note, screenshot, client log, and launcher install log. The save/reload
 session must link to all three save snapshots plus the client log. The central
 verifier rejects `TBD` run values and `1970-01-01T...` template timestamps.
+Release-ready sessions must be chronological: every session starts at or after
+`run.startedAt`; Signal Crown starts after the two-hour route window; save/reload
+starts after Signal Crown; no-crash review starts after save/reload.
 
 The initializer also creates Markdown worksheets for the four required notes.
 Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and

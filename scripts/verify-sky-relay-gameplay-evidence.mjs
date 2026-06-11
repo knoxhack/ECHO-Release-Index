@@ -205,6 +205,54 @@ const REQUIRED_SESSIONS = [
   },
 ]
 
+const REQUIRED_SESSION_ORDER = [
+  'fresh_world_creation',
+  'first_30_minutes',
+  'first_2_hours',
+  'signal_crown_completion',
+  'save_reload_verification',
+  'no_crash_review',
+]
+
+const SESSION_CHRONOLOGY_RULES = [
+  {
+    earlierId: 'fresh_world_creation',
+    earlierField: 'startedAt',
+    laterId: 'first_30_minutes',
+    laterField: 'startedAt',
+  },
+  {
+    earlierId: 'first_30_minutes',
+    earlierField: 'startedAt',
+    laterId: 'first_2_hours',
+    laterField: 'startedAt',
+  },
+  {
+    earlierId: 'first_30_minutes',
+    earlierField: 'endedAt',
+    laterId: 'first_2_hours',
+    laterField: 'endedAt',
+  },
+  {
+    earlierId: 'first_2_hours',
+    earlierField: 'endedAt',
+    laterId: 'signal_crown_completion',
+    laterField: 'startedAt',
+  },
+  {
+    earlierId: 'signal_crown_completion',
+    earlierField: 'endedAt',
+    laterId: 'save_reload_verification',
+    laterField: 'startedAt',
+  },
+  {
+    earlierId: 'save_reload_verification',
+    earlierField: 'endedAt',
+    laterId: 'no_crash_review',
+    laterField: 'startedAt',
+  },
+]
+
 function usage() {
   return `Usage: node scripts/verify-sky-relay-gameplay-evidence.mjs [options]
 
@@ -400,6 +448,11 @@ function isPlaceholderText(value) {
   return normalized === '' || ['tbd', 'todo', 'pending', 'template'].includes(normalized)
 }
 
+function timestampMs(value) {
+  const timestamp = Date.parse(value)
+  return Number.isNaN(timestamp) ? null : timestamp
+}
+
 function valueAt(value, pointer) {
   return String(pointer).split('.').reduce((current, part) => current?.[part], value)
 }
@@ -519,6 +572,36 @@ function validateSessionEvidencePath({ root, evidence, edition, sessionId, field
   }
 }
 
+function validateSessionChronology({ evidence, edition, blockers }) {
+  if (!Array.isArray(evidence.sessions)) return
+
+  const sessions = new Map(evidence.sessions.map((session) => [session?.id, session]))
+  const runStartedAt = timestampMs(evidence.run?.startedAt)
+  const hasRealRunStart = runStartedAt !== null && !isTemplateTimestamp(evidence.run?.startedAt)
+
+  if (hasRealRunStart) {
+    for (const sessionId of REQUIRED_SESSION_ORDER) {
+      const session = sessions.get(sessionId)
+      const startedAt = timestampMs(session?.startedAt)
+      if (startedAt !== null && startedAt < runStartedAt) {
+        blockers.push(`${edition} manual evidence sessions.${sessionId}.startedAt must be at or after ${edition} manual evidence run.startedAt.`)
+      }
+    }
+  }
+
+  for (const rule of SESSION_CHRONOLOGY_RULES) {
+    const earlier = sessions.get(rule.earlierId)
+    const later = sessions.get(rule.laterId)
+    const earlierTimestamp = timestampMs(earlier?.[rule.earlierField])
+    const laterTimestamp = timestampMs(later?.[rule.laterField])
+    if (earlierTimestamp !== null && laterTimestamp !== null && laterTimestamp < earlierTimestamp) {
+      blockers.push(
+        `${edition} manual evidence sessions.${rule.laterId}.${rule.laterField} must be at or after ${rule.earlierId}.${rule.earlierField}.`,
+      )
+    }
+  }
+}
+
 function validateSessions({ root, evidence, edition, blockers }) {
   if (!Array.isArray(evidence.sessions)) {
     blockers.push(`${edition} manual evidence sessions must be an array.`)
@@ -571,6 +654,8 @@ function validateSessions({ root, evidence, edition, blockers }) {
       validateSessionEvidencePath({ root, evidence, edition, sessionId: requirement.id, field, rule, relPath, blockers })
     }
   }
+
+  validateSessionChronology({ evidence, edition, blockers })
 }
 
 function validateRouteReport(routeReport, blockers) {

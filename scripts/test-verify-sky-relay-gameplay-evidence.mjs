@@ -619,6 +619,26 @@ try {
   assert.equal(mismatchedArtifact.status, 1)
   assert.match(`${mismatchedArtifact.stdout}\n${mismatchedArtifact.stderr}`, /native manual evidence run\.artifactSha256 must be/u)
 
+  const chronologyRoot = path.join(tmp, 'chronology-release-index')
+  const chronologyWorkspace = path.join(tmp, 'chronology-workspace')
+  await writeRouteReport(chronologyRoot)
+  await writeGameplayEvidence(chronologyWorkspace)
+  const chronologyEvidencePath = path.join(
+    chronologyWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const chronologyEvidence = JSON.parse(await fs.readFile(chronologyEvidencePath, 'utf8'))
+  const saveReloadSession = chronologyEvidence.sessions.find((session) => session.id === 'save_reload_verification')
+  saveReloadSession.startedAt = '2026-06-11T02:10:00Z'
+  await fs.writeFile(chronologyEvidencePath, `${JSON.stringify(chronologyEvidence, null, 2)}\n`, 'utf8')
+  const chronology = run(chronologyRoot, chronologyWorkspace, ['--require-release-ready'])
+  assert.equal(chronology.status, 1)
+  assert.match(
+    `${chronology.stdout}\n${chronology.stderr}`,
+    /native manual evidence sessions\.save_reload_verification\.startedAt must be at or after signal_crown_completion\.endedAt/u,
+  )
+
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
   const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')
   await writeRouteReport(blankFieldRoot)
