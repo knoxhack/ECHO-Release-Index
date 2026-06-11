@@ -214,8 +214,10 @@ metadata can be promoted. The public-alpha readiness verifier writes the
 10-phase audit to `release-readiness/sky-relay-public-alpha-readiness.json`.
 It also requires `release-readiness/sky-relay-gameplay-evidence.json` to include
 the detailed gameplay gates, capture kit summaries, all three edition evidence
-summaries, checked evidence file groups, and expected source report paths; a
-stub report with only `status: PASS` is not release-ready.
+summaries, checked evidence file groups, expected source report paths, an empty
+blocker list when status is `PASS`, and pack artifact names, hashes, and sizes
+that match `release-readiness/sky-relay-edition-pack-assets.json`; a stub report
+with only `status: PASS` is not release-ready.
 
 ## Promotion Boundary
 

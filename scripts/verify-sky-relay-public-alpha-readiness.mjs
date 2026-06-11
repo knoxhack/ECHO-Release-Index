@@ -298,11 +298,28 @@ function isIsoTimestamp(value) {
   return typeof value === 'string' && !Number.isNaN(Date.parse(value))
 }
 
-function requireGameplayEvidenceReport(item, report) {
+function expectedArtifactFromPackAssets(editionPackAssets, edition) {
+  const entry = editionPackAssets?.downloadBackValidation?.editions?.find((candidate) =>
+    candidate?.packId === edition.packId && candidate?.releaseTag === edition.releaseTag)
+  const zipName = entry?.zip?.name
+  const zipAsset = entry?.assets?.find((asset) => asset?.name === zipName)
+  if (!entry || entry.zip?.validated !== true || !zipName || !zipAsset) return null
+  return {
+    artifactAsset: zipName,
+    artifactSha256: zipAsset.sha256,
+    artifactSize: Number(zipAsset.size),
+  }
+}
+
+function requireGameplayEvidenceReport(item, report, editionPackAssets) {
   requireReport(item, report, 'gameplay evidence report', 'echo.skyrelay.gameplay-evidence.v1')
   if (!report) return
 
   requireCondition(item, report.status === 'PASS', 'gameplay evidence report is PASS', 'gameplay evidence report must be PASS before public alpha promotion')
+  requireCondition(item, Array.isArray(report.blockers), 'gameplay evidence report includes blockers array', 'gameplay evidence report blockers must be an array')
+  if (Array.isArray(report.blockers)) {
+    requireCondition(item, report.status !== 'PASS' || report.blockers.length === 0, 'gameplay evidence report has no PASS/blocker contradiction', 'gameplay evidence report must not contain blockers')
+  }
   requireCondition(item, report.moduleId === MODULE_ID, 'gameplay evidence report moduleId matches echoskyrelayprotocol', 'gameplay evidence report moduleId must be echoskyrelayprotocol')
   requireCondition(item, isIsoTimestamp(report.generatedAt), 'gameplay evidence report generatedAt is an ISO timestamp', 'gameplay evidence report generatedAt must be an ISO timestamp')
   requireCondition(item, report.routeContractReport === REPORTS.gameplayRouteSmoke, 'gameplay evidence report references the route smoke report', `gameplay evidence report routeContractReport must be ${REPORTS.gameplayRouteSmoke}`)
@@ -318,8 +335,23 @@ function requireGameplayEvidenceReport(item, report) {
     requireCondition(item, captureKit?.status === 'passed', `gameplay evidence capture kit ${edition.key}=passed`, `gameplay evidence capture kit ${edition.key} must be passed`)
   }
 
+  requireCondition(item, Boolean(report.requiredEvidence?.packArtifacts), 'gameplay evidence report includes required pack artifacts', 'gameplay evidence report must include requiredEvidence.packArtifacts')
   requireCondition(item, Array.isArray(report.editions) && report.editions.length === EDITIONS.length, 'gameplay evidence report includes all edition summaries', 'gameplay evidence report must include all edition summaries')
   for (const edition of EDITIONS) {
+    const expectedArtifact = expectedArtifactFromPackAssets(editionPackAssets, edition)
+    const actualArtifact = report.requiredEvidence?.packArtifacts?.[edition.key]
+    requireCondition(item, Boolean(expectedArtifact), `edition pack assets include ${edition.key} public artifact`, `edition pack assets must include validated public artifact for ${edition.key}`)
+    if (expectedArtifact) {
+      for (const field of ['artifactAsset', 'artifactSha256', 'artifactSize']) {
+        requireCondition(
+          item,
+          actualArtifact?.[field] === expectedArtifact[field],
+          `gameplay evidence ${edition.key} artifact ${field} matches edition pack assets`,
+          `gameplay evidence ${edition.key} artifact ${field} must match edition pack assets`,
+        )
+      }
+    }
+
     const evidence = report.editions?.find((entry) => entry?.edition === edition.key)
     requireCondition(item, Boolean(evidence), `gameplay evidence report includes ${edition.key}`, `gameplay evidence report must include ${edition.key}`)
     if (!evidence) continue
@@ -546,7 +578,7 @@ async function buildReport(args) {
     ]) {
       await requireFile(item, root, relPath)
     }
-    requireGameplayEvidenceReport(item, reports.gameplayEvidence)
+    requireGameplayEvidenceReport(item, reports.gameplayEvidence, reports.editionPackAssets)
     phases.push(finalizePhase(item))
   }
 

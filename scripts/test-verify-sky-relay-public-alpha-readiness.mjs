@@ -71,6 +71,24 @@ const editions = [
   ['standalone', 'ECHO-Sky-Relay-Standalone-Edition', 'sky-relay-standalone-edition', 'sky-relay-standalone-0.1.0-alpha'],
 ]
 
+const artifactByEdition = {
+  native: {
+    artifactAsset: 'sky-relay-native-edition-0.1.0.zip',
+    artifactSha256: '8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa',
+    artifactSize: 39163330,
+  },
+  neoforge: {
+    artifactAsset: 'sky-relay-neoforge-edition-0.1.0.zip',
+    artifactSha256: '04fde5ab03cd89ee3717a90491d818de2659cf77cfc5ea9b0e1ad43e64a9ca7b',
+    artifactSize: 40132235,
+  },
+  standalone: {
+    artifactAsset: 'sky-relay-standalone-edition-0.1.0.zip',
+    artifactSha256: '93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2',
+    artifactSize: 40131817,
+  },
+}
+
 async function writeJson(root, relPath, value) {
   const filePath = path.join(root, relPath)
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -210,6 +228,9 @@ function gameplayEvidenceReport(status = 'PASS') {
     routeContractReport: 'release-readiness/sky-relay-gameplay-route-smoke.json',
     editionPackAssets: 'release-readiness/sky-relay-edition-pack-assets.json',
     manualEvidencePath: 'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+    requiredEvidence: {
+      packArtifacts: artifactByEdition,
+    },
     gates: Object.fromEntries(gameplayGates.map((gate) => [gate, passed ? 'passed' : 'blocked'])),
     captureKits: editions.map(([key]) => ({
       edition: key,
@@ -227,6 +248,7 @@ function gameplayEvidenceReport(status = 'PASS') {
         saveSnapshots: checkedFiles(passed ? 3 : 0, `${key}-save`),
       },
     })),
+    blockers: passed ? [] : ['manual evidence blocked'],
   }
 }
 
@@ -255,6 +277,24 @@ async function writeReports(root, options = {}) {
   })
   await writeJson(root, 'release-readiness/sky-relay-edition-pack-assets.json', {
     schemaVersion: 'echo.skyrelay.edition-pack-assets.v1',
+    downloadBackValidation: {
+      editions: editions.map(([key, repoDir, packId, releaseTag]) => ({
+        packId,
+        repository: `knoxhack/${repoDir}`,
+        releaseTag,
+        assets: [
+          {
+            name: artifactByEdition[key].artifactAsset,
+            size: artifactByEdition[key].artifactSize,
+            sha256: artifactByEdition[key].artifactSha256,
+          },
+        ],
+        zip: {
+          name: artifactByEdition[key].artifactAsset,
+          validated: true,
+        },
+      })),
+    },
     gates: {
       editionPackAssetsBuilt: 'passed',
       editionDraftAssetsUploaded: 'passed',
@@ -340,6 +380,35 @@ try {
   assert.equal(stubGameplay.status, 1)
   assert.match(stubGameplay.stdout, /gameplay evidence report moduleId must be echoskyrelayprotocol/u)
   assert.match(stubGameplay.stdout, /gameplay evidence report must include all edition summaries/u)
+
+  const contradictoryGameplayRoot = path.join(tmp, 'contradictory-gameplay-release-index')
+  const contradictoryGameplayWorkspace = path.join(tmp, 'contradictory-gameplay-workspace')
+  await writeModuleFixture(contradictoryGameplayWorkspace)
+  await writeEditionRepos(contradictoryGameplayWorkspace)
+  await writeCatalogFiles(contradictoryGameplayRoot)
+  await writeReports(contradictoryGameplayRoot, {
+    gameplayReport: {
+      ...gameplayEvidenceReport('PASS'),
+      blockers: ['leftover blocker'],
+    },
+  })
+  const contradictoryGameplay = run(contradictoryGameplayRoot, contradictoryGameplayWorkspace, ['--require-release-ready'])
+  assert.equal(contradictoryGameplay.status, 1)
+  assert.match(contradictoryGameplay.stdout, /gameplay evidence report must not contain blockers/u)
+
+  const artifactDriftRoot = path.join(tmp, 'artifact-drift-release-index')
+  const artifactDriftWorkspace = path.join(tmp, 'artifact-drift-workspace')
+  const artifactDriftReport = JSON.parse(JSON.stringify(gameplayEvidenceReport('PASS')))
+  artifactDriftReport.requiredEvidence.packArtifacts.native.artifactSha256 = '0'.repeat(64)
+  await writeModuleFixture(artifactDriftWorkspace)
+  await writeEditionRepos(artifactDriftWorkspace)
+  await writeCatalogFiles(artifactDriftRoot)
+  await writeReports(artifactDriftRoot, {
+    gameplayReport: artifactDriftReport,
+  })
+  const artifactDrift = run(artifactDriftRoot, artifactDriftWorkspace, ['--require-release-ready'])
+  assert.equal(artifactDrift.status, 1)
+  assert.match(artifactDrift.stdout, /gameplay evidence native artifact artifactSha256 must match edition pack assets/u)
 
   const blockedRoot = path.join(tmp, 'blocked-release-index')
   const blockedWorkspace = path.join(tmp, 'blocked-workspace')
