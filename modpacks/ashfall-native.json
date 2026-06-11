@@ -1,7 +1,7 @@
 {
   "id": "ashfall-native-edition",
   "kind": "modpack",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
@@ -11,20 +11,26 @@
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
-      "sha256": "bb600fb4f75e2cc557aeae44c4a9febddedcc18a6f2823d5c8fb12b2fac7f19c",
-      "size": 195
+      "sha256": "49c92bcff4444c59e578c10b3d5c854e06d4444213671fa691b85dda912c933d",
+      "size": 294
     },
-    "pack": {
-      "file": "echo-native-product-1.0.0-existing-layout-rc.zip",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-native-product-1.0.0-existing-layout-rc.zip",
-      "sha256": "16d1af3195ccd11b342a976ea5e29bb02cf27c1ac721417d9a346e884bfef03b",
-      "size": 27875
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
+      "sha256": "644cfba8f70c5e00093b8ddd6670afc73399c22a6a11b65830fa3dc222618e62",
+      "size": 37766
     },
     "manifest": {
-      "file": "manifest.json",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/manifest.json",
-      "sha256": "e62eff3b329c253bf0abd3cd89a9cc7c42e608130ce58a97b428cbad3b5a97eb",
-      "size": 275
+      "file": "ashfall-native-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
+      "sha256": "d8fa2bb2a11d25cfd2c907f95147fd59429f709e9e8daa57e87239f5794d0362",
+      "size": 97268
+    },
+    "pack": {
+      "file": "ashfall-native-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
+      "sha256": "26d201ee2b5346959c423f288f7b2f0c9fa2171bc83c3e2fcd998ab48b53e3bf",
+      "size": 236842847
     }
   },
   "dependencies": [
@@ -38,5 +44,6 @@
     "native"
   ],
   "trust": "source-linked",
-  "validation": "approved"
+  "validation": "approved",
+  "validationReason": "Ashfall Native catalog points at exporter-built release-ready pack assets with matching release manifest, pack manifest, archive, and checksums."
 }

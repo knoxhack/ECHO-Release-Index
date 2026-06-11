@@ -14,48 +14,38 @@
   "moduleArtifactFamily": "echo-addon",
   "moduleArtifactPattern": "<module>-<version>.echo-addon",
   "updatePolicy": "Use this manifest for Ashfall Native Edition launcher pack updates. Module entries must pin .echo-addon artifacts from ECHO-Modules.",
+  "releaseReadiness": {
+    "status": "approved",
+    "blockers": [],
+    "evidence": [
+      "release-readiness/ashfall-native-public-alpha.json",
+      "release-readiness/ashfall-rc-smoke.json"
+    ]
+  },
   "assets": [
     {
       "name": "checksums.txt",
-      "size": 449,
-      "sha256": "598765fe314e684d4e8b8f1b2b686f5257b0ff923dae352bfbd598111b4668cd",
+      "size": 294,
+      "sha256": "49c92bcff4444c59e578c10b3d5c854e06d4444213671fa691b85dda912c933d",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt"
     },
     {
-      "name": "echo-native-product-1.0.0-existing-layout-rc.zip",
-      "size": 27875,
-      "sha256": "16d1af3195ccd11b342a976ea5e29bb02cf27c1ac721417d9a346e884bfef03b",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-native-product-1.0.0-existing-layout-rc.zip"
+      "name": "echo-release.json",
+      "size": 37766,
+      "sha256": "644cfba8f70c5e00093b8ddd6670afc73399c22a6a11b65830fa3dc222618e62",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json"
     },
     {
-      "name": "manifest.json",
-      "size": 421,
-      "sha256": "cc4d1993b949cb215464d28341c3c68dde8c5e021c325c49c3380363ccb683bf",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/manifest.json"
+      "name": "ashfall-native-edition-alpha-0.1.0.pack.json",
+      "size": 97268,
+      "sha256": "d8fa2bb2a11d25cfd2c907f95147fd59429f709e9e8daa57e87239f5794d0362",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json"
     },
     {
-      "name": "native-addon-source-truth.md",
-      "size": 1484,
-      "sha256": "c8913934116bc36f396cf7ed59c8209bdf0fa8006f3b0f9cf14082983bc7c0ee",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/native-addon-source-truth.md"
-    },
-    {
-      "name": "native-live-proof-gate.json",
-      "size": 300,
-      "sha256": "f97ced62fad40eccde59381ef2d4f34665b4142768ef9a7539c0972fa1e43e40",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/native-live-proof-gate.json"
-    },
-    {
-      "name": "native-module-inventory.json",
-      "size": 241,
-      "sha256": "c4ffa0e7a781062ccf4bb786fdb577665a435bbc3e0070dca5e2b314e09fe992",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/native-module-inventory.json"
-    },
-    {
-      "name": "echocore-1.0.0.echo-addon",
-      "size": 20489,
-      "sha256": "55ba7cb8f4964517a3d7f1c69c8470db35dc078d0a612b342238c8b105e730b3",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-v0.1.0-alpha/echocore-1.0.0.echo-addon"
+      "name": "ashfall-native-edition-0.1.0.zip",
+      "size": 236842847,
+      "sha256": "26d201ee2b5346959c423f288f7b2f0c9fa2171bc83c3e2fcd998ab48b53e3bf",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip"
     }
   ]
 }
