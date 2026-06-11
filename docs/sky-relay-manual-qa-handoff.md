@@ -124,7 +124,7 @@ Each edition must produce these save snapshots:
 - `fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip`
 - `fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip`
 
-Save snapshots must be ZIP files.
+Save snapshots must be ZIP archives with at least one entry.
 
 The central Release Index verifier records byte size and SHA-256 for every
 accepted notes, log, screenshot, and save file. Screenshot entries also record
