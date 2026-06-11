@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.skyrelay.edition-pack-assets.v1",
-  "generatedAt": "2026-06-11T12:04:51.207Z",
+  "generatedAt": "2026-06-11T13:26:18.810Z",
   "project": {
     "name": "ECHO: Sky Relay",
     "version": "0.1.0",
@@ -157,13 +157,15 @@
     "editionDraftDownloadBack": "passed",
     "zipMatchesPackManifest": "passed",
     "releaseIndexApproval": "blocked",
-    "launcherInstallUpdateRepairRollback": "partial_node_contract_passed",
+    "launcherInstallUpdateRepairRollback": "node_contract_passed_packaged_install_update_repair_passed",
     "gameplayRouteContractSmoke": "passed",
     "gameplaySmoke": "not_started",
     "launcherLifecycleContractSmoke": "passed",
     "launcherBrowserPreviewUiSmoke": "passed",
     "launcherPackagedElectronUiSmoke": "passed",
-    "electronUiEndToEnd": "partial_packaged_ui_passed"
+    "launcherPackagedElectronInstallUpdateRepair": "passed",
+    "launcherPackagedElectronRollback": "not_available_no_visible_ui_command",
+    "electronUiEndToEnd": "packaged_install_update_repair_passed"
   },
   "relatedEvidence": {
     "moduleDraftRelease": "release-readiness/sky-relay-module-draft-release.json",
@@ -175,9 +177,9 @@
   },
   "promotionBlockers": [
     "Edition releases are still drafts and use untagged draft asset URLs.",
-    "Release Index modpack entries must remain warning/planned until stable public URLs, packaged Electron install/update click-through evidence, and gameplay smoke evidence are available.",
-    "Browser-preview UI smoke passed for the Library pack cards; a packaged Electron install/update click-through is still required.",
-    "Packaged Electron UI smoke passed for renderer mount, native bridge bootstrap, and Sky Relay preview card gating; packaged install/update/repair/rollback click-through is still required.",
+    "Release Index modpack entries must remain warning/planned until stable public URLs and gameplay smoke evidence are available.",
+    "Browser-preview UI smoke passed for the Library pack cards.",
+    "Packaged Electron UI smoke passed for renderer mount, native bridge bootstrap, Sky Relay preview card gating, install click-through, same-version update reconciliation, and repair click-through; rollback has no visible packaged UI command.",
     "Launcher Node lifecycle smoke passed for deep links, install, same-version update reconciliation, repair, and rollback.",
     "Gameplay route contract smoke passed; real first 30 minutes, first 2 hours, and Signal Crown playthrough evidence is still required.",
     "Only one Sky Relay pack version exists, so real version-to-version update remains blocked."
