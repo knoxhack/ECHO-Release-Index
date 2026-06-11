@@ -32,6 +32,24 @@ const editions = [
   },
 ]
 
+const artifactByEdition = {
+  native: {
+    artifactAsset: 'sky-relay-native-edition-0.1.0.zip',
+    artifactSha256: '8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa',
+    artifactSize: 39163330,
+  },
+  neoforge: {
+    artifactAsset: 'sky-relay-neoforge-edition-0.1.0.zip',
+    artifactSha256: '04fde5ab03cd89ee3717a90491d818de2659cf77cfc5ea9b0e1ad43e64a9ca7b',
+    artifactSize: 40132235,
+  },
+  standalone: {
+    artifactAsset: 'sky-relay-standalone-edition-0.1.0.zip',
+    artifactSha256: '93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2',
+    artifactSize: 40131817,
+  },
+}
+
 const captureKitFiles = [
   'scripts/init-manual-gameplay-evidence.mjs',
   'scripts/verify-manual-gameplay-evidence.mjs',
@@ -363,6 +381,33 @@ async function writeRouteReport(root) {
       signalCrownContract: 'passed',
     },
   })
+  await writeJson(root, 'release-readiness/sky-relay-edition-pack-assets.json', {
+    schemaVersion: 'echo.skyrelay.edition-pack-assets.v1',
+    downloadBackValidation: {
+      editions: editions.map((edition) => ({
+        packId: edition.packId,
+        releaseTag: edition.releaseTag,
+        assets: [
+          {
+            name: artifactByEdition[edition.key].artifactAsset,
+            size: artifactByEdition[edition.key].artifactSize,
+            sha256: artifactByEdition[edition.key].artifactSha256,
+          },
+        ],
+        zip: {
+          name: artifactByEdition[edition.key].artifactAsset,
+          validated: true,
+        },
+      })),
+    },
+    gates: {
+      editionPackAssetsBuilt: 'passed',
+      editionDraftDownloadBack: 'passed',
+      editionPublicPrereleasesPromoted: 'passed',
+      stableTaggedArtifactUrls: 'passed',
+      zipMatchesPackManifest: 'passed',
+    },
+  })
 }
 
 async function writeGameplayEvidence(workspaceRoot, options = {}) {
@@ -415,6 +460,7 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
       run: {
         tester: 'test fixture',
         releaseTag: edition.releaseTag,
+        ...artifactByEdition[edition.key],
         launcherChannel: 'alpha',
         worldOrProfile: 'fixture-world',
         installedFrom: 'ECHO Launcher',
@@ -540,6 +586,22 @@ try {
   const shortSession = run(shortSessionRoot, shortSessionWorkspace, ['--require-release-ready'])
   assert.equal(shortSession.status, 1)
   assert.match(`${shortSession.stdout}\n${shortSession.stderr}`, /first_30_minutes.*durationMinutes must be at least 30/u)
+
+  const mismatchedArtifactRoot = path.join(tmp, 'mismatched-artifact-release-index')
+  const mismatchedArtifactWorkspace = path.join(tmp, 'mismatched-artifact-workspace')
+  await writeRouteReport(mismatchedArtifactRoot)
+  await writeGameplayEvidence(mismatchedArtifactWorkspace)
+  const mismatchedArtifactEvidencePath = path.join(
+    mismatchedArtifactWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const mismatchedArtifactEvidence = JSON.parse(await fs.readFile(mismatchedArtifactEvidencePath, 'utf8'))
+  mismatchedArtifactEvidence.run.artifactSha256 = 'f'.repeat(64)
+  await fs.writeFile(mismatchedArtifactEvidencePath, `${JSON.stringify(mismatchedArtifactEvidence, null, 2)}\n`, 'utf8')
+  const mismatchedArtifact = run(mismatchedArtifactRoot, mismatchedArtifactWorkspace, ['--require-release-ready'])
+  assert.equal(mismatchedArtifact.status, 1)
+  assert.match(`${mismatchedArtifact.stdout}\n${mismatchedArtifact.stderr}`, /native manual evidence run\.artifactSha256 must be/u)
 
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
   const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')

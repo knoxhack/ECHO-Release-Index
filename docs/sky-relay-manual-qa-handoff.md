@@ -78,10 +78,17 @@ verification:
 
 - `tester`
 - `releaseTag`
+- `artifactAsset`
+- `artifactSha256`
+- `artifactSize`
 - `launcherChannel`
 - `worldOrProfile`
 - `installedFrom`
 - `startedAt`
+
+The release tag, artifact asset name, artifact SHA-256, and artifact byte size
+must match the public prerelease ZIP recorded in
+`release-readiness/sky-relay-edition-pack-assets.json` for that edition.
 
 Fill the `sessions` array with `fresh_world_creation`, `first_30_minutes`,
 `first_2_hours`, `signal_crown_completion`, `save_reload_verification`, and

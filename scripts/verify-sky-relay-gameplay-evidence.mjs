@@ -5,6 +5,7 @@ import path from 'node:path'
 import process from 'node:process'
 
 const DEFAULT_ROUTE_REPORT = 'release-readiness/sky-relay-gameplay-route-smoke.json'
+const DEFAULT_EDITION_PACK_ASSETS = 'release-readiness/sky-relay-edition-pack-assets.json'
 const DEFAULT_MANUAL_EVIDENCE = 'fixtures/sky-relay/gameplay-qa/manual-evidence.json'
 const DEFAULT_OUT = 'release-readiness/sky-relay-gameplay-evidence.json'
 const TEMPLATE_MARKER = 'ECHO_SKY_RELAY_TEMPLATE_ONLY'
@@ -215,6 +216,7 @@ Options:
   --root <dir>                 Release Index repository root. Default: current directory.
   --workspace-root <dir>       Workspace containing sibling ECHO repos. Default: parent of --root.
   --route-report <path>        Route contract report. Default: ${DEFAULT_ROUTE_REPORT}
+  --edition-pack-assets <path> Edition pack asset report. Default: ${DEFAULT_EDITION_PACK_ASSETS}
   --manual-evidence <path>     Manual evidence JSON path inside each edition repo.
                                Default: ${DEFAULT_MANUAL_EVIDENCE}
   --out <path>                 Readiness report path. Default: ${DEFAULT_OUT}
@@ -229,6 +231,7 @@ function parseArgs(argv) {
     root: process.cwd(),
     workspaceRoot: null,
     routeReport: DEFAULT_ROUTE_REPORT,
+    editionPackAssets: DEFAULT_EDITION_PACK_ASSETS,
     manualEvidence: DEFAULT_MANUAL_EVIDENCE,
     out: DEFAULT_OUT,
     write: false,
@@ -245,6 +248,7 @@ function parseArgs(argv) {
     if (arg === '--root') args.root = path.resolve(next())
     else if (arg === '--workspace-root') args.workspaceRoot = path.resolve(next())
     else if (arg === '--route-report') args.routeReport = next()
+    else if (arg === '--edition-pack-assets') args.editionPackAssets = next()
     else if (arg === '--manual-evidence') args.manualEvidence = next()
     else if (arg === '--out') args.out = next()
     else if (arg === '--write') args.write = true
@@ -449,7 +453,7 @@ function validateGameplayLog({ text, relPath, label, index, blockers }) {
   }
 }
 
-function validateRunIdentity({ evidence, edition, blockers }) {
+function validateRunIdentity({ evidence, edition, expectedArtifact, blockers }) {
   const source = EVIDENCE_SOURCE_REPOS[edition]
   if (!evidence.run || typeof evidence.run !== 'object' || Array.isArray(evidence.run)) {
     blockers.push(`${edition} manual evidence run must be an object.`)
@@ -457,6 +461,15 @@ function validateRunIdentity({ evidence, edition, blockers }) {
   }
   if (evidence.run.releaseTag !== source.releaseTag) {
     blockers.push(`${edition} manual evidence run.releaseTag must be ${source.releaseTag}.`)
+  }
+  if (!expectedArtifact) {
+    blockers.push(`${edition} expected public alpha artifact is missing from the edition pack assets report.`)
+  } else {
+    for (const [field, expected] of Object.entries(expectedArtifact)) {
+      if (evidence.run[field] !== expected) {
+        blockers.push(`${edition} manual evidence run.${field} must be ${expected}.`)
+      }
+    }
   }
   if (evidence.run.launcherChannel !== 'alpha') {
     blockers.push(`${edition} manual evidence run.launcherChannel must be alpha.`)
@@ -558,6 +571,38 @@ function validateRouteReport(routeReport, blockers) {
   }
 }
 
+function validateEditionPackAssetsReport(editionPackAssets, blockers) {
+  if (editionPackAssets.schemaVersion !== 'echo.skyrelay.edition-pack-assets.v1') {
+    blockers.push('Edition pack assets report schemaVersion must be echo.skyrelay.edition-pack-assets.v1.')
+  }
+  for (const gate of [
+    'editionPackAssetsBuilt',
+    'editionDraftDownloadBack',
+    'editionPublicPrereleasesPromoted',
+    'stableTaggedArtifactUrls',
+    'zipMatchesPackManifest',
+  ]) {
+    if (editionPackAssets.gates?.[gate] !== 'passed') {
+      blockers.push(`Edition pack assets report gate ${gate} must be passed.`)
+    }
+  }
+}
+
+function expectedArtifactFromPackAssets(editionPackAssets, edition) {
+  const source = EVIDENCE_SOURCE_REPOS[edition]
+  const packId = `sky-relay-${edition}-edition`
+  const entry = editionPackAssets?.downloadBackValidation?.editions?.find((candidate) =>
+    candidate?.packId === packId && candidate?.releaseTag === source.releaseTag)
+  const zipName = entry?.zip?.name
+  const zipAsset = entry?.assets?.find((asset) => asset?.name === zipName)
+  if (!entry || entry.zip?.validated !== true || !zipName || !zipAsset) return null
+  return {
+    artifactAsset: zipName,
+    artifactSha256: zipAsset.sha256,
+    artifactSize: Number(zipAsset.size),
+  }
+}
+
 function evidenceRoot(args, edition) {
   return path.join(args.workspaceRoot, EVIDENCE_SOURCE_REPOS[edition].workspaceDir)
 }
@@ -607,7 +652,7 @@ async function validateFileList({ root, label, values, minItems, requiredPattern
   return checked
 }
 
-async function validateManualEvidence(args, edition, blockers) {
+async function validateManualEvidence(args, edition, expectedArtifact, blockers) {
   const source = EVIDENCE_SOURCE_REPOS[edition]
   const root = evidenceRoot(args, edition)
   const resolvedManual = resolveInside(root, args.manualEvidence)
@@ -655,7 +700,7 @@ async function validateManualEvidence(args, edition, blockers) {
   if (typeof evidence.generatedAt !== 'string' || Number.isNaN(Date.parse(evidence.generatedAt))) {
     blockers.push(`${edition} manual evidence generatedAt must be an ISO timestamp.`)
   }
-  validateRunIdentity({ evidence, edition, blockers })
+  validateRunIdentity({ evidence, edition, expectedArtifact, blockers })
   validateSessions({ root, evidence, edition, blockers })
   result.run = evidence.run ?? null
   result.sessions = Array.isArray(evidence.sessions) ? evidence.sessions : []
@@ -773,11 +818,24 @@ async function buildReport(args) {
     blockers.push(`Route contract report is missing or invalid: ${args.routeReport}: ${error.message}`)
   }
 
+  const editionPackAssetsPath = path.resolve(args.root, args.editionPackAssets)
+  let editionPackAssets = null
+  try {
+    editionPackAssets = await readJson(editionPackAssetsPath)
+    validateEditionPackAssetsReport(editionPackAssets, blockers)
+  } catch (error) {
+    blockers.push(`Edition pack assets report is missing or invalid: ${args.editionPackAssets}: ${error.message}`)
+  }
+
+  const expectedArtifacts = Object.fromEntries(
+    Object.keys(EVIDENCE_SOURCE_REPOS).map((edition) => [edition, expectedArtifactFromPackAssets(editionPackAssets, edition)]),
+  )
+
   const captureKits = []
   const editions = []
   for (const edition of Object.keys(EVIDENCE_SOURCE_REPOS)) {
     captureKits.push(await validateCaptureKit(args, edition, blockers))
-    editions.push(await validateManualEvidence(args, edition, blockers))
+    editions.push(await validateManualEvidence(args, edition, expectedArtifacts[edition], blockers))
   }
 
   const gates = {
@@ -797,6 +855,7 @@ async function buildReport(args) {
     generatedAt: new Date().toISOString(),
     moduleId: 'echoskyrelayprotocol',
     routeContractReport: args.routeReport,
+    editionPackAssets: args.editionPackAssets,
     manualEvidencePath: args.manualEvidence,
     requiredEvidence: {
       editions: Object.values(EVIDENCE_SOURCE_REPOS).map(({ source, repository, workspaceDir }) => ({ source, repository, workspaceDir })),
@@ -812,6 +871,7 @@ async function buildReport(args) {
       logs: REQUIRED_LOG_PATTERNS.map(String),
       saveSnapshots: REQUIRED_SAVE_PATTERNS.map(String),
       captureKitFiles: REQUIRED_CAPTURE_KIT_FILES,
+      packArtifacts: expectedArtifacts,
     },
     gates,
     captureKits,
