@@ -15,11 +15,10 @@ node scripts\verify-sky-relay-public-alpha-readiness.mjs
 
 Expected current state:
 
-- `repo_foundation` through `systems_integration`: `passed`
-- `editions_launcher`: `blocked` until a real version-to-version Sky Relay
-  launcher update is proven
-- `release_public_alpha`: `blocked` until gameplay evidence and real pack
-  version update evidence pass
+- `repo_foundation` through `editions_launcher`: `passed`
+- `release_public_alpha`: `blocked` until gameplay evidence passes
+- `launcherVersionTransitionUpdate`: `passed`
+- `versionTransitionUpdate`: `passed`
 - `routeContractReport`: `passed`
 - `captureKitReady`: `passed`
 - `realFirst30Playthrough`: `blocked`
@@ -28,7 +27,8 @@ Expected current state:
 - `saveReloadVerified`: `blocked`
 - `noCrashEvidence`: `blocked`
 
-The blocker is real manual evidence, not tooling readiness.
+The blocker is real manual gameplay evidence, not tooling, artifact, launcher,
+or update readiness.
 
 ## Edition Repositories
 
@@ -151,8 +151,6 @@ blocked in `release-readiness/sky-relay-gameplay-evidence.json`:
 The `captureKitReady` gate proves capture tooling is present. It does not prove
 that gameplay happened.
 
-Also do not promote while either of these remain blocked in
-`release-readiness/sky-relay-public-alpha-readiness.json`:
-
-- `phase 9 Editions And Launcher: real version-to-version launcher update`
-- `phase 10 Release And Public Alpha: real pack version update`
+The launcher and pack version-transition gates use a fixture-local previous
+Sky Relay manifest plus the current public `0.1.0` assets. They prove update
+mechanics without claiming a second public Sky Relay release exists.

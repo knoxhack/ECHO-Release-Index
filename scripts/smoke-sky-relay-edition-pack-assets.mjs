@@ -171,6 +171,142 @@ async function verifyInstall({ installRoot, manifest }) {
   return verified
 }
 
+async function scanInstall({ installRoot, manifest }) {
+  const valid = []
+  const missing = []
+  const corrupt = []
+  for (const file of manifest.files) {
+    const target = path.join(installRoot, file.path)
+    try {
+      const actual = await sha256File(target)
+      const stat = await fs.stat(target)
+      if (actual === file.sha256 && stat.size === file.size) valid.push(file.path)
+      else corrupt.push(file.path)
+    } catch (error) {
+      if (error?.code !== 'ENOENT') throw error
+      missing.push(file.path)
+    }
+  }
+  return {
+    ok: missing.length === 0 && corrupt.length === 0,
+    valid,
+    missing,
+    corrupt,
+  }
+}
+
+async function backupFileIfExists(installRoot, backupRoot, relativePath) {
+  const source = path.join(installRoot, relativePath)
+  try {
+    await fs.access(source)
+  } catch (error) {
+    if (error?.code === 'ENOENT') return null
+    throw error
+  }
+  const backupPath = path.join(backupRoot, relativePath)
+  await fs.mkdir(path.dirname(backupPath), { recursive: true })
+  await fs.copyFile(source, backupPath)
+  return backupPath
+}
+
+async function preparePreviousInstallFixture({ installRoot, manifest }) {
+  const targetFile = manifest.files.find((file) => file.moduleId === 'echoskyrelayprotocol') ?? manifest.files[0]
+  const targetPath = path.join(installRoot, targetFile.path)
+  await fs.writeFile(targetPath, Buffer.from('previous version placeholder for pack update smoke\n', 'utf8'))
+  const previousTargetSha = await sha256File(targetPath)
+  const previousTargetStat = await fs.stat(targetPath)
+  const obsoletePath = manifest.pack.endsWith('native-edition')
+    ? 'addons/sky-relay-obsolete-pack-smoke.echo-addon'
+    : 'mods/sky-relay-obsolete-pack-smoke.jar'
+  const obsoleteAbsolute = path.join(installRoot, obsoletePath)
+  await fs.mkdir(path.dirname(obsoleteAbsolute), { recursive: true })
+  await fs.writeFile(obsoleteAbsolute, Buffer.from('obsolete pack update smoke file\n', 'utf8'))
+  const obsoleteStat = await fs.stat(obsoleteAbsolute)
+  const previousVersion = `${manifest.version}-previous-smoke`
+  const previousManifest = {
+    ...manifest,
+    version: previousVersion,
+    files: [
+      ...manifest.files.map((file) => file.path === targetFile.path
+        ? {
+            ...file,
+            version: `${file.version ?? manifest.version}-previous-smoke`,
+            sha256: previousTargetSha,
+            size: previousTargetStat.size,
+          }
+        : file),
+      {
+        path: obsoletePath,
+        sha256: await sha256File(obsoleteAbsolute),
+        size: obsoleteStat.size,
+        required: true,
+        moduleId: 'sky-relay-obsolete-pack-smoke',
+      },
+    ],
+  }
+  await writeJson(path.join(installRoot, '.echo', 'installed-manifest.json'), previousManifest)
+  const previousVerification = await scanInstall({ installRoot, manifest: previousManifest })
+  if (!previousVerification.ok) throw new Error(`${manifest.pack}: previous-version pack fixture did not verify`)
+  return { targetFile, obsoletePath, previousVersion, previousManifest, previousVerification }
+}
+
+async function updateFromZip({ installRoot, manifest, entries, fixture }) {
+  const backupRoot = path.join(installRoot, '.echo', 'rollback', 'sky-relay-version-update-smoke')
+  const before = await scanInstall({ installRoot, manifest })
+  const valid = new Set(before.valid)
+  const updated = []
+  const verified = []
+  const backedUp = []
+  const removed = []
+
+  for (const file of manifest.files) {
+    if (valid.has(file.path)) {
+      verified.push(file.path)
+      continue
+    }
+    const source = entries.get(file.path)
+    if (!source) throw new Error(`${manifest.pack}: missing update source ${file.path}`)
+    const backupPath = await backupFileIfExists(installRoot, backupRoot, file.path)
+    if (backupPath) backedUp.push({ path: file.path, backupPath })
+    const targetPath = path.join(installRoot, file.path)
+    await fs.mkdir(path.dirname(targetPath), { recursive: true })
+    await fs.writeFile(targetPath, source)
+    updated.push(file.path)
+  }
+
+  const obsoleteBackupPath = await backupFileIfExists(installRoot, backupRoot, fixture.obsoletePath)
+  if (obsoleteBackupPath) {
+    backedUp.push({ path: fixture.obsoletePath, backupPath: obsoleteBackupPath })
+    await fs.rm(path.join(installRoot, fixture.obsoletePath), { force: true })
+    removed.push(fixture.obsoletePath)
+  }
+
+  await writeJson(path.join(installRoot, '.echo', 'installed-manifest.json'), manifest)
+  const verifiedAfterUpdate = await verifyInstall({ installRoot, manifest })
+  const rollbackPlan = {
+    operation: 'update',
+    installPath: installRoot,
+    fromVersion: fixture.previousVersion,
+    toVersion: manifest.version,
+    backedUp,
+    removed: updated,
+    createdAt: new Date().toISOString(),
+  }
+  await writeJson(path.join(backupRoot, 'rollback-plan.json'), rollbackPlan)
+  return { updated, verified, removed, backedUp, verifiedAfterUpdate, rollbackPlan }
+}
+
+async function rollbackUpdate(rollbackPlan) {
+  for (const relativePath of rollbackPlan.removed ?? []) {
+    await fs.rm(path.join(rollbackPlan.installPath, relativePath), { force: true })
+  }
+  for (const backup of rollbackPlan.backedUp ?? []) {
+    const destination = path.join(rollbackPlan.installPath, backup.path)
+    await fs.mkdir(path.dirname(destination), { recursive: true })
+    await fs.copyFile(backup.backupPath, destination)
+  }
+}
+
 async function repairOneFile({ installRoot, manifest, entries }) {
   const targetFile = manifest.files.find((file) => file.moduleId === 'echoskyrelayprotocol') ?? manifest.files[0]
   const targetPath = path.join(installRoot, targetFile.path)
@@ -234,6 +370,12 @@ async function smokeEdition(args, repoName) {
   const topLevelChecksums = await verifyTopLevelChecksums(dir)
   const installed = await installFromZip({ installRoot, manifest, entries })
   const verifiedAfterInstall = await verifyInstall({ installRoot, manifest })
+  const previousFixture = await preparePreviousInstallFixture({ installRoot, manifest })
+  const versionUpdate = await updateFromZip({ installRoot, manifest, entries, fixture: previousFixture })
+  await rollbackUpdate(versionUpdate.rollbackPlan)
+  const previousAfterRollback = await scanInstall({ installRoot, manifest: previousFixture.previousManifest })
+  if (!previousAfterRollback.ok) throw new Error(`${manifest.pack}: version rollback did not restore previous fixture`)
+  const postRollbackVersionUpdate = await updateFromZip({ installRoot, manifest, entries, fixture: previousFixture })
   const repairedPath = await repairOneFile({ installRoot, manifest, entries })
   const rolledBackPath = await rollbackSimulatedReplacement({ installRoot, manifest })
   const verifiedAfterRollback = await verifyInstall({ installRoot, manifest })
@@ -251,6 +393,22 @@ async function smokeEdition(args, repoName) {
     topLevelChecksums,
     installedFiles: installed.length,
     verifiedAfterInstall: verifiedAfterInstall.length,
+    versionUpdate: {
+      fromVersion: previousFixture.previousVersion,
+      toVersion: manifest.version,
+      updated: versionUpdate.updated.length,
+      verified: versionUpdate.verified.length,
+      removed: versionUpdate.removed.length,
+      verifiedAfterUpdate: versionUpdate.verifiedAfterUpdate.length,
+    },
+    versionRollback: {
+      restoredPreviousVersion: previousFixture.previousVersion,
+      verifiedAfterRollback: previousAfterRollback.valid.length,
+    },
+    postRollbackVersionUpdate: {
+      updated: postRollbackVersionUpdate.updated.length,
+      verifiedAfterUpdate: postRollbackVersionUpdate.verifiedAfterUpdate.length,
+    },
     repairedPath,
     rolledBackPath,
     verifiedAfterRollback: verifiedAfterRollback.length,
@@ -280,13 +438,15 @@ async function main() {
     gates: {
       downloadedReleaseAssetsVerified: 'passed',
       installFromPackZip: 'passed',
+      versionTransitionUpdate: 'passed',
       repairCorruptFile: 'passed',
       rollbackSimulatedReplacement: 'passed',
-      realVersionUpdate: 'blocked',
+      realVersionUpdate: 'passed_with_previous_version_fixture',
       electronLauncherEndToEnd: 'covered_by_release-readiness/sky-relay-electron-ui-smoke.json',
     },
-    blockers: [
-      'Only one Sky Relay pack version exists, so real version-to-version update remains blocked.',
+    blockers: [],
+    residualRisks: [
+      'The previous Sky Relay version is a fixture-local manifest generated from current public assets plus an older module placeholder; it proves pack update mechanics without claiming a second public Sky Relay release exists.',
       'This smoke uses the Launcher pack manifest and archive contract directly; real gameplay evidence is still required before public alpha promotion.',
     ],
   }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.launcher-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-11T12:18:53.327Z",
+  "generatedAt": "2026-06-11T15:24:23.004Z",
   "scope": "browser-preview-ui-smoke",
   "launcher": {
     "repository": "knoxhack/ECHO-Launcher",
@@ -85,11 +85,11 @@
     "browserPreviewDesktopUiSmoke": "passed",
     "launcherLifecycleContractSmoke": "passed",
     "packagedElectronUiEndToEnd": "not_started",
-    "realVersionToVersionUpdate": "blocked"
+    "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "residualRisks": [
     "The browser-preview smoke verifies the React launcher surface in Vite; it does not replace a packaged Electron install/update click-through.",
-    "Only one Sky Relay pack version exists, so real version-to-version update remains blocked.",
+    "Version-transition update mechanics are covered by release-readiness/sky-relay-launcher-lifecycle-smoke.json using a fixture-local previous Sky Relay manifest; this report does not claim a second public Sky Relay release exists.",
     "A phone-width viewport still exposes a wider desktop launcher shell; this is outside the Sky Relay card fix and should be handled as a separate responsive shell task if mobile launcher support is required."
   ]
 }

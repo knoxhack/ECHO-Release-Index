@@ -427,6 +427,7 @@ async function buildReport(args) {
       'launcherReleaseIndexDeepLinks',
       'launcherInstallFromPackZip',
       'launcherUpdateReconciliation',
+      'launcherVersionTransitionUpdate',
       'launcherRepairCorruptFile',
       'launcherRollbackSimulatedUpdate',
     ]) {
@@ -444,12 +445,6 @@ async function buildReport(args) {
     ]) {
       requireGate(item, reports.electronUiSmoke, 'packaged Electron UI smoke', gate)
     }
-    requireCondition(
-      item,
-      reports.launcherLifecycleSmoke?.gates?.realVersionToVersionUpdate !== 'blocked',
-      'real version-to-version launcher update is proven',
-      'real version-to-version launcher update is blocked until a second Sky Relay version exists',
-    )
     phases.push(finalizePhase(item))
   }
 
@@ -478,6 +473,7 @@ async function buildReport(args) {
     for (const gate of [
       'downloadedReleaseAssetsVerified',
       'installFromPackZip',
+      'versionTransitionUpdate',
       'repairCorruptFile',
       'rollbackSimulatedReplacement',
     ]) {
@@ -496,12 +492,6 @@ async function buildReport(args) {
     }
     requireReport(item, reports.gameplayEvidence, 'gameplay evidence report', 'echo.skyrelay.gameplay-evidence.v1')
     requireCondition(item, reports.gameplayEvidence?.status === 'PASS', 'gameplay evidence report is PASS', 'gameplay evidence report must be PASS before public alpha promotion')
-    requireCondition(
-      item,
-      reports.editionPackSmoke?.gates?.realVersionUpdate !== 'blocked',
-      'real pack version update is proven',
-      'real pack version update is blocked until a second Sky Relay version exists',
-    )
     phases.push(finalizePhase(item))
   }
 

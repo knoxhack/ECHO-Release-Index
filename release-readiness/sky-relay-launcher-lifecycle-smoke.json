@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.launcher-lifecycle-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-11T13:26:18.810Z",
+  "generatedAt": "2026-06-11T15:25:47.787Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-download",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-launcher-lifecycle-smoke",
   "editions": [
@@ -34,15 +34,19 @@
         "verifiedAfterInstall": 12
       },
       "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
         "updated": 1,
         "verified": 11,
         "removed": 1,
         "verifiedAfterUpdate": 12,
-        "sameVersionReconciliation": true
+        "sameVersionReconciliation": false
       },
       "rollback": {
         "restoredPreviousTarget": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
-        "restoredObsoletePath": "addons/sky-relay-obsolete-smoke.echo-addon"
+        "restoredObsoletePath": "addons/sky-relay-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
       },
       "postRollbackUpdate": {
         "updated": 1,
@@ -83,15 +87,19 @@
         "verifiedAfterInstall": 12
       },
       "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
         "updated": 1,
         "verified": 11,
         "removed": 1,
         "verifiedAfterUpdate": 12,
-        "sameVersionReconciliation": true
+        "sameVersionReconciliation": false
       },
       "rollback": {
         "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
-        "restoredObsoletePath": "mods/sky-relay-obsolete-smoke.jar"
+        "restoredObsoletePath": "mods/sky-relay-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
       },
       "postRollbackUpdate": {
         "updated": 1,
@@ -132,15 +140,19 @@
         "verifiedAfterInstall": 12
       },
       "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
         "updated": 1,
         "verified": 11,
         "removed": 1,
         "verifiedAfterUpdate": 12,
-        "sameVersionReconciliation": true
+        "sameVersionReconciliation": false
       },
       "rollback": {
         "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
-        "restoredObsoletePath": "mods/sky-relay-obsolete-smoke.jar"
+        "restoredObsoletePath": "mods/sky-relay-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
       },
       "postRollbackUpdate": {
         "updated": 1,
@@ -157,15 +169,17 @@
     "launcherReleaseIndexDeepLinks": "passed",
     "launcherInstallFromPackZip": "passed",
     "launcherUpdateReconciliation": "passed",
+    "launcherVersionTransitionUpdate": "passed",
     "launcherRepairCorruptFile": "passed",
     "launcherRollbackSimulatedUpdate": "passed",
-    "realVersionToVersionUpdate": "blocked",
+    "realVersionToVersionUpdate": "passed_with_previous_version_fixture",
     "packagedElectronCardUiSmoke": "covered_separately",
     "electronInstallUpdateRepairClickThrough": "covered_by_packaged_electron_ui_smoke",
     "electronRollbackClickThrough": "not_available_no_visible_ui_command"
   },
-  "blockers": [
-    "Only one Sky Relay pack version exists, so this smoke uses same-version manifest reconciliation plus rollback instead of a real version-to-version update.",
+  "blockers": [],
+  "residualRisks": [
+    "The previous Sky Relay version is a fixture-local manifest generated from current public assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Sky Relay release exists.",
     "This script uses Launcher-owned resolver and lifecycle contracts from Node; packaged Electron install/update/repair click-through is covered by release-readiness/sky-relay-electron-ui-smoke.json, while rollback has no visible packaged UI command yet."
   ]
 }

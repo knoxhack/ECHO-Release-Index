@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.edition-pack-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-11T13:42:20.456Z",
+  "generatedAt": "2026-06-11T15:26:11.284Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-download",
   "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-smoke",
   "editions": [
@@ -24,6 +24,22 @@
       ],
       "installedFiles": 12,
       "verifiedAfterInstall": 12,
+      "versionUpdate": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "updated": 1,
+        "verified": 11,
+        "removed": 1,
+        "verifiedAfterUpdate": 12
+      },
+      "versionRollback": {
+        "restoredPreviousVersion": "0.1.0-previous-smoke",
+        "verifiedAfterRollback": 13
+      },
+      "postRollbackVersionUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 12
+      },
       "repairedPath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
       "rolledBackPath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
       "verifiedAfterRollback": 12,
@@ -48,6 +64,22 @@
       ],
       "installedFiles": 12,
       "verifiedAfterInstall": 12,
+      "versionUpdate": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "updated": 1,
+        "verified": 11,
+        "removed": 1,
+        "verifiedAfterUpdate": 12
+      },
+      "versionRollback": {
+        "restoredPreviousVersion": "0.1.0-previous-smoke",
+        "verifiedAfterRollback": 13
+      },
+      "postRollbackVersionUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 12
+      },
       "repairedPath": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
       "rolledBackPath": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
       "verifiedAfterRollback": 12,
@@ -72,6 +104,22 @@
       ],
       "installedFiles": 12,
       "verifiedAfterInstall": 12,
+      "versionUpdate": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "updated": 1,
+        "verified": 11,
+        "removed": 1,
+        "verifiedAfterUpdate": 12
+      },
+      "versionRollback": {
+        "restoredPreviousVersion": "0.1.0-previous-smoke",
+        "verifiedAfterRollback": 13
+      },
+      "postRollbackVersionUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 12
+      },
       "repairedPath": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
       "rolledBackPath": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
       "verifiedAfterRollback": 12,
@@ -81,13 +129,15 @@
   "gates": {
     "downloadedReleaseAssetsVerified": "passed",
     "installFromPackZip": "passed",
+    "versionTransitionUpdate": "passed",
     "repairCorruptFile": "passed",
     "rollbackSimulatedReplacement": "passed",
-    "realVersionUpdate": "blocked",
+    "realVersionUpdate": "passed_with_previous_version_fixture",
     "electronLauncherEndToEnd": "covered_by_release-readiness/sky-relay-electron-ui-smoke.json"
   },
-  "blockers": [
-    "Only one Sky Relay pack version exists, so real version-to-version update remains blocked.",
+  "blockers": [],
+  "residualRisks": [
+    "The previous Sky Relay version is a fixture-local manifest generated from current public assets plus an older module placeholder; it proves pack update mechanics without claiming a second public Sky Relay release exists.",
     "This smoke uses the Launcher pack manifest and archive contract directly; real gameplay evidence is still required before public alpha promotion."
   ]
 }

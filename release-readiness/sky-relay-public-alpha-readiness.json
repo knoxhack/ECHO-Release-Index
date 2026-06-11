@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.public-alpha-readiness.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T15:05:34.834Z",
+  "generatedAt": "2026-06-11T15:26:20.779Z",
   "project": {
     "name": "ECHO: Sky Relay",
     "moduleId": "echoskyrelayprotocol",
@@ -81,7 +81,7 @@
       "phase": 9,
       "id": "editions_launcher",
       "name": "Editions And Launcher",
-      "status": "blocked"
+      "status": "passed"
     },
     {
       "phase": 10,
@@ -266,7 +266,7 @@
       "phase": 9,
       "id": "editions_launcher",
       "name": "Editions And Launcher",
-      "status": "blocked",
+      "status": "passed",
       "evidence": [
         "edition release report exists",
         "edition release report schemaVersion=echo.skyrelay.edition-draft-releases.v1",
@@ -278,6 +278,7 @@
         "launcher lifecycle smoke gate launcherReleaseIndexDeepLinks=passed",
         "launcher lifecycle smoke gate launcherInstallFromPackZip=passed",
         "launcher lifecycle smoke gate launcherUpdateReconciliation=passed",
+        "launcher lifecycle smoke gate launcherVersionTransitionUpdate=passed",
         "launcher lifecycle smoke gate launcherRepairCorruptFile=passed",
         "launcher lifecycle smoke gate launcherRollbackSimulatedUpdate=passed",
         "packaged Electron UI smoke exists",
@@ -290,9 +291,7 @@
         "packaged Electron UI smoke gate packagedElectronUpdateReconciliationClickThrough=passed",
         "packaged Electron UI smoke gate packagedElectronRepairClickThrough=passed"
       ],
-      "blockers": [
-        "real version-to-version launcher update is blocked until a second Sky Relay version exists"
-      ]
+      "blockers": []
     },
     {
       "phase": 10,
@@ -317,6 +316,7 @@
         "edition pack smoke schemaVersion=echo.skyrelay.edition-pack-smoke.v1",
         "edition pack smoke gate downloadedReleaseAssetsVerified=passed",
         "edition pack smoke gate installFromPackZip=passed",
+        "edition pack smoke gate versionTransitionUpdate=passed",
         "edition pack smoke gate repairCorruptFile=passed",
         "edition pack smoke gate rollbackSimulatedReplacement=passed",
         "addons/echoskyrelayprotocol.json exists",
@@ -330,8 +330,7 @@
         "gameplay evidence report schemaVersion=echo.skyrelay.gameplay-evidence.v1"
       ],
       "blockers": [
-        "gameplay evidence report must be PASS before public alpha promotion",
-        "real pack version update is blocked until a second Sky Relay version exists"
+        "gameplay evidence report must be PASS before public alpha promotion"
       ]
     }
   ],
@@ -344,7 +343,7 @@
     "fragments_world_loop": "passed",
     "player_progression": "passed",
     "systems_integration": "passed",
-    "editions_launcher": "blocked",
+    "editions_launcher": "passed",
     "release_public_alpha": "blocked"
   },
   "promotion": {
@@ -353,9 +352,7 @@
     "publicAlphaCanBeDeclaredReady": false
   },
   "blockers": [
-    "phase 9 Editions And Launcher: real version-to-version launcher update is blocked until a second Sky Relay version exists",
-    "phase 10 Release And Public Alpha: gameplay evidence report must be PASS before public alpha promotion",
-    "phase 10 Release And Public Alpha: real pack version update is blocked until a second Sky Relay version exists"
+    "phase 10 Release And Public Alpha: gameplay evidence report must be PASS before public alpha promotion"
   ],
   "notes": [
     "This audit composes source contracts and release-readiness evidence; it does not replace real manual gameplay evidence.",

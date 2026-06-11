@@ -178,8 +178,8 @@ async function writeCatalogFiles(root) {
 }
 
 async function writeReports(root, options = {}) {
-  const realUpdateGate = options.realUpdateGate ?? 'passed'
-  const packRealUpdateGate = options.packRealUpdateGate ?? 'passed'
+  const launcherVersionTransitionGate = options.launcherVersionTransitionGate ?? 'passed'
+  const packVersionTransitionGate = options.packVersionTransitionGate ?? 'passed'
   const gameplayStatus = options.gameplayStatus ?? 'PASS'
 
   await writeJson(root, 'release-readiness/sky-relay-module-draft-release.json', {
@@ -216,9 +216,10 @@ async function writeReports(root, options = {}) {
     gates: {
       downloadedReleaseAssetsVerified: 'passed',
       installFromPackZip: 'passed',
+      versionTransitionUpdate: packVersionTransitionGate,
       repairCorruptFile: 'passed',
       rollbackSimulatedReplacement: 'passed',
-      realVersionUpdate: packRealUpdateGate,
+      realVersionUpdate: packVersionTransitionGate === 'passed' ? 'passed_with_previous_version_fixture' : 'blocked',
     },
   })
   await writeJson(root, 'release-readiness/sky-relay-launcher-lifecycle-smoke.json', {
@@ -227,9 +228,10 @@ async function writeReports(root, options = {}) {
       launcherReleaseIndexDeepLinks: 'passed',
       launcherInstallFromPackZip: 'passed',
       launcherUpdateReconciliation: 'passed',
+      launcherVersionTransitionUpdate: launcherVersionTransitionGate,
       launcherRepairCorruptFile: 'passed',
       launcherRollbackSimulatedUpdate: 'passed',
-      realVersionToVersionUpdate: realUpdateGate,
+      realVersionToVersionUpdate: launcherVersionTransitionGate === 'passed' ? 'passed_with_previous_version_fixture' : 'blocked',
     },
   })
   await writeJson(root, 'release-readiness/sky-relay-electron-ui-smoke.json', {
@@ -279,8 +281,8 @@ try {
   await writeEditionRepos(blockedWorkspace)
   await writeCatalogFiles(blockedRoot)
   await writeReports(blockedRoot, {
-    realUpdateGate: 'blocked',
-    packRealUpdateGate: 'blocked',
+    launcherVersionTransitionGate: 'blocked',
+    packVersionTransitionGate: 'blocked',
     gameplayStatus: 'BLOCKED',
   })
   const blocked = run(blockedRoot, blockedWorkspace, ['--require-release-ready'])
@@ -290,7 +292,7 @@ try {
   assert.equal(blockedReport.gates.editions_launcher, 'blocked')
   assert.equal(blockedReport.gates.release_public_alpha, 'blocked')
   assert.match(blocked.stdout, /gameplay evidence report must be PASS/u)
-  assert.match(blocked.stdout, /real version-to-version launcher update is blocked/u)
+  assert.match(blocked.stdout, /launcher lifecycle smoke gate launcherVersionTransitionUpdate must be passed/u)
 } finally {
   await fs.rm(tmp, { recursive: true, force: true })
 }
