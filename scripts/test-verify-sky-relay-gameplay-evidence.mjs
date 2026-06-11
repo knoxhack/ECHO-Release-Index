@@ -169,6 +169,12 @@ try {
   assert.equal(readyReport.captureKits.length, 3)
   assert.equal(readyReport.gates.realFirst30Playthrough, 'passed')
   assert.equal(readyReport.gates.realSignalCrownPlaythrough, 'passed')
+  const nativeEvidence = readyReport.editions.find((edition) => edition.edition === 'native')
+  assert.match(nativeEvidence.checked.supportingFiles[0].sha256, /^[a-f0-9]{64}$/u)
+  assert.equal(nativeEvidence.checked.supportingFiles[0].size, 8)
+  assert.equal(nativeEvidence.checked.screenshots[0].size, 33)
+  assert.match(nativeEvidence.checked.screenshots[0].sha256, /^[a-f0-9]{64}$/u)
+  assert.deepEqual(nativeEvidence.checked.screenshots[0].dimensions, { width: 1280, height: 720 })
 
   const badClaimRoot = path.join(tmp, 'bad-claim-release-index')
   const badClaimWorkspace = path.join(tmp, 'bad-claim-workspace')

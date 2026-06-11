@@ -97,6 +97,11 @@ Each edition must produce these save snapshots:
 
 Save snapshots must be ZIP files.
 
+The central Release Index verifier records byte size and SHA-256 for every
+accepted notes, log, screenshot, and save file. Screenshot entries also record
+PNG dimensions, so the final readiness report can identify the exact evidence
+set reviewed for promotion.
+
 ## Claims
 
 Set each claim in `manual-evidence.json` to `true` only after the corresponding
