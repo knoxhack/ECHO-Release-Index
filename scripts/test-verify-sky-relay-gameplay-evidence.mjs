@@ -568,6 +568,8 @@ try {
   assert.ok(nativeEvidence.checked.logs[0].lineCount >= 1)
   assert.deepEqual(nativeEvidence.checked.logs[0].provenanceMatches, ['packId', 'releaseTag', 'artifactAsset', 'artifactSha256', 'artifactSize'])
   assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 1)
+  assert.equal(nativeEvidence.checked.saveSnapshots[0].hasLevelDat, true)
+  assert.deepEqual(nativeEvidence.checked.saveSnapshots[0].unsafeEntries, [])
   assert.equal(new Set(nativeEvidence.checked.saveSnapshots.map((snapshot) => snapshot.sha256)).size, 3)
 
   const badClaimRoot = path.join(tmp, 'bad-claim-release-index')
@@ -762,6 +764,19 @@ try {
   const duplicateSave = run(duplicateSaveRoot, duplicateSaveWorkspace, ['--require-release-ready'])
   assert.equal(duplicateSave.status, 1)
   assert.match(`${duplicateSave.stdout}\n${duplicateSave.stderr}`, /native\.saveSnapshots must contain unique file content/u)
+
+  const missingLevelDatRoot = path.join(tmp, 'missing-level-dat-release-index')
+  const missingLevelDatWorkspace = path.join(tmp, 'missing-level-dat-workspace')
+  await writeRouteReport(missingLevelDatRoot)
+  await writeGameplayEvidence(missingLevelDatWorkspace)
+  await writeBytes(
+    path.join(missingLevelDatWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip',
+    zipFixture('notes/readme.txt', 'not a world save\n'),
+  )
+  const missingLevelDat = run(missingLevelDatRoot, missingLevelDatWorkspace, ['--require-release-ready'])
+  assert.equal(missingLevelDat.status, 1)
+  assert.match(`${missingLevelDat.stdout}\n${missingLevelDat.stderr}`, /ZIP must contain a level\.dat world save entry/u)
 
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
   const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')
