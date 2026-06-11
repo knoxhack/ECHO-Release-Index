@@ -151,8 +151,10 @@ Each edition must produce these save snapshots:
 - `fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip`
 - `fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip`
 
-Save snapshots must be ZIP archives with at least one entry, a `level.dat` world
-save entry, and no absolute or parent-directory entry paths.
+Save snapshots must be ZIP archives with `level.dat`, at least one
+`region/r.*.*.mca` chunk entry, at least one player/profile data entry under
+`playerdata/`, `data/`, `stats/`, or `advancements/`, and no absolute or
+parent-directory entry paths.
 Logs must not contain blocking crash or corruption signatures such as
 `crash report`, `fatal`, `uncaught exception`, `unhandled exception`,
 `exception in thread`, Java stack trace lines, `failed to load world`, or

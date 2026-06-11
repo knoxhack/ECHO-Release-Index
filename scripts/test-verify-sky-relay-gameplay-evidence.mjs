@@ -139,40 +139,71 @@ function crc32(buffer) {
 }
 
 function zipFixture(filename = 'save/level.dat', content = 'fixture save snapshot\n') {
-  const name = Buffer.from(filename, 'utf8')
-  const data = Buffer.from(content, 'utf8')
-  const checksum = crc32(data)
-  const localHeader = Buffer.alloc(30)
-  localHeader.writeUInt32LE(0x04034b50, 0)
-  localHeader.writeUInt16LE(20, 4)
-  localHeader.writeUInt16LE(0, 6)
-  localHeader.writeUInt16LE(0, 8)
-  localHeader.writeUInt32LE(checksum, 14)
-  localHeader.writeUInt32LE(data.length, 18)
-  localHeader.writeUInt32LE(data.length, 22)
-  localHeader.writeUInt16LE(name.length, 26)
+  const entries = Array.isArray(filename)
+    ? filename
+    : [{ filename, content }]
+  const localParts = []
+  const centralParts = []
+  let offset = 0
 
-  const centralDirectoryOffset = localHeader.length + name.length + data.length
-  const centralHeader = Buffer.alloc(46)
-  centralHeader.writeUInt32LE(0x02014b50, 0)
-  centralHeader.writeUInt16LE(20, 4)
-  centralHeader.writeUInt16LE(20, 6)
-  centralHeader.writeUInt16LE(0, 8)
-  centralHeader.writeUInt16LE(0, 10)
-  centralHeader.writeUInt32LE(checksum, 16)
-  centralHeader.writeUInt32LE(data.length, 20)
-  centralHeader.writeUInt32LE(data.length, 24)
-  centralHeader.writeUInt16LE(name.length, 28)
+  for (const entry of entries) {
+    const name = Buffer.from(entry.filename, 'utf8')
+    const data = Buffer.from(entry.content, 'utf8')
+    const checksum = crc32(data)
+    const localHeader = Buffer.alloc(30)
+    localHeader.writeUInt32LE(0x04034b50, 0)
+    localHeader.writeUInt16LE(20, 4)
+    localHeader.writeUInt16LE(0, 6)
+    localHeader.writeUInt16LE(0, 8)
+    localHeader.writeUInt32LE(checksum, 14)
+    localHeader.writeUInt32LE(data.length, 18)
+    localHeader.writeUInt32LE(data.length, 22)
+    localHeader.writeUInt16LE(name.length, 26)
 
-  const centralDirectorySize = centralHeader.length + name.length
+    const centralHeader = Buffer.alloc(46)
+    centralHeader.writeUInt32LE(0x02014b50, 0)
+    centralHeader.writeUInt16LE(20, 4)
+    centralHeader.writeUInt16LE(20, 6)
+    centralHeader.writeUInt16LE(0, 8)
+    centralHeader.writeUInt16LE(0, 10)
+    centralHeader.writeUInt32LE(checksum, 16)
+    centralHeader.writeUInt32LE(data.length, 20)
+    centralHeader.writeUInt32LE(data.length, 24)
+    centralHeader.writeUInt16LE(name.length, 28)
+    centralHeader.writeUInt32LE(offset, 42)
+
+    localParts.push(localHeader, name, data)
+    centralParts.push(centralHeader, name)
+    offset += localHeader.length + name.length + data.length
+  }
+
+  const centralDirectoryOffset = offset
+  const centralDirectorySize = centralParts.reduce((total, part) => total + part.length, 0)
   const endOfCentralDirectory = Buffer.alloc(22)
   endOfCentralDirectory.writeUInt32LE(0x06054b50, 0)
-  endOfCentralDirectory.writeUInt16LE(1, 8)
-  endOfCentralDirectory.writeUInt16LE(1, 10)
+  endOfCentralDirectory.writeUInt16LE(entries.length, 8)
+  endOfCentralDirectory.writeUInt16LE(entries.length, 10)
   endOfCentralDirectory.writeUInt32LE(centralDirectorySize, 12)
   endOfCentralDirectory.writeUInt32LE(centralDirectoryOffset, 16)
 
-  return Buffer.concat([localHeader, name, data, centralHeader, name, endOfCentralDirectory])
+  return Buffer.concat([...localParts, ...centralParts, endOfCentralDirectory])
+}
+
+function worldSaveZipFixture(index, relPath) {
+  return zipFixture([
+    {
+      filename: 'save/level.dat',
+      content: `fixture level.dat ${index + 1}: ${relPath}\n`,
+    },
+    {
+      filename: 'save/region/r.0.0.mca',
+      content: `fixture region chunk ${index + 1}: ${relPath}\n`,
+    },
+    {
+      filename: `save/playerdata/test-player-${index + 1}.dat`,
+      content: `fixture player state ${index + 1}: ${relPath}\n`,
+    },
+  ])
 }
 
 async function writeJson(root, relPath, value) {
@@ -559,7 +590,7 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
     for (const [index, relPath] of screenshots.entries()) await writeBytes(root, relPath, pngFixture(1280, 720, index + 1))
     for (const relPath of logs) await writeText(root, relPath, logFixture({ packId: edition.packId, run, sessions }, relPath))
     for (const [index, relPath] of saveSnapshots.entries()) {
-      await writeBytes(root, relPath, zipFixture('save/level.dat', `fixture save snapshot ${index + 1}: ${relPath}\n`))
+      await writeBytes(root, relPath, worldSaveZipFixture(index, relPath))
     }
 
     await writeJson(root, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json', evidence)
@@ -615,8 +646,11 @@ try {
     'runStartedAt',
   ])
   assert.ok(nativeEvidence.checked.logs[0].sessionMatches.includes('signal_crown_completion.startedAt'))
-  assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 1)
+  assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 3)
   assert.equal(nativeEvidence.checked.saveSnapshots[0].hasLevelDat, true)
+  assert.equal(nativeEvidence.checked.saveSnapshots[0].hasRegionChunk, true)
+  assert.equal(nativeEvidence.checked.saveSnapshots[0].hasPlayerOrDataState, true)
+  assert.ok(nativeEvidence.checked.saveSnapshots[0].worldStateEntries.length >= 2)
   assert.deepEqual(nativeEvidence.checked.saveSnapshots[0].unsafeEntries, [])
   assert.equal(new Set(nativeEvidence.checked.saveSnapshots.map((snapshot) => snapshot.sha256)).size, 3)
 
@@ -804,10 +838,15 @@ try {
   const duplicateSaveWorkspace = path.join(tmp, 'duplicate-save-workspace')
   await writeRouteReport(duplicateSaveRoot)
   await writeGameplayEvidence(duplicateSaveWorkspace)
+  const first30SaveBytes = await fs.readFile(path.join(
+    duplicateSaveWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip',
+  ))
   await writeBytes(
     path.join(duplicateSaveWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
     'fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip',
-    zipFixture('save/level.dat', 'fixture save snapshot 1: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip\n'),
+    first30SaveBytes,
   )
   const duplicateSave = run(duplicateSaveRoot, duplicateSaveWorkspace, ['--require-release-ready'])
   assert.equal(duplicateSave.status, 1)
@@ -825,6 +864,19 @@ try {
   const missingLevelDat = run(missingLevelDatRoot, missingLevelDatWorkspace, ['--require-release-ready'])
   assert.equal(missingLevelDat.status, 1)
   assert.match(`${missingLevelDat.stdout}\n${missingLevelDat.stderr}`, /ZIP must contain a level\.dat world save entry/u)
+
+  const missingWorldStateRoot = path.join(tmp, 'missing-world-state-release-index')
+  const missingWorldStateWorkspace = path.join(tmp, 'missing-world-state-workspace')
+  await writeRouteReport(missingWorldStateRoot)
+  await writeGameplayEvidence(missingWorldStateWorkspace)
+  await writeBytes(
+    path.join(missingWorldStateWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip',
+    zipFixture('save/level.dat', 'level.dat alone is not a full captured world state\n'),
+  )
+  const missingWorldState = run(missingWorldStateRoot, missingWorldStateWorkspace, ['--require-release-ready'])
+  assert.equal(missingWorldState.status, 1)
+  assert.match(`${missingWorldState.stdout}\n${missingWorldState.stderr}`, /captured world state entries beyond level\.dat/u)
 
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
   const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')

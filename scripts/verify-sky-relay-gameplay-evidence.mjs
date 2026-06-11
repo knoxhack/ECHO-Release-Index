@@ -14,6 +14,8 @@ const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0
 const ZIP_LOCAL_FILE_HEADER = Buffer.from([0x50, 0x4b, 0x03, 0x04])
 const ZIP_CENTRAL_DIRECTORY_HEADER = Buffer.from([0x50, 0x4b, 0x01, 0x02])
 const ZIP_END_OF_CENTRAL_DIRECTORY = Buffer.from([0x50, 0x4b, 0x05, 0x06])
+const WORLD_SAVE_REGION_ENTRY = /(^|\/)region\/r\.-?\d+\.-?\d+\.mca$/iu
+const WORLD_SAVE_PROFILE_ENTRY = /(^|\/)(?:playerdata|data|stats|advancements)\/[^/]+\.(?:dat|json)$/iu
 
 const EVIDENCE_SOURCE_REPOS = {
   native: {
@@ -546,11 +548,18 @@ async function zipArchiveInfo(filePath) {
   }
   if (offset !== centralDirectoryOffset + centralDirectorySize) return null
 
+  const worldStateEntries = entryNames.filter((entryName) =>
+    WORLD_SAVE_REGION_ENTRY.test(entryName) || WORLD_SAVE_PROFILE_ENTRY.test(entryName)
+  )
+
   return {
     entries: entryCount,
     centralDirectorySize,
     entryNames,
     hasLevelDat: entryNames.some((entryName) => entryName === 'level.dat' || entryName.endsWith('/level.dat')),
+    hasRegionChunk: entryNames.some((entryName) => WORLD_SAVE_REGION_ENTRY.test(entryName)),
+    hasPlayerOrDataState: entryNames.some((entryName) => WORLD_SAVE_PROFILE_ENTRY.test(entryName)),
+    worldStateEntries,
     unsafeEntries,
   }
 }
@@ -1132,6 +1141,9 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
       }
       if (!zipInfo.hasLevelDat) {
         fileBlockers.push(`${label}[${index}] ZIP must contain a level.dat world save entry: ${relPath}`)
+      }
+      if (!zipInfo.hasRegionChunk || !zipInfo.hasPlayerOrDataState) {
+        fileBlockers.push(`${label}[${index}] ZIP must contain captured world state entries beyond level.dat, including a region chunk and player/profile data: ${relPath}`)
       }
       if (zipInfo.unsafeEntries.length) {
         fileBlockers.push(`${label}[${index}] ZIP contains unsafe entry paths: ${zipInfo.unsafeEntries.join(', ')}`)
