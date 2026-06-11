@@ -34,6 +34,10 @@ const captureKitFiles = [
   'scripts/verify-manual-gameplay-evidence.mjs',
   'fixtures/sky-relay/gameplay-qa/manual-evidence.template.json',
   'fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md',
 ]
 
 function pngFixture(width = 1280, height = 720) {
@@ -187,6 +191,19 @@ try {
   const badClaim = run(badClaimRoot, badClaimWorkspace, ['--require-release-ready'])
   assert.equal(badClaim.status, 1)
   assert.match(`${badClaim.stdout}\n${badClaim.stderr}`, /native manual evidence claim realSignalCrownPlaythrough must be true/u)
+
+  const templateMarkerRoot = path.join(tmp, 'template-marker-release-index')
+  const templateMarkerWorkspace = path.join(tmp, 'template-marker-workspace')
+  await writeRouteReport(templateMarkerRoot)
+  await writeGameplayEvidence(templateMarkerWorkspace)
+  await writeText(
+    path.join(templateMarkerWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md',
+    'ECHO_SKY_RELAY_TEMPLATE_ONLY\n',
+  )
+  const templateMarker = run(templateMarkerRoot, templateMarkerWorkspace, ['--require-release-ready'])
+  assert.equal(templateMarker.status, 1)
+  assert.match(`${templateMarker.stdout}\n${templateMarker.stderr}`, /template marker ECHO_SKY_RELAY_TEMPLATE_ONLY/u)
 
   const lowResolutionRoot = path.join(tmp, 'low-resolution-release-index')
   const lowResolutionWorkspace = path.join(tmp, 'low-resolution-workspace')

@@ -7,6 +7,7 @@ import process from 'node:process'
 const DEFAULT_ROUTE_REPORT = 'release-readiness/sky-relay-gameplay-route-smoke.json'
 const DEFAULT_MANUAL_EVIDENCE = 'fixtures/sky-relay/gameplay-qa/manual-evidence.json'
 const DEFAULT_OUT = 'release-readiness/sky-relay-gameplay-evidence.json'
+const TEMPLATE_MARKER = 'ECHO_SKY_RELAY_TEMPLATE_ONLY'
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])
 const ZIP_SIGNATURES = [
   Buffer.from([0x50, 0x4b, 0x03, 0x04]),
@@ -37,6 +38,10 @@ const REQUIRED_CAPTURE_KIT_FILES = [
   'scripts/verify-manual-gameplay-evidence.mjs',
   'fixtures/sky-relay/gameplay-qa/manual-evidence.template.json',
   'fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md',
 ]
 
 const REQUIRED_CLAIMS = [
@@ -322,6 +327,12 @@ async function validateManualEvidence(args, edition, blockers) {
     minItems: 4,
     requiredPatterns: REQUIRED_SUPPORTING_PATTERNS,
     blockers,
+    fileValidator: async ({ filePath, relPath, blockers: fileBlockers, label, index }) => {
+      const text = await fs.readFile(filePath, 'utf8')
+      if (text.includes(TEMPLATE_MARKER)) {
+        fileBlockers.push(`${label}[${index}] target still contains template marker ${TEMPLATE_MARKER}: ${relPath}`)
+      }
+    },
   })
   result.checked.screenshots = await validateFileList({
     root,

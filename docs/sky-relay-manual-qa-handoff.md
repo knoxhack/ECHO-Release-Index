@@ -45,6 +45,10 @@ Each edition repo must contain:
 - `scripts/test-manual-gameplay-evidence-tools.mjs`
 - `fixtures/sky-relay/gameplay-qa/manual-evidence.template.json`
 - `fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md`
+- `fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md`
+- `fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md`
+- `fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md`
+- `fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md`
 
 ## Capture Setup
 
@@ -66,6 +70,11 @@ The initializer creates:
 
 All claims in `manual-evidence.json` must remain `false` until the referenced
 evidence files are produced by the real manual run.
+
+The initializer also creates Markdown worksheets for the four required notes.
+Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and
+central verifiers reject that marker until the worksheets are replaced with real
+playthrough observations.
 
 ## Required Evidence Per Edition
 
