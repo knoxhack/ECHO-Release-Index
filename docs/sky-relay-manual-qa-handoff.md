@@ -136,8 +136,9 @@ Each edition must produce these screenshots:
 - `fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png`
 - `fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png`
 
-Screenshots must be complete PNG images with valid chunks, an `IEND` chunk, and
-dimensions at least 640x360.
+Screenshots must be complete PNG images with valid chunks, an `IEND` chunk,
+dimensions at least 640x360, and visible pixel variation rather than blank
+placeholder frames.
 
 Each edition must produce these logs:
 
