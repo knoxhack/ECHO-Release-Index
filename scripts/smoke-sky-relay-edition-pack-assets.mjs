@@ -10,10 +10,25 @@ const EDITIONS = [
   'ECHO-Sky-Relay-Standalone-Edition',
 ]
 
+const PUBLIC_RELEASES = {
+  'ECHO-Sky-Relay-Native-Edition': {
+    releaseTag: 'sky-relay-native-0.1.0-alpha',
+    releaseUrl: 'https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.0-alpha',
+  },
+  'ECHO-Sky-Relay-NeoForge-Edition': {
+    releaseTag: 'sky-relay-neoforge-0.1.0-alpha',
+    releaseUrl: 'https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.0-alpha',
+  },
+  'ECHO-Sky-Relay-Standalone-Edition': {
+    releaseTag: 'sky-relay-standalone-0.1.0-alpha',
+    releaseUrl: 'https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.0-alpha',
+  },
+}
+
 function usage() {
   return `Usage: node scripts/smoke-sky-relay-edition-pack-assets.mjs [options]
 
-Smoke-tests downloaded Sky Relay draft pack assets by verifying checksums,
+Smoke-tests downloaded Sky Relay pack assets by verifying checksums,
 installing manifest files from the pack ZIP, repairing a corrupted file, and
 rolling back a simulated file replacement.
 
@@ -225,10 +240,10 @@ async function smokeEdition(args, repoName) {
   return {
     repoName,
     pack: release.pack,
-    releaseTag: repoName.includes('Native') ? 'sky-relay-native-0.1.0-alpha'
-      : repoName.includes('NeoForge') ? 'sky-relay-neoforge-0.1.0-alpha'
-        : 'sky-relay-standalone-0.1.0-alpha',
-    releaseDraft: true,
+    releaseTag: PUBLIC_RELEASES[repoName].releaseTag,
+    releaseUrl: PUBLIC_RELEASES[repoName].releaseUrl,
+    publicPrerelease: true,
+    releaseMetadataDraft: Boolean(release.draft),
     manifestAsset: release.manifestAsset,
     artifactAsset: release.artifactAsset,
     artifactSha256: release.artifactSha256,
@@ -263,16 +278,16 @@ async function main() {
     workRoot: args.workRoot,
     editions,
     gates: {
-      downloadedDraftAssetsVerified: 'passed',
+      downloadedReleaseAssetsVerified: 'passed',
       installFromPackZip: 'passed',
       repairCorruptFile: 'passed',
       rollbackSimulatedReplacement: 'passed',
       realVersionUpdate: 'blocked',
-      electronLauncherEndToEnd: 'blocked',
+      electronLauncherEndToEnd: 'covered_by_release-readiness/sky-relay-electron-ui-smoke.json',
     },
     blockers: [
       'Only one Sky Relay pack version exists, so real version-to-version update remains blocked.',
-      'This smoke uses the Launcher pack manifest and archive contract directly; a desktop Electron install/update/repair/rollback pass is still required before catalog promotion.',
+      'This smoke uses the Launcher pack manifest and archive contract directly; real gameplay evidence is still required before public alpha promotion.',
     ],
   }
   await writeJson(args.out, report)

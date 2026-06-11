@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.skyrelay.edition-pack-assets.v1",
-  "generatedAt": "2026-06-11T13:26:18.810Z",
+  "generatedAt": "2026-06-11T13:37:03.105Z",
   "project": {
     "name": "ECHO: Sky Relay",
     "version": "0.1.0",
@@ -36,7 +36,7 @@
         "packId": "sky-relay-native-edition",
         "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
         "releaseTag": "sky-relay-native-0.1.0-alpha",
-        "draft": true,
+        "draft": false,
         "downloadDir": "tmp/sky-relay-edition-pack-download/ECHO-Sky-Relay-Native-Edition",
         "assets": [
           {
@@ -75,7 +75,7 @@
         "packId": "sky-relay-neoforge-edition",
         "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
         "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
-        "draft": true,
+        "draft": false,
         "downloadDir": "tmp/sky-relay-edition-pack-download/ECHO-Sky-Relay-NeoForge-Edition",
         "assets": [
           {
@@ -114,7 +114,7 @@
         "packId": "sky-relay-standalone-edition",
         "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
         "releaseTag": "sky-relay-standalone-0.1.0-alpha",
-        "draft": true,
+        "draft": false,
         "downloadDir": "tmp/sky-relay-edition-pack-download/ECHO-Sky-Relay-Standalone-Edition",
         "assets": [
           {
@@ -155,6 +155,8 @@
     "editionPackAssetsBuilt": "passed",
     "editionDraftAssetsUploaded": "passed",
     "editionDraftDownloadBack": "passed",
+    "editionPublicPrereleasesPromoted": "passed",
+    "stableTaggedArtifactUrls": "passed",
     "zipMatchesPackManifest": "passed",
     "releaseIndexApproval": "blocked",
     "launcherInstallUpdateRepairRollback": "node_contract_passed_packaged_install_update_repair_passed",
@@ -176,8 +178,7 @@
     "gameplayRouteSmoke": "release-readiness/sky-relay-gameplay-route-smoke.json"
   },
   "promotionBlockers": [
-    "Edition releases are still drafts and use untagged draft asset URLs.",
-    "Release Index modpack entries must remain warning/planned until stable public URLs and gameplay smoke evidence are available.",
+    "Release Index modpack entries now point at stable public prerelease URLs but remain warning-gated until gameplay smoke evidence is available.",
     "Browser-preview UI smoke passed for the Library pack cards.",
     "Packaged Electron UI smoke passed for renderer mount, native bridge bootstrap, Sky Relay preview card gating, install click-through, same-version update reconciliation, and repair click-through; rollback has no visible packaged UI command.",
     "Launcher Node lifecycle smoke passed for deep links, install, same-version update reconciliation, repair, and rollback.",

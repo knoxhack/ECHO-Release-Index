@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.edition-pack-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-11T12:02:53.314Z",
+  "generatedAt": "2026-06-11T13:42:20.456Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-download",
   "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-smoke",
   "editions": [
@@ -9,7 +9,9 @@
       "repoName": "ECHO-Sky-Relay-Native-Edition",
       "pack": "sky-relay-native-edition",
       "releaseTag": "sky-relay-native-0.1.0-alpha",
-      "releaseDraft": true,
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.0-alpha",
+      "publicPrerelease": true,
+      "releaseMetadataDraft": false,
       "manifestAsset": "sky-relay-native-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "sky-relay-native-edition-0.1.0.zip",
       "artifactSha256": "8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa",
@@ -31,7 +33,9 @@
       "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
       "pack": "sky-relay-neoforge-edition",
       "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
-      "releaseDraft": true,
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.0-alpha",
+      "publicPrerelease": true,
+      "releaseMetadataDraft": false,
       "manifestAsset": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "sky-relay-neoforge-edition-0.1.0.zip",
       "artifactSha256": "04fde5ab03cd89ee3717a90491d818de2659cf77cfc5ea9b0e1ad43e64a9ca7b",
@@ -53,7 +57,9 @@
       "repoName": "ECHO-Sky-Relay-Standalone-Edition",
       "pack": "sky-relay-standalone-edition",
       "releaseTag": "sky-relay-standalone-0.1.0-alpha",
-      "releaseDraft": true,
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.0-alpha",
+      "publicPrerelease": true,
+      "releaseMetadataDraft": false,
       "manifestAsset": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "sky-relay-standalone-edition-0.1.0.zip",
       "artifactSha256": "93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2",
@@ -73,15 +79,15 @@
     }
   ],
   "gates": {
-    "downloadedDraftAssetsVerified": "passed",
+    "downloadedReleaseAssetsVerified": "passed",
     "installFromPackZip": "passed",
     "repairCorruptFile": "passed",
     "rollbackSimulatedReplacement": "passed",
     "realVersionUpdate": "blocked",
-    "electronLauncherEndToEnd": "blocked"
+    "electronLauncherEndToEnd": "covered_by_release-readiness/sky-relay-electron-ui-smoke.json"
   },
   "blockers": [
     "Only one Sky Relay pack version exists, so real version-to-version update remains blocked.",
-    "This smoke uses the Launcher pack manifest and archive contract directly; a desktop Electron install/update/repair/rollback pass is still required before catalog promotion."
+    "This smoke uses the Launcher pack manifest and archive contract directly; real gameplay evidence is still required before public alpha promotion."
   ]
 }

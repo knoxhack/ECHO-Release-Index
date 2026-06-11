@@ -5,9 +5,46 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "planned-sky-relay-0.1.0-alpha",
-  "commitSha": "5c1a0de",
-  "artifacts": {},
+  "releaseTag": "sky-relay-0.1.0-alpha",
+  "commitSha": "ea45c08c611abbb2331ec3a3e0ebda91c51ca1ee",
+  "artifacts": {
+    "native": {
+      "file": "echoskyrelayprotocol-0.1.0.echo-addon",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/echoskyrelayprotocol-0.1.0.echo-addon",
+      "sha256": "707e487f650dd973699960ca6e193a5bb085f05e0237236909ae8ffa73be33bf",
+      "size": 47935
+    },
+    "neoforge": {
+      "file": "echoskyrelayprotocol-0.1.0-neoforge.jar",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/echoskyrelayprotocol-0.1.0-neoforge.jar",
+      "sha256": "461bab4a6a7208bf108a11c2b812b0987935ba30700b41a61c97c5000c8525d1",
+      "size": 53302
+    },
+    "standalone": {
+      "file": "echoskyrelayprotocol-0.1.0-standalone.jar",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/echoskyrelayprotocol-0.1.0-standalone.jar",
+      "sha256": "461bab4a6a7208bf108a11c2b812b0987935ba30700b41a61c97c5000c8525d1",
+      "size": 53302
+    },
+    "sources": {
+      "file": "echoskyrelayprotocol-0.1.0-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/echoskyrelayprotocol-0.1.0-sources.jar",
+      "sha256": "fc5da7ed657df7a2ae6d654615fbe41ca537ac0561613a22fdb3fd5a9ce33140",
+      "size": 29517
+    },
+    "checksums": {
+      "file": "checksums.sha256",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/checksums.sha256",
+      "sha256": "6bd2f1bf132fa6f2814b1929a2296111ea3b2d27dc254f34f64ed7a50571ef21",
+      "size": 927
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/echo-release.json",
+      "sha256": "3a14e6175ae10492d7274a510a56fc65065f0937198699052f325f1be369b66a",
+      "size": 3388
+    }
+  },
   "dependencies": [
     {
       "id": "echocore",
@@ -20,7 +57,8 @@
     "sky-relay-neoforge-edition",
     "sky-relay-standalone-edition"
   ],
-  "trust": "source-linked",
+  "trust": "echo-workflow-built",
   "validation": "warning",
-  "notes": "Planned Sky Relay protocol addon. Keep warning until Native, NeoForge, Standalone, and sources artifacts are published with checksums and launcher install/update/repair/rollback evidence. Full module dependency requirements are declared in ECHO-Modules/addons/echoskyrelayprotocol/src/main/resources/META-INF/echo.mod.json; this catalog entry lists only dependencies already indexed in Release Index."
+  "validationReason": "Public prerelease artifacts are published with SHA-256 metadata and download-back evidence; keep warning until real gameplay evidence is attached for public alpha.",
+  "notes": "Sky Relay protocol addon prerelease. Full module dependency requirements are declared in ECHO-Modules/addons/echoskyrelayprotocol/src/main/resources/META-INF/echo.mod.json; this catalog entry lists only dependencies already indexed in Release Index."
 }

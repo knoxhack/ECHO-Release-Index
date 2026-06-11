@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.skyrelay.module-draft-release.v1",
-  "generatedAt": "2026-06-11T12:04:51.057Z",
+  "generatedAt": "2026-06-11T13:37:03.105Z",
   "project": {
     "name": "ECHO: Sky Relay Protocol",
     "moduleId": "echoskyrelayprotocol",
@@ -9,8 +9,9 @@
   },
   "repository": "knoxhack/ECHO-Modules",
   "releaseTag": "sky-relay-0.1.0-alpha",
-  "draft": true,
-  "releaseUrl": "https://github.com/knoxhack/ECHO-Modules/releases/tag/untagged-debe09b10ee823979b14",
+  "draft": false,
+  "prerelease": true,
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Modules/releases/tag/sky-relay-0.1.0-alpha",
   "targetCommitish": "feature/sky-relay-protocol",
   "sourceBranch": "feature/sky-relay-protocol",
   "sourceCommit": "ea45c08c611abbb2331ec3a3e0ebda91c51ca1ee",
@@ -63,10 +64,11 @@
     "draftReleaseTargetUpdated": "passed",
     "releaseManifestProvenance": "passed",
     "downloadBackHashValidation": "passed",
-    "publicReleasePromotion": "blocked"
+    "publicReleasePromotion": "passed",
+    "stableTaggedAssetUrls": "passed"
   },
   "promotionBlockers": [
-    "Release remains draft-only until Release Index entries are promoted from warning with stable public URLs.",
-    "Visible Electron UI smoke, real version-to-version update, and real gameplay smoke evidence are still required before public alpha promotion."
+    "Release Index entries remain warning-gated until real gameplay smoke evidence is attached.",
+    "Real version-to-version update remains blocked until a second Sky Relay version exists."
   ]
 }

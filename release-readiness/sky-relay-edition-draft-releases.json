@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.skyrelay.edition-draft-releases.v1",
-  "generatedAt": "2026-06-11T07:10:58.2368659-04:00",
+  "generatedAt": "2026-06-11T13:37:03.105Z",
   "project": {
     "name": "ECHO: Sky Relay",
     "packIds": [
@@ -15,8 +15,8 @@
       "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
       "releaseTag": "sky-relay-native-0.1.0-alpha",
       "releaseTitle": "Sky Relay Native Edition 0.1.0 Alpha",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/untagged-5f9217cc3d72b129c38a",
-      "draft": true,
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.0-alpha",
+      "draft": false,
       "prerelease": true,
       "targetCommitish": "main",
       "downloadBack": {
@@ -40,8 +40,8 @@
       "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
       "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
       "releaseTitle": "Sky Relay NeoForge Edition 0.1.0 Alpha",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/untagged-b48f95f3aee09d089f3c",
-      "draft": true,
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.0-alpha",
+      "draft": false,
       "prerelease": true,
       "targetCommitish": "main",
       "downloadBack": {
@@ -65,8 +65,8 @@
       "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
       "releaseTag": "sky-relay-standalone-0.1.0-alpha",
       "releaseTitle": "Sky Relay Standalone Edition 0.1.0 Alpha",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/untagged-e10509c02641c4b88f8f",
-      "draft": true,
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.0-alpha",
+      "draft": false,
       "prerelease": true,
       "targetCommitish": "main",
       "downloadBack": {
@@ -90,15 +90,16 @@
     "editionRepositoriesCreated": "passed",
     "editionManifestValidators": "passed",
     "draftReleasesCreated": "passed",
+    "publicPrereleasesPromoted": "passed",
+    "stableTaggedReleaseUrls": "passed",
     "draftDownloadBack": "passed",
-    "packZipsBuilt": "not_started",
-    "releaseReadyPackManifests": "not_started",
-    "launcherInstallUpdateRepairRollback": "not_started"
+    "packZipsBuilt": "covered_by_release-readiness/sky-relay-edition-pack-assets.json",
+    "releaseReadyPackManifests": "covered_by_release-readiness/sky-relay-edition-pack-assets.json",
+    "launcherInstallUpdateRepairRollback": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "promotionBlockers": [
-    "Draft edition releases currently contain template manifests only; they do not include installable Sky Relay pack archives.",
-    "Release Index modpack entries must remain planned/warning until pack manifest and pack zip assets exist with stable public release URLs.",
-    "The Launcher can display Sky Relay preview cards, but install/update/repair/rollback cannot be validated until real pack assets exist.",
-    "Gameplay smoke evidence has not been produced for the first 30 minutes, first 2 hours, or Signal Crown completion."
+    "Release Index modpack entries now point at stable public prerelease URLs but remain warning-gated until real gameplay smoke evidence is attached.",
+    "Gameplay smoke evidence has not been produced for the first 30 minutes, first 2 hours, or Signal Crown completion.",
+    "Real version-to-version update remains blocked until a second Sky Relay version exists."
   ]
 }
