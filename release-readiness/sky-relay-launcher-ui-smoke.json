@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "echo.skyrelay.launcher-ui-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-11T12:18:53.327Z",
+  "scope": "browser-preview-ui-smoke",
+  "launcher": {
+    "repository": "knoxhack/ECHO-Launcher",
+    "branch": "feature/sky-relay-protocol",
+    "previewUrl": "http://127.0.0.1:5173/?launcher-preview",
+    "page": "Library",
+    "tab": "Packs"
+  },
+  "commands": [
+    {
+      "command": "npm.cmd run test -- src/data/officialModpacks.test.ts src/components/dashboard/ModpacksPage.test.tsx",
+      "workingDirectory": "../ECHO-Launcher",
+      "result": "passed",
+      "assertions": [
+        "officialModpacks contains Ashfall and Sky Relay launcher products surfaced for public alpha readiness",
+        "Sky Relay remains preview-gated until release evidence is promoted",
+        "ModpacksPage server-render smoke includes all three Sky Relay cards and no Sky Relay install/play affordance"
+      ]
+    },
+    {
+      "command": "npm.cmd run test:e2e:sky-relay-launcher -- --clean",
+      "workingDirectory": "../ECHO-Launcher",
+      "result": "passed",
+      "evidence": "release-readiness/sky-relay-launcher-lifecycle-smoke.json"
+    },
+    {
+      "command": "npm.cmd run test:e2e:release-index",
+      "workingDirectory": "../ECHO-Launcher",
+      "result": "passed"
+    },
+    {
+      "command": "npm.cmd run build",
+      "workingDirectory": "../ECHO-Launcher",
+      "result": "passed"
+    }
+  ],
+  "browserPreview": {
+    "surface": "Codex in-app browser",
+    "desktopViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "officialPackCount": 6,
+    "skyRelayCards": [
+      {
+        "packId": "sky-relay-native-edition",
+        "name": "Sky Relay Native Edition",
+        "status": "Preview",
+        "mode": "View-only",
+        "play": "Locked",
+        "channel": "alpha",
+        "headingOverflow": false
+      },
+      {
+        "packId": "sky-relay-neoforge-edition",
+        "name": "Sky Relay NeoForge Edition",
+        "status": "Preview",
+        "mode": "View-only",
+        "play": "Locked",
+        "channel": "alpha",
+        "headingOverflow": false
+      },
+      {
+        "packId": "sky-relay-standalone-edition",
+        "name": "Sky Relay Standalone Edition",
+        "status": "Preview",
+        "mode": "View-only",
+        "play": "Locked",
+        "channel": "alpha",
+        "headingOverflow": false
+      }
+    ],
+    "layoutFixesVerified": [
+      "Pack cards use full launcher row until 2xl before adding the import column.",
+      "Official pack card heading uses card-scale type and no inline overflow at the default browser-preview viewport."
+    ]
+  },
+  "gates": {
+    "catalogDataSmoke": "passed",
+    "libraryRenderSmoke": "passed",
+    "browserPreviewDesktopUiSmoke": "passed",
+    "launcherLifecycleContractSmoke": "passed",
+    "packagedElectronUiEndToEnd": "not_started",
+    "realVersionToVersionUpdate": "blocked"
+  },
+  "residualRisks": [
+    "The browser-preview smoke verifies the React launcher surface in Vite; it does not replace a packaged Electron install/update click-through.",
+    "Only one Sky Relay pack version exists, so real version-to-version update remains blocked.",
+    "A phone-width viewport still exposes a wider desktop launcher shell; this is outside the Sky Relay card fix and should be handled as a separate responsive shell task if mobile launcher support is required."
+  ]
+}

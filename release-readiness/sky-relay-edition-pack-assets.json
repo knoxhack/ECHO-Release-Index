@@ -161,17 +161,20 @@
     "gameplayRouteContractSmoke": "passed",
     "gameplaySmoke": "not_started",
     "launcherLifecycleContractSmoke": "passed",
+    "launcherBrowserPreviewUiSmoke": "passed",
     "electronUiEndToEnd": "not_started"
   },
   "relatedEvidence": {
     "moduleDraftRelease": "release-readiness/sky-relay-module-draft-release.json",
     "launcherLifecycleSmoke": "release-readiness/sky-relay-launcher-lifecycle-smoke.json",
+    "launcherUiSmoke": "release-readiness/sky-relay-launcher-ui-smoke.json",
     "packSmoke": "release-readiness/sky-relay-edition-pack-smoke.json",
     "gameplayRouteSmoke": "release-readiness/sky-relay-gameplay-route-smoke.json"
   },
   "promotionBlockers": [
     "Edition releases are still drafts and use untagged draft asset URLs.",
-    "Release Index modpack entries must remain warning/planned until visible Electron UI smoke evidence passes and stable public URLs are available.",
+    "Release Index modpack entries must remain warning/planned until packaged Electron UI smoke evidence passes and stable public URLs are available.",
+    "Browser-preview UI smoke passed for the Library pack cards; a packaged Electron install/update click-through is still required.",
     "Launcher Node lifecycle smoke passed for deep links, install, same-version update reconciliation, repair, and rollback; a visible Electron UI pass is still required.",
     "Gameplay route contract smoke passed; real first 30 minutes, first 2 hours, and Signal Crown playthrough evidence is still required.",
     "Only one Sky Relay pack version exists, so real version-to-version update remains blocked."
