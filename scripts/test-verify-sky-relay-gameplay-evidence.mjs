@@ -64,6 +64,65 @@ async function writeText(root, relPath, value = 'fixture\n') {
   await fs.writeFile(filePath, value, 'utf8')
 }
 
+function noteFixture(relPath) {
+  if (relPath.includes('no-crash')) {
+    return `# No Crash Review
+
+## Reviewed Files
+
+- Client playthrough log: client-playthrough.log reviewed
+- Launcher install log: launcher-install.log reviewed
+- Save snapshots: all snapshots opened
+- Screenshots: all screenshots reviewed
+
+## Required Checks
+
+- No blocking crash: confirmed
+- No world corruption: confirmed
+- Save reload verified: confirmed
+- Fresh world/profile confirmed: confirmed
+- Known non-blocking warnings: none
+
+## Reviewer Notes
+
+- Reviewer: test fixture
+- Date: 2026-06-11
+- Decision: pass
+- Follow-up: none
+`
+  }
+  const routeSection = relPath.includes('signal-crown') ? 'Required Completion Checks' : 'Required Route Checks'
+  return `# Gameplay Notes
+
+## Run Identity
+
+- Pack: sky-relay-test-edition
+- Release tag: sky-relay-test-0.1.0-alpha
+- Tester: test fixture
+- Date: 2026-06-11
+- World or profile: fixture-world
+
+## ${routeSection}
+
+- Gate reached: confirmed
+- Terminal state: confirmed
+- Lens scan state: confirmed
+- Save state: confirmed
+
+## Evidence Links
+
+- Screenshot: fixture.png
+- Save snapshot: fixture.zip
+- Client log: client-playthrough.log
+
+## Notes
+
+- Observations: fixture observations recorded
+- Issues: none
+- Follow-up: none
+`
+}
+
 async function writeBytes(root, relPath, value) {
   const filePath = path.join(root, relPath)
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -122,7 +181,7 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
       `${base}/saves/signal-crown-save.zip`,
     ]
 
-    for (const relPath of supportingFiles) await writeText(root, relPath)
+    for (const relPath of supportingFiles) await writeText(root, relPath, noteFixture(relPath))
     for (const relPath of screenshots) await writeBytes(root, relPath, pngFixture())
     for (const relPath of logs) await writeText(root, relPath)
     for (const relPath of saveSnapshots) await writeBytes(root, relPath, zipFixture)
@@ -175,7 +234,7 @@ try {
   assert.equal(readyReport.gates.realSignalCrownPlaythrough, 'passed')
   const nativeEvidence = readyReport.editions.find((edition) => edition.edition === 'native')
   assert.match(nativeEvidence.checked.supportingFiles[0].sha256, /^[a-f0-9]{64}$/u)
-  assert.equal(nativeEvidence.checked.supportingFiles[0].size, 8)
+  assert.ok(nativeEvidence.checked.supportingFiles[0].size > 100)
   assert.equal(nativeEvidence.checked.screenshots[0].size, 33)
   assert.match(nativeEvidence.checked.screenshots[0].sha256, /^[a-f0-9]{64}$/u)
   assert.deepEqual(nativeEvidence.checked.screenshots[0].dimensions, { width: 1280, height: 720 })
@@ -204,6 +263,32 @@ try {
   const templateMarker = run(templateMarkerRoot, templateMarkerWorkspace, ['--require-release-ready'])
   assert.equal(templateMarker.status, 1)
   assert.match(`${templateMarker.stdout}\n${templateMarker.stderr}`, /template marker ECHO_SKY_RELAY_TEMPLATE_ONLY/u)
+
+  const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
+  const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')
+  await writeRouteReport(blankFieldRoot)
+  await writeGameplayEvidence(blankFieldWorkspace)
+  await writeText(
+    path.join(blankFieldWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md',
+    noteFixture('first-30-minutes-notes.md').replace('- Tester: test fixture', '- Tester:'),
+  )
+  const blankField = run(blankFieldRoot, blankFieldWorkspace, ['--require-release-ready'])
+  assert.equal(blankField.status, 1)
+  assert.match(`${blankField.stdout}\n${blankField.stderr}`, /blank worksheet fields/u)
+
+  const missingSectionRoot = path.join(tmp, 'missing-section-release-index')
+  const missingSectionWorkspace = path.join(tmp, 'missing-section-workspace')
+  await writeRouteReport(missingSectionRoot)
+  await writeGameplayEvidence(missingSectionWorkspace)
+  await writeText(
+    path.join(missingSectionWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md',
+    noteFixture('first-30-minutes-notes.md').replace('## Evidence Links\n\n', ''),
+  )
+  const missingSection = run(missingSectionRoot, missingSectionWorkspace, ['--require-release-ready'])
+  assert.equal(missingSection.status, 1)
+  assert.match(`${missingSection.stdout}\n${missingSection.stderr}`, /missing section ## Evidence Links/u)
 
   const lowResolutionRoot = path.join(tmp, 'low-resolution-release-index')
   const lowResolutionWorkspace = path.join(tmp, 'low-resolution-workspace')

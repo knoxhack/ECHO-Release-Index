@@ -77,6 +77,27 @@ const REQUIRED_SAVE_PATTERNS = [
   /(^|\/)signal[-_]?crown[^/]*\.zip$/iu,
 ]
 
+const NOTE_SECTION_REQUIREMENTS = [
+  {
+    pattern: /(^|\/)first[-_]?30[-_]?minutes[^/]*\.md$/iu,
+    sections: ['## Run Identity', '## Required Route Checks', '## Evidence Links', '## Notes'],
+  },
+  {
+    pattern: /(^|\/)first[-_]?2[-_]?hours[^/]*\.md$/iu,
+    sections: ['## Run Identity', '## Required Route Checks', '## Evidence Links', '## Notes'],
+  },
+  {
+    pattern: /(^|\/)signal[-_]?crown[^/]*\.md$/iu,
+    sections: ['## Run Identity', '## Required Completion Checks', '## Evidence Links', '## Notes'],
+  },
+  {
+    pattern: /(^|\/)no[-_]?crash[^/]*\.md$/iu,
+    sections: ['## Reviewed Files', '## Required Checks', '## Reviewer Notes'],
+  },
+]
+
+const BLANK_NOTE_FIELD = /^-\s+[^:\n]+:\s*$/gmu
+
 function usage() {
   return `Usage: node scripts/verify-sky-relay-gameplay-evidence.mjs [options]
 
@@ -206,6 +227,23 @@ function valueAt(value, pointer) {
   return String(pointer).split('.').reduce((current, part) => current?.[part], value)
 }
 
+function validateMarkdownNote({ text, relPath, label, index, blockers }) {
+  if (text.includes(TEMPLATE_MARKER)) {
+    blockers.push(`${label}[${index}] target still contains template marker ${TEMPLATE_MARKER}: ${relPath}`)
+  }
+  const requirement = NOTE_SECTION_REQUIREMENTS.find((item) => item.pattern.test(String(relPath).replace(/\\/g, '/')))
+  if (!requirement) return
+  for (const section of requirement.sections) {
+    if (!text.includes(section)) {
+      blockers.push(`${label}[${index}] target is missing section ${section}: ${relPath}`)
+    }
+  }
+  if (BLANK_NOTE_FIELD.test(text)) {
+    blockers.push(`${label}[${index}] target still contains blank worksheet fields: ${relPath}`)
+  }
+  BLANK_NOTE_FIELD.lastIndex = 0
+}
+
 function validateRouteReport(routeReport, blockers) {
   if (routeReport.schemaVersion !== 'echo.skyrelay.gameplay-route-smoke.v1') {
     blockers.push('Route report schemaVersion must be echo.skyrelay.gameplay-route-smoke.v1.')
@@ -329,9 +367,7 @@ async function validateManualEvidence(args, edition, blockers) {
     blockers,
     fileValidator: async ({ filePath, relPath, blockers: fileBlockers, label, index }) => {
       const text = await fs.readFile(filePath, 'utf8')
-      if (text.includes(TEMPLATE_MARKER)) {
-        fileBlockers.push(`${label}[${index}] target still contains template marker ${TEMPLATE_MARKER}: ${relPath}`)
-      }
+      validateMarkdownNote({ text, relPath, label, index, blockers: fileBlockers })
     },
   })
   result.checked.screenshots = await validateFileList({

@@ -75,6 +75,8 @@ The initializer also creates Markdown worksheets for the four required notes.
 Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and
 central verifiers reject that marker until the worksheets are replaced with real
 playthrough observations.
+Keep the worksheet section headings and fill every `- Field:` line; blank
+worksheet fields are blocked.
 
 ## Required Evidence Per Edition
 
