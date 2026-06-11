@@ -210,12 +210,178 @@ const gameplayGates = [
   ...gameplayClaims,
 ]
 
-function checkedFiles(count, prefix) {
-  return Array.from({ length: count }, (_, index) => ({
-    path: `${prefix}-${index + 1}`,
-    size: index + 1,
-    sha256: String(index + 1).repeat(64).slice(0, 64),
-  }))
+const logProvenanceFields = [
+  'packId',
+  'releaseTag',
+  'artifactAsset',
+  'artifactSha256',
+  'artifactSize',
+  'launcherChannel',
+  'installedFrom',
+  'worldOrProfile',
+  'runStartedAt',
+]
+
+function shaFixture(seed) {
+  return seed.toString(16).padStart(2, '0').repeat(32).slice(0, 64)
+}
+
+function evidencePaths() {
+  const base = 'fixtures/sky-relay/gameplay-qa/evidence'
+  return {
+    supportingFiles: [
+      `${base}/fresh-world-notes.md`,
+      `${base}/first-30-minutes-notes.md`,
+      `${base}/first-2-hours-notes.md`,
+      `${base}/signal-crown-verification.md`,
+      `${base}/no-crash-review.md`,
+    ],
+    screenshots: [
+      `${base}/screenshots/fresh-world-created.png`,
+      `${base}/screenshots/first-30-minutes.png`,
+      `${base}/screenshots/first-2-hours.png`,
+      `${base}/screenshots/signal-crown-complete.png`,
+    ],
+    logs: [
+      `${base}/logs/client-playthrough.log`,
+      `${base}/logs/launcher-install.log`,
+    ],
+    saveSnapshots: [
+      `${base}/saves/first-30-minutes-save.zip`,
+      `${base}/saves/first-2-hours-save.zip`,
+      `${base}/saves/signal-crown-save.zip`,
+    ],
+  }
+}
+
+function sessionsFixture(paths) {
+  return [
+    {
+      id: 'fresh_world_creation',
+      claim: 'freshWorldCreated',
+      startedAt: '2026-06-11T00:00:00Z',
+      endedAt: '2026-06-11T00:02:00Z',
+      durationMinutes: 2,
+      evidence: {
+        notes: paths.supportingFiles[0],
+        screenshot: paths.screenshots[0],
+        clientLog: paths.logs[0],
+        launcherLog: paths.logs[1],
+      },
+    },
+    {
+      id: 'first_30_minutes',
+      claim: 'realFirst30Playthrough',
+      startedAt: '2026-06-11T00:00:00Z',
+      endedAt: '2026-06-11T00:31:00Z',
+      durationMinutes: 31,
+      evidence: {
+        notes: paths.supportingFiles[1],
+        screenshot: paths.screenshots[1],
+        saveSnapshot: paths.saveSnapshots[0],
+        clientLog: paths.logs[0],
+      },
+    },
+    {
+      id: 'first_2_hours',
+      claim: 'realFirst2HourPlaythrough',
+      startedAt: '2026-06-11T00:00:00Z',
+      endedAt: '2026-06-11T02:05:00Z',
+      durationMinutes: 125,
+      evidence: {
+        notes: paths.supportingFiles[2],
+        screenshot: paths.screenshots[2],
+        saveSnapshot: paths.saveSnapshots[1],
+        clientLog: paths.logs[0],
+      },
+    },
+    {
+      id: 'signal_crown_completion',
+      claim: 'realSignalCrownPlaythrough',
+      startedAt: '2026-06-11T02:05:00Z',
+      endedAt: '2026-06-11T02:20:00Z',
+      durationMinutes: 15,
+      evidence: {
+        notes: paths.supportingFiles[3],
+        screenshot: paths.screenshots[3],
+        saveSnapshot: paths.saveSnapshots[2],
+        clientLog: paths.logs[0],
+      },
+    },
+    {
+      id: 'save_reload_verification',
+      claim: 'saveReloadVerified',
+      startedAt: '2026-06-11T02:20:00Z',
+      endedAt: '2026-06-11T02:22:00Z',
+      durationMinutes: 2,
+      evidence: {
+        first30SaveSnapshot: paths.saveSnapshots[0],
+        first2HourSaveSnapshot: paths.saveSnapshots[1],
+        signalCrownSaveSnapshot: paths.saveSnapshots[2],
+        clientLog: paths.logs[0],
+      },
+    },
+    {
+      id: 'no_crash_review',
+      claim: 'noCrashEvidence',
+      startedAt: '2026-06-11T02:22:00Z',
+      endedAt: '2026-06-11T02:23:00Z',
+      durationMinutes: 1,
+      evidence: {
+        notes: paths.supportingFiles[4],
+        clientLog: paths.logs[0],
+        launcherLog: paths.logs[1],
+      },
+    },
+  ]
+}
+
+function checkedEvidence(paths, sessions) {
+  return {
+    supportingFiles: paths.supportingFiles.map((filePath, index) => ({
+      path: filePath,
+      size: 512 + index,
+      sha256: shaFixture(index + 1),
+    })),
+    screenshots: paths.screenshots.map((filePath, index) => ({
+      path: filePath,
+      size: 2048 + index,
+      sha256: shaFixture(index + 11),
+      dimensions: { width: 1280, height: 720 },
+      chunks: 3,
+      idatChunks: 1,
+      bitDepth: 8,
+      colorType: 0,
+      pixelVariation: {
+        supported: true,
+        uniquePixelSamples: 64,
+        luminanceRange: 128,
+      },
+    })),
+    logs: paths.logs.map((filePath, index) => ({
+      path: filePath,
+      size: 1024 + index,
+      sha256: shaFixture(index + 21),
+      lineCount: 24 + index,
+      blockingSignatures: 0,
+      provenanceMatches: logProvenanceFields,
+      sessionMatches: index === 0
+        ? sessions.flatMap((session) => [`${session.id}.id`, `${session.id}.startedAt`, `${session.id}.endedAt`])
+        : [],
+    })),
+    saveSnapshots: paths.saveSnapshots.map((filePath, index) => ({
+      path: filePath,
+      size: 4096 + index,
+      sha256: shaFixture(index + 31),
+      entries: 3,
+      centralDirectorySize: 128,
+      hasLevelDat: true,
+      hasRegionChunk: true,
+      hasPlayerOrDataState: true,
+      worldStateEntries: ['save/region/r.0.0.mca', `save/playerdata/test-player-${index + 1}.dat`],
+      unsafeEntries: [],
+    })),
+  }
 }
 
 function gameplayEvidenceReport(status = 'PASS') {
@@ -236,18 +402,25 @@ function gameplayEvidenceReport(status = 'PASS') {
       edition: key,
       status: passed ? 'passed' : 'blocked',
     })),
-    editions: editions.map(([key, repoDir]) => ({
-      edition: key,
-      repository: `knoxhack/${repoDir}`,
-      found: passed,
-      claims: Object.fromEntries(gameplayClaims.map((claim) => [claim, passed])),
-      checked: {
-        supportingFiles: checkedFiles(passed ? 5 : 0, `${key}-note`),
-        screenshots: checkedFiles(passed ? 4 : 0, `${key}-screenshot`),
-        logs: checkedFiles(passed ? 2 : 0, `${key}-log`),
-        saveSnapshots: checkedFiles(passed ? 3 : 0, `${key}-save`),
-      },
-    })),
+    editions: editions.map(([key, repoDir]) => {
+      const paths = evidencePaths()
+      const sessions = sessionsFixture(paths)
+      return {
+        edition: key,
+        repository: `knoxhack/${repoDir}`,
+        found: passed,
+        claims: Object.fromEntries(gameplayClaims.map((claim) => [claim, passed])),
+        sessions,
+        checked: passed
+          ? checkedEvidence(paths, sessions)
+          : {
+              supportingFiles: [],
+              screenshots: [],
+              logs: [],
+              saveSnapshots: [],
+            },
+      }
+    }),
     blockers: passed ? [] : ['manual evidence blocked'],
   }
 }
@@ -409,6 +582,20 @@ try {
   const artifactDrift = run(artifactDriftRoot, artifactDriftWorkspace, ['--require-release-ready'])
   assert.equal(artifactDrift.status, 1)
   assert.match(artifactDrift.stdout, /gameplay evidence native artifact artifactSha256 must match edition pack assets/u)
+
+  const thinCheckedRoot = path.join(tmp, 'thin-checked-release-index')
+  const thinCheckedWorkspace = path.join(tmp, 'thin-checked-workspace')
+  const thinCheckedReport = JSON.parse(JSON.stringify(gameplayEvidenceReport('PASS')))
+  delete thinCheckedReport.editions[0].checked.screenshots[0].dimensions
+  await writeModuleFixture(thinCheckedWorkspace)
+  await writeEditionRepos(thinCheckedWorkspace)
+  await writeCatalogFiles(thinCheckedRoot)
+  await writeReports(thinCheckedRoot, {
+    gameplayReport: thinCheckedReport,
+  })
+  const thinChecked = run(thinCheckedRoot, thinCheckedWorkspace, ['--require-release-ready'])
+  assert.equal(thinChecked.status, 1)
+  assert.match(thinChecked.stdout, /gameplay evidence native screenshots\[0\] must record dimensions at least 640x360/u)
 
   const blockedRoot = path.join(tmp, 'blocked-release-index')
   const blockedWorkspace = path.join(tmp, 'blocked-workspace')

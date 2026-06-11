@@ -129,6 +129,80 @@ const REQUIRED_GAMEPLAY_EVIDENCE_GATES = [
   ...REQUIRED_GAMEPLAY_EVIDENCE_CLAIMS,
 ]
 
+const REQUIRED_GAMEPLAY_EVIDENCE_SESSIONS = [
+  {
+    id: 'fresh_world_creation',
+    claim: 'freshWorldCreated',
+    evidence: {
+      notes: 'supportingFiles',
+      screenshot: 'screenshots',
+      clientLog: 'logs',
+      launcherLog: 'logs',
+    },
+  },
+  {
+    id: 'first_30_minutes',
+    claim: 'realFirst30Playthrough',
+    evidence: {
+      notes: 'supportingFiles',
+      screenshot: 'screenshots',
+      saveSnapshot: 'saveSnapshots',
+      clientLog: 'logs',
+    },
+  },
+  {
+    id: 'first_2_hours',
+    claim: 'realFirst2HourPlaythrough',
+    evidence: {
+      notes: 'supportingFiles',
+      screenshot: 'screenshots',
+      saveSnapshot: 'saveSnapshots',
+      clientLog: 'logs',
+    },
+  },
+  {
+    id: 'signal_crown_completion',
+    claim: 'realSignalCrownPlaythrough',
+    evidence: {
+      notes: 'supportingFiles',
+      screenshot: 'screenshots',
+      saveSnapshot: 'saveSnapshots',
+      clientLog: 'logs',
+    },
+  },
+  {
+    id: 'save_reload_verification',
+    claim: 'saveReloadVerified',
+    evidence: {
+      first30SaveSnapshot: 'saveSnapshots',
+      first2HourSaveSnapshot: 'saveSnapshots',
+      signalCrownSaveSnapshot: 'saveSnapshots',
+      clientLog: 'logs',
+    },
+  },
+  {
+    id: 'no_crash_review',
+    claim: 'noCrashEvidence',
+    evidence: {
+      notes: 'supportingFiles',
+      clientLog: 'logs',
+      launcherLog: 'logs',
+    },
+  },
+]
+
+const REQUIRED_GAMEPLAY_LOG_PROVENANCE_FIELDS = [
+  'packId',
+  'releaseTag',
+  'artifactAsset',
+  'artifactSha256',
+  'artifactSize',
+  'launcherChannel',
+  'installedFrom',
+  'worldOrProfile',
+  'runStartedAt',
+]
+
 const PHASES = [
   [1, 'repo_foundation', 'Repo Foundation'],
   [2, 'protocol_module', 'Protocol Module'],
@@ -311,6 +385,107 @@ function expectedArtifactFromPackAssets(editionPackAssets, edition) {
   }
 }
 
+function normalizeRel(value) {
+  return String(value).replace(/\\/g, '/')
+}
+
+function isSha256(value) {
+  return typeof value === 'string' && /^[a-f0-9]{64}$/u.test(value)
+}
+
+function checkedPathSet(records) {
+  return new Set((Array.isArray(records) ? records : []).map((record) => normalizeRel(record?.path ?? '')))
+}
+
+function requireCheckedFileRecord(item, record, label) {
+  requireCondition(item, typeof record?.path === 'string' && record.path.trim() !== '', `${label} records a path`, `${label} must record a path`)
+  requireCondition(item, typeof record?.size === 'number' && record.size > 0, `${label} records byte size`, `${label} must record a positive byte size`)
+  requireCondition(item, isSha256(record?.sha256), `${label} records SHA-256`, `${label} must record a SHA-256`)
+}
+
+function requireGameplaySessionCoverage(item, editionKey, evidence) {
+  const checkedPaths = {
+    supportingFiles: checkedPathSet(evidence.checked?.supportingFiles),
+    screenshots: checkedPathSet(evidence.checked?.screenshots),
+    logs: checkedPathSet(evidence.checked?.logs),
+    saveSnapshots: checkedPathSet(evidence.checked?.saveSnapshots),
+  }
+  const hasMinimumCheckedArtifacts =
+    checkedPaths.supportingFiles.size >= 5 &&
+    checkedPaths.screenshots.size >= 4 &&
+    checkedPaths.logs.size >= 2 &&
+    checkedPaths.saveSnapshots.size >= 3
+  if (!hasMinimumCheckedArtifacts) return
+
+  for (const requirement of REQUIRED_GAMEPLAY_EVIDENCE_SESSIONS) {
+    const session = evidence.sessions?.find((entry) => entry?.id === requirement.id)
+    for (const [field, group] of Object.entries(requirement.evidence)) {
+      const relPath = session?.evidence?.[field]
+      requireCondition(
+        item,
+        typeof relPath === 'string' && checkedPaths[group].has(normalizeRel(relPath)),
+        `gameplay evidence ${editionKey} session ${requirement.id} ${field} is checked`,
+        `gameplay evidence ${editionKey} session ${requirement.id} ${field} must reference a checked ${group} artifact`,
+      )
+    }
+  }
+}
+
+function requireDetailedGameplayEvidence(item, editionKey, evidence) {
+  requireCondition(item, Array.isArray(evidence.sessions) && evidence.sessions.length === REQUIRED_GAMEPLAY_EVIDENCE_SESSIONS.length, `gameplay evidence ${editionKey} includes all session summaries`, `gameplay evidence ${editionKey} must include all session summaries`)
+  for (const requirement of REQUIRED_GAMEPLAY_EVIDENCE_SESSIONS) {
+    const session = evidence.sessions?.find((entry) => entry?.id === requirement.id)
+    requireCondition(item, Boolean(session), `gameplay evidence ${editionKey} includes session ${requirement.id}`, `gameplay evidence ${editionKey} must include session ${requirement.id}`)
+    if (!session) continue
+    requireCondition(item, session.claim === requirement.claim, `gameplay evidence ${editionKey} session ${requirement.id} claim is recorded`, `gameplay evidence ${editionKey} session ${requirement.id} claim must be ${requirement.claim}`)
+    requireCondition(item, isIsoTimestamp(session.startedAt), `gameplay evidence ${editionKey} session ${requirement.id} startedAt is ISO`, `gameplay evidence ${editionKey} session ${requirement.id} startedAt must be an ISO timestamp`)
+    requireCondition(item, isIsoTimestamp(session.endedAt), `gameplay evidence ${editionKey} session ${requirement.id} endedAt is ISO`, `gameplay evidence ${editionKey} session ${requirement.id} endedAt must be an ISO timestamp`)
+    requireCondition(item, typeof session.durationMinutes === 'number' && Number.isFinite(session.durationMinutes), `gameplay evidence ${editionKey} session ${requirement.id} duration is recorded`, `gameplay evidence ${editionKey} session ${requirement.id} durationMinutes must be a number`)
+  }
+
+  for (const [index, record] of (evidence.checked?.supportingFiles ?? []).entries()) {
+    requireCheckedFileRecord(item, record, `gameplay evidence ${editionKey} supportingFiles[${index}]`)
+  }
+
+  for (const [index, record] of (evidence.checked?.screenshots ?? []).entries()) {
+    const label = `gameplay evidence ${editionKey} screenshots[${index}]`
+    requireCheckedFileRecord(item, record, label)
+    requireCondition(item, record?.dimensions?.width >= 640 && record?.dimensions?.height >= 360, `${label} records release-ready dimensions`, `${label} must record dimensions at least 640x360`)
+    requireCondition(item, record?.pixelVariation?.supported === true && record.pixelVariation.uniquePixelSamples >= 16, `${label} records visible pixel variation`, `${label} must record visible pixel variation`)
+  }
+
+  const allSessionMatches = new Set()
+  for (const [index, record] of (evidence.checked?.logs ?? []).entries()) {
+    const label = `gameplay evidence ${editionKey} logs[${index}]`
+    requireCheckedFileRecord(item, record, label)
+    requireCondition(item, record?.blockingSignatures === 0, `${label} has no blocking signatures`, `${label} must have zero blocking signatures`)
+    for (const field of REQUIRED_GAMEPLAY_LOG_PROVENANCE_FIELDS) {
+      requireCondition(item, record?.provenanceMatches?.includes(field), `${label} records provenance ${field}`, `${label} must record provenance ${field}`)
+    }
+    for (const match of record?.sessionMatches ?? []) allSessionMatches.add(match)
+  }
+  if ((evidence.checked?.logs?.length ?? 0) >= 2) {
+    for (const requirement of REQUIRED_GAMEPLAY_EVIDENCE_SESSIONS) {
+      for (const field of ['startedAt', 'endedAt']) {
+        const marker = `${requirement.id}.${field}`
+        requireCondition(item, allSessionMatches.has(marker), `gameplay evidence ${editionKey} client log records ${marker}`, `gameplay evidence ${editionKey} client log must record ${marker}`)
+      }
+    }
+  }
+
+  for (const [index, record] of (evidence.checked?.saveSnapshots ?? []).entries()) {
+    const label = `gameplay evidence ${editionKey} saveSnapshots[${index}]`
+    requireCheckedFileRecord(item, record, label)
+    requireCondition(item, record?.hasLevelDat === true, `${label} has level.dat`, `${label} must contain level.dat`)
+    requireCondition(item, record?.hasRegionChunk === true, `${label} has region chunk`, `${label} must contain a region chunk`)
+    requireCondition(item, record?.hasPlayerOrDataState === true, `${label} has player/profile state`, `${label} must contain player/profile state`)
+    requireCondition(item, (record?.worldStateEntries?.length ?? 0) >= 2, `${label} records world state entries`, `${label} must record world state entries`)
+    requireCondition(item, Array.isArray(record?.unsafeEntries) && record.unsafeEntries.length === 0, `${label} has no unsafe ZIP entries`, `${label} must not contain unsafe ZIP entries`)
+  }
+
+  requireGameplaySessionCoverage(item, editionKey, evidence)
+}
+
 function requireGameplayEvidenceReport(item, report, editionPackAssets) {
   requireReport(item, report, 'gameplay evidence report', 'echo.skyrelay.gameplay-evidence.v1')
   if (!report) return
@@ -364,6 +539,7 @@ function requireGameplayEvidenceReport(item, report, editionPackAssets) {
     requireCondition(item, (evidence.checked?.screenshots?.length ?? 0) >= 4, `gameplay evidence ${edition.key} checked screenshots`, `gameplay evidence ${edition.key} must include checked screenshots`)
     requireCondition(item, (evidence.checked?.logs?.length ?? 0) >= 2, `gameplay evidence ${edition.key} checked logs`, `gameplay evidence ${edition.key} must include checked logs`)
     requireCondition(item, (evidence.checked?.saveSnapshots?.length ?? 0) >= 3, `gameplay evidence ${edition.key} checked save snapshots`, `gameplay evidence ${edition.key} must include checked save snapshots`)
+    requireDetailedGameplayEvidence(item, edition.key, evidence)
   }
 }
 
