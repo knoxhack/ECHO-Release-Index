@@ -101,6 +101,8 @@ verifier rejects `TBD` run values and `1970-01-01T...` template timestamps.
 Release-ready sessions must be chronological: every session starts at or after
 `run.startedAt`; Signal Crown starts after the two-hour route window; save/reload
 starts after Signal Crown; no-crash review starts after save/reload.
+Each session's `durationMinutes` must match its start/end timestamps within one
+minute, and `generatedAt` must be after the recorded sessions have ended.
 
 The initializer also creates Markdown worksheets for the four required notes.
 Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and

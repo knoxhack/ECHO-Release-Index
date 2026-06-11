@@ -479,7 +479,7 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
     await writeJson(root, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json', {
       schemaVersion: 'echo.skyrelay.gameplay-qa.manual.v1',
       packId: edition.packId,
-      generatedAt: '2026-06-11T00:00:00Z',
+      generatedAt: '2026-06-11T02:24:00Z',
       run,
       claims,
       sessions: sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }),
@@ -637,6 +637,45 @@ try {
   assert.match(
     `${chronology.stdout}\n${chronology.stderr}`,
     /native manual evidence sessions\.save_reload_verification\.startedAt must be at or after signal_crown_completion\.endedAt/u,
+  )
+
+  const durationMismatchRoot = path.join(tmp, 'duration-mismatch-release-index')
+  const durationMismatchWorkspace = path.join(tmp, 'duration-mismatch-workspace')
+  await writeRouteReport(durationMismatchRoot)
+  await writeGameplayEvidence(durationMismatchWorkspace)
+  const durationMismatchEvidencePath = path.join(
+    durationMismatchWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const durationMismatchEvidence = JSON.parse(await fs.readFile(durationMismatchEvidencePath, 'utf8'))
+  const first2HourSession = durationMismatchEvidence.sessions.find((session) => session.id === 'first_2_hours')
+  first2HourSession.durationMinutes = 121
+  await fs.writeFile(durationMismatchEvidencePath, `${JSON.stringify(durationMismatchEvidence, null, 2)}\n`, 'utf8')
+  const durationMismatch = run(durationMismatchRoot, durationMismatchWorkspace, ['--require-release-ready'])
+  assert.equal(durationMismatch.status, 1)
+  assert.match(
+    `${durationMismatch.stdout}\n${durationMismatch.stderr}`,
+    /native manual evidence sessions\.first_2_hours\.durationMinutes must match startedAt\/endedAt/u,
+  )
+
+  const earlyGeneratedRoot = path.join(tmp, 'early-generated-release-index')
+  const earlyGeneratedWorkspace = path.join(tmp, 'early-generated-workspace')
+  await writeRouteReport(earlyGeneratedRoot)
+  await writeGameplayEvidence(earlyGeneratedWorkspace)
+  const earlyGeneratedEvidencePath = path.join(
+    earlyGeneratedWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const earlyGeneratedEvidence = JSON.parse(await fs.readFile(earlyGeneratedEvidencePath, 'utf8'))
+  earlyGeneratedEvidence.generatedAt = '2026-06-11T02:10:00Z'
+  await fs.writeFile(earlyGeneratedEvidencePath, `${JSON.stringify(earlyGeneratedEvidence, null, 2)}\n`, 'utf8')
+  const earlyGenerated = run(earlyGeneratedRoot, earlyGeneratedWorkspace, ['--require-release-ready'])
+  assert.equal(earlyGenerated.status, 1)
+  assert.match(
+    `${earlyGenerated.stdout}\n${earlyGenerated.stderr}`,
+    /native manual evidence generatedAt must be at or after native manual evidence sessions\.signal_crown_completion\.endedAt/u,
   )
 
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
