@@ -281,13 +281,15 @@ async function writeDraftDownloadEvidence(root, nativeStage) {
   for (const name of assetNames) {
     const filePath = path.join(nativeStage, name)
     const bytes = await fs.readFile(filePath)
+    const assetSha256 = sha256(bytes)
     downloadedAssets.push({
       name,
       size: bytes.length,
-      sha256: sha256(bytes),
-      githubDigestSha256: sha256(bytes),
+      sha256: assetSha256,
+      githubDigestSha256: assetSha256,
       browserDownloadUrl: `https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/${name}`,
-      apiUrl: `https://api.github.com/repos/knoxhack/ECHO-Ashfall-Native-Edition/releases/assets/${name}`,
+      apiUrl: `https://api.github.com/repos/knoxhack/ECHO-Ashfall-Native-Edition/releases/assets/${downloadedAssets.length + 1}`,
+      state: 'uploaded',
       localPath: path.relative(root, filePath).replace(/\\/g, '/'),
     })
   }
@@ -298,6 +300,9 @@ async function writeDraftDownloadEvidence(root, nativeStage) {
     summary: {
       blockingDiagnostics: 0,
       downloadedAssetCount: downloadedAssets.length,
+      totalBytes: downloadedAssets.reduce((sum, asset) => sum + asset.size, 0),
+      unlistedAssetCount: 0,
+      placeholderAssetCount: 0,
     },
     data: {
       downloadedFromGitHubRelease: true,
@@ -324,7 +329,7 @@ try {
   assert.equal(pass.status, 0, `${pass.stdout}\n${pass.stderr}`)
   const passReport = JSON.parse(await fs.readFile(path.join(passRoot, 'release-readiness/ashfall-rc-smoke.json'), 'utf8'))
   assert.equal(passReport.status, 'PASS_WITH_WARNINGS')
-  assert.equal(passReport.data.installedFromDownloadedArtifacts, true)
+  assert.equal(passReport.data.installedFromDownloadedArtifacts, false)
   assert.equal(passReport.data.launcherInstallSmoke, true)
   assert.equal(passReport.data.updateSmoke, true)
   assert.equal(passReport.data.rollbackPlanVerified, true)
@@ -341,8 +346,44 @@ try {
   assert.equal(downloadedReport.status, 'PASS_WITH_WARNINGS')
   assert.equal(downloadedReport.summary.warningCount, 1)
   assert.equal(downloadedReport.data.draftReleaseDownloaded, true)
+  assert.equal(downloadedReport.data.installedFromDownloadedArtifacts, true)
   assert.equal(downloadedReport.data.artifactSource, 'github-draft-release-download')
   assert.equal(downloadedReport.data.draftDownloadEvidence.path, 'release-readiness/ashfall-draft-download.json')
+  const downloadedEvidence = JSON.parse(await fs.readFile(path.join(downloadedRoot, 'release-readiness/ashfall-draft-download.json'), 'utf8'))
+  assert.equal(downloadedReport.data.draftDownloadEvidence.totalBytes, downloadedEvidence.summary.totalBytes)
+
+  const badTotalRoot = path.join(tmp, 'bad-total')
+  const badTotalStage = await writeFixture(badTotalRoot)
+  await writeDraftDownloadEvidence(badTotalRoot, badTotalStage)
+  const badTotalEvidencePath = path.join(badTotalRoot, 'release-readiness/ashfall-draft-download.json')
+  const badTotalEvidence = JSON.parse(await fs.readFile(badTotalEvidencePath, 'utf8'))
+  badTotalEvidence.summary.totalBytes += 1
+  await writeJson(badTotalRoot, 'release-readiness/ashfall-draft-download.json', badTotalEvidence)
+  const badTotal = run(badTotalRoot, ['--draft-download-evidence'])
+  assert.equal(badTotal.status, 1)
+  assert.match(`${badTotal.stdout}\n${badTotal.stderr}`, /Draft download evidence totalBytes expected/u)
+
+  const warningEvidenceRoot = path.join(tmp, 'warning-evidence')
+  const warningEvidenceStage = await writeFixture(warningEvidenceRoot)
+  await writeDraftDownloadEvidence(warningEvidenceRoot, warningEvidenceStage)
+  const warningEvidencePath = path.join(warningEvidenceRoot, 'release-readiness/ashfall-draft-download.json')
+  const warningEvidence = JSON.parse(await fs.readFile(warningEvidencePath, 'utf8'))
+  warningEvidence.status = 'PASS_WITH_WARNINGS'
+  await writeJson(warningEvidenceRoot, 'release-readiness/ashfall-draft-download.json', warningEvidence)
+  const warningEvidenceRun = run(warningEvidenceRoot, ['--draft-download-evidence'])
+  assert.equal(warningEvidenceRun.status, 1)
+  assert.match(`${warningEvidenceRun.stdout}\n${warningEvidenceRun.stderr}`, /Draft download evidence status must be PASS/u)
+
+  const dirtySummaryRoot = path.join(tmp, 'dirty-summary')
+  const dirtySummaryStage = await writeFixture(dirtySummaryRoot)
+  await writeDraftDownloadEvidence(dirtySummaryRoot, dirtySummaryStage)
+  const dirtySummaryPath = path.join(dirtySummaryRoot, 'release-readiness/ashfall-draft-download.json')
+  const dirtySummary = JSON.parse(await fs.readFile(dirtySummaryPath, 'utf8'))
+  dirtySummary.summary.unlistedAssetCount = 1
+  await writeJson(dirtySummaryRoot, 'release-readiness/ashfall-draft-download.json', dirtySummary)
+  const dirtySummaryRun = run(dirtySummaryRoot, ['--draft-download-evidence'])
+  assert.equal(dirtySummaryRun.status, 1)
+  assert.match(`${dirtySummaryRun.stdout}\n${dirtySummaryRun.stderr}`, /Draft download evidence unlistedAssetCount expected 0/u)
 
   const deprecated = run(passRoot, ['--draft-release-downloaded'])
   assert.equal(deprecated.status, 1)

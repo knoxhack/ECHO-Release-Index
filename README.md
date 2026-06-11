@@ -42,6 +42,17 @@ Run commands from the repository root.
 - `node scripts/test-sync-public-alpha-index.mjs`
 - `node scripts/test-verify-artifact-urls.mjs`
 - `node scripts/test-build-public-alpha-assets.mjs`
+- `node scripts/test-verify-ashfall-artifact-truth.mjs`
+- `node scripts/test-verify-ashfall-release-readiness.mjs`
+- `node scripts/test-generate-ashfall-rc-smoke.mjs`
+- `node scripts/test-download-ashfall-draft-release.mjs`
+- `node scripts/test-promote-ashfall-native-catalog.mjs`
+- `node scripts/verify-ashfall-artifact-truth.mjs --download-live`
+- `node scripts/verify-ashfall-artifact-truth.mjs --require-release-ready`
+- `node scripts/download-ashfall-draft-release.mjs --clean`
+- `node scripts/generate-ashfall-rc-smoke.mjs`
+- `node scripts/promote-ashfall-native-catalog.mjs --write`
+- `node scripts/verify-ashfall-release-readiness.mjs --require-release-ready`
 - `node scripts/test-publish-public-alpha.mjs`
 - `node scripts/test-ingest-release-local-e2e.mjs`
 - `node scripts/test-publish-ingest-install-local-e2e.mjs`
@@ -60,7 +71,23 @@ The required schema inventory is enforced by `scripts/validate-index.mjs` and in
 
 `scripts/sync-public-alpha-index.mjs --check` compares product and modpack catalog artifacts with `channels/alpha/release-manifest.json`; use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
-`scripts/publish-public-alpha.mjs` uploads every generated file in each repository's public-alpha staging directory. `--strict-assets` still enforces the manifest-listed required assets, but generated assets such as the Standalone Runtime archive are not dropped just because the live manifest has not been refreshed yet. The `Public Alpha Publish` workflow runs this with `--write-manifest` during real publish runs, then runs catalog sync and commits refreshed manifest/product/modpack artifact metadata back to the index.
+`scripts/publish-public-alpha.mjs` uploads every generated file in each repository's public-alpha staging directory. Use `--only <repo>` for a single release candidate lane and `--draft --prune-unlisted` for Ashfall Native release candidates so stale placeholder assets are removed from the draft before download smoke testing. `--draft` refuses to convert an existing public release back to draft unless `--convert-existing-public-release-to-draft` is supplied; prefer a fresh RC tag unless reusing the public tag is intentional. Ashfall Native publish filtering intentionally skips generic staged `manifest.json` and uploads only the release-ready `checksums.txt`, `echo-release.json`, `.pack.json`, and pack ZIP assets. `--strict-assets` still enforces the manifest-listed required assets, but generated assets such as the Standalone Runtime archive are not dropped just because the live manifest has not been refreshed yet. The `Public Alpha Publish` workflow runs this with `--write-manifest` during real publish runs, then runs catalog sync and commits refreshed manifest/product/modpack artifact metadata back to the index.
+
+`scripts/build-public-alpha-assets.mjs` stages Ashfall Native Edition through the ECHO Launcher pack exporter using `ECHO_ASHFALL_NATIVE_SOURCE`, then `ECHO_ASHFALL_SOURCE`, then the default CurseForge instance path. It must not copy the Native Platform product zip as a pack substitute. ECHO Modules staging selects the full Ashfall required module set by default and fails without compiled runtime jars; use `--allow-source-packaged-modules` only for source-visible alpha staging, not player-ready release evidence.
+
+`scripts/verify-ashfall-artifact-truth.mjs` keeps the current Ashfall Native catalog honest while legacy assets remain live. Warning-level metadata can point at the old placeholder for continuity, but `--require-release-ready` fails until the catalog has an exporter-built Native pack zip, `.pack.json` sidecar, `echo-release.json`, and matching checksums. Add `--download-live` to inspect the live GitHub manifest and ZIP contents.
+
+`scripts/verify-ashfall-release-readiness.mjs` is the full Ashfall promotion gate. It reads `release-readiness/ashfall-native-public-alpha.json` and verifies artifact truth, Launcher pack metadata, Native Platform beta/crash/public-beta evidence, real gameplay QA evidence, Native Edition player-facing polish assets, and release-candidate install smoke evidence. Run it without `--require-release-ready` for an audit report; run it with `--require-release-ready` before any public-ready promotion.
+
+Phase 5 Native Platform code-gate evidence is produced in `ECHO-Native-Platform` by `node scripts/generate-ashfall-native-code-gate.mjs`. The report must prove a real `gradlew check` execution exited with code 0.
+
+Phase 7 Native Platform beta evidence is produced in `ECHO-Native-Platform` by `node scripts/generate-ashfall-native-public-beta-evidence.mjs`. That reducer must stay fail-closed until `fixtures/ashfall/native-public-beta/manual-evidence.json` cites real session logs, crash review notes, a checksum-verified tester package, support runbook, rollback plan, and published limitations.
+
+`scripts/download-ashfall-draft-release.mjs --clean` is the Phase 10 draft-download gate. It requires a GitHub token, refuses non-draft releases, downloads only the four release-ready Ashfall Native assets, rejects stale placeholder/generic assets, writes them under `tmp/ashfall-draft-download/ECHO-Ashfall-Native-Edition`, and records `release-readiness/ashfall-draft-download.json`.
+
+`scripts/generate-ashfall-rc-smoke.mjs` creates the Phase 10 smoke evidence from locally staged Ashfall Native and ECHO Modules public-alpha assets. It verifies the release manifest, top-level checksums, embedded ZIP checksums, required pack files, required compiled modules, and a temporary launcher-style install/repair/rollback cycle. By default it records `draftReleaseDownloaded` and `promotedAfterGreen` as false because local staged assets are not a downloaded GitHub draft release and have not been promoted. To smoke the downloaded draft release bytes, run it with `--native-stage tmp/ashfall-draft-download/ECHO-Ashfall-Native-Edition --draft-download-evidence`; the deprecated `--draft-release-downloaded` flag now fails unless real draft-download evidence is supplied.
+
+`scripts/promote-ashfall-native-catalog.mjs --write` is the guarded Phase 2/3 promotion step after the Ashfall Native release candidate is published, downloaded, smoke-tested, and promoted out of draft. It refuses to approve `modpacks/ashfall-native.json` or `packs/ashfall-native-edition.json` while the release manifest is still draft, still contains placeholder/generic assets, lacks release-ready asset names, has local staged SHA/size drift, or lacks green downloaded-draft RC smoke promotion evidence linked to the draft-download gate.
 
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 

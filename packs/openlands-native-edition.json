@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "openlands-native-edition",
+  "name": "Openlands Native Edition",
+  "channel": "alpha",
+  "loader": "echo-native-loader",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
+    "nativePlatform": "https://github.com/knoxhack/ECHO-Native-Platform",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "echo-addon",
+  "moduleArtifactPattern": "<module>-<version>.echo-addon",
+  "updatePolicy": "Use this manifest for Openlands Native Edition launcher pack updates. Module entries must pin .echo-addon artifacts from ECHO-Modules.",
+  "moduleRequirements": [
+    {
+      "id": "echoopenlandsprotocol",
+      "version": "0.1.0"
+    }
+  ],
+  "assets": []
+}

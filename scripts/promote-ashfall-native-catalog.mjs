@@ -151,8 +151,11 @@ async function validatePromotionInputs(args, manifest) {
     if (!smoke) {
       findings.push(`RC smoke evidence is missing: ${rel(args.root, args.rcSmoke)}`)
     } else {
-      if (!['PASS', 'PASS_WITH_WARNINGS'].includes(smoke.status)) findings.push(`RC smoke status must be PASS or PASS_WITH_WARNINGS, found ${smoke.status ?? '(missing)'}.`)
+      if (smoke.schemaVersion !== 'echo.ashfall.rc-smoke.v1') findings.push(`RC smoke schemaVersion must be echo.ashfall.rc-smoke.v1, found ${smoke.schemaVersion ?? '(missing)'}.`)
+      if (smoke.status !== 'PASS') findings.push(`RC smoke status must be PASS for catalog approval, found ${smoke.status ?? '(missing)'}.`)
+      if (!smoke.generatedAt || smoke.generatedAt === '1970-01-01T00:00:00Z') findings.push('RC smoke generatedAt must be a current non-placeholder timestamp.')
       for (const [key, expected] of Object.entries({
+        localStagedArtifactSmoke: true,
         draftReleaseDownloaded: true,
         installedFromDownloadedArtifacts: true,
         launcherInstallSmoke: true,
@@ -162,6 +165,8 @@ async function validatePromotionInputs(args, manifest) {
       })) {
         if (smoke.data?.[key] !== expected) findings.push(`RC smoke data.${key} must be ${expected}.`)
       }
+      if (smoke.data?.artifactSource !== 'github-draft-release-download') findings.push(`RC smoke data.artifactSource must be github-draft-release-download, found ${smoke.data?.artifactSource ?? '(missing)'}.`)
+      if (typeof smoke.data?.draftDownloadEvidence?.path !== 'string' || smoke.data.draftDownloadEvidence.path.trim() === '') findings.push('RC smoke must link draftDownloadEvidence.path from the draft download gate.')
     }
   }
 

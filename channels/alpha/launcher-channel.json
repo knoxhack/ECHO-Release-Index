@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "channel": "alpha",
-  "generatedAt": "2026-06-07T23:03:14.3229246Z",
+  "generatedAt": "2026-06-11T09:52:47.115Z",
   "releaseManifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/release-manifest.json",
   "repositoryCatalogUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/repositories.json",
   "catalogUrls": {
@@ -16,6 +16,9 @@
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-native.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-neoforge.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-standalone.json",
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-native.json",
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-neoforge.json",
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-standalone.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-native.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-neoforge.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-standalone.json"
@@ -24,6 +27,7 @@
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modules/echocore.json"
     ],
     "addons": [
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/addons/echoopenlandsprotocol.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/addons/echoskyrelayprotocol.json"
     ]
   },
@@ -35,12 +39,15 @@
     "ashfallNativeEdition": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition",
     "ashfallNeoForgeEdition": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
     "ashfallStandaloneEdition": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
-    "launcher": "https://github.com/knoxhack/ECHO-Launcher",
-    "website": "https://github.com/knoxhack/ECHO-Platform-Website",
-    "releaseIndex": "https://github.com/knoxhack/ECHO-Release-Index",
+    "openlandsNativeEdition": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
+    "openlandsNeoForgeEdition": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition",
+    "openlandsStandaloneEdition": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition",
     "skyRelayNativeEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
     "skyRelayNeoForgeEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
-    "skyRelayStandaloneEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition"
+    "skyRelayStandaloneEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+    "launcher": "https://github.com/knoxhack/ECHO-Launcher",
+    "website": "https://github.com/knoxhack/ECHO-Platform-Website",
+    "releaseIndex": "https://github.com/knoxhack/ECHO-Release-Index"
   },
   "launcherUpdateFeed": {
     "provider": "github",
@@ -93,6 +100,30 @@
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-standalone-edition.json"
+    },
+    {
+      "id": "openlands-native-edition",
+      "name": "Openlands Native Edition",
+      "channel": "alpha",
+      "loader": "echo-native-loader",
+      "moduleArtifactFamily": "echo-addon",
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-native-edition.json"
+    },
+    {
+      "id": "openlands-neoforge-edition",
+      "name": "Openlands NeoForge Edition",
+      "channel": "alpha",
+      "loader": "neoforge",
+      "moduleArtifactFamily": "neoforge",
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-neoforge-edition.json"
+    },
+    {
+      "id": "openlands-standalone-edition",
+      "name": "Openlands Standalone Edition",
+      "channel": "experimental",
+      "loader": "echo-standalone-runtime",
+      "moduleArtifactFamily": "standalone",
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-standalone-edition.json"
     },
     {
       "id": "sky-relay-native-edition",

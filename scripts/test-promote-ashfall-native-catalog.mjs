@@ -125,15 +125,21 @@ async function writeFixture(root, options = {}) {
   })
   if (!options.omitSmoke) {
     await writeJson(root, 'release-readiness/ashfall-rc-smoke.json', {
+      schemaVersion: 'echo.ashfall.rc-smoke.v1',
       status: 'PASS',
       generatedAt: '2026-06-11T00:00:00Z',
       data: {
+        localStagedArtifactSmoke: true,
         draftReleaseDownloaded: true,
         installedFromDownloadedArtifacts: true,
         launcherInstallSmoke: true,
         updateSmoke: true,
         rollbackPlanVerified: true,
         promotedAfterGreen: true,
+        artifactSource: 'github-draft-release-download',
+        draftDownloadEvidence: {
+          path: 'release-readiness/ashfall-draft-download.json',
+        },
       },
     })
   }
@@ -177,6 +183,29 @@ try {
   const smoke = run(smokeRoot, ['--write'])
   assert.equal(smoke.status, 1)
   assert.match(`${smoke.stdout}\n${smoke.stderr}`, /RC smoke evidence is missing/u)
+
+  const localSmokeRoot = path.join(tmp, 'local-smoke')
+  await writeFixture(localSmokeRoot)
+  await writeJson(localSmokeRoot, 'release-readiness/ashfall-rc-smoke.json', {
+    schemaVersion: 'echo.ashfall.rc-smoke.v1',
+    status: 'PASS_WITH_WARNINGS',
+    generatedAt: '2026-06-11T00:00:00Z',
+    data: {
+      localStagedArtifactSmoke: true,
+      draftReleaseDownloaded: false,
+      installedFromDownloadedArtifacts: false,
+      launcherInstallSmoke: true,
+      updateSmoke: true,
+      rollbackPlanVerified: true,
+      promotedAfterGreen: false,
+      artifactSource: 'local-public-alpha-staging',
+      draftDownloadEvidence: null,
+    },
+  })
+  const localSmoke = run(localSmokeRoot, ['--write'])
+  assert.equal(localSmoke.status, 1)
+  assert.match(`${localSmoke.stdout}\n${localSmoke.stderr}`, /artifactSource must be github-draft-release-download/u)
+  assert.match(`${localSmoke.stdout}\n${localSmoke.stderr}`, /installedFromDownloadedArtifacts must be true/u)
 } finally {
   await fs.rm(tmp, { recursive: true, force: true })
 }
