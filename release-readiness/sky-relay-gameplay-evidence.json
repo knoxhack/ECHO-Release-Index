@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T14:06:52.625Z",
+  "generatedAt": "2026-06-11T14:46:57.993Z",
   "moduleId": "echoskyrelayprotocol",
   "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
   "manualEvidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
@@ -50,16 +50,85 @@
       "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.zip$/iu",
       "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.zip$/iu",
       "/(^|\\/)signal[-_]?crown[^/]*\\.zip$/iu"
+    ],
+    "captureKitFiles": [
+      "scripts/init-manual-gameplay-evidence.mjs",
+      "scripts/verify-manual-gameplay-evidence.mjs",
+      "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+      "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
     ]
   },
   "gates": {
     "routeContractReport": "passed",
+    "captureKitReady": "passed",
     "realFirst30Playthrough": "blocked",
     "realFirst2HourPlaythrough": "blocked",
     "realSignalCrownPlaythrough": "blocked",
     "saveReloadVerified": "blocked",
     "noCrashEvidence": "blocked"
   },
+  "captureKits": [
+    {
+      "edition": "native",
+      "source": "sky-relay-native",
+      "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "workspaceDir": "ECHO-Sky-Relay-Native-Edition",
+      "status": "passed",
+      "requiredFiles": [
+        "scripts/init-manual-gameplay-evidence.mjs",
+        "scripts/verify-manual-gameplay-evidence.mjs",
+        "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+        "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
+      ],
+      "presentFiles": [
+        "scripts/init-manual-gameplay-evidence.mjs",
+        "scripts/verify-manual-gameplay-evidence.mjs",
+        "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+        "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
+      ],
+      "missingFiles": []
+    },
+    {
+      "edition": "neoforge",
+      "source": "sky-relay-neoforge",
+      "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition",
+      "status": "passed",
+      "requiredFiles": [
+        "scripts/init-manual-gameplay-evidence.mjs",
+        "scripts/verify-manual-gameplay-evidence.mjs",
+        "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+        "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
+      ],
+      "presentFiles": [
+        "scripts/init-manual-gameplay-evidence.mjs",
+        "scripts/verify-manual-gameplay-evidence.mjs",
+        "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+        "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
+      ],
+      "missingFiles": []
+    },
+    {
+      "edition": "standalone",
+      "source": "sky-relay-standalone",
+      "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition",
+      "status": "passed",
+      "requiredFiles": [
+        "scripts/init-manual-gameplay-evidence.mjs",
+        "scripts/verify-manual-gameplay-evidence.mjs",
+        "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+        "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
+      ],
+      "presentFiles": [
+        "scripts/init-manual-gameplay-evidence.mjs",
+        "scripts/verify-manual-gameplay-evidence.mjs",
+        "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+        "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md"
+      ],
+      "missingFiles": []
+    }
+  ],
   "editions": [
     {
       "edition": "native",

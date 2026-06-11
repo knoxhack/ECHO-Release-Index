@@ -29,6 +29,13 @@ const editions = [
   },
 ]
 
+const captureKitFiles = [
+  'scripts/init-manual-gameplay-evidence.mjs',
+  'scripts/verify-manual-gameplay-evidence.mjs',
+  'fixtures/sky-relay/gameplay-qa/manual-evidence.template.json',
+  'fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md',
+]
+
 function pngFixture(width = 1280, height = 720) {
   const header = Buffer.alloc(33)
   pngSignature.copy(header, 0)
@@ -88,6 +95,7 @@ async function writeRouteReport(root) {
 async function writeGameplayEvidence(workspaceRoot, options = {}) {
   for (const edition of editions) {
     const root = path.join(workspaceRoot, edition.workspaceDir)
+    for (const relPath of captureKitFiles) await writeText(root, relPath)
     const base = 'fixtures/sky-relay/gameplay-qa/evidence'
     const supportingFiles = [
       `${base}/first-30-minutes-notes.md`,
@@ -157,6 +165,8 @@ try {
   assert.equal(ready.status, 0, `${ready.stdout}\n${ready.stderr}`)
   const readyReport = JSON.parse(ready.stdout)
   assert.equal(readyReport.status, 'PASS')
+  assert.equal(readyReport.gates.captureKitReady, 'passed')
+  assert.equal(readyReport.captureKits.length, 3)
   assert.equal(readyReport.gates.realFirst30Playthrough, 'passed')
   assert.equal(readyReport.gates.realSignalCrownPlaythrough, 'passed')
 

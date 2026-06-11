@@ -31,6 +31,13 @@ const EVIDENCE_SOURCE_REPOS = {
   },
 }
 
+const REQUIRED_CAPTURE_KIT_FILES = [
+  'scripts/init-manual-gameplay-evidence.mjs',
+  'scripts/verify-manual-gameplay-evidence.mjs',
+  'fixtures/sky-relay/gameplay-qa/manual-evidence.template.json',
+  'fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md',
+]
+
 const REQUIRED_CLAIMS = [
   'realFirst30Playthrough',
   'realFirst2HourPlaythrough',
@@ -345,6 +352,38 @@ async function validateManualEvidence(args, edition, blockers) {
   return result
 }
 
+async function validateCaptureKit(args, edition, blockers) {
+  const source = EVIDENCE_SOURCE_REPOS[edition]
+  const root = evidenceRoot(args, edition)
+  const result = {
+    edition,
+    source: source.source,
+    repository: source.repository,
+    workspaceDir: source.workspaceDir,
+    status: 'passed',
+    requiredFiles: REQUIRED_CAPTURE_KIT_FILES,
+    presentFiles: [],
+    missingFiles: [],
+  }
+
+  for (const relPath of REQUIRED_CAPTURE_KIT_FILES) {
+    const resolved = resolveInside(root, relPath)
+    if (resolved.error) {
+      result.missingFiles.push(relPath)
+      blockers.push(`${edition} capture kit path must stay inside ${source.workspaceDir}: ${relPath}`)
+      continue
+    }
+    if (await fileExists(resolved.target)) result.presentFiles.push(relPath)
+    else {
+      result.missingFiles.push(relPath)
+      blockers.push(`${edition} capture kit is missing: ${source.workspaceDir}/${relPath}`)
+    }
+  }
+
+  if (result.missingFiles.length) result.status = 'blocked'
+  return result
+}
+
 async function buildReport(args) {
   const blockers = []
   const routeReportPath = path.resolve(args.root, args.routeReport)
@@ -356,13 +395,16 @@ async function buildReport(args) {
     blockers.push(`Route contract report is missing or invalid: ${args.routeReport}: ${error.message}`)
   }
 
+  const captureKits = []
   const editions = []
   for (const edition of Object.keys(EVIDENCE_SOURCE_REPOS)) {
+    captureKits.push(await validateCaptureKit(args, edition, blockers))
     editions.push(await validateManualEvidence(args, edition, blockers))
   }
 
   const gates = {
     routeContractReport: blockers.some((blocker) => blocker.startsWith('Route')) ? 'blocked' : 'passed',
+    captureKitReady: captureKits.every((captureKit) => captureKit.status === 'passed') ? 'passed' : 'blocked',
     realFirst30Playthrough: editions.every((edition) => edition.claims.realFirst30Playthrough) ? 'passed' : 'blocked',
     realFirst2HourPlaythrough: editions.every((edition) => edition.claims.realFirst2HourPlaythrough) ? 'passed' : 'blocked',
     realSignalCrownPlaythrough: editions.every((edition) => edition.claims.realSignalCrownPlaythrough) ? 'passed' : 'blocked',
@@ -384,8 +426,10 @@ async function buildReport(args) {
       screenshots: REQUIRED_SCREENSHOT_PATTERNS.map(String),
       logs: REQUIRED_LOG_PATTERNS.map(String),
       saveSnapshots: REQUIRED_SAVE_PATTERNS.map(String),
+      captureKitFiles: REQUIRED_CAPTURE_KIT_FILES,
     },
     gates,
+    captureKits,
     editions,
     blockers,
     note: 'This verifier requires real manual playthrough evidence files in each Sky Relay edition repo before Release Index promotion can remove warning validation.',
