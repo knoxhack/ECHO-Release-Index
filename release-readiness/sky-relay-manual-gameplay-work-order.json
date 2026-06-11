@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.manual-gameplay-work-order.v1",
   "status": "OPEN",
-  "generatedAt": "2026-06-11T20:39:49.020Z",
+  "generatedAt": "2026-06-11T20:51:23.158Z",
   "sourceReport": "release-readiness/sky-relay-gameplay-evidence.json",
   "moduleId": "echoskyrelayprotocol",
   "gameplayEvidenceStatus": "BLOCKED",
@@ -30,7 +30,8 @@
     "node scripts\\promote-sky-relay-public-alpha.mjs",
     "node scripts\\promote-sky-relay-public-alpha.mjs --write",
     "node scripts\\validate-index.mjs --strict",
-    "node scripts\\sync-public-alpha-index.mjs --check"
+    "node scripts\\sync-public-alpha-index.mjs --check",
+    "node scripts\\verify-sky-relay-release-pipeline.mjs --write --require-release-ready"
   ],
   "editions": [
     {

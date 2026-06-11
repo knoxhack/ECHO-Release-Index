@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T20:39:47.744Z",
+  "generatedAt": "2026-06-11T20:48:21.346Z",
   "moduleId": "echoskyrelayprotocol",
   "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
   "editionPackAssets": "release-readiness/sky-relay-edition-pack-assets.json",
@@ -10,7 +10,7 @@
     "releaseIndex": {
       "repository": "knoxhack/ECHO-Release-Index",
       "workspaceDir": "ECHO-Release-Index",
-      "commit": "426921d02be3099e5293ec05bc2dc7e42cd8cff8",
+      "commit": "66a88a63b8f9236a75db9dac9e24ba518e99c639",
       "branch": "feature/sky-relay-protocol",
       "dirty": true,
       "cleanForEvidence": false,
@@ -20,6 +20,7 @@
         " M channels/alpha/launcher-channel.json",
         " M channels/alpha/release-manifest.json",
         " M channels/alpha/repositories.json",
+        " M release-readiness/sky-relay-manual-gameplay-work-order.json",
         " M scripts/generate-ashfall-rc-smoke.mjs",
         " M scripts/promote-ashfall-native-catalog.mjs",
         " M scripts/publish-public-alpha.mjs",
@@ -36,6 +37,7 @@
         "?? release-readiness/ashfall-draft-download.json",
         "?? release-readiness/ashfall-native-public-alpha.json",
         "?? release-readiness/ashfall-rc-smoke.json",
+        "?? release-readiness/sky-relay-release-pipeline.json",
         "?? scripts/download-ashfall-draft-release.mjs",
         "?? scripts/test-download-ashfall-draft-release.mjs",
         "?? scripts/test-verify-ashfall-artifact-truth.mjs",
@@ -43,7 +45,10 @@
         "?? scripts/verify-ashfall-artifact-truth.mjs",
         "?? scripts/verify-ashfall-release-readiness.mjs"
       ],
-      "ignoredStatusLines": [],
+      "ignoredStatusLines": [
+        " M release-readiness/sky-relay-manual-gameplay-work-order.json",
+        "?? release-readiness/sky-relay-release-pipeline.json"
+      ],
       "blockingStatusLines": [
         " M PUBLIC_ALPHA_RELEASE_STATUS.md",
         " M README.md",
