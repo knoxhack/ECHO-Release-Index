@@ -409,17 +409,29 @@ function sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }) {
   ]
 }
 
-function logFixture({ packId, run }, relPath) {
+function logFixture({ packId, run, sessions }, relPath) {
   const kind = /launcher|pack/u.test(relPath) ? 'launcher install' : 'client playthrough'
-  return [
+  const lines = [
     `Sky Relay ${kind} log`,
     `Pack ID: ${packId}`,
     `Release tag: ${run.releaseTag}`,
     `Artifact asset: ${run.artifactAsset}`,
     `Artifact SHA-256: ${run.artifactSha256}`,
     `Artifact size: ${run.artifactSize}`,
+    `Launcher channel: ${run.launcherChannel}`,
+    `Installed from: ${run.installedFrom}`,
+    `World/profile: ${run.worldOrProfile}`,
+    `Run started at: ${run.startedAt}`,
     'Status: completed without blocking crash',
-  ].join('\n')
+  ]
+  if (/client/u.test(relPath)) {
+    for (const session of sessions ?? []) {
+      lines.push(`${session.id}.id=${session.id}`)
+      lines.push(`${session.id}.startedAt=${session.startedAt}`)
+      lines.push(`${session.id}.endedAt=${session.endedAt}`)
+    }
+  }
+  return lines.join('\n')
 }
 
 async function writeBytes(root, relPath, value) {
@@ -545,7 +557,7 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
 
     for (const relPath of supportingFiles) await writeText(root, relPath, noteFixture(relPath, evidence))
     for (const [index, relPath] of screenshots.entries()) await writeBytes(root, relPath, pngFixture(1280, 720, index + 1))
-    for (const relPath of logs) await writeText(root, relPath, logFixture({ packId: edition.packId, run }, relPath))
+    for (const relPath of logs) await writeText(root, relPath, logFixture({ packId: edition.packId, run, sessions }, relPath))
     for (const [index, relPath] of saveSnapshots.entries()) {
       await writeBytes(root, relPath, zipFixture('save/level.dat', `fixture save snapshot ${index + 1}: ${relPath}\n`))
     }
@@ -591,7 +603,18 @@ try {
   assert.ok(nativeEvidence.checked.screenshots[0].pixelVariation.uniquePixelSamples >= 16)
   assert.equal(nativeEvidence.checked.logs[0].blockingSignatures, 0)
   assert.ok(nativeEvidence.checked.logs[0].lineCount >= 1)
-  assert.deepEqual(nativeEvidence.checked.logs[0].provenanceMatches, ['packId', 'releaseTag', 'artifactAsset', 'artifactSha256', 'artifactSize'])
+  assert.deepEqual(nativeEvidence.checked.logs[0].provenanceMatches, [
+    'packId',
+    'releaseTag',
+    'artifactAsset',
+    'artifactSha256',
+    'artifactSize',
+    'launcherChannel',
+    'installedFrom',
+    'worldOrProfile',
+    'runStartedAt',
+  ])
+  assert.ok(nativeEvidence.checked.logs[0].sessionMatches.includes('signal_crown_completion.startedAt'))
   assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 1)
   assert.equal(nativeEvidence.checked.saveSnapshots[0].hasLevelDat, true)
   assert.deepEqual(nativeEvidence.checked.saveSnapshots[0].unsafeEntries, [])
@@ -867,6 +890,30 @@ try {
   const missingLogProvenance = run(missingLogProvenanceRoot, missingLogProvenanceWorkspace, ['--require-release-ready'])
   assert.equal(missingLogProvenance.status, 1)
   assert.match(`${missingLogProvenance.stdout}\n${missingLogProvenance.stderr}`, /missing required provenance artifactSha256/u)
+
+  const missingClientSessionRoot = path.join(tmp, 'missing-client-session-release-index')
+  const missingClientSessionWorkspace = path.join(tmp, 'missing-client-session-workspace')
+  await writeRouteReport(missingClientSessionRoot)
+  await writeGameplayEvidence(missingClientSessionWorkspace)
+  const clientSessionEditionRoot = path.join(missingClientSessionWorkspace, 'ECHO-Sky-Relay-Native-Edition')
+  const clientSessionEvidence = JSON.parse(await fs.readFile(
+    path.join(clientSessionEditionRoot, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json'),
+    'utf8',
+  ))
+  const signalCrownSession = clientSessionEvidence.sessions.find((session) => session.id === 'signal_crown_completion')
+  const signalCrownStartMarker = `${signalCrownSession.id}.startedAt=${signalCrownSession.startedAt}`
+  await writeText(
+    clientSessionEditionRoot,
+    'fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log',
+    logFixture(
+      { packId: clientSessionEvidence.packId, run: clientSessionEvidence.run, sessions: clientSessionEvidence.sessions },
+      'fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log',
+    )
+      .replace(signalCrownStartMarker, `${signalCrownSession.id}.startedAt=2026-06-11T02:04:59Z`),
+  )
+  const missingClientSession = run(missingClientSessionRoot, missingClientSessionWorkspace, ['--require-release-ready'])
+  assert.equal(missingClientSession.status, 1)
+  assert.match(`${missingClientSession.stdout}\n${missingClientSession.stderr}`, /missing required client log session marker signal_crown_completion\.startedAt/u)
 
   const incompletePngRoot = path.join(tmp, 'incomplete-png-release-index')
   const incompletePngWorkspace = path.join(tmp, 'incomplete-png-workspace')
