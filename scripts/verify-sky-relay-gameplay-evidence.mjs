@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process'
 import crypto from 'node:crypto'
+import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
@@ -10,6 +11,10 @@ const DEFAULT_ROUTE_REPORT = 'release-readiness/sky-relay-gameplay-route-smoke.j
 const DEFAULT_EDITION_PACK_ASSETS = 'release-readiness/sky-relay-edition-pack-assets.json'
 const DEFAULT_MANUAL_EVIDENCE = 'fixtures/sky-relay/gameplay-qa/manual-evidence.json'
 const DEFAULT_OUT = 'release-readiness/sky-relay-gameplay-evidence.json'
+const RELEASE_INDEX_PROVENANCE_IGNORES = [
+  DEFAULT_OUT,
+  'release-readiness/sky-relay-public-alpha-readiness.json',
+]
 const TEMPLATE_MARKER = 'ECHO_SKY_RELAY_TEMPLATE_ONLY'
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])
 const ZIP_LOCAL_FILE_HEADER = Buffer.from([0x50, 0x4b, 0x03, 0x04])
@@ -583,6 +588,12 @@ function normalizeRel(value) {
   return String(value).replace(/\\/g, '/')
 }
 
+function statusLinePath(line) {
+  const normalized = normalizeRel(String(line))
+  if (normalized.startsWith('?? ')) return normalized.slice(3)
+  return normalized.slice(3)
+}
+
 function gitOutput(root, args, options = {}) {
   const result = spawnSync('git', ['-C', root, ...args], {
     encoding: 'utf8',
@@ -593,18 +604,38 @@ function gitOutput(root, args, options = {}) {
   return options.trim === false ? output : output.trim()
 }
 
-function repositoryRevision(root, metadata = {}) {
+function repositoryRevision(root, metadata = {}, ignoredPaths = []) {
+  if (!fsSync.existsSync(path.join(root, '.git'))) {
+    return {
+      ...metadata,
+      workspaceDir: path.basename(root),
+      commit: null,
+      branch: null,
+      dirty: false,
+      cleanForEvidence: true,
+      statusLines: [],
+      ignoredStatusLines: [],
+      blockingStatusLines: [],
+    }
+  }
+
   const commit = gitOutput(root, ['rev-parse', 'HEAD'])
   const branch = gitOutput(root, ['rev-parse', '--abbrev-ref', 'HEAD'])
   const status = gitOutput(root, ['status', '--short', '--untracked-files=all'], { trim: false })
   const statusLines = status ? status.split(/\r?\n/u).filter(Boolean) : []
+  const ignoredPathSet = new Set(ignoredPaths.map(normalizeRel))
+  const ignoredStatusLines = statusLines.filter((line) => ignoredPathSet.has(statusLinePath(line)))
+  const blockingStatusLines = statusLines.filter((line) => !ignoredPathSet.has(statusLinePath(line)))
   return {
     ...metadata,
     workspaceDir: path.basename(root),
     commit,
     branch,
     dirty: statusLines.length > 0,
+    cleanForEvidence: blockingStatusLines.length === 0,
     statusLines,
+    ignoredStatusLines,
+    blockingStatusLines,
   }
 }
 
@@ -1286,7 +1317,7 @@ async function buildReport(args) {
     sourceRevisions: {
       releaseIndex: repositoryRevision(path.resolve(args.root), {
         repository: 'knoxhack/ECHO-Release-Index',
-      }),
+      }, RELEASE_INDEX_PROVENANCE_IGNORES),
       editions: Object.fromEntries(Object.entries(EVIDENCE_SOURCE_REPOS).map(([edition, source]) => [
         edition,
         repositoryRevision(evidenceRoot(args, edition), {

@@ -221,9 +221,12 @@ gameplay report must also preserve detailed checked-artifact metadata from the
 gameplay verifier, including session evidence coverage, PNG dimensions and pixel
 variation, log provenance and session markers, structured save ZIP state, and
 Git source revisions for Release Index plus all three edition repos. When status
-is `PASS`, those source revisions must be clean so the captured evidence can be
-traced back to committed repository state. A stub report with only
-`status: PASS` is not release-ready.
+is `PASS`, those source revisions must be clean for evidence so the captured
+evidence can be traced back to committed repository state. The verifier records
+raw Git status separately from blocking status; generated Sky Relay readiness
+JSON outputs may be ignored, but manual evidence, capture tooling, manifests, and
+source files may not be dirty. A stub report with only `status: PASS` is not
+release-ready.
 
 ## Promotion Boundary
 

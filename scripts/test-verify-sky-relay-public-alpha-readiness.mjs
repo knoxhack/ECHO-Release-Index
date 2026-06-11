@@ -236,7 +236,10 @@ function sourceRevisionFixture(metadata, seed) {
     commit: gitShaFixture(seed),
     branch: 'feature/sky-relay-protocol',
     dirty: false,
+    cleanForEvidence: true,
     statusLines: [],
+    ignoredStatusLines: [],
+    blockingStatusLines: [],
   }
 }
 
@@ -570,6 +573,27 @@ try {
   assert.equal(readyReport.phaseSummary.length, 10)
   assert.equal(readyReport.gates.release_public_alpha, 'passed')
 
+  const generatedOnlyDirtyRoot = path.join(tmp, 'generated-only-dirty-release-index')
+  const generatedOnlyDirtyWorkspace = path.join(tmp, 'generated-only-dirty-workspace')
+  const generatedOnlyDirtyReport = JSON.parse(JSON.stringify(gameplayEvidenceReport('PASS')))
+  generatedOnlyDirtyReport.sourceRevisions.releaseIndex.dirty = true
+  generatedOnlyDirtyReport.sourceRevisions.releaseIndex.cleanForEvidence = true
+  generatedOnlyDirtyReport.sourceRevisions.releaseIndex.statusLines = [
+    ' M release-readiness/sky-relay-gameplay-evidence.json',
+    ' M release-readiness/sky-relay-public-alpha-readiness.json',
+  ]
+  generatedOnlyDirtyReport.sourceRevisions.releaseIndex.ignoredStatusLines =
+    generatedOnlyDirtyReport.sourceRevisions.releaseIndex.statusLines
+  generatedOnlyDirtyReport.sourceRevisions.releaseIndex.blockingStatusLines = []
+  await writeModuleFixture(generatedOnlyDirtyWorkspace)
+  await writeEditionRepos(generatedOnlyDirtyWorkspace)
+  await writeCatalogFiles(generatedOnlyDirtyRoot)
+  await writeReports(generatedOnlyDirtyRoot, {
+    gameplayReport: generatedOnlyDirtyReport,
+  })
+  const generatedOnlyDirty = run(generatedOnlyDirtyRoot, generatedOnlyDirtyWorkspace, ['--require-release-ready'])
+  assert.equal(generatedOnlyDirty.status, 0, `${generatedOnlyDirty.stdout}\n${generatedOnlyDirty.stderr}`)
+
   const stubGameplayRoot = path.join(tmp, 'stub-gameplay-release-index')
   const stubGameplayWorkspace = path.join(tmp, 'stub-gameplay-workspace')
   await writeModuleFixture(stubGameplayWorkspace)
@@ -633,7 +657,9 @@ try {
   const dirtySourceWorkspace = path.join(tmp, 'dirty-source-workspace')
   const dirtySourceReport = JSON.parse(JSON.stringify(gameplayEvidenceReport('PASS')))
   dirtySourceReport.sourceRevisions.editions.native.dirty = true
+  dirtySourceReport.sourceRevisions.editions.native.cleanForEvidence = false
   dirtySourceReport.sourceRevisions.editions.native.statusLines = [' M fixtures/sky-relay/gameplay-qa/manual-evidence.json']
+  dirtySourceReport.sourceRevisions.editions.native.blockingStatusLines = dirtySourceReport.sourceRevisions.editions.native.statusLines
   await writeModuleFixture(dirtySourceWorkspace)
   await writeEditionRepos(dirtySourceWorkspace)
   await writeCatalogFiles(dirtySourceRoot)
@@ -642,7 +668,7 @@ try {
   })
   const dirtySource = run(dirtySourceRoot, dirtySourceWorkspace, ['--require-release-ready'])
   assert.equal(dirtySource.status, 1)
-  assert.match(dirtySource.stdout, /gameplay evidence native source revision must be clean for PASS/u)
+  assert.match(dirtySource.stdout, /gameplay evidence native source revision must be clean for evidence for PASS/u)
 
   const blockedRoot = path.join(tmp, 'blocked-release-index')
   const blockedWorkspace = path.join(tmp, 'blocked-workspace')

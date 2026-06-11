@@ -502,9 +502,12 @@ function requireGameplaySourceRevision(item, report, label, revision, expected) 
   requireCondition(item, isGitCommit(revision.commit), `${label} source commit is recorded`, `${label} source commit must be a 40-character Git SHA`)
   requireCondition(item, typeof revision.branch === 'string' && revision.branch.trim() !== '', `${label} source branch is recorded`, `${label} source branch must be recorded`)
   requireCondition(item, typeof revision.dirty === 'boolean', `${label} source dirty state is recorded`, `${label} source dirty state must be recorded`)
+  requireCondition(item, typeof revision.cleanForEvidence === 'boolean', `${label} source clean-for-evidence state is recorded`, `${label} source cleanForEvidence must be recorded`)
   requireCondition(item, Array.isArray(revision.statusLines), `${label} source status lines are recorded`, `${label} source statusLines must be an array`)
+  requireCondition(item, Array.isArray(revision.ignoredStatusLines), `${label} source ignored status lines are recorded`, `${label} source ignoredStatusLines must be an array`)
+  requireCondition(item, Array.isArray(revision.blockingStatusLines), `${label} source blocking status lines are recorded`, `${label} source blockingStatusLines must be an array`)
   if (report.status === 'PASS') {
-    requireCondition(item, revision.dirty === false, `${label} source revision is clean`, `${label} source revision must be clean for PASS`)
+    requireCondition(item, revision.cleanForEvidence === true, `${label} source revision is clean for evidence`, `${label} source revision must be clean for evidence for PASS`)
   }
 }
 
