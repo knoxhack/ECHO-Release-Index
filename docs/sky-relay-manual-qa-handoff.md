@@ -21,6 +21,7 @@ Expected current state:
 - `versionTransitionUpdate`: `passed`
 - `routeContractReport`: `passed`
 - `captureKitReady`: `passed`
+- `freshWorldCreated`: `blocked`
 - `realFirst30Playthrough`: `blocked`
 - `realFirst2HourPlaythrough`: `blocked`
 - `realSignalCrownPlaythrough`: `blocked`
@@ -45,6 +46,7 @@ Each edition repo must contain:
 - `scripts/test-manual-gameplay-evidence-tools.mjs`
 - `fixtures/sky-relay/gameplay-qa/manual-evidence.template.json`
 - `fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md`
+- `fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md`
 - `fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md`
 - `fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md`
 - `fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md`
@@ -81,13 +83,14 @@ verification:
 - `installedFrom`
 - `startedAt`
 
-Fill the `sessions` array with `first_30_minutes`, `first_2_hours`,
-`signal_crown_completion`, `save_reload_verification`, and `no_crash_review`.
-Each session must use real start/end timestamps, meet the minimum duration in
-the verifier, and link back to the matching required note, screenshot, save
-snapshot, and log paths. The save/reload session must link to all three save
-snapshots plus the client log. The central verifier rejects `TBD` run values and
-`1970-01-01T...` template timestamps.
+Fill the `sessions` array with `fresh_world_creation`, `first_30_minutes`,
+`first_2_hours`, `signal_crown_completion`, `save_reload_verification`, and
+`no_crash_review`. Each session must use real start/end timestamps, meet the
+minimum duration in the verifier, and link back to the matching required note,
+screenshot, save snapshot, and log paths. The fresh-world session must link to
+its note, screenshot, client log, and launcher install log. The save/reload
+session must link to all three save snapshots plus the client log. The central
+verifier rejects `TBD` run values and `1970-01-01T...` template timestamps.
 
 The initializer also creates Markdown worksheets for the four required notes.
 Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and
@@ -100,6 +103,7 @@ worksheet fields are blocked.
 
 Each edition must produce these notes:
 
+- `fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md`
 - `fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md`
 - `fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md`
 - `fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md`
@@ -107,6 +111,7 @@ Each edition must produce these notes:
 
 Each edition must produce these screenshots:
 
+- `fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png`
 - `fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png`
 - `fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png`
 - `fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png`
@@ -179,6 +184,7 @@ blocked in `release-readiness/sky-relay-gameplay-evidence.json`:
 - `realFirst30Playthrough`
 - `realFirst2HourPlaythrough`
 - `realSignalCrownPlaythrough`
+- `freshWorldCreated`
 - `saveReloadVerified`
 - `noCrashEvidence`
 

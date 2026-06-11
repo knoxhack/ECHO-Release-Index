@@ -36,6 +36,7 @@ const captureKitFiles = [
   'scripts/verify-manual-gameplay-evidence.mjs',
   'fixtures/sky-relay/gameplay-qa/manual-evidence.template.json',
   'fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md',
+  'fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md',
   'fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md',
   'fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md',
   'fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md',
@@ -141,7 +142,11 @@ function noteFixture(relPath) {
 - Follow-up: none
 `
   }
-  const routeSection = relPath.includes('signal-crown') ? 'Required Completion Checks' : 'Required Route Checks'
+  const routeSection = relPath.includes('fresh-world')
+    ? 'Required Fresh World Checks'
+    : relPath.includes('signal-crown')
+      ? 'Required Completion Checks'
+      : 'Required Route Checks'
   return `# Gameplay Notes
 
 ## Run Identity
@@ -178,6 +183,19 @@ function sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }) {
   const clientLog = find(logs, /client/i)
   const launcherLog = find(logs, /(launcher|pack)[-_]?install/i)
   return [
+    {
+      id: 'fresh_world_creation',
+      claim: 'freshWorldCreated',
+      startedAt: '2026-06-11T00:00:00Z',
+      endedAt: '2026-06-11T00:02:00Z',
+      durationMinutes: 2,
+      evidence: {
+        notes: find(supportingFiles, /fresh[-_]?world/i),
+        screenshot: find(screenshots, /fresh[-_]?world/i),
+        clientLog,
+        launcherLog,
+      },
+    },
     {
       id: 'first_30_minutes',
       claim: 'realFirst30Playthrough',
@@ -283,12 +301,14 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
     for (const relPath of captureKitFiles) await writeText(root, relPath)
     const base = 'fixtures/sky-relay/gameplay-qa/evidence'
     const supportingFiles = [
+      `${base}/fresh-world-notes.md`,
       `${base}/first-30-minutes-notes.md`,
       `${base}/first-2-hours-notes.md`,
       `${base}/signal-crown-verification.md`,
       `${base}/no-crash-review.md`,
     ]
     const screenshots = [
+      `${base}/screenshots/fresh-world-created.png`,
       `${base}/screenshots/first-30-minutes.png`,
       `${base}/screenshots/first-2-hours.png`,
       `${base}/screenshots/signal-crown-complete.png`,
@@ -361,6 +381,7 @@ try {
   assert.equal(readyReport.status, 'PASS')
   assert.equal(readyReport.gates.captureKitReady, 'passed')
   assert.equal(readyReport.captureKits.length, 3)
+  assert.equal(readyReport.gates.freshWorldCreated, 'passed')
   assert.equal(readyReport.gates.realFirst30Playthrough, 'passed')
   assert.equal(readyReport.gates.realSignalCrownPlaythrough, 'passed')
   const nativeEvidence = readyReport.editions.find((edition) => edition.edition === 'native')
@@ -411,6 +432,22 @@ try {
   const missingSession = run(missingSessionRoot, missingSessionWorkspace, ['--require-release-ready'])
   assert.equal(missingSession.status, 1)
   assert.match(`${missingSession.stdout}\n${missingSession.stderr}`, /native manual evidence sessions must include save_reload_verification/u)
+
+  const missingFreshSessionRoot = path.join(tmp, 'missing-fresh-session-release-index')
+  const missingFreshSessionWorkspace = path.join(tmp, 'missing-fresh-session-workspace')
+  await writeRouteReport(missingFreshSessionRoot)
+  await writeGameplayEvidence(missingFreshSessionWorkspace)
+  const missingFreshSessionEvidencePath = path.join(
+    missingFreshSessionWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const missingFreshSessionEvidence = JSON.parse(await fs.readFile(missingFreshSessionEvidencePath, 'utf8'))
+  missingFreshSessionEvidence.sessions = missingFreshSessionEvidence.sessions.filter((session) => session.id !== 'fresh_world_creation')
+  await fs.writeFile(missingFreshSessionEvidencePath, `${JSON.stringify(missingFreshSessionEvidence, null, 2)}\n`, 'utf8')
+  const missingFreshSession = run(missingFreshSessionRoot, missingFreshSessionWorkspace, ['--require-release-ready'])
+  assert.equal(missingFreshSession.status, 1)
+  assert.match(`${missingFreshSession.stdout}\n${missingFreshSession.stderr}`, /native manual evidence sessions must include fresh_world_creation/u)
 
   const shortSessionRoot = path.join(tmp, 'short-session-release-index')
   const shortSessionWorkspace = path.join(tmp, 'short-session-workspace')

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
   "status": "BLOCKED",
-  "generatedAt": "2026-06-11T16:49:15.974Z",
+  "generatedAt": "2026-06-11T17:01:42.386Z",
   "moduleId": "echoskyrelayprotocol",
   "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
   "manualEvidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
@@ -32,6 +32,17 @@
       "noCrashEvidence"
     ],
     "sessions": [
+      {
+        "id": "fresh_world_creation",
+        "claim": "freshWorldCreated",
+        "minDurationMinutes": 1,
+        "evidence": {
+          "notes": "/(^|\\/)fresh[-_]?world[^/]*\\.md$/iu",
+          "screenshot": "/(^|\\/)fresh[-_]?world[^/]*\\.png$/iu",
+          "clientLog": "/(^|\\/)client[^/]*\\.log$/iu",
+          "launcherLog": "/(^|\\/)(launcher|pack)[-_]?install[^/]*\\.log$/iu"
+        }
+      },
       {
         "id": "first_30_minutes",
         "claim": "realFirst30Playthrough",
@@ -88,12 +99,14 @@
       }
     ],
     "supportingFiles": [
+      "/(^|\\/)fresh[-_]?world[^/]*\\.md$/iu",
       "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.md$/iu",
       "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.md$/iu",
       "/(^|\\/)signal[-_]?crown[^/]*\\.md$/iu",
       "/(^|\\/)no[-_]?crash[^/]*\\.md$/iu"
     ],
     "screenshots": [
+      "/(^|\\/)fresh[-_]?world[^/]*\\.png$/iu",
       "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.png$/iu",
       "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.png$/iu",
       "/(^|\\/)signal[-_]?crown[^/]*\\.png$/iu"
@@ -112,6 +125,7 @@
       "scripts/verify-manual-gameplay-evidence.mjs",
       "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
       "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+      "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
       "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
       "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
       "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -121,6 +135,7 @@
   "gates": {
     "routeContractReport": "passed",
     "captureKitReady": "passed",
+    "freshWorldCreated": "blocked",
     "realFirst30Playthrough": "blocked",
     "realFirst2HourPlaythrough": "blocked",
     "realSignalCrownPlaythrough": "blocked",
@@ -139,6 +154,7 @@
         "scripts/verify-manual-gameplay-evidence.mjs",
         "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
         "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+        "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -149,6 +165,7 @@
         "scripts/verify-manual-gameplay-evidence.mjs",
         "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
         "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+        "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -167,6 +184,7 @@
         "scripts/verify-manual-gameplay-evidence.mjs",
         "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
         "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+        "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -177,6 +195,7 @@
         "scripts/verify-manual-gameplay-evidence.mjs",
         "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
         "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+        "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -195,6 +214,7 @@
         "scripts/verify-manual-gameplay-evidence.mjs",
         "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
         "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+        "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -205,6 +225,7 @@
         "scripts/verify-manual-gameplay-evidence.mjs",
         "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
         "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+        "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
         "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
@@ -237,6 +258,19 @@
         "startedAt": "1970-01-01T00:00:00Z"
       },
       "sessions": [
+        {
+          "id": "fresh_world_creation",
+          "claim": "freshWorldCreated",
+          "startedAt": "1970-01-01T00:00:00Z",
+          "endedAt": "1970-01-01T00:01:00Z",
+          "durationMinutes": 1,
+          "evidence": {
+            "notes": "fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+            "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
+            "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
+          }
+        },
         {
           "id": "first_30_minutes",
           "claim": "realFirst30Playthrough",
@@ -333,6 +367,19 @@
       },
       "sessions": [
         {
+          "id": "fresh_world_creation",
+          "claim": "freshWorldCreated",
+          "startedAt": "1970-01-01T00:00:00Z",
+          "endedAt": "1970-01-01T00:01:00Z",
+          "durationMinutes": 1,
+          "evidence": {
+            "notes": "fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+            "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
+            "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
+          }
+        },
+        {
           "id": "first_30_minutes",
           "claim": "realFirst30Playthrough",
           "startedAt": "1970-01-01T00:00:00Z",
@@ -428,6 +475,19 @@
       },
       "sessions": [
         {
+          "id": "fresh_world_creation",
+          "claim": "freshWorldCreated",
+          "startedAt": "1970-01-01T00:00:00Z",
+          "endedAt": "1970-01-01T00:01:00Z",
+          "durationMinutes": 1,
+          "evidence": {
+            "notes": "fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+            "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
+            "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
+          }
+        },
+        {
           "id": "first_30_minutes",
           "claim": "realFirst30Playthrough",
           "startedAt": "1970-01-01T00:00:00Z",
@@ -504,6 +564,7 @@
     "native manual evidence run.startedAt must not use the template timestamp.",
     "native manual evidence run.tester must be filled with real capture information.",
     "native manual evidence run.worldOrProfile must be filled with real capture information.",
+    "native manual evidence sessions.fresh_world_creation must not use template timestamps.",
     "native manual evidence sessions.first_30_minutes must not use template timestamps.",
     "native manual evidence sessions.first_2_hours must not use template timestamps.",
     "native manual evidence sessions.signal_crown_completion must not use template timestamps.",
@@ -515,13 +576,15 @@
     "native manual evidence claim freshWorldCreated must be true.",
     "native manual evidence claim saveReloadVerified must be true.",
     "native manual evidence claim noCrashEvidence must be true.",
-    "native.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-    "native.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-    "native.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-    "native.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-    "native.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-    "native.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-    "native.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
+    "native.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+    "native.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
+    "native.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
+    "native.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
+    "native.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
+    "native.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+    "native.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+    "native.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
+    "native.screenshots[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
     "native.logs[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
     "native.logs[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log",
     "native.saveSnapshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
@@ -530,6 +593,7 @@
     "neoforge manual evidence run.startedAt must not use the template timestamp.",
     "neoforge manual evidence run.tester must be filled with real capture information.",
     "neoforge manual evidence run.worldOrProfile must be filled with real capture information.",
+    "neoforge manual evidence sessions.fresh_world_creation must not use template timestamps.",
     "neoforge manual evidence sessions.first_30_minutes must not use template timestamps.",
     "neoforge manual evidence sessions.first_2_hours must not use template timestamps.",
     "neoforge manual evidence sessions.signal_crown_completion must not use template timestamps.",
@@ -541,13 +605,15 @@
     "neoforge manual evidence claim freshWorldCreated must be true.",
     "neoforge manual evidence claim saveReloadVerified must be true.",
     "neoforge manual evidence claim noCrashEvidence must be true.",
-    "neoforge.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-    "neoforge.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-    "neoforge.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-    "neoforge.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-    "neoforge.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-    "neoforge.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-    "neoforge.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
+    "neoforge.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+    "neoforge.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
+    "neoforge.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
+    "neoforge.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
+    "neoforge.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
+    "neoforge.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+    "neoforge.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+    "neoforge.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
+    "neoforge.screenshots[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
     "neoforge.logs[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
     "neoforge.logs[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log",
     "neoforge.saveSnapshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
@@ -556,6 +622,7 @@
     "standalone manual evidence run.startedAt must not use the template timestamp.",
     "standalone manual evidence run.tester must be filled with real capture information.",
     "standalone manual evidence run.worldOrProfile must be filled with real capture information.",
+    "standalone manual evidence sessions.fresh_world_creation must not use template timestamps.",
     "standalone manual evidence sessions.first_30_minutes must not use template timestamps.",
     "standalone manual evidence sessions.first_2_hours must not use template timestamps.",
     "standalone manual evidence sessions.signal_crown_completion must not use template timestamps.",
@@ -567,13 +634,15 @@
     "standalone manual evidence claim freshWorldCreated must be true.",
     "standalone manual evidence claim saveReloadVerified must be true.",
     "standalone manual evidence claim noCrashEvidence must be true.",
-    "standalone.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-    "standalone.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-    "standalone.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-    "standalone.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-    "standalone.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-    "standalone.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-    "standalone.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
+    "standalone.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+    "standalone.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
+    "standalone.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
+    "standalone.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
+    "standalone.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
+    "standalone.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+    "standalone.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+    "standalone.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
+    "standalone.screenshots[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
     "standalone.logs[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
     "standalone.logs[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log",
     "standalone.saveSnapshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
