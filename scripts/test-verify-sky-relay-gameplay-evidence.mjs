@@ -802,6 +802,27 @@ try {
     /native manual evidence sessions\.save_reload_verification\.startedAt must be at or after signal_crown_completion\.endedAt/u,
   )
 
+  const splitRouteRoot = path.join(tmp, 'split-route-release-index')
+  const splitRouteWorkspace = path.join(tmp, 'split-route-workspace')
+  await writeRouteReport(splitRouteRoot)
+  await writeGameplayEvidence(splitRouteWorkspace)
+  const splitRouteEvidencePath = path.join(
+    splitRouteWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const splitRouteEvidence = JSON.parse(await fs.readFile(splitRouteEvidencePath, 'utf8'))
+  const splitRouteSession = splitRouteEvidence.sessions.find((session) => session.id === 'first_2_hours')
+  splitRouteSession.startedAt = '2026-06-11T00:01:00Z'
+  splitRouteSession.durationMinutes = 124
+  await fs.writeFile(splitRouteEvidencePath, `${JSON.stringify(splitRouteEvidence, null, 2)}\n`, 'utf8')
+  const splitRoute = run(splitRouteRoot, splitRouteWorkspace, ['--require-release-ready'])
+  assert.equal(splitRoute.status, 1)
+  assert.match(
+    `${splitRoute.stdout}\n${splitRoute.stderr}`,
+    /native manual evidence sessions\.first_2_hours\.startedAt must match native manual evidence run\.startedAt/u,
+  )
+
   const durationMismatchRoot = path.join(tmp, 'duration-mismatch-release-index')
   const durationMismatchWorkspace = path.join(tmp, 'duration-mismatch-workspace')
   await writeRouteReport(durationMismatchRoot)
