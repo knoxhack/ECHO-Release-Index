@@ -16,16 +16,19 @@ const editions = [
     key: 'native',
     packId: 'sky-relay-native-edition',
     workspaceDir: 'ECHO-Sky-Relay-Native-Edition',
+    releaseTag: 'sky-relay-native-0.1.0-alpha',
   },
   {
     key: 'neoforge',
     packId: 'sky-relay-neoforge-edition',
     workspaceDir: 'ECHO-Sky-Relay-NeoForge-Edition',
+    releaseTag: 'sky-relay-neoforge-0.1.0-alpha',
   },
   {
     key: 'standalone',
     packId: 'sky-relay-standalone-edition',
     workspaceDir: 'ECHO-Sky-Relay-Standalone-Edition',
+    releaseTag: 'sky-relay-standalone-0.1.0-alpha',
   },
 ]
 
@@ -123,6 +126,65 @@ function noteFixture(relPath) {
 `
 }
 
+function sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }) {
+  const find = (values, pattern) => values.find((relPath) => pattern.test(relPath))
+  const clientLog = find(logs, /client/i)
+  const launcherLog = find(logs, /(launcher|pack)[-_]?install/i)
+  return [
+    {
+      id: 'first_30_minutes',
+      claim: 'realFirst30Playthrough',
+      startedAt: '2026-06-11T00:00:00Z',
+      endedAt: '2026-06-11T00:31:00Z',
+      durationMinutes: 31,
+      evidence: {
+        notes: find(supportingFiles, /first[-_]?30[-_]?minutes/i),
+        screenshot: find(screenshots, /first[-_]?30[-_]?minutes/i),
+        saveSnapshot: find(saveSnapshots, /first[-_]?30[-_]?minutes/i),
+        clientLog,
+      },
+    },
+    {
+      id: 'first_2_hours',
+      claim: 'realFirst2HourPlaythrough',
+      startedAt: '2026-06-11T00:00:00Z',
+      endedAt: '2026-06-11T02:05:00Z',
+      durationMinutes: 125,
+      evidence: {
+        notes: find(supportingFiles, /first[-_]?2[-_]?hours/i),
+        screenshot: find(screenshots, /first[-_]?2[-_]?hours/i),
+        saveSnapshot: find(saveSnapshots, /first[-_]?2[-_]?hours/i),
+        clientLog,
+      },
+    },
+    {
+      id: 'signal_crown_completion',
+      claim: 'realSignalCrownPlaythrough',
+      startedAt: '2026-06-11T02:05:00Z',
+      endedAt: '2026-06-11T02:20:00Z',
+      durationMinutes: 15,
+      evidence: {
+        notes: find(supportingFiles, /signal[-_]?crown/i),
+        screenshot: find(screenshots, /signal[-_]?crown/i),
+        saveSnapshot: find(saveSnapshots, /signal[-_]?crown/i),
+        clientLog,
+      },
+    },
+    {
+      id: 'no_crash_review',
+      claim: 'noCrashEvidence',
+      startedAt: '2026-06-11T02:20:00Z',
+      endedAt: '2026-06-11T02:21:00Z',
+      durationMinutes: 1,
+      evidence: {
+        notes: find(supportingFiles, /no[-_]?crash/i),
+        clientLog,
+        launcherLog,
+      },
+    },
+  ]
+}
+
 async function writeBytes(root, relPath, value) {
   const filePath = path.join(root, relPath)
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -200,7 +262,16 @@ async function writeGameplayEvidence(workspaceRoot, options = {}) {
       schemaVersion: 'echo.skyrelay.gameplay-qa.manual.v1',
       packId: edition.packId,
       generatedAt: '2026-06-11T00:00:00Z',
+      run: {
+        tester: 'test fixture',
+        releaseTag: edition.releaseTag,
+        launcherChannel: 'alpha',
+        worldOrProfile: 'fixture-world',
+        installedFrom: 'ECHO Launcher',
+        startedAt: '2026-06-11T00:00:00Z',
+      },
       claims,
+      sessions: sessionFixture({ supportingFiles, screenshots, logs, saveSnapshots }),
       supportingFiles,
       screenshots,
       logs,
@@ -263,6 +334,40 @@ try {
   const templateMarker = run(templateMarkerRoot, templateMarkerWorkspace, ['--require-release-ready'])
   assert.equal(templateMarker.status, 1)
   assert.match(`${templateMarker.stdout}\n${templateMarker.stderr}`, /template marker ECHO_SKY_RELAY_TEMPLATE_ONLY/u)
+
+  const missingSessionRoot = path.join(tmp, 'missing-session-release-index')
+  const missingSessionWorkspace = path.join(tmp, 'missing-session-workspace')
+  await writeRouteReport(missingSessionRoot)
+  await writeGameplayEvidence(missingSessionWorkspace)
+  const missingSessionEvidencePath = path.join(
+    missingSessionWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const missingSessionEvidence = JSON.parse(await fs.readFile(missingSessionEvidencePath, 'utf8'))
+  missingSessionEvidence.sessions = missingSessionEvidence.sessions.filter((session) => session.id !== 'first_2_hours')
+  await fs.writeFile(missingSessionEvidencePath, `${JSON.stringify(missingSessionEvidence, null, 2)}\n`, 'utf8')
+  const missingSession = run(missingSessionRoot, missingSessionWorkspace, ['--require-release-ready'])
+  assert.equal(missingSession.status, 1)
+  assert.match(`${missingSession.stdout}\n${missingSession.stderr}`, /native manual evidence sessions must include first_2_hours/u)
+
+  const shortSessionRoot = path.join(tmp, 'short-session-release-index')
+  const shortSessionWorkspace = path.join(tmp, 'short-session-workspace')
+  await writeRouteReport(shortSessionRoot)
+  await writeGameplayEvidence(shortSessionWorkspace)
+  const shortSessionEvidencePath = path.join(
+    shortSessionWorkspace,
+    'ECHO-Sky-Relay-Native-Edition',
+    'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+  )
+  const shortSessionEvidence = JSON.parse(await fs.readFile(shortSessionEvidencePath, 'utf8'))
+  const shortSessionRecord = shortSessionEvidence.sessions.find((session) => session.id === 'first_30_minutes')
+  shortSessionRecord.endedAt = '2026-06-11T00:05:00Z'
+  shortSessionRecord.durationMinutes = 5
+  await fs.writeFile(shortSessionEvidencePath, `${JSON.stringify(shortSessionEvidence, null, 2)}\n`, 'utf8')
+  const shortSession = run(shortSessionRoot, shortSessionWorkspace, ['--require-release-ready'])
+  assert.equal(shortSession.status, 1)
+  assert.match(`${shortSession.stdout}\n${shortSession.stderr}`, /first_30_minutes.*durationMinutes must be at least 30/u)
 
   const blankFieldRoot = path.join(tmp, 'blank-field-release-index')
   const blankFieldWorkspace = path.join(tmp, 'blank-field-workspace')

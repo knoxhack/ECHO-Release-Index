@@ -71,6 +71,23 @@ The initializer creates:
 All claims in `manual-evidence.json` must remain `false` until the referenced
 evidence files are produced by the real manual run.
 
+Fill the `run` object with real capture identity before release-ready
+verification:
+
+- `tester`
+- `releaseTag`
+- `launcherChannel`
+- `worldOrProfile`
+- `installedFrom`
+- `startedAt`
+
+Fill the `sessions` array with `first_30_minutes`, `first_2_hours`,
+`signal_crown_completion`, and `no_crash_review`. Each session must use real
+start/end timestamps, meet the minimum duration in the verifier, and link back
+to the matching required note, screenshot, save snapshot, and log paths. The
+central verifier rejects `TBD` run values and `1970-01-01T...` template
+timestamps.
+
 The initializer also creates Markdown worksheets for the four required notes.
 Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and
 central verifiers reject that marker until the worksheets are replaced with real

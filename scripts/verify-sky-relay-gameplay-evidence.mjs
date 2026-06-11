@@ -20,16 +20,19 @@ const EVIDENCE_SOURCE_REPOS = {
     source: 'sky-relay-native',
     repository: 'knoxhack/ECHO-Sky-Relay-Native-Edition',
     workspaceDir: 'ECHO-Sky-Relay-Native-Edition',
+    releaseTag: 'sky-relay-native-0.1.0-alpha',
   },
   neoforge: {
     source: 'sky-relay-neoforge',
     repository: 'knoxhack/ECHO-Sky-Relay-NeoForge-Edition',
     workspaceDir: 'ECHO-Sky-Relay-NeoForge-Edition',
+    releaseTag: 'sky-relay-neoforge-0.1.0-alpha',
   },
   standalone: {
     source: 'sky-relay-standalone',
     repository: 'knoxhack/ECHO-Sky-Relay-Standalone-Edition',
     workspaceDir: 'ECHO-Sky-Relay-Standalone-Edition',
+    releaseTag: 'sky-relay-standalone-0.1.0-alpha',
   },
 }
 
@@ -97,6 +100,52 @@ const NOTE_SECTION_REQUIREMENTS = [
 ]
 
 const BLANK_NOTE_FIELD = /^-\s+[^:\n]+:\s*$/gmu
+
+const REQUIRED_SESSIONS = [
+  {
+    id: 'first_30_minutes',
+    claim: 'realFirst30Playthrough',
+    minDurationMinutes: 30,
+    evidence: {
+      notes: { list: 'supportingFiles', pattern: REQUIRED_SUPPORTING_PATTERNS[0] },
+      screenshot: { list: 'screenshots', pattern: REQUIRED_SCREENSHOT_PATTERNS[0] },
+      saveSnapshot: { list: 'saveSnapshots', pattern: REQUIRED_SAVE_PATTERNS[0] },
+      clientLog: { list: 'logs', pattern: REQUIRED_LOG_PATTERNS[0] },
+    },
+  },
+  {
+    id: 'first_2_hours',
+    claim: 'realFirst2HourPlaythrough',
+    minDurationMinutes: 120,
+    evidence: {
+      notes: { list: 'supportingFiles', pattern: REQUIRED_SUPPORTING_PATTERNS[1] },
+      screenshot: { list: 'screenshots', pattern: REQUIRED_SCREENSHOT_PATTERNS[1] },
+      saveSnapshot: { list: 'saveSnapshots', pattern: REQUIRED_SAVE_PATTERNS[1] },
+      clientLog: { list: 'logs', pattern: REQUIRED_LOG_PATTERNS[0] },
+    },
+  },
+  {
+    id: 'signal_crown_completion',
+    claim: 'realSignalCrownPlaythrough',
+    minDurationMinutes: 1,
+    evidence: {
+      notes: { list: 'supportingFiles', pattern: REQUIRED_SUPPORTING_PATTERNS[2] },
+      screenshot: { list: 'screenshots', pattern: REQUIRED_SCREENSHOT_PATTERNS[2] },
+      saveSnapshot: { list: 'saveSnapshots', pattern: REQUIRED_SAVE_PATTERNS[2] },
+      clientLog: { list: 'logs', pattern: REQUIRED_LOG_PATTERNS[0] },
+    },
+  },
+  {
+    id: 'no_crash_review',
+    claim: 'noCrashEvidence',
+    minDurationMinutes: 1,
+    evidence: {
+      notes: { list: 'supportingFiles', pattern: REQUIRED_SUPPORTING_PATTERNS[3] },
+      clientLog: { list: 'logs', pattern: REQUIRED_LOG_PATTERNS[0] },
+      launcherLog: { list: 'logs', pattern: REQUIRED_LOG_PATTERNS[1] },
+    },
+  },
+]
 
 function usage() {
   return `Usage: node scripts/verify-sky-relay-gameplay-evidence.mjs [options]
@@ -223,6 +272,28 @@ function matchesAny(values, pattern) {
   return values.some((value) => pattern.test(String(value)))
 }
 
+function normalizeRel(value) {
+  return String(value).replace(/\\/g, '/')
+}
+
+function hasPath(values, relPath) {
+  return Array.isArray(values) && values.some((value) => normalizeRel(value) === normalizeRel(relPath))
+}
+
+function isIsoTimestamp(value) {
+  return typeof value === 'string' && !Number.isNaN(Date.parse(value))
+}
+
+function isTemplateTimestamp(value) {
+  return typeof value === 'string' && value.startsWith('1970-01-01T')
+}
+
+function isPlaceholderText(value) {
+  if (typeof value !== 'string') return true
+  const normalized = value.trim().toLowerCase()
+  return normalized === '' || ['tbd', 'todo', 'pending', 'template'].includes(normalized)
+}
+
 function valueAt(value, pointer) {
   return String(pointer).split('.').reduce((current, part) => current?.[part], value)
 }
@@ -242,6 +313,103 @@ function validateMarkdownNote({ text, relPath, label, index, blockers }) {
     blockers.push(`${label}[${index}] target still contains blank worksheet fields: ${relPath}`)
   }
   BLANK_NOTE_FIELD.lastIndex = 0
+}
+
+function validateRunIdentity({ evidence, edition, blockers }) {
+  const source = EVIDENCE_SOURCE_REPOS[edition]
+  if (!evidence.run || typeof evidence.run !== 'object' || Array.isArray(evidence.run)) {
+    blockers.push(`${edition} manual evidence run must be an object.`)
+    return
+  }
+  if (evidence.run.releaseTag !== source.releaseTag) {
+    blockers.push(`${edition} manual evidence run.releaseTag must be ${source.releaseTag}.`)
+  }
+  if (evidence.run.launcherChannel !== 'alpha') {
+    blockers.push(`${edition} manual evidence run.launcherChannel must be alpha.`)
+  }
+  if (!isIsoTimestamp(evidence.run.startedAt)) {
+    blockers.push(`${edition} manual evidence run.startedAt must be an ISO timestamp.`)
+  } else if (isTemplateTimestamp(evidence.run.startedAt)) {
+    blockers.push(`${edition} manual evidence run.startedAt must not use the template timestamp.`)
+  }
+  for (const field of ['tester', 'worldOrProfile', 'installedFrom']) {
+    if (isPlaceholderText(evidence.run[field])) {
+      blockers.push(`${edition} manual evidence run.${field} must be filled with real capture information.`)
+    }
+  }
+}
+
+function validateSessionEvidencePath({ root, evidence, edition, sessionId, field, rule, relPath, blockers }) {
+  const label = `${edition}.sessions.${sessionId}.evidence.${field}`
+  const resolved = resolveInside(root, relPath)
+  if (resolved.error === 'relative-path-required') {
+    blockers.push(`${label} must be a relative file path.`)
+    return
+  }
+  if (resolved.error === 'outside-root') {
+    blockers.push(`${label} points outside the evidence root: ${relPath}`)
+    return
+  }
+  if (!rule.pattern.test(normalizeRel(relPath))) {
+    blockers.push(`${label} must match ${rule.pattern}.`)
+  }
+  if (!hasPath(evidence[rule.list], relPath)) {
+    blockers.push(`${label} must also be listed in ${edition}.${rule.list}.`)
+  }
+}
+
+function validateSessions({ root, evidence, edition, blockers }) {
+  if (!Array.isArray(evidence.sessions)) {
+    blockers.push(`${edition} manual evidence sessions must be an array.`)
+    return
+  }
+  const ids = evidence.sessions.map((session) => session?.id).filter(Boolean)
+  if (new Set(ids).size !== ids.length) blockers.push(`${edition} manual evidence sessions must not contain duplicate ids.`)
+  for (const requirement of REQUIRED_SESSIONS) {
+    const session = evidence.sessions.find((entry) => entry?.id === requirement.id)
+    if (!session) {
+      blockers.push(`${edition} manual evidence sessions must include ${requirement.id}.`)
+      continue
+    }
+    if (session.claim !== requirement.claim) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id}.claim must be ${requirement.claim}.`)
+    }
+    if (!isIsoTimestamp(session.startedAt)) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id}.startedAt must be an ISO timestamp.`)
+    }
+    if (!isIsoTimestamp(session.endedAt)) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id}.endedAt must be an ISO timestamp.`)
+    }
+    const start = Date.parse(session.startedAt)
+    const end = Date.parse(session.endedAt)
+    if (!Number.isNaN(start) && !Number.isNaN(end)) {
+      if (end <= start) blockers.push(`${edition} manual evidence sessions.${requirement.id}.endedAt must be after startedAt.`)
+      const elapsedMinutes = (end - start) / 60000
+      if (elapsedMinutes < requirement.minDurationMinutes) {
+        blockers.push(`${edition} manual evidence sessions.${requirement.id} elapsed minutes must be at least ${requirement.minDurationMinutes}.`)
+      }
+    }
+    if (typeof session.durationMinutes !== 'number' || !Number.isFinite(session.durationMinutes)) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id}.durationMinutes must be a number.`)
+    } else if (session.durationMinutes < requirement.minDurationMinutes) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id}.durationMinutes must be at least ${requirement.minDurationMinutes}.`)
+    }
+    if (isTemplateTimestamp(session.startedAt) || isTemplateTimestamp(session.endedAt)) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id} must not use template timestamps.`)
+    }
+    if (!session.evidence || typeof session.evidence !== 'object' || Array.isArray(session.evidence)) {
+      blockers.push(`${edition} manual evidence sessions.${requirement.id}.evidence must be an object.`)
+      continue
+    }
+    for (const [field, rule] of Object.entries(requirement.evidence)) {
+      const relPath = session.evidence[field]
+      if (typeof relPath !== 'string' || relPath.trim() === '') {
+        blockers.push(`${edition} manual evidence sessions.${requirement.id}.evidence.${field} must be a relative file path.`)
+        continue
+      }
+      validateSessionEvidencePath({ root, evidence, edition, sessionId: requirement.id, field, rule, relPath, blockers })
+    }
+  }
 }
 
 function validateRouteReport(routeReport, blockers) {
@@ -316,6 +484,8 @@ async function validateManualEvidence(args, edition, blockers) {
     manualEvidence: args.manualEvidence,
     found: false,
     claims: {},
+    run: null,
+    sessions: [],
     checked: {
       supportingFiles: [],
       screenshots: [],
@@ -351,6 +521,10 @@ async function validateManualEvidence(args, edition, blockers) {
   if (typeof evidence.generatedAt !== 'string' || Number.isNaN(Date.parse(evidence.generatedAt))) {
     blockers.push(`${edition} manual evidence generatedAt must be an ISO timestamp.`)
   }
+  validateRunIdentity({ evidence, edition, blockers })
+  validateSessions({ root, evidence, edition, blockers })
+  result.run = evidence.run ?? null
+  result.sessions = Array.isArray(evidence.sessions) ? evidence.sessions : []
 
   const claims = evidence.claims ?? {}
   result.claims = Object.fromEntries(REQUIRED_CLAIMS.map((claim) => [claim, claims[claim] === true]))
@@ -485,6 +659,12 @@ async function buildReport(args) {
     requiredEvidence: {
       editions: Object.values(EVIDENCE_SOURCE_REPOS).map(({ source, repository, workspaceDir }) => ({ source, repository, workspaceDir })),
       claims: REQUIRED_CLAIMS,
+      sessions: REQUIRED_SESSIONS.map((session) => ({
+        id: session.id,
+        claim: session.claim,
+        minDurationMinutes: session.minDurationMinutes,
+        evidence: Object.fromEntries(Object.entries(session.evidence).map(([field, rule]) => [field, String(rule.pattern)])),
+      })),
       supportingFiles: REQUIRED_SUPPORTING_PATTERNS.map(String),
       screenshots: REQUIRED_SCREENSHOT_PATTERNS.map(String),
       logs: REQUIRED_LOG_PATTERNS.map(String),
