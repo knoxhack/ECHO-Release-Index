@@ -177,6 +177,59 @@ async function writeCatalogFiles(root) {
   }
 }
 
+const gameplayClaims = [
+  'freshWorldCreated',
+  'realFirst30Playthrough',
+  'realFirst2HourPlaythrough',
+  'realSignalCrownPlaythrough',
+  'saveReloadVerified',
+  'noCrashEvidence',
+]
+
+const gameplayGates = [
+  'routeContractReport',
+  'captureKitReady',
+  ...gameplayClaims,
+]
+
+function checkedFiles(count, prefix) {
+  return Array.from({ length: count }, (_, index) => ({
+    path: `${prefix}-${index + 1}`,
+    size: index + 1,
+    sha256: String(index + 1).repeat(64).slice(0, 64),
+  }))
+}
+
+function gameplayEvidenceReport(status = 'PASS') {
+  const passed = status === 'PASS'
+  return {
+    schemaVersion: 'echo.skyrelay.gameplay-evidence.v1',
+    status,
+    generatedAt: '2026-06-11T00:00:00.000Z',
+    moduleId: 'echoskyrelayprotocol',
+    routeContractReport: 'release-readiness/sky-relay-gameplay-route-smoke.json',
+    editionPackAssets: 'release-readiness/sky-relay-edition-pack-assets.json',
+    manualEvidencePath: 'fixtures/sky-relay/gameplay-qa/manual-evidence.json',
+    gates: Object.fromEntries(gameplayGates.map((gate) => [gate, passed ? 'passed' : 'blocked'])),
+    captureKits: editions.map(([key]) => ({
+      edition: key,
+      status: passed ? 'passed' : 'blocked',
+    })),
+    editions: editions.map(([key, repoDir]) => ({
+      edition: key,
+      repository: `knoxhack/${repoDir}`,
+      found: passed,
+      claims: Object.fromEntries(gameplayClaims.map((claim) => [claim, passed])),
+      checked: {
+        supportingFiles: checkedFiles(passed ? 5 : 0, `${key}-note`),
+        screenshots: checkedFiles(passed ? 4 : 0, `${key}-screenshot`),
+        logs: checkedFiles(passed ? 2 : 0, `${key}-log`),
+        saveSnapshots: checkedFiles(passed ? 3 : 0, `${key}-save`),
+      },
+    })),
+  }
+}
+
 async function writeReports(root, options = {}) {
   const launcherVersionTransitionGate = options.launcherVersionTransitionGate ?? 'passed'
   const packVersionTransitionGate = options.packVersionTransitionGate ?? 'passed'
@@ -254,10 +307,7 @@ async function writeReports(root, options = {}) {
       signalCrownContract: 'passed',
     },
   })
-  await writeJson(root, 'release-readiness/sky-relay-gameplay-evidence.json', {
-    schemaVersion: 'echo.skyrelay.gameplay-evidence.v1',
-    status: gameplayStatus,
-  })
+  await writeJson(root, 'release-readiness/sky-relay-gameplay-evidence.json', options.gameplayReport ?? gameplayEvidenceReport(gameplayStatus))
 }
 
 const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'sky-relay-readiness-'))
@@ -274,6 +324,22 @@ try {
   assert.equal(readyReport.status, 'PASS')
   assert.equal(readyReport.phaseSummary.length, 10)
   assert.equal(readyReport.gates.release_public_alpha, 'passed')
+
+  const stubGameplayRoot = path.join(tmp, 'stub-gameplay-release-index')
+  const stubGameplayWorkspace = path.join(tmp, 'stub-gameplay-workspace')
+  await writeModuleFixture(stubGameplayWorkspace)
+  await writeEditionRepos(stubGameplayWorkspace)
+  await writeCatalogFiles(stubGameplayRoot)
+  await writeReports(stubGameplayRoot, {
+    gameplayReport: {
+      schemaVersion: 'echo.skyrelay.gameplay-evidence.v1',
+      status: 'PASS',
+    },
+  })
+  const stubGameplay = run(stubGameplayRoot, stubGameplayWorkspace, ['--require-release-ready'])
+  assert.equal(stubGameplay.status, 1)
+  assert.match(stubGameplay.stdout, /gameplay evidence report moduleId must be echoskyrelayprotocol/u)
+  assert.match(stubGameplay.stdout, /gameplay evidence report must include all edition summaries/u)
 
   const blockedRoot = path.join(tmp, 'blocked-release-index')
   const blockedWorkspace = path.join(tmp, 'blocked-workspace')

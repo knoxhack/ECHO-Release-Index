@@ -212,6 +212,10 @@ node scripts\sync-public-alpha-index.mjs --check
 Both `--require-release-ready` commands must pass before any Sky Relay warning
 metadata can be promoted. The public-alpha readiness verifier writes the
 10-phase audit to `release-readiness/sky-relay-public-alpha-readiness.json`.
+It also requires `release-readiness/sky-relay-gameplay-evidence.json` to include
+the detailed gameplay gates, capture kit summaries, all three edition evidence
+summaries, checked evidence file groups, and expected source report paths; a
+stub report with only `status: PASS` is not release-ready.
 
 ## Promotion Boundary
 

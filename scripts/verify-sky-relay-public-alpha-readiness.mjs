@@ -114,6 +114,21 @@ const EXPECTED_OPTIONAL_INTEGRATIONS = [
   'echologisticsnetwork',
 ]
 
+const REQUIRED_GAMEPLAY_EVIDENCE_CLAIMS = [
+  'freshWorldCreated',
+  'realFirst30Playthrough',
+  'realFirst2HourPlaythrough',
+  'realSignalCrownPlaythrough',
+  'saveReloadVerified',
+  'noCrashEvidence',
+]
+
+const REQUIRED_GAMEPLAY_EVIDENCE_GATES = [
+  'routeContractReport',
+  'captureKitReady',
+  ...REQUIRED_GAMEPLAY_EVIDENCE_CLAIMS,
+]
+
 const PHASES = [
   [1, 'repo_foundation', 'Repo Foundation'],
   [2, 'protocol_module', 'Protocol Module'],
@@ -276,6 +291,47 @@ function requireReport(item, report, reportName, schemaVersion = null) {
       `${reportName} schemaVersion=${schemaVersion}`,
       `${reportName} schemaVersion must be ${schemaVersion}`,
     )
+  }
+}
+
+function isIsoTimestamp(value) {
+  return typeof value === 'string' && !Number.isNaN(Date.parse(value))
+}
+
+function requireGameplayEvidenceReport(item, report) {
+  requireReport(item, report, 'gameplay evidence report', 'echo.skyrelay.gameplay-evidence.v1')
+  if (!report) return
+
+  requireCondition(item, report.status === 'PASS', 'gameplay evidence report is PASS', 'gameplay evidence report must be PASS before public alpha promotion')
+  requireCondition(item, report.moduleId === MODULE_ID, 'gameplay evidence report moduleId matches echoskyrelayprotocol', 'gameplay evidence report moduleId must be echoskyrelayprotocol')
+  requireCondition(item, isIsoTimestamp(report.generatedAt), 'gameplay evidence report generatedAt is an ISO timestamp', 'gameplay evidence report generatedAt must be an ISO timestamp')
+  requireCondition(item, report.routeContractReport === REPORTS.gameplayRouteSmoke, 'gameplay evidence report references the route smoke report', `gameplay evidence report routeContractReport must be ${REPORTS.gameplayRouteSmoke}`)
+  requireCondition(item, report.editionPackAssets === REPORTS.editionPackAssets, 'gameplay evidence report references the edition pack assets report', `gameplay evidence report editionPackAssets must be ${REPORTS.editionPackAssets}`)
+  requireCondition(item, report.manualEvidencePath === 'fixtures/sky-relay/gameplay-qa/manual-evidence.json', 'gameplay evidence report manual evidence path is recorded', 'gameplay evidence report manualEvidencePath must be fixtures/sky-relay/gameplay-qa/manual-evidence.json')
+  for (const gate of REQUIRED_GAMEPLAY_EVIDENCE_GATES) {
+    requireGate(item, report, 'gameplay evidence report', gate)
+  }
+
+  requireCondition(item, Array.isArray(report.captureKits) && report.captureKits.length === EDITIONS.length, 'gameplay evidence report includes all capture kit summaries', 'gameplay evidence report must include all capture kit summaries')
+  for (const edition of EDITIONS) {
+    const captureKit = report.captureKits?.find((entry) => entry?.edition === edition.key)
+    requireCondition(item, captureKit?.status === 'passed', `gameplay evidence capture kit ${edition.key}=passed`, `gameplay evidence capture kit ${edition.key} must be passed`)
+  }
+
+  requireCondition(item, Array.isArray(report.editions) && report.editions.length === EDITIONS.length, 'gameplay evidence report includes all edition summaries', 'gameplay evidence report must include all edition summaries')
+  for (const edition of EDITIONS) {
+    const evidence = report.editions?.find((entry) => entry?.edition === edition.key)
+    requireCondition(item, Boolean(evidence), `gameplay evidence report includes ${edition.key}`, `gameplay evidence report must include ${edition.key}`)
+    if (!evidence) continue
+    requireCondition(item, evidence.repository === `knoxhack/${edition.repoDir}`, `gameplay evidence ${edition.key} repository is recorded`, `gameplay evidence ${edition.key} repository must be knoxhack/${edition.repoDir}`)
+    requireCondition(item, evidence.found === true, `gameplay evidence ${edition.key} manual evidence found`, `gameplay evidence ${edition.key} manual evidence must be found`)
+    for (const claim of REQUIRED_GAMEPLAY_EVIDENCE_CLAIMS) {
+      requireCondition(item, evidence.claims?.[claim] === true, `gameplay evidence ${edition.key} claim ${claim}=true`, `gameplay evidence ${edition.key} claim ${claim} must be true`)
+    }
+    requireCondition(item, (evidence.checked?.supportingFiles?.length ?? 0) >= 5, `gameplay evidence ${edition.key} checked supporting files`, `gameplay evidence ${edition.key} must include checked supporting files`)
+    requireCondition(item, (evidence.checked?.screenshots?.length ?? 0) >= 4, `gameplay evidence ${edition.key} checked screenshots`, `gameplay evidence ${edition.key} must include checked screenshots`)
+    requireCondition(item, (evidence.checked?.logs?.length ?? 0) >= 2, `gameplay evidence ${edition.key} checked logs`, `gameplay evidence ${edition.key} must include checked logs`)
+    requireCondition(item, (evidence.checked?.saveSnapshots?.length ?? 0) >= 3, `gameplay evidence ${edition.key} checked save snapshots`, `gameplay evidence ${edition.key} must include checked save snapshots`)
   }
 }
 
@@ -490,8 +546,7 @@ async function buildReport(args) {
     ]) {
       await requireFile(item, root, relPath)
     }
-    requireReport(item, reports.gameplayEvidence, 'gameplay evidence report', 'echo.skyrelay.gameplay-evidence.v1')
-    requireCondition(item, reports.gameplayEvidence?.status === 'PASS', 'gameplay evidence report is PASS', 'gameplay evidence report must be PASS before public alpha promotion')
+    requireGameplayEvidenceReport(item, reports.gameplayEvidence)
     phases.push(finalizePhase(item))
   }
 
