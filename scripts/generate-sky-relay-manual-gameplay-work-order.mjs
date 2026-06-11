@@ -298,6 +298,7 @@ function buildWorkOrder(report, args) {
       'node scripts\\promote-sky-relay-public-alpha.mjs --write',
       'node scripts\\validate-index.mjs --strict',
       'node scripts\\sync-public-alpha-index.mjs --check',
+      'node scripts\\verify-sky-relay-release-pipeline.mjs --write --require-release-ready',
     ],
     editions,
     notes: [

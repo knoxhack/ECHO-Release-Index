@@ -15,6 +15,7 @@ const RELEASE_INDEX_PROVENANCE_IGNORES = [
   DEFAULT_OUT,
   'release-readiness/sky-relay-public-alpha-readiness.json',
   'release-readiness/sky-relay-manual-gameplay-work-order.json',
+  'release-readiness/sky-relay-release-pipeline.json',
   'docs/sky-relay-manual-gameplay-work-order.md',
 ]
 const TEMPLATE_MARKER = 'ECHO_SKY_RELAY_TEMPLATE_ONLY'

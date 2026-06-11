@@ -212,6 +212,7 @@ node scripts\promote-sky-relay-public-alpha.mjs
 node scripts\promote-sky-relay-public-alpha.mjs --write
 node scripts\validate-index.mjs --strict
 node scripts\sync-public-alpha-index.mjs --check
+node scripts\verify-sky-relay-release-pipeline.mjs --write --require-release-ready
 ```
 
 Both `--require-release-ready` commands must pass before any Sky Relay warning
@@ -240,6 +241,9 @@ The Sky Relay promotion script is dry-run by default and refuses to write
 catalog approvals unless the public-alpha readiness report is `PASS`, the
 gameplay evidence report is `PASS`, and the manual gameplay work order is
 `COMPLETE`.
+The release pipeline verifier runs the edition-local validators, edition-local
+manual evidence checks, central readiness checks, work-order refresh, promotion
+dry-run, strict index validation, and public-alpha sync check from one command.
 
 ## Promotion Boundary
 
