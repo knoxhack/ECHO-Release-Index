@@ -133,6 +133,10 @@ Each edition must produce these save snapshots:
 - `fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip`
 
 Save snapshots must be ZIP archives with at least one entry.
+Logs must not contain blocking crash or corruption signatures such as
+`crash report`, `fatal`, `uncaught exception`, `unhandled exception`,
+`exception in thread`, Java stack trace lines, `failed to load world`, or
+world/save corruption markers.
 
 The central Release Index verifier records byte size and SHA-256 for every
 accepted notes, log, screenshot, and save file. Screenshot entries also record

@@ -462,6 +462,8 @@ try {
   assert.deepEqual(nativeEvidence.checked.screenshots[0].dimensions, { width: 1280, height: 720 })
   assert.equal(nativeEvidence.checked.screenshots[0].idatChunks, 1)
   assert.ok(nativeEvidence.checked.screenshots[0].chunks >= 3)
+  assert.equal(nativeEvidence.checked.logs[0].blockingSignatures, 0)
+  assert.ok(nativeEvidence.checked.logs[0].lineCount >= 1)
   assert.equal(nativeEvidence.checked.saveSnapshots[0].entries, 1)
 
   const badClaimRoot = path.join(tmp, 'bad-claim-release-index')
@@ -577,6 +579,19 @@ try {
   const missingNoteTerm = run(missingNoteTermRoot, missingNoteTermWorkspace, ['--require-release-ready'])
   assert.equal(missingNoteTerm.status, 1)
   assert.match(`${missingNoteTerm.stdout}\n${missingNoteTerm.stderr}`, /missing required note term.*hydroponics_deck/u)
+
+  const blockingLogRoot = path.join(tmp, 'blocking-log-release-index')
+  const blockingLogWorkspace = path.join(tmp, 'blocking-log-workspace')
+  await writeRouteReport(blockingLogRoot)
+  await writeGameplayEvidence(blockingLogWorkspace)
+  await writeText(
+    path.join(blockingLogWorkspace, 'ECHO-Sky-Relay-Native-Edition'),
+    'fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log',
+    '[main/FATAL] Crash report generated after failed to load world\n',
+  )
+  const blockingLog = run(blockingLogRoot, blockingLogWorkspace, ['--require-release-ready'])
+  assert.equal(blockingLog.status, 1)
+  assert.match(`${blockingLog.stdout}\n${blockingLog.stderr}`, /blocking log signature.*crash report/u)
 
   const incompletePngRoot = path.join(tmp, 'incomplete-png-release-index')
   const incompletePngWorkspace = path.join(tmp, 'incomplete-png-workspace')
