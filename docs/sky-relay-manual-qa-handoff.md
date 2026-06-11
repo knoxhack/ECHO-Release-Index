@@ -10,10 +10,16 @@ The current Release Index gate is:
 
 ```powershell
 node scripts\verify-sky-relay-gameplay-evidence.mjs
+node scripts\verify-sky-relay-public-alpha-readiness.mjs
 ```
 
 Expected current state:
 
+- `repo_foundation` through `systems_integration`: `passed`
+- `editions_launcher`: `blocked` until a real version-to-version Sky Relay
+  launcher update is proven
+- `release_public_alpha`: `blocked` until gameplay evidence and real pack
+  version update evidence pass
 - `routeContractReport`: `passed`
 - `captureKitReady`: `passed`
 - `realFirst30Playthrough`: `blocked`
@@ -121,12 +127,15 @@ After all three edition repos have passing local evidence verification, run from
 ```powershell
 node scripts\verify-sky-relay-gameplay-evidence.mjs --require-release-ready
 node scripts\verify-sky-relay-gameplay-evidence.mjs --write
+node scripts\verify-sky-relay-public-alpha-readiness.mjs --require-release-ready
+node scripts\verify-sky-relay-public-alpha-readiness.mjs --write
 node scripts\validate-index.mjs --strict
 node scripts\sync-public-alpha-index.mjs --check
 ```
 
-The `--require-release-ready` command must pass before any Sky Relay warning
-metadata can be promoted.
+Both `--require-release-ready` commands must pass before any Sky Relay warning
+metadata can be promoted. The public-alpha readiness verifier writes the
+10-phase audit to `release-readiness/sky-relay-public-alpha-readiness.json`.
 
 ## Promotion Boundary
 
@@ -141,3 +150,9 @@ blocked in `release-readiness/sky-relay-gameplay-evidence.json`:
 
 The `captureKitReady` gate proves capture tooling is present. It does not prove
 that gameplay happened.
+
+Also do not promote while either of these remain blocked in
+`release-readiness/sky-relay-public-alpha-readiness.json`:
+
+- `phase 9 Editions And Launcher: real version-to-version launcher update`
+- `phase 10 Release And Public Alpha: real pack version update`
