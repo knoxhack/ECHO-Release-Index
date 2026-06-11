@@ -97,7 +97,9 @@ Those worksheets contain `ECHO_SKY_RELAY_TEMPLATE_ONLY`, and both local and
 central verifiers reject that marker until the worksheets are replaced with real
 playthrough observations.
 Keep the worksheet section headings and fill every `- Field:` line; blank
-worksheet fields are blocked.
+worksheet fields are blocked. Each worksheet must also mention the gameplay
+objects and actions named by its checklist, such as `relay_anchor_key`,
+`hydroponics_deck`, `weather_mast`, and `sky_relay_badge` where applicable.
 
 ## Required Evidence Per Edition
 
