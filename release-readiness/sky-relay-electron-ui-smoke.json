@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-11T12:32:16.607Z",
+  "scope": "packaged-electron-ui-smoke",
+  "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
+  "debugPort": 53669,
+  "platform": {
+    "os": "win32",
+    "release": "10.0.19045",
+    "arch": "x64"
+  },
+  "nativeBridge": {
+    "available": true,
+    "protocolVersion": 3,
+    "profileIds": [
+      "ashfall-native-edition",
+      "ashfall-neoforge-edition",
+      "ashfall-standalone-edition",
+      "sky-relay-native-edition",
+      "sky-relay-neoforge-edition",
+      "sky-relay-standalone-edition"
+    ],
+    "releaseIndexAccepted": 3,
+    "releaseIndexWarnings": [],
+    "launcherUpdateStatus": "idle",
+    "userData": null
+  },
+  "ui": {
+    "title": "ECHO Launcher",
+    "href": "file:///C:/Development/Github/ECHO-Launcher/installer-artifacts/win-unpacked/resources/app.asar/dist/index.html",
+    "activeHeading": "Library",
+    "rootMounted": true,
+    "startupRecovery": false,
+    "nativeBridgeAvailable": true,
+    "officialPacksLabelVisible": true,
+    "cards": [
+      {
+        "name": "Sky Relay Native Edition",
+        "found": true,
+        "heading": {
+          "clientWidth": 496,
+          "scrollWidth": 496,
+          "overflow": false,
+          "rect": {
+            "left": 871,
+            "top": 1551,
+            "width": 496,
+            "height": 38
+          }
+        },
+        "statusPreview": true,
+        "modeViewOnly": true,
+        "playLocked": true,
+        "noInstallProfile": true
+      },
+      {
+        "name": "Sky Relay NeoForge Edition",
+        "found": true,
+        "heading": {
+          "clientWidth": 496,
+          "scrollWidth": 496,
+          "overflow": false,
+          "rect": {
+            "left": 318,
+            "top": 2324,
+            "width": 496,
+            "height": 38
+          }
+        },
+        "statusPreview": true,
+        "modeViewOnly": true,
+        "playLocked": true,
+        "noInstallProfile": true
+      },
+      {
+        "name": "Sky Relay Standalone Edition",
+        "found": true,
+        "heading": {
+          "clientWidth": 496,
+          "scrollWidth": 496,
+          "overflow": false,
+          "rect": {
+            "left": 871,
+            "top": 2300,
+            "width": 496,
+            "height": 38
+          }
+        },
+        "statusPreview": true,
+        "modeViewOnly": true,
+        "playLocked": true,
+        "noInstallProfile": true
+      }
+    ],
+    "hasInstallSkyRelay": false,
+    "hasPlaySkyRelay": false
+  },
+  "gates": {
+    "packagedElectronRendererMounted": "passed",
+    "nativeBridgeBootstrap": "passed",
+    "skyRelayLibraryCardsVisible": "passed",
+    "skyRelayPreviewGating": "passed",
+    "skyRelayHeadingOverflow": "passed",
+    "installUpdateRepairRollbackClickThrough": "not_started",
+    "realVersionToVersionUpdate": "blocked"
+  },
+  "process": {
+    "pid": 7020,
+    "stdout": [],
+    "stderr": [
+      "DevTools listening on ws://127.0.0.1:53669/devtools/browser/8903ed54-dc1d-403d-9b49-0052815eaed1"
+    ]
+  }
+}
