@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
+  "status": "BLOCKED",
+  "generatedAt": "2026-06-11T14:06:52.625Z",
+  "moduleId": "echoskyrelayprotocol",
+  "routeContractReport": "release-readiness/sky-relay-gameplay-route-smoke.json",
+  "manualEvidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+  "requiredEvidence": {
+    "editions": [
+      {
+        "source": "sky-relay-native",
+        "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+        "workspaceDir": "ECHO-Sky-Relay-Native-Edition"
+      },
+      {
+        "source": "sky-relay-neoforge",
+        "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+        "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition"
+      },
+      {
+        "source": "sky-relay-standalone",
+        "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+        "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition"
+      }
+    ],
+    "claims": [
+      "realFirst30Playthrough",
+      "realFirst2HourPlaythrough",
+      "realSignalCrownPlaythrough",
+      "freshWorldCreated",
+      "saveReloadVerified",
+      "noCrashEvidence"
+    ],
+    "supportingFiles": [
+      "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.md$/iu",
+      "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.md$/iu",
+      "/(^|\\/)signal[-_]?crown[^/]*\\.md$/iu",
+      "/(^|\\/)no[-_]?crash[^/]*\\.md$/iu"
+    ],
+    "screenshots": [
+      "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.png$/iu",
+      "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.png$/iu",
+      "/(^|\\/)signal[-_]?crown[^/]*\\.png$/iu"
+    ],
+    "logs": [
+      "/(^|\\/)client[^/]*\\.log$/iu",
+      "/(^|\\/)(launcher|pack)[-_]?install[^/]*\\.log$/iu"
+    ],
+    "saveSnapshots": [
+      "/(^|\\/)first[-_]?30[-_]?minutes[^/]*\\.zip$/iu",
+      "/(^|\\/)first[-_]?2[-_]?hours[^/]*\\.zip$/iu",
+      "/(^|\\/)signal[-_]?crown[^/]*\\.zip$/iu"
+    ]
+  },
+  "gates": {
+    "routeContractReport": "passed",
+    "realFirst30Playthrough": "blocked",
+    "realFirst2HourPlaythrough": "blocked",
+    "realSignalCrownPlaythrough": "blocked",
+    "saveReloadVerified": "blocked",
+    "noCrashEvidence": "blocked"
+  },
+  "editions": [
+    {
+      "edition": "native",
+      "source": "sky-relay-native",
+      "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "found": false,
+      "claims": {},
+      "checked": {
+        "supportingFiles": [],
+        "screenshots": [],
+        "logs": [],
+        "saveSnapshots": []
+      }
+    },
+    {
+      "edition": "neoforge",
+      "source": "sky-relay-neoforge",
+      "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "found": false,
+      "claims": {},
+      "checked": {
+        "supportingFiles": [],
+        "screenshots": [],
+        "logs": [],
+        "saveSnapshots": []
+      }
+    },
+    {
+      "edition": "standalone",
+      "source": "sky-relay-standalone",
+      "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "found": false,
+      "claims": {},
+      "checked": {
+        "supportingFiles": [],
+        "screenshots": [],
+        "logs": [],
+        "saveSnapshots": []
+      }
+    }
+  ],
+  "blockers": [
+    "native manual evidence is missing: ECHO-Sky-Relay-Native-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+    "neoforge manual evidence is missing: ECHO-Sky-Relay-NeoForge-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+    "standalone manual evidence is missing: ECHO-Sky-Relay-Standalone-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json"
+  ],
+  "note": "This verifier requires real manual playthrough evidence files in each Sky Relay edition repo before Release Index promotion can remove warning validation."
+}

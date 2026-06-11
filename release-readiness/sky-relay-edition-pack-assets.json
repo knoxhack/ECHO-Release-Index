@@ -167,7 +167,8 @@
     "launcherPackagedElectronUiSmoke": "passed",
     "launcherPackagedElectronInstallUpdateRepair": "passed",
     "launcherPackagedElectronRollback": "not_available_no_visible_ui_command",
-    "electronUiEndToEnd": "packaged_install_update_repair_passed"
+    "electronUiEndToEnd": "packaged_install_update_repair_passed",
+    "gameplayEvidenceVerifier": "blocked_missing_manual_playthrough_evidence"
   },
   "relatedEvidence": {
     "moduleDraftRelease": "release-readiness/sky-relay-module-draft-release.json",
@@ -175,14 +176,15 @@
     "launcherUiSmoke": "release-readiness/sky-relay-launcher-ui-smoke.json",
     "launcherElectronUiSmoke": "release-readiness/sky-relay-electron-ui-smoke.json",
     "packSmoke": "release-readiness/sky-relay-edition-pack-smoke.json",
-    "gameplayRouteSmoke": "release-readiness/sky-relay-gameplay-route-smoke.json"
+    "gameplayRouteSmoke": "release-readiness/sky-relay-gameplay-route-smoke.json",
+    "gameplayEvidence": "release-readiness/sky-relay-gameplay-evidence.json"
   },
   "promotionBlockers": [
     "Release Index modpack entries now point at stable public prerelease URLs but remain warning-gated until gameplay smoke evidence is available.",
     "Browser-preview UI smoke passed for the Library pack cards.",
     "Packaged Electron UI smoke passed for renderer mount, native bridge bootstrap, Sky Relay preview card gating, install click-through, same-version update reconciliation, and repair click-through; rollback has no visible packaged UI command.",
     "Launcher Node lifecycle smoke passed for deep links, install, same-version update reconciliation, repair, and rollback.",
-    "Gameplay route contract smoke passed; real first 30 minutes, first 2 hours, and Signal Crown playthrough evidence is still required.",
+    "Gameplay route contract smoke passed; release-readiness/sky-relay-gameplay-evidence.json now enforces missing real first 30 minutes, first 2 hours, and Signal Crown playthrough evidence for Native, NeoForge, and Standalone editions.",
     "Only one Sky Relay pack version exists, so real version-to-version update remains blocked."
   ]
 }
