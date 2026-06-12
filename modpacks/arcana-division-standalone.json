@@ -1,0 +1,55 @@
+{
+  "id": "arcana-division-standalone-edition",
+  "kind": "modpack",
+  "version": "1.0.0",
+  "channel": "beta",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
+  "releaseTag": "arcana-division-standalone-1.0.0-beta",
+  "commitSha": "a5371dc5708e7f6af7202fd7551a19dcafaeaa9b",
+  "artifacts": {
+    "pack": {
+      "file": "arcana-division-standalone-edition-1.0.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-1.0.0.zip",
+      "sha256": "ecbbc927bed6f623e4df65c8bd8233a4e4bc6203fcede4f3d19428b6a56fba55",
+      "size": 96158687
+    },
+    "manifest": {
+      "file": "arcana-division-standalone-edition-beta-1.0.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
+      "sha256": "abde6fb7795ece59221563ebe4cc4aaf845f060becc591db5b32a44f53051a52",
+      "size": 23391
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/checksums.txt",
+      "sha256": "176400f046dce5471c79f85b4f0684be6a20b3d5ded27896d1ee8e92ab4422e8",
+      "size": 317
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/echo-release.json",
+      "sha256": "eeb0676be3d6695082a3a95465627c59c1ddbda65734a0a9bbccae7ecb711027",
+      "size": 1663
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echo-standalone-runtime",
+      "kind": "runtime",
+      "version": ">=0.1.0"
+    },
+    {
+      "id": "echoarcanadivisionprotocol",
+      "kind": "addon",
+      "version": "1.0.0"
+    }
+  ],
+  "compatibility": [
+    "standalone",
+    "arcana-division"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Arcana Division Standalone beta assets are published with exact pack, manifest, release manifest, and checksum metadata."
+}

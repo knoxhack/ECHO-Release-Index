@@ -269,7 +269,7 @@ function validateAttestedProvenance(errors, filePath, entry) {
 function loadChannels(errors) {
   const channels = new Set()
   for (const filePath of jsonFiles('channels')) {
-    if (rel(filePath).startsWith('channels/alpha/')) continue
+    if (/^channels\/[^/]+\//.test(rel(filePath))) continue
     const payload = readJson(filePath)
     validateAgainstSchema(errors, filePath, 'channel.schema.json', payload)
     if (!payload.id) errors.push(`${rel(filePath)} missing id`)
@@ -389,22 +389,22 @@ function rawIndexUrlToPath(url) {
   return relPath
 }
 
-function validateLauncherChannel(errors, entryFiles) {
-  const launcherChannelPath = path.join(root, 'channels', 'alpha', 'launcher-channel.json')
+function validateLauncherChannel(errors, entryFiles, channelName) {
+  const launcherChannelPath = path.join(root, 'channels', channelName, 'launcher-channel.json')
   if (!fs.existsSync(launcherChannelPath)) return
   let channel
   try {
     channel = readJson(launcherChannelPath)
   } catch (error) {
-    errors.push(`channels/alpha/launcher-channel.json is invalid JSON: ${error.message}`)
+    errors.push(`channels/${channelName}/launcher-channel.json is invalid JSON: ${error.message}`)
     return
   }
-  if (channel.schemaVersion !== 1) errors.push('channels/alpha/launcher-channel.json schemaVersion must be 1')
-  if (channel.channel !== 'alpha') errors.push('channels/alpha/launcher-channel.json channel must be alpha')
+  if (channel.schemaVersion !== 1) errors.push(`channels/${channelName}/launcher-channel.json schemaVersion must be 1`)
+  if (channel.channel !== channelName) errors.push(`channels/${channelName}/launcher-channel.json channel must be ${channelName}`)
 
   const catalogUrls = channel.catalogUrls
   if (!catalogUrls || typeof catalogUrls !== 'object' || Array.isArray(catalogUrls)) {
-    errors.push('channels/alpha/launcher-channel.json catalogUrls must be an object')
+    errors.push(`channels/${channelName}/launcher-channel.json catalogUrls must be an object`)
     return
   }
 
@@ -413,23 +413,23 @@ function validateLauncherChannel(errors, entryFiles) {
   for (const dir of entryDirs) {
     const urls = catalogUrls[dir]
     if (!Array.isArray(urls)) {
-      errors.push(`channels/alpha/launcher-channel.json catalogUrls.${dir} must be an array`)
+      errors.push(`channels/${channelName}/launcher-channel.json catalogUrls.${dir} must be an array`)
       continue
     }
     for (const url of urls) {
       const value = String(url ?? '').trim()
-      if (seenUrls.has(value)) errors.push(`channels/alpha/launcher-channel.json has duplicate catalog URL ${value}`)
+      if (seenUrls.has(value)) errors.push(`channels/${channelName}/launcher-channel.json has duplicate catalog URL ${value}`)
       seenUrls.add(value)
       const relPath = rawIndexUrlToPath(value)
       if (!relPath) {
-        errors.push(`channels/alpha/launcher-channel.json catalog URL must use canonical raw index URL: ${value}`)
+        errors.push(`channels/${channelName}/launcher-channel.json catalog URL must use canonical raw index URL: ${value}`)
         continue
       }
       if (!relPath.startsWith(`${dir}/`)) {
-        errors.push(`channels/alpha/launcher-channel.json catalogUrls.${dir} points outside ${dir}: ${relPath}`)
+        errors.push(`channels/${channelName}/launcher-channel.json catalogUrls.${dir} points outside ${dir}: ${relPath}`)
       }
       if (!entryFiles.has(relPath)) {
-        errors.push(`channels/alpha/launcher-channel.json references missing catalog entry ${relPath}`)
+        errors.push(`channels/${channelName}/launcher-channel.json references missing catalog entry ${relPath}`)
       }
       referenced.add(relPath)
     }
@@ -437,7 +437,7 @@ function validateLauncherChannel(errors, entryFiles) {
 
   for (const entryFile of [...entryFiles].sort()) {
     if (!referenced.has(entryFile)) {
-      errors.push(`channels/alpha/launcher-channel.json does not include catalog entry ${entryFile}`)
+      errors.push(`channels/${channelName}/launcher-channel.json does not include catalog entry ${entryFile}`)
     }
   }
 }
@@ -481,7 +481,8 @@ function main() {
       }
     }
   }
-  validateLauncherChannel(errors, entryFiles)
+  validateLauncherChannel(errors, entryFiles, 'alpha')
+  validateLauncherChannel(errors, entryFiles, 'beta')
 
   const entryById = new Map(entries.map((entry) => [entry.id, entry]))
   const knownIds = new Set(entries.map((entry) => entry.id))

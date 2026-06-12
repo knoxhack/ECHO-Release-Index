@@ -1,0 +1,63 @@
+{
+  "id": "echoarcanadivisionprotocol",
+  "kind": "addon",
+  "version": "1.0.0",
+  "channel": "beta",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-arcana-division-1.0.0-beta",
+  "commitSha": "8f296d24fafd28fb464a680feba9b4c27fafd09a",
+  "artifacts": {
+    "native": {
+      "file": "echoarcanadivisionprotocol-1.0.0.echo-addon",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/echoarcanadivisionprotocol-1.0.0.echo-addon",
+      "sha256": "211e796cf1efaea56d108abeb407b70c6234230f9e4a7619ef1d4f19bd3dfc37",
+      "size": 8366
+    },
+    "neoforge": {
+      "file": "echoarcanadivisionprotocol-1.0.0-neoforge.jar",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/echoarcanadivisionprotocol-1.0.0-neoforge.jar",
+      "sha256": "ff32c2b61cce30f033bac8f3c515f6dd00abbc11bd28ff66a27254fbd8e994c4",
+      "size": 7822
+    },
+    "standalone": {
+      "file": "echoarcanadivisionprotocol-1.0.0-standalone.jar",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/echoarcanadivisionprotocol-1.0.0-standalone.jar",
+      "sha256": "ff32c2b61cce30f033bac8f3c515f6dd00abbc11bd28ff66a27254fbd8e994c4",
+      "size": 7822
+    },
+    "sources": {
+      "file": "echoarcanadivisionprotocol-1.0.0-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/echoarcanadivisionprotocol-1.0.0-sources.jar",
+      "sha256": "d7810ce29c075d16c2d4292761f2381beb1bebd95f95d1a7d4f871ba4f44f0de",
+      "size": 7593
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/checksums.txt",
+      "sha256": "1e1a546b2619c24e9d0d5aaea0eddcf2d04fa62d813eadf471d6fcf2d04628dd",
+      "size": 19476
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/echo-release.json",
+      "sha256": "25b14e6cfa3232213e0ec477a3aa90798ab14636d104ff1df742aa7933bc06bf",
+      "size": 54854
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module",
+      "version": ">=1.0.0"
+    }
+  ],
+  "compatibility": [
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Arcana Division Protocol 1.0.0 beta artifacts are published in the ECHO-Modules Arcana release feed with exact checksums."
+}

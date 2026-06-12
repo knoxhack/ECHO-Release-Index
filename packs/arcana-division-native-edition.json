@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "arcana-division-native-edition",
+  "name": "Arcana Division Native Edition",
+  "channel": "beta",
+  "loader": "echo-native-loader",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "echo-addon",
+  "moduleArtifactPattern": "<module>-<version>.echo-addon",
+  "updatePolicy": "Use this manifest for Arcana Division Native Edition launcher pack updates. Module entries must pin .echo-addon artifacts from the modules-arcana-division-1.0.0-beta ECHO-Modules release.",
+  "moduleRequirements": [
+    {
+      "id": "echocore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoadaptercore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echonetcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echofoundationcore",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echomaterialcore",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echotoolcore",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echostationcore",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echoworldstarter",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echocommonloot",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echocreatureroles",
+      "version": "0.1.0"
+    },
+    {
+      "id": "echoarcanacore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoaetherworks",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echocursecore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echofamiliarcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echogrimoire",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoriftworlds",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoritualcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echospellcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoholomap",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoindex",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echolens",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoterminal",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echothemecore",
+      "version": "1.3.0"
+    },
+    {
+      "id": "echomissioncore",
+      "version": "1.0.0"
+    }
+  ],
+  "releaseReadiness": {
+    "status": "approved",
+    "blockers": [],
+    "evidence": [
+      "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.0-beta"
+    ]
+  },
+  "assets": [
+    {
+      "name": "arcana-division-native-edition-1.0.0.zip",
+      "size": 96244549,
+      "sha256": "9bee8d3ac5dfbeff4f1afba6bf81048d74f7193b3f5bb2dce944e288f91ae834",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-1.0.0.zip"
+    },
+    {
+      "name": "arcana-division-native-edition-beta-1.0.0.pack.json",
+      "size": 23470,
+      "sha256": "faa6e5a33e1c28734f8fe0aa5200a16624a0461d76191950148d25feb516db26",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json"
+    },
+    {
+      "name": "echo-release.json",
+      "size": 1611,
+      "sha256": "99cc905432d8282bc3e1a986532aa36a61181906be8abec6ab5cf7ec00d112ed",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/echo-release.json"
+    },
+    {
+      "name": "checksums.txt",
+      "size": 309,
+      "sha256": "a1943736423543d85287485fbeaaf22f62f33d764a853f3b239c57be53833578",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/checksums.txt"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "arcana-division-native-edition",
+  "kind": "modpack",
+  "version": "1.0.0",
+  "channel": "beta",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Arcana-Division-Native-Edition",
+  "releaseTag": "arcana-division-native-1.0.0-beta",
+  "commitSha": "d08c9d5ff90aeb26e1beafae5cb074f83796e52e",
+  "artifacts": {
+    "pack": {
+      "file": "arcana-division-native-edition-1.0.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-1.0.0.zip",
+      "sha256": "9bee8d3ac5dfbeff4f1afba6bf81048d74f7193b3f5bb2dce944e288f91ae834",
+      "size": 96244549
+    },
+    "manifest": {
+      "file": "arcana-division-native-edition-beta-1.0.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
+      "sha256": "faa6e5a33e1c28734f8fe0aa5200a16624a0461d76191950148d25feb516db26",
+      "size": 23470
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/checksums.txt",
+      "sha256": "a1943736423543d85287485fbeaaf22f62f33d764a853f3b239c57be53833578",
+      "size": 309
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/echo-release.json",
+      "sha256": "99cc905432d8282bc3e1a986532aa36a61181906be8abec6ab5cf7ec00d112ed",
+      "size": 1611
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echo-native-platform",
+      "kind": "runtime",
+      "version": ">=1.0.0"
+    },
+    {
+      "id": "echoarcanadivisionprotocol",
+      "kind": "addon",
+      "version": "1.0.0"
+    }
+  ],
+  "compatibility": [
+    "native",
+    "arcana-division"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Arcana Division Native beta assets are published with exact pack, manifest, release manifest, and checksum metadata."
+}
