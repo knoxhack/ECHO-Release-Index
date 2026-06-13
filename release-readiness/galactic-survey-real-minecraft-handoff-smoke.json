@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "echo.galactic_survey.real-minecraft-handoff-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-13T17:16:43.080Z",
+  "scope": "packaged-launcher-real-minecraft-profile-handoff",
+  "limitation": "This proves packaged ECHO Launcher installed Galactic Survey Native Edition and prepared an ECHO-managed Minecraft Launcher profile in the selected Minecraft root. It does not prove official launcher open/play or gameplay.",
+  "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke",
+  "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\user-data",
+  "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\player-content",
+  "minecraftRootMode": "detected-user-root",
+  "minecraftRoot": "C:\\Users\\knox\\AppData\\Roaming\\.minecraft",
+  "debugPort": 60837,
+  "catalogPort": 60838,
+  "platform": {
+    "os": "win32",
+    "release": "10.0.19045",
+    "arch": "x64"
+  },
+  "catalog": {
+    "channelUrl": "http://127.0.0.1:60838/channel.json",
+    "servedPack": "galactic-survey-native-edition",
+    "releaseVersion": "0.1.0",
+    "manifestName": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+    "artifactName": "galactic-survey-native-edition-0.1.0.zip",
+    "manifestSha256": "1079a69a838951a1d7d90e70374e5e612d2b60b714a95db57373690d4db7f732",
+    "artifactSha256": "5f78e358f86da830dd2513647c5363ccf02775919dccc2fdb3ebb9cedd874242"
+  },
+  "nativeBridge": {
+    "protocolVersion": 3,
+    "profileIds": [
+      "ashfall-native-edition",
+      "ashfall-neoforge-edition",
+      "ashfall-standalone-edition",
+      "sky-relay-native-edition",
+      "sky-relay-neoforge-edition",
+      "sky-relay-standalone-edition",
+      "galactic-survey-native-edition",
+      "galactic-survey-neoforge-edition",
+      "galactic-survey-standalone-edition",
+      "openlands-native-edition",
+      "openlands-neoforge-edition",
+      "openlands-standalone-edition",
+      "arcana-division-native-edition",
+      "arcana-division-neoforge-edition",
+      "arcana-division-standalone-edition"
+    ],
+    "releaseIndexAccepted": 1,
+    "releaseIndexWarnings": [],
+    "userData": null
+  },
+  "install": {
+    "ok": true,
+    "operation": "install",
+    "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T17-16-31-854Z.json",
+    "installPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\player-content\\Instances\\Galactic Survey Native Edition",
+    "installed": 23,
+    "updated": 0,
+    "verified": 0,
+    "downloaded": 1,
+    "verification": {
+      "missing": 0,
+      "corrupt": 0,
+      "valid": 23
+    },
+    "verifiedModule": {
+      "relativePath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\addons\\echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "sha256": "639de979d987ad16a3be786aa1b00674c385d2049f318c08b5455ca68ef0f519",
+      "expectedSha256": "639de979d987ad16a3be786aa1b00674c385d2049f318c08b5455ca68ef0f519"
+    }
+  },
+  "handoff": {
+    "ok": true,
+    "operationId": "handoff-1781371000491-1",
+    "runtimeMode": "native-loader-minecraft",
+    "runtimeLabel": "Native Loader + Minecraft",
+    "phases": [
+      {
+        "id": "check",
+        "label": "Check installed Galactic Survey Native Edition files",
+        "status": "running",
+        "timestamp": "2026-06-13T17:16:40.532Z"
+      },
+      {
+        "id": "check",
+        "label": "Check installed Galactic Survey Native Edition files",
+        "status": "completed",
+        "timestamp": "2026-06-13T17:16:40.594Z"
+      },
+      {
+        "id": "handoff",
+        "label": "Prepare Native Loader + Minecraft profile",
+        "status": "running",
+        "timestamp": "2026-06-13T17:16:40.623Z"
+      },
+      {
+        "id": "handoff",
+        "label": "Prepare Native Loader + Minecraft profile",
+        "status": "completed",
+        "timestamp": "2026-06-13T17:16:43.076Z"
+      }
+    ],
+    "verification": {
+      "missing": 0,
+      "corrupt": 0,
+      "valid": 23
+    },
+    "result": {
+      "profileId": "echo-galactic-survey-native-edition-native-loader",
+      "profileName": "Galactic Survey Native Edition - Native Loader",
+      "profileCurrent": true,
+      "versionId": "echo-galactic-survey-native-edition-native-loader-1.0.0",
+      "versionReady": true,
+      "minecraftRoot": "C:\\Users\\knox\\AppData\\Roaming\\.minecraft",
+      "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Roaming\\.minecraft\\launcher_profiles.json",
+      "versionMetadataPath": "C:\\Users\\knox\\AppData\\Roaming\\.minecraft\\versions\\echo-galactic-survey-native-edition-native-loader-1.0.0\\echo-galactic-survey-native-edition-native-loader-1.0.0.json",
+      "gameDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\player-content\\Instances\\Galactic Survey Native Edition",
+      "validatedGameDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\player-content\\Instances\\Galactic Survey Native Edition",
+      "validatedModsCount": 23,
+      "backupPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\user-data\\ECHO\\backups\\minecraft-launcher-profiles\\2026-06-13T17-16-43-054Z-launcher_profiles.json",
+      "preparedVersionMetadata": true,
+      "updatedProfile": true,
+      "openedLauncher": false,
+      "prepareOnly": true,
+      "openSkipped": true,
+      "warnings": [
+        "Minecraft Launcher Native Loader + Minecraft version metadata 'echo-galactic-survey-native-edition-native-loader-1.0.0' was missing. ECHO wrote it from the verified Ashfall release manifest."
+      ],
+      "message": "Galactic Survey Native Edition Native Loader + Minecraft profile is ready in Minecraft Launcher; opening the launcher was skipped by prepare-only mode."
+    },
+    "writtenProfile": {
+      "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Roaming\\.minecraft\\launcher_profiles.json",
+      "echoManaged": true,
+      "profileId": "galactic-survey-native-edition",
+      "runtimeMode": "native-loader-minecraft",
+      "gameDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-real-minecraft-handoff-smoke\\player-content\\Instances\\Galactic Survey Native Edition",
+      "lastVersionId": "echo-galactic-survey-native-edition-native-loader-1.0.0"
+    }
+  },
+  "gates": {
+    "packagedLauncherInstall": "passed",
+    "realMinecraftRootSelected": "passed_detected_user_root",
+    "realMinecraftProfileWritten": "passed",
+    "nativeLoaderVersionMetadataWritten": "passed",
+    "installedFilesVerified": "passed",
+    "officialMinecraftLauncherOpened": "not_run_prepare_only",
+    "firstLaunchOpenPlay": "blocked_not_proven"
+  },
+  "process": {
+    "pid": 20996,
+    "stdout": [
+      "Checking for update",
+      "Generated new staging user ID: fc8d92fe-2fbd-5fb5-96d2-56a55959cbe2",
+      "Update for version 1.1.2 is not available (latest version: 1.1.2, downgrade is disallowed)."
+    ],
+    "stderr": [
+      "DevTools listening on ws://127.0.0.1:60837/devtools/browser/14d04704-df2f-40f3-8cc9-7ef08ae61cba"
+    ]
+  }
+}

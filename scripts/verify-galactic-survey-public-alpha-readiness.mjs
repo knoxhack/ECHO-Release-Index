@@ -12,6 +12,7 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-electron-ui-smoke.json',
   'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+  'release-readiness/galactic-survey-real-minecraft-handoff-smoke.json',
   'release-readiness/galactic-survey-manual-gameplay-work-order.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
@@ -45,6 +46,7 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'release-readiness/galactic-survey-electron-ui-smoke.json',
   'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+  'release-readiness/galactic-survey-real-minecraft-handoff-smoke.json',
   'release-readiness/galactic-survey-manual-gameplay-work-order.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
@@ -400,6 +402,7 @@ const editionDraftPublish = readJsonOrNull(path.join(releaseIndexRoot, 'release-
 const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-download.json'))
 const launcherLifecycleSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-launcher-lifecycle-smoke.json'))
 const launcherElectronUiSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-electron-ui-smoke.json'))
+const launcherRealMinecraftHandoffSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-real-minecraft-handoff-smoke.json'))
 const firstLaunchOpenPlayEvidence = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-first-launch-open-play.json'))
 const moduleReleaseIngest = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-module-release-ingest.json'))
 const nativeSdkRc1Artifacts = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'native-sdk-rc1-artifacts.json'))
@@ -665,6 +668,30 @@ const phases = []
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronLogExport'), 'packaged Electron log export passed', 'packaged Electron log export must pass')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronMinecraftLauncherHandoffPreparation === 'passed_isolated_prepare_only', 'packaged Electron prepared Minecraft Launcher handoff metadata in isolated mode', 'packaged Electron must prepare Minecraft Launcher handoff metadata in isolated mode')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronFirstLaunch === 'blocked_legacy_native_launch_removed', 'packaged Electron first launch limitation is explicit', 'packaged Electron first launch limitation must be explicit until a real Native launch path passes')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.schemaVersion === 'echo.galactic_survey.real-minecraft-handoff-smoke.v1', 'real .minecraft handoff smoke report exists', 'real .minecraft handoff smoke report must be generated')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.ok === true, 'real .minecraft handoff smoke passed', 'real .minecraft handoff smoke must pass')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.scope === 'packaged-launcher-real-minecraft-profile-handoff', 'real .minecraft handoff smoke uses packaged launcher profile-handoff scope', 'real .minecraft handoff smoke must use packaged launcher profile-handoff scope')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.minecraftRootMode === 'detected-user-root', 'real .minecraft handoff used the detected user Minecraft root', 'real .minecraft handoff must use the detected user Minecraft root')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.packagedLauncherInstall === 'passed', 'real .minecraft handoff installed through the packaged launcher', 'real .minecraft handoff must install through the packaged launcher')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.realMinecraftRootSelected === 'passed_detected_user_root', 'real .minecraft handoff selected the user Minecraft root', 'real .minecraft handoff must select the user Minecraft root')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.realMinecraftProfileWritten === 'passed', 'real .minecraft handoff wrote launcher profile metadata', 'real .minecraft handoff must write launcher profile metadata')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.nativeLoaderVersionMetadataWritten === 'passed', 'real .minecraft handoff wrote Native Loader version metadata', 'real .minecraft handoff must write Native Loader version metadata')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.installedFilesVerified === 'passed', 'real .minecraft handoff verified installed files', 'real .minecraft handoff must verify installed files')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.officialMinecraftLauncherOpened === 'not_run_prepare_only', 'real .minecraft handoff did not claim official launcher open/play', 'real .minecraft handoff must remain prepare-only until official launcher open/play evidence exists')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.gates?.firstLaunchOpenPlay === 'blocked_not_proven', 'real .minecraft handoff leaves first-launch/open-play blocked', 'real .minecraft handoff must leave first-launch/open-play blocked')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.install?.verification?.valid === expectedPackagedModuleCount, `real .minecraft handoff install verified all ${expectedPackagedModuleCount} module files`, `real .minecraft handoff install must verify all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.install?.verifiedModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'real .minecraft handoff install verified the Galactic Survey addon hash', 'real .minecraft handoff install must verify the Galactic Survey addon hash')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.runtimeMode === 'native-loader-minecraft', 'real .minecraft handoff used Native Loader Minecraft mode', 'real .minecraft handoff must use Native Loader Minecraft mode')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.verification?.valid === expectedPackagedModuleCount, `real .minecraft handoff preflight verified all ${expectedPackagedModuleCount} module files`, `real .minecraft handoff preflight must verify all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.result?.profileId === 'echo-galactic-survey-native-edition-native-loader', 'real .minecraft handoff created the expected ECHO-managed profile id', 'real .minecraft handoff must create the expected ECHO-managed profile id')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.result?.profileCurrent === true, 'real .minecraft handoff profile is current', 'real .minecraft handoff profile must be current')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.result?.versionReady === true, 'real .minecraft handoff version metadata is ready', 'real .minecraft handoff version metadata must be ready')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.result?.updatedProfile === true, 'real .minecraft handoff updated launcher profile metadata', 'real .minecraft handoff must update launcher profile metadata')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.result?.openedLauncher === false && launcherRealMinecraftHandoffSmoke?.handoff?.result?.prepareOnly === true && launcherRealMinecraftHandoffSmoke?.handoff?.result?.openSkipped === true, 'real .minecraft handoff remained prepare-only', 'real .minecraft handoff must remain prepare-only')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.result?.validatedModsCount === expectedPackagedModuleCount, `real .minecraft handoff validated all ${expectedPackagedModuleCount} module files`, `real .minecraft handoff must validate all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.writtenProfile?.echoManaged === true, 'real .minecraft handoff wrote an ECHO-managed launcher profile', 'real .minecraft handoff must write an ECHO-managed launcher profile')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.writtenProfile?.profileId === 'galactic-survey-native-edition', 'real .minecraft handoff launcher profile points at Galactic Survey Native Edition', 'real .minecraft handoff launcher profile must point at Galactic Survey Native Edition')
+  requireCondition(phase, launcherRealMinecraftHandoffSmoke?.handoff?.writtenProfile?.runtimeMode === 'native-loader-minecraft', 'real .minecraft handoff launcher profile records Native Loader Minecraft mode', 'real .minecraft handoff launcher profile must record Native Loader Minecraft mode')
   const automatedFirstLaunchOpenPlayPassed = reportGatePassed(launcherElectronUiSmoke, 'packagedElectronFirstLaunch')
   requireCondition(
     phase,
@@ -802,6 +829,7 @@ const report = {
       editionDraftDownload: 'release-readiness/galactic-survey-draft-download.json',
       launcherLifecycleSmoke: 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
       launcherElectronUiSmoke: 'release-readiness/galactic-survey-electron-ui-smoke.json',
+      launcherRealMinecraftHandoffSmoke: 'release-readiness/galactic-survey-real-minecraft-handoff-smoke.json',
       firstLaunchOpenPlayEvidence: 'release-readiness/galactic-survey-first-launch-open-play.json',
       manualGameplayWorkOrder: 'release-readiness/galactic-survey-manual-gameplay-work-order.json',
       nativeSdkRc1Artifacts: 'release-readiness/native-sdk-rc1-artifacts.json',
@@ -1086,6 +1114,53 @@ const report = {
         gates: launcherElectronUiSmoke.gates
       }
     : null,
+  launcherRealMinecraftHandoffEvidence: launcherRealMinecraftHandoffSmoke
+    ? {
+        schemaVersion: launcherRealMinecraftHandoffSmoke.schemaVersion,
+        ok: launcherRealMinecraftHandoffSmoke.ok,
+        generatedAt: launcherRealMinecraftHandoffSmoke.generatedAt,
+        scope: launcherRealMinecraftHandoffSmoke.scope,
+        limitation: launcherRealMinecraftHandoffSmoke.limitation,
+        executable: launcherRealMinecraftHandoffSmoke.executable,
+        minecraftRootMode: launcherRealMinecraftHandoffSmoke.minecraftRootMode,
+        platform: launcherRealMinecraftHandoffSmoke.platform,
+        catalog: launcherRealMinecraftHandoffSmoke.catalog,
+        install: {
+          ok: launcherRealMinecraftHandoffSmoke.install?.ok,
+          operation: launcherRealMinecraftHandoffSmoke.install?.operation,
+          installed: launcherRealMinecraftHandoffSmoke.install?.installed,
+          downloaded: launcherRealMinecraftHandoffSmoke.install?.downloaded,
+          verification: launcherRealMinecraftHandoffSmoke.install?.verification,
+          verifiedModule: launcherRealMinecraftHandoffSmoke.install?.verifiedModule
+        },
+        handoff: {
+          ok: launcherRealMinecraftHandoffSmoke.handoff?.ok,
+          runtimeMode: launcherRealMinecraftHandoffSmoke.handoff?.runtimeMode,
+          verification: launcherRealMinecraftHandoffSmoke.handoff?.verification,
+          result: {
+            profileId: launcherRealMinecraftHandoffSmoke.handoff?.result?.profileId,
+            profileName: launcherRealMinecraftHandoffSmoke.handoff?.result?.profileName,
+            profileCurrent: launcherRealMinecraftHandoffSmoke.handoff?.result?.profileCurrent,
+            versionId: launcherRealMinecraftHandoffSmoke.handoff?.result?.versionId,
+            versionReady: launcherRealMinecraftHandoffSmoke.handoff?.result?.versionReady,
+            validatedModsCount: launcherRealMinecraftHandoffSmoke.handoff?.result?.validatedModsCount,
+            preparedVersionMetadata: launcherRealMinecraftHandoffSmoke.handoff?.result?.preparedVersionMetadata,
+            updatedProfile: launcherRealMinecraftHandoffSmoke.handoff?.result?.updatedProfile,
+            openedLauncher: launcherRealMinecraftHandoffSmoke.handoff?.result?.openedLauncher,
+            prepareOnly: launcherRealMinecraftHandoffSmoke.handoff?.result?.prepareOnly,
+            openSkipped: launcherRealMinecraftHandoffSmoke.handoff?.result?.openSkipped,
+            warnings: launcherRealMinecraftHandoffSmoke.handoff?.result?.warnings
+          },
+          writtenProfile: {
+            echoManaged: launcherRealMinecraftHandoffSmoke.handoff?.writtenProfile?.echoManaged,
+            profileId: launcherRealMinecraftHandoffSmoke.handoff?.writtenProfile?.profileId,
+            runtimeMode: launcherRealMinecraftHandoffSmoke.handoff?.writtenProfile?.runtimeMode,
+            lastVersionId: launcherRealMinecraftHandoffSmoke.handoff?.writtenProfile?.lastVersionId
+          }
+        },
+        gates: launcherRealMinecraftHandoffSmoke.gates
+      }
+    : null,
   firstLaunchOpenPlayEvidence: firstLaunchOpenPlayEvidence
     ? {
         schemaVersion: firstLaunchOpenPlayEvidence.schemaVersion,
@@ -1171,6 +1246,7 @@ const report = {
     'This audit composes source contracts, Release Index routing, and edition evidence validators.',
     'Galactic Survey catalog install is checksum-backed, but release-ready promotion remains blocked until real gameplay evidence passes.',
     'Packaged Electron rollback now has visible Restore Last Known Good click-through evidence; real first launch and gameplay evidence remain separate gates.',
+    'Packaged Launcher real .minecraft prepare-only handoff evidence is green; it proves profile/version metadata preparation, not official launcher open/play.',
     'Import real first-launch/open-play evidence with scripts/import-galactic-survey-first-launch-evidence.mjs after capturing official launcher open/play notes, screenshots, logs, support bundle, and a downloaded pack artifact hash.'
   ]
 }

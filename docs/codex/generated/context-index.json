@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T13:17:08-04:00",
+  "generatedAt": "2026-06-13T13:25:18-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,11 +16,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "837a09d76eca",
-        "commitDate": "2026-06-13T13:13:28-04:00",
+        "commit": "adad7a7bc95e",
+        "commitDate": "2026-06-13T13:18:58-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-manual-gameplay-work-order.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
           "?? release-readiness/galactic-survey-real-minecraft-handoff-smoke.json",
@@ -32,7 +37,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 22003,
+          "bytes": 22892,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -256,12 +261,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9c75d56f4441",
-        "commitDate": "2026-06-13T10:36:55-04:00",
+        "commit": "5497bef98612",
+        "commitDate": "2026-06-13T13:25:18-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M README.md",
           " M electron/main.cjs",
           " M electron/release-assets.test.mjs",
           " M package.json",
@@ -271,7 +274,6 @@
           "?? electron/version-compare.cjs",
           "?? electron/version-compare.test.mjs",
           "?? scripts/all-modpacks-electron-install-smoke.mjs",
-          "?? scripts/galactic-survey-real-minecraft-handoff-smoke.mjs",
           "?? tmp/"
         ]
       },
@@ -745,14 +747,23 @@
         "branch": "main",
         "commit": "3477dd542ee7",
         "commitDate": "2026-06-13T13:17:08-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M README.md",
+          " M docs/REMAINING_WORK.md",
+          " M src/main/scanner-smoke.ts",
+          " M src/main/scanner.ts",
+          " M src/main/validation-runner.ts",
+          " M src/renderer/App.tsx",
+          " M src/renderer/styles/app.css",
+          " M src/shared/echo.ts"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3573,
+          "bytes": 3596,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -780,7 +791,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 10714,
+          "bytes": 10746,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }

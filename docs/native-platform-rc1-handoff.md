@@ -62,11 +62,13 @@ Launcher lifecycle evidence now exists:
 
 - Evidence: `release-readiness/galactic-survey-launcher-lifecycle-smoke.json`
 - Packaged Electron evidence: `release-readiness/galactic-survey-electron-ui-smoke.json`
+- Real `.minecraft` prepare-only handoff evidence: `release-readiness/galactic-survey-real-minecraft-handoff-smoke.json`
 - Reducer: `release-readiness/galactic-survey-public-alpha-readiness.json`
 - Scope: Galactic Survey public prerelease GitHub pack assets, including `galactic-survey-native-edition`.
 - Passed: Launcher-owned deep-link resolution, pack ZIP install, update reconciliation, version-transition update, corrupt-file repair, rollback, and post-rollback update.
 - Passed in packaged Electron: renderer mount, native bridge bootstrap, Galactic Survey Library cards, scoped card actions, install click-through, update reconciliation click-through, visible Restore Last Known Good rollback click-through, post-rollback re-update, corrupt-file repair click-through, diagnostic export, log/support bundle export, and prepare-only Minecraft Launcher handoff metadata in an isolated Minecraft root.
 - Handoff status: the packaged launcher wrote an ECHO-managed Native Loader Minecraft profile and `echo-native-loader-1.0.0` version metadata inside `tmp/galactic-survey-electron-ui-smoke/isolated-minecraft-root`, verified all 23 installed module files, and deliberately skipped opening the official Minecraft Launcher. This proves metadata handoff mechanics without touching the user's real `.minecraft` folder.
+- Real root handoff status: `../ECHO-Launcher/scripts/galactic-survey-real-minecraft-handoff-smoke.mjs --allow-real-minecraft-root --clean` installed Galactic Survey Native Edition from downloaded public prerelease bytes, wrote the ECHO-managed `echo-galactic-survey-native-edition-native-loader` profile and Native Loader version metadata in the detected user `.minecraft` root, verified all 23 installed module files, and deliberately stayed in prepare-only mode.
 - First-launch status: the legacy `launch:start` path fails closed with the explicit Minecraft Launcher Handoff blocker after verifying all 23 installed module files. This is not first-launch proof; a real Native runtime launch path or an official Minecraft Launcher open/play handoff must pass before approval.
 - Not covered: real packaged first launch, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback is now covered by the visible Restore Last Known Good path and recorded in `release-readiness/galactic-survey-electron-ui-smoke.json`.
 - Gameplay capture intake now exists in all three Galactic Survey edition repos through `scripts/import-manual-gameplay-capture.mjs`; it imports real notes, PNG screenshots, logs, save ZIPs, and the published pack artifact hash into `manual-evidence.json`. This tooling does not satisfy the gameplay gate by itself.
@@ -78,6 +80,8 @@ node scripts/prepare-galactic-survey-first-launch-capture.mjs --tester <name> --
 ```
 
 The prep command verifies the downloaded GitHub pack ZIP against `release-readiness/galactic-survey-draft-download.json`, creates a timestamped capture folder under `tmp/galactic-survey-first-launch-open-play/`, records local Minecraft Launcher/profile status, and writes the exact file checklist and importer command. It is intentionally not release evidence: note templates include a marker that the importer rejects until real observations replace them, and it does not create fake screenshots, logs, or ZIP bundles.
+
+After the real `.minecraft` prepare-only handoff smoke passes, the prep command should report the expected ECHO-managed Galactic Survey Native Loader profile as present. That still only prepares the capture path; the tester must open the official launcher, select the profile, launch/open the game, and capture the required notes, screenshots, logs, and support bundle before import.
 
 ```text
 node scripts/import-galactic-survey-first-launch-evidence.mjs --capture-root <path> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso>
@@ -135,6 +139,7 @@ The current Native release contract is typed-host-receipt based:
 - `release-readiness/galactic-survey-edition-pack-assets.json`
 - `release-readiness/galactic-survey-edition-pack-smoke.json`
 - `release-readiness/galactic-survey-electron-ui-smoke.json`
+- `release-readiness/galactic-survey-real-minecraft-handoff-smoke.json`
 - `release-readiness/galactic-survey-public-alpha-readiness.json`
 - `release-readiness/native-sdk-rc1-artifacts.json`
 - `release-readiness/native-sdk-rc1-attestation.json`
