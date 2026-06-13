@@ -15,6 +15,9 @@ const releaseReadiness = path.join(tmpRoot, 'release-readiness')
 const artifact = path.join(tmpRoot, 'downloads', 'galactic-survey-native-edition-0.1.0.zip')
 const captureRoot = path.join(tmpRoot, 'capture')
 const minecraftRoot = path.join(tmpRoot, '.minecraft')
+const profileGameDir = path.join(tmpRoot, 'Instances', 'Galactic Survey Native Edition')
+const profileVersionId = 'echo-galactic-survey-native-edition-native-loader-1.0.0'
+const fakeLauncherLog = path.join(tmpRoot, 'evidence', 'launcher-install.json')
 const zipBytes = Buffer.from('504b050600000000000000000000000000000000', 'hex')
 
 async function writeJson(filePath, value) {
@@ -24,14 +27,22 @@ async function writeJson(filePath, value) {
 
 await fs.mkdir(path.dirname(artifact), { recursive: true })
 await fs.mkdir(releaseReadiness, { recursive: true })
-await fs.mkdir(path.join(minecraftRoot, 'versions', 'echo-native-loader-1.0.0'), { recursive: true })
+await fs.mkdir(path.join(minecraftRoot, 'versions', profileVersionId), { recursive: true })
+await fs.mkdir(path.join(profileGameDir, 'logs'), { recursive: true })
+await fs.mkdir(path.dirname(fakeLauncherLog), { recursive: true })
 await fs.writeFile(artifact, zipBytes)
+await fs.writeFile(path.join(profileGameDir, 'logs', 'latest.log'), 'Galactic Survey first-launch candidate client log\n')
+await writeJson(fakeLauncherLog, {
+  ok: true,
+  operation: 'install',
+  profileId: 'galactic-survey-native-edition'
+})
 await writeJson(path.join(minecraftRoot, 'launcher_profiles.json'), {
   profiles: {
     'echo-galactic-survey-native-edition-native-loader': {
       name: 'Galactic Survey Native Edition - Native Loader',
-      lastVersionId: 'echo-native-loader-1.0.0',
-      gameDir: path.join(tmpRoot, 'Instances', 'Galactic Survey Native Edition'),
+      lastVersionId: profileVersionId,
+      gameDir: profileGameDir,
       echoManaged: true,
       echoLauncher: {
         profileId: 'galactic-survey-native-edition',
@@ -40,8 +51,15 @@ await writeJson(path.join(minecraftRoot, 'launcher_profiles.json'), {
     }
   }
 })
-await writeJson(path.join(minecraftRoot, 'versions', 'echo-native-loader-1.0.0', 'echo-native-loader-1.0.0.json'), {
-  id: 'echo-native-loader-1.0.0'
+await writeJson(path.join(minecraftRoot, 'versions', profileVersionId, `${profileVersionId}.json`), {
+  id: profileVersionId
+})
+await writeJson(path.join(releaseReadiness, 'galactic-survey-real-minecraft-handoff-smoke.json'), {
+  schemaVersion: 'echo.galactic_survey.real-minecraft-handoff-smoke.v1',
+  ok: true,
+  install: {
+    reportPath: fakeLauncherLog
+  }
 })
 
 const artifactSha256 = crypto.createHash('sha256').update(zipBytes).digest('hex')
@@ -92,6 +110,11 @@ try {
   assert.equal(report.openLauncher.attempted, false)
   assert.equal(report.minecraft.expectedProfilePresent, true)
   assert.equal(report.minecraft.nativeLoaderVersionExists, true)
+  assert.equal(report.minecraft.expectedVersionId, profileVersionId)
+  assert.equal(report.minecraft.expectedVersionMetadataExists, true)
+  assert.equal(report.localEvidenceInventory.realHandoffReport.path, path.join(releaseReadiness, 'galactic-survey-real-minecraft-handoff-smoke.json'))
+  assert.ok(report.localEvidenceInventory.launcherLogs.some((candidate) => candidate.path === fakeLauncherLog))
+  assert.ok(report.localEvidenceInventory.clientLogs.some((candidate) => candidate.path === path.join(profileGameDir, 'logs', 'latest.log')))
   assert.match(report.importerCommand, /import-galactic-survey-first-launch-evidence\.mjs/u)
   assert.ok(await fs.stat(path.join(captureRoot, 'capture-manifest.json')).then((stat) => stat.isFile()))
   assert.ok(await fs.stat(path.join(captureRoot, 'README.md')).then((stat) => stat.isFile()))

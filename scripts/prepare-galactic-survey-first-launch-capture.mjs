@@ -127,6 +127,33 @@ async function exists(filePath) {
   }
 }
 
+async function fileCandidate(label, filePath) {
+  if (!filePath) return null
+  const stat = await fs.stat(filePath).catch(() => null)
+  if (!stat?.isFile()) return null
+  return {
+    label,
+    path: filePath,
+    size: stat.size,
+    modifiedAt: stat.mtime.toISOString()
+  }
+}
+
+async function listRecentFileCandidates(label, directory, pattern, limit = 5) {
+  if (!directory) return []
+  const entries = await fs.readdir(directory, { withFileTypes: true }).catch(() => [])
+  const candidates = []
+  for (const entry of entries) {
+    if (!entry.isFile()) continue
+    if (pattern && !pattern.test(entry.name)) continue
+    const candidate = await fileCandidate(label, path.join(directory, entry.name))
+    if (candidate) candidates.push(candidate)
+  }
+  return candidates
+    .sort((left, right) => Date.parse(right.modifiedAt) - Date.parse(left.modifiedAt))
+    .slice(0, limit)
+}
+
 function findExpectedDownloadedAsset(downloadEvidence, packId) {
   if (downloadEvidence?.status !== 'PASS') return null
   if (downloadEvidence?.summary?.downloadedFromGitHubRelease !== true) return null
@@ -144,7 +171,6 @@ function defaultMinecraftRoot() {
 async function readMinecraftStatus(packId, minecraftRootOverride = '') {
   const minecraftRoot = minecraftRootOverride || defaultMinecraftRoot()
   const profilesPath = path.join(minecraftRoot, 'launcher_profiles.json')
-  const versionMetadataPath = path.join(minecraftRoot, 'versions', 'echo-native-loader-1.0.0', 'echo-native-loader-1.0.0.json')
   const profiles = await readJson(profilesPath).catch(() => null)
   const expectedProfileId = `echo-${packId}-native-loader`
   const echoProfiles = Object.entries(profiles?.profiles ?? {})
@@ -162,16 +188,55 @@ async function readMinecraftStatus(packId, minecraftRootOverride = '') {
     profile.echoProfileId === packId ||
     /galactic survey native edition/iu.test(profile.name)
   ) ?? null
+  const expectedVersionId = expectedProfile?.lastVersionId || 'echo-native-loader-1.0.0'
+  const versionMetadataPath = path.join(minecraftRoot, 'versions', expectedVersionId, `${expectedVersionId}.json`)
   return {
     minecraftRoot,
     launcherProfilesPath: profilesPath,
     launcherProfilesExists: Boolean(profiles),
     nativeLoaderVersionPath: versionMetadataPath,
     nativeLoaderVersionExists: await exists(versionMetadataPath),
+    expectedVersionId,
+    expectedVersionMetadataPath: versionMetadataPath,
+    expectedVersionMetadataExists: await exists(versionMetadataPath),
     expectedProfileId,
     expectedProfilePresent: Boolean(expectedProfile),
     expectedProfile,
     echoProfiles
+  }
+}
+
+async function readLocalEvidenceInventory({ root, minecraft }) {
+  const workspaceRoot = path.resolve(root, '..')
+  const realHandoffReportPath = path.join(root, 'release-readiness', 'galactic-survey-real-minecraft-handoff-smoke.json')
+  const realHandoffReport = await readJson(realHandoffReportPath).catch(() => null)
+  const launcherTmpLogs = path.join(workspaceRoot, 'ECHO-Launcher', 'tmp', 'galactic-survey-real-minecraft-handoff-smoke', 'user-data', 'ECHO', 'launcher-logs')
+  const profileGameDir = minecraft.expectedProfile?.gameDir ?? ''
+  const minecraftRoot = minecraft.minecraftRoot
+  const launcherLogs = [
+    await fileCandidate('real-handoff-install-report', realHandoffReport?.install?.reportPath),
+    ...(await listRecentFileCandidates('launcher-tmp-log', launcherTmpLogs, /\.(json|log)$/iu))
+  ].filter(Boolean)
+  const clientLogs = [
+    await fileCandidate('minecraft-root-latest-log', path.join(minecraftRoot, 'logs', 'latest.log')),
+    await fileCandidate('profile-game-dir-latest-log', profileGameDir ? path.join(profileGameDir, 'logs', 'latest.log') : '')
+  ].filter(Boolean)
+  const crashReports = [
+    ...(await listRecentFileCandidates('minecraft-root-crash-report', path.join(minecraftRoot, 'crash-reports'), /\.(txt|log)$/iu)),
+    ...(await listRecentFileCandidates('profile-game-dir-crash-report', profileGameDir ? path.join(profileGameDir, 'crash-reports') : '', /\.(txt|log)$/iu))
+  ]
+  const screenshots = [
+    ...(await listRecentFileCandidates('minecraft-root-screenshot', path.join(minecraftRoot, 'screenshots'), /\.png$/iu)),
+    ...(await listRecentFileCandidates('profile-game-dir-screenshot', profileGameDir ? path.join(profileGameDir, 'screenshots') : '', /\.png$/iu))
+  ]
+
+  return {
+    note: 'These files are candidates only. Copy or export real run evidence into the required capture paths after the official launcher/open-play run; this inventory is not release evidence.',
+    realHandoffReport: await fileCandidate('real-handoff-report', realHandoffReportPath),
+    launcherLogs,
+    clientLogs,
+    crashReports,
+    screenshots
   }
 }
 
@@ -240,6 +305,10 @@ Required files:
 
 ${REQUIRED_CAPTURE_FILES.map((file) => `- ${file}`).join('\n')}
 
+Local evidence candidates are listed in \`capture-manifest.json\`. They are
+only pointers to possible logs/screenshots from the workstation; copy confirmed
+real run files into the required paths above after the official launcher run.
+
 Importer command:
 
 \`\`\`powershell
@@ -290,6 +359,7 @@ async function main() {
   if ((await exists(captureRoot)) && !args.force) blockers.push(`capture root already exists; pass --force to write into it: ${captureRoot}`)
 
   const minecraft = await readMinecraftStatus(args.packId, args.minecraftRoot)
+  const localEvidenceInventory = await readLocalEvidenceInventory({ root, minecraft })
   const openLauncherPrereqsMet = blockers.length === 0 && minecraft.expectedProfilePresent
   const openedLauncher = args.openLauncher && openLauncherPrereqsMet
     ? openMinecraftLauncher()
@@ -341,6 +411,7 @@ async function main() {
         }
       : null,
     minecraft,
+    localEvidenceInventory,
     openLauncher: openedLauncher,
     requiredCaptureFiles: REQUIRED_CAPTURE_FILES,
     importerCommand,
