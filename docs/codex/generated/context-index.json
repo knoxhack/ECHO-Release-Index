@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T10:16:06-04:00",
+  "generatedAt": "2026-06-13T10:25:41-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d8a7b5ebb9db",
-        "commitDate": "2026-06-13T10:16:06-04:00",
+        "commit": "b19401e2d153",
+        "commitDate": "2026-06-13T10:17:13-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M products/addons-studio.json"
@@ -254,6 +254,12 @@
         "commitDate": "2026-06-13T10:04:52-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M electron/main.cjs",
+          " M scripts/galactic-survey-electron-ui-smoke.mjs",
+          " M src/components/tools/ToolsPage.tsx",
+          " M src/services/RepairService.ts",
+          " M src/services/nativeBridge.ts",
+          " M src/types/native.ts",
           "?? tmp/"
         ]
       },
@@ -397,6 +403,7 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientTextureAtlas.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiInputMapper.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientWorldTemplates.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoGlfwWindow.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreContractLock.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreDomain.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreModuleCoverageAuditor.java",
@@ -424,6 +431,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientDebugOverlaySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindingsSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssemblySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveContinueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsControllerSmokeHarness.java",
@@ -469,6 +477,7 @@
           "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenRuntime.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientAudioDiagnosticsSnapshot.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidBucketUse.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFocusLossRuntimeController.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingMonitor.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingSnapshot.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientOpenlandsSessionFactory.java",
@@ -707,8 +716,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c875015ff96f",
-        "commitDate": "2026-06-13T10:14:34-04:00",
+        "commit": "b87ede0ccd70",
+        "commitDate": "2026-06-13T10:25:41-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -716,7 +725,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2310,
+          "bytes": 2457,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -744,7 +753,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 8867,
+          "bytes": 9003,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
