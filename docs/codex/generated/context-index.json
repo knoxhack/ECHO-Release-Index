@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T14:09:43-04:00",
+  "generatedAt": "2026-06-13T16:00:21-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,20 +16,18 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "df4e7049718a",
-        "commitDate": "2026-06-13T14:09:43-04:00",
+        "commit": "28f7f86b5277",
+        "commitDate": "2026-06-13T14:43:55-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-manual-gameplay-work-order.json",
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
+          "?? release-readiness/all-modpacks-electron-install-smoke-debug.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? release-readiness/galactic-survey-first-launch-official-launcher-attempt.json",
+          "?? release-readiness/all-modpacks-pipeline-audit.json",
           "?? release-readiness/openlands-electron-install-smoke.json",
+          "?? release-readiness/openlands-neoforge-electron-install-smoke.json",
           "?? release-readiness/openlands-standalone-electron-install-smoke.json"
         ]
       },
@@ -115,12 +113,22 @@
         "commitDate": "2026-06-13T09:15:55-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M addons/echoaddonapi/src/main/resources/META-INF/echo.mod.json",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
+          " M addons/echoblockworks/src/main/resources/META-INF/echo.mod.json",
+          " M build.gradle",
+          " M docs/module-docs-index.md",
           " M reports/echo/agents/agent-73-blockers.json",
           " M reports/echo/agents/agent-73-parity.json",
           " M reports/echo/agents/agent-73-status.json",
           " M reports/echo/standalone/runtime-full-catalog-module-status.json",
-          " M reports/echo/standalone/runtime-required-system-module-activation.json"
+          " M reports/echo/standalone/runtime-required-system-module-activation.json",
+          "?? addons/echoaddonapi/src/main/java/dev/echo/api/addon/EchoAddonApi.java",
+          "?? reports/runtime-parity/",
+          "?? scripts/apply-runtime-parity-pack-baseline.mjs",
+          "?? scripts/generate-module-docs-index.mjs",
+          "?? scripts/generate-runtime-parity-audit.mjs",
+          "?? scripts/generate-runtime-parity-audit.test.mjs"
         ]
       },
       "canonicalDocs": [
@@ -148,7 +156,7 @@
         {
           "path": "docs/module-docs-index.md",
           "exists": true,
-          "bytes": 8277,
+          "bytes": 11526,
           "heading": "Module Docs Index",
           "excerpt": "This index is generated from `addons/<module>/gradle.properties` and `META-INF/echo.mod.json` so every module has a visible documentation landing page."
         },
@@ -261,14 +269,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "635ddd68dcb1",
-        "commitDate": "2026-06-13T14:09:32-04:00",
+        "commit": "5238ffbb0816",
+        "commitDate": "2026-06-13T16:00:21-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M electron/main.cjs",
-          " M electron/release-assets.cjs",
-          " M electron/release-assets.test.mjs",
-          " M scripts/all-modpacks-electron-install-smoke.mjs",
           "?? tmp/"
         ]
       },
@@ -293,7 +297,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 6041,
+          "bytes": 6124,
           "summary": "package echo-launcher 1.1.2; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
@@ -402,6 +406,7 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInput.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInventoryRuntime.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindings.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientModScanService.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRenderRuntimeController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssembly.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeDiagnosticsSnapshot.java",
@@ -748,25 +753,36 @@
         "dirtyFiles": [
           " M README.md",
           " M docs/REMAINING_WORK.md",
+          " M package.json",
           " M src/main/build-runner.ts",
           " M src/main/candidate-reports.ts",
+          " M src/main/main.ts",
           " M src/main/run-history.ts",
           " M src/main/scanner-smoke.ts",
           " M src/main/scanner.ts",
+          " M src/main/settings.ts",
+          " M src/main/train-drafts.ts",
           " M src/main/validation-runner.ts",
+          " M src/preload/preload.ts",
           " M src/renderer/App.tsx",
+          " M src/renderer/main.tsx",
           " M src/renderer/styles/app.css",
           " M src/shared/echo.ts",
-          "?? .codex-preview-4176.err.log",
-          "?? .codex-preview-4176.out.log",
-          "?? src/shared/command-safety.ts"
+          " M vite.main.config.ts",
+          " M vite.scanner-smoke.config.ts",
+          "?? .github/",
+          "?? docs/OPERATOR_RUNBOOK.md",
+          "?? src/main/unit-tests.ts",
+          "?? src/renderer/ErrorBoundary.tsx",
+          "?? src/shared/command-safety.ts",
+          "?? vite.unit-tests.config.ts"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3938,
+          "bytes": 5932,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -794,7 +810,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 11391,
+          "bytes": 13528,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
@@ -812,8 +828,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 3170,
-          "summary": "package echo-command-center 0.1.2; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:scanner-smoke"
+          "bytes": 3316,
+          "summary": "package echo-command-center 0.1.2; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:unit-tests"
         }
       ],
       "warnings": []
@@ -879,8 +895,11 @@
         "branch": "main",
         "commit": "c47e951e272b",
         "commitDate": "2026-06-13T06:08:02-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -921,7 +940,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 534,
+          "bytes": 1498,
           "heading": "Ashfall Native Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand."
         }
@@ -942,8 +961,11 @@
         "branch": "main",
         "commit": "1c07fc41c37a",
         "commitDate": "2026-06-12T21:11:05-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -970,7 +992,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 993,
+          "bytes": 1927,
           "heading": "Ashfall NeoForge Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand."
         }
@@ -991,8 +1013,11 @@
         "branch": "main",
         "commit": "a8cd381892ab",
         "commitDate": "2026-06-12T21:11:12-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1019,7 +1044,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1001,
+          "bytes": 1939,
           "heading": "Ashfall Standalone Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand."
         }
@@ -1042,9 +1067,11 @@
         "commitDate": "2026-06-13T03:20:32-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M docs/module-requirements.md",
           " M release-assets/v0.1.0-openlands-native-edition/checksums.txt",
           " M release-assets/v0.1.0-openlands-native-edition/echo-release.json",
-          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json"
+          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
         ]
       },
       "canonicalDocs": [
@@ -1079,7 +1106,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1759,
+          "bytes": 3118,
           "heading": "Module Requirements",
           "excerpt": "Openlands Native Edition consumes Native `.echo-addon` artifacts."
         }
@@ -1102,9 +1129,11 @@
         "commitDate": "2026-06-13T03:20:32-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M docs/module-requirements.md",
           " M release-assets/v0.1.0-openlands-neoforge-edition/checksums.txt",
           " M release-assets/v0.1.0-openlands-neoforge-edition/echo-release.json",
-          " M release-assets/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json"
+          " M release-assets/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
         ]
       },
       "canonicalDocs": [
@@ -1139,7 +1168,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1699,
+          "bytes": 3058,
           "heading": "Module Requirements",
           "excerpt": "Openlands NeoForge Edition consumes `-neoforge.jar` artifacts."
         }
@@ -1162,9 +1191,11 @@
         "commitDate": "2026-06-13T03:20:32-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M docs/module-requirements.md",
           " M release-assets/v0.1.0-openlands-standalone-edition/checksums.txt",
           " M release-assets/v0.1.0-openlands-standalone-edition/echo-release.json",
-          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json"
+          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
+          " M release-manifest.template.json"
         ]
       },
       "canonicalDocs": [
@@ -1199,7 +1230,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1604,
+          "bytes": 2967,
           "heading": "Module Requirements",
           "excerpt": "Openlands Standalone Edition consumes `-standalone.jar` artifacts."
         }
@@ -1220,8 +1251,11 @@
         "branch": "main",
         "commit": "570bd1671e55",
         "commitDate": "2026-06-13T03:28:11-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
+          "?? docs/"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1255,8 +1289,11 @@
         "branch": "main",
         "commit": "fc05f105e934",
         "commitDate": "2026-06-13T03:28:10-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
+          "?? docs/"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1290,8 +1327,11 @@
         "branch": "main",
         "commit": "690ff4d4d19f",
         "commitDate": "2026-06-13T03:28:11-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
+          "?? docs/"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1325,8 +1365,11 @@
         "branch": "feature/sky-relay-gameplay-evidence",
         "commit": "d2b0e38d3a9a",
         "commitDate": "2026-06-11T15:14:11-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1367,7 +1410,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 241,
+          "bytes": 1222,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
         }
@@ -1388,8 +1431,11 @@
         "branch": "feature/sky-relay-gameplay-evidence",
         "commit": "f9d7e1a2d195",
         "commitDate": "2026-06-11T15:14:11-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1430,7 +1476,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 90,
+          "bytes": 1071,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
         }
@@ -1451,8 +1497,11 @@
         "branch": "feature/sky-relay-gameplay-evidence",
         "commit": "f1051cf95dd1",
         "commitDate": "2026-06-11T15:14:11-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1493,7 +1542,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 90,
+          "bytes": 1075,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
         }
@@ -1514,8 +1563,11 @@
         "branch": "main",
         "commit": "5f2330caf585",
         "commitDate": "2026-06-13T13:48:28-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1556,7 +1608,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 601,
+          "bytes": 1815,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey Native Edition consumes Native `.echo-addon` artifacts."
         }
@@ -1577,8 +1629,11 @@
         "branch": "main",
         "commit": "e50462aec771",
         "commitDate": "2026-06-13T13:48:28-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1619,7 +1674,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 617,
+          "bytes": 1831,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey NeoForge Edition consumes Minecraft/NeoForge `-neoforge.jar`"
         }
@@ -1640,8 +1695,11 @@
         "branch": "main",
         "commit": "736edede91e2",
         "commitDate": "2026-06-13T13:48:28-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/module-requirements.md",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1682,7 +1740,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 613,
+          "bytes": 1831,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey Standalone Edition consumes Standalone `-standalone.jar`"
         }

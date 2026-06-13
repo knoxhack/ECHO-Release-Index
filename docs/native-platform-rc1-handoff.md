@@ -74,6 +74,13 @@ Launcher lifecycle evidence now exists:
 - Not covered: real packaged first launch, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback is now covered by the visible Restore Last Known Good path and recorded in `release-readiness/galactic-survey-electron-ui-smoke.json`.
 - Gameplay capture intake now exists in all three Galactic Survey edition repos through `scripts/prepare-manual-gameplay-capture.mjs` and `scripts/import-manual-gameplay-capture.mjs`. The prepare step verifies the Release Index downloaded public prerelease artifact, writes a checksum-bound `capture-manifest.json`, and creates only note templates plus empty capture directories. The import step requires that manifest, real notes, PNG screenshots, logs, save ZIPs, and an artifact size/SHA-256 match before it can write release-ready `manual-evidence.json`. This tooling does not satisfy the gameplay gate by itself.
 
+Launcher artifact and handoff repair is now committed in `ECHO-Launcher`:
+
+- Commits: `4d55635 Repair modpack artifact and handoff pipeline`, `5238ffb Harden all-modpacks smoke reporting`
+- Scope: public module release fallback URLs, Release Index/module metadata asset ingestion, hash-verified multi-URL artifact downloads, legacy `pack-root/` module archive-path normalization, pack-specific install/handoff messages, NeoForge installer metadata repair from official Maven bytes, packaged standalone runtime staging, and all-modpack install-smoke route preparation checks.
+- Verification already run before commit: `npm.cmd test`, `npm.cmd run build`, and `npm.cmd run package:win:dir`.
+- Boundary: this fixes the launcher/export pipeline mechanics. It does not close first-launch/open-play or gameplay evidence gates until real captures are imported.
+
 First-launch/open-play capture intake now exists in the Release Index:
 
 ```text
