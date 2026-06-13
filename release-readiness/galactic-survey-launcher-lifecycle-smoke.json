@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.galactic_survey.launcher-lifecycle-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T11:02:19.023Z",
+  "generatedAt": "2026-06-13T12:58:29.728Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-download",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke",
   "editions": [
@@ -11,8 +11,8 @@
       "releaseTag": "galactic-survey-native-0.1.0-alpha",
       "manifestAsset": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-native-edition-0.1.0.zip",
-      "moduleCount": 18,
-      "fileCount": 18,
+      "moduleCount": 23,
+      "fileCount": 23,
       "topLevelChecksums": [
         "echo-release.json",
         "galactic-survey-native-edition-0.1.0.zip",
@@ -30,17 +30,17 @@
         }
       },
       "install": {
-        "installed": 18,
-        "verifiedAfterInstall": 18
+        "installed": 23,
+        "verifiedAfterInstall": 23
       },
       "update": {
         "fromVersion": "0.1.0-previous-smoke",
         "toVersion": "0.1.0",
         "versionTransition": true,
         "updated": 1,
-        "verified": 17,
+        "verified": 22,
         "removed": 1,
-        "verifiedAfterUpdate": 18,
+        "verifiedAfterUpdate": 23,
         "sameVersionReconciliation": false
       },
       "rollback": {
@@ -50,11 +50,11 @@
       },
       "postRollbackUpdate": {
         "updated": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "repair": {
         "repaired": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
-        "verifiedAfterRepair": 18
+        "verifiedAfterRepair": 23
       },
       "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-Native-Edition\\install"
     },
@@ -64,8 +64,8 @@
       "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
       "manifestAsset": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-neoforge-edition-0.1.0.zip",
-      "moduleCount": 18,
-      "fileCount": 18,
+      "moduleCount": 23,
+      "fileCount": 23,
       "topLevelChecksums": [
         "echo-release.json",
         "galactic-survey-neoforge-edition-0.1.0.zip",
@@ -83,17 +83,17 @@
         }
       },
       "install": {
-        "installed": 18,
-        "verifiedAfterInstall": 18
+        "installed": 23,
+        "verifiedAfterInstall": 23
       },
       "update": {
         "fromVersion": "0.1.0-previous-smoke",
         "toVersion": "0.1.0",
         "versionTransition": true,
         "updated": 1,
-        "verified": 17,
+        "verified": 22,
         "removed": 1,
-        "verifiedAfterUpdate": 18,
+        "verifiedAfterUpdate": 23,
         "sameVersionReconciliation": false
       },
       "rollback": {
@@ -103,11 +103,11 @@
       },
       "postRollbackUpdate": {
         "updated": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "repair": {
         "repaired": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
-        "verifiedAfterRepair": 18
+        "verifiedAfterRepair": 23
       },
       "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-NeoForge-Edition\\install"
     },
@@ -117,8 +117,8 @@
       "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
       "manifestAsset": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-standalone-edition-0.1.0.zip",
-      "moduleCount": 18,
-      "fileCount": 18,
+      "moduleCount": 23,
+      "fileCount": 23,
       "topLevelChecksums": [
         "echo-release.json",
         "galactic-survey-pack-build-report.json",
@@ -136,17 +136,17 @@
         }
       },
       "install": {
-        "installed": 18,
-        "verifiedAfterInstall": 18
+        "installed": 23,
+        "verifiedAfterInstall": 23
       },
       "update": {
         "fromVersion": "0.1.0-previous-smoke",
         "toVersion": "0.1.0",
         "versionTransition": true,
         "updated": 1,
-        "verified": 17,
+        "verified": 22,
         "removed": 1,
-        "verifiedAfterUpdate": 18,
+        "verifiedAfterUpdate": 23,
         "sameVersionReconciliation": false
       },
       "rollback": {
@@ -156,11 +156,11 @@
       },
       "postRollbackUpdate": {
         "updated": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "repair": {
         "repaired": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
-        "verifiedAfterRepair": 18
+        "verifiedAfterRepair": 23
       },
       "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\install"
     }
@@ -179,8 +179,8 @@
   },
   "blockers": [],
   "residualRisks": [
-    "The previous Galactic Survey version is a fixture-local manifest generated from current draft assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Galactic Survey release exists.",
-    "This script uses Launcher-owned resolver and lifecycle contracts from Node against downloaded GitHub draft assets; packaged Electron install/update/repair click-through is covered by release-readiness/galactic-survey-electron-ui-smoke.json, while rollback has no visible packaged UI command yet.",
+    "The previous Galactic Survey version is a fixture-local manifest generated from current prerelease assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Galactic Survey release exists.",
+    "This script uses Launcher-owned resolver and lifecycle contracts from Node against downloaded GitHub prerelease assets; packaged Electron install/update/repair click-through is covered by release-readiness/galactic-survey-electron-ui-smoke.json, while rollback has no visible packaged UI command yet.",
     "Real gameplay evidence remains required before public alpha promotion."
   ]
 }

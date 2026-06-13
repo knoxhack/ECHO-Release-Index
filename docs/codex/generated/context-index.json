@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T08:47:38-04:00",
+  "generatedAt": "2026-06-13T08:56:16-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,55 +16,18 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "12c05308045b",
-        "commitDate": "2026-06-13T08:17:12-04:00",
+        "commit": "1f0abded278b",
+        "commitDate": "2026-06-13T08:56:16-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M channels/alpha/launcher-channel.json",
-          " M channels/beta/launcher-channel.json",
-          " M modpacks/galactic-survey-native.json",
-          " M modpacks/galactic-survey-neoforge.json",
-          " M modpacks/galactic-survey-standalone.json",
-          " M modules/echocore.json",
           " M packs/galactic-survey-native-edition.json",
           " M packs/galactic-survey-neoforge-edition.json",
           " M packs/galactic-survey-standalone-edition.json",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-draft-download.json",
-          " M release-readiness/galactic-survey-edition-pack-assets.json",
-          " M release-readiness/galactic-survey-edition-pack-smoke.json",
+          " M release-readiness/galactic-survey-electron-ui-smoke.json",
+          " M release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
           " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M scripts/build-galactic-survey-edition-assets.mjs",
-          " M scripts/download-galactic-survey-draft-releases.mjs",
-          " M scripts/ingest-release.mjs",
-          " M scripts/smoke-galactic-survey-edition-pack-assets.mjs",
-          " M scripts/test-ingest-release-local-e2e.mjs",
-          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
-          "?? modules/echoadaptercore.json",
-          "?? modules/echoaddonapi.json",
-          "?? modules/echocontentcore.json",
-          "?? modules/echogalacticcore.json",
-          "?? modules/echogalacticsurveyprotocol.json",
-          "?? modules/echoholomap.json",
-          "?? modules/echoindex.json",
-          "?? modules/echolens.json",
-          "?? modules/echologisticsnetwork.json",
-          "?? modules/echomissioncore.json",
-          "?? modules/echonetcore.json",
-          "?? modules/echoorbitalremnants.json",
-          "?? modules/echoplatformcore.json",
-          "?? modules/echopowergrid.json",
-          "?? modules/echoprogressioncore.json",
-          "?? modules/echorecipecore.json",
-          "?? modules/echoruntimeguard.json",
-          "?? modules/echoschemacore.json",
-          "?? modules/echosoundcore.json",
-          "?? modules/echoterminal.json",
-          "?? modules/echovalidationcore.json",
-          "?? modules/echovehiclecore.json",
-          "?? release-readiness/galactic-survey-module-release-ingest.json",
-          "?? scripts/sync-launcher-channel-catalog.mjs"
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs"
         ]
       },
       "canonicalDocs": [
@@ -298,6 +261,7 @@
         "commitDate": "2026-06-13T08:18:06-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M scripts/galactic-survey-launcher-lifecycle-smoke.mjs",
           "?? tmp/"
         ]
       },
@@ -406,6 +370,7 @@
           " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneVoxelMaterialAtlasRuntime.java",
           " M echo-runtime-assets/src/main/java/dev/echo/standalone/runtime/assets/EchoBlockTextureResolver.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientChunkMesh.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientContentProfiles.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientDamageSource.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEntityRuntime.java",
@@ -418,6 +383,7 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssembly.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeServices.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotService.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenCommand.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSelectedItemUse.java",
@@ -447,6 +413,7 @@
           " M echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/EchoSaveTransaction.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockModelChunkRenderSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockTextureResolverSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientVoxelBiomeSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAdapterCoreModuleCoverageSmokeHarness.java",
@@ -491,6 +458,8 @@
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidBucketUse.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientOpenlandsSessionFactory.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientProjectileResult.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSupportBundleResult.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSupportBundleService.java",
           "?? echo-runtime-data/src/main/resources/data/echoopenlandsprotocol/",
           "?? echo-runtime-modules/src/main/java/dev/echo/nativeplatform/",
           "?? echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleDataRegistry.java",
@@ -722,8 +691,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1a004c703ed3",
-        "commitDate": "2026-06-13T08:47:38-04:00",
+        "commit": "f68158532f27",
+        "commitDate": "2026-06-13T08:55:40-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M docs/REMAINING_WORK.md",
@@ -732,7 +701,7 @@
           " M src/renderer/App.tsx",
           " M src/renderer/styles/app.css",
           " M src/shared/echo.ts",
-          "?? src/main/train-drafts.ts"
+          "?? src/main/run-history.ts"
         ]
       },
       "canonicalDocs": [
@@ -767,7 +736,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 7365,
+          "bytes": 7476,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
