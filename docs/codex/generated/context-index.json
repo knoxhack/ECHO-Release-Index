@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T11:00:47-04:00",
+  "generatedAt": "2026-06-13T11:11:30-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,21 +16,13 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1b78a69afc8b",
-        "commitDate": "2026-06-13T10:51:15-04:00",
+        "commit": "8b71132d0d95",
+        "commitDate": "2026-06-13T11:06:57-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
-          "?? docs/galactic-survey-manual-gameplay-work-order.md",
-          "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? release-readiness/galactic-survey-manual-gameplay-work-order.json",
-          "?? scripts/generate-galactic-survey-manual-gameplay-work-order.mjs",
-          "?? scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs"
+          "?? release-readiness/all-modpacks-electron-install-smoke.json",
+          "?? release-readiness/all-modpacks-electron-install-smoke.manual.json"
         ]
       },
       "canonicalDocs": [
@@ -265,7 +257,9 @@
         "dirty": true,
         "dirtyFiles": [
           " M electron/main.cjs",
+          " M package.json",
           " M scripts/lib/pack-export.mjs",
+          "?? scripts/all-modpacks-electron-install-smoke.mjs",
           "?? tmp/"
         ]
       },
@@ -290,7 +284,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 5931,
+          "bytes": 6041,
           "summary": "package echo-launcher 1.1.2; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
@@ -726,8 +720,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "85e45c61bfb6",
-        "commitDate": "2026-06-13T11:00:47-04:00",
+        "commit": "71d0e9e48055",
+        "commitDate": "2026-06-13T11:11:30-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -735,7 +729,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2793,
+          "bytes": 2983,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -763,7 +757,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 9470,
+          "bytes": 9729,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
@@ -1009,8 +1003,12 @@
         "branch": "main",
         "commit": "1e1aaf03c54a",
         "commitDate": "2026-06-13T03:20:32-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-native-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-native-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1065,8 +1063,12 @@
         "branch": "main",
         "commit": "bd402c96502a",
         "commitDate": "2026-06-13T03:20:32-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-neoforge-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-neoforge-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1121,8 +1123,12 @@
         "branch": "main",
         "commit": "2149bc0cb9fa",
         "commitDate": "2026-06-13T03:20:32-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-standalone-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-standalone-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json"
+        ]
       },
       "canonicalDocs": [
         {
