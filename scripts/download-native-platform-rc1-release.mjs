@@ -162,43 +162,62 @@ function remainingHardGates(product) {
   return gates
 }
 
-function inspectProductZip(errors, bytes) {
+function inspectPlatformZip(errors, bytes) {
   const entries = readZipEntries(bytes)
   const byName = new Map(entries.map((entry) => [entry.name, entry]))
-  const requireEntry = (name) => requireCondition(errors, byName.has(name), `product ZIP is missing ${name}`)
-  requireEntry('echo-native-product-package.json')
-  requireEntry('echo.pack.json')
+  const requireEntry = (name) => requireCondition(errors, byName.has(name), `platform ZIP is missing ${name}`)
+  requireEntry('echo-native-platform-package.json')
+  requireEntry('runtime/native-loader-runtime.json')
 
-  const productPackage = JSON.parse(readZipEntry(bytes, byName.get('echo-native-product-package.json')).toString('utf8'))
-  const packProfile = JSON.parse(readZipEntry(bytes, byName.get('echo.pack.json')).toString('utf8'))
-  requireCondition(errors, productPackage.schema === 'echo.native.product_package.v1', 'product package schema mismatch')
-  requireCondition(errors, productPackage.releaseClasspath === 'explicit-packaged-artifacts', 'product package must use explicit packaged artifacts')
-  requireCondition(errors, productPackage.packagedModules === productPackage.totalModules, 'packaged module count must equal total module count')
-  requireCondition(errors, packProfile.loader?.kind === 'echo_native', 'echo.pack.json loader.kind must be echo_native')
-
-  const descriptorModules = new Set()
-  const jarModules = new Set()
+  const forbiddenEntries = []
   for (const entry of entries) {
-    const descriptorMatch = entry.name.match(/^modules\/([^/]+)\/META-INF\/echo\.mod\.json$/u)
-    if (descriptorMatch) descriptorModules.add(descriptorMatch[1])
-    const jarMatch = entry.name.match(/^modules\/([^/]+)\/lib\/[^/]+\.jar$/u)
-    if (jarMatch) jarModules.add(jarMatch[1])
+    const normalized = entry.name.replace(/\\/gu, '/').toLowerCase()
+    if (
+      normalized === 'echo.pack.json'
+      || normalized.endsWith('/echo.pack.json')
+      || normalized === 'echo-native-product-package.json'
+      || normalized.endsWith('/echo-native-product-package.json')
+      || normalized.startsWith('modules/')
+      || normalized.includes('/modules/')
+      || normalized.endsWith('.jar')
+      || normalized.includes('ashfall')
+    ) {
+      forbiddenEntries.push(entry.name)
+    }
   }
-  requireCondition(errors, descriptorModules.size === productPackage.packagedModules, `descriptor module count ${descriptorModules.size} must equal packagedModules ${productPackage.packagedModules}`)
-  requireCondition(errors, jarModules.size === productPackage.packagedModules, `runtime jar module count ${jarModules.size} must equal packagedModules ${productPackage.packagedModules}`)
-  for (const moduleId of descriptorModules) {
-    requireCondition(errors, jarModules.has(moduleId), `${moduleId} has descriptor but no runtime jar`)
-  }
+  requireCondition(errors, forbiddenEntries.length === 0, `platform ZIP contains forbidden pack/product entries: ${forbiddenEntries.join(', ')}`)
+
+  const platformPackage = byName.has('echo-native-platform-package.json')
+    ? JSON.parse(readZipEntry(bytes, byName.get('echo-native-platform-package.json')).toString('utf8'))
+    : {}
+  const runtimeManifest = byName.has('runtime/native-loader-runtime.json')
+    ? JSON.parse(readZipEntry(bytes, byName.get('runtime/native-loader-runtime.json')).toString('utf8'))
+    : {}
+  requireCondition(errors, platformPackage.schemaVersion === 'echo.native.platform_package.v1', 'platform package schema mismatch')
+  requireCondition(errors, platformPackage.kind === 'loader_runtime', 'platform package kind must be loader_runtime')
+  requireCondition(errors, platformPackage.containsModpack === false, 'platform package must declare containsModpack=false')
+  requireCondition(errors, platformPackage.containsPackProfile === false, 'platform package must declare containsPackProfile=false')
+  requireCondition(errors, platformPackage.containsProductModules === false, 'platform package must declare containsProductModules=false')
+  requireCondition(errors, platformPackage.moduleCount === 0, 'platform package moduleCount must be zero')
+  requireCondition(errors, platformPackage.moduleDirectoryIncluded === false, 'platform package must declare moduleDirectoryIncluded=false')
+  requireCondition(errors, Array.isArray(platformPackage.packagedPackFiles) && platformPackage.packagedPackFiles.length === 0, 'platform package packagedPackFiles must be empty')
+  requireCondition(errors, runtimeManifest.schemaVersion === 'echo.native.loader_runtime.v1', 'runtime manifest schema mismatch')
+  requireCondition(errors, runtimeManifest.zeroModuleStartup === true, 'runtime manifest must declare zeroModuleStartup=true')
+  requireCondition(errors, runtimeManifest.requiresPackProfile === false, 'runtime manifest must declare requiresPackProfile=false')
 
   return {
     entryCount: entries.length,
-    packId: productPackage.packId,
-    releaseClasspath: productPackage.releaseClasspath,
-    packagedModules: productPackage.packagedModules,
-    totalModules: productPackage.totalModules,
-    descriptorModuleCount: descriptorModules.size,
-    runtimeJarModuleCount: jarModules.size,
-    requiredModules: packProfile.requiredModules ?? [],
+    packageId: platformPackage.id,
+    packageKind: platformPackage.kind,
+    containsModpack: platformPackage.containsModpack,
+    containsPackProfile: platformPackage.containsPackProfile,
+    containsProductModules: platformPackage.containsProductModules,
+    moduleCount: platformPackage.moduleCount,
+    runtimeId: runtimeManifest.runtimeId,
+    zeroModuleStartup: runtimeManifest.zeroModuleStartup,
+    requiresPackProfile: runtimeManifest.requiresPackProfile,
+    builtInTheme: runtimeManifest.builtInTheme,
+    entries: entries.map((entry) => entry.name).sort(),
   }
 }
 
@@ -255,7 +274,7 @@ async function main() {
   requireCondition(errors, releaseMetadata.commitSha === product.commitSha, 'echo-release.json commitSha mismatch')
   requireCondition(errors, releaseMetadata.validation === 'warning', 'echo-release.json must keep RC1 warning-gated')
 
-  const archiveLayout = inspectProductZip(errors, downloaded.get(product.artifacts.archive.file))
+  const archiveLayout = inspectPlatformZip(errors, downloaded.get(product.artifacts.archive.file))
   const result = {
     schemaVersion: 'echo.native-platform.rc1-download-smoke.v1',
     status: errors.length === 0 ? 'passed' : 'failed',
