@@ -71,7 +71,7 @@ Launcher lifecycle evidence now exists:
 - Real root handoff status: `../ECHO-Launcher/scripts/galactic-survey-real-minecraft-handoff-smoke.mjs --allow-real-minecraft-root --clean` installed Galactic Survey Native Edition from downloaded public prerelease bytes, wrote the ECHO-managed `echo-galactic-survey-native-edition-native-loader` profile and Native Loader version metadata in the detected user `.minecraft` root, verified all 23 installed module files, and deliberately stayed in prepare-only mode.
 - First-launch status: the legacy `launch:start` path fails closed with the explicit Minecraft Launcher Handoff blocker after verifying all 23 installed module files. This is not first-launch proof; a real Native runtime launch path or an official Minecraft Launcher open/play handoff must pass before approval.
 - Not covered: real packaged first launch, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback is now covered by the visible Restore Last Known Good path and recorded in `release-readiness/galactic-survey-electron-ui-smoke.json`.
-- Gameplay capture intake now exists in all three Galactic Survey edition repos through `scripts/import-manual-gameplay-capture.mjs`; it imports real notes, PNG screenshots, logs, save ZIPs, and the published pack artifact hash into `manual-evidence.json`. This tooling does not satisfy the gameplay gate by itself.
+- Gameplay capture intake now exists in all three Galactic Survey edition repos through `scripts/prepare-manual-gameplay-capture.mjs` and `scripts/import-manual-gameplay-capture.mjs`. The prepare step verifies the Release Index downloaded public prerelease artifact, writes a checksum-bound `capture-manifest.json`, and creates only note templates plus empty capture directories. The import step requires that manifest, real notes, PNG screenshots, logs, save ZIPs, and an artifact size/SHA-256 match before it can write release-ready `manual-evidence.json`. This tooling does not satisfy the gameplay gate by itself.
 
 First-launch/open-play capture intake now exists in the Release Index:
 
@@ -109,7 +109,12 @@ Manual gameplay work-order generation also exists in the Release Index:
 node scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write
 ```
 
-It writes `release-readiness/galactic-survey-manual-gameplay-work-order.json` and `docs/galactic-survey-manual-gameplay-work-order.md`. The current work order is `OPEN`; it names the missing first-30-minute, first-2-hour, Survey Array, fresh world, save/reload, no-crash, notes, screenshots, client log, save ZIP, artifact-hash, and local verifier tasks for Native, NeoForge, and Standalone.
+It writes `release-readiness/galactic-survey-manual-gameplay-work-order.json` and `docs/galactic-survey-manual-gameplay-work-order.md`. The current work order is `OPEN`; it names the missing first-30-minute, first-2-hour, Survey Array, fresh world, save/reload, no-crash, notes, screenshots, client log, save ZIP, artifact-hash, prepared capture manifest, and local verifier tasks for Native, NeoForge, and Standalone. Each edition section now starts with:
+
+```text
+node scripts\prepare-manual-gameplay-capture.mjs --release-index-root ..\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>
+node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force
+```
 
 ## Approval Boundary
 

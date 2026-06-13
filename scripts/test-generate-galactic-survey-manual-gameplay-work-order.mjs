@@ -247,7 +247,9 @@ try {
   assert.ok(blockedWorkOrder.totals.openTasks > 0)
   const blockedText = await fs.readFile(path.join(tmp, blockedMarkdown), 'utf8')
   assert.match(blockedText, /Galactic Survey Manual Gameplay Work Order/u)
+  assert.match(blockedText, /prepare-manual-gameplay-capture\.mjs/u)
   assert.match(blockedText, /import-manual-gameplay-capture\.mjs/u)
+  assert.match(blockedText, /prepared-artifact-path/u)
 
   const passFixture = readinessFixture(true)
   const passReport = 'pass/galactic-survey-public-alpha-readiness.json'

@@ -340,9 +340,13 @@ function buildEditionWorkOrder(report, editionConfig, loadedManualEvidence) {
     artifact,
     sourceRevision: revision,
     commands: {
+      prepare: [
+        `Set-Location ..\\${editionConfig.repo}`,
+        'node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>'
+      ],
       capture: [
         `Set-Location ..\\${editionConfig.repo}`,
-        'node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force'
+        'node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force'
       ],
       verify: [
         `Set-Location ..\\${editionConfig.repo}`,
@@ -453,7 +457,11 @@ function renderMarkdown(workOrder, args) {
         ['Open tasks', String(edition.openTaskCount)]
       ]),
       '',
-      '### Capture',
+      '### Prepare Capture',
+      '',
+      powershellBlock(edition.commands.prepare),
+      '',
+      '### Import Capture',
       '',
       powershellBlock(edition.commands.capture),
       '',
