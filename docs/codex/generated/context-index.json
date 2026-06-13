@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T10:48:46-04:00",
+  "generatedAt": "2026-06-13T11:00:47-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,25 +16,28 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c7dd654cbb37",
-        "commitDate": "2026-06-13T10:39:34-04:00",
+        "commit": "1b78a69afc8b",
+        "commitDate": "2026-06-13T10:51:15-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M PUBLIC_ALPHA_RELEASE_STATUS.md",
           " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
           " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
           " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
+          "?? docs/galactic-survey-manual-gameplay-work-order.md",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? scripts/import-galactic-survey-first-launch-evidence.mjs",
-          "?? scripts/test-import-galactic-survey-first-launch-evidence.mjs"
+          "?? release-readiness/galactic-survey-manual-gameplay-work-order.json",
+          "?? scripts/generate-galactic-survey-manual-gameplay-work-order.mjs",
+          "?? scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 18669,
+          "bytes": 19463,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -261,6 +264,8 @@
         "commitDate": "2026-06-13T10:36:55-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M electron/main.cjs",
+          " M scripts/lib/pack-export.mjs",
           "?? tmp/"
         ]
       },
@@ -303,8 +308,10 @@
         "branch": "main",
         "commit": "2f59e8dee210",
         "commitDate": "2026-06-13T06:23:19-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? echo-native-loader/src/main/java/com/"
+        ]
       },
       "canonicalDocs": [
         {
@@ -439,6 +446,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientVoxelBiomeSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAdapterCoreModuleCoverageSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAppSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAdapterCoreParitySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAudioCueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallPlayableMissionSmokeHarness.java",
@@ -718,8 +726,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5863b8032ed2",
-        "commitDate": "2026-06-13T10:48:46-04:00",
+        "commit": "85e45c61bfb6",
+        "commitDate": "2026-06-13T11:00:47-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -727,7 +735,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2723,
+          "bytes": 2793,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -755,7 +763,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 9422,
+          "bytes": 9470,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
