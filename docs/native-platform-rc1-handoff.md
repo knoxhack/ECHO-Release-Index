@@ -11,6 +11,16 @@ The RC1 GitHub prerelease now exists and the product assets have passed download
 - Evidence: `release-readiness/native-platform-rc1-download-smoke.json`
 - Ingestion: `release-readiness/native-platform-rc1-ingestion.json`
 
+Published asset attestation evidence now exists:
+
+- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27464082128`
+- Attestation workflow commit: `2f59e8dee210392e252d7dea7c069d12dd43a93f`
+- Evidence: `release-readiness/native-platform-rc1-attestation.json`
+- Verified command: `gh attestation verify`
+- Scope: published release asset bytes for all 9 RC1 release assets.
+
+`gh release verify-asset` still reports no release-tag-scoped attestations for this tag. Do not treat that command as green unless it starts passing in a future GitHub CLI/API behavior. The accepted RC1 evidence is the asset-byte `gh attestation verify` result recorded above.
+
 Local artifact evidence exists:
 
 - Artifact: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-product-1.0.0-RC1.zip`
@@ -26,11 +36,10 @@ The local external addon proof generated, built, packaged, and loaded a `.echo-a
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
-- Signing or attestation policy is satisfied.
 - Launcher install, first launch, diagnostics export, repair, and rollback pass.
 - At least one Native pack gameplay smoke passes from the published runtime.
 - Public SDK artifacts have main, source, and Javadoc jars.
-- Stable-target catalog metadata has no `warning`, `blocked`, `alpha`, or `source-linked` release blocker.
+- Stable-target catalog metadata has no `warning`, `blocked`, or `alpha` release blocker, and no stable artifact remains `source-linked`.
 
 ## Mutation Truth
 

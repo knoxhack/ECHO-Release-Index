@@ -68,7 +68,7 @@
     }
   },
   "provenance": {
-    "status": "github-rc1-published-download-smoked",
+    "status": "github-rc1-published-download-smoked-attested",
     "nativePlatformCommitSha": "d2a0536de2e2d4d13e02c8574e906f6013724d8b",
     "modulesCommitSha": "52713215938fbd0def40a9f87c9c3fc95fb7fa56",
     "sdkCommitSha": "ec0d9b83b695309ef895c8e591ec41bf84336211",
@@ -78,22 +78,42 @@
     "githubReleaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
     "githubDownloadSmoke": "release-readiness/native-platform-rc1-download-smoke.json",
     "githubIngestion": "release-readiness/native-platform-rc1-ingestion.json",
+    "workflow": ".github/workflows/attest-release-assets.yml",
+    "workflowRef": "refs/heads/main",
+    "verifiedBy": "scripts/verify-native-platform-rc1-attestation.mjs",
     "attestation": {
-      "status": "not-attested",
-      "reason": "Local RC1 artifact has not been signed or attested yet."
+      "status": "github-attested",
+      "scope": "published-release-assets",
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "workflow": ".github/workflows/attest-release-assets.yml",
+      "workflowTrigger": "workflow_dispatch",
+      "workflowRunId": 27464082128,
+      "workflowRunUrl": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27464082128",
+      "workflowRunConclusion": "success",
+      "sourceDigest": "2f59e8dee210392e252d7dea7c069d12dd43a93f",
+      "signerDigest": "2f59e8dee210392e252d7dea7c069d12dd43a93f",
+      "sourceRef": "refs/heads/main",
+      "signerWorkflow": "knoxhack/ECHO-Native-Platform/.github/workflows/attest-release-assets.yml",
+      "verifiedSubjectSha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45",
+      "verifiedSubjectCount": 9,
+      "evidence": "release-readiness/native-platform-rc1-attestation.json",
+      "releaseAssetVerifier": {
+        "status": "not-available",
+        "reason": "gh release verify-asset reports no attestations for the v1.0.0-RC1 release tag, while gh attestation verify succeeds against the published asset bytes."
+      }
     }
   },
   "dependencies": [],
   "compatibility": [
     "ashfall-native-edition"
   ],
-  "trust": "source-linked",
+  "trust": "provenance-attested",
   "validation": "warning",
-  "validationReason": "The RC1 product artifact has been uploaded to the v1.0.0-RC1 GitHub prerelease and download-smoked from GitHub bytes, but approval is still blocked until the asset is signed or attested, launcher-installed, rollback-tested, and backed by real pack gameplay evidence.",
+  "validationReason": "The RC1 product artifact has been uploaded to the v1.0.0-RC1 GitHub prerelease, download-smoked from GitHub bytes, and verified with GitHub artifact attestation. Approval is still blocked until it is launcher-installed, rollback-tested, and backed by real pack gameplay evidence.",
   "stableReleaseBlockedUntil": [
-    "workflow provenance, signing, or attestation policy is satisfied",
     "launcher install, rollback, and diagnostics smoke evidence are attached",
     "pack gameplay evidence is real-run and green",
-    "all stable-target catalog metadata is approved rather than warning or blocked"
+    "all stable-target catalog metadata is approved rather than warning, blocked, or alpha"
   ]
 }

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "echo.native-platform.rc1-attestation.v1",
+  "status": "passed",
+  "generatedAt": "2026-06-13T10:32:09.038Z",
+  "sourceRepo": "knoxhack/ECHO-Native-Platform",
+  "releaseTag": "v1.0.0-RC1",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
+  "productCommitSha": "d2a0536de2e2d4d13e02c8574e906f6013724d8b",
+  "archive": {
+    "file": "echo-native-product-1.0.0-RC1.zip",
+    "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-product-1.0.0-RC1.zip",
+    "source": "github-release-download",
+    "size": 60744144,
+    "sha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45"
+  },
+  "workflowRun": {
+    "id": 27464082128,
+    "url": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27464082128",
+    "name": "Attest Release Assets",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "2f59e8dee210392e252d7dea7c069d12dd43a93f",
+    "event": "workflow_dispatch",
+    "runAttempt": 1
+  },
+  "verification": {
+    "action": "gh attestation verify",
+    "ghExecutable": "gh",
+    "predicateType": "https://slsa.dev/provenance/v1",
+    "signerWorkflow": "knoxhack/ECHO-Native-Platform/.github/workflows/attest-release-assets.yml",
+    "workflowPath": ".github/workflows/attest-release-assets.yml",
+    "sourceRef": "refs/heads/main",
+    "sourceRepositoryDigest": "2f59e8dee210392e252d7dea7c069d12dd43a93f",
+    "buildSignerDigest": "2f59e8dee210392e252d7dea7c069d12dd43a93f",
+    "workflowTrigger": "workflow_dispatch",
+    "runnerEnvironment": "github-hosted",
+    "sourceRepositoryVisibilityAtSigning": "public",
+    "runInvocationUri": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27464082128/attempts/1",
+    "verifiedTimestamp": "2026-06-13T06:23:57-04:00",
+    "subjectCount": 9,
+    "verifiedSubjectSha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45"
+  },
+  "releaseAssetVerifier": {
+    "action": "gh release verify-asset",
+    "status": "not-available",
+    "exitCode": 1,
+    "reason": "no attestations found for tag v1.0.0-RC1 (sha1:d2a0536de2e2d4d13e02c8574e906f6013724d8b)"
+  },
+  "verifiedSubjects": [
+    {
+      "name": "checksums.txt",
+      "sha256": "53876974ce2482b16b9128484a2a0fd3645c3526cb5a35e102855324462390aa"
+    },
+    {
+      "name": "echo-native-product-1.0.0-RC1.zip",
+      "sha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45"
+    },
+    {
+      "name": "echo-release.json",
+      "sha256": "56f3d474ef54fdaf5df4ae9de18d48aa06ade13888aba5085df0d8a418226227"
+    },
+    {
+      "name": "native-addon-source-truth.md",
+      "sha256": "c8913934116bc36f396cf7ed59c8209bdf0fa8006f3b0f9cf14082983bc7c0ee"
+    },
+    {
+      "name": "native-live-proof-gate.json",
+      "sha256": "cc15324b1dd35fb6d1168f793a10fb0f86bdb7b4eb922956c302be79e07ea761"
+    },
+    {
+      "name": "native-module-inventory.json",
+      "sha256": "a6e5933cec9cb6a6b624613f9f4e344165292d99d94573c65dfb1d61f61ae1d8"
+    },
+    {
+      "name": "plan3-dependency-vulnerability-scan.json",
+      "sha256": "9f40b29f35157f692b13f2d6af44d9796f8d4ecbb86908aa83867a5844741711"
+    },
+    {
+      "name": "plan3-final-qa.json",
+      "sha256": "1b2f5555afc4af1666d4213877152482e59bbfbf96de515196c1c5eacadda342"
+    },
+    {
+      "name": "plan3-release-prep.json",
+      "sha256": "054bf41229d5cb94e9f3d58f27720f9747c1335c4c0aa9e18350005481614ffa"
+    }
+  ],
+  "remainingHardGates": [
+    "launcher-install-first-launch-diagnostics-repair-rollback",
+    "real-native-pack-gameplay-smoke",
+    "stable-catalog-metadata-without-warning-blocked-alpha"
+  ],
+  "errors": []
+}

@@ -147,6 +147,21 @@ function expectedAssetRecords(product) {
   return records
 }
 
+function remainingHardGates(product) {
+  const gates = []
+  const attested = product.provenance?.attestation?.status === 'github-attested'
+    && product.trust === 'provenance-attested'
+  if (!attested) gates.push('signing-or-github-attestation')
+  gates.push(
+    'launcher-install-first-launch-diagnostics-repair-rollback',
+    'real-native-pack-gameplay-smoke',
+  )
+  gates.push(attested
+    ? 'stable-catalog-metadata-without-warning-blocked-alpha'
+    : 'stable-catalog-trust-without-warning-blocked-alpha-source-linked')
+  return gates
+}
+
 function inspectProductZip(errors, bytes) {
   const entries = readZipEntries(bytes)
   const byName = new Map(entries.map((entry) => [entry.name, entry]))
@@ -258,12 +273,7 @@ async function main() {
     verifiedAssets,
     verifiedChecksumEntries: [...checksums.keys()].sort(),
     archiveLayout,
-    remainingHardGates: [
-      'signing-or-github-attestation',
-      'launcher-install-first-launch-diagnostics-repair-rollback',
-      'real-native-pack-gameplay-smoke',
-      'stable-catalog-trust-without-warning-blocked-alpha-source-linked',
-    ],
+    remainingHardGates: remainingHardGates(product),
     errors,
   }
 
