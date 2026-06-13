@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T16:00:53-04:00",
+  "generatedAt": "2026-06-13T16:11:09-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,11 +16,20 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "45c188f0ec9b",
-        "commitDate": "2026-06-13T16:00:53-04:00",
+        "commit": "9c7cf0a65eed",
+        "commitDate": "2026-06-13T16:01:47-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M products/addons-studio.json"
+          " M docs/native-platform-rc1-handoff.md",
+          " M products/addons-studio.json",
+          " M products/native-platform.json",
+          " M release-readiness/native-platform-rc1-attestation.json",
+          " M release-readiness/native-platform-rc1-download-smoke.json",
+          " M release-readiness/native-platform-rc1-ingestion.json",
+          "?? release-readiness/all-modpacks-electron-install-smoke-debug.json",
+          "?? release-readiness/all-modpacks-electron-install-smoke-neoforge-debug.json",
+          "?? release-readiness/all-modpacks-electron-install-smoke.json",
+          "?? release-readiness/all-modpacks-pipeline-audit.json"
         ]
       },
       "canonicalDocs": [
@@ -263,8 +272,12 @@
         "branch": "main",
         "commit": "5238ffbb0816",
         "commitDate": "2026-06-13T16:00:21-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/main.cjs",
+          " M scripts/all-modpacks-electron-install-smoke.mjs",
+          "?? tmp/"
+        ]
       },
       "canonicalDocs": [
         {
@@ -303,11 +316,44 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2f59e8dee210",
-        "commitDate": "2026-06-13T06:23:19-04:00",
+        "commit": "3d6e810a1ccf",
+        "commitDate": "2026-06-13T16:11:09-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "?? echo-native-loader/src/main/java/com/"
+          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiHandlerRegistry.java",
+          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapMain.java",
+          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapOrchestrator.java",
+          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeLiveUiBridge.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ListNavigationSmoke.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveInputFocusRoutingAcceptance.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveMainMenuOverrideAcceptance.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveModuleSurfaceCatalogAcceptance.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveVisualFrameAcceptance.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuEndToEndAcceptance.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuEndToEndAcceptanceSmoke.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuOptionActivationSmoke.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ScreenHostModel.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ThemeApplicationSmoke.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiBridgeContractVerifier.java",
+          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiHostInteractionStateAcceptance.java",
+          " M echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoNativeBootstrapProductProfile.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeRegistryHost.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderClientRouteTable.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderClientUiHost.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderCoreServiceRegistrar.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderDefaultProductBridgeProvider.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderGeneratedUiSources.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLiveLoadingRenderBridge.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderModuleSurfaceRenderers.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRuntimeBridgeAggregator.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRuntimeBridgeSeed.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderScreenHostModel.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderSurfaceRenderer.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderUiActionRouter.java",
+          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeAgent2ClientRouteOwnershipSmokeMain.java",
+          "?? echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderTheme.java",
+          "?? echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderThemeMode.java",
+          "?? echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderThemeResolver.java"
         ]
       },
       "canonicalDocs": [
@@ -445,6 +491,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindingsSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssemblySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveContinueSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenCatalogSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientShellFlowSmokeHarness.java",
@@ -760,6 +807,8 @@
           " M src/shared/echo.ts",
           " M vite.main.config.ts",
           " M vite.scanner-smoke.config.ts",
+          "?? .codex-preview-4191.err.log",
+          "?? .codex-preview-4191.out.log",
           "?? .github/",
           "?? docs/OPERATOR_RUNBOOK.md",
           "?? src/main/unit-tests.ts",
@@ -772,7 +821,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5984,
+          "bytes": 6298,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -800,7 +849,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 13621,
+          "bytes": 13917,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
@@ -1740,6 +1789,10 @@
       "warnings": []
     }
   ],
-  "discoveredRepos": [],
-  "warnings": []
+  "discoveredRepos": [
+    "ECHO-Native-Platform-RC1-3d6e810"
+  ],
+  "warnings": [
+    "Unconfigured local ECHO repository ECHO-Native-Platform-RC1-3d6e810"
+  ]
 }

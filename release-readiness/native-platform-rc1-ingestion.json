@@ -3,25 +3,25 @@
   "sourceRepo": "knoxhack/ECHO-Native-Platform",
   "releaseTag": "v1.0.0-RC1",
   "releaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
-  "assetCount": 9,
+  "assetCount": 10,
   "assets": [
     {
       "name": "checksums.txt",
-      "size": 674,
+      "size": 850,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/checksums.txt",
-      "sha256": "53876974ce2482b16b9128484a2a0fd3645c3526cb5a35e102855324462390aa"
+      "sha256": "133b50693dc39741df91dc915c0a62d846cbb6e97cf77a6fc009cc5e0a3b6734"
     },
     {
       "name": "echo-native-product-1.0.0-RC1.zip",
-      "size": 60744144,
+      "size": 60746224,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-product-1.0.0-RC1.zip",
-      "sha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45"
+      "sha256": "97e493a1ca86c9346d0e3cb9912ae2188ac9dd22e39be12eb0b2ab2c6b2a1bb4"
     },
     {
       "name": "echo-release.json",
-      "size": 4448,
+      "size": 4717,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-release.json",
-      "sha256": "56f3d474ef54fdaf5df4ae9de18d48aa06ade13888aba5085df0d8a418226227"
+      "sha256": "93770b720592498c877c036242d0a55af472cff91f60c8747e5cdf5140df7bde"
     },
     {
       "name": "native-addon-source-truth.md",
@@ -33,34 +33,43 @@
       "name": "native-live-proof-gate.json",
       "size": 399,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-live-proof-gate.json",
-      "sha256": "cc15324b1dd35fb6d1168f793a10fb0f86bdb7b4eb922956c302be79e07ea761"
+      "sha256": "6f17c187672917cabef438e59048cbf1afa4a7ea3a2e8359f07690c68f9fe837"
+    },
+    {
+      "name": "native-loader-1.0.0.jar",
+      "size": 1120889,
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-loader-1.0.0.jar",
+      "sha256": "1eab65699ed5bdf02d362e3d37d3cf62c5815f7067375dfd9af89a8a422f1272"
     },
     {
       "name": "native-module-inventory.json",
       "size": 270,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-module-inventory.json",
-      "sha256": "a6e5933cec9cb6a6b624613f9f4e344165292d99d94573c65dfb1d61f61ae1d8"
+      "sha256": "f342f8955379a95340d071710d05540fa1bc2f00d2a4982d99d890a2b5e9bdc3"
     },
     {
       "name": "plan3-dependency-vulnerability-scan.json",
       "size": 341,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-dependency-vulnerability-scan.json",
-      "sha256": "9f40b29f35157f692b13f2d6af44d9796f8d4ecbb86908aa83867a5844741711"
+      "sha256": "39c3732c950546bda9e7fd4ce62a96310be02fd437888ab18ce1819b111830aa"
     },
     {
       "name": "plan3-final-qa.json",
       "size": 289,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-final-qa.json",
-      "sha256": "1b2f5555afc4af1666d4213877152482e59bbfbf96de515196c1c5eacadda342"
+      "sha256": "28ff4d52072f2bf47672d78ece8095b396c697df0d79b94296a75c282557b5ca"
     },
     {
       "name": "plan3-release-prep.json",
       "size": 341,
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-release-prep.json",
-      "sha256": "054bf41229d5cb94e9f3d58f27720f9747c1335c4c0aa9e18350005481614ffa"
+      "sha256": "1de648cd7d13fd51f7997ffe8700bcd3b4baed4063003ba3de7150bfcaead203"
     }
   ],
   "writtenIndexEntries": [],
   "reasons": [],
-  "warnings": []
+  "warnings": [
+    "gh release verify-asset did not verify echo-native-product-1.0.0-RC1.zip: no attestations found for tag v1.0.0-RC1 (sha1:fe83654eed0ba332ef35f904be80d4c0a50bbc78)",
+    "gh release verify-asset did not verify native-loader-1.0.0.jar: no attestations found for tag v1.0.0-RC1 (sha1:fe83654eed0ba332ef35f904be80d4c0a50bbc78)"
+  ]
 }
