@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T11:44:39-04:00",
+  "generatedAt": "2026-06-13T12:38:20-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c522e809e0aa",
-        "commitDate": "2026-06-13T11:38:39-04:00",
+        "commit": "9133d3a6cf7f",
+        "commitDate": "2026-06-13T11:45:20-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M products/addons-studio.json",
@@ -190,11 +190,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "fc4221ee1bc3",
-        "commitDate": "2026-06-13T06:07:10-04:00",
+        "commit": "f31edb91f3d9",
+        "commitDate": "2026-06-13T12:38:20-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? build/",
+          "?? dist/",
           "?? gradle-plugin/echo-addon-gradle-plugin/.gradle/",
           "?? gradle-plugin/echo-addon-gradle-plugin/build/",
           "?? metadata/templates/openlands_official/",
@@ -206,14 +207,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4002,
+          "bytes": 4824,
           "heading": "ECHO SDK",
           "excerpt": "Source of truth for ECHO schemas, contracts, templates, API docs, and developer/creator onboarding."
         },
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 806,
+          "bytes": 1246,
           "heading": "ECHO SDK Release Status",
           "excerpt": "The active Native SDK release line is `1.0.0-RC1`."
         },
@@ -259,8 +260,13 @@
         "dirty": true,
         "dirtyFiles": [
           " M electron/main.cjs",
+          " M electron/release-assets.test.mjs",
           " M package.json",
           " M scripts/lib/pack-export.mjs",
+          " M scripts/lib/pack-export.test.mjs",
+          " M src/data/officialModpacks.ts",
+          "?? electron/version-compare.cjs",
+          "?? electron/version-compare.test.mjs",
           "?? scripts/all-modpacks-electron-install-smoke.mjs",
           "?? tmp/"
         ]
@@ -730,8 +736,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d39ad5b63d9a",
-        "commitDate": "2026-06-13T11:44:39-04:00",
+        "commit": "7074997a0079",
+        "commitDate": "2026-06-13T12:38:10-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -739,7 +745,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3375,
+          "bytes": 3496,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -767,7 +773,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 10295,
+          "bytes": 10395,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
