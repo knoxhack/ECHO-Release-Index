@@ -1,168 +1,177 @@
 {
   "schemaVersion": "echo.galactic_survey.edition-pack-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T10:27:16.859Z",
+  "generatedAt": "2026-06-13T12:53:34.588Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-download",
-  "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke",
-  "artifactSource": "github-draft-release-download",
+  "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke",
+  "artifactSource": "github-public-prerelease-download",
   "draftDownloadEvidence": {
     "path": "release-readiness/galactic-survey-draft-download.json",
     "downloadedEditionCount": 3,
     "downloadedAssetCount": 15,
-    "totalBytes": 225082531
+    "draftReleasesDownloaded": false,
+    "publicPrereleasesDownloaded": true,
+    "totalBytes": 225459913
   },
   "editions": [
     {
       "repoName": "ECHO-Galactic-Survey-Native-Edition",
       "pack": "galactic-survey-native-edition",
       "releaseTag": "galactic-survey-native-0.1.0-alpha",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/untagged-b447a8b82a46997b54ab",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.0-alpha",
       "publicPrerelease": true,
-      "artifactSource": "github-draft-release-download",
-      "githubDraftReleaseDownload": true,
-      "releaseMetadataDraft": true,
+      "artifactSource": "github-public-prerelease-download",
+      "githubReleaseDownloadBack": true,
+      "githubDraftReleaseDownload": false,
+      "githubPublicPrereleaseDownload": true,
+      "releaseMetadataDraft": false,
       "releaseMetadataPrerelease": true,
       "localReleaseCandidate": true,
       "manifestAsset": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-native-edition-0.1.0.zip",
-      "artifactSha256": "6eef6da1c8af2346d10a9a5adf5024490f2a786f0641c77941a830e7303a5674",
-      "artifactSize": 73418279,
+      "artifactSha256": "8edd7eed2a125a11a04d9a83d6ec22d8de4f386731f6a2abcc56a449efb31a02",
+      "artifactSize": 73621275,
       "topLevelChecksums": [
         "galactic-survey-native-edition-alpha-0.1.0.pack.json",
-        "galactic-survey-native-edition-0.1.0.zip",
         "echo-release.json",
+        "galactic-survey-native-edition-0.1.0.zip",
         "galactic-survey-pack-build-report.json"
       ],
-      "installedFiles": 18,
-      "verifiedAfterInstall": 18,
+      "installedFiles": 23,
+      "verifiedAfterInstall": 23,
       "versionUpdate": {
         "fromVersion": "0.1.0-previous-smoke",
         "toVersion": "0.1.0",
         "updated": 1,
-        "verified": 17,
+        "verified": 22,
         "removed": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "versionRollback": {
         "restoredPreviousVersion": "0.1.0-previous-smoke",
-        "verifiedAfterRollback": 19
+        "verifiedAfterRollback": 24
       },
       "postRollbackVersionUpdate": {
         "updated": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "repairedPath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
       "rolledBackPath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
-      "verifiedAfterRollback": 18,
+      "verifiedAfterRollback": 23,
       "draftDownloadEvidence": {
         "path": "release-readiness/galactic-survey-draft-download.json",
         "downloadedAssetCount": 5,
-        "totalBytes": 73450171
+        "totalBytes": 73660779
       },
-      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke\\ECHO-Galactic-Survey-Native-Edition\\install"
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke\\ECHO-Galactic-Survey-Native-Edition\\install"
     },
     {
       "repoName": "ECHO-Galactic-Survey-NeoForge-Edition",
       "pack": "galactic-survey-neoforge-edition",
       "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/untagged-17d3997a7ff7062ba597",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.0-alpha",
       "publicPrerelease": true,
-      "artifactSource": "github-draft-release-download",
-      "githubDraftReleaseDownload": true,
-      "releaseMetadataDraft": true,
+      "artifactSource": "github-public-prerelease-download",
+      "githubReleaseDownloadBack": true,
+      "githubDraftReleaseDownload": false,
+      "githubPublicPrereleaseDownload": true,
+      "releaseMetadataDraft": false,
       "releaseMetadataPrerelease": true,
       "localReleaseCandidate": true,
       "manifestAsset": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-neoforge-edition-0.1.0.zip",
-      "artifactSha256": "7d1eb07fb7a46729c4a4d02a3998834c8800430c2b6ff5f68725b6e51146d2e5",
-      "artifactSize": 75784176,
+      "artifactSha256": "45ff41c7524a125c343392e5c941b939f6a49e8de95ac574daaa4d55f6861dcf",
+      "artifactSize": 75860072,
       "topLevelChecksums": [
+        "galactic-survey-neoforge-edition-0.1.0.zip",
         "galactic-survey-pack-build-report.json",
         "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
-        "echo-release.json",
-        "galactic-survey-neoforge-edition-0.1.0.zip"
+        "echo-release.json"
       ],
-      "installedFiles": 18,
-      "verifiedAfterInstall": 18,
+      "installedFiles": 23,
+      "verifiedAfterInstall": 23,
       "versionUpdate": {
         "fromVersion": "0.1.0-previous-smoke",
         "toVersion": "0.1.0",
         "updated": 1,
-        "verified": 17,
+        "verified": 22,
         "removed": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "versionRollback": {
         "restoredPreviousVersion": "0.1.0-previous-smoke",
-        "verifiedAfterRollback": 19
+        "verifiedAfterRollback": 24
       },
       "postRollbackVersionUpdate": {
         "updated": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "repairedPath": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
       "rolledBackPath": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
-      "verifiedAfterRollback": 18,
+      "verifiedAfterRollback": 23,
       "draftDownloadEvidence": {
         "path": "release-readiness/galactic-survey-draft-download.json",
         "downloadedAssetCount": 5,
-        "totalBytes": 75816410
+        "totalBytes": 75899958
       },
-      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke\\ECHO-Galactic-Survey-NeoForge-Edition\\install"
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke\\ECHO-Galactic-Survey-NeoForge-Edition\\install"
     },
     {
       "repoName": "ECHO-Galactic-Survey-Standalone-Edition",
       "pack": "galactic-survey-standalone-edition",
       "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/untagged-089e6a6a87b9098717b7",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.0-alpha",
       "publicPrerelease": true,
-      "artifactSource": "github-draft-release-download",
-      "githubDraftReleaseDownload": true,
-      "releaseMetadataDraft": true,
+      "artifactSource": "github-public-prerelease-download",
+      "githubReleaseDownloadBack": true,
+      "githubDraftReleaseDownload": false,
+      "githubPublicPrereleaseDownload": true,
+      "releaseMetadataDraft": false,
       "releaseMetadataPrerelease": true,
       "localReleaseCandidate": true,
       "manifestAsset": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-standalone-edition-0.1.0.zip",
-      "artifactSha256": "de9da8dece0791c7c8e7a8ce9ebb02069bdf4a23cf85bbb125367636bf47e8e9",
-      "artifactSize": 75783878,
+      "artifactSha256": "aebebf406b085ed0e83814c7c8a9c9f66cb9a8c19dec17f0e9ece307b6f52ee4",
+      "artifactSize": 75859332,
       "topLevelChecksums": [
-        "galactic-survey-pack-build-report.json",
         "echo-release.json",
         "galactic-survey-standalone-edition-0.1.0.zip",
+        "galactic-survey-pack-build-report.json",
         "galactic-survey-standalone-edition-alpha-0.1.0.pack.json"
       ],
-      "installedFiles": 18,
-      "verifiedAfterInstall": 18,
+      "installedFiles": 23,
+      "verifiedAfterInstall": 23,
       "versionUpdate": {
         "fromVersion": "0.1.0-previous-smoke",
         "toVersion": "0.1.0",
         "updated": 1,
-        "verified": 17,
+        "verified": 22,
         "removed": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "versionRollback": {
         "restoredPreviousVersion": "0.1.0-previous-smoke",
-        "verifiedAfterRollback": 19
+        "verifiedAfterRollback": 24
       },
       "postRollbackVersionUpdate": {
         "updated": 1,
-        "verifiedAfterUpdate": 18
+        "verifiedAfterUpdate": 23
       },
       "repairedPath": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
       "rolledBackPath": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
-      "verifiedAfterRollback": 18,
+      "verifiedAfterRollback": 23,
       "draftDownloadEvidence": {
         "path": "release-readiness/galactic-survey-draft-download.json",
         "downloadedAssetCount": 5,
-        "totalBytes": 75815950
+        "totalBytes": 75899176
       },
-      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\install"
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\install"
     }
   ],
   "gates": {
     "stagedReleaseAssetsVerified": "passed",
-    "githubDraftDownloadBack": "passed",
+    "githubDraftDownloadBack": "not_started",
+    "githubReleaseDownloadBack": "passed",
     "installedFromDownloadedArtifacts": "passed",
     "installFromPackZip": "passed",
     "versionTransitionUpdate": "passed",
@@ -174,7 +183,7 @@
   "blockers": [],
   "residualRisks": [
     "The previous Galactic Survey version is a fixture-local manifest generated from current staged assets plus an older module placeholder; it proves pack update mechanics without claiming a second public release exists.",
-    "This smoke uses downloaded GitHub draft release assets, but not yet a promoted public release.",
+    "This smoke uses downloaded public prerelease GitHub assets; real gameplay evidence is still required before release-ready promotion.",
     "Real gameplay evidence is still required before public alpha promotion."
   ]
 }

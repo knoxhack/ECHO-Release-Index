@@ -36,6 +36,11 @@ const EDITIONS = [
 
 const REQUIRED_MODULE_IDS = [
   'echocore',
+  'echoplatformcore',
+  'echoschemacore',
+  'echovalidationcore',
+  'echocontentcore',
+  'echorecipecore',
   'echoaddonapi',
   'echoadaptercore',
   'echonetcore',

@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echoterminal",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoterminal-1.0.0-neoforge.jar",
+      "sha256": "8159c0e1e0a25e27689a760a1d9456bb72b71066a1ff4dfc365d764968db8497",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoterminal-1.0.0-neoforge.jar",
+      "size": 22985612,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoterminal-1.0.0-standalone.jar",
+      "sha256": "4a369e09e23fecfef79338a4d6a327084cf26071596b073d24acb6dd5c05eb58",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoterminal-1.0.0-standalone.jar",
+      "size": 22985617,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoterminal-1.0.0.echo-addon",
+      "sha256": "4eb202e33ac47b9984b871b30348a3a97368f4da36709890803f1baf3dc9f32f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoterminal-1.0.0.echo-addon",
+      "size": 22455524,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoterminal-1.0.0-sources.jar",
+      "sha256": "3bf076b1f680ae5e29f92673d480af3ee40024388773b1576b1638b81357b6c8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoterminal-1.0.0-sources.jar",
+      "size": 22458280
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

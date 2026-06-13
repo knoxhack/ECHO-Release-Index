@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.galactic_survey.edition-pack-assets.v1",
-  "generatedAt": "2026-06-13T10:11:12.455Z",
+  "generatedAt": "2026-06-13T12:36:42.858Z",
   "project": {
     "name": "ECHO: Galactic Survey",
     "version": "0.1.0",
@@ -15,6 +15,11 @@
   },
   "packagedModules": [
     "echocore",
+    "echoplatformcore",
+    "echoschemacore",
+    "echovalidationcore",
+    "echocontentcore",
+    "echorecipecore",
     "echoaddonapi",
     "echoadaptercore",
     "echonetcore",
@@ -44,27 +49,27 @@
           {
             "name": "checksums.txt",
             "size": 415,
-            "sha256": "38f84c01d40a6dd831fe94d639a2263033584e24da2aa3075502404a736d7892"
+            "sha256": "da777dc7b5cecb0264dc3b10b2e6f74ca1f25d40ced516eb32e8c525346a96eb"
           },
           {
             "name": "echo-release.json",
-            "size": 6263,
-            "sha256": "a22225315279155be5fe9b70b49da6a1d7ff8f6c9bd250acbdffdedb683bb23a"
+            "size": 7522,
+            "sha256": "7027893962eb80fb70f903184a9cfb7bb633cf62705bcfc1954193ac30d2c385"
           },
           {
             "name": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
-            "size": 15995,
-            "sha256": "67ffa60cae73073a6643a30d8aaf3c5abae940e2decc310f4061e6b7ddf76284"
+            "size": 20013,
+            "sha256": "32fba5ee907943891cfe729139cefde4e2693291df8fb4b6b9ea6e7fc80027b1"
           },
           {
             "name": "galactic-survey-native-edition-0.1.0.zip",
-            "size": 73418279,
-            "sha256": "6eef6da1c8af2346d10a9a5adf5024490f2a786f0641c77941a830e7303a5674"
+            "size": 73621275,
+            "sha256": "8edd7eed2a125a11a04d9a83d6ec22d8de4f386731f6a2abcc56a449efb31a02"
           },
           {
             "name": "galactic-survey-pack-build-report.json",
-            "size": 9219,
-            "sha256": "f84974af3966cc95e8993ab1e057153bea4648847c98bb39bcaa68add41cffe1"
+            "size": 11554,
+            "sha256": "e1363e04c57b89fd86a7624f5455ce98c1387a8f3ae83a8351c35f8c4e2039fd"
           }
         ],
         "modules": [
@@ -76,8 +81,73 @@
             "assetName": "echocore-1.0.0.echo-addon",
             "artifactName": "echocore-1.0.0.echo-addon",
             "path": "addons/echocore-1.0.0.echo-addon",
-            "sha256": "1dd773f650a7fbb79212d8cf1df8ed284e8d54e31d564b4549bae5fb38863152",
-            "size": 328018,
+            "sha256": "7348c2da2a15be07ee509619d34f86bce227bd7f35ee9db5123787538c0fe9e4",
+            "size": 328375,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echoplatformcore",
+            "moduleId": "echoplatformcore",
+            "version": "1.0.0",
+            "artifactFamily": "echo-addon",
+            "assetName": "echoplatformcore-1.0.0.echo-addon",
+            "artifactName": "echoplatformcore-1.0.0.echo-addon",
+            "path": "addons/echoplatformcore-1.0.0.echo-addon",
+            "sha256": "11d508382de0a487d02c02680fe0446e51eb77b228514a0ae8aa09e4566440bc",
+            "size": 45215,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echoschemacore",
+            "moduleId": "echoschemacore",
+            "version": "1.0.0",
+            "artifactFamily": "echo-addon",
+            "assetName": "echoschemacore-1.0.0.echo-addon",
+            "artifactName": "echoschemacore-1.0.0.echo-addon",
+            "path": "addons/echoschemacore-1.0.0.echo-addon",
+            "sha256": "61224a570b9f008755802a74a6cf8642517e115e70e2e998840a8662e3a87286",
+            "size": 31239,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echovalidationcore",
+            "moduleId": "echovalidationcore",
+            "version": "1.0.0",
+            "artifactFamily": "echo-addon",
+            "assetName": "echovalidationcore-1.0.0.echo-addon",
+            "artifactName": "echovalidationcore-1.0.0.echo-addon",
+            "path": "addons/echovalidationcore-1.0.0.echo-addon",
+            "sha256": "02abb39eb0306acc15a36e78a39712408a7c29df8815b0514c059e81c7e74c8a",
+            "size": 41824,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echocontentcore",
+            "moduleId": "echocontentcore",
+            "version": "1.0.0",
+            "artifactFamily": "echo-addon",
+            "assetName": "echocontentcore-1.0.0.echo-addon",
+            "artifactName": "echocontentcore-1.0.0.echo-addon",
+            "path": "addons/echocontentcore-1.0.0.echo-addon",
+            "sha256": "53ed4cf5defad603a6a1493d5c25581488dd25c071ba09088425cbc4324e967e",
+            "size": 33666,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echorecipecore",
+            "moduleId": "echorecipecore",
+            "version": "1.0.0",
+            "artifactFamily": "echo-addon",
+            "assetName": "echorecipecore-1.0.0.echo-addon",
+            "artifactName": "echorecipecore-1.0.0.echo-addon",
+            "path": "addons/echorecipecore-1.0.0.echo-addon",
+            "sha256": "213a41430114e374cd02a956a2a0376ce2b8b9d965d9c2b895bd461eb56dee51",
+            "size": 38508,
             "required": true,
             "side": "both"
           },
@@ -89,8 +159,8 @@
             "assetName": "echoaddonapi-0.1.0.echo-addon",
             "artifactName": "echoaddonapi-0.1.0.echo-addon",
             "path": "addons/echoaddonapi-0.1.0.echo-addon",
-            "sha256": "4b5b59283008b7906b5d5ee670c25c54a6c008ccb2d9fe33db06f16a639f2249",
-            "size": 53052,
+            "sha256": "81f89e9ed27331d4a418b7e8a38a0aa147fdcb4504ce4207a7f737981066a1e7",
+            "size": 53409,
             "required": true,
             "side": "both"
           },
@@ -102,8 +172,8 @@
             "assetName": "echoadaptercore-1.0.0.echo-addon",
             "artifactName": "echoadaptercore-1.0.0.echo-addon",
             "path": "addons/echoadaptercore-1.0.0.echo-addon",
-            "sha256": "76aa1a563198dc1c03fc5fa1c31b8447cd6e96e2e0316dfc7b464cb3d73e4462",
-            "size": 814616,
+            "sha256": "1fd5161452fc9aa3ce614ed086cc4a0d333e6ceeed47b78266525c66988ed3da",
+            "size": 814976,
             "required": true,
             "side": "both"
           },
@@ -115,8 +185,8 @@
             "assetName": "echonetcore-1.0.0.echo-addon",
             "artifactName": "echonetcore-1.0.0.echo-addon",
             "path": "addons/echonetcore-1.0.0.echo-addon",
-            "sha256": "12658312840ace9e981c38142104dc707f7bd398d5805303dc8aaac1468b2506",
-            "size": 64592,
+            "sha256": "e66e8df2195e914891964ee9d44fcb2e4a4826abfe7bd15efbff41ceca2a5d16",
+            "size": 64950,
             "required": true,
             "side": "both"
           },
@@ -128,8 +198,8 @@
             "assetName": "echoruntimeguard-1.0.0.echo-addon",
             "artifactName": "echoruntimeguard-1.0.0.echo-addon",
             "path": "addons/echoruntimeguard-1.0.0.echo-addon",
-            "sha256": "1cecdeba3465b2dc690172b5b4859e0fb924a4f0bfd3d59bdc92b92a0871749b",
-            "size": 121183,
+            "sha256": "e51ce37caca0ee1a59654a4c6d2edcdb92311110fd23e600af3cc630746f1d53",
+            "size": 121543,
             "required": true,
             "side": "both"
           },
@@ -141,8 +211,8 @@
             "assetName": "echoterminal-1.0.0.echo-addon",
             "artifactName": "echoterminal-1.0.0.echo-addon",
             "path": "addons/echoterminal-1.0.0.echo-addon",
-            "sha256": "439570d7a1cccc3868c1b8cce070c86a966ee96d6be1abea2e6404cde936515b",
-            "size": 22455460,
+            "sha256": "94310c7403c76d2a16e70124c878d2c6817ea1b2316f17ffc13200ae5b3413ed",
+            "size": 22455821,
             "required": true,
             "side": "both"
           },
@@ -154,8 +224,8 @@
             "assetName": "echoindex-1.0.0.echo-addon",
             "artifactName": "echoindex-1.0.0.echo-addon",
             "path": "addons/echoindex-1.0.0.echo-addon",
-            "sha256": "b7073de218624c2b3bf49b4b8248b4690a893efac4c2898390922e405b916948",
-            "size": 560929,
+            "sha256": "aba88e5a66b91e005542bd55039a3a8c20192c98c121a22779605c154f49f38e",
+            "size": 561287,
             "required": true,
             "side": "both"
           },
@@ -167,8 +237,8 @@
             "assetName": "echolens-1.0.0.echo-addon",
             "artifactName": "echolens-1.0.0.echo-addon",
             "path": "addons/echolens-1.0.0.echo-addon",
-            "sha256": "49d12e06e0c505ec83b45fff7abaf5acfba54b68669ccc11fba0cff025ffcc36",
-            "size": 206217,
+            "sha256": "59bf409b76903f1868614ce083d1f064fa7962bf65413b47ca0e717556948455",
+            "size": 206573,
             "required": true,
             "side": "both"
           },
@@ -180,8 +250,8 @@
             "assetName": "echoholomap-1.0.0.echo-addon",
             "artifactName": "echoholomap-1.0.0.echo-addon",
             "path": "addons/echoholomap-1.0.0.echo-addon",
-            "sha256": "9279080b26c43fc6ab11df6ea53ea2f36ed8ea8cd5fe5e3edf8c231458dbe689",
-            "size": 1470384,
+            "sha256": "38357f80870eb6808c492fb6b4423d87c0c6caeadef2ea6d7fc4a747306d8423",
+            "size": 1470744,
             "required": true,
             "side": "both"
           },
@@ -193,8 +263,8 @@
             "assetName": "echomissioncore-1.0.0.echo-addon",
             "artifactName": "echomissioncore-1.0.0.echo-addon",
             "path": "addons/echomissioncore-1.0.0.echo-addon",
-            "sha256": "86f95958a20c7955cad827f456a8afc1a9a1e707f3430c8bc7d4fd3dccffe774",
-            "size": 100701,
+            "sha256": "7e224be5e7770338b547c6295aa854efdb6624fa53846812cc7f88f15f8800bc",
+            "size": 101064,
             "required": true,
             "side": "both"
           },
@@ -206,8 +276,8 @@
             "assetName": "echopowergrid-1.0.0.echo-addon",
             "artifactName": "echopowergrid-1.0.0.echo-addon",
             "path": "addons/echopowergrid-1.0.0.echo-addon",
-            "sha256": "4668f7a91d0496f201ed10d73e8f4faed7d6e97eb11faf84d73b6283a0d49c1c",
-            "size": 7141180,
+            "sha256": "706b5926125e64bf0414f06a655548ecb69b1d96c60c197fce77fa4385c71a2d",
+            "size": 7141545,
             "required": true,
             "side": "both"
           },
@@ -219,8 +289,8 @@
             "assetName": "echologisticsnetwork-1.0.0.echo-addon",
             "artifactName": "echologisticsnetwork-1.0.0.echo-addon",
             "path": "addons/echologisticsnetwork-1.0.0.echo-addon",
-            "sha256": "c2213bb6a2f9b4563443af4831b7e30a7794c8b0752cdf293cfcf33eafb2e5bf",
-            "size": 3640281,
+            "sha256": "b842c86c3e5073e015e6cdaca0dd680b86425f3a61d17edcbe13570a14d15b88",
+            "size": 3640652,
             "required": true,
             "side": "both"
           },
@@ -232,8 +302,8 @@
             "assetName": "echoprogressioncore-1.0.0.echo-addon",
             "artifactName": "echoprogressioncore-1.0.0.echo-addon",
             "path": "addons/echoprogressioncore-1.0.0.echo-addon",
-            "sha256": "20fb078d966efcbc97dc288043fd752fa548cd34e885d8d6626ae3be3f734420",
-            "size": 45885,
+            "sha256": "e5b5b61fef0678ac5a8444643b0e9ad234771a18451e8bcb5259c8df074eb222",
+            "size": 46252,
             "required": true,
             "side": "both"
           },
@@ -245,8 +315,8 @@
             "assetName": "echosoundcore-1.0.0.echo-addon",
             "artifactName": "echosoundcore-1.0.0.echo-addon",
             "path": "addons/echosoundcore-1.0.0.echo-addon",
-            "sha256": "afeeb9636f1ab8bcc432e468addd33b37ff0d551a50759658cf326920b2be122",
-            "size": 11080349,
+            "sha256": "c00ccb23106c94d6f8d7464e7ee5b6a21b668f7a9090aff72c35546aeeadde2d",
+            "size": 11080710,
             "required": true,
             "side": "both"
           },
@@ -258,8 +328,8 @@
             "assetName": "echogalacticcore-0.1.0-native-alpha.echo-addon",
             "artifactName": "echogalacticcore-0.1.0-native-alpha.echo-addon",
             "path": "addons/echogalacticcore-0.1.0-native-alpha.echo-addon",
-            "sha256": "928f6442a1b689a6f51b7201757d74d051bb71a0f599c588ed9007c2cd3b569b",
-            "size": 10868498,
+            "sha256": "204fa8b098b65234bac756730a6c5d90a68319fc65dcc432f0c127ba4984f9ca",
+            "size": 10869672,
             "required": true,
             "side": "both"
           },
@@ -271,8 +341,8 @@
             "assetName": "echoorbitalremnants-1.0.0.echo-addon",
             "artifactName": "echoorbitalremnants-1.0.0.echo-addon",
             "path": "addons/echoorbitalremnants-1.0.0.echo-addon",
-            "sha256": "806fcf603873c08cc2378fed0cd594f0202f22fcec5a98b47ce1899a3fb2fe7f",
-            "size": 14310274,
+            "sha256": "b6f9514d38b91f81fbf319b3db4f83111af6d1f1c42562216640efafe6fccad5",
+            "size": 14310530,
             "required": true,
             "side": "both"
           },
@@ -284,8 +354,8 @@
             "assetName": "echovehiclecore-1.0.0.echo-addon",
             "artifactName": "echovehiclecore-1.0.0.echo-addon",
             "path": "addons/echovehiclecore-1.0.0.echo-addon",
-            "sha256": "7761a26e94b53e5ee374e7c6e977918f0763f0b068ad45e04b4f7f5f85853a27",
-            "size": 22434,
+            "sha256": "52b3407b0f8cf2481e52811e4ebeb7bb6ffc0e84e0c041b1d462bc6d351f4d3f",
+            "size": 22796,
             "required": true,
             "side": "both"
           },
@@ -297,15 +367,15 @@
             "assetName": "echogalacticsurveyprotocol-0.1.0.echo-addon",
             "artifactName": "echogalacticsurveyprotocol-0.1.0.echo-addon",
             "path": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
-            "sha256": "b3057a6becb131f4862e38706a659ac3b7b3b23e33873c9fb69f9efc5c0785be",
-            "size": 112778,
+            "sha256": "87ff3ab5abb8dea3db02a5fef40ce8aa5bb8ec828e5a68abaee98aa01d0367f6",
+            "size": 113152,
             "required": true,
             "side": "both"
           }
         ],
         "zip": {
           "name": "galactic-survey-native-edition-0.1.0.zip",
-          "manifestFiles": 18,
+          "manifestFiles": 23,
           "validated": true
         }
       },
@@ -318,27 +388,27 @@
           {
             "name": "checksums.txt",
             "size": 419,
-            "sha256": "c54c90c4f8115885bc51430b2c9b2d8cbe419052c28357e632f5c8eaf91b011a"
+            "sha256": "d1ab846209141b73368efb182a86cb6194ceb5d5f36aed0c147bf8d2665fa967"
           },
           {
             "name": "echo-release.json",
-            "size": 6321,
-            "sha256": "7bc83ba992d5a512cb552e6bc0009e7006c07df877a6837c7f9e0f3bcb100518"
+            "size": 7590,
+            "sha256": "da53c36e54224b697df30becf8e574b734263fce6faee4978d9f3b3206c3fe76"
           },
           {
             "name": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
-            "size": 16231,
-            "sha256": "58ef18b087d537848fb728d11e9e08a74fa73d68369a9aaa6b3c694d334aee55"
+            "size": 20269,
+            "sha256": "cc51af86495c1d63dcb1996791e1eab70b25cbe50a0f484376ec64615239d2e0"
           },
           {
             "name": "galactic-survey-neoforge-edition-0.1.0.zip",
-            "size": 75784176,
-            "sha256": "7d1eb07fb7a46729c4a4d02a3998834c8800430c2b6ff5f68725b6e51146d2e5"
+            "size": 75860072,
+            "sha256": "45ff41c7524a125c343392e5c941b939f6a49e8de95ac574daaa4d55f6861dcf"
           },
           {
             "name": "galactic-survey-pack-build-report.json",
-            "size": 9263,
-            "sha256": "49cab5605c674e5604b675694f622bb05b9107b459660d41dfa6de62b166022f"
+            "size": 11608,
+            "sha256": "647701e558a3a3396f4672829471219e17c25e910feb933d9b6e9e3ef53ca22a"
           }
         ],
         "modules": [
@@ -350,8 +420,73 @@
             "assetName": "echocore-1.0.0-neoforge.jar",
             "artifactName": "echocore-1.0.0-neoforge.jar",
             "path": "mods/echocore-1.0.0-neoforge.jar",
-            "sha256": "56474273ccd8fd2e8f4f37e8410abe02823efb9031f791c6fff7956acda06d1d",
-            "size": 372263,
+            "sha256": "4f76d9a60049829d786ec48c03d0b0a4efb042bba1ace4cf12787210413fa609",
+            "size": 366695,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echoplatformcore",
+            "moduleId": "echoplatformcore",
+            "version": "1.0.0",
+            "artifactFamily": "neoforge",
+            "assetName": "echoplatformcore-1.0.0-neoforge.jar",
+            "artifactName": "echoplatformcore-1.0.0-neoforge.jar",
+            "path": "mods/echoplatformcore-1.0.0-neoforge.jar",
+            "sha256": "1e1819b1903e900cacfeacec9338018db8f94a23d255fc4efaf262abe1cfb288",
+            "size": 46631,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echoschemacore",
+            "moduleId": "echoschemacore",
+            "version": "1.0.0",
+            "artifactFamily": "neoforge",
+            "assetName": "echoschemacore-1.0.0-neoforge.jar",
+            "artifactName": "echoschemacore-1.0.0-neoforge.jar",
+            "path": "mods/echoschemacore-1.0.0-neoforge.jar",
+            "sha256": "0d28b9ae277adaebf3190b92d30ff39e6016d44fd26ea90b02c6834812b898b5",
+            "size": 30700,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echovalidationcore",
+            "moduleId": "echovalidationcore",
+            "version": "1.0.0",
+            "artifactFamily": "neoforge",
+            "assetName": "echovalidationcore-1.0.0-neoforge.jar",
+            "artifactName": "echovalidationcore-1.0.0-neoforge.jar",
+            "path": "mods/echovalidationcore-1.0.0-neoforge.jar",
+            "sha256": "3f5528439deeea59dd7426d7d08dc294dde1de7464f45afeac84da798f82d7bb",
+            "size": 41993,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echocontentcore",
+            "moduleId": "echocontentcore",
+            "version": "1.0.0",
+            "artifactFamily": "neoforge",
+            "assetName": "echocontentcore-1.0.0-neoforge.jar",
+            "artifactName": "echocontentcore-1.0.0-neoforge.jar",
+            "path": "mods/echocontentcore-1.0.0-neoforge.jar",
+            "sha256": "134416c26814cf17756facdaaf60249deb478530b0eb870607519a99cc6466a0",
+            "size": 33265,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echorecipecore",
+            "moduleId": "echorecipecore",
+            "version": "1.0.0",
+            "artifactFamily": "neoforge",
+            "assetName": "echorecipecore-1.0.0-neoforge.jar",
+            "artifactName": "echorecipecore-1.0.0-neoforge.jar",
+            "path": "mods/echorecipecore-1.0.0-neoforge.jar",
+            "sha256": "e67399bd80deae9a433bd833f764e643a206f203f5c5b8b93bc35687f7a9d546",
+            "size": 37914,
             "required": true,
             "side": "both"
           },
@@ -363,8 +498,8 @@
             "assetName": "echoaddonapi-0.1.0-neoforge.jar",
             "artifactName": "echoaddonapi-0.1.0-neoforge.jar",
             "path": "mods/echoaddonapi-0.1.0-neoforge.jar",
-            "sha256": "bde30faea3bc83284b5bdabd12d599cd3a53dec0156def19bb175fa1704f8d05",
-            "size": 62282,
+            "sha256": "79a530a3b0f24626f4d0424955494ea44440f4a09f36569135f13c2b088bb583",
+            "size": 60493,
             "required": true,
             "side": "both"
           },
@@ -376,8 +511,8 @@
             "assetName": "echoadaptercore-1.0.0-neoforge.jar",
             "artifactName": "echoadaptercore-1.0.0-neoforge.jar",
             "path": "mods/echoadaptercore-1.0.0-neoforge.jar",
-            "sha256": "5813c51e5fcca98b3547a4ee521fa8d9d5d0fe9b1a425bf38ee2cfb8d5a19b86",
-            "size": 948483,
+            "sha256": "7b1cdfafbbee7c57cbe063bfa46eac88946200a5da6e446b94e9b7f5bb7aea62",
+            "size": 944421,
             "required": true,
             "side": "both"
           },
@@ -389,8 +524,8 @@
             "assetName": "echonetcore-1.0.0-neoforge.jar",
             "artifactName": "echonetcore-1.0.0-neoforge.jar",
             "path": "mods/echonetcore-1.0.0-neoforge.jar",
-            "sha256": "bd155183464462d6af40f4b810cc8c68aa8c09eed37c9a01332d54de5ac30bea",
-            "size": 70690,
+            "sha256": "6d5c0bc5f33509526beab8baeb503683678868f2f9be177b32c749956fa54a9e",
+            "size": 68882,
             "required": true,
             "side": "both"
           },
@@ -402,8 +537,8 @@
             "assetName": "echoruntimeguard-1.0.0-neoforge.jar",
             "artifactName": "echoruntimeguard-1.0.0-neoforge.jar",
             "path": "mods/echoruntimeguard-1.0.0-neoforge.jar",
-            "sha256": "0ac4d9b8c71ef9ade344297303b3a52b1480c2d0d8c8c682879482b9840ccc35",
-            "size": 129581,
+            "sha256": "5c4aa576d1a3877e030d166487681d0442a3ec6631fe33e585ee8e54ab743ac3",
+            "size": 127446,
             "required": true,
             "side": "both"
           },
@@ -415,8 +550,8 @@
             "assetName": "echoterminal-1.0.0-neoforge.jar",
             "artifactName": "echoterminal-1.0.0-neoforge.jar",
             "path": "mods/echoterminal-1.0.0-neoforge.jar",
-            "sha256": "e64ea9d7cdeefd19d32c6399d856aeec37f4810b97b866b9a6e8d3071c4233ab",
-            "size": 23014857,
+            "sha256": "292ceb20bfd09cce307948bca73201e41db86d1a210b3ace00804f56b0e09234",
+            "size": 22985986,
             "required": true,
             "side": "both"
           },
@@ -428,8 +563,8 @@
             "assetName": "echoindex-1.0.0-neoforge.jar",
             "artifactName": "echoindex-1.0.0-neoforge.jar",
             "path": "mods/echoindex-1.0.0-neoforge.jar",
-            "sha256": "8cbb3a46a34d3ee3e74e8872927c3eb5cd32697139fa5402c27ebc3f6455a785",
-            "size": 590437,
+            "sha256": "ba1065c8d221cfb6958e26bd72bdc15bee3ca932d3c8d97b1adb27d75823e64a",
+            "size": 586845,
             "required": true,
             "side": "both"
           },
@@ -441,8 +576,8 @@
             "assetName": "echolens-1.0.0-neoforge.jar",
             "artifactName": "echolens-1.0.0-neoforge.jar",
             "path": "mods/echolens-1.0.0-neoforge.jar",
-            "sha256": "8eef6b58aa978085a5e706d20b634b848b362c8cd9383060652207bb2b9d5cd7",
-            "size": 219138,
+            "sha256": "b15d08bdb0946d80b8b7ec23e3303e4eb64744f4240971034f5f9b50cfaeae05",
+            "size": 215026,
             "required": true,
             "side": "both"
           },
@@ -454,8 +589,8 @@
             "assetName": "echoholomap-1.0.0-neoforge.jar",
             "artifactName": "echoholomap-1.0.0-neoforge.jar",
             "path": "mods/echoholomap-1.0.0-neoforge.jar",
-            "sha256": "ec288047f70ca59f3a74cfbfdbd044e3bf16ae53f4b87ea642e35a8226c81217",
-            "size": 1500613,
+            "sha256": "29b3eac33844f6032c71d9595597e03cdd0609cfc86a36fd6f0f06f9dd8f0875",
+            "size": 1496517,
             "required": true,
             "side": "both"
           },
@@ -467,8 +602,8 @@
             "assetName": "echomissioncore-1.0.0-neoforge.jar",
             "artifactName": "echomissioncore-1.0.0-neoforge.jar",
             "path": "mods/echomissioncore-1.0.0-neoforge.jar",
-            "sha256": "116592c905439963cc15aac1695c2edba9a065913ef777cd0aff331d81a54e66",
-            "size": 103331,
+            "sha256": "634fa211937bf31aa803e3e03dbd9c164432996be77a76f13be5dd79e2cbe292",
+            "size": 101943,
             "required": true,
             "side": "both"
           },
@@ -480,8 +615,8 @@
             "assetName": "echopowergrid-1.0.0-neoforge.jar",
             "artifactName": "echopowergrid-1.0.0-neoforge.jar",
             "path": "mods/echopowergrid-1.0.0-neoforge.jar",
-            "sha256": "288b2e234873de55c77b659aab40e955ef017bf5a01c6af1f095c16f23872a67",
-            "size": 7192307,
+            "sha256": "bef06423a62d3976283d9a4ece3032bf85e5cd435e09b331d780c8d47e8fe8dd",
+            "size": 7185421,
             "required": true,
             "side": "both"
           },
@@ -493,8 +628,8 @@
             "assetName": "echologisticsnetwork-1.0.0-neoforge.jar",
             "artifactName": "echologisticsnetwork-1.0.0-neoforge.jar",
             "path": "mods/echologisticsnetwork-1.0.0-neoforge.jar",
-            "sha256": "8a894f476d9d9d98adc45e8cb980288bfb5ac20ef61f9f1f65280d419b699553",
-            "size": 3681703,
+            "sha256": "55ad8619f5c8302b333cb35805fed88ea172e0d3e75a22e8a5572d9205ad1f3f",
+            "size": 3672994,
             "required": true,
             "side": "both"
           },
@@ -506,8 +641,8 @@
             "assetName": "echoprogressioncore-1.0.0-neoforge.jar",
             "artifactName": "echoprogressioncore-1.0.0-neoforge.jar",
             "path": "mods/echoprogressioncore-1.0.0-neoforge.jar",
-            "sha256": "52a97d2b9afe7add670a842aa7de3b5b0af3788016264f4bb048a67ab3e50807",
-            "size": 47449,
+            "sha256": "e2af9a672fac66c86482e052b0b7fb1f467ffd1d1bb762b839a7f50401a1649f",
+            "size": 46382,
             "required": true,
             "side": "both"
           },
@@ -519,8 +654,8 @@
             "assetName": "echosoundcore-1.0.0-neoforge.jar",
             "artifactName": "echosoundcore-1.0.0-neoforge.jar",
             "path": "mods/echosoundcore-1.0.0-neoforge.jar",
-            "sha256": "f2a9cd46fb22bf7430feaabcf39731d459b68f1f9c1239c65557aebdf745c02b",
-            "size": 11088545,
+            "sha256": "dfe8b283d9d773dd3e1df2ed2bcec202ab4781f92a9d777fa2b61f2b1a555369",
+            "size": 11079843,
             "required": true,
             "side": "both"
           },
@@ -532,8 +667,8 @@
             "assetName": "echogalacticcore-0.1.0-native-alpha-neoforge.jar",
             "artifactName": "echogalacticcore-0.1.0-native-alpha-neoforge.jar",
             "path": "mods/echogalacticcore-0.1.0-native-alpha-neoforge.jar",
-            "sha256": "e3de2fe802575bfb9146ed080a442ee3c5f2ccc563649ae1b6752f7be2f1a292",
-            "size": 12098024,
+            "sha256": "b61e45fc2c874f97540048005adc101e0aac9647bde4c3d23d97f386ac7cf876",
+            "size": 12074857,
             "required": true,
             "side": "both"
           },
@@ -545,8 +680,8 @@
             "assetName": "echoorbitalremnants-1.0.0-neoforge.jar",
             "artifactName": "echoorbitalremnants-1.0.0-neoforge.jar",
             "path": "mods/echoorbitalremnants-1.0.0-neoforge.jar",
-            "sha256": "f850c7c58dc321eaa0d94f17e51cb05a3a548020ec64075af65d86eea825feb8",
-            "size": 14493320,
+            "sha256": "f2ab501fa7e20c8fcb54f45b05d6d6b5a52e38f158fba58309724dce70b55328",
+            "size": 14483862,
             "required": true,
             "side": "both"
           },
@@ -558,8 +693,8 @@
             "assetName": "echovehiclecore-1.0.0-neoforge.jar",
             "artifactName": "echovehiclecore-1.0.0-neoforge.jar",
             "path": "mods/echovehiclecore-1.0.0-neoforge.jar",
-            "sha256": "02c845a3bdc1dee5ed9a9f38690348d8f3c5aa466b6060dc70399e880715280c",
-            "size": 22797,
+            "sha256": "a0084082c4ece2f4d8f03b4e434b6261e3b48d2ed51e59435b8ccba3df5f81ec",
+            "size": 21791,
             "required": true,
             "side": "both"
           },
@@ -571,15 +706,15 @@
             "assetName": "echogalacticsurveyprotocol-0.1.0-neoforge.jar",
             "artifactName": "echogalacticsurveyprotocol-0.1.0-neoforge.jar",
             "path": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
-            "sha256": "12593328c900e3233d87e9463e952b30db3551d88b12abef0cd808438f9d340c",
-            "size": 126670,
+            "sha256": "e3976a70fba477a5b2ff7a76b08060e0ad9c35de02bf1b6c50e158e08720a480",
+            "size": 123135,
             "required": true,
             "side": "both"
           }
         ],
         "zip": {
           "name": "galactic-survey-neoforge-edition-0.1.0.zip",
-          "manifestFiles": 18,
+          "manifestFiles": 23,
           "validated": true
         }
       },
@@ -592,27 +727,27 @@
           {
             "name": "checksums.txt",
             "size": 423,
-            "sha256": "252805f303f88977b9b9094a91e1a31f794cb1d18a0f303ec89859b34cedb6df"
+            "sha256": "cd716d32b8d8ce4bcf498d64968cb938955be390310c8594e47e51bbbd86f5a4"
           },
           {
             "name": "echo-release.json",
-            "size": 6415,
-            "sha256": "d5aafd7c8175c21cbeb5e629e15b3d61cf2caa480b88d02d04acd8c4ac56bf35"
+            "size": 7704,
+            "sha256": "3900e02156faa12723dc6995afcab2b999ea7020c8f823e2d1eb69ca63e99015"
           },
           {
             "name": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
-            "size": 15819,
-            "sha256": "f617662f51cc0991dcd55164cf1f14f254b3fb966c7401b5b44f3c23df2bd721"
+            "size": 19917,
+            "sha256": "fc40b46032327b9bea45c22c880d4d150184bc7f57c107b8cd5070509e7ba972"
           },
           {
             "name": "galactic-survey-standalone-edition-0.1.0.zip",
-            "size": 75783878,
-            "sha256": "de9da8dece0791c7c8e7a8ce9ebb02069bdf4a23cf85bbb125367636bf47e8e9"
+            "size": 75859332,
+            "sha256": "aebebf406b085ed0e83814c7c8a9c9f66cb9a8c19dec17f0e9ece307b6f52ee4"
           },
           {
             "name": "galactic-survey-pack-build-report.json",
-            "size": 9415,
-            "sha256": "9291ffe7480c47929827e0a062681efa43b291920764b9a0b66942a847dbb2b6"
+            "size": 11800,
+            "sha256": "bc398438da7c9c8f4a045993fc9e7c38f81d8b59d3df5940f6d44c635107462d"
           }
         ],
         "modules": [
@@ -624,8 +759,73 @@
             "assetName": "echocore-1.0.0-standalone.jar",
             "artifactName": "echocore-1.0.0-standalone.jar",
             "path": "mods/echocore-1.0.0-standalone.jar",
-            "sha256": "56474273ccd8fd2e8f4f37e8410abe02823efb9031f791c6fff7956acda06d1d",
-            "size": 372263,
+            "sha256": "54d1a4403939292092afe1957e58588ebef9878445538ad4e4b96383009dcd17",
+            "size": 366703,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echoplatformcore",
+            "moduleId": "echoplatformcore",
+            "version": "1.0.0",
+            "artifactFamily": "standalone",
+            "assetName": "echoplatformcore-1.0.0-standalone.jar",
+            "artifactName": "echoplatformcore-1.0.0-standalone.jar",
+            "path": "mods/echoplatformcore-1.0.0-standalone.jar",
+            "sha256": "bb6c740f0fb801dcc5cd44a5b408434c5885ead7c38876a295737ee34f7a4d55",
+            "size": 46626,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echoschemacore",
+            "moduleId": "echoschemacore",
+            "version": "1.0.0",
+            "artifactFamily": "standalone",
+            "assetName": "echoschemacore-1.0.0-standalone.jar",
+            "artifactName": "echoschemacore-1.0.0-standalone.jar",
+            "path": "mods/echoschemacore-1.0.0-standalone.jar",
+            "sha256": "c97e4f55244264516c71a4da94926f6d52851e98b2fb10980d84478142165ac2",
+            "size": 30695,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echovalidationcore",
+            "moduleId": "echovalidationcore",
+            "version": "1.0.0",
+            "artifactFamily": "standalone",
+            "assetName": "echovalidationcore-1.0.0-standalone.jar",
+            "artifactName": "echovalidationcore-1.0.0-standalone.jar",
+            "path": "mods/echovalidationcore-1.0.0-standalone.jar",
+            "sha256": "8ca39b304b5b6701eb404132344496c082c6c6c041a17e3d4671b94f7148f37b",
+            "size": 41988,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echocontentcore",
+            "moduleId": "echocontentcore",
+            "version": "1.0.0",
+            "artifactFamily": "standalone",
+            "assetName": "echocontentcore-1.0.0-standalone.jar",
+            "artifactName": "echocontentcore-1.0.0-standalone.jar",
+            "path": "mods/echocontentcore-1.0.0-standalone.jar",
+            "sha256": "7d321737ea09e6665a01d3d67797d2389c826b7db524ca3d02b213adc6499896",
+            "size": 33258,
+            "required": true,
+            "side": "both"
+          },
+          {
+            "id": "echorecipecore",
+            "moduleId": "echorecipecore",
+            "version": "1.0.0",
+            "artifactFamily": "standalone",
+            "assetName": "echorecipecore-1.0.0-standalone.jar",
+            "artifactName": "echorecipecore-1.0.0-standalone.jar",
+            "path": "mods/echorecipecore-1.0.0-standalone.jar",
+            "sha256": "cb70cb8605bb5d4394e89f196011aeba285fa7b05a92f9981b24f890c23714cd",
+            "size": 37905,
             "required": true,
             "side": "both"
           },
@@ -637,8 +837,8 @@
             "assetName": "echoaddonapi-0.1.0-standalone.jar",
             "artifactName": "echoaddonapi-0.1.0-standalone.jar",
             "path": "mods/echoaddonapi-0.1.0-standalone.jar",
-            "sha256": "bde30faea3bc83284b5bdabd12d599cd3a53dec0156def19bb175fa1704f8d05",
-            "size": 62282,
+            "sha256": "8f6991dc616c5650e8c0c654b05c07b26cd857895059ddaf90a287a93f358b6e",
+            "size": 59957,
             "required": true,
             "side": "both"
           },
@@ -650,8 +850,8 @@
             "assetName": "echoadaptercore-1.0.0-standalone.jar",
             "artifactName": "echoadaptercore-1.0.0-standalone.jar",
             "path": "mods/echoadaptercore-1.0.0-standalone.jar",
-            "sha256": "5813c51e5fcca98b3547a4ee521fa8d9d5d0fe9b1a425bf38ee2cfb8d5a19b86",
-            "size": 948483,
+            "sha256": "d053270b9fde16906689b71e25a16d2612073807f772d55648b4eb0b4f51be22",
+            "size": 944417,
             "required": true,
             "side": "both"
           },
@@ -663,8 +863,8 @@
             "assetName": "echonetcore-1.0.0-standalone.jar",
             "artifactName": "echonetcore-1.0.0-standalone.jar",
             "path": "mods/echonetcore-1.0.0-standalone.jar",
-            "sha256": "bd155183464462d6af40f4b810cc8c68aa8c09eed37c9a01332d54de5ac30bea",
-            "size": 70690,
+            "sha256": "90b8dd689a30e70b6a6038d4e3e38605d37e4c64d1a58128752afee493353a60",
+            "size": 68877,
             "required": true,
             "side": "both"
           },
@@ -676,8 +876,8 @@
             "assetName": "echoruntimeguard-1.0.0-standalone.jar",
             "artifactName": "echoruntimeguard-1.0.0-standalone.jar",
             "path": "mods/echoruntimeguard-1.0.0-standalone.jar",
-            "sha256": "0ac4d9b8c71ef9ade344297303b3a52b1480c2d0d8c8c682879482b9840ccc35",
-            "size": 129581,
+            "sha256": "e451d13e3d24afacd45426001387df8c501764fe55a943c0062223c2fce21ec2",
+            "size": 127439,
             "required": true,
             "side": "both"
           },
@@ -689,8 +889,8 @@
             "assetName": "echoterminal-1.0.0-standalone.jar",
             "artifactName": "echoterminal-1.0.0-standalone.jar",
             "path": "mods/echoterminal-1.0.0-standalone.jar",
-            "sha256": "e64ea9d7cdeefd19d32c6399d856aeec37f4810b97b866b9a6e8d3071c4233ab",
-            "size": 23014857,
+            "sha256": "d1764ba42aafae7d8273029a5edebf444b8d5a4e09115ea8843af4d859e56bd0",
+            "size": 22985980,
             "required": true,
             "side": "both"
           },
@@ -702,8 +902,8 @@
             "assetName": "echoindex-1.0.0-standalone.jar",
             "artifactName": "echoindex-1.0.0-standalone.jar",
             "path": "mods/echoindex-1.0.0-standalone.jar",
-            "sha256": "8cbb3a46a34d3ee3e74e8872927c3eb5cd32697139fa5402c27ebc3f6455a785",
-            "size": 590437,
+            "sha256": "2cd71b77d94fe02e77a1362cdef2a1c3d74d5d2602743d0927e8cfed6488a407",
+            "size": 586845,
             "required": true,
             "side": "both"
           },
@@ -715,8 +915,8 @@
             "assetName": "echolens-1.0.0-standalone.jar",
             "artifactName": "echolens-1.0.0-standalone.jar",
             "path": "mods/echolens-1.0.0-standalone.jar",
-            "sha256": "8eef6b58aa978085a5e706d20b634b848b362c8cd9383060652207bb2b9d5cd7",
-            "size": 219138,
+            "sha256": "c39b79921f32674f5803d8c19abf58a5673af5369f2a66dde67116261a0ff6c2",
+            "size": 215073,
             "required": true,
             "side": "both"
           },
@@ -728,8 +928,8 @@
             "assetName": "echoholomap-1.0.0-standalone.jar",
             "artifactName": "echoholomap-1.0.0-standalone.jar",
             "path": "mods/echoholomap-1.0.0-standalone.jar",
-            "sha256": "ec288047f70ca59f3a74cfbfdbd044e3bf16ae53f4b87ea642e35a8226c81217",
-            "size": 1500613,
+            "sha256": "d86e613efe41ffda2e18d185769c411a2335b219c715a8abe6c274074240ea32",
+            "size": 1496522,
             "required": true,
             "side": "both"
           },
@@ -741,8 +941,8 @@
             "assetName": "echomissioncore-1.0.0-standalone.jar",
             "artifactName": "echomissioncore-1.0.0-standalone.jar",
             "path": "mods/echomissioncore-1.0.0-standalone.jar",
-            "sha256": "116592c905439963cc15aac1695c2edba9a065913ef777cd0aff331d81a54e66",
-            "size": 103331,
+            "sha256": "9aa28b6eb335286912a85e42b488ed5e4e45dc7a2a28eee31bcda283e37244a9",
+            "size": 101947,
             "required": true,
             "side": "both"
           },
@@ -754,8 +954,8 @@
             "assetName": "echopowergrid-1.0.0-standalone.jar",
             "artifactName": "echopowergrid-1.0.0-standalone.jar",
             "path": "mods/echopowergrid-1.0.0-standalone.jar",
-            "sha256": "288b2e234873de55c77b659aab40e955ef017bf5a01c6af1f095c16f23872a67",
-            "size": 7192307,
+            "sha256": "ba609821f52f7eb4ddd1932b75cc7fe8de024caaad52b2054e8921b5f9efb76d",
+            "size": 7185421,
             "required": true,
             "side": "both"
           },
@@ -767,8 +967,8 @@
             "assetName": "echologisticsnetwork-1.0.0-standalone.jar",
             "artifactName": "echologisticsnetwork-1.0.0-standalone.jar",
             "path": "mods/echologisticsnetwork-1.0.0-standalone.jar",
-            "sha256": "8a894f476d9d9d98adc45e8cb980288bfb5ac20ef61f9f1f65280d419b699553",
-            "size": 3681703,
+            "sha256": "55ad8619f5c8302b333cb35805fed88ea172e0d3e75a22e8a5572d9205ad1f3f",
+            "size": 3672994,
             "required": true,
             "side": "both"
           },
@@ -780,8 +980,8 @@
             "assetName": "echoprogressioncore-1.0.0-standalone.jar",
             "artifactName": "echoprogressioncore-1.0.0-standalone.jar",
             "path": "mods/echoprogressioncore-1.0.0-standalone.jar",
-            "sha256": "52a97d2b9afe7add670a842aa7de3b5b0af3788016264f4bb048a67ab3e50807",
-            "size": 47449,
+            "sha256": "ebd4fc1928d929fe0aabfd0ab62595af8352c9850e19fb8796e6c355d89f9c4d",
+            "size": 46378,
             "required": true,
             "side": "both"
           },
@@ -793,8 +993,8 @@
             "assetName": "echosoundcore-1.0.0-standalone.jar",
             "artifactName": "echosoundcore-1.0.0-standalone.jar",
             "path": "mods/echosoundcore-1.0.0-standalone.jar",
-            "sha256": "f2a9cd46fb22bf7430feaabcf39731d459b68f1f9c1239c65557aebdf745c02b",
-            "size": 11088545,
+            "sha256": "4fcb3830da6c99e1939b6d116c9533c6d508757a4e613c2ada0925974b3815e2",
+            "size": 11079841,
             "required": true,
             "side": "both"
           },
@@ -806,8 +1006,8 @@
             "assetName": "echogalacticcore-0.1.0-native-alpha-standalone.jar",
             "artifactName": "echogalacticcore-0.1.0-native-alpha-standalone.jar",
             "path": "mods/echogalacticcore-0.1.0-native-alpha-standalone.jar",
-            "sha256": "e3de2fe802575bfb9146ed080a442ee3c5f2ccc563649ae1b6752f7be2f1a292",
-            "size": 12098024,
+            "sha256": "c575ea87153d7d20dd7eef7d703e7a9dbaef0d9250ba69ddf7e097bb0de0f698",
+            "size": 12074858,
             "required": true,
             "side": "both"
           },
@@ -819,8 +1019,8 @@
             "assetName": "echoorbitalremnants-1.0.0-standalone.jar",
             "artifactName": "echoorbitalremnants-1.0.0-standalone.jar",
             "path": "mods/echoorbitalremnants-1.0.0-standalone.jar",
-            "sha256": "f850c7c58dc321eaa0d94f17e51cb05a3a548020ec64075af65d86eea825feb8",
-            "size": 14493320,
+            "sha256": "4d0ed75ead5e57a6cc89a4833328c0162f6b8487ff22664d51d42342194d41ca",
+            "size": 14483849,
             "required": true,
             "side": "both"
           },
@@ -832,8 +1032,8 @@
             "assetName": "echovehiclecore-1.0.0-standalone.jar",
             "artifactName": "echovehiclecore-1.0.0-standalone.jar",
             "path": "mods/echovehiclecore-1.0.0-standalone.jar",
-            "sha256": "02c845a3bdc1dee5ed9a9f38690348d8f3c5aa466b6060dc70399e880715280c",
-            "size": 22797,
+            "sha256": "141125c054aa3a6e2e536882862489bfe79a5f834ab12d6f4102391d279a21df",
+            "size": 21788,
             "required": true,
             "side": "both"
           },
@@ -845,15 +1045,15 @@
             "assetName": "echogalacticsurveyprotocol-0.1.0-standalone.jar",
             "artifactName": "echogalacticsurveyprotocol-0.1.0-standalone.jar",
             "path": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
-            "sha256": "12593328c900e3233d87e9463e952b30db3551d88b12abef0cd808438f9d340c",
-            "size": 126670,
+            "sha256": "bc86c62b9a9e94e75623a6e7a63ed9174b4d53b53ef532986c10e0b4dfd8d611",
+            "size": 123149,
             "required": true,
             "side": "both"
           }
         ],
         "zip": {
           "name": "galactic-survey-standalone-edition-0.1.0.zip",
-          "manifestFiles": 18,
+          "manifestFiles": 23,
           "validated": true
         }
       }

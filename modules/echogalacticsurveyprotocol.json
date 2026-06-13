@@ -1,0 +1,77 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echogalacticsurveyprotocol",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echogalacticsurveyprotocol-0.1.0-neoforge.jar",
+      "sha256": "e1f8b1c9a519c0e68586fc139c8302f8ef5b4e08f6f0dd5e946debbd18872239",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
+      "size": 123135,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echogalacticsurveyprotocol-0.1.0-standalone.jar",
+      "sha256": "74f0fb59b8cb95cf4264eec5f49d0a46bbe534a560689323d07fd1fc658e3881",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echogalacticsurveyprotocol-0.1.0-standalone.jar",
+      "size": 123149,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "sha256": "dbed2abc9c826aa4951367f193ba7ce5ad517e49edb5cbec707c6304e1721168",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "size": 113152,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echogalacticsurveyprotocol-0.1.0-sources.jar",
+      "sha256": "67d972497f921dc856b89c53198b2795a6b353473e044385da89c84eed5bea1e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echogalacticsurveyprotocol-0.1.0-sources.jar",
+      "size": 48361
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoruntimeguard",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

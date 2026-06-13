@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echopowergrid",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echopowergrid-1.0.0-neoforge.jar",
+      "sha256": "c4f695384417a0adaf226cd6d58e6604e533625c959521ce77ba0727de8aa820",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0-neoforge.jar",
+      "size": 7184851,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echopowergrid-1.0.0-standalone.jar",
+      "sha256": "c4f695384417a0adaf226cd6d58e6604e533625c959521ce77ba0727de8aa820",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0-standalone.jar",
+      "size": 7184851,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echopowergrid-1.0.0.echo-addon",
+      "sha256": "d65c27f00be21c25c8f539095262c304ad2cf9e586536be097ddf8a2e86ab993",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0.echo-addon",
+      "size": 7142503,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echopowergrid-1.0.0-sources.jar",
+      "sha256": "6fd94380cf81d8a2166baeeb957f3811b87e2885d3508a495992efce40f8da52",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0-sources.jar",
+      "size": 7055955
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

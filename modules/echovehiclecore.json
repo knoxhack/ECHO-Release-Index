@@ -1,0 +1,85 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echovehiclecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echovehiclecore-1.0.0-neoforge.jar",
+      "sha256": "8cf293619c334ef21425832a452167989817420887571ab27762eafe632aa669",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echovehiclecore-1.0.0-neoforge.jar",
+      "size": 21766,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echovehiclecore-1.0.0-standalone.jar",
+      "sha256": "7b9a3d912c95d0e1d404cc284003ecf9f36ca52c703c38c92a87bb1794181ab9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echovehiclecore-1.0.0-standalone.jar",
+      "size": 21774,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echovehiclecore-1.0.0.echo-addon",
+      "sha256": "c2a994f2a80e7d3ffa54bbc6daf63f25d2a2961caf9a6acf836ff0a585cd5aa3",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echovehiclecore-1.0.0.echo-addon",
+      "size": 22766,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echovehiclecore-1.0.0-sources.jar",
+      "sha256": "4b67202d41a7cbe61d03038f3e9337169510369375b6dcd97e502e1b37156315",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echovehiclecore-1.0.0-sources.jar",
+      "size": 12038
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

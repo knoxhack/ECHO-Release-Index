@@ -57,6 +57,7 @@ const extraArgs = new Map([
     args.only ??= new Set()
     next().split(',').map((item) => item.trim().toLowerCase()).filter(Boolean).forEach((item) => args.only.add(item))
   }],
+  ['--allow-public-prerelease', (args) => { args.allowPublicPrerelease = true }],
   ['--clean', (args) => { args.clean = true }],
 ])
 
@@ -74,6 +75,8 @@ Options:
   --token-env <name>       Read token from a specific env var.
   --only <edition[,repo]>  Limit to native, neoforge, standalone, or repo names.
   --out <path>             Evidence JSON path. Default: ${DEFAULT_OUT}.
+  --allow-public-prerelease
+                          Download an already-public prerelease instead of requiring draft=true.
   --clean                  Remove the download root before writing. Only allowed under repo tmp/.
   --help                   Print this help text.
 `
@@ -199,7 +202,7 @@ function validateAssetSet(edition, assets) {
 async function downloadEdition({ args, edition, authToken, owner }) {
   const release = await findRelease(owner, edition, authToken)
   requireTrue(release.tag_name === edition.releaseTag, `${edition.repoName} release tag expected ${edition.releaseTag}, found ${release.tag_name ?? '(missing)'}.`)
-  requireTrue(release.draft === true, `${edition.repoName}@${edition.releaseTag} must be a GitHub draft before draft-download smoke; found draft=${Boolean(release.draft)}.`)
+  requireTrue(release.draft === true || args.allowPublicPrerelease, `${edition.repoName}@${edition.releaseTag} must be a GitHub draft before draft-download smoke unless --allow-public-prerelease is supplied; found draft=${Boolean(release.draft)}.`)
   requireTrue(release.prerelease === true, `${edition.repoName}@${edition.releaseTag} must remain a prerelease.`)
 
   const assets = await listAssets(release, authToken)
@@ -298,7 +301,8 @@ async function download(args) {
     status: 'PASS',
     summary: {
       downloadedFromGitHubRelease: true,
-      draftReleasesDownloaded: true,
+      draftReleasesDownloaded: editions.every((edition) => edition.release.draft === true),
+      publicPrereleasesDownloaded: editions.every((edition) => edition.release.draft === false && edition.release.prerelease === true),
       downloadedEditionCount: editions.length,
       downloadedAssetCount,
       totalBytes,
@@ -318,6 +322,7 @@ function failedReport(args, message) {
     summary: {
       downloadedFromGitHubRelease: false,
       draftReleasesDownloaded: false,
+      publicPrereleasesDownloaded: false,
       blockingDiagnostics: 1,
       errors: [message],
     },

@@ -1,0 +1,89 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echoprogressioncore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoprogressioncore-1.0.0-neoforge.jar",
+      "sha256": "54e29224ba761e4af6c5f2f939140df7876fab8b5b6fdad5d08d828e92033b3c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoprogressioncore-1.0.0-neoforge.jar",
+      "size": 46358,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoprogressioncore-1.0.0-standalone.jar",
+      "sha256": "87d6c70aa0614b0a4abe66f473b09d7d8d1d85ccb928fe587e4e298410087ae8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoprogressioncore-1.0.0-standalone.jar",
+      "size": 46368,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoprogressioncore-1.0.0.echo-addon",
+      "sha256": "0ff16f45f0b120bec9e868f40382ce8b4bd1f6d118dbb808194c57c2ecd838f1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoprogressioncore-1.0.0.echo-addon",
+      "size": 46226,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoprogressioncore-1.0.0-sources.jar",
+      "sha256": "11598eea638ab9d9fcc8f6d5068e6cb298e342de750649578bba3d2816736f29",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoprogressioncore-1.0.0-sources.jar",
+      "size": 20226
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echorecipecore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

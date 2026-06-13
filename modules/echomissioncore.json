@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echomissioncore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echomissioncore-1.0.0-neoforge.jar",
+      "sha256": "f174bebc701f902f28852e05beecff640baa5dec9193ae874034d505a50f05c6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echomissioncore-1.0.0-neoforge.jar",
+      "size": 101928,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echomissioncore-1.0.0-standalone.jar",
+      "sha256": "0601284dd78bf773ea1cf93e8567beed4bfd67647398a8105e47963f6e5dfe85",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echomissioncore-1.0.0-standalone.jar",
+      "size": 101940,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echomissioncore-1.0.0.echo-addon",
+      "sha256": "a064b40e98021c518770aafe05317cb116955be8336d976d690f1138df235712",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echomissioncore-1.0.0.echo-addon",
+      "size": 101043,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echomissioncore-1.0.0-sources.jar",
+      "sha256": "8dacd49f47c8dbd7c810022fa172442a6001aac414ed02ec48670f648e15fc88",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echomissioncore-1.0.0-sources.jar",
+      "size": 39684
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

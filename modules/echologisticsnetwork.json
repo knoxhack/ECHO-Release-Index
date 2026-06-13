@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echologisticsnetwork",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echologisticsnetwork-1.0.0-neoforge.jar",
+      "sha256": "03632d2319c8676796a810d1550d64e1b0c88f836f4bf482da8f63b4775d57ac",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0-neoforge.jar",
+      "size": 3672634,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echologisticsnetwork-1.0.0-standalone.jar",
+      "sha256": "03632d2319c8676796a810d1550d64e1b0c88f836f4bf482da8f63b4775d57ac",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0-standalone.jar",
+      "size": 3672634,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echologisticsnetwork-1.0.0.echo-addon",
+      "sha256": "c112dcb97bc37ead9ccbe99a4ebe67e0c64e12a8f184eb82c8bc58164359b6cb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0.echo-addon",
+      "size": 3640459,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echologisticsnetwork-1.0.0-sources.jar",
+      "sha256": "dd7f07df72d6d37c770187b5f8bac979093a979bec8cd5ba0f98aa527cd60628",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0-sources.jar",
+      "size": 3536758
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echosoundcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echosoundcore-1.0.0-neoforge.jar",
+      "sha256": "07469240acac038e5bb2ade03dce7a5f82c22d242ac7ecbce5844d6c924e7607",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echosoundcore-1.0.0-neoforge.jar",
+      "size": 11079763,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echosoundcore-1.0.0-standalone.jar",
+      "sha256": "c64abcf7883b156648a4e2697385237eedb2ca74f6f300759c7dee46a4b6b16c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echosoundcore-1.0.0-standalone.jar",
+      "size": 11079771,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echosoundcore-1.0.0.echo-addon",
+      "sha256": "18ea3be56bd1f69f39f25142758c7289cece40b7ed2627451b4c5b30b4f3ce53",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echosoundcore-1.0.0.echo-addon",
+      "size": 11080621,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echosoundcore-1.0.0-sources.jar",
+      "sha256": "e4540ff1810c6345746f52dacfc6f20d0d94d465fac57f44b6105ada8c88d14f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echosoundcore-1.0.0-sources.jar",
+      "size": 11026579
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

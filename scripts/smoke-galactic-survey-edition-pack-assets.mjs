@@ -162,8 +162,10 @@ async function verifyDraftDownloadEvidence(args) {
   if (evidence.summary?.downloadedAssetCount !== 15) throw new Error('Draft download evidence must cover all 15 Galactic Survey assets')
   const byRepo = new Map()
   for (const edition of evidence.data?.editions ?? []) {
-    if (edition.release?.draft !== true) throw new Error(`${edition.repoName} draft download evidence must be draft=true`)
     if (edition.release?.prerelease !== true) throw new Error(`${edition.repoName} draft download evidence must be prerelease=true`)
+    if (edition.release?.draft !== true && evidence.summary?.publicPrereleasesDownloaded !== true) {
+      throw new Error(`${edition.repoName} download evidence must be draft=true unless publicPrereleasesDownloaded=true`)
+    }
     for (const asset of edition.downloadedAssets ?? []) {
       const target = path.resolve(args.root, asset.localPath)
       const actualSha = await sha256File(target)
@@ -433,8 +435,12 @@ async function smokeEdition(args, repoName, draftDownload) {
     releaseTag: draftEdition?.releaseTag ?? RELEASES[repoName].releaseTag,
     releaseUrl: draftEdition?.release?.htmlUrl ?? RELEASES[repoName].releaseUrl,
     publicPrerelease: draftEdition ? Boolean(draftEdition.release?.prerelease) : false,
-    artifactSource: draftEdition ? 'github-draft-release-download' : 'local-release-candidate',
-    githubDraftReleaseDownload: Boolean(draftEdition),
+    artifactSource: draftEdition
+      ? (draftEdition.release?.draft === true ? 'github-draft-release-download' : 'github-public-prerelease-download')
+      : 'local-release-candidate',
+    githubReleaseDownloadBack: Boolean(draftEdition),
+    githubDraftReleaseDownload: Boolean(draftEdition && draftEdition.release?.draft === true),
+    githubPublicPrereleaseDownload: Boolean(draftEdition && draftEdition.release?.draft === false && draftEdition.release?.prerelease === true),
     releaseMetadataDraft: draftEdition?.release?.draft ?? null,
     releaseMetadataPrerelease: draftEdition?.release?.prerelease ?? null,
     localReleaseCandidate: Boolean(release.localReleaseCandidate),
@@ -484,7 +490,11 @@ async function main() {
   const draftDownload = await verifyDraftDownloadEvidence(args)
   const editions = []
   for (const repoName of EDITIONS) editions.push(await smokeEdition(args, repoName, draftDownload))
-  const artifactSource = draftDownload.downloaded ? 'github-draft-release-download' : 'local-release-candidate'
+  const artifactSource = draftDownload.downloaded
+    ? (draftDownload.summary?.publicPrereleasesDownloaded ? 'github-public-prerelease-download' : 'github-draft-release-download')
+    : 'local-release-candidate'
+  const draftReleaseDownloaded = draftDownload.downloaded && draftDownload.summary?.draftReleasesDownloaded === true
+  const publicPrereleaseDownloaded = draftDownload.downloaded && draftDownload.summary?.publicPrereleasesDownloaded === true
   const report = {
     schemaVersion: 'echo.galactic_survey.edition-pack-smoke.v1',
     ok: true,
@@ -496,12 +506,15 @@ async function main() {
       path: draftDownload.path,
       downloadedEditionCount: draftDownload.summary.downloadedEditionCount,
       downloadedAssetCount: draftDownload.summary.downloadedAssetCount,
+      draftReleasesDownloaded: draftDownload.summary.draftReleasesDownloaded,
+      publicPrereleasesDownloaded: draftDownload.summary.publicPrereleasesDownloaded,
       totalBytes: draftDownload.summary.totalBytes,
     } : null,
     editions,
     gates: {
       stagedReleaseAssetsVerified: 'passed',
-      githubDraftDownloadBack: draftDownload.downloaded ? 'passed' : 'not_started',
+      githubDraftDownloadBack: draftReleaseDownloaded ? 'passed' : 'not_started',
+      githubReleaseDownloadBack: draftDownload.downloaded ? 'passed' : 'not_started',
       installedFromDownloadedArtifacts: draftDownload.downloaded ? 'passed' : 'not_started',
       installFromPackZip: 'passed',
       versionTransitionUpdate: 'passed',
@@ -513,9 +526,11 @@ async function main() {
     blockers: [],
     residualRisks: [
       'The previous Galactic Survey version is a fixture-local manifest generated from current staged assets plus an older module placeholder; it proves pack update mechanics without claiming a second public release exists.',
-      draftDownload.downloaded
-        ? 'This smoke uses downloaded GitHub draft release assets, but not yet a promoted public release.'
-        : 'This smoke uses local release-candidate assets, not downloaded GitHub Release assets.',
+      publicPrereleaseDownloaded
+        ? 'This smoke uses downloaded public prerelease GitHub assets; real gameplay evidence is still required before release-ready promotion.'
+        : draftReleaseDownloaded
+          ? 'This smoke uses downloaded GitHub draft release assets; promotion still requires the release publish step.'
+          : 'This smoke uses local release-candidate assets, not downloaded GitHub Release assets.',
       'Real gameplay evidence is still required before public alpha promotion.',
     ],
   }

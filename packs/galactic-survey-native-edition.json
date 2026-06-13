@@ -6,7 +6,7 @@
   "loader": "echo-native-loader",
   "publicDownloadHub": "official-echo-website",
   "sourceRevision": "f538fb0bd866cfb619c0d7dc1740e830b9e8638b",
-  "moduleSourceRevision": "26b75495425297e3e28299645f7e87c907463428",
+  "moduleSourceRevision": "c02de90643e0958f543e2cefadfa897140f2b045",
   "sourceRepos": {
     "pack": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
     "nativePlatform": "https://github.com/knoxhack/ECHO-Native-Platform",
@@ -18,33 +18,42 @@
   "updatePolicy": "Use this manifest for Galactic Survey Native Edition launcher pack updates only after release-readiness evidence passes. Module entries must pin .echo-addon artifacts from ECHO-Modules.",
   "moduleRequirements": [
     { "id": "echocore", "version": ">=1.0.0" },
+    { "id": "echoplatformcore", "version": ">=1.0.0" },
+    { "id": "echoschemacore", "version": ">=1.0.0" },
+    { "id": "echovalidationcore", "version": ">=1.0.0" },
+    { "id": "echocontentcore", "version": ">=1.0.0" },
+    { "id": "echorecipecore", "version": ">=1.0.0" },
     { "id": "echoaddonapi", "version": ">=0.1.0" },
-    { "id": "echonetcore", "version": ">=1.0.0" },
     { "id": "echoadaptercore", "version": ">=1.0.0" },
+    { "id": "echonetcore", "version": ">=1.0.0" },
     { "id": "echoruntimeguard", "version": ">=1.0.0" },
-    { "id": "echogalacticcore", "version": ">=1.0.0" },
-    { "id": "echoorbitalremnants", "version": ">=1.0.0" },
-    { "id": "echovehiclecore", "version": ">=1.0.0" },
-    { "id": "echoholomap", "version": ">=1.0.0" },
     { "id": "echoterminal", "version": ">=1.0.0" },
     { "id": "echoindex", "version": ">=1.0.0" },
     { "id": "echolens", "version": ">=1.0.0" },
+    { "id": "echoholomap", "version": ">=1.0.0" },
     { "id": "echomissioncore", "version": ">=1.0.0" },
     { "id": "echopowergrid", "version": ">=1.0.0" },
     { "id": "echologisticsnetwork", "version": ">=1.0.0" },
     { "id": "echoprogressioncore", "version": ">=1.0.0" },
     { "id": "echosoundcore", "version": ">=1.0.0" },
+    { "id": "echogalacticcore", "version": ">=0.1.0-native-alpha" },
+    { "id": "echoorbitalremnants", "version": ">=1.0.0" },
+    { "id": "echovehiclecore", "version": ">=1.0.0" },
     { "id": "echogalacticsurveyprotocol", "version": "0.1.0" }
   ],
   "releaseReadiness": {
     "status": "blocked",
     "blockers": [
-      "Galactic Survey protocol artifacts are not published as checksum-backed GitHub Release assets.",
-      "Native Edition pack artifacts have not been published, downloaded back, installed, repaired, updated, or rolled back through the launcher.",
+      "Launcher packaged end-to-end evidence must be refreshed against the 23-module public prerelease assets.",
       "Real first-30-minute, first-2-hour, Survey Array, save/reload, and no-crash gameplay evidence is missing."
     ],
     "evidence": [
       "ECHO-Modules/addons/echogalacticsurveyprotocol/scripts/validate-galactic-survey-contract.mjs",
+      "ECHO-Modules/dist/echo-module-release/echo-release.json",
+      "ECHO-Release-Index/release-readiness/galactic-survey-module-release-ingest.json",
+      "ECHO-Release-Index/release-readiness/galactic-survey-edition-pack-assets.json",
+      "ECHO-Release-Index/release-readiness/galactic-survey-draft-download.json",
+      "ECHO-Release-Index/release-readiness/galactic-survey-edition-pack-smoke.json",
       "ECHO-Galactic-Survey-Native-Edition/scripts/validate-galactic-survey-edition.mjs",
       "ECHO-Galactic-Survey-Native-Edition/scripts/verify-manual-gameplay-evidence.mjs"
     ]

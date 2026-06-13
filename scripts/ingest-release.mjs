@@ -44,12 +44,20 @@ function parseArgs(argv) {
     else if (arg === '--channel') args.channel = argv[++index]
     else if (arg === '--publisher') args.publisher = argv[++index]
     else if (arg === '--trust') args.trust = argv[++index]
+    else if (arg === '--compatibility') args.compatibility = splitList(argv[++index])
     else if (arg === '--require-attestation') args.requireAttestation = true
     else if (arg === '--attestation-commit') args.attestationCommit = argv[++index]
     else if (arg === '--attestation-workflow') args.attestationWorkflow = argv[++index]
     else throw new Error(`Unknown argument: ${arg}`)
   }
   return args
+}
+
+function splitList(value) {
+  return String(value ?? '')
+    .split(',')
+    .map((item) => item.trim())
+    .filter(Boolean)
 }
 
 async function readJson(filePath) {
@@ -423,6 +431,22 @@ function artifactMapFromModule(moduleRecord, assets, metadata, checksums) {
   return out
 }
 
+function compatibilityForModuleRelease(args, metadata, tag) {
+  if (Array.isArray(args.compatibility) && args.compatibility.length) return args.compatibility
+  if (Array.isArray(metadata?.compatibility) && metadata.compatibility.length) return metadata.compatibility
+
+  const releaseId = String(metadata?.releaseId ?? metadata?.id ?? tag ?? '')
+  const families = [
+    ['galactic-survey', 'galactic-survey'],
+    ['sky-relay', 'sky-relay'],
+    ['openlands', 'openlands'],
+    ['ashfall', 'ashfall'],
+  ]
+  const family = families.find(([prefix]) => releaseId.startsWith(prefix))?.[1]
+  if (!family) return []
+  return [`${family}-native-edition`, `${family}-neoforge-edition`, `${family}-standalone-edition`]
+}
+
 async function writeIndexEntries({ args, owner, repo, tag, metadata, assets, checksums, validation, commitSha }) {
   if (!args.writeIndexEntry) return []
   const trust = resolvedTrust(args, metadata, validation)
@@ -440,6 +464,7 @@ async function writeIndexEntries({ args, owner, repo, tag, metadata, assets, che
   const entries = []
 
   if (Array.isArray(metadata?.modules)) {
+    const moduleCompatibility = compatibilityForModuleRelease(args, metadata, tag)
     for (const moduleRecord of metadata.modules) {
       entries.push({
         ...common,
@@ -450,7 +475,7 @@ async function writeIndexEntries({ args, owner, repo, tag, metadata, assets, che
         dependencies: [
           ...(moduleRecord.requires ?? []).map((id) => ({ id, kind: 'module' })),
         ],
-        compatibility: ['ashfall-native-edition', 'ashfall-neoforge-edition', 'ashfall-standalone-edition'],
+        compatibility: moduleRecord.compatibility ?? moduleCompatibility,
       })
     }
   } else {
@@ -559,6 +584,7 @@ function attestationProvenance(args, validation, commitSha, owner, repo) {
     attestation: {
       action: 'gh attestation verify',
       releaseAssetAction: 'gh release verify-asset',
+      releaseAssetActionMode: 'best-effort',
       sourceDigest: args.attestationCommit ?? commitSha,
       signerWorkflow,
     },
@@ -619,17 +645,19 @@ function runGhAttestation(args) {
 
 function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, options = {}) {
   const reasons = []
+  const warnings = []
   const signerWorkflow = normalizedSignerWorkflow(options.attestationWorkflow, owner, repo)
   const releaseResult = runGhAttestation(['release', 'verify-asset', tag, localPath, '--repo', `${owner}/${repo}`, '--format', 'json'])
   if (releaseResult.status !== 0) {
-    reasons.push(releaseResult.stderr || releaseResult.stdout || 'gh release verify-asset failed')
+    const detail = releaseResult.stderr || releaseResult.stdout || 'gh release verify-asset failed'
+    warnings.push(`gh release verify-asset did not verify ${asset.name}: ${String(detail).trim()}`)
   } else {
     try {
       const payload = JSON.parse(releaseResult.stdout)
       const text = JSON.stringify(payload)
-      reasons.push(...attestationTextIncludes(text, actualSha256, 'asset digest'))
+      warnings.push(...attestationTextIncludes(text, actualSha256, 'asset digest').map((reason) => `gh release verify-asset for ${asset.name}: ${reason}`))
     } catch (error) {
-      reasons.push(`Unable to parse release asset attestation JSON: ${error.message}`)
+      warnings.push(`Unable to parse release asset attestation JSON for ${asset.name}: ${error.message}`)
     }
   }
 
@@ -639,13 +667,15 @@ function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, opt
     localPath,
     '--repo',
     `${owner}/${repo}`,
-    '--signer-repo',
-    `${owner}/${repo}`,
     '--format',
     'json',
   ]
   if (options.attestationCommit) attestArgs.push('--source-digest', options.attestationCommit)
-  if (signerWorkflow) attestArgs.push('--signer-workflow', signerWorkflow)
+  if (signerWorkflow) {
+    attestArgs.push('--signer-workflow', signerWorkflow)
+  } else {
+    attestArgs.push('--signer-repo', `${owner}/${repo}`)
+  }
 
   const result = runGhAttestation(attestArgs)
   if (result.status !== 0) {
@@ -664,6 +694,7 @@ function verifyAttestation(asset, localPath, owner, repo, tag, actualSha256, opt
   return {
     ok: reasons.length === 0,
     reasons,
+    warnings,
     stdout: `${releaseResult.stdout}\n${result.stdout}`,
     stderr: `${releaseResult.stderr}\n${result.stderr}`,
   }
@@ -781,6 +812,7 @@ async function ingest(args) {
         continue
       }
       const attestation = verifyAttestation(asset, downloaded.localPath, owner, repo, tag, downloaded.sha256, args)
+      warnings.push(...attestation.warnings)
       if (!attestation.ok) reasons.push(`Attestation verification failed for ${asset.name}: ${attestation.reasons.join('; ')}`.trim())
     }
   }

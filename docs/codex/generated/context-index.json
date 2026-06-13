@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T07:46:37-04:00",
+  "generatedAt": "2026-06-13T08:47:38-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,15 +16,34 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "24d159632b55",
-        "commitDate": "2026-06-13T07:35:04-04:00",
+        "commit": "12c05308045b",
+        "commitDate": "2026-06-13T08:17:12-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M channels/alpha/launcher-channel.json",
+          " M channels/beta/launcher-channel.json",
+          " M modpacks/galactic-survey-native.json",
+          " M modpacks/galactic-survey-neoforge.json",
+          " M modpacks/galactic-survey-standalone.json",
           " M modules/echocore.json",
+          " M packs/galactic-survey-native-edition.json",
+          " M packs/galactic-survey-neoforge-edition.json",
+          " M packs/galactic-survey-standalone-edition.json",
           " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-draft-download.json",
+          " M release-readiness/galactic-survey-edition-pack-assets.json",
+          " M release-readiness/galactic-survey-edition-pack-smoke.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M scripts/build-galactic-survey-edition-assets.mjs",
+          " M scripts/download-galactic-survey-draft-releases.mjs",
           " M scripts/ingest-release.mjs",
+          " M scripts/smoke-galactic-survey-edition-pack-assets.mjs",
+          " M scripts/test-ingest-release-local-e2e.mjs",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
           "?? modules/echoadaptercore.json",
           "?? modules/echoaddonapi.json",
+          "?? modules/echocontentcore.json",
           "?? modules/echogalacticcore.json",
           "?? modules/echogalacticsurveyprotocol.json",
           "?? modules/echoholomap.json",
@@ -34,20 +53,25 @@
           "?? modules/echomissioncore.json",
           "?? modules/echonetcore.json",
           "?? modules/echoorbitalremnants.json",
+          "?? modules/echoplatformcore.json",
           "?? modules/echopowergrid.json",
           "?? modules/echoprogressioncore.json",
+          "?? modules/echorecipecore.json",
           "?? modules/echoruntimeguard.json",
+          "?? modules/echoschemacore.json",
           "?? modules/echosoundcore.json",
           "?? modules/echoterminal.json",
+          "?? modules/echovalidationcore.json",
           "?? modules/echovehiclecore.json",
-          "?? release-readiness/galactic-survey-module-release-ingest.json"
+          "?? release-readiness/galactic-survey-module-release-ingest.json",
+          "?? scripts/sync-launcher-channel-catalog.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 16404,
+          "bytes": 17270,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -99,8 +123,8 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 13708,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-13T06:41:03.688Z"
+          "bytes": 17832,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-13T12:34:04.939Z"
         },
         {
           "path": "trust/tiers.json",
@@ -121,11 +145,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "693c9b1845f9",
-        "commitDate": "2026-06-13T07:44:10-04:00",
+        "commit": "c02de90643e0",
+        "commitDate": "2026-06-13T08:18:51-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java"
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
+          " M reports/echo/agents/agent-73-blockers.json",
+          " M reports/echo/agents/agent-73-parity.json",
+          " M reports/echo/agents/agent-73-status.json",
+          " M reports/echo/standalone/runtime-full-catalog-module-status.json",
+          " M reports/echo/standalone/runtime-required-system-module-activation.json"
         ]
       },
       "canonicalDocs": [
@@ -160,7 +189,7 @@
         {
           "path": "docs/module-artifact-contract.md",
           "exists": true,
-          "bytes": 6222,
+          "bytes": 6473,
           "heading": "ECHO Module Release Contract",
           "excerpt": "`knoxhack/ECHO-Modules` is the canonical source for module artifacts consumed by Ashfall editions."
         },
@@ -265,10 +294,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1093e5c1410a",
-        "commitDate": "2026-06-13T07:35:15-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "d1c62b4ceb5e",
+        "commitDate": "2026-06-13T08:18:06-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          "?? tmp/"
+        ]
       },
       "canonicalDocs": [
         {
@@ -292,7 +323,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 5931,
-          "summary": "package echo-launcher 1.1.1; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "summary": "package echo-launcher 1.1.2; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -382,10 +413,13 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSimulationRules.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplay.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplaySaveCodec.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientHud2D.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInventoryRuntime.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssembly.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeServices.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotService.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenController.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSelectedItemUse.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientTextureAtlas.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientWorldTemplates.java",
@@ -688,10 +722,18 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "bd1d62a71765",
-        "commitDate": "2026-06-13T07:46:37-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "1a004c703ed3",
+        "commitDate": "2026-06-13T08:47:38-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/REMAINING_WORK.md",
+          " M src/main/main.ts",
+          " M src/preload/preload.ts",
+          " M src/renderer/App.tsx",
+          " M src/renderer/styles/app.css",
+          " M src/shared/echo.ts",
+          "?? src/main/train-drafts.ts"
+        ]
       },
       "canonicalDocs": [
         {
@@ -725,7 +767,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 4050,
+          "bytes": 7365,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }

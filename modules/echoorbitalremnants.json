@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echoorbitalremnants",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoorbitalremnants-1.0.0-neoforge.jar",
+      "sha256": "8603a53a0e03d8fdaf0578449395c8a895d234fd346fd6a14f28d0b3ec8f524a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoorbitalremnants-1.0.0-neoforge.jar",
+      "size": 14481729,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoorbitalremnants-1.0.0-standalone.jar",
+      "sha256": "b43cd2908c9cedd816d1b1d4b36499f62857d9fdd6026f3cdeec0d85d798bc40",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoorbitalremnants-1.0.0-standalone.jar",
+      "size": 14481731,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoorbitalremnants-1.0.0.echo-addon",
+      "sha256": "b5a915850237f00b865f5791ec7cd1d66faba2b69e5ae9c4e820c4abbc3ba13c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoorbitalremnants-1.0.0.echo-addon",
+      "size": 14310266,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoorbitalremnants-1.0.0-sources.jar",
+      "sha256": "7b3c9bb8934b38e26546d4e4415c1526baf7bad8707a7c245a806150bbc2cd4e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoorbitalremnants-1.0.0-sources.jar",
+      "size": 14214061
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

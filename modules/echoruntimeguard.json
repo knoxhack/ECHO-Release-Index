@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echoruntimeguard",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoruntimeguard-1.0.0-neoforge.jar",
+      "sha256": "1ee1f5213f7521521d2b0aa60784f565ad2c092c07199d9075427c0efd7fe932",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoruntimeguard-1.0.0-neoforge.jar",
+      "size": 127420,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoruntimeguard-1.0.0-standalone.jar",
+      "sha256": "a63828f9cc042db4f003e3d8393e1dbf00c4dd6ffea1808e31a65b25e9378e64",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoruntimeguard-1.0.0-standalone.jar",
+      "size": 127430,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoruntimeguard-1.0.0.echo-addon",
+      "sha256": "c7f1e17056d4a464863f6b61ecefbdeef5f2eabea5c4e482767eb7a3ffd975bf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoruntimeguard-1.0.0.echo-addon",
+      "size": 121518,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoruntimeguard-1.0.0-sources.jar",
+      "sha256": "0a8df90e98e763770987edcd580e3d0c4ac13c792c352651d68d309a988bee00",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoruntimeguard-1.0.0-sources.jar",
+      "size": 53883
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

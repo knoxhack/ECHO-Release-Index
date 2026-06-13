@@ -139,6 +139,7 @@ async function writeBaseIndex(root) {
   await writeJson(root, 'trust/tiers.json', [
     { id: 'official', rank: 100, description: 'Official fixture trust.', playable: true },
     { id: 'provenance-attested', rank: 70, description: 'Attested fixture trust.', playable: true },
+    { id: 'source-linked', rank: 50, description: 'Source-linked fixture trust.', playable: true },
     { id: 'community', rank: 40, description: 'Community fixture trust.', playable: true },
     { id: 'unverified', rank: 20, description: 'Unverified fixture trust.', playable: false },
     { id: 'blocked', rank: 0, description: 'Blocked fixture trust.', playable: false },
@@ -202,6 +203,10 @@ set "joined=%*"
 echo %joined%>>"%FAKE_GH_LOG%"
 echo %joined% | findstr /C:"--repo knoxhack/ECHO-Fixture" >nul || exit /b 11
 if "%1 %2"=="release verify-asset" (
+  if "%FAKE_RELEASE_VERIFY_FAIL%"=="1" (
+    echo no attestations found for tag v1.0.0 1>&2
+    exit /b 15
+  )
   echo {"kind":"release-asset","sha256":"%FAKE_ATTESTED_SHA%","repo":"knoxhack/ECHO-Fixture"}
   exit /b 0
 )
@@ -218,6 +223,10 @@ joined="$*"
 printf '%s\\n' "$joined" >> "$FAKE_GH_LOG"
 echo "$joined" | grep -F -- "--repo knoxhack/ECHO-Fixture" >/dev/null || exit 11
 if [ "$1 $2" = "release verify-asset" ]; then
+  if [ "$FAKE_RELEASE_VERIFY_FAIL" = "1" ]; then
+    printf 'no attestations found for tag v1.0.0\n' >&2
+    exit 15
+  fi
   printf '{"kind":"release-asset","sha256":"%s","repo":"knoxhack/ECHO-Fixture"}\\n' "$FAKE_ATTESTED_SHA"
   exit 0
 fi
@@ -246,6 +255,11 @@ async function runIngestionCase({
   setupIndex,
   expectedValidation = 'approved',
   expectedReason,
+  expectedWarning,
+  releaseVerifyFails = false,
+  expectedWrittenIndexEntries = ['addons/fixture-addon.json'],
+  expectedDependencies = [{ id: 'fixture-runtime', kind: 'runtime' }],
+  expectedCompatibility = ['ashfall-native-edition'],
 }) {
   const tempRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-ingest-local-'))
   await writeBaseIndex(tempRoot)
@@ -298,6 +312,7 @@ async function runIngestionCase({
         FAKE_GH_LOG: fakeGhLog,
         ECHO_INGEST_GH_EXECUTABLE: ghExecutableOverride ?? fakeGhExecutable,
         FAKE_ATTESTED_SHA: addonSha,
+        ...(releaseVerifyFails ? { FAKE_RELEASE_VERIFY_FAIL: '1' } : {}),
         ...(attestationCommit ? { FAKE_ATTESTED_COMMIT: attestationCommit } : {}),
         ...(attestationWorkflow ? { FAKE_ATTESTED_WORKFLOW: normalizedFixtureWorkflow(attestationWorkflow) } : {}),
       } : {}),
@@ -309,7 +324,7 @@ async function runIngestionCase({
       }
       childEnv[pathKey] = `${fakeGhBin}${path.delimiter}${childEnv[pathKey] ?? ''}`
     }
-    if (requireAttestation && !ghExecutableOverride) {
+    if (requireAttestation && !ghExecutableOverride && !releaseVerifyFails) {
       const smoke = await runNode(['-e', "const { spawnSync } = require('node:child_process'); const r = spawnSync(process.env.ECHO_INGEST_GH_EXECUTABLE, ['release', 'verify-asset', 'v1.0.0', 'fixture.echo-addon', '--repo', 'knoxhack/ECHO-Fixture', '--format', 'json'], { encoding: 'utf8', shell: process.platform === 'win32' }); process.stdout.write(JSON.stringify({ status: r.status, stdout: r.stdout, stderr: r.stderr, error: r.error && r.error.message })); process.exit(r.status ?? 1)"], {
         cwd: tempRoot,
         env: childEnv,
@@ -331,17 +346,19 @@ async function runIngestionCase({
     const result = JSON.parse(await fs.readFile(resultPath, 'utf8'))
     assert.equal(result.validation, expectedValidation)
     if (expectedReason) assert(result.reasons.some((reason) => reason.includes(expectedReason)), `${name} missing reason ${expectedReason}: ${JSON.stringify(result.reasons)}`)
+    if (expectedWarning) assert(result.warnings.some((warning) => warning.includes(expectedWarning)), `${name} missing warning ${expectedWarning}: ${JSON.stringify(result.warnings)}`)
     if (expectedValidation !== 'approved') return
-    assert.deepEqual(result.writtenIndexEntries, ['addons/fixture-addon.json'])
+    assert.deepEqual(result.writtenIndexEntries, expectedWrittenIndexEntries)
 
-    const entry = JSON.parse(await fs.readFile(path.join(tempRoot, 'addons', 'fixture-addon.json'), 'utf8'))
+    const entry = JSON.parse(await fs.readFile(path.join(tempRoot, expectedWrittenIndexEntries[0]), 'utf8'))
     assert.equal(entry.artifacts.native.sha256, addonSha)
     assert.equal(entry.artifacts.native.url, 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/fixture-addon-1.0.0.echo-addon')
-    assert.deepEqual(entry.dependencies, [{ id: 'fixture-runtime', kind: 'runtime' }])
-    assert.deepEqual(entry.compatibility, ['ashfall-native-edition'])
+    assert.deepEqual(entry.dependencies, expectedDependencies)
+    assert.deepEqual(entry.compatibility, expectedCompatibility)
     if (requireAttestation) {
       assert.equal(entry.trust, 'provenance-attested')
       assert.equal(entry.provenance?.attestation?.action, 'gh attestation verify')
+      assert.equal(entry.provenance?.attestation?.releaseAssetActionMode, 'best-effort')
       assert.equal(entry.provenance?.attestation?.sourceDigest, attestationCommit)
       assert.equal(entry.provenance?.workflow, attestationWorkflow)
       assert.equal(entry.provenance?.attestation?.signerWorkflow, normalizedFixtureWorkflow(attestationWorkflow))
@@ -350,6 +367,7 @@ async function runIngestionCase({
       assert.match(log, /attestation verify/)
       assert.match(log, /--source-digest/)
       assert.match(log, /--signer-workflow/)
+      assert.doesNotMatch(log, /--signer-repo/)
     }
 
     const validation = await runNode([validatorScript, '--root', tempRoot, '--strict'])
@@ -425,11 +443,11 @@ async function main() {
       ['fixture-addon-1.0.0.echo-addon', selectedAddonBytes],
     ])
   }
-  const setModuleReleaseMetadata = (schemaVersion = 'echo.module.release.v1') => {
+  const setModuleReleaseMetadata = (schemaVersion = 'echo.module.release.v1', options = {}) => {
     const selectedChecksumsBytes = Buffer.from(`${addonSha} fixture-addon-1.0.0.echo-addon\n`)
     const moduleReleaseMetadata = {
       schemaVersion,
-      releaseId: 'modules-fixture',
+      releaseId: options.releaseId ?? 'modules-fixture',
       generatedAt: '2026-06-09T00:00:00Z',
       sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
       provenance: {
@@ -447,7 +465,7 @@ async function main() {
           moduleId: 'fixture-addon',
           version: '1.0.0',
           descriptor: { path: 'META-INF/echo.mod.json', sha256: sha256(moduleJson) },
-          requires: ['fixture-runtime'],
+          requires: options.requires ?? ['fixture-runtime'],
           optional: [],
           artifacts: [
             {
@@ -550,6 +568,17 @@ async function main() {
       attestationWorkflow: '.github/workflows/release-fixture.yml',
     })
     await runIngestionCase({
+      name: 'approved-with-byte-attestation-when-release-asset-verification-missing',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setMetadataDependencies([{ id: 'fixture-runtime', kind: 'runtime' }]),
+      requireAttestation: true,
+      attestationCommit: 'abc1234',
+      attestationWorkflow: '.github/workflows/release-fixture.yml',
+      releaseVerifyFails: true,
+      expectedWarning: 'release asset attestation JSON for fixture-addon-1.0.0.echo-addon',
+    })
+    await runIngestionCase({
       name: 'rejected-official-trust-without-attestation',
       baseUrl,
       addonSha,
@@ -607,6 +636,22 @@ async function main() {
       setMetadataDependencies: () => setModuleReleaseMetadata(1),
       expectedValidation: 'rejected',
       expectedReason: 'Module release metadata must use schemaVersion echo.module.release.v1',
+    })
+    await runIngestionCase({
+      name: 'approved-galactic-module-release-compatibility',
+      baseUrl,
+      addonSha,
+      setMetadataDependencies: () => setModuleReleaseMetadata('echo.module.release.v1', {
+        releaseId: 'galactic-survey-0.1.0-alpha',
+        requires: [],
+      }),
+      expectedWrittenIndexEntries: ['modules/fixture-addon.json'],
+      expectedDependencies: [],
+      expectedCompatibility: [
+        'galactic-survey-native-edition',
+        'galactic-survey-neoforge-edition',
+        'galactic-survey-standalone-edition',
+      ],
     })
     requireGitHubAppToken = true
     const tokenRequestsBefore = installationTokenRequests

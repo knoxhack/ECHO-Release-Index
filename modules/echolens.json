@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echolens",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echolens-1.0.0-neoforge.jar",
+      "sha256": "241dbc1f6c472b3fc654feaad97f8714fc0977e9681bb2afd8914ffbb9e0f710",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echolens-1.0.0-neoforge.jar",
+      "size": 214997,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echolens-1.0.0-standalone.jar",
+      "sha256": "11329e24beb25ab53f4c24310bc0148e8ebcaff51847d2d9dce039bda8ca2c4b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echolens-1.0.0-standalone.jar",
+      "size": 215048,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echolens-1.0.0.echo-addon",
+      "sha256": "88df77fe4ab3cb2906679b0def7cd2e43d51ed1a782bad85617a8b95c69adbcc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echolens-1.0.0.echo-addon",
+      "size": 206533,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echolens-1.0.0-sources.jar",
+      "sha256": "936fecfa38dceb72afe1425abe44d4baf3e72369eaf841f1a1f20c0b79cf22fa",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echolens-1.0.0-sources.jar",
+      "size": 87247
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echoholomap",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoholomap-1.0.0-neoforge.jar",
+      "sha256": "a7625beb8eaa7641794f89d878b4ca14b8100c81b3f3d594e0312f6a83c45176",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoholomap-1.0.0-neoforge.jar",
+      "size": 1496487,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoholomap-1.0.0-standalone.jar",
+      "sha256": "ad0a8deb5a1b1dd632e1ad066cfb4366e0f767c491cdbe47d42c91bea55a6dcd",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoholomap-1.0.0-standalone.jar",
+      "size": 1496498,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoholomap-1.0.0.echo-addon",
+      "sha256": "9158478ba2ba8c91088e5aa98d7123ebe28eb374a7d8b1867cfe0dbe865385c9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoholomap-1.0.0.echo-addon",
+      "size": 1470714,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoholomap-1.0.0-sources.jar",
+      "sha256": "bc08fd14cdd41ba43e5e1dc5b915659258aa24c5297672cc34feb83fe47665fc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echoholomap-1.0.0-sources.jar",
+      "size": 1147618
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}

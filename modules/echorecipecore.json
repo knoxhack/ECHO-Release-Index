@@ -1,0 +1,85 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "galactic-survey-0.1.0-alpha",
+  "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+  "trust": "provenance-attested",
+  "validation": "approved",
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "c02de90643e0958f543e2cefadfa897140f2b045",
+    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
+    "verifiedBy": "scripts/ingest-release.mjs",
+    "attestation": {
+      "action": "gh attestation verify",
+      "releaseAssetAction": "gh release verify-asset",
+      "releaseAssetActionMode": "best-effort",
+      "sourceDigest": "c02de90643e0958f543e2cefadfa897140f2b045",
+      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
+    }
+  },
+  "id": "echorecipecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echorecipecore-1.0.0-neoforge.jar",
+      "sha256": "84be282b6986edf4816e7a5e0ce4628f12ad272fe7b54b955d8d66e4d303663f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echorecipecore-1.0.0-neoforge.jar",
+      "size": 37891,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echorecipecore-1.0.0-standalone.jar",
+      "sha256": "1ccfad8bcfe8bae48caeb361d7202f805b2b8b090b2b6e67cbd071d81fa26a1d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echorecipecore-1.0.0-standalone.jar",
+      "size": 37895,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echorecipecore-1.0.0.echo-addon",
+      "sha256": "a3a77a90ac0dbf8620147f6c11c322f047b590db3ae7c9811ed65331a2f14e75",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echorecipecore-1.0.0.echo-addon",
+      "size": 38477,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echorecipecore-1.0.0-sources.jar",
+      "sha256": "86ced18a1a0c3860af1490e974040ed084e58c50e581ad2137de804dbe343e46",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echorecipecore-1.0.0-sources.jar",
+      "size": 17046
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition"
+  ]
+}
