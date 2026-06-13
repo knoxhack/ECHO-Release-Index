@@ -414,31 +414,11 @@ const galacticModpackCatalog = Object.fromEntries(editions.map((edition) => [
   edition.id,
   readJsonOrNull(path.join(releaseIndexRoot, 'modpacks', `${edition.id.replace(/-edition$/u, '')}.json`))
 ]))
-const requiredPackagedModules = [
-  'echocore',
-  'echoplatformcore',
-  'echoschemacore',
-  'echovalidationcore',
-  'echocontentcore',
-  'echorecipecore',
-  'echoaddonapi',
-  'echoadaptercore',
-  'echonetcore',
-  'echoruntimeguard',
-  'echoterminal',
-  'echoindex',
-  'echolens',
-  'echoholomap',
-  'echomissioncore',
-  'echopowergrid',
-  'echologisticsnetwork',
-  'echoprogressioncore',
-  'echosoundcore',
-  'echogalacticcore',
-  'echoorbitalremnants',
-  'echovehiclecore',
-  'echogalacticsurveyprotocol'
-]
+const officialSelections = readJsonOrNull(path.join(moduleRepo, 'metadata', 'official-pack-module-selections.json'))
+const requiredPackagedModules = officialSelections?.packs?.['galactic-survey']?.modules ?? []
+if (requiredPackagedModules.length === 0) {
+  throw new Error('Official Galactic Survey module selection is missing or empty.')
+}
 const expectedPackagedModuleCount = requiredPackagedModules.length
 const publicPrereleaseDownload = editionDraftDownload?.summary?.publicPrereleasesDownloaded === true
 const importedFirstLaunchOpenPlayPassed = firstLaunchOpenPlayEvidencePassed(firstLaunchOpenPlayEvidence)
@@ -583,7 +563,7 @@ const phases = []
   requireCondition(phase, reportGatePassed(editionPackAssets, 'editionPackAssetsBuilt'), 'local edition pack assets built successfully', 'local edition pack assets must build successfully')
   requireCondition(phase, reportGatePassed(editionPackAssets, 'localStageChecksums'), 'local staged edition asset checksums passed', 'local staged edition asset checksums must pass')
   requireCondition(phase, reportGatePassed(editionPackAssets, 'zipMatchesPackManifest'), 'local edition ZIP manifests match pack manifests', 'local edition ZIP manifests must match pack manifests')
-  requireCondition(phase, setContainsAll(editionPackAssets?.packagedModules, requiredPackagedModules), 'local edition assets include the full 23-module runtime spine', 'local edition assets must include the full 23-module runtime spine')
+  requireCondition(phase, setContainsAll(editionPackAssets?.packagedModules, requiredPackagedModules), `local edition assets include the full ${expectedPackagedModuleCount}-module runtime spine`, `local edition assets must include the full ${expectedPackagedModuleCount}-module runtime spine`)
   requireCondition(phase, setContainsAll(assetEditionPackIds, editions.map((edition) => edition.id)), 'local edition asset report covers Native, NeoForge, and Standalone packs', 'local edition asset report must cover Native, NeoForge, and Standalone packs')
   requireCondition(phase, editionPackSmoke?.schemaVersion === 'echo.galactic_survey.edition-pack-smoke.v1', 'local edition lifecycle smoke report exists', 'local edition lifecycle smoke report must be generated')
   requireCondition(phase, editionPackSmoke?.ok === true, 'local edition lifecycle smoke completed successfully', 'local edition lifecycle smoke must complete successfully')

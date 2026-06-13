@@ -3,12 +3,14 @@ import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 
 const DEFAULT_VERSION = '0.1.0'
 const DEFAULT_CHANNEL = 'alpha'
 const DEFAULT_MINECRAFT_VERSION = '26.1.2'
 const DEFAULT_NEOFORGE_VERSION = '26.1.2.29-beta'
 const DEFAULT_NATIVE_LOADER_VERSION = '1.0.0'
+const DEFAULT_WORKSPACE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
 
 const EDITIONS = [
   {
@@ -34,31 +36,10 @@ const EDITIONS = [
   },
 ]
 
-const REQUIRED_MODULE_IDS = [
-  'echocore',
-  'echoplatformcore',
-  'echoschemacore',
-  'echovalidationcore',
-  'echocontentcore',
-  'echorecipecore',
-  'echoaddonapi',
-  'echoadaptercore',
-  'echonetcore',
-  'echoruntimeguard',
-  'echoterminal',
-  'echoindex',
-  'echolens',
-  'echoholomap',
-  'echomissioncore',
-  'echopowergrid',
-  'echologisticsnetwork',
-  'echoprogressioncore',
-  'echosoundcore',
-  'echogalacticcore',
-  'echoorbitalremnants',
-  'echovehiclecore',
-  'echogalacticsurveyprotocol',
-]
+const officialSelections = JSON.parse(
+  await fs.readFile(path.join(DEFAULT_WORKSPACE_ROOT, 'ECHO-Modules', 'metadata', 'official-pack-module-selections.json'), 'utf8')
+)
+const REQUIRED_MODULE_IDS = officialSelections.packs['galactic-survey'].modules
 
 const crcTable = new Uint32Array(256)
 for (let index = 0; index < crcTable.length; index += 1) {
