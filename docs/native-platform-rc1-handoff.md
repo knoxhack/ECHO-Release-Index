@@ -55,6 +55,7 @@ Launcher lifecycle evidence now exists:
 - Handoff status: the packaged launcher wrote an ECHO-managed Native Loader Minecraft profile and `echo-native-loader-1.0.0` version metadata inside `tmp/galactic-survey-electron-ui-smoke/isolated-minecraft-root`, verified all 23 installed module files, and deliberately skipped opening the official Minecraft Launcher. This proves metadata handoff mechanics without touching the user's real `.minecraft` folder.
 - First-launch status: the legacy `launch:start` path fails closed with the explicit Minecraft Launcher Handoff blocker after verifying all 23 installed module files. This is not first-launch proof; a real Native runtime launch path or an official Minecraft Launcher open/play handoff must pass before approval.
 - Not covered: real packaged first launch, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback remains covered by the Launcher-owned lifecycle smoke until the UI exposes a visible rollback command.
+- Gameplay capture intake now exists in all three Galactic Survey edition repos through `scripts/import-manual-gameplay-capture.mjs`; it imports real notes, PNG screenshots, logs, save ZIPs, and the published pack artifact hash into `manual-evidence.json`. This tooling does not satisfy the gameplay gate by itself.
 
 ## Approval Boundary
 

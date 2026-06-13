@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T10:06:47-04:00",
+  "generatedAt": "2026-06-13T10:14:34-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,11 +16,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1fff66a6c791",
-        "commitDate": "2026-06-13T10:05:51-04:00",
+        "commit": "503e17e5c4d1",
+        "commitDate": "2026-06-13T10:07:45-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M products/addons-studio.json"
+          " M docs/native-platform-rc1-handoff.md",
+          " M packs/galactic-survey-native-edition.json",
+          " M packs/galactic-survey-neoforge-edition.json",
+          " M packs/galactic-survey-standalone-edition.json",
+          " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json"
         ]
       },
       "canonicalDocs": [
@@ -378,6 +383,7 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplayRuntimeController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplaySaveCodec.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientHud2D.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInput.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInventoryRuntime.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindings.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRenderRuntimeController.java",
@@ -394,6 +400,7 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSelectedItemUse.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientTextureAtlas.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiInputMapper.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientWorldTemplates.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreContractLock.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreDomain.java",
@@ -421,6 +428,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockTextureResolverSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientDebugOverlaySmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindingsSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveContinueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsControllerSmokeHarness.java",
@@ -704,8 +712,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e710ea084dbf",
-        "commitDate": "2026-06-13T10:06:47-04:00",
+        "commit": "c875015ff96f",
+        "commitDate": "2026-06-13T10:14:34-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -741,7 +749,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 8518,
+          "bytes": 8867,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
@@ -1447,8 +1455,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5a52fad22a4b",
-        "commitDate": "2026-06-13T09:15:55-04:00",
+        "commit": "b012ded09881",
+        "commitDate": "2026-06-13T10:13:30-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1484,7 +1492,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 2849,
+          "bytes": 4115,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey Native Edition cannot be promoted from preview metadata until"
         },
@@ -1510,8 +1518,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a7a5b58d1af5",
-        "commitDate": "2026-06-13T09:15:55-04:00",
+        "commit": "fca2d839cde1",
+        "commitDate": "2026-06-13T10:13:35-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1547,7 +1555,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 2851,
+          "bytes": 4119,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey NeoForge Edition cannot be promoted from preview metadata until"
         },
@@ -1573,8 +1581,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "cce61a2f6536",
-        "commitDate": "2026-06-13T09:15:55-04:00",
+        "commit": "929142506bbd",
+        "commitDate": "2026-06-13T10:13:41-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1610,7 +1618,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 2853,
+          "bytes": 4123,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey Standalone Edition cannot be promoted from preview metadata until"
         },
