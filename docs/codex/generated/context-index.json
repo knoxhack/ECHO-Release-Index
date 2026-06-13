@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T12:55:49-04:00",
+  "generatedAt": "2026-06-13T13:10:49-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "fe67f6d35047",
-        "commitDate": "2026-06-13T12:55:49-04:00",
+        "commit": "aa7c9988be96",
+        "commitDate": "2026-06-13T13:10:49-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M products/addons-studio.json",
@@ -31,7 +31,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 21174,
+          "bytes": 22003,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -741,14 +741,22 @@
         "branch": "main",
         "commit": "f31b196eb3b8",
         "commitDate": "2026-06-13T12:55:01-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M README.md",
+          " M docs/REMAINING_WORK.md",
+          " M src/main/scanner-smoke.ts",
+          " M src/main/scanner.ts",
+          " M src/renderer/App.tsx",
+          " M src/renderer/styles/app.css",
+          " M src/shared/echo.ts"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3541,
+          "bytes": 3573,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -776,7 +784,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 10709,
+          "bytes": 10714,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
