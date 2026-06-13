@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.galactic_survey.launcher-lifecycle-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T10:40:47.251Z",
+  "generatedAt": "2026-06-13T11:02:19.023Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-download",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke",
   "editions": [
@@ -173,14 +173,14 @@
     "launcherRepairCorruptFile": "passed",
     "launcherRollbackSimulatedUpdate": "passed",
     "realVersionToVersionUpdate": "passed_with_previous_version_fixture",
-    "packagedElectronCardUiSmoke": "not_started",
-    "electronInstallUpdateRepairClickThrough": "not_started",
+    "packagedElectronCardUiSmoke": "covered_separately",
+    "electronInstallUpdateRepairClickThrough": "covered_by_packaged_electron_ui_smoke",
     "electronRollbackClickThrough": "not_available_no_visible_ui_command"
   },
   "blockers": [],
   "residualRisks": [
     "The previous Galactic Survey version is a fixture-local manifest generated from current draft assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Galactic Survey release exists.",
-    "This script uses Launcher-owned resolver and lifecycle contracts from Node against downloaded GitHub draft assets; packaged Electron install/update/repair click-through remains separate UI evidence.",
+    "This script uses Launcher-owned resolver and lifecycle contracts from Node against downloaded GitHub draft assets; packaged Electron install/update/repair click-through is covered by release-readiness/galactic-survey-electron-ui-smoke.json, while rollback has no visible packaged UI command yet.",
     "Real gameplay evidence remains required before public alpha promotion."
   ]
 }
