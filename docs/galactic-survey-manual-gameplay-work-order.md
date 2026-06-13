@@ -99,7 +99,6 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 
 ### Current Blockers
 
-- phase 10 Full Progression And Release: galactic-survey-native-edition sourceRevision must match ECHO-Galactic-Survey-Native-Edition HEAD
 - phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing
 - manualEvidence.sessions missing fresh_world_creation.
 - manualEvidence.sessions missing first_30_minutes.
@@ -253,7 +252,6 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 
 ### Current Blockers
 
-- phase 10 Full Progression And Release: galactic-survey-neoforge-edition sourceRevision must match ECHO-Galactic-Survey-NeoForge-Edition HEAD
 - phase 10 Full Progression And Release: galactic-survey-neoforge-edition release-ready gameplay evidence is still missing
 - manualEvidence.sessions missing fresh_world_creation.
 - manualEvidence.sessions missing first_30_minutes.
@@ -407,7 +405,6 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 
 ### Current Blockers
 
-- phase 10 Full Progression And Release: galactic-survey-standalone-edition sourceRevision must match ECHO-Galactic-Survey-Standalone-Edition HEAD
 - phase 10 Full Progression And Release: galactic-survey-standalone-edition release-ready gameplay evidence is still missing
 - manualEvidence.sessions missing fresh_world_creation.
 - manualEvidence.sessions missing first_30_minutes.

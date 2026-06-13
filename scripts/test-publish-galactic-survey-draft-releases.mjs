@@ -274,6 +274,25 @@ function initialState() {
   }
 }
 
+function seedRelease(repoState, edition, { draft = true, prerelease = true, assetPrefix = null } = {}) {
+  repoState.release = {
+    id: 4001 + editions.indexOf(edition),
+    tagName: edition.releaseTag,
+    draft,
+    prerelease,
+  }
+  if (assetPrefix) {
+    for (const name of edition.requiredAssets) {
+      const id = 5000 + repoState.assets.size
+      repoState.assets.set(id, {
+        id,
+        name,
+        bytes: Buffer.from(`${assetPrefix} ${edition.repoName} ${name}\n`, 'utf8'),
+      })
+    }
+  }
+}
+
 const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-galactic-survey-draft-publish-test-'))
 try {
   {
@@ -316,6 +335,59 @@ try {
       const result = await run(root, api.baseUrl)
       assert.equal(result.status, 1)
       assert.match(`${result.stdout}\n${result.stderr}`, /already public; refusing/u)
+      const report = JSON.parse(await fs.readFile(path.join(root, 'release-readiness/galactic-survey-draft-publish.json'), 'utf8'))
+      assert.equal(report.status, 'FAILED')
+    } finally {
+      await api.close()
+    }
+  }
+
+  {
+    const root = path.join(tmp, 'public-prerelease-update')
+    await writeStagedAssets(root)
+    const state = initialState()
+    for (const edition of editions) {
+      seedRelease(state.repos.get(edition.repoName), edition, {
+        draft: false,
+        prerelease: true,
+        assetPrefix: 'stale public asset',
+      })
+    }
+    const api = await startFixtureApi(state)
+    try {
+      const result = await run(root, api.baseUrl, ['--allow-public-prerelease-update'])
+      assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`)
+      const report = JSON.parse(await fs.readFile(path.join(root, 'release-readiness/galactic-survey-draft-publish.json'), 'utf8'))
+      assert.equal(report.status, 'PASS')
+      assert.equal(report.summary.releaseAssetsPublished, true)
+      assert.equal(report.summary.draftReleasesPublished, false)
+      assert.equal(report.summary.publicPrereleasesUpdated, true)
+      assert.equal(report.summary.actionCounts['update-public-prerelease-assets'], 3)
+      assert.equal(report.summary.actionCounts['delete-existing-asset'], 15)
+      assert.equal(report.summary.actionCounts['upload-asset'], 15)
+      for (const edition of report.data.editions) {
+        assert.equal(edition.release.draft, false)
+        assert.equal(edition.release.prerelease, true)
+        assert.equal(edition.assets.length, 5)
+      }
+    } finally {
+      await api.close()
+    }
+  }
+
+  {
+    const root = path.join(tmp, 'stable-public-release')
+    await writeStagedAssets(root)
+    const state = initialState()
+    seedRelease(state.repos.get('ECHO-Galactic-Survey-Native-Edition'), editions[0], {
+      draft: false,
+      prerelease: false,
+    })
+    const api = await startFixtureApi(state)
+    try {
+      const result = await run(root, api.baseUrl, ['--allow-public-prerelease-update'])
+      assert.equal(result.status, 1)
+      assert.match(`${result.stdout}\n${result.stderr}`, /public but not a prerelease; refusing/u)
       const report = JSON.parse(await fs.readFile(path.join(root, 'release-readiness/galactic-survey-draft-publish.json'), 'utf8'))
       assert.equal(report.status, 'FAILED')
     } finally {

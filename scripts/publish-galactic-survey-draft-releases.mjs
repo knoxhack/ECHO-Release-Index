@@ -58,6 +58,7 @@ const extraArgs = new Map([
   ['--asset-root', (args, next) => { args.assetRoot = next() }],
   ['--token-env', (args, next) => { args.tokenEnv = next() }],
   ['--prune-unlisted', (args) => { args.pruneUnlisted = true }],
+  ['--allow-public-prerelease-update', (args) => { args.allowPublicPrereleaseUpdate = true }],
   ['--only', (args, next) => {
     args.only ??= new Set()
     next().split(',').map((item) => item.trim().toLowerCase()).filter(Boolean).forEach((item) => args.only.add(item))
@@ -79,6 +80,9 @@ Options:
   --out <path>             Evidence JSON path. Default: ${DEFAULT_OUT}.
   --publish                Perform GitHub writes. Without this, no writes occur.
   --prune-unlisted         Delete draft release assets not in the required set.
+  --allow-public-prerelease-update
+                          Allow replacing assets on an already-public prerelease.
+                          Stable releases and public releases without this flag are refused.
   --help                   Print this help text.
 `
 }
@@ -115,6 +119,10 @@ function releaseBody(edition) {
 
 function requireTrue(condition, message) {
   if (!condition) throw new Error(message)
+}
+
+function releaseMode(release) {
+  return release?.draft === true ? 'draft' : 'public-prerelease'
 }
 
 async function githubJson(route, options = {}) {
@@ -237,7 +245,16 @@ async function ensureRelease({ args, edition, owner, authToken, result }) {
     release = await githubJson(`/repos/${owner}/${edition.repoName}/releases`, { method: 'POST', token: authToken, body })
     result.actions.push({ action: 'create-draft-release', id: release.id, tag: edition.releaseTag })
   } else {
-    if (release.draft !== true) throw new Error(`${edition.repoName}@${edition.releaseTag} is already public; refusing to modify it as a draft gate.`)
+    if (release.draft !== true) {
+      if (!args.allowPublicPrereleaseUpdate) {
+        throw new Error(`${edition.repoName}@${edition.releaseTag} is already public; refusing to modify it without --allow-public-prerelease-update.`)
+      }
+      if (release.prerelease !== true) {
+        throw new Error(`${edition.repoName}@${edition.releaseTag} is public but not a prerelease; refusing to modify stable release assets.`)
+      }
+      result.actions.push({ action: 'update-public-prerelease-assets', id: release.id, dryRun: Boolean(args.dryRun) })
+      return release
+    }
     if (args.dryRun) {
       result.actions.push({ action: 'update-draft-release', id: release.id, dryRun: true })
     } else {
@@ -265,7 +282,7 @@ async function publishEdition({ args, edition, owner, authToken }) {
 
   const unlistedLiveAssets = liveAssets.filter((asset) => !requiredNames.has(asset.name))
   if (unlistedLiveAssets.length && !args.pruneUnlisted) {
-    throw new Error(`${edition.repoName} draft release contains unlisted assets: ${unlistedLiveAssets.map((asset) => asset.name).join(', ')}. Re-run with --prune-unlisted after confirming these are stale.`)
+    throw new Error(`${edition.repoName} ${releaseMode(release)} release contains unlisted assets: ${unlistedLiveAssets.map((asset) => asset.name).join(', ')}. Re-run with --prune-unlisted after confirming these are stale.`)
   }
   for (const asset of unlistedLiveAssets) {
     if (PLACEHOLDER_PATTERN.test(asset.name)) result.actions.push({ action: 'detected-placeholder-live-asset', name: asset.name })
@@ -377,6 +394,9 @@ async function publish(args) {
     return counts
   }, {})
   const publishedAssetCount = editions.reduce((sum, edition) => sum + edition.assets.length, 0)
+  const releaseAssetsPublished = !args.dryRun
+  const draftReleasesPublished = releaseAssetsPublished && editions.every((edition) => edition.release.draft === true)
+  const publicPrereleasesUpdated = releaseAssetsPublished && editions.some((edition) => edition.release.draft === false)
 
   return {
     schemaVersion: 'echo.galactic_survey.draft-publish.v1',
@@ -384,11 +404,14 @@ async function publish(args) {
     status: args.dryRun ? 'DRY_RUN' : 'PASS',
     summary: {
       dryRun: Boolean(args.dryRun),
-      draftReleasesPublished: !args.dryRun,
+      releaseAssetsPublished,
+      draftReleasesPublished,
+      publicPrereleasesUpdated,
       publishedEditionCount: editions.length,
       publishedAssetCount,
       actionCounts,
       pruneUnlisted: Boolean(args.pruneUnlisted),
+      allowPublicPrereleaseUpdate: Boolean(args.allowPublicPrereleaseUpdate),
     },
     data: {
       assetRoot: rel(args.root, args.assetRootPath),
@@ -404,7 +427,9 @@ function failedReport(args, message) {
     status: 'FAILED',
     summary: {
       dryRun: Boolean(args.dryRun),
+      releaseAssetsPublished: false,
       draftReleasesPublished: false,
+      publicPrereleasesUpdated: false,
       blockingDiagnostics: 1,
       errors: [message],
     },
