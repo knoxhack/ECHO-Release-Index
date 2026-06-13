@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T10:35:16-04:00",
+  "generatedAt": "2026-06-13T10:48:46-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,24 +16,25 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "986d8af3c3ea",
-        "commitDate": "2026-06-13T10:26:26-04:00",
+        "commit": "c7dd654cbb37",
+        "commitDate": "2026-06-13T10:39:34-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
           " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-electron-ui-smoke.json",
-          " M release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
           " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs"
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
+          "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
+          "?? scripts/import-galactic-survey-first-launch-evidence.mjs",
+          "?? scripts/test-import-galactic-survey-first-launch-evidence.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 17771,
+          "bytes": 18669,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -256,22 +257,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "159c6c50761f",
-        "commitDate": "2026-06-13T10:04:52-04:00",
+        "commit": "9c75d56f4441",
+        "commitDate": "2026-06-13T10:36:55-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M README.md",
-          " M docs/checksum-rollback.md",
-          " M electron/main.cjs",
-          " M scripts/galactic-survey-electron-ui-smoke.mjs",
-          " M scripts/galactic-survey-launcher-lifecycle-smoke.mjs",
-          " M scripts/sky-relay-electron-ui-smoke.mjs",
-          " M scripts/sky-relay-launcher-lifecycle-smoke.mjs",
-          " M src/components/tools/ToolsPage.tsx",
-          " M src/services/RepairService.ts",
-          " M src/services/nativeBridge.ts",
-          " M src/types/native.ts",
           "?? tmp/"
         ]
       },
@@ -729,8 +718,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9c2b54e05f78",
-        "commitDate": "2026-06-13T10:35:16-04:00",
+        "commit": "5863b8032ed2",
+        "commitDate": "2026-06-13T10:48:46-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -738,7 +727,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2615,
+          "bytes": 2723,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -766,7 +755,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 9208,
+          "bytes": 9422,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
