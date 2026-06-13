@@ -7,7 +7,7 @@
 The RC1 GitHub prerelease now exists and the product assets have passed download-back smoke from GitHub bytes:
 
 - Release: `https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1`
-- Release target: `fe83654eed0ba332ef35f904be80d4c0a50bbc78`
+- Release target: `e6e71a28362a66bae74bfa465a1687d36248a046`
 - Evidence: `release-readiness/native-platform-rc1-download-smoke.json`
 - Ingestion: `release-readiness/native-platform-rc1-ingestion.json`
 - Published asset count: 10
@@ -15,8 +15,8 @@ The RC1 GitHub prerelease now exists and the product assets have passed download
 
 Published asset attestation evidence now exists:
 
-- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27478197993`
-- Attestation workflow commit: `fe83654eed0ba332ef35f904be80d4c0a50bbc78`
+- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27480239596`
+- Attestation workflow commit: `e6e71a28362a66bae74bfa465a1687d36248a046`
 - Evidence: `release-readiness/native-platform-rc1-attestation.json`
 - Verified command: `gh attestation verify`
 - Scope: published release asset bytes for all 10 RC1 release assets, including `native-loader-1.0.0.jar`.
@@ -25,14 +25,14 @@ Published asset attestation evidence now exists:
 
 Local artifact evidence exists:
 
-- Product artifact: `C:/Development/Github/ECHO-Native-Platform-RC1-3d6e810/build/public-alpha/echo-native-product-1.0.0-RC1.zip`
+- Product artifact: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-product-1.0.0-RC1.zip`
 - Product size: `60746224`
-- Product SHA-256: `97e493a1ca86c9346d0e3cb9912ae2188ac9dd22e39be12eb0b2ab2c6b2a1bb4`
-- Native Loader launcher library: `C:/Development/Github/ECHO-Native-Platform-RC1-3d6e810/build/public-alpha/native-loader-1.0.0.jar`
+- Product SHA-256: `363e6c0368655b24e5a5e83a07b9e4f2d1a37a1827100ffee2a2ee487d949a83`
+- Native Loader launcher library: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/native-loader-1.0.0.jar`
 - Native Loader library size: `1120889`
-- Native Loader library SHA-256: `1eab65699ed5bdf02d362e3d37d3cf62c5815f7067375dfd9af89a8a422f1272`
+- Native Loader library SHA-256: `413d0146654b37fdf58345ed396180b44286ba98eb9e7da495eae1b98ccd98c5`
 - Native Loader library proof: contains `com/echo/NativeLoaderClient.class`.
-- Native Platform commit: `fe83654eed0ba332ef35f904be80d4c0a50bbc78`
+- Native Platform commit: `e6e71a28362a66bae74bfa465a1687d36248a046`
 - Native Loader shim commit included: `3d6e810a1ccf36cbec9dadd08776576807946701`
 - SDK proof commit: `ec0d9b83b695309ef895c8e591ec41bf84336211`
 - Module proof commit: `7f452ce44db8628ca0724f0e5b94f252ffa5bb1a`

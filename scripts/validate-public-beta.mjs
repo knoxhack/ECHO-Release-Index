@@ -31,6 +31,7 @@ const arcanaPackFiles = [
   'packs/arcana-division-neoforge-edition.json',
   'packs/arcana-division-standalone-edition.json',
 ]
+const expectedArcanaModuleRequirementCount = 39
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'))
@@ -94,7 +95,9 @@ if (!errors.length) {
   for (const file of arcanaPackFiles) {
     const pack = readJson(file)
     if (pack.channel !== 'beta') errors.push(`${file} must use beta channel`)
-    if ((pack.moduleRequirements ?? []).length !== 24) errors.push(`${file} must pin 24 module requirements`)
+    if ((pack.moduleRequirements ?? []).length !== expectedArcanaModuleRequirementCount) {
+      errors.push(`${file} must pin ${expectedArcanaModuleRequirementCount} module requirements`)
+    }
   }
 }
 
