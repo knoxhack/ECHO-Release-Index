@@ -221,6 +221,73 @@ function inspectPlatformZip(errors, bytes) {
   }
 }
 
+function inspectNativeLoaderJar(errors, bytes) {
+  const entries = readZipEntries(bytes)
+  const names = new Set(entries.map((entry) => entry.name))
+  const requiredEntries = [
+    'com/echo/NativeLoaderClient.class',
+    'dev/echo/nativeplatform/loader/NativeLoaderCoreServiceRegistrar.class',
+  ]
+  for (const entry of requiredEntries) {
+    requireCondition(errors, names.has(entry), `Native Loader direct jar is missing ${entry}`)
+  }
+  const forbiddenEntries = []
+  for (const entry of entries) {
+    const normalized = entry.name.replace(/\\/gu, '/').toLowerCase()
+    if (
+      normalized === 'echo.pack.json'
+      || normalized.endsWith('/echo.pack.json')
+      || normalized === 'meta-inf/echo.mod.json'
+      || normalized.endsWith('/meta-inf/echo.mod.json')
+      || normalized.startsWith('modules/')
+      || normalized.includes('/modules/')
+    ) {
+      forbiddenEntries.push(entry.name)
+    }
+  }
+  requireCondition(errors, forbiddenEntries.length === 0, `Native Loader direct jar contains forbidden pack/module entries: ${forbiddenEntries.join(', ')}`)
+  return {
+    entryCount: entries.length,
+    requiredEntries,
+    forbiddenEntries,
+  }
+}
+
+function inspectDirectInstallDescriptor(errors, bytes, product) {
+  const descriptor = JSON.parse(bytes.toString('utf8'))
+  const loaderArtifact = product.artifacts?.nativeLoaderLibrary ?? {}
+  requireCondition(errors, descriptor.schemaVersion === 'echo.native.loader_direct_install.v1', 'native-loader-direct-install.json schemaVersion mismatch')
+  requireCondition(errors, descriptor.artifactRole === 'native-loader-library', 'native-loader-direct-install.json artifactRole must be native-loader-library')
+  requireCondition(errors, descriptor.file === 'echo-native-loader-1.0.0.jar', 'native-loader-direct-install.json file mismatch')
+  requireCondition(errors, descriptor.url === loaderArtifact.url, 'native-loader-direct-install.json url must match nativeLoaderLibrary.url')
+  requireCondition(errors, descriptor.sha256 === loaderArtifact.sha256, 'native-loader-direct-install.json sha256 must match nativeLoaderLibrary.sha256')
+  requireCondition(errors, descriptor.size === loaderArtifact.size, 'native-loader-direct-install.json size must match nativeLoaderLibrary.size')
+  requireCondition(errors, descriptor.manualInstall === true, 'native-loader-direct-install.json manualInstall must be true')
+  requireCondition(errors, descriptor.developerDirectDownload === true, 'native-loader-direct-install.json developerDirectDownload must be true')
+  requireCondition(errors, descriptor.launcherFacing === false, 'native-loader-direct-install.json launcherFacing must be false')
+  requireCondition(errors, descriptor.moduleArtifact === false, 'native-loader-direct-install.json moduleArtifact must be false')
+  requireCondition(errors, descriptor.packContent === false, 'native-loader-direct-install.json packContent must be false')
+  requireCondition(errors, descriptor.expectedJava?.minimumMajorVersion === 25, 'native-loader-direct-install.json expectedJava.minimumMajorVersion must be 25')
+  requireCondition(errors, descriptor.expectedJava?.testedMajorVersion === 25, 'native-loader-direct-install.json expectedJava.testedMajorVersion must be 25')
+  requireCondition(errors, descriptor.minecraftLibrary?.name === 'com.echo:native-loader:1.0.0', 'native-loader-direct-install.json minecraftLibrary.name mismatch')
+  requireCondition(errors, descriptor.minecraftLibrary?.path === 'com/echo/native-loader/1.0.0/native-loader-1.0.0.jar', 'native-loader-direct-install.json minecraftLibrary.path mismatch')
+  requireCondition(errors, descriptor.mainClass === 'com.echo.NativeLoaderClient', 'native-loader-direct-install.json mainClass mismatch')
+  return {
+    schemaVersion: descriptor.schemaVersion,
+    artifactRole: descriptor.artifactRole,
+    file: descriptor.file,
+    sha256: descriptor.sha256,
+    size: descriptor.size,
+    manualInstall: descriptor.manualInstall,
+    developerDirectDownload: descriptor.developerDirectDownload,
+    moduleArtifact: descriptor.moduleArtifact,
+    packContent: descriptor.packContent,
+    minimumJava: descriptor.expectedJava?.minimumMajorVersion,
+    minecraftLibraryPath: descriptor.minecraftLibrary?.path,
+    mainClass: descriptor.mainClass,
+  }
+}
+
 async function main() {
   const productPath = path.resolve(args.root, args.product)
   const product = await readJson(productPath)
@@ -275,6 +342,12 @@ async function main() {
   requireCondition(errors, releaseMetadata.validation === 'warning', 'echo-release.json must keep RC1 warning-gated')
 
   const archiveLayout = inspectPlatformZip(errors, downloaded.get(product.artifacts.archive.file))
+  const nativeLoaderJar = inspectNativeLoaderJar(errors, downloaded.get(product.artifacts.nativeLoaderLibrary.file))
+  const directInstallDescriptor = inspectDirectInstallDescriptor(
+    errors,
+    downloaded.get(product.artifacts.nativeLoaderDirectInstall.file),
+    product,
+  )
   const result = {
     schemaVersion: 'echo.native-platform.rc1-download-smoke.v1',
     status: errors.length === 0 ? 'passed' : 'failed',
@@ -292,6 +365,8 @@ async function main() {
     verifiedAssets,
     verifiedChecksumEntries: [...checksums.keys()].sort(),
     archiveLayout,
+    nativeLoaderJar,
+    directInstallDescriptor,
     remainingHardGates: remainingHardGates(product),
     errors,
   }

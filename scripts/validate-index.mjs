@@ -25,6 +25,10 @@ const rawIndexPrefix = 'https://raw.githubusercontent.com/knoxhack/ECHO-Release-
 const validKinds = new Set(['product', 'modpack', 'module', 'addon', 'runtime', 'studio', 'website'])
 const validValidationStates = new Set(['approved', 'warning', 'rejected', 'blocked'])
 const attestedTrustTiers = new Set(['official', 'reproducible-build', 'echo-workflow-built', 'provenance-attested'])
+const nativeLoaderDirectArtifactFile = 'echo-native-loader-1.0.0.jar'
+const nativeLoaderDirectDescriptorFile = 'native-loader-direct-install.json'
+const nativeLoaderLibraryRole = 'native-loader-library'
+const nativeLoaderDescriptorRole = 'native-loader-direct-install-descriptor'
 const requiredSchemas = [
   'block.schema.json',
   'channel.schema.json',
@@ -198,14 +202,94 @@ function artifactRoleRecords(artifacts) {
       records.push({
         role,
         name: String(node.file ?? node.name ?? node.filename ?? role),
+        file: node.file,
         url: node.url ?? node.downloadUrl,
         sha256: node.sha256,
+        artifactRole: node.artifactRole,
+        manualInstall: node.manualInstall,
+        developerDirectDownload: node.developerDirectDownload,
+        launcherFacing: node.launcherFacing,
+        moduleArtifact: node.moduleArtifact,
+        packContent: node.packContent,
       })
     }
     Object.entries(node).forEach(([key, value]) => visit(value, key))
   }
   visit(artifacts)
   return records
+}
+
+function validateNativeLoaderDirectArtifactBoundaries(errors, filePath, entry) {
+  const records = artifactRoleRecords(entry.artifacts)
+  const isNativePlatformProduct = entry.id === 'echo-native-platform' && entry.kind === 'runtime'
+  const packContentKinds = new Set(['modpack', 'module', 'addon'])
+
+  for (const artifact of records) {
+    const name = String(artifact.name ?? '')
+    const basename = name.split(/[\\/]/u).pop()
+    const artifactRole = String(artifact.artifactRole ?? '')
+    const isDirectLoaderJar = basename === nativeLoaderDirectArtifactFile
+    const isDirectDescriptor = basename === nativeLoaderDirectDescriptorFile
+    const isDirectLoaderRole = artifactRole === nativeLoaderLibraryRole || artifactRole === nativeLoaderDescriptorRole
+
+    if (!isDirectLoaderJar && !isDirectDescriptor && !isDirectLoaderRole) continue
+
+    if (!isNativePlatformProduct) {
+      errors.push(`${rel(filePath)} must not publish ${basename || artifactRole} as pack, module, addon, or non-Native-Platform content`)
+    }
+    if (packContentKinds.has(entry.kind)) {
+      errors.push(`${rel(filePath)} ${entry.kind} entry must not contain Native Loader direct-install artifact ${basename || artifactRole}`)
+    }
+    if (isDirectLoaderJar || artifactRole === nativeLoaderLibraryRole) {
+      if (artifact.manualInstall !== true) errors.push(`${rel(filePath)} Native Loader library artifact must set manualInstall=true`)
+      if (artifact.developerDirectDownload !== true) errors.push(`${rel(filePath)} Native Loader library artifact must set developerDirectDownload=true`)
+      if (artifact.moduleArtifact !== false) errors.push(`${rel(filePath)} Native Loader library artifact must set moduleArtifact=false`)
+      if (artifact.packContent !== false) errors.push(`${rel(filePath)} Native Loader library artifact must set packContent=false`)
+    }
+    if (isDirectDescriptor || artifactRole === nativeLoaderDescriptorRole) {
+      if (artifact.manualInstall !== true) errors.push(`${rel(filePath)} Native Loader direct-install descriptor must set manualInstall=true`)
+      if (artifact.developerDirectDownload !== true) errors.push(`${rel(filePath)} Native Loader direct-install descriptor must set developerDirectDownload=true`)
+      if (artifact.moduleArtifact !== false) errors.push(`${rel(filePath)} Native Loader direct-install descriptor must set moduleArtifact=false`)
+      if (artifact.packContent !== false) errors.push(`${rel(filePath)} Native Loader direct-install descriptor must set packContent=false`)
+    }
+  }
+
+  if (!isNativePlatformProduct) {
+    for (const dependency of entry.dependencies ?? []) {
+      const encoded = JSON.stringify(dependency).toLowerCase()
+      if (encoded.includes(nativeLoaderDirectArtifactFile)) {
+        errors.push(`${rel(filePath)} dependency list must not reference ${nativeLoaderDirectArtifactFile}`)
+      }
+    }
+    return
+  }
+
+  const artifacts = entry.artifacts ?? {}
+  const loader = artifacts.nativeLoaderLibrary
+  const descriptor = artifacts.nativeLoaderDirectInstall
+  const directDistribution = entry.directDistribution
+  if (!loader) errors.push(`${rel(filePath)} echo-native-platform must index artifacts.nativeLoaderLibrary`)
+  if (!descriptor) errors.push(`${rel(filePath)} echo-native-platform must index artifacts.nativeLoaderDirectInstall`)
+  if (!directDistribution || typeof directDistribution !== 'object' || Array.isArray(directDistribution)) {
+    errors.push(`${rel(filePath)} echo-native-platform must define directDistribution metadata`)
+    return
+  }
+
+  if (loader) {
+    if (loader.file !== nativeLoaderDirectArtifactFile) errors.push(`${rel(filePath)} nativeLoaderLibrary.file must be ${nativeLoaderDirectArtifactFile}`)
+    if (loader.artifactRole !== nativeLoaderLibraryRole) errors.push(`${rel(filePath)} nativeLoaderLibrary.artifactRole must be ${nativeLoaderLibraryRole}`)
+  }
+  if (descriptor) {
+    if (descriptor.file !== nativeLoaderDirectDescriptorFile) errors.push(`${rel(filePath)} nativeLoaderDirectInstall.file must be ${nativeLoaderDirectDescriptorFile}`)
+    if (descriptor.artifactRole !== nativeLoaderDescriptorRole) errors.push(`${rel(filePath)} nativeLoaderDirectInstall.artifactRole must be ${nativeLoaderDescriptorRole}`)
+  }
+  if (directDistribution.artifactRole !== nativeLoaderLibraryRole) errors.push(`${rel(filePath)} directDistribution.artifactRole must be ${nativeLoaderLibraryRole}`)
+  if (directDistribution.descriptor !== nativeLoaderDirectDescriptorFile) errors.push(`${rel(filePath)} directDistribution.descriptor must be ${nativeLoaderDirectDescriptorFile}`)
+  if (directDistribution.file !== nativeLoaderDirectArtifactFile) errors.push(`${rel(filePath)} directDistribution.file must be ${nativeLoaderDirectArtifactFile}`)
+  if (directDistribution.manualInstall !== true) errors.push(`${rel(filePath)} directDistribution.manualInstall must be true`)
+  if (directDistribution.developerDirectDownload !== true) errors.push(`${rel(filePath)} directDistribution.developerDirectDownload must be true`)
+  if (directDistribution.moduleArtifact !== false) errors.push(`${rel(filePath)} directDistribution.moduleArtifact must be false`)
+  if (directDistribution.packContent !== false) errors.push(`${rel(filePath)} directDistribution.packContent must be false`)
 }
 
 function hasExactArtifactRole(entry, role) {
@@ -375,6 +459,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   if (!Array.isArray(entry.dependencies)) errors.push(`${rel(filePath)} dependencies must be an array`)
   if (!Array.isArray(entry.compatibility)) errors.push(`${rel(filePath)} compatibility must be an array`)
   validateArtifacts(errors, warnings, filePath, entry)
+  validateNativeLoaderDirectArtifactBoundaries(errors, filePath, entry)
   validateRequiredArtifactRoles(errors, warnings, filePath, entry)
   validateAttestedProvenance(errors, filePath, entry)
 }

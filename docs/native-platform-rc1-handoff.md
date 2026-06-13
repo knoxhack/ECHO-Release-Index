@@ -7,33 +7,38 @@
 The RC1 GitHub prerelease now exists and the platform runtime assets have passed download-back smoke from GitHub bytes:
 
 - Release: `https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1`
-- Release target: `a524d5945bc350115cd48f3f6a14fdbac4b914e3`
+- Release target: `6cd51553cb822897e75f5b3df7fbc599fcfd0d82`
 - Evidence: `release-readiness/native-platform-rc1-download-smoke.json`
 - Ingestion: `release-readiness/native-platform-rc1-ingestion.json`
-- Published asset count: 10
+- Published asset count: 11
 - Native Loader handoff asset: `echo-native-loader-1.0.0.jar`
+- Native Loader direct-install descriptor: `native-loader-direct-install.json`
 
 Published asset attestation evidence now exists:
 
-- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27482291068`
-- Attestation workflow commit: `a524d5945bc350115cd48f3f6a14fdbac4b914e3`
+- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27482758336`
+- Attestation workflow commit: `6cd51553cb822897e75f5b3df7fbc599fcfd0d82`
 - Evidence: `release-readiness/native-platform-rc1-attestation.json`
 - Verified command: `gh attestation verify`
-- Scope: published release asset bytes for all 10 RC1 release assets, including `echo-native-platform-1.0.0-RC1.zip` and `echo-native-loader-1.0.0.jar`.
+- Scope: published release asset bytes for all 11 RC1 release assets, including `echo-native-platform-1.0.0-RC1.zip`, `echo-native-loader-1.0.0.jar`, and `native-loader-direct-install.json`.
 
 `gh release verify-asset` still reports no release-tag-scoped attestations for this tag. Do not treat that command as green unless it starts passing in a future GitHub CLI/API behavior. The accepted RC1 evidence is the asset-byte `gh attestation verify` result recorded above.
 
 Local artifact evidence exists:
 
 - Platform runtime artifact: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-platform-1.0.0-RC1.zip`
-- Platform runtime size: `1221`
-- Platform runtime SHA-256: `8dcd3e3f300c9b570c9d8f2bc85dab932b7d1d5c9110e5c0651926737e3ed141`
+- Platform runtime size: `1220`
+- Platform runtime SHA-256: `404ce2957e14a696a0e5cff0b511da5b744dc3fb747437c8b23d8646b386b011`
 - Platform runtime scope: no `echo.pack.json`, no `echo-native-product-package.json`, no `modules/`, no Ashfall content, and no embedded jars.
 - Native Loader launcher library: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-loader-1.0.0.jar`
 - Native Loader library size: `1141527`
 - Native Loader library SHA-256: `413d0146654b37fdf58345ed396180b44286ba98eb9e7da495eae1b98ccd98c5`
-- Native Loader library proof: contains `com/echo/NativeLoaderClient.class`.
-- Native Platform commit: `a524d5945bc350115cd48f3f6a14fdbac4b914e3`
+- Native Loader library proof: contains `com/echo/NativeLoaderClient.class` and `dev/echo/nativeplatform/loader/NativeLoaderCoreServiceRegistrar.class`.
+- Native Loader direct-install descriptor: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/native-loader-direct-install.json`
+- Native Loader direct-install descriptor size: `1279`
+- Native Loader direct-install descriptor SHA-256: `283126b360acfe0f9a4aeb8093aef0ea09090c97eaedbfb7fe184362812eecf3`
+- Native Loader direct-install role: `artifactRole: native-loader-library`, `manualInstall: true`, `developerDirectDownload: true`, `moduleArtifact: false`, and `packContent: false`.
+- Native Platform commit: `6cd51553cb822897e75f5b3df7fbc599fcfd0d82`
 - SDK proof commit: `ec0d9b83b695309ef895c8e591ec41bf84336211`
 - Module proof commit: `7f452ce44db8628ca0724f0e5b94f252ffa5bb1a`
 
