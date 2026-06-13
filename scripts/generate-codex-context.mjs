@@ -68,6 +68,16 @@ function run(command, args, cwd) {
   return result.stdout.trim();
 }
 
+function runRaw(command, args, cwd) {
+  const result = spawnSync(command, args, {
+    cwd,
+    encoding: "utf8",
+    windowsHide: true,
+  });
+  if (result.status !== 0) return null;
+  return result.stdout.replace(/\r?\n$/u, "");
+}
+
 function gitInfo(repoPath, repoName) {
   if (!exists(path.join(repoPath, ".git"))) {
     return {
@@ -83,7 +93,7 @@ function gitInfo(repoPath, repoName) {
   const branch = run("git", ["branch", "--show-current"], repoPath) || run("git", ["rev-parse", "--abbrev-ref", "HEAD"], repoPath);
   const commit = run("git", ["rev-parse", "--short=12", "HEAD"], repoPath);
   const commitDate = run("git", ["log", "-1", "--format=%cI"], repoPath);
-  const statusText = run("git", ["status", "--short"], repoPath) || "";
+  const statusText = runRaw("git", ["status", "--short"], repoPath) || "";
   const dirtyFiles = statusText
     .split(/\r?\n/)
     .map((line) => line.trimEnd())

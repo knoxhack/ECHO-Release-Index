@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T06:19:07-04:00",
+  "generatedAt": "2026-06-13T06:33:27-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,21 +16,23 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "45fadabbd752",
-        "commitDate": "2026-06-13T06:19:07-04:00",
+        "commit": "564914f2a485",
+        "commitDate": "2026-06-13T06:33:27-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M docs/codex/generated/ECHO_PLATFORM_CONTEXT.md",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
           " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
-          "?? release-readiness/galactic-survey-draft-download.json"
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
+          "?? release-readiness/galactic-survey-launcher-lifecycle-smoke.json"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 15068,
+          "bytes": 16052,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -248,8 +250,12 @@
         "branch": "main",
         "commit": "3a1900abc179",
         "commitDate": "2026-06-13T06:07:52-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/release-index-resolver.mjs",
+          " M package.json",
+          "?? scripts/galactic-survey-launcher-lifecycle-smoke.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -272,7 +278,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 5728,
+          "bytes": 5829,
           "summary": "package echo-launcher 1.1.0; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
@@ -288,8 +294,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "8fbba3310ae8",
-        "commitDate": "2026-06-13T06:06:55-04:00",
+        "commit": "2f59e8dee210",
+        "commitDate": "2026-06-13T06:23:19-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -327,7 +333,7 @@
         "commitDate": "2026-06-13T06:08:25-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M build.gradle",
+          " M build.gradle",
           " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
