@@ -1,0 +1,1228 @@
+{
+  "schemaVersion": "echo.galactic_survey.manual-gameplay-work-order.v1",
+  "status": "OPEN",
+  "generatedAt": "2026-06-13T15:05:53.193Z",
+  "sourceReport": "release-readiness/galactic-survey-public-alpha-readiness.json",
+  "project": {
+    "name": "ECHO: Galactic Survey",
+    "moduleId": "echogalacticsurveyprotocol",
+    "version": "0.1.0",
+    "channel": "alpha",
+    "packIds": [
+      "galactic-survey-native-edition",
+      "galactic-survey-neoforge-edition",
+      "galactic-survey-standalone-edition"
+    ]
+  },
+  "readinessStatus": "BLOCKED",
+  "gates": {
+    "vision_scope": "passed",
+    "protocol_foundation": "passed",
+    "data_content_framework": "passed",
+    "first_playable_loop": "passed",
+    "probe_exploration_system": "passed",
+    "holomap_navigation": "passed",
+    "catalog_progression": "passed",
+    "logistics_fuel_networks": "passed",
+    "salvage_upgrades": "passed",
+    "full_progression_release": "blocked"
+  },
+  "totals": {
+    "editions": 3,
+    "openEditions": 3,
+    "tasks": 30,
+    "openTasks": 27
+  },
+  "promotionCommands": [
+    "node scripts\\verify-galactic-survey-public-alpha-readiness.mjs --write",
+    "node scripts\\generate-galactic-survey-manual-gameplay-work-order.mjs --write",
+    "node scripts\\verify-galactic-survey-public-alpha-readiness.mjs --require-release-ready",
+    "node scripts\\validate-index.mjs --strict",
+    "node scripts\\sync-public-alpha-index.mjs --check"
+  ],
+  "editions": [
+    {
+      "edition": "native",
+      "packId": "galactic-survey-native-edition",
+      "repository": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
+      "workspaceDir": "ECHO-Galactic-Survey-Native-Edition",
+      "manualEvidence": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+      "status": "open",
+      "artifact": {
+        "artifactAsset": "galactic-survey-native-edition-0.1.0.zip",
+        "artifactSha256": "5f78e358f86da830dd2513647c5363ccf02775919dccc2fdb3ebb9cedd874242",
+        "artifactSize": 73613941,
+        "releaseTag": "galactic-survey-native-0.1.0-alpha",
+        "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.0-alpha"
+      },
+      "sourceRevision": {
+        "repository": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
+        "workspaceDir": "ECHO-Galactic-Survey-Native-Edition",
+        "commit": "b012ded09881fc9bee18ef61defa40588595c648",
+        "branch": "main",
+        "dirty": false,
+        "cleanForEvidence": true,
+        "statusLines": [],
+        "ignoredStatusLines": [],
+        "blockingStatusLines": []
+      },
+      "commands": {
+        "capture": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force"
+        ],
+        "verify": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --template-only",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ]
+      },
+      "blockers": [
+        "phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true.",
+        "manualEvidence claim saveReloadVerified must be true.",
+        "manualEvidence claim noCrashEvidence must be true.",
+        "manualEvidence release gate probe_launch_works must be satisfied.",
+        "manualEvidence release gate probe_launch_works requires claim realFirst30Playthrough.",
+        "manualEvidence release gate probe_launch_works must name real evidenceSource.",
+        "manualEvidence release gate holomap_reveals_meaningful_data must be satisfied.",
+        "manualEvidence release gate holomap_reveals_meaningful_data requires claim realFirst30Playthrough.",
+        "manualEvidence release gate holomap_reveals_meaningful_data must name real evidenceSource.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries must be satisfied.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries requires claim realFirst30Playthrough.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries must name real evidenceSource.",
+        "manualEvidence release gate fuel_route_limits_understandable must be satisfied.",
+        "manualEvidence release gate fuel_route_limits_understandable requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate fuel_route_limits_understandable must name real evidenceSource.",
+        "manualEvidence release gate one_salvage_site_playable must be satisfied.",
+        "manualEvidence release gate one_salvage_site_playable requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate one_salvage_site_playable must name real evidenceSource.",
+        "manualEvidence release gate one_probe_upgrade_matters must be satisfied.",
+        "manualEvidence release gate one_probe_upgrade_matters requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate one_probe_upgrade_matters must name real evidenceSource.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end must be satisfied.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end must name real evidenceSource.",
+        "manualEvidence release gate real_first_30_playthrough must be satisfied.",
+        "manualEvidence release gate real_first_30_playthrough requires claim realFirst30Playthrough.",
+        "manualEvidence release gate real_first_30_playthrough must name real evidenceSource.",
+        "manualEvidence release gate real_first_2_hour_playthrough must be satisfied.",
+        "manualEvidence release gate real_first_2_hour_playthrough requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate real_first_2_hour_playthrough must name real evidenceSource.",
+        "manualEvidence release gate real_survey_array_playthrough must be satisfied.",
+        "manualEvidence release gate real_survey_array_playthrough requires claim realSurveyArrayPlaythrough.",
+        "manualEvidence release gate real_survey_array_playthrough must name real evidenceSource.",
+        "manualEvidence release gate fresh_world_created must be satisfied.",
+        "manualEvidence release gate fresh_world_created requires claim freshWorldCreated.",
+        "manualEvidence release gate fresh_world_created must name real evidenceSource.",
+        "manualEvidence release gate save_reload_verified must be satisfied.",
+        "manualEvidence release gate save_reload_verified requires claim saveReloadVerified.",
+        "manualEvidence release gate save_reload_verified must name real evidenceSource.",
+        "manualEvidence release gate no_crash_evidence must be satisfied.",
+        "manualEvidence release gate no_crash_evidence requires claim noCrashEvidence.",
+        "manualEvidence release gate no_crash_evidence must name real evidenceSource.",
+        "manualEvidence.run.tester must contain real capture data.",
+        "manualEvidence.run.artifactSha256 must contain real capture data.",
+        "manualEvidence.run.artifactSize must contain real capture data.",
+        "manualEvidence.run.worldOrProfile must contain real capture data.",
+        "manualEvidence.run.startedAt must contain real capture data.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png.",
+        "manualEvidence.logs missing file fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip."
+      ],
+      "tasks": [
+        {
+          "id": "capture_kit",
+          "title": "Manual capture kit is present",
+          "status": "passed",
+          "manualEvidence": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+          "workspacePath": "ECHO-Galactic-Survey-Native-Edition/fixtures/galactic-survey/gameplay-qa/manual-evidence.json"
+        },
+        {
+          "id": "run_identity",
+          "title": "Run identity and artifact match are filled",
+          "status": "open",
+          "missingRunFields": [
+            "tester",
+            "artifactSha256",
+            "artifactSize",
+            "worldOrProfile",
+            "startedAt"
+          ],
+          "artifact": {
+            "artifactAsset": "galactic-survey-native-edition-0.1.0.zip",
+            "artifactSha256": "5f78e358f86da830dd2513647c5363ccf02775919dccc2fdb3ebb9cedd874242",
+            "artifactSize": 73613941,
+            "releaseTag": "galactic-survey-native-0.1.0-alpha",
+            "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.0-alpha"
+          },
+          "artifactMatches": false
+        },
+        {
+          "id": "claims",
+          "title": "Manual gameplay claims are true",
+          "status": "open",
+          "claims": [
+            {
+              "claim": "realFirst30Playthrough",
+              "status": "open"
+            },
+            {
+              "claim": "realFirst2HourPlaythrough",
+              "status": "open"
+            },
+            {
+              "claim": "realSurveyArrayPlaythrough",
+              "status": "open"
+            },
+            {
+              "claim": "freshWorldCreated",
+              "status": "open"
+            },
+            {
+              "claim": "saveReloadVerified",
+              "status": "open"
+            },
+            {
+              "claim": "noCrashEvidence",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "id": "release_gates",
+          "title": "All 13 release gates cite real evidence sources",
+          "status": "open",
+          "releaseGates": [
+            {
+              "id": "probe_launch_works",
+              "proof": "probe:starter_probe",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "holomap_reveals_meaningful_data",
+              "proof": "holomap_layer:scan_cones",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "catalog_entries_unlock_from_discoveries",
+              "proof": "discovery:barren_moon_kg_01a",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "fuel_route_limits_understandable",
+              "proof": "route:near_sector_01_survey_hop",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "one_salvage_site_playable",
+              "proof": "salvage:derelict_relay_osprey",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "one_probe_upgrade_matters",
+              "proof": "item:long_range_probe",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "first_2_hour_loop_no_dead_end",
+              "proof": "mission:first_survey_circuit",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_first_30_playthrough",
+              "proof": "manual:real_first_30_playthrough",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_first_2_hour_playthrough",
+              "proof": "manual:real_first_2_hour_playthrough",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_survey_array_playthrough",
+              "proof": "manual:real_survey_array_playthrough",
+              "requiredClaim": "realSurveyArrayPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "fresh_world_created",
+              "proof": "manual:fresh_world_created",
+              "requiredClaim": "freshWorldCreated",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "save_reload_verified",
+              "proof": "manual:save_reload_verified",
+              "requiredClaim": "saveReloadVerified",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "no_crash_evidence",
+              "proof": "manual:no_crash_evidence",
+              "requiredClaim": "noCrashEvidence",
+              "status": "open",
+              "evidenceSource": "template"
+            }
+          ]
+        },
+        {
+          "id": "sessions",
+          "title": "Required session records are complete",
+          "status": "open",
+          "sessions": [
+            {
+              "id": "fresh_world_creation",
+              "claim": "freshWorldCreated",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "first_30_minutes",
+              "claim": "realFirst30Playthrough",
+              "minDurationMinutes": 30,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "first_2_hours",
+              "claim": "realFirst2HourPlaythrough",
+              "minDurationMinutes": 120,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "survey_array_completion",
+              "claim": "realSurveyArrayPlaythrough",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "save_reload_verification",
+              "claim": "saveReloadVerified",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "no_crash_review",
+              "claim": "noCrashEvidence",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            }
+          ]
+        },
+        {
+          "id": "supporting_files",
+          "title": "Gameplay notes",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 5
+        },
+        {
+          "id": "screenshots",
+          "title": "Screenshots",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 4
+        },
+        {
+          "id": "logs",
+          "title": "Client logs",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 1
+        },
+        {
+          "id": "save_snapshots",
+          "title": "Save snapshots",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 3
+        },
+        {
+          "id": "local_verification",
+          "title": "Edition local evidence verifier passes",
+          "status": "open",
+          "command": "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        }
+      ],
+      "openTaskCount": 9
+    },
+    {
+      "edition": "neoforge",
+      "packId": "galactic-survey-neoforge-edition",
+      "repository": "knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+      "workspaceDir": "ECHO-Galactic-Survey-NeoForge-Edition",
+      "manualEvidence": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+      "status": "open",
+      "artifact": {
+        "artifactAsset": "galactic-survey-neoforge-edition-0.1.0.zip",
+        "artifactSha256": "e69fb6669b3542288e23ad1924360c7d1810f0ffc58ee70d4ff0c1d7dbda6581",
+        "artifactSize": 75847052,
+        "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
+        "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.0-alpha"
+      },
+      "sourceRevision": {
+        "repository": "knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+        "workspaceDir": "ECHO-Galactic-Survey-NeoForge-Edition",
+        "commit": "fca2d839cde1e33206d4e068fd1816950985051c",
+        "branch": "main",
+        "dirty": false,
+        "cleanForEvidence": true,
+        "statusLines": [],
+        "ignoredStatusLines": [],
+        "blockingStatusLines": []
+      },
+      "commands": {
+        "capture": [
+          "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force"
+        ],
+        "verify": [
+          "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --template-only",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ]
+      },
+      "blockers": [
+        "phase 10 Full Progression And Release: galactic-survey-neoforge-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true.",
+        "manualEvidence claim saveReloadVerified must be true.",
+        "manualEvidence claim noCrashEvidence must be true.",
+        "manualEvidence release gate probe_launch_works must be satisfied.",
+        "manualEvidence release gate probe_launch_works requires claim realFirst30Playthrough.",
+        "manualEvidence release gate probe_launch_works must name real evidenceSource.",
+        "manualEvidence release gate holomap_reveals_meaningful_data must be satisfied.",
+        "manualEvidence release gate holomap_reveals_meaningful_data requires claim realFirst30Playthrough.",
+        "manualEvidence release gate holomap_reveals_meaningful_data must name real evidenceSource.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries must be satisfied.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries requires claim realFirst30Playthrough.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries must name real evidenceSource.",
+        "manualEvidence release gate fuel_route_limits_understandable must be satisfied.",
+        "manualEvidence release gate fuel_route_limits_understandable requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate fuel_route_limits_understandable must name real evidenceSource.",
+        "manualEvidence release gate one_salvage_site_playable must be satisfied.",
+        "manualEvidence release gate one_salvage_site_playable requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate one_salvage_site_playable must name real evidenceSource.",
+        "manualEvidence release gate one_probe_upgrade_matters must be satisfied.",
+        "manualEvidence release gate one_probe_upgrade_matters requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate one_probe_upgrade_matters must name real evidenceSource.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end must be satisfied.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end must name real evidenceSource.",
+        "manualEvidence release gate real_first_30_playthrough must be satisfied.",
+        "manualEvidence release gate real_first_30_playthrough requires claim realFirst30Playthrough.",
+        "manualEvidence release gate real_first_30_playthrough must name real evidenceSource.",
+        "manualEvidence release gate real_first_2_hour_playthrough must be satisfied.",
+        "manualEvidence release gate real_first_2_hour_playthrough requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate real_first_2_hour_playthrough must name real evidenceSource.",
+        "manualEvidence release gate real_survey_array_playthrough must be satisfied.",
+        "manualEvidence release gate real_survey_array_playthrough requires claim realSurveyArrayPlaythrough.",
+        "manualEvidence release gate real_survey_array_playthrough must name real evidenceSource.",
+        "manualEvidence release gate fresh_world_created must be satisfied.",
+        "manualEvidence release gate fresh_world_created requires claim freshWorldCreated.",
+        "manualEvidence release gate fresh_world_created must name real evidenceSource.",
+        "manualEvidence release gate save_reload_verified must be satisfied.",
+        "manualEvidence release gate save_reload_verified requires claim saveReloadVerified.",
+        "manualEvidence release gate save_reload_verified must name real evidenceSource.",
+        "manualEvidence release gate no_crash_evidence must be satisfied.",
+        "manualEvidence release gate no_crash_evidence requires claim noCrashEvidence.",
+        "manualEvidence release gate no_crash_evidence must name real evidenceSource.",
+        "manualEvidence.run.tester must contain real capture data.",
+        "manualEvidence.run.artifactSha256 must contain real capture data.",
+        "manualEvidence.run.artifactSize must contain real capture data.",
+        "manualEvidence.run.worldOrProfile must contain real capture data.",
+        "manualEvidence.run.startedAt must contain real capture data.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png.",
+        "manualEvidence.logs missing file fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip."
+      ],
+      "tasks": [
+        {
+          "id": "capture_kit",
+          "title": "Manual capture kit is present",
+          "status": "passed",
+          "manualEvidence": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+          "workspacePath": "ECHO-Galactic-Survey-NeoForge-Edition/fixtures/galactic-survey/gameplay-qa/manual-evidence.json"
+        },
+        {
+          "id": "run_identity",
+          "title": "Run identity and artifact match are filled",
+          "status": "open",
+          "missingRunFields": [
+            "tester",
+            "artifactSha256",
+            "artifactSize",
+            "worldOrProfile",
+            "startedAt"
+          ],
+          "artifact": {
+            "artifactAsset": "galactic-survey-neoforge-edition-0.1.0.zip",
+            "artifactSha256": "e69fb6669b3542288e23ad1924360c7d1810f0ffc58ee70d4ff0c1d7dbda6581",
+            "artifactSize": 75847052,
+            "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
+            "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.0-alpha"
+          },
+          "artifactMatches": false
+        },
+        {
+          "id": "claims",
+          "title": "Manual gameplay claims are true",
+          "status": "open",
+          "claims": [
+            {
+              "claim": "realFirst30Playthrough",
+              "status": "open"
+            },
+            {
+              "claim": "realFirst2HourPlaythrough",
+              "status": "open"
+            },
+            {
+              "claim": "realSurveyArrayPlaythrough",
+              "status": "open"
+            },
+            {
+              "claim": "freshWorldCreated",
+              "status": "open"
+            },
+            {
+              "claim": "saveReloadVerified",
+              "status": "open"
+            },
+            {
+              "claim": "noCrashEvidence",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "id": "release_gates",
+          "title": "All 13 release gates cite real evidence sources",
+          "status": "open",
+          "releaseGates": [
+            {
+              "id": "probe_launch_works",
+              "proof": "probe:starter_probe",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "holomap_reveals_meaningful_data",
+              "proof": "holomap_layer:scan_cones",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "catalog_entries_unlock_from_discoveries",
+              "proof": "discovery:barren_moon_kg_01a",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "fuel_route_limits_understandable",
+              "proof": "route:near_sector_01_survey_hop",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "one_salvage_site_playable",
+              "proof": "salvage:derelict_relay_osprey",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "one_probe_upgrade_matters",
+              "proof": "item:long_range_probe",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "first_2_hour_loop_no_dead_end",
+              "proof": "mission:first_survey_circuit",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_first_30_playthrough",
+              "proof": "manual:real_first_30_playthrough",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_first_2_hour_playthrough",
+              "proof": "manual:real_first_2_hour_playthrough",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_survey_array_playthrough",
+              "proof": "manual:real_survey_array_playthrough",
+              "requiredClaim": "realSurveyArrayPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "fresh_world_created",
+              "proof": "manual:fresh_world_created",
+              "requiredClaim": "freshWorldCreated",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "save_reload_verified",
+              "proof": "manual:save_reload_verified",
+              "requiredClaim": "saveReloadVerified",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "no_crash_evidence",
+              "proof": "manual:no_crash_evidence",
+              "requiredClaim": "noCrashEvidence",
+              "status": "open",
+              "evidenceSource": "template"
+            }
+          ]
+        },
+        {
+          "id": "sessions",
+          "title": "Required session records are complete",
+          "status": "open",
+          "sessions": [
+            {
+              "id": "fresh_world_creation",
+              "claim": "freshWorldCreated",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "first_30_minutes",
+              "claim": "realFirst30Playthrough",
+              "minDurationMinutes": 30,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "first_2_hours",
+              "claim": "realFirst2HourPlaythrough",
+              "minDurationMinutes": 120,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "survey_array_completion",
+              "claim": "realSurveyArrayPlaythrough",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "save_reload_verification",
+              "claim": "saveReloadVerified",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "no_crash_review",
+              "claim": "noCrashEvidence",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            }
+          ]
+        },
+        {
+          "id": "supporting_files",
+          "title": "Gameplay notes",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 5
+        },
+        {
+          "id": "screenshots",
+          "title": "Screenshots",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 4
+        },
+        {
+          "id": "logs",
+          "title": "Client logs",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 1
+        },
+        {
+          "id": "save_snapshots",
+          "title": "Save snapshots",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 3
+        },
+        {
+          "id": "local_verification",
+          "title": "Edition local evidence verifier passes",
+          "status": "open",
+          "command": "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        }
+      ],
+      "openTaskCount": 9
+    },
+    {
+      "edition": "standalone",
+      "packId": "galactic-survey-standalone-edition",
+      "repository": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+      "workspaceDir": "ECHO-Galactic-Survey-Standalone-Edition",
+      "manualEvidence": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+      "status": "open",
+      "artifact": {
+        "artifactAsset": "galactic-survey-standalone-edition-0.1.0.zip",
+        "artifactSha256": "0409cbd3679ad1a969fdba32d1f7e6ba67506ef01e0dea18bc00d54e659b6622",
+        "artifactSize": 75847047,
+        "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
+        "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.0-alpha"
+      },
+      "sourceRevision": {
+        "repository": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+        "workspaceDir": "ECHO-Galactic-Survey-Standalone-Edition",
+        "commit": "929142506bbd2fd20483d1c9073045adacef817d",
+        "branch": "main",
+        "dirty": false,
+        "cleanForEvidence": true,
+        "statusLines": [],
+        "ignoredStatusLines": [],
+        "blockingStatusLines": []
+      },
+      "commands": {
+        "capture": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force"
+        ],
+        "verify": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --template-only",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ]
+      },
+      "blockers": [
+        "phase 10 Full Progression And Release: galactic-survey-standalone-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true.",
+        "manualEvidence claim saveReloadVerified must be true.",
+        "manualEvidence claim noCrashEvidence must be true.",
+        "manualEvidence release gate probe_launch_works must be satisfied.",
+        "manualEvidence release gate probe_launch_works requires claim realFirst30Playthrough.",
+        "manualEvidence release gate probe_launch_works must name real evidenceSource.",
+        "manualEvidence release gate holomap_reveals_meaningful_data must be satisfied.",
+        "manualEvidence release gate holomap_reveals_meaningful_data requires claim realFirst30Playthrough.",
+        "manualEvidence release gate holomap_reveals_meaningful_data must name real evidenceSource.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries must be satisfied.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries requires claim realFirst30Playthrough.",
+        "manualEvidence release gate catalog_entries_unlock_from_discoveries must name real evidenceSource.",
+        "manualEvidence release gate fuel_route_limits_understandable must be satisfied.",
+        "manualEvidence release gate fuel_route_limits_understandable requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate fuel_route_limits_understandable must name real evidenceSource.",
+        "manualEvidence release gate one_salvage_site_playable must be satisfied.",
+        "manualEvidence release gate one_salvage_site_playable requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate one_salvage_site_playable must name real evidenceSource.",
+        "manualEvidence release gate one_probe_upgrade_matters must be satisfied.",
+        "manualEvidence release gate one_probe_upgrade_matters requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate one_probe_upgrade_matters must name real evidenceSource.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end must be satisfied.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate first_2_hour_loop_no_dead_end must name real evidenceSource.",
+        "manualEvidence release gate real_first_30_playthrough must be satisfied.",
+        "manualEvidence release gate real_first_30_playthrough requires claim realFirst30Playthrough.",
+        "manualEvidence release gate real_first_30_playthrough must name real evidenceSource.",
+        "manualEvidence release gate real_first_2_hour_playthrough must be satisfied.",
+        "manualEvidence release gate real_first_2_hour_playthrough requires claim realFirst2HourPlaythrough.",
+        "manualEvidence release gate real_first_2_hour_playthrough must name real evidenceSource.",
+        "manualEvidence release gate real_survey_array_playthrough must be satisfied.",
+        "manualEvidence release gate real_survey_array_playthrough requires claim realSurveyArrayPlaythrough.",
+        "manualEvidence release gate real_survey_array_playthrough must name real evidenceSource.",
+        "manualEvidence release gate fresh_world_created must be satisfied.",
+        "manualEvidence release gate fresh_world_created requires claim freshWorldCreated.",
+        "manualEvidence release gate fresh_world_created must name real evidenceSource.",
+        "manualEvidence release gate save_reload_verified must be satisfied.",
+        "manualEvidence release gate save_reload_verified requires claim saveReloadVerified.",
+        "manualEvidence release gate save_reload_verified must name real evidenceSource.",
+        "manualEvidence release gate no_crash_evidence must be satisfied.",
+        "manualEvidence release gate no_crash_evidence requires claim noCrashEvidence.",
+        "manualEvidence release gate no_crash_evidence must name real evidenceSource.",
+        "manualEvidence.run.tester must contain real capture data.",
+        "manualEvidence.run.artifactSha256 must contain real capture data.",
+        "manualEvidence.run.artifactSize must contain real capture data.",
+        "manualEvidence.run.worldOrProfile must contain real capture data.",
+        "manualEvidence.run.startedAt must contain real capture data.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md.",
+        "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png.",
+        "manualEvidence.screenshots missing file fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png.",
+        "manualEvidence.logs missing file fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip.",
+        "manualEvidence.saveSnapshots missing file fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip."
+      ],
+      "tasks": [
+        {
+          "id": "capture_kit",
+          "title": "Manual capture kit is present",
+          "status": "passed",
+          "manualEvidence": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+          "workspacePath": "ECHO-Galactic-Survey-Standalone-Edition/fixtures/galactic-survey/gameplay-qa/manual-evidence.json"
+        },
+        {
+          "id": "run_identity",
+          "title": "Run identity and artifact match are filled",
+          "status": "open",
+          "missingRunFields": [
+            "tester",
+            "artifactSha256",
+            "artifactSize",
+            "worldOrProfile",
+            "startedAt"
+          ],
+          "artifact": {
+            "artifactAsset": "galactic-survey-standalone-edition-0.1.0.zip",
+            "artifactSha256": "0409cbd3679ad1a969fdba32d1f7e6ba67506ef01e0dea18bc00d54e659b6622",
+            "artifactSize": 75847047,
+            "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
+            "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.0-alpha"
+          },
+          "artifactMatches": false
+        },
+        {
+          "id": "claims",
+          "title": "Manual gameplay claims are true",
+          "status": "open",
+          "claims": [
+            {
+              "claim": "realFirst30Playthrough",
+              "status": "open"
+            },
+            {
+              "claim": "realFirst2HourPlaythrough",
+              "status": "open"
+            },
+            {
+              "claim": "realSurveyArrayPlaythrough",
+              "status": "open"
+            },
+            {
+              "claim": "freshWorldCreated",
+              "status": "open"
+            },
+            {
+              "claim": "saveReloadVerified",
+              "status": "open"
+            },
+            {
+              "claim": "noCrashEvidence",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "id": "release_gates",
+          "title": "All 13 release gates cite real evidence sources",
+          "status": "open",
+          "releaseGates": [
+            {
+              "id": "probe_launch_works",
+              "proof": "probe:starter_probe",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "holomap_reveals_meaningful_data",
+              "proof": "holomap_layer:scan_cones",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "catalog_entries_unlock_from_discoveries",
+              "proof": "discovery:barren_moon_kg_01a",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "fuel_route_limits_understandable",
+              "proof": "route:near_sector_01_survey_hop",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "one_salvage_site_playable",
+              "proof": "salvage:derelict_relay_osprey",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "one_probe_upgrade_matters",
+              "proof": "item:long_range_probe",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "first_2_hour_loop_no_dead_end",
+              "proof": "mission:first_survey_circuit",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_first_30_playthrough",
+              "proof": "manual:real_first_30_playthrough",
+              "requiredClaim": "realFirst30Playthrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_first_2_hour_playthrough",
+              "proof": "manual:real_first_2_hour_playthrough",
+              "requiredClaim": "realFirst2HourPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "real_survey_array_playthrough",
+              "proof": "manual:real_survey_array_playthrough",
+              "requiredClaim": "realSurveyArrayPlaythrough",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "fresh_world_created",
+              "proof": "manual:fresh_world_created",
+              "requiredClaim": "freshWorldCreated",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "save_reload_verified",
+              "proof": "manual:save_reload_verified",
+              "requiredClaim": "saveReloadVerified",
+              "status": "open",
+              "evidenceSource": "template"
+            },
+            {
+              "id": "no_crash_evidence",
+              "proof": "manual:no_crash_evidence",
+              "requiredClaim": "noCrashEvidence",
+              "status": "open",
+              "evidenceSource": "template"
+            }
+          ]
+        },
+        {
+          "id": "sessions",
+          "title": "Required session records are complete",
+          "status": "open",
+          "sessions": [
+            {
+              "id": "fresh_world_creation",
+              "claim": "freshWorldCreated",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "first_30_minutes",
+              "claim": "realFirst30Playthrough",
+              "minDurationMinutes": 30,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "first_2_hours",
+              "claim": "realFirst2HourPlaythrough",
+              "minDurationMinutes": 120,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "survey_array_completion",
+              "claim": "realSurveyArrayPlaythrough",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "save_reload_verification",
+              "claim": "saveReloadVerified",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            },
+            {
+              "id": "no_crash_review",
+              "claim": "noCrashEvidence",
+              "minDurationMinutes": 1,
+              "status": "open",
+              "expectedEvidence": {}
+            }
+          ]
+        },
+        {
+          "id": "supporting_files",
+          "title": "Gameplay notes",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/survey-array-verification.md",
+            "fixtures/galactic-survey/gameplay-qa/evidence/no-crash-review.md"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 5
+        },
+        {
+          "id": "screenshots",
+          "title": "Screenshots",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/fresh-world-created.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-30-minutes.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/first-2-hours.png",
+            "fixtures/galactic-survey/gameplay-qa/evidence/screenshots/survey-array-complete.png"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 4
+        },
+        {
+          "id": "logs",
+          "title": "Client logs",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/logs/client-playthrough.log"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 1
+        },
+        {
+          "id": "save_snapshots",
+          "title": "Save snapshots",
+          "status": "open",
+          "requiredPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip"
+          ],
+          "missingPaths": [
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/first-2-hours-save.zip",
+            "fixtures/galactic-survey/gameplay-qa/evidence/saves/survey-array-save.zip"
+          ],
+          "checkedCount": 0,
+          "requiredCount": 3
+        },
+        {
+          "id": "local_verification",
+          "title": "Edition local evidence verifier passes",
+          "status": "open",
+          "command": "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        }
+      ],
+      "openTaskCount": 9
+    }
+  ],
+  "notes": [
+    "This work order is generated from the readiness report and does not itself prove gameplay happened.",
+    "Keep manual claims false until the referenced notes, screenshots, logs, and save snapshots are captured from a real playthrough."
+  ]
+}
