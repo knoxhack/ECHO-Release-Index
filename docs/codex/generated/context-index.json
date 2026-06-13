@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T11:11:30-04:00",
+  "generatedAt": "2026-06-13T11:18:52-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,20 +16,29 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "8b71132d0d95",
-        "commitDate": "2026-06-13T11:06:57-04:00",
+        "commit": "cff8e874ff57",
+        "commitDate": "2026-06-13T11:12:21-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
-          "?? release-readiness/all-modpacks-electron-install-smoke.manual.json"
+          "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
+          "?? release-readiness/native-sdk-rc1-artifacts.json",
+          "?? release-readiness/openlands-standalone-electron-install-smoke.json",
+          "?? scripts/test-verify-native-sdk-rc1-artifacts.mjs",
+          "?? scripts/verify-native-sdk-rc1-artifacts.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 19463,
+          "bytes": 20184,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -467,6 +476,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVerticalSliceSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVoxelMaterialAtlasSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVoxelRenderMeshSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeWindowedSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeWorldSmokeHarness.java",
           " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelBiomeSources.java",
           " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelChunk.java",
@@ -720,8 +730,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "71d0e9e48055",
-        "commitDate": "2026-06-13T11:11:30-04:00",
+        "commit": "7a7b835978fe",
+        "commitDate": "2026-06-13T11:18:52-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -729,7 +739,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2983,
+          "bytes": 3024,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -757,7 +767,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 9729,
+          "bytes": 9845,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
