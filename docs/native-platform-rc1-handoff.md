@@ -32,11 +32,19 @@ Local artifact evidence exists:
 
 The local external addon proof generated, built, packaged, and loaded a `.echo-addon` through Native release mode. That proves the developer export path, but it does not prove public distribution.
 
+Partial Launcher lifecycle evidence now exists:
+
+- Evidence: `release-readiness/galactic-survey-launcher-lifecycle-smoke.json`
+- Reducer: `release-readiness/galactic-survey-public-alpha-readiness.json`
+- Scope: Galactic Survey draft GitHub pack assets, including `galactic-survey-native-edition`.
+- Passed: Launcher-owned deep-link resolution, pack ZIP install, update reconciliation, version-transition update, corrupt-file repair, rollback, and post-rollback update.
+- Not covered: packaged Electron click-through, first launch, diagnostics export, final public pack promotion, and real gameplay/player evidence.
+
 ## Approval Boundary
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
-- Launcher install, first launch, diagnostics export, repair, and rollback pass.
+- Packaged Launcher install, first launch, diagnostics export, repair, and rollback pass.
 - At least one Native pack gameplay smoke passes from the published runtime.
 - Public SDK artifacts have main, source, and Javadoc jars.
 - Stable-target catalog metadata has no `warning`, `blocked`, or `alpha` release blocker, and no stable artifact remains `source-linked`.

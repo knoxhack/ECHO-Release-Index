@@ -78,6 +78,27 @@
     "githubReleaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
     "githubDownloadSmoke": "release-readiness/native-platform-rc1-download-smoke.json",
     "githubIngestion": "release-readiness/native-platform-rc1-ingestion.json",
+    "launcherLifecycleSmoke": {
+      "status": "partial-pack-lifecycle-smoked",
+      "scope": "galactic-survey-draft-pack-assets",
+      "evidence": "release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
+      "readinessEvidence": "release-readiness/galactic-survey-public-alpha-readiness.json",
+      "passedGates": [
+        "launcherReleaseIndexDeepLinks",
+        "launcherInstallFromPackZip",
+        "launcherUpdateReconciliation",
+        "launcherVersionTransitionUpdate",
+        "launcherRepairCorruptFile",
+        "launcherRollbackSimulatedUpdate"
+      ],
+      "remainingGates": [
+        "packagedElectronCardUiSmoke",
+        "electronInstallUpdateRepairClickThrough",
+        "firstLaunch",
+        "diagnosticsExport",
+        "realGameplayEvidence"
+      ]
+    },
     "workflow": ".github/workflows/attest-release-assets.yml",
     "workflowRef": "refs/heads/main",
     "verifiedBy": "scripts/verify-native-platform-rc1-attestation.mjs",
@@ -110,9 +131,9 @@
   ],
   "trust": "provenance-attested",
   "validation": "warning",
-  "validationReason": "The RC1 product artifact has been uploaded to the v1.0.0-RC1 GitHub prerelease, download-smoked from GitHub bytes, and verified with GitHub artifact attestation. Approval is still blocked until it is launcher-installed, rollback-tested, and backed by real pack gameplay evidence.",
+  "validationReason": "The RC1 product artifact has been uploaded to the v1.0.0-RC1 GitHub prerelease, download-smoked from GitHub bytes, and verified with GitHub artifact attestation. Launcher-owned pack lifecycle mechanics now pass for Galactic Survey draft Native assets, but approval is still blocked until packaged Electron install/click-through, first launch, diagnostics export, and real pack gameplay evidence are attached.",
   "stableReleaseBlockedUntil": [
-    "launcher install, rollback, and diagnostics smoke evidence are attached",
+    "packaged Electron launcher install, first launch, diagnostics export, repair, and rollback evidence are attached",
     "pack gameplay evidence is real-run and green",
     "all stable-target catalog metadata is approved rather than warning, blocked, or alpha"
   ]
