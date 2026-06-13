@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T09:52:41-04:00",
+  "generatedAt": "2026-06-13T10:04:52-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,14 +16,13 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0e0881bc861a",
-        "commitDate": "2026-06-13T09:44:40-04:00",
+        "commit": "fa51a5adddd7",
+        "commitDate": "2026-06-13T09:53:51-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M PUBLIC_ALPHA_RELEASE_STATUS.md",
           " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M products/native-platform.json",
           " M release-readiness/galactic-survey-electron-ui-smoke.json",
           " M release-readiness/galactic-survey-public-alpha-readiness.json",
           " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
@@ -34,7 +33,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 17697,
+          "bytes": 17762,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -257,8 +256,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "cd78fd00e155",
-        "commitDate": "2026-06-13T09:52:41-04:00",
+        "commit": "159c6c50761f",
+        "commitDate": "2026-06-13T10:04:52-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? tmp/"
@@ -268,14 +267,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3541,
+          "bytes": 4127,
           "heading": "ECHO Launcher",
           "excerpt": "Official desktop launcher, updater, repair tool, profile manager, diagnostics center, and release consumer for Ashfall and the ECHO ecosystem."
         },
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 827,
+          "bytes": 915,
           "heading": "Launcher Release Status",
           "excerpt": "ECHO Launcher is the install, update, repair, rollback, and diagnostics surface for ECHO products. It is not itself the ECHO Native Platform release artifact."
         }
@@ -369,6 +368,7 @@
           " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneLauncherRuntime.java",
           " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneVoxelMaterialAtlasRuntime.java",
           " M echo-runtime-assets/src/main/java/dev/echo/standalone/runtime/assets/EchoBlockTextureResolver.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientAudio.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientChunkMesh.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientContentProfiles.java",
@@ -710,10 +710,17 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "050ee9af7490",
-        "commitDate": "2026-06-13T09:50:34-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "d2b7fa1fb193",
+        "commitDate": "2026-06-13T09:59:12-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/REMAINING_WORK.md",
+          " M src/main/scanner-smoke.ts",
+          " M src/main/scanner.ts",
+          " M src/renderer/App.tsx",
+          " M src/renderer/styles/app.css",
+          " M src/shared/echo.ts"
+        ]
       },
       "canonicalDocs": [
         {
@@ -747,7 +754,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 8181,
+          "bytes": 8518,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }

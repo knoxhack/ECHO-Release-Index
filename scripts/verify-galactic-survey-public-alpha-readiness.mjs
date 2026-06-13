@@ -616,6 +616,7 @@ const phases = []
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronRepairClickThrough'), 'packaged Electron repair click-through passed', 'packaged Electron repair click-through must pass')
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronDiagnosticExport'), 'packaged Electron diagnostic export passed', 'packaged Electron diagnostic export must pass')
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronLogExport'), 'packaged Electron log export passed', 'packaged Electron log export must pass')
+  requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronMinecraftLauncherHandoffPreparation === 'passed_isolated_prepare_only', 'packaged Electron prepared Minecraft Launcher handoff metadata in isolated mode', 'packaged Electron must prepare Minecraft Launcher handoff metadata in isolated mode')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronFirstLaunch === 'blocked_legacy_native_launch_removed', 'packaged Electron first launch limitation is explicit', 'packaged Electron first launch limitation must be explicit until a real Native launch path passes')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronRollbackClickThrough === 'not_available_no_visible_ui_command', 'packaged Electron rollback limitation is explicit', 'packaged Electron rollback limitation must be explicit until the UI exposes rollback')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.selectedPack?.packId === 'galactic-survey-native-edition', 'packaged Electron selected Galactic Survey Native Edition', 'packaged Electron smoke must select Galactic Survey Native Edition')
@@ -629,6 +630,20 @@ const phases = []
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.firstLaunch?.state === 'fail_closed_legacy_native_launch_removed', 'packaged Electron first launch fails closed on legacy native launch path', 'packaged Electron first launch must fail closed until real launch proof exists')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.firstLaunch?.preflight?.verification?.valid === expectedPackagedModuleCount, `packaged Electron first-launch preflight verified all ${expectedPackagedModuleCount} module files`, `packaged Electron first-launch preflight must verify all ${expectedPackagedModuleCount} module files`)
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.firstLaunch?.preflight?.blockers?.some((blocker) => blocker.id === 'minecraft-launcher-handoff'), 'packaged Electron first-launch preflight names Minecraft Launcher Handoff blocker', 'packaged Electron first-launch preflight must name the real launch blocker')
+  const isolatedHandoff = launcherElectronUiSmoke?.clickThrough?.minecraftLauncherHandoff
+  requireCondition(phase, isolatedHandoff?.state === 'prepared_profile_in_isolated_minecraft_root', 'packaged Electron handoff preparation is explicitly isolated', 'packaged Electron handoff preparation must be isolated from the user Minecraft root')
+  requireCondition(phase, isolatedHandoff?.ok === true, 'packaged Electron handoff preparation passed', 'packaged Electron handoff preparation must pass')
+  requireCondition(phase, isolatedHandoff?.runtimeMode === 'native-loader-minecraft', 'packaged Electron handoff used Native Loader Minecraft mode', 'packaged Electron handoff must use Native Loader Minecraft mode')
+  requireCondition(phase, isolatedHandoff?.verification?.valid === expectedPackagedModuleCount, `packaged Electron handoff preparation verified all ${expectedPackagedModuleCount} module files`, `packaged Electron handoff preparation must verify all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, isolatedHandoff?.handoff?.profileCurrent === true, 'packaged Electron handoff profile is current', 'packaged Electron handoff profile must be current')
+  requireCondition(phase, isolatedHandoff?.handoff?.versionReady === true, 'packaged Electron handoff version metadata is ready', 'packaged Electron handoff version metadata must be ready')
+  requireCondition(phase, isolatedHandoff?.handoff?.updatedProfile === true, 'packaged Electron handoff wrote launcher profile metadata', 'packaged Electron handoff must write launcher profile metadata')
+  requireCondition(phase, isolatedHandoff?.handoff?.openedLauncher === false && isolatedHandoff?.handoff?.openSkipped === true, 'packaged Electron handoff did not open the official launcher during isolated proof', 'packaged Electron isolated handoff proof must not open the official launcher')
+  requireCondition(phase, isolatedHandoff?.handoff?.validatedModsCount === expectedPackagedModuleCount, `packaged Electron handoff validated all ${expectedPackagedModuleCount} module files`, `packaged Electron handoff must validate all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, isolatedHandoff?.writtenProfile?.echoManaged === true, 'packaged Electron handoff wrote an ECHO-managed launcher profile', 'packaged Electron handoff must write an ECHO-managed launcher profile')
+  requireCondition(phase, isolatedHandoff?.writtenProfile?.profileId === 'galactic-survey-native-edition', 'packaged Electron handoff launcher profile points at Galactic Survey Native Edition', 'packaged Electron handoff launcher profile must point at Galactic Survey Native Edition')
+  requireCondition(phase, isolatedHandoff?.writtenProfile?.runtimeMode === 'native-loader-minecraft', 'packaged Electron handoff launcher profile records Native Loader Minecraft mode', 'packaged Electron handoff launcher profile must record Native Loader Minecraft mode')
+  requireCondition(phase, isolatedHandoff?.writtenVersionMetadata?.loader === 'native-loader', 'packaged Electron handoff wrote Native Loader version metadata', 'packaged Electron handoff must write Native Loader version metadata')
   const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
   const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
   const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
@@ -914,6 +929,7 @@ const report = {
           diagnostics: launcherElectronUiSmoke.clickThrough?.diagnostics,
           logs: launcherElectronUiSmoke.clickThrough?.logs,
           firstLaunch: launcherElectronUiSmoke.clickThrough?.firstLaunch,
+          minecraftLauncherHandoff: launcherElectronUiSmoke.clickThrough?.minecraftLauncherHandoff,
           rollback: launcherElectronUiSmoke.clickThrough?.rollback
         },
         gates: launcherElectronUiSmoke.gates

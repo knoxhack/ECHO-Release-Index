@@ -51,15 +51,16 @@ Launcher lifecycle evidence now exists:
 - Reducer: `release-readiness/galactic-survey-public-alpha-readiness.json`
 - Scope: Galactic Survey public prerelease GitHub pack assets, including `galactic-survey-native-edition`.
 - Passed: Launcher-owned deep-link resolution, pack ZIP install, update reconciliation, version-transition update, corrupt-file repair, rollback, and post-rollback update.
-- Passed in packaged Electron: renderer mount, native bridge bootstrap, Galactic Survey Library cards, scoped card actions, install click-through, update reconciliation click-through, corrupt-file repair click-through, diagnostic export, and log/support bundle export.
-- First-launch status: the legacy `launch:start` path fails closed with the explicit Minecraft Launcher Handoff blocker after verifying all 23 installed module files. This is not first-launch proof; a real Native runtime launch path or Minecraft Launcher Handoff run must pass before approval.
+- Passed in packaged Electron: renderer mount, native bridge bootstrap, Galactic Survey Library cards, scoped card actions, install click-through, update reconciliation click-through, corrupt-file repair click-through, diagnostic export, log/support bundle export, and prepare-only Minecraft Launcher handoff metadata in an isolated Minecraft root.
+- Handoff status: the packaged launcher wrote an ECHO-managed Native Loader Minecraft profile and `echo-native-loader-1.0.0` version metadata inside `tmp/galactic-survey-electron-ui-smoke/isolated-minecraft-root`, verified all 23 installed module files, and deliberately skipped opening the official Minecraft Launcher. This proves metadata handoff mechanics without touching the user's real `.minecraft` folder.
+- First-launch status: the legacy `launch:start` path fails closed with the explicit Minecraft Launcher Handoff blocker after verifying all 23 installed module files. This is not first-launch proof; a real Native runtime launch path or an official Minecraft Launcher open/play handoff must pass before approval.
 - Not covered: real packaged first launch, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback remains covered by the Launcher-owned lifecycle smoke until the UI exposes a visible rollback command.
 
 ## Approval Boundary
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
-- Packaged Launcher first launch passes through a real runtime path or Minecraft Launcher Handoff.
+- Packaged Launcher first launch passes through a real runtime path or an official Minecraft Launcher open/play handoff.
 - Final public pack promotion evidence is approved.
 - At least one Native pack gameplay smoke passes from the published runtime.
 - Public SDK artifacts have main, source, and Javadoc jars.
