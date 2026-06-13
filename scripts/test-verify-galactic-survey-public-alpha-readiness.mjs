@@ -249,7 +249,7 @@ assert.equal(report.runtimePlaytestEvidence.releaseGatePreview.publicAlphaAllowe
 assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('real_first_30_playthrough'))
 assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('no_crash_evidence'))
 assert.ok(!report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('launcher_install_update_repair_rollback'))
-assert.ok(!report.blockers.some((blocker) => blocker.includes('Launcher lifecycle smoke must verify all 23 module files')))
+assert.ok(!report.blockers.some((blocker) => blocker.includes('Launcher lifecycle smoke must verify all 42 module files')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('release-ready gameplay evidence is still missing')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('packaged Electron first launch/open-play proof must pass')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('first-launch/open-play evidence report must be imported from a real capture')))

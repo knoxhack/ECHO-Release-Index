@@ -764,7 +764,7 @@ const phases = []
   }
   requireCondition(phase, moduleReleaseIngest?.validation === 'approved', 'Galactic module release ingestion is approved', 'Galactic module release ingestion must be approved')
   requireCondition(phase, moduleReleaseIngest?.assetCount === 96, 'Galactic module release exposes 96 source-owned release assets', 'Galactic module release must expose the 23-module runtime/source artifact set')
-  requireCondition(phase, moduleReleaseIngest?.writtenIndexEntries?.length === 23, 'Release Index wrote 23 Galactic module catalog entries', 'Release Index must write the full 23-module Galactic module catalog set')
+  requireCondition(phase, moduleReleaseIngest?.writtenIndexEntries?.length === expectedPackagedModuleCount, `Release Index wrote ${expectedPackagedModuleCount} Galactic module catalog entries`, `Release Index must write the full ${expectedPackagedModuleCount}-module Galactic module catalog set`)
   requireCondition(phase, nativeSdkRc1Artifacts?.schemaVersion === 'echo.native_sdk.rc1-artifacts.v1', 'Native SDK RC1 artifact report exists', 'Native SDK RC1 artifact report must be generated')
   requireCondition(phase, nativeSdkRc1Artifacts?.gates?.localMainSourceJavadocJars === 'passed', 'Native SDK RC1 local main/source/Javadoc jars are complete', 'Native SDK RC1 local main/source/Javadoc jars must be complete')
   requireCondition(phase, nativeSdkRc1Artifacts?.gates?.publicCatalogArtifacts === 'passed', 'Native SDK RC1 public catalog artifacts are indexed', 'Native SDK RC1 public catalog artifacts must be indexed')
