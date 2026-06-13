@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.launcher-lifecycle-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T12:14:20.462Z",
+  "generatedAt": "2026-06-13T20:36:06.956Z",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-download",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-launcher-lifecycle-smoke",
   "editions": [
@@ -175,11 +175,11 @@
     "realVersionToVersionUpdate": "passed_with_previous_version_fixture",
     "packagedElectronCardUiSmoke": "covered_separately",
     "electronInstallUpdateRepairClickThrough": "covered_by_packaged_electron_ui_smoke",
-    "electronRollbackClickThrough": "not_available_no_visible_ui_command"
+    "electronRollbackClickThrough": "not_exercised_by_sky_relay_packaged_smoke"
   },
   "blockers": [],
   "residualRisks": [
     "The previous Sky Relay version is a fixture-local manifest generated from current public assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Sky Relay release exists.",
-    "This script uses Launcher-owned resolver and lifecycle contracts from Node; packaged Electron install/update/repair click-through is covered by release-readiness/sky-relay-electron-ui-smoke.json, while rollback has no visible packaged UI command yet."
+    "This script uses Launcher-owned resolver and lifecycle contracts from Node; packaged Electron install/update/repair click-through is covered by release-readiness/sky-relay-electron-ui-smoke.json, while visible packaged rollback remains unexercised by the Sky Relay smoke."
   ]
 }

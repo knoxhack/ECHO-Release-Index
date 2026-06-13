@@ -1,21 +1,21 @@
 {
   "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T12:15:29.376Z",
+  "generatedAt": "2026-06-13T20:36:21.068Z",
   "scope": "packaged-electron-ui-and-lifecycle-smoke",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
   "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data",
   "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content",
-  "debugPort": 61379,
-  "catalogPort": 61380,
+  "debugPort": 63532,
+  "catalogPort": 63533,
   "platform": {
     "os": "win32",
     "release": "10.0.19045",
     "arch": "x64"
   },
   "catalog": {
-    "channelUrl": "http://127.0.0.1:61380/channel.json",
+    "channelUrl": "http://127.0.0.1:63533/channel.json",
     "servedPack": "sky-relay-native-edition",
     "releaseVersion": "0.1.0",
     "manifestName": "sky-relay-native-edition-alpha-0.1.0.pack.json",
@@ -45,7 +45,7 @@
     ],
     "releaseIndexAccepted": 1,
     "releaseIndexWarnings": [],
-    "launcherUpdateStatus": "idle",
+    "launcherUpdateStatus": "checking",
     "userData": null
   },
   "ui": {
@@ -195,7 +195,7 @@
         "clicked": true,
         "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T12-15-25-384Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T20-36-16-760Z.json",
       "installed": 12,
       "updated": 0,
       "verified": 0,
@@ -215,7 +215,7 @@
         "clicked": true,
         "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T12-15-27-905Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T20-36-19-328Z.json",
       "installed": 0,
       "updated": 0,
       "verified": 12,
@@ -233,13 +233,13 @@
         "clicked": true,
         "text": "Repair Now"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T12-15-28-865Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T20-36-20-039Z.json",
       "repaired": [
         "addons/echoskyrelayprotocol-0.1.0.echo-addon"
       ],
       "skipped": [],
       "warnings": [],
-      "corruptSha256": "cd8c8d925c273187c3f90da459d1983eabe6770c350659a406c9bfc47d51cc6f",
+      "corruptSha256": "ccee01e7242b45983fd1b2c64fe252a4b156481f95b87eec2e4b1dee2ec9a0f5",
       "verifiedModule": {
         "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
@@ -248,7 +248,7 @@
       }
     },
     "rollback": {
-      "state": "covered_by_node_lifecycle_smoke_no_visible_packaged_ui_command"
+      "state": "covered_by_node_lifecycle_smoke_visible_packaged_command_not_exercised_here"
     }
   },
   "gates": {
@@ -261,18 +261,18 @@
     "packagedElectronInstallClickThrough": "passed",
     "packagedElectronUpdateReconciliationClickThrough": "passed",
     "packagedElectronRepairClickThrough": "passed",
-    "packagedElectronRollbackClickThrough": "not_available_no_visible_ui_command",
+    "packagedElectronRollbackClickThrough": "not_exercised_by_sky_relay_packaged_smoke",
     "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "process": {
-    "pid": 8280,
+    "pid": 3388,
     "stdout": [
       "Checking for update",
-      "Generated new staging user ID: 427b4279-a282-5a64-9614-ac8090ef96d8",
-      "Update for version 1.1.2 is not available (latest version: 1.1.1, downgrade is disallowed)."
+      "Generated new staging user ID: 9be7d7e1-7ec5-582d-9876-225049e576f2",
+      "Update for version 1.1.2 is not available (latest version: 1.1.2, downgrade is disallowed)."
     ],
     "stderr": [
-      "DevTools listening on ws://127.0.0.1:61379/devtools/browser/dcbdf728-3393-4180-9c5d-2fb50a883a67"
+      "DevTools listening on ws://127.0.0.1:63532/devtools/browser/2f957880-97a0-4cf4-bdd2-8252479d4d16"
     ]
   }
 }
