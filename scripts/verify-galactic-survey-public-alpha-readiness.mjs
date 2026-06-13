@@ -57,8 +57,6 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'docs/galactic-survey-manual-gameplay-work-order.md'
 ])
 const MODULE_RELEVANT_STATUS_PATHS = [
-  'addons/echoaddonapi/build.gradle',
-  'addons/echoaddonapi/src/main/templates',
   'addons/echogalacticcore/README.md',
   'addons/echogalacticcore/build.gradle',
   'addons/echogalacticcore/docs/artifacts.md',

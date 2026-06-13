@@ -82,7 +82,7 @@ assert.equal(report.editionPackEvidence.assets.gates.editionPackAssetsBuilt, 'pa
 assert.equal(report.editionPackEvidence.assets.gates.localStageChecksums, 'passed')
 assert.equal(report.editionPackEvidence.assets.gates.zipMatchesPackManifest, 'passed')
 assert.equal(report.editionPackEvidence.assets.packagedModules.length, 23)
-assert.ok(report.editionPackEvidence.assets.packagedModules.includes('echoaddonapi'))
+assert.ok(!report.editionPackEvidence.assets.packagedModules.includes('echoaddonapi'))
 assert.ok(report.editionPackEvidence.assets.packagedModules.includes('echoplatformcore'))
 assert.equal(report.editionPackEvidence.assets.editions.length, 3)
 assert.equal(typeof report.editionPackEvidence.downloadBackMatchesLocalStage.matches, 'boolean')
