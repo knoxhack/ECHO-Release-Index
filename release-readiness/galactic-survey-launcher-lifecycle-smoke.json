@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "echo.galactic_survey.launcher-lifecycle-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-13T10:39:34.131Z",
+  "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-download",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke",
+  "editions": [
+    {
+      "repoName": "ECHO-Galactic-Survey-Native-Edition",
+      "pack": "galactic-survey-native-edition",
+      "releaseTag": "galactic-survey-native-0.1.0-alpha",
+      "manifestAsset": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "galactic-survey-native-edition-0.1.0.zip",
+      "moduleCount": 18,
+      "fileCount": 18,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "galactic-survey-native-edition-0.1.0.zip",
+        "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+        "galactic-survey-pack-build-report.json"
+      ],
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/galactic-survey-native-edition",
+          "artifact": "galactic-survey-native-edition-alpha-0.1.0.pack.json"
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echogalacticsurveyprotocol?pack=galactic-survey-native-edition",
+          "artifact": "echogalacticsurveyprotocol-0.1.0.echo-addon"
+        }
+      },
+      "install": {
+        "installed": 18,
+        "verifiedAfterInstall": 18
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 17,
+        "removed": 1,
+        "verifiedAfterUpdate": 18,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "restoredObsoletePath": "addons/galactic-survey-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 18
+      },
+      "repair": {
+        "repaired": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "verifiedAfterRepair": 18
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-Native-Edition\\install"
+    },
+    {
+      "repoName": "ECHO-Galactic-Survey-NeoForge-Edition",
+      "pack": "galactic-survey-neoforge-edition",
+      "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
+      "manifestAsset": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "galactic-survey-neoforge-edition-0.1.0.zip",
+      "moduleCount": 18,
+      "fileCount": 18,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "galactic-survey-neoforge-edition-0.1.0.zip",
+        "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+        "galactic-survey-pack-build-report.json"
+      ],
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/galactic-survey-neoforge-edition",
+          "artifact": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json"
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echogalacticsurveyprotocol?pack=galactic-survey-neoforge-edition",
+          "artifact": "echogalacticsurveyprotocol-0.1.0-neoforge.jar"
+        }
+      },
+      "install": {
+        "installed": 18,
+        "verifiedAfterInstall": 18
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 17,
+        "removed": 1,
+        "verifiedAfterUpdate": 18,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
+        "restoredObsoletePath": "mods/galactic-survey-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 18
+      },
+      "repair": {
+        "repaired": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
+        "verifiedAfterRepair": 18
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-NeoForge-Edition\\install"
+    },
+    {
+      "repoName": "ECHO-Galactic-Survey-Standalone-Edition",
+      "pack": "galactic-survey-standalone-edition",
+      "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
+      "manifestAsset": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "galactic-survey-standalone-edition-0.1.0.zip",
+      "moduleCount": 18,
+      "fileCount": 18,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "galactic-survey-pack-build-report.json",
+        "galactic-survey-standalone-edition-0.1.0.zip",
+        "galactic-survey-standalone-edition-alpha-0.1.0.pack.json"
+      ],
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/galactic-survey-standalone-edition",
+          "artifact": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json"
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echogalacticsurveyprotocol?pack=galactic-survey-standalone-edition",
+          "artifact": "echogalacticsurveyprotocol-0.1.0-standalone.jar"
+        }
+      },
+      "install": {
+        "installed": 18,
+        "verifiedAfterInstall": 18
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 17,
+        "removed": 1,
+        "verifiedAfterUpdate": 18,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
+        "restoredObsoletePath": "mods/galactic-survey-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 18
+      },
+      "repair": {
+        "repaired": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
+        "verifiedAfterRepair": 18
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\install"
+    }
+  ],
+  "gates": {
+    "launcherReleaseIndexDeepLinks": "passed",
+    "launcherInstallFromPackZip": "passed",
+    "launcherUpdateReconciliation": "passed",
+    "launcherVersionTransitionUpdate": "passed",
+    "launcherRepairCorruptFile": "passed",
+    "launcherRollbackSimulatedUpdate": "passed",
+    "realVersionToVersionUpdate": "passed_with_previous_version_fixture",
+    "packagedElectronCardUiSmoke": "not_started",
+    "electronInstallUpdateRepairClickThrough": "not_started",
+    "electronRollbackClickThrough": "not_available_no_visible_ui_command"
+  },
+  "blockers": [],
+  "residualRisks": [
+    "The previous Galactic Survey version is a fixture-local manifest generated from current draft assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Galactic Survey release exists.",
+    "This script uses Launcher-owned resolver and lifecycle contracts from Node against downloaded GitHub draft assets; packaged Electron install/update/repair click-through remains separate UI evidence.",
+    "Real gameplay evidence remains required before public alpha promotion."
+  ]
+}

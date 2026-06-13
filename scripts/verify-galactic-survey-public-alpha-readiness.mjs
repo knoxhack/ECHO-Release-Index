@@ -267,6 +267,7 @@ const editionPackAssets = readJsonOrNull(path.join(releaseIndexRoot, 'release-re
 const editionPackSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-smoke.json'))
 const editionDraftPublish = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-publish.json'))
 const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-download.json'))
+const launcherLifecycleSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-launcher-lifecycle-smoke.json'))
 const requiredPackagedModules = [
   'echocore',
   'echoaddonapi',
@@ -462,6 +463,24 @@ const phases = []
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'githubDraftDownloadBack'), 'lifecycle smoke verified GitHub draft download evidence', 'lifecycle smoke must verify GitHub draft download evidence')
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'installedFromDownloadedArtifacts'), 'lifecycle smoke installed downloaded GitHub draft artifacts', 'lifecycle smoke must install downloaded GitHub draft artifacts')
   requireCondition(phase, smokeEditions.every((edition) => edition.githubDraftReleaseDownload === true && edition.releaseMetadataDraft === true && edition.releaseMetadataPrerelease === true), 'lifecycle smoke covers draft release metadata for all editions', 'lifecycle smoke must cover draft release metadata for all editions')
+  const launcherLifecycleEditions = Array.isArray(launcherLifecycleSmoke?.editions) ? launcherLifecycleSmoke.editions : []
+  const launcherLifecyclePackIds = launcherLifecycleEditions.map((edition) => edition.pack)
+  requireCondition(phase, launcherLifecycleSmoke?.schemaVersion === 'echo.galactic_survey.launcher-lifecycle-smoke.v1', 'Launcher-owned lifecycle smoke report exists', 'Launcher-owned lifecycle smoke report must be generated')
+  requireCondition(phase, launcherLifecycleSmoke?.ok === true, 'Launcher-owned lifecycle smoke passed', 'Launcher-owned lifecycle smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherLifecycleSmoke, 'launcherReleaseIndexDeepLinks'), 'Launcher lifecycle deep-link resolver smoke passed', 'Launcher lifecycle deep-link resolver smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherLifecycleSmoke, 'launcherInstallFromPackZip'), 'Launcher lifecycle install smoke passed', 'Launcher lifecycle install smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherLifecycleSmoke, 'launcherUpdateReconciliation'), 'Launcher lifecycle update reconciliation smoke passed', 'Launcher lifecycle update reconciliation smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherLifecycleSmoke, 'launcherVersionTransitionUpdate'), 'Launcher lifecycle version-transition update smoke passed', 'Launcher lifecycle version-transition update smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherLifecycleSmoke, 'launcherRepairCorruptFile'), 'Launcher lifecycle repair smoke passed', 'Launcher lifecycle repair smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherLifecycleSmoke, 'launcherRollbackSimulatedUpdate'), 'Launcher lifecycle rollback smoke passed', 'Launcher lifecycle rollback smoke must pass')
+  requireCondition(phase, setContainsAll(launcherLifecyclePackIds, editions.map((edition) => edition.id)), 'Launcher lifecycle smoke covers Native, NeoForge, and Standalone packs', 'Launcher lifecycle smoke must cover Native, NeoForge, and Standalone packs')
+  requireCondition(phase, launcherLifecycleEditions.every((edition) =>
+    edition.fileCount === 18 &&
+    edition.install?.verifiedAfterInstall === 18 &&
+    edition.update?.verifiedAfterUpdate === 18 &&
+    edition.postRollbackUpdate?.verifiedAfterUpdate === 18 &&
+    edition.repair?.verifiedAfterRepair === 18
+  ), 'Launcher lifecycle smoke verified all 18 module files through install, update, repair, and rollback', 'Launcher lifecycle smoke must verify all 18 module files through install, update, repair, and rollback')
   const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
   const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
   const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
@@ -504,7 +523,6 @@ const phases = []
   } else {
     phase.blockers.push('checksum-backed module and edition GitHub Release artifacts are not published')
   }
-  phase.blockers.push('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')
   phase.blockers.push('real first-30-minute, first-2-hour, Survey Array, save/reload, and no-crash evidence is not present')
   phases.push(finalizePhase(phase))
 }
@@ -536,6 +554,7 @@ const report = {
       editionPackSmoke: 'release-readiness/galactic-survey-edition-pack-smoke.json',
       editionDraftPublish: 'release-readiness/galactic-survey-draft-publish.json',
       editionDraftDownload: 'release-readiness/galactic-survey-draft-download.json',
+      launcherLifecycleSmoke: 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
@@ -632,6 +651,28 @@ const report = {
           })) ?? [],
           verifiedTopLevelChecksumCount: edition.verifiedTopLevelChecksums?.length ?? 0
         })) ?? []
+      }
+    : null,
+  launcherLifecycleEvidence: launcherLifecycleSmoke
+    ? {
+        schemaVersion: launcherLifecycleSmoke.schemaVersion,
+        ok: launcherLifecycleSmoke.ok,
+        generatedAt: launcherLifecycleSmoke.generatedAt,
+        editions: launcherLifecycleSmoke.editions?.map((edition) => ({
+          pack: edition.pack,
+          repoName: edition.repoName,
+          releaseTag: edition.releaseTag,
+          moduleCount: edition.moduleCount,
+          fileCount: edition.fileCount,
+          deepLinks: edition.deepLinks,
+          install: edition.install,
+          update: edition.update,
+          rollback: edition.rollback,
+          postRollbackUpdate: edition.postRollbackUpdate,
+          repair: edition.repair
+        })) ?? [],
+        gates: launcherLifecycleSmoke.gates,
+        residualRisks: launcherLifecycleSmoke.residualRisks
       }
     : null,
   runtimePlaytestEvidence: runtimePlaytest
