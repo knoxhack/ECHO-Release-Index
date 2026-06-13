@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T06:02:16-04:00",
+  "generatedAt": "2026-06-13T06:02:59-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,11 +16,11 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1aafce885567",
-        "commitDate": "2026-06-13T06:02:16-04:00",
+        "commit": "5c20e48c5845",
+        "commitDate": "2026-06-13T06:02:59-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M README.md",
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
           " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
           "?? docs/native-platform-rc1-handoff.md"
@@ -106,8 +106,10 @@
         "branch": "main",
         "commit": "5ac36fab2234",
         "commitDate": "2026-06-13T05:58:13-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -310,8 +312,10 @@
         "branch": "main",
         "commit": "fc78afec34cb",
         "commitDate": "2026-06-13T05:10:20-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -324,9 +328,9 @@
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 243,
-          "heading": "PUBLIC_ALPHA_RELEASE_STATUS.md",
-          "excerpt": "This brand-new repository is staged for the ECHO Native Platform public alpha."
+          "bytes": 590,
+          "heading": "Launcher Release Status",
+          "excerpt": "ECHO Launcher is the install, update, repair, rollback, and diagnostics surface for ECHO products. It is not itself the ECHO Native Platform release artifact."
         }
       ],
       "agentDocs": [],
@@ -395,7 +399,8 @@
         "commitDate": "2026-06-09T19:50:54-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M build.gradle",
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M build.gradle",
           " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
@@ -544,9 +549,9 @@
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 243,
-          "heading": "PUBLIC_ALPHA_RELEASE_STATUS.md",
-          "excerpt": "This brand-new repository is staged for the ECHO Native Platform public alpha."
+          "bytes": 610,
+          "heading": "Standalone Runtime Release Status",
+          "excerpt": "ECHO Standalone Runtime is a separate runtime lane for running ECHO content outside Minecraft. It is not the canonical Native Platform `1.0.0-RC1` loader release."
         }
       ],
       "agentDocs": [],
@@ -609,6 +614,7 @@
         "commitDate": "2026-06-09T16:40:03-04:00",
         "dirty": true,
         "dirtyFiles": [
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
           "?? dist/",
           "?? node_modules/",
           "?? release/"
@@ -763,8 +769,10 @@
         "branch": "main",
         "commit": "b5703b22eaef",
         "commitDate": "2026-06-12T20:57:12-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -777,9 +785,9 @@
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 243,
-          "heading": "PUBLIC_ALPHA_RELEASE_STATUS.md",
-          "excerpt": "This brand-new repository is staged for the ECHO Native Platform public alpha."
+          "bytes": 576,
+          "heading": "Ashfall Native Edition Release Status",
+          "excerpt": "Ashfall Native Edition consumes ECHO Native `.echo-addon` artifacts and remains warning-gated until real pack assets replace historical placeholder outputs."
         },
         {
           "path": "docs/NATIVE_INSTALL_GUIDE.md",

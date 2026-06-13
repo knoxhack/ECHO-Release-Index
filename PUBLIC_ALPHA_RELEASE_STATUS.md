@@ -1,7 +1,7 @@
-﻿# Public Alpha Release Status
+# Release Index Status
 
-This brand-new repository is staged for the ECHO Native Platform public alpha.
+ECHO Release Index is the canonical catalog, channel, trust, block, and release-routing hub for ECHO products.
 
-Public release assets are staged through GitHub draft releases first. The official ECHO website is the public download hub.
+The ECHO Native Platform entry is currently `1.0.0-RC1` and remains warning-gated. Local product artifact, SDK export, and external addon release-mode proof exist, but public approval still requires uploaded/download-backed assets, signing or attestation, launcher install and rollback evidence, diagnostics export, and real pack gameplay smoke proof.
 
-Ashfall Native Edition remains warning-level until the live release replaces the legacy Native Platform placeholder zip with an exporter-built pack zip, `.pack.json` sidecar, `echo-release.json`, and matching checksums.
+Stable `1.0.0` catalog entries must not use `warning`, `blocked`, `alpha`, `source-linked`, source-packaged, or dev-fallback-backed evidence.

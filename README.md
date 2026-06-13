@@ -68,6 +68,10 @@ Run commands from the repository root.
 
 Index JSON and catalog metadata belong here. Binary release assets stay in their owning source repos.
 
+## Native Platform RC1
+
+The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, SDK export, and external addon release-mode proof exist, but public approval is blocked until GitHub upload/download-back, signing or attestation, launcher install/rollback/diagnostics, and real pack gameplay evidence pass. See `docs/native-platform-rc1-handoff.md`.
+
 Each installable entry must include stable fields for `id`, `kind`, `version`, `channel`, `publisher`, `sourceRepo`, `releaseTag`, `commitSha`, `artifacts`, `dependencies`, `compatibility`, `trust`, and `validation`.
 
 The required schema inventory is enforced by `scripts/validate-index.mjs` and includes addon package, pack manifest, module release manifest, product update entry, Release Index entry, publisher, channel, trust, and block schemas.
@@ -122,6 +126,7 @@ For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a Gi
 - [docs/codex/platform-primer.md](docs/codex/platform-primer.md)
 - [docs/codex/repo-routing.md](docs/codex/repo-routing.md)
 - [docs/codex/maintenance.md](docs/codex/maintenance.md)
+- [docs/native-platform-rc1-handoff.md](docs/native-platform-rc1-handoff.md)
 - [PUBLIC_ALPHA_RELEASE_STATUS.md](PUBLIC_ALPHA_RELEASE_STATUS.md)
 
 ## Related Repos
