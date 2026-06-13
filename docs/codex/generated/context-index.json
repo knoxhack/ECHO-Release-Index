@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T06:02:59-04:00",
+  "generatedAt": "2026-06-13T06:08:25-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,14 +16,14 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5c20e48c5845",
-        "commitDate": "2026-06-13T06:02:59-04:00",
+        "commit": "5775f79eaf3d",
+        "commitDate": "2026-06-13T06:07:37-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M release-readiness/sky-relay-electron-ui-smoke.json",
+          "M release-readiness/sky-relay-electron-ui-smoke.json",
           " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
-          "?? docs/native-platform-rc1-handoff.md"
+          "?? scripts/download-galactic-survey-draft-releases.mjs",
+          "?? scripts/test-download-galactic-survey-draft-releases.mjs"
         ]
       },
       "canonicalDocs": [
@@ -104,12 +104,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5ac36fab2234",
-        "commitDate": "2026-06-13T05:58:13-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md"
-        ]
+        "commit": "26b754954252",
+        "commitDate": "2026-06-13T06:07:22-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -184,72 +182,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ec0d9b83b695",
-        "commitDate": "2026-06-13T05:31:54-04:00",
+        "commit": "fc4221ee1bc3",
+        "commitDate": "2026-06-13T06:07:10-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M README.md",
-          " M docs/NATIVE_API_REFERENCE.md",
-          " M docs/NATIVE_EXAMPLE_ADDON_WALKTHROUGH.md",
-          " M docs/NATIVE_MOD_AUTHOR_GUIDE.md",
-          " M docs/NATIVE_PORTING_GUIDE.md",
-          " M docs/NATIVE_SDK_ARTIFACTS.md",
-          " M docs/NATIVE_TROUBLESHOOTING.md",
-          " M templates/README.md",
-          " M templates/_shared/native-addon-module/addons/{{module_id}}/README.md.tpl",
-          " M templates/_shared/native-addon-module/addons/{{module_id}}/build.gradle.tpl",
-          " M templates/_shared/native-addon-module/addons/{{module_id}}/docs/{{module_id}}.md.tpl",
-          " D templates/config-example/AddonConfig.java",
-          " D templates/config-example/ConfigExampleAddon.java",
-          " D templates/config-example/ConfigExampleTest.java",
-          " M templates/config-example/README.md",
-          " D templates/config-example/build.gradle",
-          " D templates/config-example/echo-native-addon.descriptor.json",
-          " D templates/event-example/EventExampleAddon.java",
-          " D templates/event-example/EventExampleTest.java",
-          " M templates/event-example/README.md",
-          " D templates/event-example/build.gradle",
-          " D templates/event-example/echo-native-addon.descriptor.json",
-          " D templates/native-module-template/NativeModule.java",
-          " D templates/native-module-template/NativeModuleTest.java",
-          " D templates/native-module-template/NativeService.java",
-          " M templates/native-module-template/README.md",
-          " D templates/native-module-template/build.gradle",
-          " D templates/native-module-template/echo-native-addon.descriptor.json",
-          " D templates/new-addon-template/MyAddon.java",
-          " D templates/new-addon-template/MyAddonTest.java",
-          " M templates/new-addon-template/README.md",
-          " D templates/new-addon-template/build.gradle",
-          " D templates/new-addon-template/echo-native-addon.descriptor.json",
-          " D templates/packet-example/PacketExampleAddon.java",
-          " D templates/packet-example/PacketExampleTest.java",
-          " M templates/packet-example/README.md",
-          " D templates/packet-example/build.gradle",
-          " D templates/packet-example/echo-native-addon.descriptor.json",
-          " M templates/registry-example/README.md",
-          " D templates/registry-example/RegistryExampleAddon.java",
-          " D templates/registry-example/RegistryExampleTest.java",
-          " D templates/registry-example/build.gradle",
-          " D templates/registry-example/echo-native-addon.descriptor.json",
-          " D templates/screen-hud-example/HudOverlay.java",
-          " M templates/screen-hud-example/README.md",
-          " D templates/screen-hud-example/ScreenHudExampleAddon.java",
-          " D templates/screen-hud-example/ScreenHudExampleTest.java",
-          " D templates/screen-hud-example/build.gradle",
-          " D templates/screen-hud-example/echo-native-addon.descriptor.json",
-          " D templates/testkit-example/CounterService.java",
-          " M templates/testkit-example/README.md",
-          " D templates/testkit-example/TestkitExampleAddon.java",
-          " D templates/testkit-example/TestkitExampleTest.java",
-          " D templates/testkit-example/build.gradle",
-          " D templates/testkit-example/echo-native-addon.descriptor.json",
-          " M templates/worldgen-example/README.md",
-          " D templates/worldgen-example/WorldgenExampleAddon.java",
-          " D templates/worldgen-example/WorldgenExampleTest.java",
-          " D templates/worldgen-example/WorldgenFeature.java",
-          " D templates/worldgen-example/build.gradle",
-          " D templates/worldgen-example/echo-native-addon.descriptor.json",
           "?? build/",
           "?? gradle-plugin/echo-addon-gradle-plugin/.gradle/",
           "?? gradle-plugin/echo-addon-gradle-plugin/build/",
@@ -310,12 +246,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "fc78afec34cb",
-        "commitDate": "2026-06-13T05:10:20-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md"
-        ]
+        "commit": "3a1900abc179",
+        "commitDate": "2026-06-13T06:07:52-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -354,16 +288,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d2a0536de2e2",
-        "commitDate": "2026-06-13T05:32:28-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M README.md",
-          " M docs/echo/implementation/ECHO_NATIVE_CORE_AUDIT.md",
-          " M docs/echo/native/COMPATIBILITY_MATRIX.md",
-          " M docs/echo/native/INSTALL_GUIDE.md"
-        ]
+        "commit": "8fbba3310ae8",
+        "commitDate": "2026-06-13T06:06:55-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -395,12 +323,11 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "12a686d0afea",
-        "commitDate": "2026-06-09T19:50:54-04:00",
+        "commit": "c8ffdd7c80f5",
+        "commitDate": "2026-06-13T06:08:25-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M build.gradle",
+          "M build.gradle",
           " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
@@ -610,11 +537,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3eb021b22e25",
-        "commitDate": "2026-06-09T16:40:03-04:00",
+        "commit": "559788781a89",
+        "commitDate": "2026-06-13T06:08:11-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
           "?? dist/",
           "?? node_modules/",
           "?? release/"
@@ -767,12 +693,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b5703b22eaef",
-        "commitDate": "2026-06-12T20:57:12-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M PUBLIC_ALPHA_RELEASE_STATUS.md"
-        ]
+        "commit": "c47e951e272b",
+        "commitDate": "2026-06-13T06:08:02-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
