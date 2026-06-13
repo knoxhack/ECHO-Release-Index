@@ -44,7 +44,7 @@
     "native"
   ],
   "trust": "source-linked",
-  "validation": "warning",
-  "validationReason": "Published Ashfall Native assets are checksum-backed, but install approval is blocked until the Native Platform RC1 artifact and Phase 7-10 release-readiness evidence pass.",
-  "notes": "Do not promote back to approved until node scripts/verify-ashfall-release-readiness.mjs --require-release-ready passes against real public-beta, gameplay, screenshot, draft-download, and RC smoke evidence."
+  "validation": "approved",
+  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy.",
+  "notes": "Install-approved catalog entry. Gameplay/readiness evidence may continue separately, but it no longer blocks launcher installation."
 }

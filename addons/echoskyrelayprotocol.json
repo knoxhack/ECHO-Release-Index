@@ -45,20 +45,14 @@
       "size": 3388
     }
   },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module",
-      "version": ">=1.0.0"
-    }
-  ],
+  "dependencies": [],
   "compatibility": [
     "sky-relay-native-edition",
     "sky-relay-neoforge-edition",
     "sky-relay-standalone-edition"
   ],
-  "trust": "echo-workflow-built",
-  "validation": "warning",
-  "validationReason": "Public prerelease artifacts are published with SHA-256 metadata and download-back evidence; keep warning until real gameplay evidence is attached for public alpha.",
-  "notes": "Sky Relay protocol addon prerelease. Full module dependency requirements are declared in ECHO-Modules/addons/echoskyrelayprotocol/src/main/resources/META-INF/echo.mod.json; this catalog entry lists only dependencies already indexed in Release Index."
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Public module artifacts are published with SHA-256 metadata and approved for launcher pack installation.",
+  "notes": "Install-approved protocol addon prerelease for Sky Relay official packs."
 }

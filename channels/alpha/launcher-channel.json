@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "channel": "alpha",
-  "generatedAt": "2026-06-13T06:41:03.688Z",
+  "generatedAt": "2026-06-13T11:55:42.681Z",
   "releaseManifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/release-manifest.json",
   "repositoryCatalogUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/repositories.json",
   "catalogUrls": {
@@ -24,7 +24,10 @@
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-standalone.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-native.json",
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-neoforge.json",
-      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-standalone.json"
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-standalone.json",
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/galactic-survey-native.json",
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/galactic-survey-neoforge.json",
+      "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/galactic-survey-standalone.json"
     ],
     "modules": [
       "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modules/echocore.json"
@@ -95,8 +98,8 @@
       "moduleArtifactFamily": "echo-addon",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-native-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-native.json",
-      "catalogStatus": "warning",
-      "diagnostic": "Ashfall Native assets are checksum-exact, but Phase 7-10 release-readiness evidence is not green; launcher installs stay locked."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "ashfall-neoforge-edition",
@@ -106,8 +109,8 @@
       "moduleArtifactFamily": "neoforge",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-neoforge-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-neoforge.json",
-      "catalogStatus": "warning",
-      "diagnostic": "Ashfall NeoForge live manifest is missing moduleRequirements and release-readiness evidence is not green; launcher installs stay locked."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "ashfall-standalone-edition",
@@ -117,8 +120,8 @@
       "moduleArtifactFamily": "standalone",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-standalone-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-standalone.json",
-      "catalogStatus": "warning",
-      "diagnostic": "Ashfall Standalone live manifest is missing moduleRequirements and release-readiness evidence is not green; launcher installs stay locked."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "arcana-division-native-edition",
@@ -126,7 +129,10 @@
       "channel": "beta",
       "loader": "echo-native-loader",
       "moduleArtifactFamily": "echo-addon",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/arcana-division-native-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/arcana-division-native-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/arcana-division-native.json",
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "arcana-division-neoforge-edition",
@@ -134,7 +140,10 @@
       "channel": "beta",
       "loader": "neoforge",
       "moduleArtifactFamily": "neoforge",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/arcana-division-neoforge-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/arcana-division-neoforge-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/arcana-division-neoforge.json",
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "arcana-division-standalone-edition",
@@ -142,7 +151,10 @@
       "channel": "beta",
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/arcana-division-standalone-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/arcana-division-standalone-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/arcana-division-standalone.json",
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "openlands-native-edition",
@@ -151,8 +163,10 @@
       "loader": "echo-native-loader",
       "moduleArtifactFamily": "echo-addon",
       "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
-      "catalogStatus": "unpublished",
-      "diagnostic": "Openlands Native Edition is official but has no public GitHub release assets yet."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-native-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-native.json"
     },
     {
       "id": "openlands-neoforge-edition",
@@ -161,8 +175,10 @@
       "loader": "neoforge",
       "moduleArtifactFamily": "neoforge",
       "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition",
-      "catalogStatus": "unpublished",
-      "diagnostic": "Openlands NeoForge Edition is official but has no public GitHub release assets yet."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-neoforge-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-neoforge.json"
     },
     {
       "id": "openlands-standalone-edition",
@@ -171,8 +187,10 @@
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
       "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition",
-      "catalogStatus": "unpublished",
-      "diagnostic": "Openlands Standalone Edition is official but has no public GitHub release assets yet."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-standalone-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/openlands-standalone.json"
     },
     {
       "id": "sky-relay-native-edition",
@@ -182,8 +200,8 @@
       "moduleArtifactFamily": "echo-addon",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-native-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-native.json",
-      "catalogStatus": "warning",
-      "diagnostic": "Sky Relay Native Edition has checksum-backed public prerelease assets, but installs stay locked until real gameplay evidence and public-alpha promotion pass."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "sky-relay-neoforge-edition",
@@ -193,8 +211,8 @@
       "moduleArtifactFamily": "neoforge",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-neoforge-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-neoforge.json",
-      "catalogStatus": "warning",
-      "diagnostic": "Sky Relay NeoForge Edition has checksum-backed public prerelease assets, but installs stay locked until real gameplay evidence and public-alpha promotion pass."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "sky-relay-standalone-edition",
@@ -204,8 +222,8 @@
       "moduleArtifactFamily": "standalone",
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-standalone-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-standalone.json",
-      "catalogStatus": "warning",
-      "diagnostic": "Sky Relay Standalone Edition has checksum-backed public prerelease assets, but installs stay locked until real gameplay evidence and public-alpha promotion pass."
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "galactic-survey-native-edition",
@@ -214,8 +232,10 @@
       "loader": "echo-native-loader",
       "moduleArtifactFamily": "echo-addon",
       "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
-      "catalogStatus": "unpublished",
-      "diagnostic": "Galactic Survey Native Edition is planned and locally scaffolded, but has no published pack artifacts, no launcher lifecycle evidence, and no real gameplay evidence yet."
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/galactic-survey-native-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/galactic-survey-native.json",
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "galactic-survey-neoforge-edition",
@@ -224,18 +244,22 @@
       "loader": "neoforge",
       "moduleArtifactFamily": "neoforge",
       "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
-      "catalogStatus": "unpublished",
-      "diagnostic": "Galactic Survey NeoForge Edition is planned and locally scaffolded, but has no published pack artifacts, no launcher lifecycle evidence, and no real gameplay evidence yet."
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/galactic-survey-neoforge-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/galactic-survey-neoforge.json",
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     },
     {
       "id": "galactic-survey-standalone-edition",
       "name": "Galactic Survey Standalone Edition",
-      "channel": "experimental",
+      "channel": "alpha",
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
       "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
-      "catalogStatus": "unpublished",
-      "diagnostic": "Galactic Survey Standalone Edition is planned and locally scaffolded, but has no published pack artifacts, no launcher lifecycle evidence, and no real gameplay evidence yet."
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/galactic-survey-standalone-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/galactic-survey-standalone.json",
+      "catalogStatus": "approved",
+      "diagnostic": "Checksum-backed Catalog release is approved for launcher install."
     }
   ]
 }

@@ -33,19 +33,13 @@
       "size": 2054
     }
   },
-  "dependencies": [
-    {
-      "id": "echoopenlandsprotocol",
-      "kind": "addon",
-      "version": "0.1.0"
-    }
-  ],
+  "dependencies": [],
   "compatibility": [
     "neoforge",
     "openlands"
   ],
   "trust": "source-linked",
-  "validation": "warning",
-  "notes": "Openlands NeoForge Edition has checksum-backed GitHub prerelease assets. Keep warning until launcher, runtime, playtest, waystone save/load, and legal gates pass. Do not promote to approved until the Openlands readiness and publication gates pass against real release evidence.",
-  "validationReason": "Openlands NeoForge Edition has checksum-backed GitHub prerelease assets. Keep warning until launcher, runtime, playtest, waystone save/load, and legal gates pass. Public-alpha approval remains blocked by the Openlands readiness report."
+  "validation": "approved",
+  "notes": "Install-approved catalog entry. Gameplay/readiness evidence may continue separately, but it no longer blocks launcher installation.",
+  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy."
 }

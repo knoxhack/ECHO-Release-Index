@@ -1,0 +1,57 @@
+{
+  "id": "galactic-survey-native-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
+  "releaseTag": "galactic-survey-native-0.1.0-alpha",
+  "commitSha": "f538fb0bd866cfb619c0d7dc1740e830b9e8638b",
+  "artifacts": {
+    "pack": {
+      "file": "galactic-survey-native-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip",
+      "sha256": "6eef6da1c8af2346d10a9a5adf5024490f2a786f0641c77941a830e7303a5674",
+      "size": 73418279
+    },
+    "manifest": {
+      "file": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
+      "sha256": "67ffa60cae73073a6643a30d8aaf3c5abae940e2decc310f4061e6b7ddf76284",
+      "size": 15995
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/checksums.txt",
+      "sha256": "38f84c01d40a6dd831fe94d639a2263033584e24da2aa3075502404a736d7892",
+      "size": 415
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/echo-release.json",
+      "sha256": "a22225315279155be5fe9b70b49da6a1d7ff8f6c9bd250acbdffdedb683bb23a",
+      "size": 6263
+    },
+    "buildReport": {
+      "file": "galactic-survey-pack-build-report.json",
+      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-pack-build-report.json",
+      "sha256": "f84974af3966cc95e8993ab1e057153bea4648847c98bb39bcaa68add41cffe1",
+      "size": 9219
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echo-native-platform",
+      "kind": "runtime",
+      "version": ">=1.0.0-RC1"
+    }
+  ],
+  "compatibility": [
+    "native",
+    "galactic-survey"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Galactic Survey public alpha assets are published, checksum-backed, and approved for launcher installation.",
+  "notes": "Install-approved Galactic Survey public alpha catalog entry."
+}

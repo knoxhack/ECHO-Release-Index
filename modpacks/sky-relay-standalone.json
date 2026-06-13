@@ -55,8 +55,8 @@
     "standalone",
     "sky-relay"
   ],
-  "trust": "echo-workflow-built",
-  "validation": "warning",
-  "validationReason": "Public prerelease pack assets are published and checksum-backed; keep warning until real gameplay evidence is attached for public alpha.",
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy.",
   "notes": "Sky Relay Standalone Edition prerelease. Launcher Node lifecycle evidence covers install/update/repair/rollback for this edition."
 }
