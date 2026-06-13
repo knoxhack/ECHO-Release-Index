@@ -5,6 +5,7 @@ import path from 'node:path'
 import process from 'node:process'
 
 const DEFAULT_OUT = 'release-readiness/native-sdk-rc1-artifacts.json'
+const DEFAULT_DOWNLOAD_SMOKE = 'release-readiness/native-sdk-rc1-download-smoke.json'
 const RELEASE_LINE = '1.0.0-RC1'
 const SHA256_PATTERN = /^[a-f0-9]{64}$/iu
 const GITHUB_RELEASE_URL_PATTERN = /^https:\/\/github\.com\/knoxhack\//u
@@ -54,6 +55,7 @@ function parseArgs(argv) {
     root: process.cwd(),
     workspaceRoot: null,
     out: DEFAULT_OUT,
+    downloadSmoke: DEFAULT_DOWNLOAD_SMOKE,
     write: false,
     requireReleaseReady: false,
     help: false
@@ -63,6 +65,7 @@ function parseArgs(argv) {
     if (arg === '--root') args.root = path.resolve(argv[++index])
     else if (arg === '--workspace-root') args.workspaceRoot = path.resolve(argv[++index])
     else if (arg === '--out') args.out = argv[++index]
+    else if (arg === '--download-smoke') args.downloadSmoke = argv[++index]
     else if (arg === '--write') args.write = true
     else if (arg === '--require-release-ready') args.requireReleaseReady = true
     else if (arg === '--help') args.help = true
@@ -83,6 +86,7 @@ Options:
   --root <dir>                 Release Index repository root. Default: current directory.
   --workspace-root <dir>       Workspace containing sibling ECHO repos. Default: parent of --root.
   --out <path>                 Report path relative to --root. Default: ${DEFAULT_OUT}.
+  --download-smoke <path>      Download smoke report relative to --root. Default: ${DEFAULT_DOWNLOAD_SMOKE}.
   --write                      Write the JSON report.
   --require-release-ready      Fail if local jars or public provenance are incomplete.
   --help                       Print this help text.
@@ -208,8 +212,45 @@ function summarizeMatches(records, local) {
   }))
 }
 
+function downloadSmokeIsComplete(report) {
+  if (report?.schemaVersion !== 'echo.native_sdk.rc1-download-smoke.v1') return false
+  if (report.status !== 'PASS') return false
+  if (report.release?.id !== 'echo-native-sdk') return false
+  if (report.release?.version !== RELEASE_LINE) return false
+  if (report.release?.releaseTag !== `v${RELEASE_LINE}`) return false
+  if (report.summary?.artifactCount !== 15) return false
+  if (report.summary?.downloadedCount !== 15) return false
+  if (report.summary?.matchedCount !== 15) return false
+  if (report.gates?.catalogEntry !== 'passed') return false
+  if (report.gates?.artifactSetComplete !== 'passed') return false
+  if (report.gates?.downloadBackArtifacts !== 'passed') return false
+  if (report.gates?.checksumMatch !== 'passed') return false
+  return true
+}
+
+function downloadSmokeBlockers(report, reportPath) {
+  if (!report) return [`Native SDK RC1 download smoke report is missing at ${reportPath}`]
+  const blockers = []
+  if (report.schemaVersion !== 'echo.native_sdk.rc1-download-smoke.v1') blockers.push('Native SDK RC1 download smoke report has an unexpected schema')
+  if (report.status !== 'PASS') blockers.push('Native SDK RC1 download smoke report is not PASS')
+  if (report.release?.id !== 'echo-native-sdk') blockers.push('Native SDK RC1 download smoke report does not target echo-native-sdk')
+  if (report.release?.version !== RELEASE_LINE) blockers.push(`Native SDK RC1 download smoke report version is not ${RELEASE_LINE}`)
+  if (report.release?.releaseTag !== `v${RELEASE_LINE}`) blockers.push(`Native SDK RC1 download smoke report releaseTag is not v${RELEASE_LINE}`)
+  if (report.summary?.artifactCount !== 15) blockers.push(`Native SDK RC1 download smoke must cover 15 artifacts, found ${report.summary?.artifactCount ?? 'unknown'}`)
+  if (report.summary?.downloadedCount !== 15) blockers.push(`Native SDK RC1 download smoke must download 15 artifacts, found ${report.summary?.downloadedCount ?? 'unknown'}`)
+  if (report.summary?.matchedCount !== 15) blockers.push(`Native SDK RC1 download smoke must checksum-match 15 artifacts, found ${report.summary?.matchedCount ?? 'unknown'}`)
+  for (const [gate, value] of Object.entries(report.gates ?? {})) {
+    if (value !== 'passed') blockers.push(`Native SDK RC1 download smoke gate ${gate} is ${value}`)
+  }
+  for (const blocker of report.blockers ?? []) blockers.push(`Native SDK RC1 download smoke: ${blocker}`)
+  return blockers
+}
+
 async function verify(args) {
   const catalogRecords = await catalogArtifactRecords(args.root)
+  const downloadSmokePath = path.isAbsolute(args.downloadSmoke) ? args.downloadSmoke : path.join(args.root, args.downloadSmoke)
+  const downloadSmoke = await readJsonOrNull(downloadSmokePath)
+  const downloadBackArtifactsComplete = downloadSmokeIsComplete(downloadSmoke)
   const blockers = []
   const componentReports = []
 
@@ -274,9 +315,13 @@ async function verify(args) {
   const publicCatalogMatchedFiles = componentReports.reduce((sum, component) => sum + component.files.filter((file) => file.hasMatchingPublicCatalog).length, 0)
   const stableProvenanceFiles = componentReports.reduce((sum, component) => sum + component.files.filter((file) => file.hasStablePublicProvenance).length, 0)
 
+  const smokeBlockers = downloadSmokeBlockers(downloadSmoke, rel(args.root, downloadSmokePath))
+  if (!downloadBackArtifactsComplete) blockers.push(...smokeBlockers)
+
   const gates = {
     localMainSourceJavadocJars: localPresentFiles === totalRequiredFiles ? 'passed' : 'blocked',
     publicCatalogArtifacts: publicCatalogMatchedFiles === totalRequiredFiles ? 'passed' : 'blocked',
+    downloadBackArtifacts: downloadBackArtifactsComplete ? 'passed' : 'blocked',
     stablePublicProvenance: stableProvenanceFiles === totalRequiredFiles ? 'passed' : 'blocked'
   }
   const status = Object.values(gates).every((gate) => gate === 'passed') ? 'PASS' : 'BLOCKED'
@@ -294,19 +339,38 @@ async function verify(args) {
       requiredFileCount: totalRequiredFiles,
       localPresentFileCount: localPresentFiles,
       publicCatalogMatchedFileCount: publicCatalogMatchedFiles,
+      downloadBackMatchedFileCount: downloadBackArtifactsComplete ? totalRequiredFiles : 0,
       stableProvenanceFileCount: stableProvenanceFiles
     },
     gates,
+    downloadSmoke: downloadSmoke
+      ? {
+          path: rel(args.root, downloadSmokePath),
+          schemaVersion: downloadSmoke.schemaVersion,
+          status: downloadSmoke.status,
+          generatedAt: downloadSmoke.generatedAt,
+          mode: downloadSmoke.mode,
+          release: downloadSmoke.release,
+          summary: downloadSmoke.summary,
+          gates: downloadSmoke.gates,
+          blockers: downloadSmoke.blockers ?? []
+        }
+      : {
+          path: rel(args.root, downloadSmokePath),
+          status: 'missing',
+          blockers: smokeBlockers
+        },
     components: componentReports,
     promotion: {
       localSdkArtifactSetComplete: gates.localMainSourceJavadocJars === 'passed',
-      publicSdkArtifactDistributionComplete: gates.publicCatalogArtifacts === 'passed',
+      publicSdkArtifactDistributionComplete: gates.publicCatalogArtifacts === 'passed' && gates.downloadBackArtifacts === 'passed',
       stableSdkProvenanceComplete: gates.stablePublicProvenance === 'passed',
       stableReleaseCanUseSdkEvidence: status === 'PASS'
     },
     blockers,
     notes: [
       'Local Gradle outputs prove only that the SDK jars were built in this workspace.',
+      'Download-back evidence proves the indexed SDK release URLs return bytes with exact size/SHA-256 matches.',
       'Stable release approval requires matching public catalog artifacts with GitHub URLs, exact size/SHA-256, validation approved, and a non-source-linked trust tier.',
       'Keep echo-native-loader out of this public SDK set; it is loader-internal and must not be an addon-facing dependency.'
     ]

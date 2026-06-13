@@ -16,17 +16,20 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
   'release-readiness/native-sdk-rc1-artifacts.json',
+  'release-readiness/native-sdk-rc1-download-smoke.json',
   'docs/galactic-survey-manual-gameplay-work-order.md',
   'scripts/build-galactic-survey-edition-assets.mjs',
   'scripts/download-galactic-survey-draft-releases.mjs',
   'scripts/generate-galactic-survey-manual-gameplay-work-order.mjs',
   'scripts/import-galactic-survey-first-launch-evidence.mjs',
   'scripts/publish-galactic-survey-draft-releases.mjs',
+  'scripts/download-native-sdk-rc1-artifacts.mjs',
   'scripts/sync-launcher-channel-catalog.mjs',
   'scripts/smoke-galactic-survey-edition-pack-assets.mjs',
   'scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs',
   'scripts/test-import-galactic-survey-first-launch-evidence.mjs',
   'scripts/test-publish-galactic-survey-draft-releases.mjs',
+  'scripts/test-download-native-sdk-rc1-artifacts.mjs',
   'scripts/test-verify-native-sdk-rc1-artifacts.mjs',
   'scripts/test-verify-galactic-survey-public-alpha-readiness.mjs',
   'scripts/verify-native-sdk-rc1-artifacts.mjs',
@@ -44,6 +47,7 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
   'release-readiness/native-sdk-rc1-artifacts.json',
+  'release-readiness/native-sdk-rc1-download-smoke.json',
   'docs/galactic-survey-manual-gameplay-work-order.md'
 ])
 const MODULE_RELEVANT_STATUS_PATHS = [
@@ -396,6 +400,7 @@ const launcherElectronUiSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'rele
 const firstLaunchOpenPlayEvidence = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-first-launch-open-play.json'))
 const moduleReleaseIngest = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-module-release-ingest.json'))
 const nativeSdkRc1Artifacts = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'native-sdk-rc1-artifacts.json'))
+const nativeSdkRc1DownloadSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'native-sdk-rc1-download-smoke.json'))
 const galacticModpackCatalog = Object.fromEntries(editions.map((edition) => [
   edition.id,
   readJsonOrNull(path.join(releaseIndexRoot, 'modpacks', `${edition.id.replace(/-edition$/u, '')}.json`))
@@ -750,6 +755,7 @@ const phases = []
   requireCondition(phase, nativeSdkRc1Artifacts?.schemaVersion === 'echo.native_sdk.rc1-artifacts.v1', 'Native SDK RC1 artifact report exists', 'Native SDK RC1 artifact report must be generated')
   requireCondition(phase, nativeSdkRc1Artifacts?.gates?.localMainSourceJavadocJars === 'passed', 'Native SDK RC1 local main/source/Javadoc jars are complete', 'Native SDK RC1 local main/source/Javadoc jars must be complete')
   requireCondition(phase, nativeSdkRc1Artifacts?.gates?.publicCatalogArtifacts === 'passed', 'Native SDK RC1 public catalog artifacts match local jars', 'Native SDK RC1 public catalog artifacts must match local jars')
+  requireCondition(phase, nativeSdkRc1Artifacts?.gates?.downloadBackArtifacts === 'passed', 'Native SDK RC1 public release artifacts download back with exact checksums', 'Native SDK RC1 public release artifacts must download back with exact checksums')
   requireCondition(phase, nativeSdkRc1Artifacts?.gates?.stablePublicProvenance === 'passed', 'Native SDK RC1 public artifacts have approved non-source-linked provenance', 'Native SDK RC1 public artifacts must have approved non-source-linked provenance')
   for (const edition of editions) {
     const modpack = galacticModpackCatalog[edition.id]
@@ -794,6 +800,7 @@ const report = {
       firstLaunchOpenPlayEvidence: 'release-readiness/galactic-survey-first-launch-open-play.json',
       manualGameplayWorkOrder: 'release-readiness/galactic-survey-manual-gameplay-work-order.json',
       nativeSdkRc1Artifacts: 'release-readiness/native-sdk-rc1-artifacts.json',
+      nativeSdkRc1DownloadSmoke: 'release-readiness/native-sdk-rc1-download-smoke.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
@@ -806,6 +813,7 @@ const report = {
         releaseLine: nativeSdkRc1Artifacts.releaseLine,
         summary: nativeSdkRc1Artifacts.summary,
         gates: nativeSdkRc1Artifacts.gates,
+        downloadSmoke: nativeSdkRc1Artifacts.downloadSmoke,
         promotion: nativeSdkRc1Artifacts.promotion,
         components: nativeSdkRc1Artifacts.components?.map((component) => ({
           id: component.id,
@@ -826,6 +834,25 @@ const report = {
           blockers: component.blockers
         })) ?? [],
         blockers: nativeSdkRc1Artifacts.blockers
+      }
+    : null,
+  nativeSdkRc1DownloadSmokeEvidence: nativeSdkRc1DownloadSmoke
+    ? {
+        schemaVersion: nativeSdkRc1DownloadSmoke.schemaVersion,
+        status: nativeSdkRc1DownloadSmoke.status,
+        generatedAt: nativeSdkRc1DownloadSmoke.generatedAt,
+        mode: nativeSdkRc1DownloadSmoke.mode,
+        release: nativeSdkRc1DownloadSmoke.release,
+        summary: nativeSdkRc1DownloadSmoke.summary,
+        gates: nativeSdkRc1DownloadSmoke.gates,
+        artifacts: nativeSdkRc1DownloadSmoke.artifacts?.map((artifact) => ({
+          file: artifact.file,
+          downloaded: artifact.downloaded,
+          size: artifact.size,
+          sha256: artifact.sha256,
+          matches: artifact.matches
+        })) ?? [],
+        blockers: nativeSdkRc1DownloadSmoke.blockers
       }
     : null,
   editionPackEvidence: {

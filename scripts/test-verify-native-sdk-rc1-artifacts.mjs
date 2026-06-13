@@ -92,8 +92,8 @@ async function writeLocalArtifacts(workspaceRoot, options = {}) {
 
 async function writeCatalog(root, artifacts, overrides = {}) {
   await writeJson(root, 'products/native-sdk-public.json', {
-    id: 'native-sdk-public',
-    kind: 'sdk',
+    id: 'echo-native-sdk',
+    kind: 'product',
     version: releaseLine,
     channel: 'beta',
     publisher: 'knoxhack',
@@ -111,6 +111,51 @@ async function writeCatalog(root, artifacts, overrides = {}) {
         size: artifact.size
       }
     ]))
+  })
+}
+
+async function writeDownloadSmoke(root, artifacts, overrides = {}) {
+  const rows = [...artifacts.values()]
+  const blockedFile = overrides.blockedFile
+  await writeJson(root, 'release-readiness/native-sdk-rc1-download-smoke.json', {
+    schemaVersion: 'echo.native_sdk.rc1-download-smoke.v1',
+    status: blockedFile ? 'BLOCKED' : 'PASS',
+    generatedAt: '2026-06-13T00:00:00.000Z',
+    catalog: 'products/native-sdk-public.json',
+    release: {
+      id: 'echo-native-sdk',
+      version: releaseLine,
+      sourceRepo: 'knoxhack/ECHO-SDK',
+      releaseTag: 'v1.0.0-RC1',
+      releaseUrl: 'https://github.com/knoxhack/ECHO-SDK/releases/tag/v1.0.0-RC1'
+    },
+    mode: 'mirror',
+    downloadRoot: 'tmp/native-sdk-rc1-download',
+    summary: {
+      artifactCount: rows.length,
+      downloadedCount: rows.length,
+      matchedCount: blockedFile ? rows.length - 1 : rows.length
+    },
+    gates: {
+      catalogEntry: 'passed',
+      artifactSetComplete: rows.length === 15 ? 'passed' : 'blocked',
+      downloadBackArtifacts: rows.length === 15 ? 'passed' : 'blocked',
+      checksumMatch: blockedFile ? 'blocked' : 'passed'
+    },
+    artifacts: rows.map((artifact) => ({
+      key: artifact.file,
+      file: artifact.file,
+      url: `https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/${artifact.file}`,
+      downloaded: true,
+      downloadPath: `tmp/native-sdk-rc1-download/${artifact.file}`,
+      expectedSize: artifact.size,
+      size: artifact.size,
+      expectedSha256: artifact.sha256,
+      sha256: blockedFile === artifact.file ? '0'.repeat(64) : artifact.sha256,
+      matches: blockedFile !== artifact.file,
+      blockers: blockedFile === artifact.file ? ['sha256 mismatch'] : []
+    })),
+    blockers: blockedFile ? [`${blockedFile}: sha256 mismatch`] : []
   })
 }
 
@@ -138,8 +183,10 @@ await withFixture('local-complete-public-missing', async ({ root, workspaceRoot 
   assert.equal(report.summary.publicCatalogMatchedFileCount, 0)
   assert.equal(report.gates.localMainSourceJavadocJars, 'passed')
   assert.equal(report.gates.publicCatalogArtifacts, 'blocked')
+  assert.equal(report.gates.downloadBackArtifacts, 'blocked')
   assert.equal(report.gates.stablePublicProvenance, 'blocked')
   assert.ok(report.blockers.some((blocker) => blocker.includes('has no matching public catalog artifact')))
+  assert.ok(report.blockers.some((blocker) => blocker.includes('download smoke report is missing')))
 
   const releaseReady = run(root, workspaceRoot, ['--require-release-ready'])
   assert.notEqual(releaseReady.status, 0, 'require-release-ready must fail without public SDK catalog provenance')
@@ -159,17 +206,21 @@ await withFixture('missing-local-javadoc', async ({ root, workspaceRoot }) => {
 await withFixture('public-provenance-complete', async ({ root, workspaceRoot }) => {
   const artifacts = await writeLocalArtifacts(workspaceRoot)
   await writeCatalog(root, artifacts)
+  await writeDownloadSmoke(root, artifacts)
   const result = run(root, workspaceRoot, ['--require-release-ready'])
   assert.equal(result.status, 0, result.stderr)
   const report = JSON.parse(result.stdout)
   assert.equal(report.status, 'PASS')
   assert.equal(report.summary.localPresentFileCount, 15)
   assert.equal(report.summary.publicCatalogMatchedFileCount, 15)
+  assert.equal(report.summary.downloadBackMatchedFileCount, 15)
   assert.equal(report.summary.stableProvenanceFileCount, 15)
   assert.equal(report.gates.localMainSourceJavadocJars, 'passed')
   assert.equal(report.gates.publicCatalogArtifacts, 'passed')
+  assert.equal(report.gates.downloadBackArtifacts, 'passed')
   assert.equal(report.gates.stablePublicProvenance, 'passed')
   assert.equal(report.promotion.stableReleaseCanUseSdkEvidence, true)
+  assert.equal(report.downloadSmoke.status, 'PASS')
 })
 
 console.log('Native SDK RC1 artifact verifier fixtures passed.')
