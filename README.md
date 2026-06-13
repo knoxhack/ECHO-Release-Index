@@ -54,6 +54,8 @@ Run commands from the repository root.
 - `node scripts/generate-ashfall-rc-smoke.mjs`
 - `node scripts/promote-ashfall-native-catalog.mjs --write`
 - `node scripts/verify-ashfall-release-readiness.mjs --require-release-ready`
+- `node scripts/verify-galactic-survey-public-alpha-readiness.mjs --write`
+- `node scripts/test-verify-galactic-survey-public-alpha-readiness.mjs`
 - `node scripts/test-publish-public-alpha.mjs`
 - `node scripts/test-ingest-release-local-e2e.mjs`
 - `node scripts/test-publish-ingest-install-local-e2e.mjs`
@@ -129,6 +131,9 @@ For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a Gi
 - [knoxhack/ECHO-Ashfall-Native-Edition](https://github.com/knoxhack/ECHO-Ashfall-Native-Edition)
 - [knoxhack/ECHO-Ashfall-NeoForge-Edition](https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition)
 - [knoxhack/ECHO-Ashfall-Standalone-Edition](https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition)
+- [knoxhack/ECHO-Galactic-Survey-Native-Edition](https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition)
+- [knoxhack/ECHO-Galactic-Survey-NeoForge-Edition](https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition)
+- [knoxhack/ECHO-Galactic-Survey-Standalone-Edition](https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition)
 - [knoxhack/ECHO-Native-Platform](https://github.com/knoxhack/ECHO-Native-Platform)
 - [knoxhack/ECHO-Standalone-Runtime](https://github.com/knoxhack/ECHO-Standalone-Runtime)
 - [knoxhack/ECHO-SDK](https://github.com/knoxhack/ECHO-SDK)

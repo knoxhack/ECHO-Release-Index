@@ -18,6 +18,7 @@ Use this guide to choose the first repository to inspect for a task. If the task
 | Openlands pack work | `ECHO-Openlands-*` edition repo first, then `ECHO-Modules` for shared modules |
 | Arcana Division pack work | `ECHO-Arcana-Division-*` edition repo first, then `ECHO-Modules` for shared modules |
 | Sky Relay pack work | `ECHO-Sky-Relay-*` edition repo first, then `ECHO-Modules` for shared modules |
+| Galactic Survey pack work | `ECHO-Galactic-Survey-*` edition repo first, then `ECHO-Modules` for shared modules |
 
 ## Edition Lanes
 

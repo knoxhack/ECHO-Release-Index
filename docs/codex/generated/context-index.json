@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T03:28:11-04:00",
+  "generatedAt": "2026-06-13T05:18:42-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,29 +16,36 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "54dc750f142b",
-        "commitDate": "2026-06-13T03:24:07-04:00",
+        "commit": "80e23275f8a1",
+        "commitDate": "2026-06-13T04:17:00-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M docs/codex/generated/ECHO_PLATFORM_CONTEXT.md",
-          " M modpacks/arcana-division-native.json",
-          " M modpacks/ashfall-native.json",
-          " M packs/ashfall-native-edition.json",
-          " M products/native-platform.json"
+          "M README.md",
+          " M channels/alpha/launcher-channel.json",
+          " M channels/beta/launcher-channel.json",
+          " M docs/ecosystem-artifact-ownership.md",
+          " M release-readiness/sky-relay-electron-ui-smoke.json",
+          " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
+          "?? packs/galactic-survey-native-edition.json",
+          "?? packs/galactic-survey-neoforge-edition.json",
+          "?? packs/galactic-survey-standalone-edition.json",
+          "?? release-readiness/galactic-survey-public-alpha-readiness.json",
+          "?? scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          "?? scripts/verify-galactic-survey-public-alpha-readiness.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 14103,
+          "bytes": 14597,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
         {
           "path": "docs/ecosystem-artifact-ownership.md",
           "exists": true,
-          "bytes": 3928,
+          "bytes": 4990,
           "heading": "ECHO Artifact Ownership",
           "excerpt": "The Release Index owns catalog records, trust policy, and channel routing. It does not own binary release assets. Each source repository publishes its own artifacts, then the Release Index records the approved artifact URLs, SHA-256 hashes, trust tier, validation state, depend..."
         },
@@ -52,7 +59,7 @@
         {
           "path": "docs/codex/repo-routing.md",
           "exists": true,
-          "bytes": 1999,
+          "bytes": 2112,
           "heading": "ECHO Repo Routing",
           "excerpt": "Use this guide to choose the first repository to inspect for a task. If the task crosses ownership boundaries, start in `ECHO-Release-Index`, then inspect the owning source repos named by the catalog entry or context packet."
         },
@@ -83,7 +90,7 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 11233,
+          "bytes": 13162,
           "summary": "launcher channel alpha; generatedAt: 2026-06-13T06:41:03.688Z"
         },
         {
@@ -105,11 +112,20 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "233d00718090",
-        "commitDate": "2026-06-12T20:57:12-04:00",
+        "commit": "5dc9f78452c5",
+        "commitDate": "2026-06-13T05:18:42-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M docs/NATIVE_COMPATIBILITY_MATRIX.md"
+          "M addons/echoadaptercore/build.gradle",
+          " M addons/echoadaptercore/gradle.properties",
+          " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoNativeModuleAdapter.java",
+          " M addons/echoaddonapi/build.gradle",
+          " M addons/echoaddonapi/gradle.properties",
+          " M addons/echoarcanadivisionprotocol/src/main/resources/META-INF/echo.mod.json",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
+          " M reports/echo-native/core-module-integration-audit.json",
+          " M settings.gradle",
+          "?? addons/echoarcanadivisionprotocol/src/main/java/com/knoxhack/echoarcanadivisionprotocol/EchoArcanaDivisionNativeModule.java"
         ]
       },
       "canonicalDocs": [
@@ -185,53 +201,21 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1c6be4c8316c",
-        "commitDate": "2026-06-09T19:22:42-04:00",
+        "commit": "3973c9b20c3c",
+        "commitDate": "2026-06-13T04:16:43-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M docs/NATIVE_API_REFERENCE.md",
-          " M docs/NATIVE_EXAMPLE_ADDON_WALKTHROUGH.md",
-          " M docs/NATIVE_MOD_AUTHOR_GUIDE.md",
-          " M docs/NATIVE_PORTING_GUIDE.md",
-          " M docs/NATIVE_SDK_ARTIFACTS.md",
-          " M docs/NATIVE_TROUBLESHOOTING.md",
-          " M templates/README.md",
-          " M templates/config-example/ConfigExampleAddon.java",
-          " M templates/config-example/build.gradle",
-          " M templates/echo-native-addon/template.json",
-          " M templates/echo-native-config-example/template.json",
-          " M templates/echo-native-event-example/template.json",
-          " M templates/echo-native-module/template.json",
-          " M templates/echo-native-packet-example/template.json",
-          " M templates/echo-native-registry-example/template.json",
-          " M templates/echo-native-screen-hud-example/template.json",
-          " M templates/echo-native-testkit-example/template.json",
-          " M templates/echo-native-worldgen-example/template.json",
-          " M templates/event-example/EventExampleAddon.java",
-          " M templates/event-example/build.gradle",
-          " M templates/native-module-template/NativeModule.java",
-          " M templates/native-module-template/README.md",
-          " M templates/native-module-template/build.gradle",
-          " M templates/native-module-template/template.json",
-          " M templates/new-addon-template/MyAddon.java",
-          " M templates/new-addon-template/README.md",
-          " M templates/new-addon-template/build.gradle",
-          " M templates/new-addon-template/template.json",
-          " M templates/packet-example/PacketExampleAddon.java",
-          " M templates/packet-example/build.gradle",
-          " M templates/registry-example/RegistryExampleAddon.java",
-          " M templates/registry-example/build.gradle",
-          " M templates/screen-hud-example/ScreenHudExampleAddon.java",
-          " M templates/screen-hud-example/build.gradle",
-          " M templates/testkit-example/TestkitExampleAddon.java",
-          " M templates/testkit-example/build.gradle",
-          " M templates/worldgen-example/WorldgenExampleAddon.java",
-          " M templates/worldgen-example/build.gradle",
+          "M gradle-plugin/echo-addon-gradle-plugin/build.gradle",
+          " M templates/_shared/native-addon-module/addons/{{module_id}}/build.gradle.tpl",
+          " M templates/_shared/native-addon-module/addons/{{module_id}}/src/main/java/{{package_path}}/{{class_name}}.java.tpl",
           " M tools/validate_echo_sdk_templates.py",
           "?? build/",
+          "?? gradle-plugin/echo-addon-gradle-plugin/.gradle/",
+          "?? gradle-plugin/echo-addon-gradle-plugin/build/",
           "?? metadata/templates/openlands_official/",
           "?? reports/",
-          "?? templates/_shared/native-addon-module/",
+          "?? templates/_shared/native-addon-module/addons/{{module_id}}/settings.gradle.tpl",
+          "?? templates/_shared/native-addon-module/addons/{{module_id}}/src/test/java/",
           "?? tools/__pycache__/"
         ]
       },
@@ -260,7 +244,7 @@
         {
           "path": "templates/README.md",
           "exists": true,
-          "bytes": 1711,
+          "bytes": 1708,
           "heading": "ECHO Native Templates and Examples",
           "excerpt": "| Template | Location | Description |"
         }
@@ -287,32 +271,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "bd92f7621c13",
-        "commitDate": "2026-06-13T03:26:19-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M electron/main.cjs",
-          " M electron/release-index-resolver.mjs",
-          " M src/app/EchoLauncher.tsx",
-          " M src/components/dashboard/HomePage.tsx",
-          " M src/components/dashboard/ModpacksPage.tsx",
-          " M src/components/downloads/DownloadsPage.tsx",
-          " M src/components/runtime/StandaloneRuntimePage.tsx",
-          " M src/components/server/ServerPackPage.tsx",
-          " M src/components/settings/SettingsPage.tsx",
-          " M src/components/shell/TopBar.tsx",
-          " M src/components/tools/ToolsPage.tsx",
-          " M src/services/nativeBridge.ts",
-          " M src/stores/communityChatStore.ts",
-          " M src/stores/readinessStore.test.ts",
-          " M src/stores/readinessStore.ts",
-          " M src/utils/ashfallHomeActions.test.ts",
-          " M src/utils/ashfallHomeActions.ts",
-          " M src/utils/minecraftLauncherHandoff.test.ts",
-          " M src/utils/minecraftLauncherHandoff.ts",
-          " M src/utils/releaseValidation.test.ts",
-          " M src/utils/releaseValidation.ts"
-        ]
+        "commit": "fc78afec34cb",
+        "commitDate": "2026-06-13T05:10:20-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -335,8 +297,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 5721,
-          "summary": "package echo-launcher 1.0.6; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 5728,
+          "summary": "package echo-launcher 1.1.0; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -351,22 +313,18 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b45681e9f6dd",
-        "commitDate": "2026-06-09T19:37:00-04:00",
+        "commit": "df39d19677c0",
+        "commitDate": "2026-06-13T04:16:09-04:00",
         "dirty": true,
         "dirtyFiles": [
           "M .gitignore",
           " M README.md",
           " M build.gradle",
-          " M docs/echo/native/KNOWN_LIMITATIONS.md",
           " M echo-native-cli/src/qa/java/dev/echo/nativeplatform/cli/EchoNativeQaCli.java",
           " M echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoNativeActivationSurfaceRegistrar.java",
           " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeDescriptorScanner.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeModuleLoadTruthGate.java",
           " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLifecycleEventHost.java",
           " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeCoreModuleLoadStateSmokeMain.java",
-          "?? docs/echo/native/RELEASE_CANDIDATE_CHECKLIST.md",
-          "?? echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeMutationTruthGateMain.java",
           "?? fixtures/ashfall/",
           "?? scripts/generate-ashfall-gameplay-qa-evidence.mjs",
           "?? scripts/generate-ashfall-native-code-gate.mjs",
@@ -1385,6 +1343,195 @@
           "bytes": 90,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
+        }
+      ],
+      "agentDocs": [],
+      "metadata": [],
+      "warnings": []
+    },
+    {
+      "id": "galactic-survey-native",
+      "name": "ECHO-Galactic-Survey-Native-Edition",
+      "github": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
+      "role": "Galactic Survey Native Edition pack manifest, gameplay QA evidence, and native release readiness.",
+      "localPath": "C:\\Development\\Github\\ECHO-Galactic-Survey-Native-Edition",
+      "exists": true,
+      "git": {
+        "available": true,
+        "branch": "main",
+        "commit": "bdaa7cd3bfe5",
+        "commitDate": "2026-06-13T05:15:15-04:00",
+        "dirty": false,
+        "dirtyFiles": []
+      },
+      "canonicalDocs": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "bytes": 1355,
+          "heading": "ECHO Galactic Survey Native Edition",
+          "excerpt": "Galactic Survey Native Edition is the ECHO Native Platform packaging lane for"
+        },
+        {
+          "path": "docs/install.md",
+          "exists": true,
+          "bytes": 464,
+          "heading": "Install",
+          "excerpt": "Galactic Survey Native Edition installs through ECHO Launcher after verified"
+        },
+        {
+          "path": "docs/update-flow.md",
+          "exists": true,
+          "bytes": 463,
+          "heading": "Update Flow",
+          "excerpt": "Updates must preserve player profiles, survey network state, probe queues,"
+        },
+        {
+          "path": "docs/runtime-evidence.md",
+          "exists": true,
+          "bytes": 485,
+          "heading": "Runtime Evidence",
+          "excerpt": "Public alpha requires real Native runtime evidence for survey network loading,"
+        },
+        {
+          "path": "docs/gameplay-evidence.md",
+          "exists": true,
+          "bytes": 2612,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Galactic Survey Native Edition cannot be promoted from preview metadata until"
+        },
+        {
+          "path": "docs/module-requirements.md",
+          "exists": true,
+          "bytes": 584,
+          "heading": "Module Requirements",
+          "excerpt": "Galactic Survey Native Edition consumes Native `.echo-addon` artifacts."
+        }
+      ],
+      "agentDocs": [],
+      "metadata": [],
+      "warnings": []
+    },
+    {
+      "id": "galactic-survey-neoforge",
+      "name": "ECHO-Galactic-Survey-NeoForge-Edition",
+      "github": "knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+      "role": "Galactic Survey NeoForge Edition pack manifest, gameplay QA evidence, and NeoForge release readiness.",
+      "localPath": "C:\\Development\\Github\\ECHO-Galactic-Survey-NeoForge-Edition",
+      "exists": true,
+      "git": {
+        "available": true,
+        "branch": "main",
+        "commit": "a7de240f3619",
+        "commitDate": "2026-06-13T05:15:15-04:00",
+        "dirty": false,
+        "dirtyFiles": []
+      },
+      "canonicalDocs": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "bytes": 1363,
+          "heading": "ECHO Galactic Survey NeoForge Edition",
+          "excerpt": "Galactic Survey NeoForge Edition is the Minecraft/NeoForge packaging lane for"
+        },
+        {
+          "path": "docs/install.md",
+          "exists": true,
+          "bytes": 470,
+          "heading": "Install",
+          "excerpt": "Galactic Survey NeoForge Edition installs through ECHO Launcher after verified"
+        },
+        {
+          "path": "docs/update-flow.md",
+          "exists": true,
+          "bytes": 463,
+          "heading": "Update Flow",
+          "excerpt": "Updates must preserve player profiles, survey network state, probe queues,"
+        },
+        {
+          "path": "docs/runtime-evidence.md",
+          "exists": true,
+          "bytes": 487,
+          "heading": "Runtime Evidence",
+          "excerpt": "Public alpha requires real NeoForge runtime evidence for survey network loading,"
+        },
+        {
+          "path": "docs/gameplay-evidence.md",
+          "exists": true,
+          "bytes": 2614,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Galactic Survey NeoForge Edition cannot be promoted from preview metadata until"
+        },
+        {
+          "path": "docs/module-requirements.md",
+          "exists": true,
+          "bytes": 600,
+          "heading": "Module Requirements",
+          "excerpt": "Galactic Survey NeoForge Edition consumes Minecraft/NeoForge `-neoforge.jar`"
+        }
+      ],
+      "agentDocs": [],
+      "metadata": [],
+      "warnings": []
+    },
+    {
+      "id": "galactic-survey-standalone",
+      "name": "ECHO-Galactic-Survey-Standalone-Edition",
+      "github": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+      "role": "Galactic Survey Standalone Edition pack manifest, gameplay QA evidence, and standalone release readiness.",
+      "localPath": "C:\\Development\\Github\\ECHO-Galactic-Survey-Standalone-Edition",
+      "exists": true,
+      "git": {
+        "available": true,
+        "branch": "main",
+        "commit": "090c1f4f57a4",
+        "commitDate": "2026-06-13T05:15:15-04:00",
+        "dirty": false,
+        "dirtyFiles": []
+      },
+      "canonicalDocs": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "bytes": 1385,
+          "heading": "ECHO Galactic Survey Standalone Edition",
+          "excerpt": "Galactic Survey Standalone Edition is the ECHO Standalone Runtime packaging lane for"
+        },
+        {
+          "path": "docs/install.md",
+          "exists": true,
+          "bytes": 476,
+          "heading": "Install",
+          "excerpt": "Galactic Survey Standalone Edition installs through ECHO Launcher after verified"
+        },
+        {
+          "path": "docs/update-flow.md",
+          "exists": true,
+          "bytes": 463,
+          "heading": "Update Flow",
+          "excerpt": "Updates must preserve player profiles, survey network state, probe queues,"
+        },
+        {
+          "path": "docs/runtime-evidence.md",
+          "exists": true,
+          "bytes": 489,
+          "heading": "Runtime Evidence",
+          "excerpt": "Public alpha requires real Standalone runtime evidence for survey network loading,"
+        },
+        {
+          "path": "docs/gameplay-evidence.md",
+          "exists": true,
+          "bytes": 2616,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Galactic Survey Standalone Edition cannot be promoted from preview metadata until"
+        },
+        {
+          "path": "docs/module-requirements.md",
+          "exists": true,
+          "bytes": 596,
+          "heading": "Module Requirements",
+          "excerpt": "Galactic Survey Standalone Edition consumes Standalone `-standalone.jar`"
         }
       ],
       "agentDocs": [],

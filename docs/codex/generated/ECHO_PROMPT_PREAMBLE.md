@@ -37,3 +37,6 @@ Keep AGENTS.md files small; put durable platform knowledge in ECHO-Release-Index
 - `ECHO-Sky-Relay-Native-Edition`: Sky Relay Native Edition pack manifest, assets, runtime evidence, and gameplay QA evidence.
 - `ECHO-Sky-Relay-NeoForge-Edition`: Sky Relay NeoForge Edition pack manifest, assets, runtime evidence, and gameplay QA evidence.
 - `ECHO-Sky-Relay-Standalone-Edition`: Sky Relay Standalone Edition pack manifest, assets, runtime evidence, and gameplay QA evidence.
+- `ECHO-Galactic-Survey-Native-Edition`: Galactic Survey Native Edition pack manifest, gameplay QA evidence, and native release readiness.
+- `ECHO-Galactic-Survey-NeoForge-Edition`: Galactic Survey NeoForge Edition pack manifest, gameplay QA evidence, and NeoForge release readiness.
+- `ECHO-Galactic-Survey-Standalone-Edition`: Galactic Survey Standalone Edition pack manifest, gameplay QA evidence, and standalone release readiness.

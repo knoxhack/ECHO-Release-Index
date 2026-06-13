@@ -46,6 +46,9 @@
     "skyRelayNativeEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
     "skyRelayNeoForgeEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
     "skyRelayStandaloneEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+    "galacticSurveyNativeEdition": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
+    "galacticSurveyNeoForgeEdition": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+    "galacticSurveyStandaloneEdition": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
     "launcher": "https://github.com/knoxhack/ECHO-Launcher",
     "releaseIndex": "https://github.com/knoxhack/ECHO-Release-Index"
   },
@@ -166,6 +169,36 @@
       "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-standalone-edition.json",
       "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-standalone.json",
       "catalogStatus": "approved"
+    },
+    {
+      "id": "galactic-survey-native-edition",
+      "name": "Galactic Survey Native Edition",
+      "channel": "alpha",
+      "loader": "echo-native-loader",
+      "moduleArtifactFamily": "echo-addon",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
+      "catalogStatus": "unpublished",
+      "diagnostic": "Galactic Survey Native Edition is planned and locally scaffolded, but has no published pack artifacts, no launcher lifecycle evidence, and no real gameplay evidence yet."
+    },
+    {
+      "id": "galactic-survey-neoforge-edition",
+      "name": "Galactic Survey NeoForge Edition",
+      "channel": "alpha",
+      "loader": "neoforge",
+      "moduleArtifactFamily": "neoforge",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+      "catalogStatus": "unpublished",
+      "diagnostic": "Galactic Survey NeoForge Edition is planned and locally scaffolded, but has no published pack artifacts, no launcher lifecycle evidence, and no real gameplay evidence yet."
+    },
+    {
+      "id": "galactic-survey-standalone-edition",
+      "name": "Galactic Survey Standalone Edition",
+      "channel": "experimental",
+      "loader": "echo-standalone-runtime",
+      "moduleArtifactFamily": "standalone",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+      "catalogStatus": "unpublished",
+      "diagnostic": "Galactic Survey Standalone Edition is planned and locally scaffolded, but has no published pack artifacts, no launcher lifecycle evidence, and no real gameplay evidence yet."
     }
   ]
 }
