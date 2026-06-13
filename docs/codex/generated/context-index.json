@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T11:25:17-04:00",
+  "generatedAt": "2026-06-13T11:34:50-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,14 +16,26 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "12d9ff58a42c",
-        "commitDate": "2026-06-13T11:21:56-04:00",
+        "commit": "21f9f6e05303",
+        "commitDate": "2026-06-13T11:26:01-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M channels/alpha/launcher-channel.json",
+          " M channels/beta/launcher-channel.json",
           " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M release-readiness/native-sdk-rc1-artifacts.json",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/test-verify-native-sdk-rc1-artifacts.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-native-sdk-rc1-artifacts.mjs",
+          "?? products/native-sdk.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? release-readiness/openlands-standalone-electron-install-smoke.json"
+          "?? release-readiness/native-sdk-rc1-download-smoke.json",
+          "?? release-readiness/openlands-standalone-electron-install-smoke.json",
+          "?? scripts/download-native-sdk-rc1-artifacts.mjs",
+          "?? scripts/test-download-native-sdk-rc1-artifacts.mjs"
         ]
       },
       "canonicalDocs": [
@@ -82,8 +94,8 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 17832,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-13T12:34:04.939Z"
+          "bytes": 17933,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-13T15:34:28.345Z"
         },
         {
           "path": "trust/tiers.json",
@@ -345,6 +357,7 @@
           " M build.gradle",
           " M docs/echo/standalone/ASHFALL_PARITY_MATRIX.md",
           " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
+          " M docs/echo/standalone/ECHO_RUNTIME_BOUNDARIES.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_RUNTIME.md",
@@ -360,6 +373,7 @@
           " M docs/echo/standalone/ECHO_STANDALONE_PLAYER_CONTROLLER.md",
           " M docs/echo/standalone/ECHO_STANDALONE_RENDERER_UPGRADE.md",
           " M docs/echo/standalone/ECHO_STANDALONE_RENDER_RUNTIME.md",
+          " M docs/echo/standalone/ECHO_STANDALONE_RUNTIME_ARCHITECTURE.md",
           " M docs/echo/standalone/ECHO_STANDALONE_SAVE_PROFILE_FLOW.md",
           " M docs/echo/standalone/ECHO_STANDALONE_SAVE_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_SCRIPTING_RUNTIME.md",
@@ -448,6 +462,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAssetSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAudioSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeCommandSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeCompatSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeDataSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeEntitySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeGameplaySmokeHarness.java",
@@ -723,8 +738,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "012309b19239",
-        "commitDate": "2026-06-13T11:25:17-04:00",
+        "commit": "3e8e439aabe0",
+        "commitDate": "2026-06-13T11:34:50-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -732,7 +747,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3046,
+          "bytes": 3213,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -760,7 +775,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 9856,
+          "bytes": 10063,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
