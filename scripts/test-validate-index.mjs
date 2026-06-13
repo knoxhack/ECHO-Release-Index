@@ -77,7 +77,28 @@ function approvedEntry(overrides = {}) {
   }
 }
 
-async function writeLauncherChannel(root, catalogUrls) {
+function approvedModpackEntry(overrides = {}) {
+  return approvedEntry({
+    id: 'fixture-pack',
+    kind: 'modpack',
+    artifacts: {
+      pack: {
+        file: 'fixture-pack.zip',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture-Pack/releases/download/v1.0.0/fixture-pack.zip',
+      },
+      manifest: {
+        file: 'fixture-pack-alpha-1.0.0.pack.json',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture-Pack/releases/download/v1.0.0/fixture-pack-alpha-1.0.0.pack.json',
+      },
+    },
+    compatibility: ['fixture-pack'],
+    ...overrides,
+  })
+}
+
+async function writeLauncherChannel(root, catalogUrls, packs = []) {
   await writeJson(root, 'channels/alpha/launcher-channel.json', {
     schemaVersion: 1,
     channel: 'alpha',
@@ -91,6 +112,7 @@ async function writeLauncherChannel(root, catalogUrls) {
       addons: [],
       ...catalogUrls,
     },
+    packs,
   })
 }
 
@@ -138,6 +160,40 @@ await runFixture('launcher-channel-omits-entry', async (root) => {
   await writeJson(root, 'addons/fixture-addon.json', approvedEntry())
   await writeLauncherChannel(root, { addons: [] })
 }, 1, 'does not include catalog entry addons/fixture-addon.json')
+
+await runFixture('launcher-channel-approved-pack-backed-by-approved-modpack', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry())
+  await writeLauncherChannel(root, {
+    modpacks: ['https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/fixture-pack.json'],
+  }, [
+    {
+      id: 'fixture-pack',
+      name: 'Fixture Pack',
+      channel: 'alpha',
+      catalogEntryUrl: 'https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/fixture-pack.json',
+      catalogStatus: 'approved',
+    },
+  ])
+}, 0, 'validation passed')
+
+await runFixture('launcher-channel-approved-pack-requires-approved-modpack', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    artifacts: {},
+    validation: 'warning',
+    trust: 'community',
+  }))
+  await writeLauncherChannel(root, {
+    modpacks: ['https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/fixture-pack.json'],
+  }, [
+    {
+      id: 'fixture-pack',
+      name: 'Fixture Pack',
+      channel: 'alpha',
+      catalogEntryUrl: 'https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/fixture-pack.json',
+      catalogStatus: 'approved',
+    },
+  ])
+}, 1, 'marks fixture-pack approved, but modpacks/fixture-pack.json validation is warning')
 
 await runFixture('warning', async (root) => {
   await writeJson(root, 'addons/fixture-addon.json', approvedEntry({

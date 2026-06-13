@@ -389,7 +389,7 @@ function rawIndexUrlToPath(url) {
   return relPath
 }
 
-function validateLauncherChannel(errors, entryFiles, channelName) {
+function validateLauncherChannel(errors, entryFiles, entriesByFile, channelName) {
   const launcherChannelPath = path.join(root, 'channels', channelName, 'launcher-channel.json')
   if (!fs.existsSync(launcherChannelPath)) return
   let channel
@@ -440,6 +440,32 @@ function validateLauncherChannel(errors, entryFiles, channelName) {
       errors.push(`channels/${channelName}/launcher-channel.json does not include catalog entry ${entryFile}`)
     }
   }
+
+  const packs = Array.isArray(channel.packs) ? channel.packs : []
+  for (const pack of packs) {
+    const packId = String(pack?.id ?? '').trim()
+    const catalogStatus = String(pack?.catalogStatus ?? '').trim().toLowerCase()
+    if (!packId || catalogStatus !== 'approved') continue
+    const catalogEntryUrl = String(pack?.catalogEntryUrl ?? '').trim()
+    if (!catalogEntryUrl) {
+      errors.push(`channels/${channelName}/launcher-channel.json marks ${packId} approved without catalogEntryUrl`)
+      continue
+    }
+    const relPath = rawIndexUrlToPath(catalogEntryUrl)
+    if (!relPath) {
+      errors.push(`channels/${channelName}/launcher-channel.json approved pack ${packId} has non-canonical catalogEntryUrl: ${catalogEntryUrl}`)
+      continue
+    }
+    const rows = entriesByFile.get(relPath) ?? []
+    const modpack = rows.find((entry) => entry.kind === 'modpack' && entry.id === packId)
+    if (!modpack) {
+      errors.push(`channels/${channelName}/launcher-channel.json marks ${packId} approved, but ${relPath} does not define that modpack`)
+      continue
+    }
+    if (modpack.validation !== 'approved') {
+      errors.push(`channels/${channelName}/launcher-channel.json marks ${packId} approved, but ${relPath} validation is ${modpack.validation}`)
+    }
+  }
 }
 
 function main() {
@@ -458,6 +484,7 @@ function main() {
   }
   const entries = []
   const entryFiles = new Set()
+  const entriesByFile = new Map()
   const ids = new Map()
   for (const dir of entryDirs) {
     for (const filePath of jsonFiles(dir)) {
@@ -472,7 +499,9 @@ function main() {
       const rows = Array.isArray(payload) ? payload : [payload]
       for (const row of rows) {
         validateEntry(errors, warnings, filePath, row, context)
-        entryFiles.add(rel(filePath))
+        const entryFile = rel(filePath)
+        entryFiles.add(entryFile)
+        entriesByFile.set(entryFile, [...(entriesByFile.get(entryFile) ?? []), row])
         if (row.id) {
           if (ids.has(row.id)) errors.push(`Duplicate release index id ${row.id}: ${ids.get(row.id)} and ${rel(filePath)}`)
           ids.set(row.id, rel(filePath))
@@ -481,8 +510,8 @@ function main() {
       }
     }
   }
-  validateLauncherChannel(errors, entryFiles, 'alpha')
-  validateLauncherChannel(errors, entryFiles, 'beta')
+  validateLauncherChannel(errors, entryFiles, entriesByFile, 'alpha')
+  validateLauncherChannel(errors, entryFiles, entriesByFile, 'beta')
 
   const entryById = new Map(entries.map((entry) => [entry.id, entry]))
   const knownIds = new Set(entries.map((entry) => entry.id))

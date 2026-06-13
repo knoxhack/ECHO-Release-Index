@@ -1,21 +1,21 @@
 {
   "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-11T15:24:23.004Z",
+  "generatedAt": "2026-06-13T11:30:51.130Z",
   "scope": "packaged-electron-ui-and-lifecycle-smoke",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
   "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data",
   "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content",
-  "debugPort": 63219,
-  "catalogPort": 63220,
+  "debugPort": 54768,
+  "catalogPort": 54769,
   "platform": {
     "os": "win32",
     "release": "10.0.19045",
     "arch": "x64"
   },
   "catalog": {
-    "channelUrl": "http://127.0.0.1:63220/channel.json",
+    "channelUrl": "http://127.0.0.1:54769/channel.json",
     "servedPack": "sky-relay-native-edition",
     "releaseVersion": "0.1.0",
     "manifestName": "sky-relay-native-edition-alpha-0.1.0.pack.json",
@@ -32,11 +32,20 @@
       "ashfall-standalone-edition",
       "sky-relay-native-edition",
       "sky-relay-neoforge-edition",
-      "sky-relay-standalone-edition"
+      "sky-relay-standalone-edition",
+      "galactic-survey-native-edition",
+      "galactic-survey-neoforge-edition",
+      "galactic-survey-standalone-edition",
+      "openlands-native-edition",
+      "openlands-neoforge-edition",
+      "openlands-standalone-edition",
+      "arcana-division-native-edition",
+      "arcana-division-neoforge-edition",
+      "arcana-division-standalone-edition"
     ],
     "releaseIndexAccepted": 1,
     "releaseIndexWarnings": [],
-    "launcherUpdateStatus": "checking",
+    "launcherUpdateStatus": "idle",
     "userData": null
   },
   "ui": {
@@ -57,15 +66,32 @@
           "overflow": false,
           "rect": {
             "left": 871,
-            "top": 1647,
+            "top": 1159,
             "width": 496,
-            "height": 38
+            "height": 30
           }
         },
-        "statusPreview": true,
-        "modeViewOnly": true,
-        "playLocked": true,
-        "noInstallProfile": true
+        "hasManifestState": true,
+        "hasCatalogState": true,
+        "hasInstallState": true,
+        "hasActionState": true,
+        "hasDiagnosticsAction": true,
+        "hasHomeAction": true,
+        "hasScopedAction": true,
+        "actionPreview": [
+          "Reading exact pack state from the desktop backend.",
+          "MANIFEST",
+          "checking",
+          "CATALOG",
+          "checking",
+          "INSTALL",
+          "missing",
+          "ACTION",
+          "checking",
+          "Checking...",
+          "Diagnostics",
+          "Home"
+        ]
       },
       {
         "name": "Sky Relay NeoForge Edition",
@@ -76,15 +102,32 @@
           "overflow": false,
           "rect": {
             "left": 318,
-            "top": 2420,
+            "top": 1758,
             "width": 496,
-            "height": 38
+            "height": 30
           }
         },
-        "statusPreview": true,
-        "modeViewOnly": true,
-        "playLocked": true,
-        "noInstallProfile": true
+        "hasManifestState": true,
+        "hasCatalogState": true,
+        "hasInstallState": true,
+        "hasActionState": true,
+        "hasDiagnosticsAction": true,
+        "hasHomeAction": true,
+        "hasScopedAction": true,
+        "actionPreview": [
+          "Reading exact pack state from the desktop backend.",
+          "MANIFEST",
+          "checking",
+          "CATALOG",
+          "checking",
+          "INSTALL",
+          "missing",
+          "ACTION",
+          "checking",
+          "Checking...",
+          "Diagnostics",
+          "Home"
+        ]
       },
       {
         "name": "Sky Relay Standalone Edition",
@@ -95,19 +138,42 @@
           "overflow": false,
           "rect": {
             "left": 871,
-            "top": 2396,
+            "top": 1738,
             "width": 496,
-            "height": 38
+            "height": 30
           }
         },
-        "statusPreview": true,
-        "modeViewOnly": true,
-        "playLocked": true,
-        "noInstallProfile": true
+        "hasManifestState": true,
+        "hasCatalogState": true,
+        "hasInstallState": true,
+        "hasActionState": true,
+        "hasDiagnosticsAction": true,
+        "hasHomeAction": true,
+        "hasScopedAction": true,
+        "actionPreview": [
+          "Reading exact pack state from the desktop backend.",
+          "MANIFEST",
+          "checking",
+          "CATALOG",
+          "checking",
+          "INSTALL",
+          "missing",
+          "ACTION",
+          "checking",
+          "Checking...",
+          "Diagnostics",
+          "Home"
+        ]
       }
     ],
-    "hasInstallSkyRelay": false,
-    "hasPlaySkyRelay": false
+    "hasGlobalInstallUpdate": false,
+    "hasScopedSkyRelayAction": true,
+    "previewGating": {
+      "noGlobalInstallUpdate": true,
+      "cardsHaveScopedActions": true,
+      "cardsHaveDiagnostics": true,
+      "cardsHaveStateRows": true
+    }
   },
   "clickThrough": {
     "selectedPack": {
@@ -127,9 +193,9 @@
       "operation": "install",
       "click": {
         "clicked": true,
-        "text": "Install Ashfall 0.1.0"
+        "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-11T13-24-47-776Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T11-30-46-355Z.json",
       "installed": 12,
       "updated": 0,
       "verified": 0,
@@ -147,9 +213,9 @@
       "operation": "update",
       "click": {
         "clicked": true,
-        "text": "Install Ashfall"
+        "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-11T13-24-50-763Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T11-30-49-723Z.json",
       "installed": 0,
       "updated": 0,
       "verified": 12,
@@ -167,13 +233,13 @@
         "clicked": true,
         "text": "Repair Now"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-11T13-24-51-539Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T11-30-50-610Z.json",
       "repaired": [
         "addons/echoskyrelayprotocol-0.1.0.echo-addon"
       ],
       "skipped": [],
       "warnings": [],
-      "corruptSha256": "83554426d6d613e4077131af5c5c9b61a692fad7a71f5d1633eb627c089849b9",
+      "corruptSha256": "6141a295fbdacc7ad84d6404a640bbd869b635349b642b16e4507dd00b4ea59d",
       "verifiedModule": {
         "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
@@ -189,6 +255,7 @@
     "packagedElectronRendererMounted": "passed",
     "nativeBridgeBootstrap": "passed",
     "skyRelayLibraryCardsVisible": "passed",
+    "skyRelayScopedCardActions": "passed",
     "skyRelayPreviewGating": "passed",
     "skyRelayHeadingOverflow": "passed",
     "packagedElectronInstallClickThrough": "passed",
@@ -198,14 +265,14 @@
     "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "process": {
-    "pid": 34736,
+    "pid": 2204,
     "stdout": [
       "Checking for update",
-      "Generated new staging user ID: e05de2e2-5e12-5794-abf3-c1bed6fecad4",
-      "Update for version 1.0.4 is not available (latest version: 1.0.4, downgrade is disallowed)."
+      "Generated new staging user ID: 0d936011-8f63-5e95-9fa2-925ff1c4a44a",
+      "Update for version 1.1.1 is not available (latest version: 1.1.0, downgrade is disallowed)."
     ],
     "stderr": [
-      "DevTools listening on ws://127.0.0.1:63219/devtools/browser/d83a60da-4d5b-4d96-98f1-ac471dafa603"
+      "DevTools listening on ws://127.0.0.1:54768/devtools/browser/dd515f12-6577-484f-844d-3ad73d9ec513"
     ]
   }
 }

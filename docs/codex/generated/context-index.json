@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T07:06:16-04:00",
+  "generatedAt": "2026-06-13T07:30:52-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,13 +16,17 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "310d7b630067",
-        "commitDate": "2026-06-13T07:06:16-04:00",
+        "commit": "a9ae967dd6b5",
+        "commitDate": "2026-06-13T07:07:57-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M channels/alpha/launcher-channel.json",
+          " M channels/beta/launcher-channel.json",
           " M products/addons-studio.json",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
-          " M release-readiness/sky-relay-launcher-lifecycle-smoke.json"
+          " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
+          " M scripts/test-validate-index.mjs",
+          " M scripts/validate-index.mjs"
         ]
       },
       "canonicalDocs": [
@@ -81,7 +85,7 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 13162,
+          "bytes": 13708,
           "summary": "launcher channel alpha; generatedAt: 2026-06-13T06:41:03.688Z"
         },
         {
@@ -103,8 +107,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "26b754954252",
-        "commitDate": "2026-06-13T06:07:22-04:00",
+        "commit": "ab89dac00050",
+        "commitDate": "2026-06-13T07:30:52-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -112,7 +116,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3488,
+          "bytes": 4025,
           "heading": "ECHO Modules",
           "excerpt": "Canonical source for all shared ECHO module code, module descriptors, generated per-module docs, and module release artifact contracts."
         },
@@ -140,7 +144,7 @@
         {
           "path": "docs/module-artifact-contract.md",
           "exists": true,
-          "bytes": 4309,
+          "bytes": 6222,
           "heading": "ECHO Module Release Contract",
           "excerpt": "`knoxhack/ECHO-Modules` is the canonical source for module artifacts consumed by Ashfall editions."
         },
@@ -247,8 +251,16 @@
         "branch": "main",
         "commit": "4afe58f4a8d2",
         "commitDate": "2026-06-13T07:02:35-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/main.cjs",
+          " M package-lock.json",
+          " M package.json",
+          " M scripts/sky-relay-electron-ui-smoke.mjs",
+          " M src/components/dashboard/ModpacksPage.tsx",
+          " M src/data/officialModpacks.test.ts",
+          " M src/data/officialModpacks.ts"
+        ]
       },
       "canonicalDocs": [
         {
@@ -271,8 +283,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 5932,
-          "summary": "package echo-launcher 1.1.0; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 5931,
+          "summary": "package echo-launcher 1.1.1; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -590,20 +602,28 @@
           " M .gitignore",
           " M package-lock.json",
           " M package.json",
+          " M scripts/doctor-electron.mjs",
           " M src/main/devWorkspaceService.ts",
           " M src/main/gitService.ts",
           " M src/main/index.ts",
           " M src/main/ipc.ts",
+          " M src/main/previewScanService.ts",
           " M src/preload/index.ts",
+          " M src/renderer/index.html",
           " M src/renderer/src/App.tsx",
+          " M src/renderer/src/pages/AIAssistant.tsx",
           " M src/renderer/src/pages/ContentBuilder.tsx",
           " M src/renderer/src/pages/Git.tsx",
+          " M src/renderer/src/pages/Preview.tsx",
           " M src/renderer/src/state/useContent.ts",
           " M src/renderer/src/styles/global.css",
           " M src/shared/__tests__/gitService.test.ts",
+          " M src/shared/__tests__/previewScanService.test.ts",
           " M src/shared/devWorkspace.ts",
+          " M src/shared/previewScan.ts",
           "?? src/main/projectPaths.ts",
-          "?? src/renderer/src/components/RouteErrorBoundary.tsx"
+          "?? src/renderer/src/components/RouteErrorBoundary.tsx",
+          "?? src/shared/__tests__/projectPaths.test.ts"
         ]
       },
       "canonicalDocs": [
