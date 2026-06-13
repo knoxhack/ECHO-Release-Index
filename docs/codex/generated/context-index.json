@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T05:18:42-04:00",
+  "generatedAt": "2026-06-13T05:32:28-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,22 +16,20 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "80e23275f8a1",
-        "commitDate": "2026-06-13T04:17:00-04:00",
+        "commit": "1cb805dadf8a",
+        "commitDate": "2026-06-13T05:22:23-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M README.md",
-          " M channels/alpha/launcher-channel.json",
-          " M channels/beta/launcher-channel.json",
-          " M docs/ecosystem-artifact-ownership.md",
+          "M docs/codex/generated/ECHO_PLATFORM_CONTEXT.md",
+          " M packs/galactic-survey-native-edition.json",
+          " M packs/galactic-survey-neoforge-edition.json",
+          " M packs/galactic-survey-standalone-edition.json",
+          " M products/native-platform.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
           " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
-          "?? packs/galactic-survey-native-edition.json",
-          "?? packs/galactic-survey-neoforge-edition.json",
-          "?? packs/galactic-survey-standalone-edition.json",
-          "?? release-readiness/galactic-survey-public-alpha-readiness.json",
-          "?? scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          "?? scripts/verify-galactic-survey-public-alpha-readiness.mjs"
+          "?? scripts/build-galactic-survey-edition-assets.mjs",
+          "?? scripts/smoke-galactic-survey-edition-pack-assets.mjs"
         ]
       },
       "canonicalDocs": [
@@ -112,20 +110,17 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5dc9f78452c5",
-        "commitDate": "2026-06-13T05:18:42-04:00",
+        "commit": "52713215938f",
+        "commitDate": "2026-06-13T05:32:02-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M addons/echoadaptercore/build.gradle",
-          " M addons/echoadaptercore/gradle.properties",
-          " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoNativeModuleAdapter.java",
-          " M addons/echoaddonapi/build.gradle",
-          " M addons/echoaddonapi/gradle.properties",
-          " M addons/echoarcanadivisionprotocol/src/main/resources/META-INF/echo.mod.json",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
-          " M reports/echo-native/core-module-integration-audit.json",
-          " M settings.gradle",
-          "?? addons/echoarcanadivisionprotocol/src/main/java/com/knoxhack/echoarcanadivisionprotocol/EchoArcanaDivisionNativeModule.java"
+          "M addons/echoaddonapi/build.gradle",
+          " M addons/echogalacticcore/README.md",
+          " M addons/echogalacticcore/build.gradle",
+          " M addons/echogalacticcore/docs/artifacts.md",
+          " M build.gradle",
+          "?? addons/echoaddonapi/src/main/templates/",
+          "?? addons/echogalacticcore/src/main/templates/"
         ]
       },
       "canonicalDocs": [
@@ -201,21 +196,15 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3973c9b20c3c",
-        "commitDate": "2026-06-13T04:16:43-04:00",
+        "commit": "ec0d9b83b695",
+        "commitDate": "2026-06-13T05:31:54-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M gradle-plugin/echo-addon-gradle-plugin/build.gradle",
-          " M templates/_shared/native-addon-module/addons/{{module_id}}/build.gradle.tpl",
-          " M templates/_shared/native-addon-module/addons/{{module_id}}/src/main/java/{{package_path}}/{{class_name}}.java.tpl",
-          " M tools/validate_echo_sdk_templates.py",
           "?? build/",
           "?? gradle-plugin/echo-addon-gradle-plugin/.gradle/",
           "?? gradle-plugin/echo-addon-gradle-plugin/build/",
           "?? metadata/templates/openlands_official/",
           "?? reports/",
-          "?? templates/_shared/native-addon-module/addons/{{module_id}}/settings.gradle.tpl",
-          "?? templates/_shared/native-addon-module/addons/{{module_id}}/src/test/java/",
           "?? tools/__pycache__/"
         ]
       },
@@ -313,28 +302,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "df39d19677c0",
-        "commitDate": "2026-06-13T04:16:09-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M .gitignore",
-          " M README.md",
-          " M build.gradle",
-          " M echo-native-cli/src/qa/java/dev/echo/nativeplatform/cli/EchoNativeQaCli.java",
-          " M echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoNativeActivationSurfaceRegistrar.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeDescriptorScanner.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLifecycleEventHost.java",
-          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeCoreModuleLoadStateSmokeMain.java",
-          "?? fixtures/ashfall/",
-          "?? scripts/generate-ashfall-gameplay-qa-evidence.mjs",
-          "?? scripts/generate-ashfall-native-code-gate.mjs",
-          "?? scripts/generate-ashfall-native-playability-evidence.mjs",
-          "?? scripts/generate-ashfall-native-public-beta-evidence.mjs",
-          "?? scripts/test-generate-ashfall-gameplay-qa-evidence.mjs",
-          "?? scripts/test-generate-ashfall-native-code-gate.mjs",
-          "?? scripts/test-generate-ashfall-native-playability-evidence.mjs",
-          "?? scripts/test-generate-ashfall-native-public-beta-evidence.mjs"
-        ]
+        "commit": "d2a0536de2e2",
+        "commitDate": "2026-06-13T05:32:28-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1361,8 +1332,12 @@
         "branch": "main",
         "commit": "bdaa7cd3bfe5",
         "commitDate": "2026-06-13T05:15:15-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M docs/module-requirements.md",
+          " M release-manifest.template.json",
+          " M scripts/validate-galactic-survey-edition.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1403,7 +1378,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 584,
+          "bytes": 601,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey Native Edition consumes Native `.echo-addon` artifacts."
         }
@@ -1424,8 +1399,12 @@
         "branch": "main",
         "commit": "a7de240f3619",
         "commitDate": "2026-06-13T05:15:15-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M docs/module-requirements.md",
+          " M release-manifest.template.json",
+          " M scripts/validate-galactic-survey-edition.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1466,7 +1445,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 600,
+          "bytes": 617,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey NeoForge Edition consumes Minecraft/NeoForge `-neoforge.jar`"
         }
@@ -1487,8 +1466,12 @@
         "branch": "main",
         "commit": "090c1f4f57a4",
         "commitDate": "2026-06-13T05:15:15-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M docs/module-requirements.md",
+          " M release-manifest.template.json",
+          " M scripts/validate-galactic-survey-edition.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1529,7 +1512,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 596,
+          "bytes": 613,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey Standalone Edition consumes Standalone `-standalone.jar`"
         }

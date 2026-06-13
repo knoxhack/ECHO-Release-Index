@@ -2,71 +2,84 @@
   "id": "echo-native-platform",
   "kind": "runtime",
   "version": "1.0.0-RC1",
-  "channel": "alpha",
+  "channel": "beta",
   "targetReleaseLine": "1.0.0-RC1",
   "targetStableVersion": "1.0.0",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Native-Platform",
-  "releaseTag": "v0.1.0-native-platform-alpha",
-  "commitSha": "50728e17aac73ac4136594eeae28c989bd9201a5",
+  "releaseTag": "v1.0.0-RC1",
+  "commitSha": "d2a0536de2e2d4d13e02c8574e906f6013724d8b",
   "artifacts": {
     "archive": {
-      "file": "echo-native-product-1.0.0-existing-layout-rc.zip",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/echo-native-product-1.0.0-existing-layout-rc.zip",
-      "sha256": "16d1af3195ccd11b342a976ea5e29bb02cf27c1ac721417d9a346e884bfef03b",
-      "size": 27875,
-      "status": "superseded-by-required-rc1-build"
+      "file": "echo-native-product-1.0.0-RC1.zip",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-product-1.0.0-RC1.zip",
+      "sha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45",
+      "size": 60744144,
+      "status": "local-rc1-built-not-download-smoked"
     },
     "nativeAddonSourceTruth": {
       "file": "native-addon-source-truth.md",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/native-addon-source-truth.md",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-addon-source-truth.md",
       "sha256": "c8913934116bc36f396cf7ed59c8209bdf0fa8006f3b0f9cf14082983bc7c0ee",
       "size": 1484
     },
     "nativeLiveProofGate": {
       "file": "native-live-proof-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/native-live-proof-gate.json",
-      "sha256": "f97ced62fad40eccde59381ef2d4f34665b4142768ef9a7539c0972fa1e43e40",
-      "size": 300
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-live-proof-gate.json",
+      "sha256": "cc15324b1dd35fb6d1168f793a10fb0f86bdb7b4eb922956c302be79e07ea761",
+      "size": 399
     },
     "nativeModuleInventory": {
       "file": "native-module-inventory.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/native-module-inventory.json",
-      "sha256": "38295c5cdf270e684de383cdaa06d11a12be057a6158a8136c5da2852c1cde0e",
-      "size": 211
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-module-inventory.json",
+      "sha256": "a6e5933cec9cb6a6b624613f9f4e344165292d99d94573c65dfb1d61f61ae1d8",
+      "size": 270
     },
     "plan3DependencyVulnerabilityScan": {
       "file": "plan3-dependency-vulnerability-scan.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/plan3-dependency-vulnerability-scan.json",
-      "sha256": "74e9703b1d53349e06d5e794ced9a1f2016e3c28da208054c6efd3ec407624c7",
-      "size": 279
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-dependency-vulnerability-scan.json",
+      "sha256": "9f40b29f35157f692b13f2d6af44d9796f8d4ecbb86908aa83867a5844741711",
+      "size": 341
     },
     "plan3FinalQa": {
       "file": "plan3-final-qa.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/plan3-final-qa.json",
-      "sha256": "052f13b7f9aedf96c2ff2c00e14bd16a8040449cc66887f554f8f760c25ae350",
-      "size": 252
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-final-qa.json",
+      "sha256": "1b2f5555afc4af1666d4213877152482e59bbfbf96de515196c1c5eacadda342",
+      "size": 289
     },
     "plan3ReleasePrep": {
       "file": "plan3-release-prep.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v0.1.0-native-platform-alpha/plan3-release-prep.json",
-      "sha256": "ab3fad80039d0990434af90d4c1070620351eb54910972fe1c66c419e278192c",
-      "size": 245
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-release-prep.json",
+      "sha256": "054bf41229d5cb94e9f3d58f27720f9747c1335c4c0aa9e18350005481614ffa",
+      "size": 341
     }
   },
-  "requiredReplacementArtifact": "echo-native-product-1.0.0-RC1.zip",
+  "provenance": {
+    "status": "local-rc1-built",
+    "nativePlatformCommitSha": "d2a0536de2e2d4d13e02c8574e906f6013724d8b",
+    "modulesCommitSha": "52713215938fbd0def40a9f87c9c3fc95fb7fa56",
+    "sdkCommitSha": "ec0d9b83b695309ef895c8e591ec41bf84336211",
+    "builtAt": "2026-06-13T09:33:03Z",
+    "buildCommand": ".\\gradlew.bat check packageNativeProductLayout packagePublicAlphaRelease --no-daemon --no-parallel --max-workers=1",
+    "artifactPath": "C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-product-1.0.0-RC1.zip",
+    "githubDownloadSmoke": "not-run",
+    "attestation": {
+      "status": "not-attested",
+      "reason": "Local RC1 artifact has not been signed or attested yet."
+    }
+  },
   "dependencies": [],
   "compatibility": [
     "ashfall-native-edition"
   ],
   "trust": "source-linked",
   "validation": "warning",
-  "validationReason": "Current indexed artifact is source-linked alpha-era evidence. Replace with workflow-built echo-native-product-1.0.0-RC1.zip, fresh checksums, provenance, install smoke, and RC release notes before approval.",
+  "validationReason": "A local RC1 product artifact has been built and checksum-indexed, but approval is still blocked until the asset is uploaded to the v1.0.0-RC1 GitHub release, download-smoked, attested or signed, launcher-installed, rollback-tested, and backed by real pack gameplay evidence.",
   "stableReleaseBlockedUntil": [
-    "workflow-built or attested RC1 runtime artifact is indexed",
-    "SDK template export validation passes against 1.0.0-RC1 artifacts",
-    "module matrix contains no ready-native module using local build output fallback",
+    "GitHub v1.0.0-RC1 assets are uploaded and checksum/download-smoked",
+    "workflow provenance, signing, or attestation policy is satisfied",
     "launcher install, rollback, and diagnostics smoke evidence are attached",
-    "pack gameplay evidence is real-run and green"
+    "pack gameplay evidence is real-run and green",
+    "all stable-target catalog metadata is approved rather than warning or blocked"
   ]
 }
