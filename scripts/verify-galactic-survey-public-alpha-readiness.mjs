@@ -15,6 +15,7 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-manual-gameplay-work-order.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
+  'release-readiness/native-sdk-rc1-artifacts.json',
   'docs/galactic-survey-manual-gameplay-work-order.md',
   'scripts/build-galactic-survey-edition-assets.mjs',
   'scripts/download-galactic-survey-draft-releases.mjs',
@@ -26,7 +27,9 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs',
   'scripts/test-import-galactic-survey-first-launch-evidence.mjs',
   'scripts/test-publish-galactic-survey-draft-releases.mjs',
+  'scripts/test-verify-native-sdk-rc1-artifacts.mjs',
   'scripts/test-verify-galactic-survey-public-alpha-readiness.mjs',
+  'scripts/verify-native-sdk-rc1-artifacts.mjs',
   'scripts/verify-galactic-survey-public-alpha-readiness.mjs'
 ]
 const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
@@ -40,6 +43,7 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'release-readiness/galactic-survey-manual-gameplay-work-order.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
+  'release-readiness/native-sdk-rc1-artifacts.json',
   'docs/galactic-survey-manual-gameplay-work-order.md'
 ])
 const MODULE_RELEVANT_STATUS_PATHS = [
@@ -391,6 +395,7 @@ const launcherLifecycleSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'relea
 const launcherElectronUiSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-electron-ui-smoke.json'))
 const firstLaunchOpenPlayEvidence = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-first-launch-open-play.json'))
 const moduleReleaseIngest = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-module-release-ingest.json'))
+const nativeSdkRc1Artifacts = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'native-sdk-rc1-artifacts.json'))
 const galacticModpackCatalog = Object.fromEntries(editions.map((edition) => [
   edition.id,
   readJsonOrNull(path.join(releaseIndexRoot, 'modpacks', `${edition.id.replace(/-edition$/u, '')}.json`))
@@ -742,6 +747,10 @@ const phases = []
   requireCondition(phase, moduleReleaseIngest?.validation === 'approved', 'Galactic module release ingestion is approved', 'Galactic module release ingestion must be approved')
   requireCondition(phase, moduleReleaseIngest?.assetCount === 96, 'Galactic module release exposes 96 source-owned release assets', 'Galactic module release must expose the 23-module runtime/source artifact set')
   requireCondition(phase, moduleReleaseIngest?.writtenIndexEntries?.length === 23, 'Release Index wrote 23 Galactic module catalog entries', 'Release Index must write the full 23-module Galactic module catalog set')
+  requireCondition(phase, nativeSdkRc1Artifacts?.schemaVersion === 'echo.native_sdk.rc1-artifacts.v1', 'Native SDK RC1 artifact report exists', 'Native SDK RC1 artifact report must be generated')
+  requireCondition(phase, nativeSdkRc1Artifacts?.gates?.localMainSourceJavadocJars === 'passed', 'Native SDK RC1 local main/source/Javadoc jars are complete', 'Native SDK RC1 local main/source/Javadoc jars must be complete')
+  requireCondition(phase, nativeSdkRc1Artifacts?.gates?.publicCatalogArtifacts === 'passed', 'Native SDK RC1 public catalog artifacts match local jars', 'Native SDK RC1 public catalog artifacts must match local jars')
+  requireCondition(phase, nativeSdkRc1Artifacts?.gates?.stablePublicProvenance === 'passed', 'Native SDK RC1 public artifacts have approved non-source-linked provenance', 'Native SDK RC1 public artifacts must have approved non-source-linked provenance')
   for (const edition of editions) {
     const modpack = galacticModpackCatalog[edition.id]
     requireCondition(phase, modpack?.validation === 'approved', `${edition.id} installable modpack catalog entry is approved`, `${edition.id} modpack catalog entry must be approved`)
@@ -784,10 +793,41 @@ const report = {
       launcherElectronUiSmoke: 'release-readiness/galactic-survey-electron-ui-smoke.json',
       firstLaunchOpenPlayEvidence: 'release-readiness/galactic-survey-first-launch-open-play.json',
       manualGameplayWorkOrder: 'release-readiness/galactic-survey-manual-gameplay-work-order.json',
+      nativeSdkRc1Artifacts: 'release-readiness/native-sdk-rc1-artifacts.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
   },
+  nativeSdkRc1ArtifactEvidence: nativeSdkRc1Artifacts
+    ? {
+        schemaVersion: nativeSdkRc1Artifacts.schemaVersion,
+        status: nativeSdkRc1Artifacts.status,
+        generatedAt: nativeSdkRc1Artifacts.generatedAt,
+        releaseLine: nativeSdkRc1Artifacts.releaseLine,
+        summary: nativeSdkRc1Artifacts.summary,
+        gates: nativeSdkRc1Artifacts.gates,
+        promotion: nativeSdkRc1Artifacts.promotion,
+        components: nativeSdkRc1Artifacts.components?.map((component) => ({
+          id: component.id,
+          artifactId: component.artifactId,
+          ownerRepo: component.ownerRepo,
+          localStatus: component.localStatus,
+          publicCatalogStatus: component.publicCatalogStatus,
+          stableProvenanceStatus: component.stableProvenanceStatus,
+          files: component.files?.map((file) => ({
+            classifier: file.classifier,
+            fileName: file.fileName,
+            exists: file.exists,
+            size: file.size,
+            sha256: file.sha256,
+            hasMatchingPublicCatalog: file.hasMatchingPublicCatalog,
+            hasStablePublicProvenance: file.hasStablePublicProvenance
+          })) ?? [],
+          blockers: component.blockers
+        })) ?? [],
+        blockers: nativeSdkRc1Artifacts.blockers
+      }
+    : null,
   editionPackEvidence: {
     assets: editionPackAssets
       ? {

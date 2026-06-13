@@ -61,6 +61,8 @@ Run commands from the repository root.
 - `node scripts/test-import-galactic-survey-first-launch-evidence.mjs`
 - `node scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write`
 - `node scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs`
+- `node scripts/verify-native-sdk-rc1-artifacts.mjs --write`
+- `node scripts/test-verify-native-sdk-rc1-artifacts.mjs`
 - `node scripts/verify-ashfall-release-readiness.mjs --require-release-ready`
 - `node scripts/verify-galactic-survey-public-alpha-readiness.mjs --write`
 - `node scripts/test-verify-galactic-survey-public-alpha-readiness.mjs`
@@ -78,7 +80,7 @@ Index JSON and catalog metadata belong here. Binary release assets stay in their
 
 ## Native Platform RC1
 
-The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, SDK export, external addon release-mode proof, GitHub upload/download-back, published asset attestation, attested Galactic Survey module assets, Galactic Survey public prerelease pack download-back, launcher install/update/repair/rollback evidence, packaged Electron UI install/update/rollback/repair evidence, packaged diagnostics/log export evidence, and isolated Minecraft Launcher handoff metadata evidence exist. Public approval is still blocked until a real packaged first-launch/open-play path, final catalog promotion, and real pack gameplay evidence pass. See `docs/native-platform-rc1-handoff.md`.
+The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, local Native SDK main/source/Javadoc jars, external addon release-mode proof, GitHub upload/download-back, published asset attestation, attested Galactic Survey module assets, Galactic Survey public prerelease pack download-back, launcher install/update/repair/rollback evidence, packaged Electron UI install/update/rollback/repair evidence, packaged diagnostics/log export evidence, and isolated Minecraft Launcher handoff metadata evidence exist. Public approval is still blocked until the Native SDK RC1 jars are public catalog artifacts with approved provenance, a real packaged first-launch/open-play path passes, final catalog promotion is complete, and real pack gameplay evidence passes. See `docs/native-platform-rc1-handoff.md`.
 
 Each installable entry must include stable fields for `id`, `kind`, `version`, `channel`, `publisher`, `sourceRepo`, `releaseTag`, `commitSha`, `artifacts`, `dependencies`, `compatibility`, `trust`, and `validation`.
 
@@ -111,6 +113,8 @@ Phase 7 Native Platform beta evidence is produced in `ECHO-Native-Platform` by `
 `scripts/import-galactic-survey-first-launch-evidence.mjs` is the catalog-side first-launch/open-play intake. It requires a capture root with launcher handoff notes, official Minecraft Launcher open notes, first open/play notes, no-crash review notes, PNG screenshots, launcher and client logs, and a support ZIP. The `--artifact` must be the downloaded pack ZIP whose size and SHA-256 match `release-readiness/galactic-survey-draft-download.json`. A passing import writes `release-readiness/galactic-survey-first-launch-open-play.json`; the readiness reducer accepts that report only when all first-launch claims are true and checksum-backed.
 
 `scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write` turns the Galactic Survey readiness report into exact per-edition manual gameplay capture tasks at `release-readiness/galactic-survey-manual-gameplay-work-order.json` and `docs/galactic-survey-manual-gameplay-work-order.md`. It does not prove gameplay by itself; it names the missing first-30-minute, first-2-hour, Survey Array, save/reload, no-crash, notes, screenshots, log, save ZIP, artifact hash, and local verifier work required before promotion.
+
+`scripts/verify-native-sdk-rc1-artifacts.mjs --write` records the Native public SDK RC1 artifact gate at `release-readiness/native-sdk-rc1-artifacts.json`. It checks `echo-native-contracts`, `echoaddonapi`, `echoadaptercore`, `echo-native-testkit`, and the SDK Gradle plugin for local main/source/Javadoc jars, then keeps stable approval blocked until each jar is also represented by a matching public GitHub catalog artifact with approved non-source-linked provenance.
 
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 

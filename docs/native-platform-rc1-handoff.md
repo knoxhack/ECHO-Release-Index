@@ -32,6 +32,14 @@ Local artifact evidence exists:
 
 The local external addon proof generated, built, packaged, and loaded a `.echo-addon` through Native release mode. That proves the developer export path, but it does not prove public distribution.
 
+Native SDK RC1 artifact evidence now exists:
+
+- Evidence: `release-readiness/native-sdk-rc1-artifacts.json`
+- Scope: `echo-native-contracts`, `echoaddonapi`, `echoadaptercore`, `echo-native-testkit`, and the SDK Gradle plugin.
+- Local status: all 15 required main/source/Javadoc jars exist in the owning repos.
+- Public status: blocked. None of the 15 jars is currently represented as a matching public catalog artifact with GitHub URL, size, and SHA-256.
+- Stable provenance status: blocked. The SDK jar set must be approved with non-source-linked provenance before stable `1.0.0`.
+
 Galactic Survey module and pack prerelease evidence now exists:
 
 - Module release workflow: `https://github.com/knoxhack/ECHO-Modules/actions/runs/27467968646`
@@ -96,7 +104,7 @@ Do not approve stable `1.0.0` and do not remove warning validation until all of 
 - `release-readiness/galactic-survey-manual-gameplay-work-order.json` is COMPLETE and all three Galactic Survey edition `verify-manual-gameplay-evidence.mjs --require-release-ready` commands pass.
 - Final public pack promotion evidence is approved.
 - At least one Native pack gameplay smoke passes from the published runtime.
-- Public SDK artifacts have main, source, and Javadoc jars.
+- `release-readiness/native-sdk-rc1-artifacts.json` is PASS, proving public SDK main/source/Javadoc jars are cataloged with matching GitHub URLs, exact size/SHA-256, and approved non-source-linked provenance.
 - Stable-target catalog metadata has no `warning`, `blocked`, or `alpha` release blocker, and no stable artifact remains `source-linked`.
 
 ## Mutation Truth
@@ -114,4 +122,5 @@ The current Native release contract is typed-host-receipt based:
 - `release-readiness/galactic-survey-edition-pack-smoke.json`
 - `release-readiness/galactic-survey-electron-ui-smoke.json`
 - `release-readiness/galactic-survey-public-alpha-readiness.json`
+- `release-readiness/native-sdk-rc1-artifacts.json`
 - `../ECHO-Native-Platform/docs/echo/native/RELEASE_CANDIDATE_CHECKLIST.md`
