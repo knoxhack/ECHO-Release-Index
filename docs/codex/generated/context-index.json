@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T07:04:13-04:00",
+  "generatedAt": "2026-06-13T07:06:16-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,10 +16,11 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7865457c3ee5",
-        "commitDate": "2026-06-13T07:04:13-04:00",
+        "commit": "310d7b630067",
+        "commitDate": "2026-06-13T07:06:16-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M products/addons-studio.json",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
           " M release-readiness/sky-relay-launcher-lifecycle-smoke.json"
         ]
@@ -586,20 +587,23 @@
         "commitDate": "2026-06-10T22:08:19-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M .gitignore",
+          " M package-lock.json",
+          " M package.json",
           " M src/main/devWorkspaceService.ts",
           " M src/main/gitService.ts",
+          " M src/main/index.ts",
           " M src/main/ipc.ts",
           " M src/preload/index.ts",
           " M src/renderer/src/App.tsx",
           " M src/renderer/src/pages/ContentBuilder.tsx",
           " M src/renderer/src/pages/Git.tsx",
           " M src/renderer/src/state/useContent.ts",
+          " M src/renderer/src/styles/global.css",
           " M src/shared/__tests__/gitService.test.ts",
           " M src/shared/devWorkspace.ts",
           "?? src/main/projectPaths.ts",
-          "?? src/renderer/src/components/RouteErrorBoundary.tsx",
-          "?? tsconfig.node.tsbuildinfo",
-          "?? tsconfig.web.tsbuildinfo"
+          "?? src/renderer/src/components/RouteErrorBoundary.tsx"
         ]
       },
       "canonicalDocs": [
@@ -638,7 +642,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 1629,
+          "bytes": 1671,
           "summary": "package echo-studio 0.1.1; scripts: dev, build, preview, start, typecheck, test, doctor:electron, lint"
         }
       ],
