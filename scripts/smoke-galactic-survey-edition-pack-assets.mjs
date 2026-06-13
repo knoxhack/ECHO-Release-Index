@@ -37,6 +37,8 @@ Options:
                           Default: tmp/galactic-survey-edition-assets
   --work-root <path>      Temporary install/rollback root. Default: tmp/galactic-survey-edition-pack-smoke
   --out <path>            Evidence output path. Default: release-readiness/galactic-survey-edition-pack-smoke.json
+  --draft-download-evidence <path>
+                          Evidence from download-galactic-survey-draft-releases.mjs.
   --clean                 Remove work-root before running.
 `
 }
@@ -48,6 +50,7 @@ function parseArgs(argv) {
     downloadRoot: path.resolve(root, 'tmp', 'galactic-survey-edition-assets'),
     workRoot: path.resolve(root, 'tmp', 'galactic-survey-edition-pack-smoke'),
     out: path.resolve(root, 'release-readiness', 'galactic-survey-edition-pack-smoke.json'),
+    draftDownloadEvidence: null,
     clean: false,
     help: false,
   }
@@ -61,11 +64,17 @@ function parseArgs(argv) {
     if (arg === '--download-root') args.downloadRoot = path.resolve(next())
     else if (arg === '--work-root') args.workRoot = path.resolve(next())
     else if (arg === '--out') args.out = path.resolve(next())
+    else if (arg === '--draft-download-evidence') args.draftDownloadEvidence = path.resolve(next())
     else if (arg === '--clean') args.clean = true
     else if (arg === '--help') args.help = true
     else throw new Error(`Unknown argument: ${arg}`)
   }
   return args
+}
+
+function rel(root, filePath) {
+  const relative = path.relative(root, filePath).replace(/\\/g, '/')
+  return relative && !relative.startsWith('../') && relative !== '..' ? relative : filePath.replace(/\\/g, '/')
 }
 
 function sha256Bytes(bytes) {
@@ -132,6 +141,48 @@ async function verifyTopLevelChecksums(dir) {
     verified.push(name)
   }
   return verified
+}
+
+async function verifyDraftDownloadEvidence(args) {
+  if (!args.draftDownloadEvidence) {
+    return {
+      downloaded: false,
+      path: null,
+      summary: null,
+      byRepo: new Map(),
+    }
+  }
+  const evidence = await readJson(args.draftDownloadEvidence)
+  if (evidence.schemaVersion !== 'echo.galactic_survey.draft-download.v1') {
+    throw new Error(`Draft download evidence schema mismatch: ${evidence.schemaVersion}`)
+  }
+  if (evidence.status !== 'PASS') throw new Error(`Draft download evidence must be PASS, found ${evidence.status}`)
+  if (evidence.summary?.downloadedFromGitHubRelease !== true) throw new Error('Draft download evidence must prove downloadedFromGitHubRelease=true')
+  if (evidence.summary?.downloadedEditionCount !== 3) throw new Error('Draft download evidence must cover all 3 Galactic Survey editions')
+  if (evidence.summary?.downloadedAssetCount !== 15) throw new Error('Draft download evidence must cover all 15 Galactic Survey assets')
+  const byRepo = new Map()
+  for (const edition of evidence.data?.editions ?? []) {
+    if (edition.release?.draft !== true) throw new Error(`${edition.repoName} draft download evidence must be draft=true`)
+    if (edition.release?.prerelease !== true) throw new Error(`${edition.repoName} draft download evidence must be prerelease=true`)
+    for (const asset of edition.downloadedAssets ?? []) {
+      const target = path.resolve(args.root, asset.localPath)
+      const actualSha = await sha256File(target)
+      const stat = await fs.stat(target)
+      if (actualSha !== asset.sha256) throw new Error(`${asset.localPath} SHA-256 does not match draft download evidence`)
+      if (stat.size !== asset.size) throw new Error(`${asset.localPath} size does not match draft download evidence`)
+      const underDownloadRoot = path.relative(args.downloadRoot, target)
+      if (underDownloadRoot.startsWith('..') || path.isAbsolute(underDownloadRoot)) {
+        throw new Error(`${asset.localPath} is not under smoke download root ${rel(args.root, args.downloadRoot)}`)
+      }
+    }
+    byRepo.set(edition.repoName, edition)
+  }
+  return {
+    downloaded: true,
+    path: rel(args.root, args.draftDownloadEvidence),
+    summary: evidence.summary,
+    byRepo,
+  }
 }
 
 async function installFromZip({ installRoot, manifest, entries }) {
@@ -334,9 +385,11 @@ async function rollbackSimulatedReplacement({ installRoot, manifest }) {
   return targetFile.path
 }
 
-async function smokeEdition(args, repoName) {
+async function smokeEdition(args, repoName, draftDownload) {
   const dir = path.join(args.downloadRoot, repoName)
   const release = await readJson(path.join(dir, 'echo-release.json'))
+  const draftEdition = draftDownload.byRepo.get(repoName)
+  if (draftDownload.downloaded && !draftEdition) throw new Error(`${repoName}: missing draft download evidence`)
   const manifest = await readJson(path.join(dir, release.manifestAsset))
   const zipPath = path.join(dir, release.artifactAsset)
   const zipBytes = await fs.readFile(zipPath)
@@ -351,6 +404,18 @@ async function smokeEdition(args, repoName) {
   await fs.rm(installRoot, { recursive: true, force: true })
   await fs.mkdir(installRoot, { recursive: true })
   const topLevelChecksums = await verifyTopLevelChecksums(dir)
+  if (draftEdition) {
+    const byName = new Map((draftEdition.downloadedAssets ?? []).map((asset) => [asset.name, asset]))
+    for (const name of ['checksums.txt', 'echo-release.json', release.manifestAsset, release.artifactAsset, 'galactic-survey-pack-build-report.json']) {
+      const asset = byName.get(name)
+      if (!asset) throw new Error(`${repoName}: draft download evidence missing ${name}`)
+      const target = path.join(dir, name)
+      const actualSha = await sha256File(target)
+      const stat = await fs.stat(target)
+      if (actualSha !== asset.sha256) throw new Error(`${repoName}: ${name} SHA-256 does not match draft download evidence`)
+      if (stat.size !== asset.size) throw new Error(`${repoName}: ${name} size does not match draft download evidence`)
+    }
+  }
   const installed = await installFromZip({ installRoot, manifest, entries })
   const verifiedAfterInstall = await verifyInstall({ installRoot, manifest })
   const previousFixture = await preparePreviousInstallFixture({ installRoot, manifest })
@@ -365,9 +430,13 @@ async function smokeEdition(args, repoName) {
   return {
     repoName,
     pack: release.pack,
-    releaseTag: RELEASES[repoName].releaseTag,
-    releaseUrl: RELEASES[repoName].releaseUrl,
-    publicPrerelease: false,
+    releaseTag: draftEdition?.releaseTag ?? RELEASES[repoName].releaseTag,
+    releaseUrl: draftEdition?.release?.htmlUrl ?? RELEASES[repoName].releaseUrl,
+    publicPrerelease: draftEdition ? Boolean(draftEdition.release?.prerelease) : false,
+    artifactSource: draftEdition ? 'github-draft-release-download' : 'local-release-candidate',
+    githubDraftReleaseDownload: Boolean(draftEdition),
+    releaseMetadataDraft: draftEdition?.release?.draft ?? null,
+    releaseMetadataPrerelease: draftEdition?.release?.prerelease ?? null,
     localReleaseCandidate: Boolean(release.localReleaseCandidate),
     manifestAsset: release.manifestAsset,
     artifactAsset: release.artifactAsset,
@@ -395,6 +464,11 @@ async function smokeEdition(args, repoName) {
     repairedPath,
     rolledBackPath,
     verifiedAfterRollback: verifiedAfterRollback.length,
+    draftDownloadEvidence: draftEdition ? {
+      path: draftDownload.path,
+      downloadedAssetCount: draftEdition.downloadedAssets?.length ?? 0,
+      totalBytes: draftEdition.downloadedAssets?.reduce((sum, asset) => sum + asset.size, 0) ?? 0,
+    } : null,
     installRoot,
   }
 }
@@ -407,17 +481,28 @@ async function main() {
   }
   if (args.clean) await fs.rm(args.workRoot, { recursive: true, force: true })
   await fs.mkdir(args.workRoot, { recursive: true })
+  const draftDownload = await verifyDraftDownloadEvidence(args)
   const editions = []
-  for (const repoName of EDITIONS) editions.push(await smokeEdition(args, repoName))
+  for (const repoName of EDITIONS) editions.push(await smokeEdition(args, repoName, draftDownload))
+  const artifactSource = draftDownload.downloaded ? 'github-draft-release-download' : 'local-release-candidate'
   const report = {
     schemaVersion: 'echo.galactic_survey.edition-pack-smoke.v1',
     ok: true,
     generatedAt: new Date().toISOString(),
     downloadRoot: args.downloadRoot,
     workRoot: args.workRoot,
+    artifactSource,
+    draftDownloadEvidence: draftDownload.downloaded ? {
+      path: draftDownload.path,
+      downloadedEditionCount: draftDownload.summary.downloadedEditionCount,
+      downloadedAssetCount: draftDownload.summary.downloadedAssetCount,
+      totalBytes: draftDownload.summary.totalBytes,
+    } : null,
     editions,
     gates: {
       stagedReleaseAssetsVerified: 'passed',
+      githubDraftDownloadBack: draftDownload.downloaded ? 'passed' : 'not_started',
+      installedFromDownloadedArtifacts: draftDownload.downloaded ? 'passed' : 'not_started',
       installFromPackZip: 'passed',
       versionTransitionUpdate: 'passed',
       repairCorruptFile: 'passed',
@@ -428,7 +513,9 @@ async function main() {
     blockers: [],
     residualRisks: [
       'The previous Galactic Survey version is a fixture-local manifest generated from current staged assets plus an older module placeholder; it proves pack update mechanics without claiming a second public release exists.',
-      'This smoke uses local release-candidate assets, not downloaded GitHub Release assets.',
+      draftDownload.downloaded
+        ? 'This smoke uses downloaded GitHub draft release assets, but not yet a promoted public release.'
+        : 'This smoke uses local release-candidate assets, not downloaded GitHub Release assets.',
       'Real gameplay evidence is still required before public alpha promotion.',
     ],
   }

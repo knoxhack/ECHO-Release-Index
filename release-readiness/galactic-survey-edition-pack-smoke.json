@@ -1,16 +1,27 @@
 {
   "schemaVersion": "echo.galactic_survey.edition-pack-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T10:11:19.349Z",
-  "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-assets",
-  "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke",
+  "generatedAt": "2026-06-13T10:27:16.859Z",
+  "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-download",
+  "workRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke",
+  "artifactSource": "github-draft-release-download",
+  "draftDownloadEvidence": {
+    "path": "release-readiness/galactic-survey-draft-download.json",
+    "downloadedEditionCount": 3,
+    "downloadedAssetCount": 15,
+    "totalBytes": 225082531
+  },
   "editions": [
     {
       "repoName": "ECHO-Galactic-Survey-Native-Edition",
       "pack": "galactic-survey-native-edition",
       "releaseTag": "galactic-survey-native-0.1.0-alpha",
-      "releaseUrl": "local-release-candidate",
-      "publicPrerelease": false,
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/untagged-b447a8b82a46997b54ab",
+      "publicPrerelease": true,
+      "artifactSource": "github-draft-release-download",
+      "githubDraftReleaseDownload": true,
+      "releaseMetadataDraft": true,
+      "releaseMetadataPrerelease": true,
       "localReleaseCandidate": true,
       "manifestAsset": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-native-edition-0.1.0.zip",
@@ -43,14 +54,23 @@
       "repairedPath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
       "rolledBackPath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
       "verifiedAfterRollback": 18,
-      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke\\ECHO-Galactic-Survey-Native-Edition\\install"
+      "draftDownloadEvidence": {
+        "path": "release-readiness/galactic-survey-draft-download.json",
+        "downloadedAssetCount": 5,
+        "totalBytes": 73450171
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke\\ECHO-Galactic-Survey-Native-Edition\\install"
     },
     {
       "repoName": "ECHO-Galactic-Survey-NeoForge-Edition",
       "pack": "galactic-survey-neoforge-edition",
       "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
-      "releaseUrl": "local-release-candidate",
-      "publicPrerelease": false,
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/untagged-17d3997a7ff7062ba597",
+      "publicPrerelease": true,
+      "artifactSource": "github-draft-release-download",
+      "githubDraftReleaseDownload": true,
+      "releaseMetadataDraft": true,
+      "releaseMetadataPrerelease": true,
       "localReleaseCandidate": true,
       "manifestAsset": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-neoforge-edition-0.1.0.zip",
@@ -83,14 +103,23 @@
       "repairedPath": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
       "rolledBackPath": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
       "verifiedAfterRollback": 18,
-      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke\\ECHO-Galactic-Survey-NeoForge-Edition\\install"
+      "draftDownloadEvidence": {
+        "path": "release-readiness/galactic-survey-draft-download.json",
+        "downloadedAssetCount": 5,
+        "totalBytes": 75816410
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke\\ECHO-Galactic-Survey-NeoForge-Edition\\install"
     },
     {
       "repoName": "ECHO-Galactic-Survey-Standalone-Edition",
       "pack": "galactic-survey-standalone-edition",
       "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
-      "releaseUrl": "local-release-candidate",
-      "publicPrerelease": false,
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/untagged-089e6a6a87b9098717b7",
+      "publicPrerelease": true,
+      "artifactSource": "github-draft-release-download",
+      "githubDraftReleaseDownload": true,
+      "releaseMetadataDraft": true,
+      "releaseMetadataPrerelease": true,
       "localReleaseCandidate": true,
       "manifestAsset": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
       "artifactAsset": "galactic-survey-standalone-edition-0.1.0.zip",
@@ -123,11 +152,18 @@
       "repairedPath": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
       "rolledBackPath": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
       "verifiedAfterRollback": 18,
-      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-edition-pack-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\install"
+      "draftDownloadEvidence": {
+        "path": "release-readiness/galactic-survey-draft-download.json",
+        "downloadedAssetCount": 5,
+        "totalBytes": 75815950
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\galactic-survey-draft-pack-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\install"
     }
   ],
   "gates": {
     "stagedReleaseAssetsVerified": "passed",
+    "githubDraftDownloadBack": "passed",
+    "installedFromDownloadedArtifacts": "passed",
     "installFromPackZip": "passed",
     "versionTransitionUpdate": "passed",
     "repairCorruptFile": "passed",
@@ -138,7 +174,7 @@
   "blockers": [],
   "residualRisks": [
     "The previous Galactic Survey version is a fixture-local manifest generated from current staged assets plus an older module placeholder; it proves pack update mechanics without claiming a second public release exists.",
-    "This smoke uses local release-candidate assets, not downloaded GitHub Release assets.",
+    "This smoke uses downloaded GitHub draft release assets, but not yet a promoted public release.",
     "Real gameplay evidence is still required before public alpha promotion."
   ]
 }

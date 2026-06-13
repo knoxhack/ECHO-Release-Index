@@ -53,6 +53,9 @@ Run commands from the repository root.
 - `node scripts/download-ashfall-draft-release.mjs --clean`
 - `node scripts/generate-ashfall-rc-smoke.mjs`
 - `node scripts/promote-ashfall-native-catalog.mjs --write`
+- `node scripts/test-publish-galactic-survey-draft-releases.mjs`
+- `node scripts/publish-galactic-survey-draft-releases.mjs --publish --prune-unlisted`
+- `node scripts/download-galactic-survey-draft-releases.mjs --clean`
 - `node scripts/verify-ashfall-release-readiness.mjs --require-release-ready`
 - `node scripts/verify-galactic-survey-public-alpha-readiness.mjs --write`
 - `node scripts/test-verify-galactic-survey-public-alpha-readiness.mjs`
@@ -95,6 +98,8 @@ Phase 7 Native Platform beta evidence is produced in `ECHO-Native-Platform` by `
 `scripts/generate-ashfall-rc-smoke.mjs` creates the Phase 10 smoke evidence from locally staged Ashfall Native and ECHO Modules public-alpha assets. It verifies the release manifest, top-level checksums, embedded ZIP checksums, required pack files, required compiled modules, and a temporary launcher-style install/repair/rollback cycle. By default it records `draftReleaseDownloaded` and `promotedAfterGreen` as false because local staged assets are not a downloaded GitHub draft release and have not been promoted. To smoke the downloaded draft release bytes, run it with `--native-stage tmp/ashfall-draft-download/ECHO-Ashfall-Native-Edition --draft-download-evidence`; the deprecated `--draft-release-downloaded` flag now fails unless real draft-download evidence is supplied.
 
 `scripts/promote-ashfall-native-catalog.mjs --write` is the guarded Phase 2/3 promotion step after the Ashfall Native release candidate is published, downloaded, smoke-tested, and promoted out of draft. It refuses to approve `modpacks/ashfall-native.json` or `packs/ashfall-native-edition.json` while the release manifest is still draft, still contains placeholder/generic assets, lacks release-ready asset names, has local staged SHA/size drift, or lacks green downloaded-draft RC smoke promotion evidence linked to the draft-download gate.
+
+`scripts/publish-galactic-survey-draft-releases.mjs --publish --prune-unlisted` is the Galactic Survey draft upload gate. It creates or updates only draft prereleases for the Native, NeoForge, and Standalone edition repos, uploads the five expected assets per edition from `tmp/galactic-survey-edition-assets`, refuses existing public releases, and writes `release-readiness/galactic-survey-draft-publish.json`. Follow with `scripts/download-galactic-survey-draft-releases.mjs --clean` and `scripts/smoke-galactic-survey-edition-pack-assets.mjs --download-root tmp/galactic-survey-draft-download --draft-download-evidence release-readiness/galactic-survey-draft-download.json --clean` before refreshing the Galactic Survey public-alpha readiness report.
 
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 

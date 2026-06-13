@@ -265,6 +265,7 @@ const descriptor = readJsonOrNull(path.join(moduleRoot, 'src/main/resources/META
 const alphaChannel = readJsonOrNull(path.join(releaseIndexRoot, 'channels', 'alpha', 'launcher-channel.json'))
 const editionPackAssets = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-assets.json'))
 const editionPackSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-smoke.json'))
+const editionDraftPublish = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-publish.json'))
 const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-download.json'))
 const requiredPackagedModules = [
   'echocore',
@@ -437,6 +438,16 @@ const phases = []
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'rollbackSimulatedReplacement'), 'local pack rollback smoke passed', 'local pack rollback smoke must pass')
   requireCondition(phase, setContainsAll(smokeEditionPackIds, editions.map((edition) => edition.id)), 'local lifecycle smoke covers Native, NeoForge, and Standalone packs', 'local lifecycle smoke must cover Native, NeoForge, and Standalone packs')
   requireCondition(phase, smokeEditions.every((edition) => edition.installedFiles === 18 && edition.verifiedAfterInstall === 18 && edition.versionUpdate?.verifiedAfterUpdate === 18 && edition.postRollbackVersionUpdate?.verifiedAfterUpdate === 18 && edition.verifiedAfterRollback === 18), 'local lifecycle smoke verified all 18 module files through install, update, repair, and rollback', 'local lifecycle smoke must verify all 18 module files through install, update, repair, and rollback')
+  const draftPublishEditions = Array.isArray(editionDraftPublish?.data?.editions) ? editionDraftPublish.data.editions : []
+  const draftPublishPackIds = draftPublishEditions.map((edition) => edition.packId)
+  requireCondition(phase, editionDraftPublish?.schemaVersion === 'echo.galactic_survey.draft-publish.v1', 'draft release publish evidence report exists', 'draft release publish evidence report must be generated')
+  requireCondition(phase, editionDraftPublish?.status === 'PASS', 'draft release publish evidence passed', 'draft release publish evidence must pass')
+  requireCondition(phase, editionDraftPublish?.summary?.draftReleasesPublished === true, 'draft release assets were published to GitHub', 'draft release assets must be published to GitHub')
+  requireCondition(phase, editionDraftPublish?.summary?.publishedEditionCount === 3, 'draft release publish evidence covers all 3 editions', 'draft release publish evidence must cover all 3 editions')
+  requireCondition(phase, editionDraftPublish?.summary?.publishedAssetCount === 15, 'draft release publish evidence covers all 15 edition assets', 'draft release publish evidence must cover all 15 edition assets')
+  requireCondition(phase, setContainsAll(draftPublishPackIds, editions.map((edition) => edition.id)), 'draft release publish evidence covers Native, NeoForge, and Standalone packs', 'draft release publish evidence must cover Native, NeoForge, and Standalone packs')
+  requireCondition(phase, draftPublishEditions.every((edition) => edition.release?.draft === true && edition.release?.prerelease === true), 'draft release publish evidence is draft prerelease-only', 'draft release publish evidence must be draft prerelease-only')
+  requireCondition(phase, draftPublishEditions.every((edition) => edition.assets?.length === 5), 'draft release publish evidence contains all required assets per edition', 'draft release publish evidence must contain all required assets per edition')
   const draftDownloadEditions = Array.isArray(editionDraftDownload?.data?.editions) ? editionDraftDownload.data.editions : []
   const draftDownloadPackIds = draftDownloadEditions.map((edition) => edition.packId)
   requireCondition(phase, editionDraftDownload?.schemaVersion === 'echo.galactic_survey.draft-download.v1', 'downloaded draft release evidence report exists', 'downloaded draft release evidence report must be generated')
@@ -447,6 +458,10 @@ const phases = []
   requireCondition(phase, setContainsAll(draftDownloadPackIds, editions.map((edition) => edition.id)), 'downloaded draft release evidence covers Native, NeoForge, and Standalone packs', 'downloaded draft release evidence must cover Native, NeoForge, and Standalone packs')
   requireCondition(phase, draftDownloadEditions.every((edition) => edition.release?.draft === true && edition.release?.prerelease === true), 'downloaded draft release evidence is from draft prereleases', 'downloaded draft release evidence must come from draft prereleases')
   requireCondition(phase, draftDownloadEditions.every((edition) => edition.downloadedAssets?.length === 5), 'downloaded draft release evidence contains all required assets per edition', 'downloaded draft release evidence must contain all required assets per edition')
+  requireCondition(phase, editionPackSmoke?.artifactSource === 'github-draft-release-download', 'lifecycle smoke used downloaded GitHub draft assets', 'lifecycle smoke must use downloaded GitHub draft assets')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'githubDraftDownloadBack'), 'lifecycle smoke verified GitHub draft download evidence', 'lifecycle smoke must verify GitHub draft download evidence')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'installedFromDownloadedArtifacts'), 'lifecycle smoke installed downloaded GitHub draft artifacts', 'lifecycle smoke must install downloaded GitHub draft artifacts')
+  requireCondition(phase, smokeEditions.every((edition) => edition.githubDraftReleaseDownload === true && edition.releaseMetadataDraft === true && edition.releaseMetadataPrerelease === true), 'lifecycle smoke covers draft release metadata for all editions', 'lifecycle smoke must cover draft release metadata for all editions')
   const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
   const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
   const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
@@ -484,7 +499,11 @@ const phases = []
   requireCondition(phase, !fs.existsSync(path.join(releaseIndexRoot, 'modpacks', 'galactic-survey-native.json')), 'no installable Native modpack catalog entry has been published yet', 'Native modpack catalog must remain absent until release evidence exists')
   requireCondition(phase, !fs.existsSync(path.join(releaseIndexRoot, 'modpacks', 'galactic-survey-neoforge.json')), 'no installable NeoForge modpack catalog entry has been published yet', 'NeoForge modpack catalog must remain absent until release evidence exists')
   requireCondition(phase, !fs.existsSync(path.join(releaseIndexRoot, 'modpacks', 'galactic-survey-standalone.json')), 'no installable Standalone modpack catalog entry has been published yet', 'Standalone modpack catalog must remain absent until release evidence exists')
-  phase.blockers.push('checksum-backed module and edition GitHub Release artifacts are not published')
+  if (editionDraftPublish?.status === 'PASS' && editionDraftDownload?.status === 'PASS') {
+    phase.blockers.push('draft edition GitHub Release artifacts are verified, but final catalog promotion and module release ingestion are not approved')
+  } else {
+    phase.blockers.push('checksum-backed module and edition GitHub Release artifacts are not published')
+  }
   phase.blockers.push('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')
   phase.blockers.push('real first-30-minute, first-2-hour, Survey Array, save/reload, and no-crash evidence is not present')
   phases.push(finalizePhase(phase))
@@ -515,6 +534,7 @@ const report = {
       editionGameplayEvidence: editions.map((edition) => `${edition.repo}/scripts/verify-manual-gameplay-evidence.mjs`),
       editionPackAssets: 'release-readiness/galactic-survey-edition-pack-assets.json',
       editionPackSmoke: 'release-readiness/galactic-survey-edition-pack-smoke.json',
+      editionDraftPublish: 'release-readiness/galactic-survey-draft-publish.json',
       editionDraftDownload: 'release-readiness/galactic-survey-draft-download.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
@@ -548,6 +568,10 @@ const report = {
             repoName: edition.repoName,
             releaseTag: edition.releaseTag,
             localReleaseCandidate: edition.localReleaseCandidate,
+            artifactSource: edition.artifactSource,
+            githubDraftReleaseDownload: edition.githubDraftReleaseDownload,
+            releaseMetadataDraft: edition.releaseMetadataDraft,
+            releaseMetadataPrerelease: edition.releaseMetadataPrerelease,
             installedFiles: edition.installedFiles,
             verifiedAfterInstall: edition.verifiedAfterInstall,
             versionUpdate: edition.versionUpdate,
@@ -556,10 +580,36 @@ const report = {
             verifiedAfterRollback: edition.verifiedAfterRollback
           })) ?? [],
           gates: editionPackSmoke.gates,
+          artifactSource: editionPackSmoke.artifactSource,
+          draftDownloadEvidence: editionPackSmoke.draftDownloadEvidence,
           residualRisks: editionPackSmoke.residualRisks
         }
       : null
   },
+  editionDraftPublishEvidence: editionDraftPublish
+    ? {
+        schemaVersion: editionDraftPublish.schemaVersion,
+        status: editionDraftPublish.status,
+        generatedAt: editionDraftPublish.generatedAt,
+        summary: editionDraftPublish.summary,
+        editions: editionDraftPublish.data?.editions?.map((edition) => ({
+          repoName: edition.repoName,
+          packId: edition.packId,
+          releaseTag: edition.releaseTag,
+          release: {
+            draft: edition.release?.draft,
+            prerelease: edition.release?.prerelease,
+            htmlUrl: edition.release?.htmlUrl
+          },
+          assetCount: edition.assets?.length ?? 0,
+          assets: edition.assets?.map((asset) => ({
+            name: asset.name,
+            size: asset.size,
+            sha256: asset.sha256
+          })) ?? []
+        })) ?? []
+      }
+    : null,
   editionDraftDownloadEvidence: editionDraftDownload
     ? {
         schemaVersion: editionDraftDownload.schemaVersion,

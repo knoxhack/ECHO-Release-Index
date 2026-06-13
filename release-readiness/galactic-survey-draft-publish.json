@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "echo.galactic_survey.draft-publish.v1",
+  "generatedAt": "2026-06-13T10:23:06.557Z",
+  "status": "PASS",
+  "summary": {
+    "dryRun": false,
+    "draftReleasesPublished": true,
+    "publishedEditionCount": 3,
+    "publishedAssetCount": 15,
+    "actionCounts": {
+      "update-draft-release": 1,
+      "skip-matching-asset": 5,
+      "create-draft-release": 2,
+      "upload-asset": 10
+    },
+    "pruneUnlisted": true
+  },
+  "data": {
+    "assetRoot": "tmp/galactic-survey-edition-assets",
+    "editions": [
+      {
+        "repoName": "ECHO-Galactic-Survey-Native-Edition",
+        "packId": "galactic-survey-native-edition",
+        "releaseTag": "galactic-survey-native-0.1.0-alpha",
+        "actions": [
+          {
+            "action": "update-draft-release",
+            "id": 338947848
+          },
+          {
+            "action": "skip-matching-asset",
+            "name": "checksums.txt",
+            "id": 446494919
+          },
+          {
+            "action": "skip-matching-asset",
+            "name": "echo-release.json",
+            "id": 446494923
+          },
+          {
+            "action": "skip-matching-asset",
+            "name": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+            "id": 446494931
+          },
+          {
+            "action": "skip-matching-asset",
+            "name": "galactic-survey-native-edition-0.1.0.zip",
+            "id": 446494935
+          },
+          {
+            "action": "skip-matching-asset",
+            "name": "galactic-survey-pack-build-report.json",
+            "id": 446494979
+          }
+        ],
+        "stage": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Native-Edition",
+        "release": {
+          "owner": "knoxhack",
+          "repoName": "ECHO-Galactic-Survey-Native-Edition",
+          "id": 338947848,
+          "tagName": "galactic-survey-native-0.1.0-alpha",
+          "htmlUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/untagged-b447a8b82a46997b54ab",
+          "draft": true,
+          "prerelease": true
+        },
+        "requiredAssets": [
+          "checksums.txt",
+          "echo-release.json",
+          "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+          "galactic-survey-native-edition-0.1.0.zip",
+          "galactic-survey-pack-build-report.json"
+        ],
+        "assets": [
+          {
+            "name": "checksums.txt",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Native-Edition/checksums.txt",
+            "size": 415,
+            "sha256": "38f84c01d40a6dd831fe94d639a2263033584e24da2aa3075502404a736d7892",
+            "githubAssetId": 446494919,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/untagged-b447a8b82a46997b54ab/checksums.txt"
+          },
+          {
+            "name": "echo-release.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Native-Edition/echo-release.json",
+            "size": 6263,
+            "sha256": "a22225315279155be5fe9b70b49da6a1d7ff8f6c9bd250acbdffdedb683bb23a",
+            "githubAssetId": 446494923,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/untagged-b447a8b82a46997b54ab/echo-release.json"
+          },
+          {
+            "name": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Native-Edition/galactic-survey-native-edition-alpha-0.1.0.pack.json",
+            "size": 15995,
+            "sha256": "67ffa60cae73073a6643a30d8aaf3c5abae940e2decc310f4061e6b7ddf76284",
+            "githubAssetId": 446494931,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/untagged-b447a8b82a46997b54ab/galactic-survey-native-edition-alpha-0.1.0.pack.json"
+          },
+          {
+            "name": "galactic-survey-native-edition-0.1.0.zip",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Native-Edition/galactic-survey-native-edition-0.1.0.zip",
+            "size": 73418279,
+            "sha256": "6eef6da1c8af2346d10a9a5adf5024490f2a786f0641c77941a830e7303a5674",
+            "githubAssetId": 446494935,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/untagged-b447a8b82a46997b54ab/galactic-survey-native-edition-0.1.0.zip"
+          },
+          {
+            "name": "galactic-survey-pack-build-report.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Native-Edition/galactic-survey-pack-build-report.json",
+            "size": 9219,
+            "sha256": "f84974af3966cc95e8993ab1e057153bea4648847c98bb39bcaa68add41cffe1",
+            "githubAssetId": 446494979,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/untagged-b447a8b82a46997b54ab/galactic-survey-pack-build-report.json"
+          }
+        ]
+      },
+      {
+        "repoName": "ECHO-Galactic-Survey-NeoForge-Edition",
+        "packId": "galactic-survey-neoforge-edition",
+        "releaseTag": "galactic-survey-neoforge-0.1.0-alpha",
+        "actions": [
+          {
+            "action": "create-draft-release",
+            "id": 338947990,
+            "tag": "galactic-survey-neoforge-0.1.0-alpha"
+          },
+          {
+            "action": "upload-asset",
+            "name": "checksums.txt",
+            "id": 446495356
+          },
+          {
+            "action": "upload-asset",
+            "name": "echo-release.json",
+            "id": 446495359
+          },
+          {
+            "action": "upload-asset",
+            "name": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+            "id": 446495365
+          },
+          {
+            "action": "upload-asset",
+            "name": "galactic-survey-neoforge-edition-0.1.0.zip",
+            "id": 446495369
+          },
+          {
+            "action": "upload-asset",
+            "name": "galactic-survey-pack-build-report.json",
+            "id": 446495417
+          }
+        ],
+        "stage": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-NeoForge-Edition",
+        "release": {
+          "owner": "knoxhack",
+          "repoName": "ECHO-Galactic-Survey-NeoForge-Edition",
+          "id": 338947990,
+          "tagName": "galactic-survey-neoforge-0.1.0-alpha",
+          "htmlUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/untagged-17d3997a7ff7062ba597",
+          "draft": true,
+          "prerelease": true
+        },
+        "requiredAssets": [
+          "checksums.txt",
+          "echo-release.json",
+          "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+          "galactic-survey-neoforge-edition-0.1.0.zip",
+          "galactic-survey-pack-build-report.json"
+        ],
+        "assets": [
+          {
+            "name": "checksums.txt",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-NeoForge-Edition/checksums.txt",
+            "size": 419,
+            "sha256": "c54c90c4f8115885bc51430b2c9b2d8cbe419052c28357e632f5c8eaf91b011a",
+            "githubAssetId": 446495356,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/untagged-17d3997a7ff7062ba597/checksums.txt"
+          },
+          {
+            "name": "echo-release.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-NeoForge-Edition/echo-release.json",
+            "size": 6321,
+            "sha256": "7bc83ba992d5a512cb552e6bc0009e7006c07df877a6837c7f9e0f3bcb100518",
+            "githubAssetId": 446495359,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/untagged-17d3997a7ff7062ba597/echo-release.json"
+          },
+          {
+            "name": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-NeoForge-Edition/galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+            "size": 16231,
+            "sha256": "58ef18b087d537848fb728d11e9e08a74fa73d68369a9aaa6b3c694d334aee55",
+            "githubAssetId": 446495365,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/untagged-17d3997a7ff7062ba597/galactic-survey-neoforge-edition-alpha-0.1.0.pack.json"
+          },
+          {
+            "name": "galactic-survey-neoforge-edition-0.1.0.zip",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-NeoForge-Edition/galactic-survey-neoforge-edition-0.1.0.zip",
+            "size": 75784176,
+            "sha256": "7d1eb07fb7a46729c4a4d02a3998834c8800430c2b6ff5f68725b6e51146d2e5",
+            "githubAssetId": 446495369,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/untagged-17d3997a7ff7062ba597/galactic-survey-neoforge-edition-0.1.0.zip"
+          },
+          {
+            "name": "galactic-survey-pack-build-report.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-NeoForge-Edition/galactic-survey-pack-build-report.json",
+            "size": 9263,
+            "sha256": "49cab5605c674e5604b675694f622bb05b9107b459660d41dfa6de62b166022f",
+            "githubAssetId": 446495417,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/untagged-17d3997a7ff7062ba597/galactic-survey-pack-build-report.json"
+          }
+        ]
+      },
+      {
+        "repoName": "ECHO-Galactic-Survey-Standalone-Edition",
+        "packId": "galactic-survey-standalone-edition",
+        "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
+        "actions": [
+          {
+            "action": "create-draft-release",
+            "id": 338948019,
+            "tag": "galactic-survey-standalone-0.1.0-alpha"
+          },
+          {
+            "action": "upload-asset",
+            "name": "checksums.txt",
+            "id": 446495446
+          },
+          {
+            "action": "upload-asset",
+            "name": "echo-release.json",
+            "id": 446495455
+          },
+          {
+            "action": "upload-asset",
+            "name": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+            "id": 446495462
+          },
+          {
+            "action": "upload-asset",
+            "name": "galactic-survey-standalone-edition-0.1.0.zip",
+            "id": 446495464
+          },
+          {
+            "action": "upload-asset",
+            "name": "galactic-survey-pack-build-report.json",
+            "id": 446495501
+          }
+        ],
+        "stage": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Standalone-Edition",
+        "release": {
+          "owner": "knoxhack",
+          "repoName": "ECHO-Galactic-Survey-Standalone-Edition",
+          "id": 338948019,
+          "tagName": "galactic-survey-standalone-0.1.0-alpha",
+          "htmlUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/untagged-089e6a6a87b9098717b7",
+          "draft": true,
+          "prerelease": true
+        },
+        "requiredAssets": [
+          "checksums.txt",
+          "echo-release.json",
+          "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+          "galactic-survey-standalone-edition-0.1.0.zip",
+          "galactic-survey-pack-build-report.json"
+        ],
+        "assets": [
+          {
+            "name": "checksums.txt",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Standalone-Edition/checksums.txt",
+            "size": 423,
+            "sha256": "252805f303f88977b9b9094a91e1a31f794cb1d18a0f303ec89859b34cedb6df",
+            "githubAssetId": 446495446,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/untagged-089e6a6a87b9098717b7/checksums.txt"
+          },
+          {
+            "name": "echo-release.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Standalone-Edition/echo-release.json",
+            "size": 6415,
+            "sha256": "d5aafd7c8175c21cbeb5e629e15b3d61cf2caa480b88d02d04acd8c4ac56bf35",
+            "githubAssetId": 446495455,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/untagged-089e6a6a87b9098717b7/echo-release.json"
+          },
+          {
+            "name": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Standalone-Edition/galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+            "size": 15819,
+            "sha256": "f617662f51cc0991dcd55164cf1f14f254b3fb966c7401b5b44f3c23df2bd721",
+            "githubAssetId": 446495462,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/untagged-089e6a6a87b9098717b7/galactic-survey-standalone-edition-alpha-0.1.0.pack.json"
+          },
+          {
+            "name": "galactic-survey-standalone-edition-0.1.0.zip",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Standalone-Edition/galactic-survey-standalone-edition-0.1.0.zip",
+            "size": 75783878,
+            "sha256": "de9da8dece0791c7c8e7a8ce9ebb02069bdf4a23cf85bbb125367636bf47e8e9",
+            "githubAssetId": 446495464,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/untagged-089e6a6a87b9098717b7/galactic-survey-standalone-edition-0.1.0.zip"
+          },
+          {
+            "name": "galactic-survey-pack-build-report.json",
+            "localPath": "tmp/galactic-survey-edition-assets/ECHO-Galactic-Survey-Standalone-Edition/galactic-survey-pack-build-report.json",
+            "size": 9415,
+            "sha256": "9291ffe7480c47929827e0a062681efa43b291920764b9a0b66942a847dbb2b6",
+            "githubAssetId": 446495501,
+            "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/untagged-089e6a6a87b9098717b7/galactic-survey-pack-build-report.json"
+          }
+        ]
+      }
+    ]
+  }
+}
