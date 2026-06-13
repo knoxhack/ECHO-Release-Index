@@ -15,7 +15,20 @@
       "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-product-1.0.0-RC1.zip",
       "sha256": "16b96ea676d7f64f84653f1d08d89ba03eddb4a08eed9698fac51637801b8e45",
       "size": 60744144,
-      "status": "local-rc1-built-not-download-smoked"
+      "status": "github-rc1-download-smoked",
+      "downloadSmoke": "release-readiness/native-platform-rc1-download-smoke.json"
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/checksums.txt",
+      "sha256": "53876974ce2482b16b9128484a2a0fd3645c3526cb5a35e102855324462390aa",
+      "size": 674
+    },
+    "echoReleaseMetadata": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-release.json",
+      "sha256": "56f3d474ef54fdaf5df4ae9de18d48aa06ade13888aba5085df0d8a418226227",
+      "size": 4448
     },
     "nativeAddonSourceTruth": {
       "file": "native-addon-source-truth.md",
@@ -55,14 +68,16 @@
     }
   },
   "provenance": {
-    "status": "local-rc1-built",
+    "status": "github-rc1-published-download-smoked",
     "nativePlatformCommitSha": "d2a0536de2e2d4d13e02c8574e906f6013724d8b",
     "modulesCommitSha": "52713215938fbd0def40a9f87c9c3fc95fb7fa56",
     "sdkCommitSha": "ec0d9b83b695309ef895c8e591ec41bf84336211",
     "builtAt": "2026-06-13T09:33:03Z",
     "buildCommand": ".\\gradlew.bat check packageNativeProductLayout packagePublicAlphaRelease --no-daemon --no-parallel --max-workers=1",
     "artifactPath": "C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-product-1.0.0-RC1.zip",
-    "githubDownloadSmoke": "not-run",
+    "githubReleaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
+    "githubDownloadSmoke": "release-readiness/native-platform-rc1-download-smoke.json",
+    "githubIngestion": "release-readiness/native-platform-rc1-ingestion.json",
     "attestation": {
       "status": "not-attested",
       "reason": "Local RC1 artifact has not been signed or attested yet."
@@ -74,9 +89,8 @@
   ],
   "trust": "source-linked",
   "validation": "warning",
-  "validationReason": "A local RC1 product artifact has been built and checksum-indexed, but approval is still blocked until the asset is uploaded to the v1.0.0-RC1 GitHub release, download-smoked, attested or signed, launcher-installed, rollback-tested, and backed by real pack gameplay evidence.",
+  "validationReason": "The RC1 product artifact has been uploaded to the v1.0.0-RC1 GitHub prerelease and download-smoked from GitHub bytes, but approval is still blocked until the asset is signed or attested, launcher-installed, rollback-tested, and backed by real pack gameplay evidence.",
   "stableReleaseBlockedUntil": [
-    "GitHub v1.0.0-RC1 assets are uploaded and checksum/download-smoked",
     "workflow provenance, signing, or attestation policy is satisfied",
     "launcher install, rollback, and diagnostics smoke evidence are attached",
     "pack gameplay evidence is real-run and green",

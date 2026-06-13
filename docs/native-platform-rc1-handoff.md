@@ -4,6 +4,13 @@
 
 `echo-native-platform` is indexed as `1.0.0-RC1` and remains warning-gated.
 
+The RC1 GitHub prerelease now exists and the product assets have passed download-back smoke from GitHub bytes:
+
+- Release: `https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1`
+- Release target: `d2a0536de2e2d4d13e02c8574e906f6013724d8b`
+- Evidence: `release-readiness/native-platform-rc1-download-smoke.json`
+- Ingestion: `release-readiness/native-platform-rc1-ingestion.json`
+
 Local artifact evidence exists:
 
 - Artifact: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-product-1.0.0-RC1.zip`
@@ -19,8 +26,6 @@ The local external addon proof generated, built, packaged, and loaded a `.echo-a
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
-- GitHub release `v1.0.0-RC1` contains the product ZIP and sidecars.
-- Download-back smoke verifies SHA-256, size, and archive layout from GitHub bytes.
 - Signing or attestation policy is satisfied.
 - Launcher install, first launch, diagnostics export, repair, and rollback pass.
 - At least one Native pack gameplay smoke passes from the published runtime.
