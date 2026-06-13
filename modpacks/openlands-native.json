@@ -5,9 +5,34 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
-  "releaseTag": "planned-openlands-native-0.1.0",
-  "commitSha": "bb538e5bb62efa62558332077636282b01ecaf03",
-  "artifacts": {},
+  "releaseTag": "v0.1.0-openlands-native-edition",
+  "commitSha": "1e1aaf03c54a6e691dae8372d588fc4d70b8cb31",
+  "artifacts": {
+    "pack": {
+      "file": "openlands-native-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/openlands-native-edition-0.1.0.zip",
+      "sha256": "b76397e83b892495a0ea17b3d07ae17867b547cbae1a8abef8ddbeb6e752f3f4",
+      "size": 218828
+    },
+    "manifest": {
+      "file": "openlands-native-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
+      "sha256": "2989c0b8ceb788a121b5fbb3d79c961ac019a991c935acaf54b33d702bc415a7",
+      "size": 4585
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/checksums.txt",
+      "sha256": "87885f0577383398b51fa05ed55566a2f389b3f980647de75371a2e92b66fbfb",
+      "size": 298
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/echo-release.json",
+      "sha256": "23a6745403fab2b8d0a82b3436a5a5151dc968782523544bdb352c90cf07947d",
+      "size": 2028
+    }
+  },
   "dependencies": [
     {
       "id": "echo-native-platform",
@@ -26,6 +51,6 @@
   ],
   "trust": "source-linked",
   "validation": "warning",
-  "notes": "Planned Openlands Native Edition. Keep warning and empty artifacts until pack manifest, checksums, echo-release metadata, and .echo-addon release assets are published and verified.",
-  "validationReason": "Openlands preview payloads and evidence are committed in the source repository, but GitHub Release download URLs are not published or verified yet."
+  "notes": "Openlands Native Edition has checksum-backed GitHub prerelease assets. Keep warning until launcher, runtime, playtest, waystone save/load, and legal gates pass. Do not promote to approved until the Openlands readiness and publication gates pass against real release evidence.",
+  "validationReason": "Openlands Native Edition has checksum-backed GitHub prerelease assets. Keep warning until launcher, runtime, playtest, waystone save/load, and legal gates pass. Public-alpha approval remains blocked by the Openlands readiness report."
 }

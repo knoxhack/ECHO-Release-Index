@@ -91,5 +91,44 @@
       "version": "0.1.0"
     }
   ],
-  "assets": []
+  "assets": [
+    {
+      "name": "checksums.txt",
+      "size": 302,
+      "sha256": "6a4623f527987cddc87a0832b1683d7af681c8e247daa3c09b327f45a554354c",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/checksums.txt"
+    },
+    {
+      "name": "echo-release.json",
+      "size": 2054,
+      "sha256": "9eca929b13f3393c26495fe5a16a97b15fd49a76e2502ea0f6505ed8180408e8",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/echo-release.json"
+    },
+    {
+      "name": "openlands-neoforge-edition-alpha-0.1.0.pack.json",
+      "size": 4625,
+      "sha256": "a4041016bf5f75a394682ea5ec3838615c888d2170ad2e303eb4d3411fc8a8b1",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json"
+    },
+    {
+      "name": "openlands-neoforge-edition-0.1.0.zip",
+      "size": 211752,
+      "sha256": "7062dce7e417c9a9724bf4f042d801eca5877a6db301c8a662a1feeeb187f8db",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-0.1.0.zip"
+    }
+  ],
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.0-openlands-neoforge-edition",
+  "releaseReadiness": {
+    "status": "blocked",
+    "blockers": [
+      "Openlands public-alpha readiness is still false.",
+      "Launcher execution, distribution approval, first-hour playtest, waystone save/load, and legal audit evidence are still blocked.",
+      "The GitHub prerelease assets are checksum-backed handoff artifacts, not approved player-facing promotion evidence."
+    ],
+    "evidence": [
+      "ECHO-Modules/dist/echo-module-release/echoopenlandsprotocol/openlands-release-readiness-report.json",
+      "ECHO-Modules/dist/echo-module-release/echoopenlandsprotocol/openlands-release-publication-rehearsal-report.json"
+    ],
+    "auditCommand": "node addons/echoopenlandsprotocol/scripts/validate-openlands-release-readiness-report.mjs --module-root addons/echoopenlandsprotocol --report dist/echo-module-release/echoopenlandsprotocol/openlands-release-readiness-report.json"
+  }
 }
