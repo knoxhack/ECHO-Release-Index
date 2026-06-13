@@ -64,6 +64,7 @@ Run commands from the repository root.
 - `node scripts/download-native-sdk-rc1-artifacts.mjs --write --clean`
 - `node scripts/test-download-native-sdk-rc1-artifacts.mjs`
 - `node scripts/verify-native-sdk-rc1-artifacts.mjs --write`
+- `node scripts/verify-native-sdk-rc1-attestation.mjs`
 - `node scripts/test-verify-native-sdk-rc1-artifacts.mjs`
 - `node scripts/verify-ashfall-release-readiness.mjs --require-release-ready`
 - `node scripts/verify-galactic-survey-public-alpha-readiness.mjs --write`
@@ -82,7 +83,7 @@ Index JSON and catalog metadata belong here. Binary release assets stay in their
 
 ## Native Platform RC1
 
-The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, local Native SDK main/source/Javadoc jars, SDK public catalog and download-back proof, external addon release-mode proof, GitHub upload/download-back, published asset attestation, attested Galactic Survey module assets, Galactic Survey public prerelease pack download-back, launcher install/update/repair/rollback evidence, packaged Electron UI install/update/rollback/repair evidence, packaged diagnostics/log export evidence, and isolated Minecraft Launcher handoff metadata evidence exist. Public approval is still blocked until the Native SDK RC1 jars have approved non-source-linked provenance, a real packaged first-launch/open-play path passes, final catalog promotion is complete, and real pack gameplay evidence passes. See `docs/native-platform-rc1-handoff.md`.
+The Native Platform product entry currently points at `1.0.0-RC1` and is checksum-backed, download-smoked, attested, and approved for beta/RC launcher installation. Local artifact, local Native SDK main/source/Javadoc jars, SDK public catalog and download-back proof, SDK workflow-built attestation, external addon release-mode proof, GitHub upload/download-back, published runtime asset attestation, attested Galactic Survey module assets, Galactic Survey public prerelease pack download-back, launcher install/update/repair/rollback evidence, packaged Electron UI install/update/rollback/repair evidence, packaged diagnostics/log export evidence, and isolated Minecraft Launcher handoff metadata evidence exist. Stable `1.0.0` and public-ready pack promotion remain blocked until a real packaged first-launch/open-play path passes, final catalog promotion is complete, and real pack gameplay evidence passes. See `docs/native-platform-rc1-handoff.md`.
 
 Each installable entry must include stable fields for `id`, `kind`, `version`, `channel`, `publisher`, `sourceRepo`, `releaseTag`, `commitSha`, `artifacts`, `dependencies`, `compatibility`, `trust`, and `validation`.
 
@@ -118,7 +119,9 @@ Phase 7 Native Platform beta evidence is produced in `ECHO-Native-Platform` by `
 
 `scripts/download-native-sdk-rc1-artifacts.mjs --write --clean` downloads every SDK jar indexed by `products/native-sdk.json`, verifies exact size/SHA-256, and writes `release-readiness/native-sdk-rc1-download-smoke.json`. It proves public URL byte round-trip only; it does not prove signing, attestation, or workflow-built provenance.
 
-`scripts/verify-native-sdk-rc1-artifacts.mjs --write` records the Native public SDK RC1 artifact gate at `release-readiness/native-sdk-rc1-artifacts.json`. It checks `echo-native-contracts`, `echoaddonapi`, `echoadaptercore`, `echo-native-testkit`, and the SDK Gradle plugin for local main/source/Javadoc jars, matching public GitHub catalog artifacts, and live download-back evidence, then keeps stable approval blocked until each jar is also approved with non-source-linked provenance.
+`scripts/verify-native-sdk-rc1-attestation.mjs` verifies the public SDK RC1 release bytes against GitHub workflow-built SLSA provenance and records `release-readiness/native-sdk-rc1-attestation.json`.
+
+`scripts/verify-native-sdk-rc1-artifacts.mjs --write` records the Native public SDK RC1 artifact gate at `release-readiness/native-sdk-rc1-artifacts.json`. It checks `echo-native-contracts`, `echoaddonapi`, `echoadaptercore`, `echo-native-testkit`, and the SDK Gradle plugin for local main/source/Javadoc jars, matching public GitHub catalog artifacts, live download-back evidence, attested public artifacts, and stable non-source-linked provenance. The current SDK RC1 artifact set is approved through `products/native-sdk.json` while the wider stable release remains gated by real first-launch/open-play and gameplay evidence.
 
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 

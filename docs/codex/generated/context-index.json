@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T12:55:01-04:00",
+  "generatedAt": "2026-06-13T12:55:49-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,33 +16,22 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "123e77d2b812",
-        "commitDate": "2026-06-13T12:47:39-04:00",
+        "commit": "fe67f6d35047",
+        "commitDate": "2026-06-13T12:55:49-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M products/native-sdk.json",
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M release-readiness/native-sdk-rc1-artifacts.json",
-          " M release-readiness/native-sdk-rc1-download-smoke.json",
-          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/test-verify-native-sdk-rc1-artifacts.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-native-sdk-rc1-artifacts.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? release-readiness/native-sdk-rc1-attestation.json",
           "?? release-readiness/openlands-electron-install-smoke.json",
-          "?? release-readiness/openlands-standalone-electron-install-smoke.json",
-          "?? scripts/verify-native-sdk-rc1-attestation.mjs"
+          "?? release-readiness/openlands-standalone-electron-install-smoke.json"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 20703,
+          "bytes": 21174,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -426,6 +415,8 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientTextureAtlas.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiInputMapper.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiRenderer.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiVisualPlan.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientWorldTemplates.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoGlfwWindow.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreContractLock.java",
@@ -459,6 +450,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveContinueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsControllerSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientShellFlowSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientVoxelBiomeSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAdapterCoreModuleCoverageSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java",
