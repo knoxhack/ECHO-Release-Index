@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T05:43:42-04:00",
+  "generatedAt": "2026-06-13T06:01:52-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,20 +16,21 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ea53dff1ea14",
-        "commitDate": "2026-06-13T05:43:42-04:00",
+        "commit": "2f4b58a21dec",
+        "commitDate": "2026-06-13T06:01:52-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "M docs/codex/generated/ECHO_PLATFORM_CONTEXT.md",
+          "M README.md",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
-          " M release-readiness/sky-relay-launcher-lifecycle-smoke.json"
+          " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
+          "?? docs/native-platform-rc1-handoff.md"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 14597,
+          "bytes": 15068,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -103,8 +104,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7f452ce44db8",
-        "commitDate": "2026-06-13T05:40:54-04:00",
+        "commit": "5ac36fab2234",
+        "commitDate": "2026-06-13T05:58:13-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -185,6 +186,66 @@
         "commitDate": "2026-06-13T05:31:54-04:00",
         "dirty": true,
         "dirtyFiles": [
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M README.md",
+          " M docs/NATIVE_API_REFERENCE.md",
+          " M docs/NATIVE_EXAMPLE_ADDON_WALKTHROUGH.md",
+          " M docs/NATIVE_MOD_AUTHOR_GUIDE.md",
+          " M docs/NATIVE_PORTING_GUIDE.md",
+          " M docs/NATIVE_SDK_ARTIFACTS.md",
+          " M docs/NATIVE_TROUBLESHOOTING.md",
+          " M templates/README.md",
+          " M templates/_shared/native-addon-module/addons/{{module_id}}/README.md.tpl",
+          " D templates/config-example/AddonConfig.java",
+          " D templates/config-example/ConfigExampleAddon.java",
+          " D templates/config-example/ConfigExampleTest.java",
+          " M templates/config-example/README.md",
+          " D templates/config-example/build.gradle",
+          " D templates/config-example/echo-native-addon.descriptor.json",
+          " D templates/event-example/EventExampleAddon.java",
+          " D templates/event-example/EventExampleTest.java",
+          " M templates/event-example/README.md",
+          " D templates/event-example/build.gradle",
+          " D templates/event-example/echo-native-addon.descriptor.json",
+          " D templates/native-module-template/NativeModule.java",
+          " D templates/native-module-template/NativeModuleTest.java",
+          " D templates/native-module-template/NativeService.java",
+          " M templates/native-module-template/README.md",
+          " D templates/native-module-template/build.gradle",
+          " D templates/native-module-template/echo-native-addon.descriptor.json",
+          " D templates/new-addon-template/MyAddon.java",
+          " D templates/new-addon-template/MyAddonTest.java",
+          " M templates/new-addon-template/README.md",
+          " D templates/new-addon-template/build.gradle",
+          " D templates/new-addon-template/echo-native-addon.descriptor.json",
+          " D templates/packet-example/PacketExampleAddon.java",
+          " D templates/packet-example/PacketExampleTest.java",
+          " M templates/packet-example/README.md",
+          " D templates/packet-example/build.gradle",
+          " D templates/packet-example/echo-native-addon.descriptor.json",
+          " M templates/registry-example/README.md",
+          " D templates/registry-example/RegistryExampleAddon.java",
+          " D templates/registry-example/RegistryExampleTest.java",
+          " D templates/registry-example/build.gradle",
+          " D templates/registry-example/echo-native-addon.descriptor.json",
+          " D templates/screen-hud-example/HudOverlay.java",
+          " M templates/screen-hud-example/README.md",
+          " D templates/screen-hud-example/ScreenHudExampleAddon.java",
+          " D templates/screen-hud-example/ScreenHudExampleTest.java",
+          " D templates/screen-hud-example/build.gradle",
+          " D templates/screen-hud-example/echo-native-addon.descriptor.json",
+          " D templates/testkit-example/CounterService.java",
+          " M templates/testkit-example/README.md",
+          " D templates/testkit-example/TestkitExampleAddon.java",
+          " D templates/testkit-example/TestkitExampleTest.java",
+          " D templates/testkit-example/build.gradle",
+          " D templates/testkit-example/echo-native-addon.descriptor.json",
+          " M templates/worldgen-example/README.md",
+          " D templates/worldgen-example/WorldgenExampleAddon.java",
+          " D templates/worldgen-example/WorldgenExampleTest.java",
+          " D templates/worldgen-example/WorldgenFeature.java",
+          " D templates/worldgen-example/build.gradle",
+          " D templates/worldgen-example/echo-native-addon.descriptor.json",
           "?? build/",
           "?? gradle-plugin/echo-addon-gradle-plugin/.gradle/",
           "?? gradle-plugin/echo-addon-gradle-plugin/build/",
@@ -197,16 +258,16 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3275,
+          "bytes": 4002,
           "heading": "ECHO SDK",
           "excerpt": "Source of truth for ECHO schemas, contracts, templates, API docs, and developer/creator onboarding."
         },
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 243,
-          "heading": "PUBLIC_ALPHA_RELEASE_STATUS.md",
-          "excerpt": "This brand-new repository is staged for the ECHO Native Platform public alpha."
+          "bytes": 806,
+          "heading": "ECHO SDK Release Status",
+          "excerpt": "The active Native SDK release line is `1.0.0-RC1`."
         },
         {
           "path": "docs/ecosystem-artifact-ownership.md",
@@ -218,7 +279,7 @@
         {
           "path": "templates/README.md",
           "exists": true,
-          "bytes": 1708,
+          "bytes": 1705,
           "heading": "ECHO Native Templates and Examples",
           "excerpt": "| Template | Location | Description |"
         }
@@ -289,14 +350,20 @@
         "branch": "main",
         "commit": "d2a0536de2e2",
         "commitDate": "2026-06-13T05:32:28-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M README.md",
+          " M docs/echo/implementation/ECHO_NATIVE_CORE_AUDIT.md",
+          " M docs/echo/native/COMPATIBILITY_MATRIX.md",
+          " M docs/echo/native/INSTALL_GUIDE.md"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5932,
+          "bytes": 6763,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
@@ -1315,8 +1382,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "40a600795977",
-        "commitDate": "2026-06-13T05:41:08-04:00",
+        "commit": "f538fb0bd866",
+        "commitDate": "2026-06-13T05:59:44-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1345,7 +1412,7 @@
         {
           "path": "docs/runtime-evidence.md",
           "exists": true,
-          "bytes": 485,
+          "bytes": 770,
           "heading": "Runtime Evidence",
           "excerpt": "Public alpha requires real Native runtime evidence for survey network loading,"
         },
@@ -1378,8 +1445,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "78a8a6ff45a3",
-        "commitDate": "2026-06-13T05:41:08-04:00",
+        "commit": "a04e6cc9e9b7",
+        "commitDate": "2026-06-13T05:59:44-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1408,7 +1475,7 @@
         {
           "path": "docs/runtime-evidence.md",
           "exists": true,
-          "bytes": 487,
+          "bytes": 774,
           "heading": "Runtime Evidence",
           "excerpt": "Public alpha requires real NeoForge runtime evidence for survey network loading,"
         },
@@ -1441,8 +1508,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "fd1eca56dfcd",
-        "commitDate": "2026-06-13T05:41:08-04:00",
+        "commit": "5cd7905018a9",
+        "commitDate": "2026-06-13T05:59:44-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1471,7 +1538,7 @@
         {
           "path": "docs/runtime-evidence.md",
           "exists": true,
-          "bytes": 489,
+          "bytes": 778,
           "heading": "Runtime Evidence",
           "excerpt": "Public alpha requires real Standalone runtime evidence for survey network loading,"
         },
