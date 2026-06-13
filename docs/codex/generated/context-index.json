@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T13:12:25-04:00",
+  "generatedAt": "2026-06-13T13:17:08-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,13 +16,14 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "308bbc6936d5",
-        "commitDate": "2026-06-13T13:11:36-04:00",
+        "commit": "837a09d76eca",
+        "commitDate": "2026-06-13T13:13:28-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M products/addons-studio.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
+          "?? release-readiness/galactic-survey-real-minecraft-handoff-smoke.json",
           "?? release-readiness/openlands-electron-install-smoke.json",
           "?? release-readiness/openlands-standalone-electron-install-smoke.json"
         ]
@@ -259,6 +260,8 @@
         "commitDate": "2026-06-13T10:36:55-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M README.md",
           " M electron/main.cjs",
           " M electron/release-assets.test.mjs",
           " M package.json",
@@ -268,6 +271,7 @@
           "?? electron/version-compare.cjs",
           "?? electron/version-compare.test.mjs",
           "?? scripts/all-modpacks-electron-install-smoke.mjs",
+          "?? scripts/galactic-survey-real-minecraft-handoff-smoke.mjs",
           "?? tmp/"
         ]
       },
@@ -275,14 +279,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4263,
+          "bytes": 4863,
           "heading": "ECHO Launcher",
           "excerpt": "Official desktop launcher, updater, repair tool, profile manager, diagnostics center, and release consumer for Ashfall and the ECHO ecosystem."
         },
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 924,
+          "bytes": 1086,
           "heading": "Launcher Release Status",
           "excerpt": "ECHO Launcher is the install, update, repair, rollback, and diagnostics surface for ECHO products. It is not itself the ECHO Native Platform release artifact."
         }
@@ -739,8 +743,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d472337cd902",
-        "commitDate": "2026-06-13T13:12:25-04:00",
+        "commit": "3477dd542ee7",
+        "commitDate": "2026-06-13T13:17:08-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -795,7 +799,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 3170,
-          "summary": "package echo-command-center 0.1.0; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:scanner-smoke"
+          "summary": "package echo-command-center 0.1.1; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:scanner-smoke"
         }
       ],
       "warnings": []
