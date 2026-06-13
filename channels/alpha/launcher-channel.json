@@ -90,7 +90,10 @@
       "channel": "alpha",
       "loader": "echo-native-loader",
       "moduleArtifactFamily": "echo-addon",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-native-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-native-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-native.json",
+      "catalogStatus": "warning",
+      "diagnostic": "Ashfall Native assets are checksum-exact, but Phase 7-10 release-readiness evidence is not green; launcher installs stay locked."
     },
     {
       "id": "ashfall-neoforge-edition",
@@ -98,7 +101,10 @@
       "channel": "alpha",
       "loader": "neoforge",
       "moduleArtifactFamily": "neoforge",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-neoforge-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-neoforge-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-neoforge.json",
+      "catalogStatus": "warning",
+      "diagnostic": "Ashfall NeoForge live manifest is missing moduleRequirements and release-readiness evidence is not green; launcher installs stay locked."
     },
     {
       "id": "ashfall-standalone-edition",
@@ -106,7 +112,10 @@
       "channel": "experimental",
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-standalone-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/ashfall-standalone-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/ashfall-standalone.json",
+      "catalogStatus": "warning",
+      "diagnostic": "Ashfall Standalone live manifest is missing moduleRequirements and release-readiness evidence is not green; launcher installs stay locked."
     },
     {
       "id": "arcana-division-native-edition",
@@ -138,7 +147,9 @@
       "channel": "alpha",
       "loader": "echo-native-loader",
       "moduleArtifactFamily": "echo-addon",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-native-edition.json"
+      "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
+      "catalogStatus": "unpublished",
+      "diagnostic": "Openlands Native Edition is official but has no public GitHub release assets yet."
     },
     {
       "id": "openlands-neoforge-edition",
@@ -146,7 +157,9 @@
       "channel": "alpha",
       "loader": "neoforge",
       "moduleArtifactFamily": "neoforge",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-neoforge-edition.json"
+      "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition",
+      "catalogStatus": "unpublished",
+      "diagnostic": "Openlands NeoForge Edition is official but has no public GitHub release assets yet."
     },
     {
       "id": "openlands-standalone-edition",
@@ -154,7 +167,9 @@
       "channel": "experimental",
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/openlands-standalone-edition.json"
+      "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition",
+      "catalogStatus": "unpublished",
+      "diagnostic": "Openlands Standalone Edition is official but has no public GitHub release assets yet."
     },
     {
       "id": "sky-relay-native-edition",
@@ -162,7 +177,9 @@
       "channel": "alpha",
       "loader": "echo-native-loader",
       "moduleArtifactFamily": "echo-addon",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-native-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-native-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-native.json",
+      "catalogStatus": "approved"
     },
     {
       "id": "sky-relay-neoforge-edition",
@@ -170,7 +187,9 @@
       "channel": "alpha",
       "loader": "neoforge",
       "moduleArtifactFamily": "neoforge",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-neoforge-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-neoforge-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-neoforge.json",
+      "catalogStatus": "approved"
     },
     {
       "id": "sky-relay-standalone-edition",
@@ -178,7 +197,9 @@
       "channel": "alpha",
       "loader": "echo-standalone-runtime",
       "moduleArtifactFamily": "standalone",
-      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-standalone-edition.json"
+      "manifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/packs/sky-relay-standalone-edition.json",
+      "catalogEntryUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/modpacks/sky-relay-standalone.json",
+      "catalogStatus": "approved"
     }
   ]
 }

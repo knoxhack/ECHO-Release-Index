@@ -14,6 +14,20 @@
   "moduleArtifactFamily": "neoforge",
   "moduleArtifactPattern": "<module>-<version>-neoforge.jar",
   "updatePolicy": "Use this manifest for the Minecraft/NeoForge Ashfall distribution. Module entries must pin -neoforge.jar artifacts from ECHO-Modules.",
+  "releaseReadiness": {
+    "status": "blocked",
+    "blockers": [
+      "The live Ashfall NeoForge .pack.json has no moduleRequirements even though this edition must pin -neoforge.jar module requirements.",
+      "Ashfall release-readiness Phase 7-10 evidence is not green.",
+      "Real gameplay QA evidence, screenshots, support/rollback proof, draft-download proof, and release-candidate smoke still need to pass before launcher install approval."
+    ],
+    "evidence": [
+      "release-readiness/ashfall-native-public-alpha.json",
+      "release-readiness/ashfall-draft-download.json",
+      "release-readiness/ashfall-rc-smoke.json"
+    ],
+    "auditCommand": "node scripts/verify-ashfall-release-readiness.mjs --require-release-ready"
+  },
   "assets": [
     {
       "name": "echo-release.json",

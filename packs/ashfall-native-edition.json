@@ -15,12 +15,19 @@
   "moduleArtifactPattern": "<module>-<version>.echo-addon",
   "updatePolicy": "Use this manifest for Ashfall Native Edition launcher pack updates. Module entries must pin .echo-addon artifacts from ECHO-Modules.",
   "releaseReadiness": {
-    "status": "approved",
-    "blockers": [],
+    "status": "blocked",
+    "blockers": [
+      "Phase 7 native beta session proof and public beta opening evidence are still failed/dry-run.",
+      "Phase 8 real gameplay QA evidence is missing: first-hour smoke, fresh world, save reload, route, server/client export, ending, screenshots, logs, and save snapshots.",
+      "Phase 9 player-facing polish is missing required real screenshots.",
+      "Phase 10 draft-release download and release-candidate smoke are not green."
+    ],
     "evidence": [
       "release-readiness/ashfall-native-public-alpha.json",
+      "release-readiness/ashfall-draft-download.json",
       "release-readiness/ashfall-rc-smoke.json"
-    ]
+    ],
+    "auditCommand": "node scripts/verify-ashfall-release-readiness.mjs --require-release-ready"
   },
   "assets": [
     {

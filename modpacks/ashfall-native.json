@@ -44,6 +44,7 @@
     "native"
   ],
   "trust": "source-linked",
-  "validation": "approved",
-  "validationReason": "Ashfall Native catalog points at exporter-built release-ready pack assets with matching release manifest, pack manifest, archive, and checksums."
+  "validation": "warning",
+  "validationReason": "Published Ashfall Native assets are checksum-backed, but install approval is blocked until Phase 7-10 release-readiness evidence passes.",
+  "notes": "Do not promote back to approved until node scripts/verify-ashfall-release-readiness.mjs --require-release-ready passes against real public-beta, gameplay, screenshot, draft-download, and RC smoke evidence."
 }

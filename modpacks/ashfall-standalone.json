@@ -44,5 +44,7 @@
     "standalone"
   ],
   "trust": "source-linked",
-  "validation": "approved"
+  "validation": "warning",
+  "validationReason": "Published Ashfall Standalone assets are checksum-backed, but install approval is blocked because the live .pack.json has no moduleRequirements and Ashfall release-readiness evidence is not green.",
+  "notes": "Do not promote back to approved until the Standalone pack is rebuilt with moduleRequirements and the Ashfall release-readiness audit records real gameplay, screenshot, support, rollback, draft-download, and RC smoke evidence."
 }
