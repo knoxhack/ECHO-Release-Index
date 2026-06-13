@@ -44,6 +44,7 @@ const releaseIndexRoot = args.root
 const workspaceRoot = args.workspaceRoot
 const moduleRepo = path.join(workspaceRoot, 'ECHO-Modules')
 const moduleRoot = path.join(moduleRepo, 'addons', 'echogalacticsurveyprotocol')
+const runtimePlaytestReportPath = path.join(moduleRoot, 'build', 'reports', 'galactic-survey', 'runtime-playtest.json')
 
 const editions = [
   {
@@ -100,6 +101,37 @@ function runNode(cwd, script, scriptArgs = []) {
     status: result.status === 0 ? 'passed' : 'blocked',
     exitCode: result.status,
     command: `node ${script} ${scriptArgs.join(' ')}`.trim(),
+    cwd,
+    stdout: result.stdout ?? '',
+    stderr: result.stderr ?? ''
+  }
+}
+
+function runGradle(cwd, taskArgs = []) {
+  const wrapper = process.platform === 'win32' ? '.\\gradlew.bat' : './gradlew'
+  const wrapperPath = path.join(cwd, process.platform === 'win32' ? 'gradlew.bat' : 'gradlew')
+  if (!fs.existsSync(wrapperPath)) {
+    return {
+      status: 'missing',
+      command: `${wrapper} ${taskArgs.join(' ')}`.trim(),
+      cwd,
+      stdout: '',
+      stderr: `${wrapperPath} is missing`
+    }
+  }
+  const command = process.platform === 'win32' ? 'cmd.exe' : wrapper
+  const commandArgs = process.platform === 'win32'
+    ? ['/d', '/s', '/c', wrapper, ...taskArgs]
+    : taskArgs
+  const result = spawnSync(command, commandArgs, {
+    cwd,
+    encoding: 'utf8',
+    shell: false
+  })
+  return {
+    status: result.status === 0 ? 'passed' : 'blocked',
+    exitCode: result.status,
+    command: `${wrapper} ${taskArgs.join(' ')}`.trim(),
     cwd,
     stdout: result.stdout ?? '',
     stderr: result.stderr ?? ''
@@ -257,6 +289,7 @@ const requiredPackagedModules = [
 const commandReports = {
   moduleContract: runNode(moduleRepo, 'addons/echogalacticsurveyprotocol/scripts/validate-galactic-survey-contract.mjs', ['--module-root', 'addons/echogalacticsurveyprotocol']),
   routeSmoke: runNode(moduleRepo, 'addons/echogalacticsurveyprotocol/scripts/smoke-galactic-survey-route.mjs', ['--module-root', 'addons/echogalacticsurveyprotocol']),
+  runtimePlaytest: runGradle(moduleRepo, [':echogalacticsurveyprotocol:runGalacticSurveyRuntimePlaytest', '--console=plain']),
   editions: editions.map((edition) => ({
     id: edition.id,
     validator: runNode(edition.path, 'scripts/validate-galactic-survey-edition.mjs', ['--root', '.']),
@@ -264,6 +297,8 @@ const commandReports = {
     releaseEvidence: runNode(edition.path, 'scripts/verify-manual-gameplay-evidence.mjs', ['--require-release-ready'])
   }))
 }
+
+const runtimePlaytest = readJsonOrNull(runtimePlaytestReportPath)
 
 const sourceRevisions = {
   releaseIndex: repositoryRevision(releaseIndexRoot, {
@@ -401,6 +436,19 @@ const phases = []
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'rollbackSimulatedReplacement'), 'local pack rollback smoke passed', 'local pack rollback smoke must pass')
   requireCondition(phase, setContainsAll(smokeEditionPackIds, editions.map((edition) => edition.id)), 'local lifecycle smoke covers Native, NeoForge, and Standalone packs', 'local lifecycle smoke must cover Native, NeoForge, and Standalone packs')
   requireCondition(phase, smokeEditions.every((edition) => edition.installedFiles === 18 && edition.verifiedAfterInstall === 18 && edition.versionUpdate?.verifiedAfterUpdate === 18 && edition.postRollbackVersionUpdate?.verifiedAfterUpdate === 18 && edition.verifiedAfterRollback === 18), 'local lifecycle smoke verified all 18 module files through install, update, repair, and rollback', 'local lifecycle smoke must verify all 18 module files through install, update, repair, and rollback')
+  const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
+  const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
+  const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
+  requireCondition(phase, commandReports.runtimePlaytest.status === 'passed', 'compiled runtime playtest task passed', 'compiled runtime playtest task must pass')
+  requireCondition(phase, runtimePlaytest?.schemaVersion === 'echo.galactic_survey.runtime-playtest.v1', 'compiled runtime playtest report exists', 'compiled runtime playtest report must be generated')
+  requireCondition(phase, runtimePlaytest?.ok === true, 'compiled runtime playtest report passed', 'compiled runtime playtest report must pass')
+  for (const check of ['first30Loop', 'first2HourLoop', 'holomapMeaningful', 'surveyArrayRestored', 'saveReloadEquivalent', 'publicAlphaStillRequiresExternalEvidence']) {
+    requireCondition(phase, runtimeChecks[check] === true, `compiled runtime playtest check ${check} passed`, `compiled runtime playtest check ${check} must pass`)
+  }
+  requireCondition(phase, releasePreview.publicAlphaAllowed === false, 'compiled runtime playtest keeps public alpha blocked without external evidence', 'compiled runtime playtest must not declare public alpha ready')
+  requireCondition(phase, releasePreviewBlockers.includes('real_first_30_playthrough'), 'compiled runtime playtest still requires real first-30-minute evidence', 'compiled runtime playtest must still require real first-30-minute evidence')
+  requireCondition(phase, releasePreviewBlockers.includes('no_crash_evidence'), 'compiled runtime playtest still requires no-crash evidence', 'compiled runtime playtest must still require no-crash evidence')
+  requireCondition(phase, releasePreviewBlockers.includes('launcher_install_update_repair_rollback'), 'compiled runtime playtest still requires launcher lifecycle evidence', 'compiled runtime playtest must still require launcher lifecycle evidence')
   for (const edition of editions) {
     const packManifest = readJsonOrNull(path.join(releaseIndexRoot, 'packs', `${edition.id}.json`))
     const revision = sourceRevisions.editions[edition.lane]
@@ -456,6 +504,7 @@ const report = {
       editionGameplayEvidence: editions.map((edition) => `${edition.repo}/scripts/verify-manual-gameplay-evidence.mjs`),
       editionPackAssets: 'release-readiness/galactic-survey-edition-pack-assets.json',
       editionPackSmoke: 'release-readiness/galactic-survey-edition-pack-smoke.json',
+      runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
   },
@@ -499,6 +548,38 @@ const report = {
         }
       : null
   },
+  runtimePlaytestEvidence: runtimePlaytest
+    ? {
+        schemaVersion: runtimePlaytest.schemaVersion,
+        ok: runtimePlaytest.ok,
+        generatedAt: runtimePlaytest.generatedAt,
+        scope: runtimePlaytest.scope,
+        moduleId: runtimePlaytest.moduleId,
+        packId: runtimePlaytest.packId,
+        mode: runtimePlaytest.mode,
+        milestones: Object.fromEntries(Object.entries(runtimePlaytest.milestones ?? {}).map(([id, milestone]) => [
+          id,
+          {
+            schema: milestone.schema,
+            probeCount: milestone.probeCount,
+            catalogedDiscoveries: milestone.catalogedDiscoveries,
+            routeCount: milestone.routeCount,
+            depotCount: milestone.depotCount,
+            salvageCount: milestone.salvageCount,
+            proofCount: milestone.completedProofs?.length ?? 0
+          }
+        ])),
+        holomap: runtimePlaytest.holomap,
+        runtimeChecks: runtimePlaytest.runtimeChecks,
+        releaseGatePreview: {
+          publicAlphaAllowed: runtimePlaytest.releaseGatePreview?.publicAlphaAllowed,
+          reason: runtimePlaytest.releaseGatePreview?.reason,
+          blockers: runtimePlaytest.releaseGatePreview?.blockers,
+          satisfiedRuntimeGateCount: runtimePlaytest.releaseGatePreview?.satisfiedRuntimeGateCount
+        },
+        residualRisks: runtimePlaytest.residualRisks
+      }
+    : null,
   sourceRevisions,
   phaseSummary: phases.map((phase) => ({
     phase: phase.phase,

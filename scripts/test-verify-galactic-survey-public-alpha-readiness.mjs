@@ -29,6 +29,7 @@ assert.match(report.sourceRevisions.editions.standalone.commit, /^[0-9a-f]{40}$/
 assert.ok(report.blockers.some((blocker) => blocker.includes('release-ready gameplay evidence is still missing')))
 assert.equal(report.evidenceSources.reports.editionPackAssets, 'release-readiness/galactic-survey-edition-pack-assets.json')
 assert.equal(report.evidenceSources.reports.editionPackSmoke, 'release-readiness/galactic-survey-edition-pack-smoke.json')
+assert.equal(report.evidenceSources.reports.runtimePlaytest, '../ECHO-Modules/addons/echogalacticsurveyprotocol/build/reports/galactic-survey/runtime-playtest.json')
 assert.equal(report.editionPackEvidence.assets.schemaVersion, 'echo.galactic_survey.edition-pack-assets.v1')
 assert.equal(report.editionPackEvidence.assets.gates.editionPackAssetsBuilt, 'passed')
 assert.equal(report.editionPackEvidence.assets.gates.localStageChecksums, 'passed')
@@ -43,6 +44,17 @@ assert.equal(report.editionPackEvidence.smoke.gates.versionTransitionUpdate, 'pa
 assert.equal(report.editionPackEvidence.smoke.gates.repairCorruptFile, 'passed')
 assert.equal(report.editionPackEvidence.smoke.gates.rollbackSimulatedReplacement, 'passed')
 assert.equal(report.editionPackEvidence.smoke.editions.length, 3)
+assert.equal(report.commandReports.runtimePlaytest.status, 'passed')
+assert.equal(report.runtimePlaytestEvidence.schemaVersion, 'echo.galactic_survey.runtime-playtest.v1')
+assert.equal(report.runtimePlaytestEvidence.ok, true)
+assert.equal(report.runtimePlaytestEvidence.scope, 'compiled-runtime-service')
+for (const check of ['first30Loop', 'first2HourLoop', 'holomapMeaningful', 'surveyArrayRestored', 'saveReloadEquivalent', 'publicAlphaStillRequiresExternalEvidence']) {
+  assert.equal(report.runtimePlaytestEvidence.runtimeChecks[check], true)
+}
+assert.equal(report.runtimePlaytestEvidence.releaseGatePreview.publicAlphaAllowed, false)
+assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('real_first_30_playthrough'))
+assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('no_crash_evidence'))
+assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('launcher_install_update_repair_rollback'))
 assert.ok(report.blockers.some((blocker) => blocker.includes('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')))
 assert.equal(report.promotion.publicAlphaCanBeDeclaredReady, false)
 
