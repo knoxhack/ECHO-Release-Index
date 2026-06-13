@@ -74,6 +74,12 @@ Launcher lifecycle evidence now exists:
 First-launch/open-play capture intake now exists in the Release Index:
 
 ```text
+node scripts/prepare-galactic-survey-first-launch-capture.mjs --tester <name> --world-or-profile <name> --started-at <iso> [--open-launcher]
+```
+
+The prep command verifies the downloaded GitHub pack ZIP against `release-readiness/galactic-survey-draft-download.json`, creates a timestamped capture folder under `tmp/galactic-survey-first-launch-open-play/`, records local Minecraft Launcher/profile status, and writes the exact file checklist and importer command. It is intentionally not release evidence: note templates include a marker that the importer rejects until real observations replace them, and it does not create fake screenshots, logs, or ZIP bundles.
+
+```text
 node scripts/import-galactic-survey-first-launch-evidence.mjs --capture-root <path> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso>
 ```
 
