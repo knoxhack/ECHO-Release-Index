@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T16:11:09-04:00",
+  "generatedAt": "2026-06-13T19:16:15-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,21 +16,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9c7cf0a65eed",
-        "commitDate": "2026-06-13T16:01:47-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M docs/native-platform-rc1-handoff.md",
-          " M products/addons-studio.json",
-          " M products/native-platform.json",
-          " M release-readiness/native-platform-rc1-attestation.json",
-          " M release-readiness/native-platform-rc1-download-smoke.json",
-          " M release-readiness/native-platform-rc1-ingestion.json",
-          "?? release-readiness/all-modpacks-electron-install-smoke-debug.json",
-          "?? release-readiness/all-modpacks-electron-install-smoke-neoforge-debug.json",
-          "?? release-readiness/all-modpacks-electron-install-smoke.json",
-          "?? release-readiness/all-modpacks-pipeline-audit.json"
-        ]
+        "commit": "c8691727bdbc",
+        "commitDate": "2026-06-13T19:14:38-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -43,7 +32,7 @@
         {
           "path": "docs/ecosystem-artifact-ownership.md",
           "exists": true,
-          "bytes": 5077,
+          "bytes": 5093,
           "heading": "ECHO Artifact Ownership",
           "excerpt": "The Release Index owns catalog records, trust policy, and channel routing. It does not own binary release assets. Each source repository publishes its own artifacts, then the Release Index records the approved artifact URLs, SHA-256 hashes, trust tier, validation state, depend..."
         },
@@ -88,7 +77,7 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 17933,
+          "bytes": 17831,
           "summary": "launcher channel alpha; generatedAt: 2026-06-13T15:34:28.345Z"
         },
         {
@@ -110,26 +99,69 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9decbb1c5ef0",
-        "commitDate": "2026-06-13T09:15:55-04:00",
+        "commit": "93ae0dcf2ea0",
+        "commitDate": "2026-06-13T19:15:51-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M addons/echoaddonapi/src/main/resources/META-INF/echo.mod.json",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
-          " M addons/echoblockworks/src/main/resources/META-INF/echo.mod.json",
+          " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoBackendLifecycleBridge.java",
+          " M addons/echoashfallprotocol/build.gradle",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallProtocol.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/entity/ModEntities.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModAttachments.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModBiomes.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModBlockEntities.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModBlocks.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModCreativeTabs.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModDataComponents.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModEffects.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModItems.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModMenuTypes.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModPoiTypes.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModSounds.java",
+          " M addons/echoblockworks/build.gradle",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/EchoBlockworks.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/integration/BlockworksMissionCoreIntegration.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModBlockEntities.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModBlocks.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModCreativeTabs.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModItems.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModMenus.java",
+          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/NativeRegistryHolder.java",
+          " M addons/echocore/src/main/java/com/echoplatform/echocore/api/EchoRuntimeModules.java",
+          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/EchoHoloMap.java",
+          " M addons/echohudcore/src/main/java/com/knoxhack/echo/hudcore/EchoHudCore.java",
+          " M addons/echoindex/build.gradle",
+          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/EchoIndex.java",
+          " M addons/echolens/src/main/java/com/knoxhack/echolens/EchoLens.java",
+          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/EchoMissionCore.java",
+          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/content/MissionCoreReloaders.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/EchoScreenCoreMod.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminal.java",
+          " M addons/echoworldcore/src/main/java/com/knoxhack/echoworldcore/EchoWorldCore.java",
           " M build.gradle",
-          " M docs/module-docs-index.md",
-          " M reports/echo/agents/agent-73-blockers.json",
-          " M reports/echo/agents/agent-73-parity.json",
-          " M reports/echo/agents/agent-73-status.json",
-          " M reports/echo/standalone/runtime-full-catalog-module-status.json",
-          " M reports/echo/standalone/runtime-required-system-module-activation.json",
-          "?? addons/echoaddonapi/src/main/java/dev/echo/api/addon/EchoAddonApi.java",
-          "?? reports/runtime-parity/",
-          "?? scripts/apply-runtime-parity-pack-baseline.mjs",
-          "?? scripts/generate-module-docs-index.mjs",
-          "?? scripts/generate-runtime-parity-audit.mjs",
-          "?? scripts/generate-runtime-parity-audit.test.mjs"
+          " M reports/runtime-parity/echo-module-runtime-parity-audit.json",
+          " M reports/runtime-parity/echo-module-runtime-parity-audit.md",
+          " M reports/runtime-parity/echo-module-runtime-parity-fix-backlog.md",
+          " M reports/runtime-parity/echo-module-runtime-play-audit.json",
+          " M reports/runtime-parity/echo-module-runtime-play-audit.md",
+          " M reports/runtime-parity/echo-module-runtime-play-fix-backlog.json",
+          " M reports/runtime-parity/echo-module-runtime-play-fix-backlog.md",
+          " M reports/runtime-parity/evidence-manifest.json",
+          " M reports/runtime-parity/manual-acceptance-matrix.json",
+          " M reports/runtime-parity/module-feature-contracts.json",
+          " M reports/runtime-parity/module-play-completion.json",
+          " M reports/runtime-parity/pack-acceptance-report-index.json",
+          " M reports/runtime-parity/strict-play-evidence-refresh.json",
+          " M scripts/generate-pack-acceptance-reports.mjs",
+          " M scripts/generate-runtime-parity-audit.test.mjs",
+          " M scripts/generate-runtime-play-audit.mjs",
+          " M scripts/test-generate-pack-acceptance-reports.mjs",
+          "?? addons/echoashfallprotocol/run/",
+          "?? addons/echoindex/run/",
+          "?? reports/neoforge-strict-play/",
+          "?? reports/runtime-parity/codex-active-goal-context.md",
+          "?? scripts/run-neoforge-gametests-and-write-evidence.mjs",
+          "?? scripts/test-run-neoforge-gametests-and-write-evidence.mjs"
         ]
       },
       "canonicalDocs": [
@@ -205,18 +237,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d167e4cae7a5",
-        "commitDate": "2026-06-13T12:42:34-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "?? build/",
-          "?? dist/",
-          "?? gradle-plugin/echo-addon-gradle-plugin/.gradle/",
-          "?? gradle-plugin/echo-addon-gradle-plugin/build/",
-          "?? metadata/templates/openlands_official/",
-          "?? reports/",
-          "?? tools/__pycache__/"
-        ]
+        "commit": "c029bfaf5d91",
+        "commitDate": "2026-06-13T16:53:29-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -270,14 +294,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5238ffbb0816",
-        "commitDate": "2026-06-13T16:00:21-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M electron/main.cjs",
-          " M scripts/all-modpacks-electron-install-smoke.mjs",
-          "?? tmp/"
-        ]
+        "commit": "34eacd247378",
+        "commitDate": "2026-06-13T17:30:47-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -316,51 +336,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3d6e810a1ccf",
-        "commitDate": "2026-06-13T16:11:09-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiHandlerRegistry.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapMain.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapOrchestrator.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeLiveUiBridge.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ListNavigationSmoke.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveInputFocusRoutingAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveMainMenuOverrideAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveModuleSurfaceCatalogAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveVisualFrameAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuEndToEndAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuEndToEndAcceptanceSmoke.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuOptionActivationSmoke.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ScreenHostModel.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ThemeApplicationSmoke.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiBridgeContractVerifier.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiHostInteractionStateAcceptance.java",
-          " M echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoNativeBootstrapProductProfile.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeRegistryHost.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderClientRouteTable.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderClientUiHost.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderCoreServiceRegistrar.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderDefaultProductBridgeProvider.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderGeneratedUiSources.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLiveLoadingRenderBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderModuleSurfaceRenderers.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRuntimeBridgeAggregator.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRuntimeBridgeSeed.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderScreenHostModel.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderSurfaceRenderer.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderUiActionRouter.java",
-          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeAgent2ClientRouteOwnershipSmokeMain.java",
-          "?? echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderTheme.java",
-          "?? echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderThemeMode.java",
-          "?? echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderThemeResolver.java"
-        ]
+        "commit": "e7e61cf05958",
+        "commitDate": "2026-06-13T19:14:20-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 6763,
+          "bytes": 6871,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
@@ -386,200 +371,13 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c8ffdd7c80f5",
-        "commitDate": "2026-06-13T06:08:25-04:00",
+        "commit": "e2d20467c57e",
+        "commitDate": "2026-06-13T16:49:51-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M build.gradle",
-          " M docs/echo/standalone/ASHFALL_PARITY_MATRIX.md",
-          " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
-          " M docs/echo/standalone/ECHO_RUNTIME_BOUNDARIES.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_APP_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_COMPATIBILITY_MIGRATION.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_DATA_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_ENTITY_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_GAMEPLAY_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_INPUT_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_ITEM_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_LAUNCHER_MVP.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_MINECRAFT_EMULATOR_PLAN.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_MODULE_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_NETWORK_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_PLAYER_CONTROLLER.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_RENDERER_UPGRADE.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_RENDER_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_RUNTIME_ARCHITECTURE.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_SAVE_PROFILE_FLOW.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_SAVE_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_SCRIPTING_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_UI_RUNTIME.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_VERTICAL_SLICE.md",
-          " M docs/echo/standalone/ECHO_STANDALONE_WORLD_RUNTIME.md",
-          " M docs/echo/standalone/FINAL_TESTER_SCRIPT.md",
-          " M docs/echo/standalone/RELEASE_ACCEPTANCE_REPORT.md",
-          " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneLauncherRuntime.java",
-          " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneVoxelMaterialAtlasRuntime.java",
-          " M echo-runtime-assets/src/main/java/dev/echo/standalone/runtime/assets/EchoBlockTextureResolver.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientAudio.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientChunkMesh.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientContentProfiles.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientDamageSource.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientDebugOverlay.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEngine.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEngineRuntimeBridge.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEntityRuntime.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSession.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSimulationRules.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameState.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplay.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplayRuntimeController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplaySaveCodec.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientHud2D.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInput.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInventoryRuntime.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindings.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientModScanService.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRenderRuntimeController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssembly.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeDiagnosticsSnapshot.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeServices.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotService.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotThumbnailGenerator.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenCommand.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenKind.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenshotService.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSelectedItemUse.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientTextureAtlas.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiInputMapper.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiRenderer.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiVisualPlan.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientWorldTemplates.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoGlfwWindow.java",
-          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreContractLock.java",
-          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreDomain.java",
-          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreModuleCoverageAuditor.java",
-          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreNativeContentRegistrations.java",
-          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreStandaloneContentBridge.java",
-          " M echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoDataRuntime.java",
-          " M echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoStandaloneClientContentProfileLoader.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleContext.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleDescriptor.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleDescriptorParser.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleDescriptorScanner.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleDescriptorSchema.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleLoader.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleManager.java",
-          " M echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModulePermissionCatalog.java",
-          " M echo-runtime-player/src/main/java/dev/echo/standalone/runtime/player/EchoVoxelHotbarProfiles.java",
-          " M echo-runtime-player/src/main/java/dev/echo/standalone/runtime/player/EchoVoxelPlayerController.java",
-          " M echo-runtime-player/src/main/java/dev/echo/standalone/runtime/player/EchoVoxelSessionProfiles.java",
-          " M echo-runtime-render/src/main/java/dev/echo/standalone/runtime/render/EchoVoxelChunkMesher.java",
-          " M echo-runtime-render/src/main/java/dev/echo/standalone/runtime/render/EchoVoxelMeshFace.java",
-          " M echo-runtime-render/src/main/java/dev/echo/standalone/runtime/render/EchoVoxelSoftwareRenderer.java",
-          " M echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/EchoSaveTransaction.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockModelChunkRenderSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockTextureResolverSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandControllerSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientDebugOverlaySmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindingsSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssemblySmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveContinueSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenCatalogSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsControllerSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientShellFlowSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientVoxelBiomeSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAdapterCoreModuleCoverageSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAppSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAdapterCoreParitySmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAudioCueSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallPlayableMissionSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallStabilitySoakSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAssetSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAudioSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeCommandSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeCompatSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeDataSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeEntitySmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeGameplaySmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeInputSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeItemSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeLauncherSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeModuleSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeNativeLoaderAbiSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeNetworkSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePackOsSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayableLoopSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayableVoxelSaveSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayerControllerSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeRegistryAssetCoverageSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeRenderSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeSaveProfileFlowSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeSaveSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeScriptingSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeUiSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVerticalSliceSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVoxelMaterialAtlasSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVoxelRenderMeshSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeWindowedSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeWorldSmokeHarness.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelBiomeSources.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelChunk.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelWorld.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelWorldProfiles.java",
-          "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsFirstHourContract.java",
-          "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsFirstHourResult.java",
-          "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsFirstHourRuntime.java",
-          "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenContract.java",
-          "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenResult.java",
-          "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenRuntime.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientAudioDiagnosticsSnapshot.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidBucketUse.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFocusLossRuntimeController.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingMonitor.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingSnapshot.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientOpenlandsSessionFactory.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientProjectileResult.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotThumbnailCapture.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSupportBundleResult.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSupportBundleService.java",
-          "?? echo-runtime-data/src/main/resources/data/echoopenlandsprotocol/",
-          "?? echo-runtime-modules/src/main/java/dev/echo/nativeplatform/",
-          "?? echo-runtime-modules/src/main/java/dev/echo/standalone/runtime/modules/EchoRuntimeModuleDataRegistry.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidBucketSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidSaveSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidScheduledUpdateSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidSurfaceHeightSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidWaterloggingSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFullBlockBehaviorMatrixSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientOpenlandsSessionSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientPlayerProjectileCombatSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSessionResilienceSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAddonArchiveCompatibilitySmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeOpenlandsExperienceSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeOpenlandsPlayableRouteSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeOpenlandsVoxelWorldSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeOpenlandsWorldgenSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayerFluidMovementSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeRealModuleExecutionSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVoxelFluidSmokeHarness.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeVoxelLightingSmokeHarness.java",
-          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelFluidRuntime.java",
-          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelLightRuntime.java",
-          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelOpenlandsBiomes.java",
-          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelOpenlandsWorldGeneration.java",
-          "?? scripts/capture-audio-hardware-evidence.ps1",
-          "?? scripts/capture-clean-install-uninstall-evidence.ps1",
-          "?? scripts/capture-manual-wallclock-playtest.ps1",
-          "?? scripts/sign-release-artifacts.ps1"
+          "?? scripts/generate-standalone-strict-play-evidence.mjs",
+          "?? scripts/test-generate-standalone-strict-play-evidence.mjs"
         ]
       },
       "canonicalDocs": [
@@ -654,14 +452,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "559788781a89",
-        "commitDate": "2026-06-13T06:08:11-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "?? .gitignore",
-          "?? dist/",
-          "?? release/"
-        ]
+        "commit": "9312503fbb31",
+        "commitDate": "2026-06-13T16:53:29-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -701,36 +495,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9defe93b3cec",
-        "commitDate": "2026-06-10T22:08:19-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M .gitignore",
-          " M package-lock.json",
-          " M package.json",
-          " M scripts/doctor-electron.mjs",
-          " M src/main/devWorkspaceService.ts",
-          " M src/main/gitService.ts",
-          " M src/main/index.ts",
-          " M src/main/ipc.ts",
-          " M src/main/previewScanService.ts",
-          " M src/preload/index.ts",
-          " M src/renderer/index.html",
-          " M src/renderer/src/App.tsx",
-          " M src/renderer/src/pages/AIAssistant.tsx",
-          " M src/renderer/src/pages/ContentBuilder.tsx",
-          " M src/renderer/src/pages/Git.tsx",
-          " M src/renderer/src/pages/Preview.tsx",
-          " M src/renderer/src/state/useContent.ts",
-          " M src/renderer/src/styles/global.css",
-          " M src/shared/__tests__/gitService.test.ts",
-          " M src/shared/__tests__/previewScanService.test.ts",
-          " M src/shared/devWorkspace.ts",
-          " M src/shared/previewScan.ts",
-          "?? src/main/projectPaths.ts",
-          "?? src/renderer/src/components/RouteErrorBoundary.tsx",
-          "?? src/shared/__tests__/projectPaths.test.ts"
-        ]
+        "commit": "5b084221b2aa",
+        "commitDate": "2026-06-13T16:47:32-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -784,38 +552,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0286b4995365",
-        "commitDate": "2026-06-13T13:27:29-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M README.md",
-          " M docs/REMAINING_WORK.md",
-          " M package.json",
-          " M src/main/build-runner.ts",
-          " M src/main/candidate-reports.ts",
-          " M src/main/main.ts",
-          " M src/main/run-history.ts",
-          " M src/main/scanner-smoke.ts",
-          " M src/main/scanner.ts",
-          " M src/main/settings.ts",
-          " M src/main/train-drafts.ts",
-          " M src/main/validation-runner.ts",
-          " M src/preload/preload.ts",
-          " M src/renderer/App.tsx",
-          " M src/renderer/main.tsx",
-          " M src/renderer/styles/app.css",
-          " M src/shared/echo.ts",
-          " M vite.main.config.ts",
-          " M vite.scanner-smoke.config.ts",
-          "?? .codex-preview-4191.err.log",
-          "?? .codex-preview-4191.out.log",
-          "?? .github/",
-          "?? docs/OPERATOR_RUNBOOK.md",
-          "?? src/main/unit-tests.ts",
-          "?? src/renderer/ErrorBoundary.tsx",
-          "?? src/shared/command-safety.ts",
-          "?? vite.unit-tests.config.ts"
-        ]
+        "commit": "7eb5f4557caa",
+        "commitDate": "2026-06-13T16:48:02-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -932,12 +672,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c47e951e272b",
-        "commitDate": "2026-06-13T06:08:02-04:00",
+        "commit": "7174499cfc32",
+        "commitDate": "2026-06-13T18:36:56-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json"
+          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-native-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-native-edition/echo-release.json",
+          " M release-assets/v0.1.0-ashfall-native-edition/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/pack-acceptance/"
         ]
       },
       "canonicalDocs": [
@@ -998,12 +742,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1c07fc41c37a",
-        "commitDate": "2026-06-12T21:11:05-04:00",
+        "commit": "1cb99a507668",
+        "commitDate": "2026-06-13T18:37:00-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/echo-release.json",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1050,12 +798,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a8cd381892ab",
-        "commitDate": "2026-06-12T21:11:12-04:00",
+        "commit": "025efa7a7abb",
+        "commitDate": "2026-06-13T18:37:04-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-assets/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/echo-release.json",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1102,15 +854,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1e1aaf03c54a",
-        "commitDate": "2026-06-13T03:20:32-04:00",
+        "commit": "4143913addd5",
+        "commitDate": "2026-06-13T18:37:08-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
           " M release-assets/v0.1.0-openlands-native-edition/checksums.txt",
           " M release-assets/v0.1.0-openlands-native-edition/echo-release.json",
           " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json"
+          " M release-assets/v0.1.0-openlands-native-edition/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1164,15 +917,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "bd402c96502a",
-        "commitDate": "2026-06-13T03:20:32-04:00",
+        "commit": "9b0ca69bc67a",
+        "commitDate": "2026-06-13T18:37:12-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
           " M release-assets/v0.1.0-openlands-neoforge-edition/checksums.txt",
           " M release-assets/v0.1.0-openlands-neoforge-edition/echo-release.json",
           " M release-assets/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json"
+          " M release-assets/v0.1.0-openlands-neoforge-edition/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1226,15 +980,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2149bc0cb9fa",
-        "commitDate": "2026-06-13T03:20:32-04:00",
+        "commit": "30041038a23b",
+        "commitDate": "2026-06-13T18:37:16-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
           " M release-assets/v0.1.0-openlands-standalone-edition/checksums.txt",
           " M release-assets/v0.1.0-openlands-standalone-edition/echo-release.json",
           " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
-          " M release-manifest.template.json"
+          " M release-assets/v0.1.0-openlands-standalone-edition/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1288,12 +1043,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "570bd1671e55",
-        "commitDate": "2026-06-13T03:28:11-04:00",
+        "commit": "4ba6c490c713",
+        "commitDate": "2026-06-13T18:37:20-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M release-assets/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
-          "?? docs/"
+          " M release-assets/arcana-division-native-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-native-1.0.0-beta/echo-release.json",
+          " M release-assets/arcana-division-native-1.0.0-beta/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1326,12 +1085,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "fc05f105e934",
-        "commitDate": "2026-06-13T03:28:10-04:00",
+        "commit": "59a4039d81c5",
+        "commitDate": "2026-06-13T18:37:24-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M release-assets/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
-          "?? docs/"
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/echo-release.json",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1364,12 +1127,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "690ff4d4d19f",
-        "commitDate": "2026-06-13T03:28:11-04:00",
+        "commit": "1d88b677c976",
+        "commitDate": "2026-06-13T18:37:28-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M release-assets/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
-          "?? docs/"
+          " M release-assets/arcana-division-standalone-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/echo-release.json",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/release-audit.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1401,20 +1168,24 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "feature/sky-relay-gameplay-evidence",
-        "commit": "d2b0e38d3a9a",
-        "commitDate": "2026-06-11T15:14:11-04:00",
+        "branch": "main",
+        "commit": "0163b28616d8",
+        "commitDate": "2026-06-13T03:30:12-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-assets/sky-relay-native-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-native-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-native-0.1.0-alpha/release-audit.json",
+          " M release-assets/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1162,
+          "bytes": 1569,
           "heading": "ECHO Sky Relay Native Edition",
           "excerpt": "Sky Relay Native Edition is the ECHO Native Platform packaging lane for"
         },
@@ -1441,22 +1212,21 @@
         },
         {
           "path": "docs/gameplay-evidence.md",
-          "exists": true,
-          "bytes": 6745,
-          "heading": "Gameplay Evidence",
-          "excerpt": "Sky Relay Native Edition cannot be promoted from warning metadata until real"
+          "exists": false
         },
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1222,
+          "bytes": 248,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
         }
       ],
       "agentDocs": [],
       "metadata": [],
-      "warnings": []
+      "warnings": [
+        "ECHO-Sky-Relay-Native-Edition missing canonical doc docs/gameplay-evidence.md"
+      ]
     },
     {
       "id": "sky-relay-neoforge",
@@ -1467,20 +1237,24 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "feature/sky-relay-gameplay-evidence",
-        "commit": "f9d7e1a2d195",
-        "commitDate": "2026-06-11T15:14:11-04:00",
+        "branch": "main",
+        "commit": "44d2348055bd",
+        "commitDate": "2026-06-13T03:30:25-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/release-audit.json",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 803,
+          "bytes": 1210,
           "heading": "ECHO Sky Relay NeoForge Edition",
           "excerpt": "Sky Relay NeoForge Edition is the Minecraft/NeoForge compatibility lane for"
         },
@@ -1507,22 +1281,21 @@
         },
         {
           "path": "docs/gameplay-evidence.md",
-          "exists": true,
-          "bytes": 6747,
-          "heading": "Gameplay Evidence",
-          "excerpt": "Sky Relay NeoForge Edition cannot be promoted from warning metadata until real"
+          "exists": false
         },
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1071,
+          "bytes": 94,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
         }
       ],
       "agentDocs": [],
       "metadata": [],
-      "warnings": []
+      "warnings": [
+        "ECHO-Sky-Relay-NeoForge-Edition missing canonical doc docs/gameplay-evidence.md"
+      ]
     },
     {
       "id": "sky-relay-standalone",
@@ -1533,20 +1306,24 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "feature/sky-relay-gameplay-evidence",
-        "commit": "f1051cf95dd1",
-        "commitDate": "2026-06-11T15:14:11-04:00",
+        "branch": "main",
+        "commit": "57a71f130445",
+        "commitDate": "2026-06-13T03:30:38-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/release-audit.json",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 781,
+          "bytes": 1198,
           "heading": "ECHO Sky Relay Standalone Edition",
           "excerpt": "Sky Relay Standalone Edition is the ECHO Standalone Runtime packaging lane for"
         },
@@ -1573,22 +1350,21 @@
         },
         {
           "path": "docs/gameplay-evidence.md",
-          "exists": true,
-          "bytes": 6749,
-          "heading": "Gameplay Evidence",
-          "excerpt": "Sky Relay Standalone Edition cannot be promoted from warning metadata until real"
+          "exists": false
         },
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1075,
+          "bytes": 94,
           "heading": "Module Requirements",
           "excerpt": "Required protocol module: `echoskyrelayprotocol` version `0.1.0`."
         }
       ],
       "agentDocs": [],
       "metadata": [],
-      "warnings": []
+      "warnings": [
+        "ECHO-Sky-Relay-Standalone-Edition missing canonical doc docs/gameplay-evidence.md"
+      ]
     },
     {
       "id": "galactic-survey-native",
@@ -1600,12 +1376,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5f2330caf585",
-        "commitDate": "2026-06-13T13:48:28-04:00",
+        "commit": "85aa624b8185",
+        "commitDate": "2026-06-13T19:16:15-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1647,7 +1423,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1815,
+          "bytes": 1832,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey Native Edition consumes Native `.echo-addon` artifacts."
         }
@@ -1666,12 +1442,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e50462aec771",
-        "commitDate": "2026-06-13T13:48:28-04:00",
+        "commit": "4664a9dd964a",
+        "commitDate": "2026-06-13T19:16:15-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1713,7 +1489,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1831,
+          "bytes": 1849,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey NeoForge Edition consumes Minecraft/NeoForge `-neoforge.jar`"
         }
@@ -1732,12 +1508,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "736edede91e2",
-        "commitDate": "2026-06-13T13:48:28-04:00",
+        "commit": "21ace87d4b96",
+        "commitDate": "2026-06-13T19:16:15-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-manifest.template.json"
+          " M release-manifest.template.json",
+          "?? reports/"
         ]
       },
       "canonicalDocs": [
@@ -1779,7 +1555,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 1831,
+          "bytes": 1849,
           "heading": "Module Requirements",
           "excerpt": "Galactic Survey Standalone Edition consumes Standalone `-standalone.jar`"
         }
@@ -1793,6 +1569,9 @@
     "ECHO-Native-Platform-RC1-3d6e810"
   ],
   "warnings": [
+    "ECHO-Sky-Relay-Native-Edition missing canonical doc docs/gameplay-evidence.md",
+    "ECHO-Sky-Relay-NeoForge-Edition missing canonical doc docs/gameplay-evidence.md",
+    "ECHO-Sky-Relay-Standalone-Edition missing canonical doc docs/gameplay-evidence.md",
     "Unconfigured local ECHO repository ECHO-Native-Platform-RC1-3d6e810"
   ]
 }
