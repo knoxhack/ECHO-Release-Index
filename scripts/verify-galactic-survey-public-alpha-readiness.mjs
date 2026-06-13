@@ -5,6 +5,12 @@ import { spawnSync } from 'node:child_process'
 
 const DEFAULT_OUT = 'release-readiness/galactic-survey-public-alpha-readiness.json'
 const MODULE_RELEVANT_STATUS_PATHS = [
+  'addons/echoaddonapi/build.gradle',
+  'addons/echoaddonapi/src/main/templates',
+  'addons/echogalacticcore/README.md',
+  'addons/echogalacticcore/build.gradle',
+  'addons/echogalacticcore/docs/artifacts.md',
+  'addons/echogalacticcore/src/main/templates',
   'addons/echogalacticsurveyprotocol',
   'docs/GALACTIC_SURVEY_FULL_EXPERIENCE_PLAN.md',
   'build.gradle'
@@ -199,6 +205,15 @@ function ids(rows) {
   return Array.isArray(rows) ? rows.map((row) => row?.id).filter(Boolean) : []
 }
 
+function reportGatePassed(report, gate) {
+  return report?.gates?.[gate] === 'passed'
+}
+
+function setContainsAll(values, requiredValues) {
+  const set = new Set(Array.isArray(values) ? values : [])
+  return requiredValues.every((value) => set.has(value))
+}
+
 const dataRoot = path.join(moduleRoot, 'src/main/resources/data/echogalacticsurveyprotocol/galacticsurvey')
 const planDoc = path.join(moduleRepo, 'docs', 'GALACTIC_SURVEY_FULL_EXPERIENCE_PLAN.md')
 const productionMatrix = readJsonOrNull(path.join(dataRoot, 'plan', 'production_phase_matrix.json'))
@@ -216,6 +231,28 @@ const missionContracts = readJsonOrNull(path.join(dataRoot, 'integrations', 'mis
 const releaseGates = readJsonOrNull(path.join(dataRoot, 'release', 'release_gates.json'))
 const descriptor = readJsonOrNull(path.join(moduleRoot, 'src/main/resources/META-INF/echo.mod.json'))
 const alphaChannel = readJsonOrNull(path.join(releaseIndexRoot, 'channels', 'alpha', 'launcher-channel.json'))
+const editionPackAssets = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-assets.json'))
+const editionPackSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-smoke.json'))
+const requiredPackagedModules = [
+  'echocore',
+  'echoaddonapi',
+  'echoadaptercore',
+  'echonetcore',
+  'echoruntimeguard',
+  'echoterminal',
+  'echoindex',
+  'echolens',
+  'echoholomap',
+  'echomissioncore',
+  'echopowergrid',
+  'echologisticsnetwork',
+  'echoprogressioncore',
+  'echosoundcore',
+  'echogalacticcore',
+  'echoorbitalremnants',
+  'echovehiclecore',
+  'echogalacticsurveyprotocol'
+]
 
 const commandReports = {
   moduleContract: runNode(moduleRepo, 'addons/echogalacticsurveyprotocol/scripts/validate-galactic-survey-contract.mjs', ['--module-root', 'addons/echogalacticsurveyprotocol']),
@@ -346,6 +383,24 @@ const phases = []
     'ECHO-Modules has no uncommitted Galactic Survey source drift',
     `ECHO-Modules has uncommitted Galactic Survey source drift: ${moduleRevision.blockingStatusLines.join('; ')}`
   )
+  const assetEditionPackIds = editionPackAssets?.localStage?.editions?.map((edition) => edition.packId) ?? []
+  const smokeEditionPackIds = editionPackSmoke?.editions?.map((edition) => edition.pack) ?? []
+  const smokeEditions = Array.isArray(editionPackSmoke?.editions) ? editionPackSmoke.editions : []
+  requireCondition(phase, editionPackAssets?.schemaVersion === 'echo.galactic_survey.edition-pack-assets.v1', 'local edition pack asset report exists', 'local edition pack asset report must be generated')
+  requireCondition(phase, reportGatePassed(editionPackAssets, 'editionPackAssetsBuilt'), 'local edition pack assets built successfully', 'local edition pack assets must build successfully')
+  requireCondition(phase, reportGatePassed(editionPackAssets, 'localStageChecksums'), 'local staged edition asset checksums passed', 'local staged edition asset checksums must pass')
+  requireCondition(phase, reportGatePassed(editionPackAssets, 'zipMatchesPackManifest'), 'local edition ZIP manifests match pack manifests', 'local edition ZIP manifests must match pack manifests')
+  requireCondition(phase, setContainsAll(editionPackAssets?.packagedModules, requiredPackagedModules), 'local edition assets include the full 18-module runtime spine', 'local edition assets must include the full 18-module runtime spine')
+  requireCondition(phase, setContainsAll(assetEditionPackIds, editions.map((edition) => edition.id)), 'local edition asset report covers Native, NeoForge, and Standalone packs', 'local edition asset report must cover Native, NeoForge, and Standalone packs')
+  requireCondition(phase, editionPackSmoke?.schemaVersion === 'echo.galactic_survey.edition-pack-smoke.v1', 'local edition lifecycle smoke report exists', 'local edition lifecycle smoke report must be generated')
+  requireCondition(phase, editionPackSmoke?.ok === true, 'local edition lifecycle smoke completed successfully', 'local edition lifecycle smoke must complete successfully')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'stagedReleaseAssetsVerified'), 'local staged release assets verified during smoke', 'local staged release assets must verify during smoke')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'installFromPackZip'), 'local pack ZIP install smoke passed', 'local pack ZIP install smoke must pass')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'versionTransitionUpdate'), 'local pack version-transition update smoke passed', 'local pack version-transition update smoke must pass')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'repairCorruptFile'), 'local pack repair smoke passed', 'local pack repair smoke must pass')
+  requireCondition(phase, reportGatePassed(editionPackSmoke, 'rollbackSimulatedReplacement'), 'local pack rollback smoke passed', 'local pack rollback smoke must pass')
+  requireCondition(phase, setContainsAll(smokeEditionPackIds, editions.map((edition) => edition.id)), 'local lifecycle smoke covers Native, NeoForge, and Standalone packs', 'local lifecycle smoke must cover Native, NeoForge, and Standalone packs')
+  requireCondition(phase, smokeEditions.every((edition) => edition.installedFiles === 18 && edition.verifiedAfterInstall === 18 && edition.versionUpdate?.verifiedAfterUpdate === 18 && edition.postRollbackVersionUpdate?.verifiedAfterUpdate === 18 && edition.verifiedAfterRollback === 18), 'local lifecycle smoke verified all 18 module files through install, update, repair, and rollback', 'local lifecycle smoke must verify all 18 module files through install, update, repair, and rollback')
   for (const edition of editions) {
     const packManifest = readJsonOrNull(path.join(releaseIndexRoot, 'packs', `${edition.id}.json`))
     const revision = sourceRevisions.editions[edition.lane]
@@ -371,7 +426,7 @@ const phases = []
   requireCondition(phase, !fs.existsSync(path.join(releaseIndexRoot, 'modpacks', 'galactic-survey-neoforge.json')), 'no installable NeoForge modpack catalog entry has been published yet', 'NeoForge modpack catalog must remain absent until release evidence exists')
   requireCondition(phase, !fs.existsSync(path.join(releaseIndexRoot, 'modpacks', 'galactic-survey-standalone.json')), 'no installable Standalone modpack catalog entry has been published yet', 'Standalone modpack catalog must remain absent until release evidence exists')
   phase.blockers.push('checksum-backed module and edition GitHub Release artifacts are not published')
-  phase.blockers.push('launcher install, update, repair, and rollback evidence is not present')
+  phase.blockers.push('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')
   phase.blockers.push('real first-30-minute, first-2-hour, Survey Array, save/reload, and no-crash evidence is not present')
   phases.push(finalizePhase(phase))
 }
@@ -398,8 +453,51 @@ const report = {
       moduleContract: commandReports.moduleContract.command,
       routeSmoke: commandReports.routeSmoke.command,
       editionValidators: editions.map((edition) => `${edition.repo}/scripts/validate-galactic-survey-edition.mjs`),
-      editionGameplayEvidence: editions.map((edition) => `${edition.repo}/scripts/verify-manual-gameplay-evidence.mjs`)
+      editionGameplayEvidence: editions.map((edition) => `${edition.repo}/scripts/verify-manual-gameplay-evidence.mjs`),
+      editionPackAssets: 'release-readiness/galactic-survey-edition-pack-assets.json',
+      editionPackSmoke: 'release-readiness/galactic-survey-edition-pack-smoke.json',
+      moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
+  },
+  editionPackEvidence: {
+    assets: editionPackAssets
+      ? {
+          schemaVersion: editionPackAssets.schemaVersion,
+          generatedAt: editionPackAssets.generatedAt,
+          packagedModules: editionPackAssets.packagedModules,
+          editions: editionPackAssets.localStage?.editions?.map((edition) => ({
+            packId: edition.packId,
+            repoName: edition.repoName,
+            releaseTag: edition.releaseTag,
+            assets: edition.assets?.map((asset) => asset.name),
+            moduleCount: edition.modules?.length,
+            zip: edition.zip
+          })) ?? [],
+          gates: editionPackAssets.gates,
+          promotionBlockers: editionPackAssets.promotionBlockers
+        }
+      : null,
+    smoke: editionPackSmoke
+      ? {
+          schemaVersion: editionPackSmoke.schemaVersion,
+          ok: editionPackSmoke.ok,
+          generatedAt: editionPackSmoke.generatedAt,
+          editions: editionPackSmoke.editions?.map((edition) => ({
+            pack: edition.pack,
+            repoName: edition.repoName,
+            releaseTag: edition.releaseTag,
+            localReleaseCandidate: edition.localReleaseCandidate,
+            installedFiles: edition.installedFiles,
+            verifiedAfterInstall: edition.verifiedAfterInstall,
+            versionUpdate: edition.versionUpdate,
+            versionRollback: edition.versionRollback,
+            postRollbackVersionUpdate: edition.postRollbackVersionUpdate,
+            verifiedAfterRollback: edition.verifiedAfterRollback
+          })) ?? [],
+          gates: editionPackSmoke.gates,
+          residualRisks: editionPackSmoke.residualRisks
+        }
+      : null
   },
   sourceRevisions,
   phaseSummary: phases.map((phase) => ({
