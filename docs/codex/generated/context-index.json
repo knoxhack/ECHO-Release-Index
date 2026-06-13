@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T09:03:17-04:00",
+  "generatedAt": "2026-06-13T09:39:20-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,27 +16,65 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "817c911a4d1f",
-        "commitDate": "2026-06-13T09:03:17-04:00",
+        "commit": "33e972343ddc",
+        "commitDate": "2026-06-13T09:05:29-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M docs/ecosystem-artifact-ownership.md",
           " M docs/native-platform-rc1-handoff.md",
-          " M products/addons-studio.json"
+          " M modules/echoadaptercore.json",
+          " M modules/echoaddonapi.json",
+          " M modules/echocontentcore.json",
+          " M modules/echocore.json",
+          " M modules/echogalacticcore.json",
+          " M modules/echogalacticsurveyprotocol.json",
+          " M modules/echoholomap.json",
+          " M modules/echoindex.json",
+          " M modules/echolens.json",
+          " M modules/echologisticsnetwork.json",
+          " M modules/echomissioncore.json",
+          " M modules/echonetcore.json",
+          " M modules/echoorbitalremnants.json",
+          " M modules/echoplatformcore.json",
+          " M modules/echopowergrid.json",
+          " M modules/echoprogressioncore.json",
+          " M modules/echorecipecore.json",
+          " M modules/echoruntimeguard.json",
+          " M modules/echoschemacore.json",
+          " M modules/echosoundcore.json",
+          " M modules/echoterminal.json",
+          " M modules/echovalidationcore.json",
+          " M modules/echovehiclecore.json",
+          " M packs/galactic-survey-native-edition.json",
+          " M packs/galactic-survey-neoforge-edition.json",
+          " M packs/galactic-survey-standalone-edition.json",
+          " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-draft-download.json",
+          " M release-readiness/galactic-survey-edition-pack-assets.json",
+          " M release-readiness/galactic-survey-edition-pack-smoke.json",
+          " M release-readiness/galactic-survey-electron-ui-smoke.json",
+          " M release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
+          " M release-readiness/galactic-survey-module-release-ingest.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M scripts/sync-public-alpha-index.mjs",
+          " M scripts/test-sync-public-alpha-index.mjs",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 17357,
+          "bytes": 17663,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
         {
           "path": "docs/ecosystem-artifact-ownership.md",
           "exists": true,
-          "bytes": 4990,
+          "bytes": 5077,
           "heading": "ECHO Artifact Ownership",
           "excerpt": "The Release Index owns catalog records, trust policy, and channel routing. It does not own binary release assets. Each source repository publishes its own artifacts, then the Release Index records the approved artifact URLs, SHA-256 hashes, trust tier, validation state, depend..."
         },
@@ -103,8 +141,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c02de90643e0",
-        "commitDate": "2026-06-13T08:18:51-04:00",
+        "commit": "9decbb1c5ef0",
+        "commitDate": "2026-06-13T09:15:55-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
@@ -353,6 +391,7 @@
           " M docs/echo/standalone/ECHO_STANDALONE_PLAYER_CONTROLLER.md",
           " M docs/echo/standalone/ECHO_STANDALONE_RENDERER_UPGRADE.md",
           " M docs/echo/standalone/ECHO_STANDALONE_RENDER_RUNTIME.md",
+          " M docs/echo/standalone/ECHO_STANDALONE_SAVE_PROFILE_FLOW.md",
           " M docs/echo/standalone/ECHO_STANDALONE_SAVE_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_SCRIPTING_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_UI_RUNTIME.md",
@@ -367,20 +406,32 @@
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientContentProfiles.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientDamageSource.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientDebugOverlay.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEngine.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEngineRuntimeBridge.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientEntityRuntime.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSession.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSimulationRules.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameState.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplay.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplayRuntimeController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplaySaveCodec.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientHud2D.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientInventoryRuntime.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientKeyBindings.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRenderRuntimeController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssembly.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeDiagnosticsSnapshot.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeServices.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotService.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotThumbnailGenerator.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenCommand.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenController.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenKind.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeController.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenshotService.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSelectedItemUse.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsController.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientTextureAtlas.java",
           " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientWorldTemplates.java",
           " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreContractLock.java",
@@ -408,7 +459,10 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockModelChunkRenderSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientBlockTextureResolverSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCommandControllerSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientDebugOverlaySmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveContinueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenRuntimeControllerSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSettingsControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientVoxelBiomeSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAdapterCoreModuleCoverageSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java",
@@ -450,8 +504,11 @@
           "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenResult.java",
           "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenRuntime.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidBucketUse.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingMonitor.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingSnapshot.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientOpenlandsSessionFactory.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientProjectileResult.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSaveSlotThumbnailCapture.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSupportBundleResult.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientSupportBundleService.java",
           "?? echo-runtime-data/src/main/resources/data/echoopenlandsprotocol/",
@@ -685,17 +742,15 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "f68158532f27",
-        "commitDate": "2026-06-13T08:55:40-04:00",
+        "commit": "939b795728fe",
+        "commitDate": "2026-06-13T09:39:20-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M docs/REMAINING_WORK.md",
-          " M src/main/main.ts",
-          " M src/preload/preload.ts",
+          " M src/main/scanner-smoke.ts",
+          " M src/main/scanner.ts",
           " M src/renderer/App.tsx",
-          " M src/renderer/styles/app.css",
-          " M src/shared/echo.ts",
-          "?? src/main/run-history.ts"
+          " M src/shared/echo.ts"
         ]
       },
       "canonicalDocs": [
@@ -730,7 +785,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 7476,
+          "bytes": 8068,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
@@ -1436,8 +1491,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "f538fb0bd866",
-        "commitDate": "2026-06-13T05:59:44-04:00",
+        "commit": "5a52fad22a4b",
+        "commitDate": "2026-06-13T09:15:55-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1473,7 +1528,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 2612,
+          "bytes": 2849,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey Native Edition cannot be promoted from preview metadata until"
         },
@@ -1499,8 +1554,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a04e6cc9e9b7",
-        "commitDate": "2026-06-13T05:59:44-04:00",
+        "commit": "a7a5b58d1af5",
+        "commitDate": "2026-06-13T09:15:55-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1536,7 +1591,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 2614,
+          "bytes": 2851,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey NeoForge Edition cannot be promoted from preview metadata until"
         },
@@ -1562,8 +1617,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5cd7905018a9",
-        "commitDate": "2026-06-13T05:59:44-04:00",
+        "commit": "cce61a2f6536",
+        "commitDate": "2026-06-13T09:15:55-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1599,7 +1654,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 2616,
+          "bytes": 2853,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey Standalone Edition cannot be promoted from preview metadata until"
         },

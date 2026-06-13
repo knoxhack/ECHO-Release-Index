@@ -74,13 +74,13 @@ Index JSON and catalog metadata belong here. Binary release assets stay in their
 
 ## Native Platform RC1
 
-The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, SDK export, external addon release-mode proof, GitHub upload/download-back, published asset attestation, and Galactic Survey launcher install/update/repair/rollback evidence exist, but public approval is blocked until packaged first launch, diagnostics export, final catalog promotion, and real pack gameplay evidence pass. See `docs/native-platform-rc1-handoff.md`.
+The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, SDK export, external addon release-mode proof, GitHub upload/download-back, published asset attestation, attested Galactic Survey module assets, Galactic Survey public prerelease pack download-back, launcher install/update/repair/rollback evidence, and packaged Electron UI install/update/repair evidence exist. Public approval is still blocked until packaged first launch, diagnostics export, final catalog promotion, and real pack gameplay evidence pass. See `docs/native-platform-rc1-handoff.md`.
 
 Each installable entry must include stable fields for `id`, `kind`, `version`, `channel`, `publisher`, `sourceRepo`, `releaseTag`, `commitSha`, `artifacts`, `dependencies`, `compatibility`, `trust`, and `validation`.
 
 The required schema inventory is enforced by `scripts/validate-index.mjs` and includes addon package, pack manifest, module release manifest, product update entry, Release Index entry, publisher, channel, trust, and block schemas.
 
-`scripts/sync-public-alpha-index.mjs --check` compares product and modpack catalog artifacts with `channels/alpha/release-manifest.json`; use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
+`scripts/sync-public-alpha-index.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` verifies that each launcher channel references every catalog entry in `products/`, `modpacks/`, `modules/`, and `addons/`. Run it without `--check` after adding or removing catalog files so `channels/<channel>/launcher-channel.json` stays aligned with strict validation.
 

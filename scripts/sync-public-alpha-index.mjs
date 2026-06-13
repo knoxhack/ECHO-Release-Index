@@ -21,6 +21,7 @@ function parseArgs(argv) {
 
 const args = parseArgs(process.argv.slice(2))
 const syncDirs = ['products', 'modpacks']
+const publicAlphaSyncChannels = new Set(['alpha', 'experimental'])
 
 function rel(filePath) {
   return path.relative(args.root, filePath).replace(/\\/g, '/')
@@ -112,6 +113,10 @@ function repoNameFromSourceRepo(sourceRepo) {
   return parts.length === 2 ? parts[1] : ''
 }
 
+function shouldSyncEntry(entry) {
+  return !entry.channel || publicAlphaSyncChannels.has(entry.channel)
+}
+
 async function main() {
   const manifest = await readJson(args.manifestPath)
   const manifestByRepo = new Map((manifest.repositories ?? []).map((repository) => [repository.repoName, repository]))
@@ -124,6 +129,7 @@ async function main() {
     let changed = false
 
     for (const entry of rows) {
+      if (!shouldSyncEntry(entry)) continue
       const repository = manifestByRepo.get(repoNameFromSourceRepo(entry.sourceRepo))
       if (!repository) continue
       const manifestTag = releaseTagForRepository(manifest, repository)

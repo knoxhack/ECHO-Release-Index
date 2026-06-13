@@ -296,6 +296,45 @@ function setContainsAll(values, requiredValues) {
   return requiredValues.every((value) => set.has(value))
 }
 
+function assetsByName(assets) {
+  return new Map((Array.isArray(assets) ? assets : [])
+    .filter((asset) => asset?.name)
+    .map((asset) => [asset.name, asset]))
+}
+
+function compareDownloadedAssetsToLocalStage(localReport, downloadReport) {
+  const localEditions = Array.isArray(localReport?.localStage?.editions) ? localReport.localStage.editions : []
+  const downloadEditions = Array.isArray(downloadReport?.data?.editions) ? downloadReport.data.editions : []
+  const downloadByPackId = new Map(downloadEditions.map((edition) => [edition.packId, edition]))
+  const mismatches = []
+
+  for (const localEdition of localEditions) {
+    const downloadedEdition = downloadByPackId.get(localEdition.packId)
+    if (!downloadedEdition) {
+      mismatches.push(`${localEdition.packId}: no downloaded GitHub release assets`)
+      continue
+    }
+    const downloadedAssetsByName = assetsByName(downloadedEdition.downloadedAssets)
+    for (const localAsset of localEdition.assets ?? []) {
+      const downloadedAsset = downloadedAssetsByName.get(localAsset.name)
+      if (!downloadedAsset) {
+        mismatches.push(`${localEdition.packId}/${localAsset.name}: missing from downloaded GitHub release`)
+        continue
+      }
+      if (downloadedAsset.size !== localAsset.size || downloadedAsset.sha256 !== localAsset.sha256) {
+        mismatches.push(`${localEdition.packId}/${localAsset.name}: local ${localAsset.size}/${localAsset.sha256} != downloaded ${downloadedAsset.size}/${downloadedAsset.sha256}`)
+      }
+    }
+  }
+
+  return {
+    matches: localEditions.length > 0 && mismatches.length === 0,
+    checkedEditionCount: localEditions.length,
+    checkedAssetCount: localEditions.reduce((count, edition) => count + (edition.assets?.length ?? 0), 0),
+    mismatches
+  }
+}
+
 const dataRoot = path.join(moduleRoot, 'src/main/resources/data/echogalacticsurveyprotocol/galacticsurvey')
 const planDoc = path.join(moduleRepo, 'docs', 'GALACTIC_SURVEY_FULL_EXPERIENCE_PLAN.md')
 const productionMatrix = readJsonOrNull(path.join(dataRoot, 'plan', 'production_phase_matrix.json'))
@@ -378,6 +417,7 @@ const sourceRevisions = {
     })
   ]))
 }
+const editionDownloadMatchesLocalStage = compareDownloadedAssetsToLocalStage(editionPackAssets, editionDraftDownload)
 
 const phases = []
 
@@ -407,7 +447,7 @@ const phases = []
   requireCondition(phase, itemCatalog?.items?.length === 16, 'item catalog has 16 items', 'item catalog must have 16 items')
   requireCondition(phase, sectorCatalog?.sectors?.length === 4, 'sector catalog has 4 sectors', 'sector catalog must have 4 sectors')
   requireCondition(phase, bodyCatalog?.bodies?.length === 5, 'body catalog has 5 bodies', 'body catalog must have 5 bodies')
-  requireCondition(phase, releaseGates?.gates?.length === 14, 'release gate catalog has 14 gates', 'release gate catalog must have 14 gates')
+  requireCondition(phase, releaseGates?.gates?.length === 13, 'release gate catalog has 13 gameplay/runtime gates', 'release gate catalog must have 13 gameplay/runtime gates')
   phases.push(finalizePhase(phase))
 }
 
@@ -536,6 +576,12 @@ const phases = []
   requireCondition(phase, setContainsAll(draftDownloadPackIds, editions.map((edition) => edition.id)), 'download-back evidence covers Native, NeoForge, and Standalone packs', 'download-back evidence must cover Native, NeoForge, and Standalone packs')
   requireCondition(phase, downloadBackReleaseMetadataAccepted, 'download-back evidence is from prerelease GitHub releases', 'download-back evidence must come from prerelease GitHub releases')
   requireCondition(phase, draftDownloadEditions.every((edition) => edition.downloadedAssets?.length === 5), 'download-back evidence contains all required assets per edition', 'download-back evidence must contain all required assets per edition')
+  requireCondition(
+    phase,
+    editionDownloadMatchesLocalStage.matches,
+    'download-back asset checksums match current local staged edition assets',
+    `download-back asset checksums must match current local staged edition assets: ${editionDownloadMatchesLocalStage.mismatches.slice(0, 5).join('; ')}`
+  )
   requireCondition(phase, smokeUsedGitHubDownloadBack, 'lifecycle smoke used downloaded GitHub release assets', 'lifecycle smoke must use downloaded GitHub release assets')
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'githubReleaseDownloadBack') || reportGatePassed(editionPackSmoke, 'githubDraftDownloadBack'), 'lifecycle smoke verified GitHub download-back evidence', 'lifecycle smoke must verify GitHub download-back evidence')
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'installedFromDownloadedArtifacts'), 'lifecycle smoke installed downloaded GitHub artifacts', 'lifecycle smoke must install downloaded GitHub artifacts')
@@ -584,7 +630,7 @@ const phases = []
   requireCondition(phase, releasePreview.publicAlphaAllowed === false, 'compiled runtime playtest keeps public alpha blocked without external evidence', 'compiled runtime playtest must not declare public alpha ready')
   requireCondition(phase, releasePreviewBlockers.includes('real_first_30_playthrough'), 'compiled runtime playtest still requires real first-30-minute evidence', 'compiled runtime playtest must still require real first-30-minute evidence')
   requireCondition(phase, releasePreviewBlockers.includes('no_crash_evidence'), 'compiled runtime playtest still requires no-crash evidence', 'compiled runtime playtest must still require no-crash evidence')
-  requireCondition(phase, releasePreviewBlockers.includes('launcher_install_update_repair_rollback'), 'compiled runtime playtest still requires launcher lifecycle evidence', 'compiled runtime playtest must still require launcher lifecycle evidence')
+  requireCondition(phase, !releasePreviewBlockers.includes('launcher_install_update_repair_rollback'), 'compiled runtime playtest leaves launcher lifecycle evidence to Release Index reports', 'compiled runtime playtest must not claim launcher lifecycle evidence is missing after Release Index launcher evidence passes')
   for (const edition of editions) {
     const packManifest = readJsonOrNull(path.join(releaseIndexRoot, 'packs', `${edition.id}.json`))
     const revision = sourceRevisions.editions[edition.lane]
@@ -671,6 +717,7 @@ const report = {
           promotionBlockers: editionPackAssets.promotionBlockers
         }
       : null,
+    downloadBackMatchesLocalStage: editionDownloadMatchesLocalStage,
     smoke: editionPackSmoke
       ? {
           schemaVersion: editionPackSmoke.schemaVersion,

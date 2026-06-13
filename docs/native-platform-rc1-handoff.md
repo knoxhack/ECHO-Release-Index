@@ -32,6 +32,18 @@ Local artifact evidence exists:
 
 The local external addon proof generated, built, packaged, and loaded a `.echo-addon` through Native release mode. That proves the developer export path, but it does not prove public distribution.
 
+Galactic Survey module and pack prerelease evidence now exists:
+
+- Module release workflow: `https://github.com/knoxhack/ECHO-Modules/actions/runs/27467968646`
+- Module release: `https://github.com/knoxhack/ECHO-Modules/releases/tag/galactic-survey-0.1.0-alpha`
+- Module source commit: `9decbb1c5ef07e3ed749301fca1eaa383fa1cef2`
+- Module ingest evidence: `release-readiness/galactic-survey-module-release-ingest.json`
+- Edition pack assets: `release-readiness/galactic-survey-edition-pack-assets.json`
+- Public prerelease download-back: `release-readiness/galactic-survey-draft-download.json`
+- Pack lifecycle smoke: `release-readiness/galactic-survey-edition-pack-smoke.json`
+- Reducer proof: `release-readiness/galactic-survey-public-alpha-readiness.json`
+- Result: all 23 required runtime modules are checksum-backed from the attested module release, all 15 public prerelease edition assets download back from GitHub, and downloaded public bytes match the locally staged pack asset hashes.
+
 Launcher lifecycle evidence now exists:
 
 - Evidence: `release-readiness/galactic-survey-launcher-lifecycle-smoke.json`

@@ -88,6 +88,20 @@ try {
           },
         ],
       },
+      {
+        repoName: 'ECHO-Fixture-Beta',
+        release: {
+          htmlUrl: 'https://github.com/knoxhack/ECHO-Fixture-Beta/releases/tag/v0.1.0-alpha',
+        },
+        assets: [
+          {
+            name: 'fixture-beta-alpha.zip',
+            size: 400,
+            sha256: sha,
+            browserDownloadUrl: 'https://github.com/knoxhack/ECHO-Fixture-Beta/releases/download/v0.1.0-alpha/fixture-beta-alpha.zip',
+          },
+        ],
+      },
     ],
   })
   await writeJson(root, 'products/fixture-studio.json', {
@@ -135,6 +149,28 @@ try {
     trust: 'source-linked',
     validation: 'warning',
   })
+  await writeJson(root, 'products/fixture-beta.json', {
+    id: 'fixture-beta',
+    kind: 'runtime',
+    version: '2.0.0-beta',
+    channel: 'beta',
+    publisher: 'knoxhack',
+    sourceRepo: 'knoxhack/ECHO-Fixture-Beta',
+    releaseTag: 'v2.0.0-beta',
+    commitSha: 'abc1234',
+    artifacts: {
+      archive: {
+        file: 'fixture-beta-2.0.0-beta.zip',
+        url: 'https://github.com/knoxhack/ECHO-Fixture-Beta/releases/download/v2.0.0-beta/fixture-beta-2.0.0-beta.zip',
+        sha256: sha,
+        size: 500,
+      },
+    },
+    dependencies: [],
+    compatibility: ['native'],
+    trust: 'provenance-attested',
+    validation: 'approved',
+  })
 
   const drift = run(root, ['--check'])
   assert.equal(drift.status, 1)
@@ -156,6 +192,10 @@ try {
   assert.equal(runtime.artifacts.alphaReadinessGate.file, 'alpha-readiness-gate.json')
   assert.equal(runtime.artifacts.archive.file, 'echo-standalone-runtime-0.1.0-alpha.zip')
   assert.equal(runtime.artifacts.archive.url, 'https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/echo-standalone-runtime-0.1.0-alpha.zip')
+
+  const beta = JSON.parse(await fs.readFile(path.join(root, 'products', 'fixture-beta.json'), 'utf8'))
+  assert.equal(beta.releaseTag, 'v2.0.0-beta')
+  assert.equal(beta.artifacts.archive.file, 'fixture-beta-2.0.0-beta.zip')
 
   const clean = run(root, ['--check'])
   assert.equal(clean.status, 0, `${clean.stdout}\n${clean.stderr}`)

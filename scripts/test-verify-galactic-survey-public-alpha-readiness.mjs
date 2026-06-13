@@ -45,6 +45,9 @@ assert.equal(report.editionPackEvidence.assets.packagedModules.length, 23)
 assert.ok(report.editionPackEvidence.assets.packagedModules.includes('echoaddonapi'))
 assert.ok(report.editionPackEvidence.assets.packagedModules.includes('echoplatformcore'))
 assert.equal(report.editionPackEvidence.assets.editions.length, 3)
+assert.equal(typeof report.editionPackEvidence.downloadBackMatchesLocalStage.matches, 'boolean')
+assert.equal(report.editionPackEvidence.downloadBackMatchesLocalStage.checkedEditionCount, 3)
+assert.equal(report.editionPackEvidence.downloadBackMatchesLocalStage.checkedAssetCount, 15)
 assert.equal(report.editionPackEvidence.smoke.schemaVersion, 'echo.galactic_survey.edition-pack-smoke.v1')
 assert.equal(report.editionPackEvidence.smoke.ok, true)
 assert.equal(report.editionPackEvidence.smoke.gates.installFromPackZip, 'passed')
@@ -135,11 +138,15 @@ for (const check of ['first30Loop', 'first2HourLoop', 'holomapMeaningful', 'surv
 assert.equal(report.runtimePlaytestEvidence.releaseGatePreview.publicAlphaAllowed, false)
 assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('real_first_30_playthrough'))
 assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('no_crash_evidence'))
-assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('launcher_install_update_repair_rollback'))
+assert.ok(!report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('launcher_install_update_repair_rollback'))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('Launcher lifecycle smoke must verify all 23 module files')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('release-ready gameplay evidence is still missing')))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('checksum-backed edition GitHub Release artifacts must be published and downloaded back')))
+assert.equal(
+  report.blockers.some((blocker) => blocker.includes('download-back asset checksums must match current local staged edition assets')),
+  !report.editionPackEvidence.downloadBackMatchesLocalStage.matches
+)
 assert.equal(report.promotion.publicAlphaCanBeDeclaredReady, false)
 
 const releaseReady = spawnSync(process.execPath, [script, '--require-release-ready'], {
