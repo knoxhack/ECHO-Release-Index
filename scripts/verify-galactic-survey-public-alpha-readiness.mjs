@@ -12,14 +12,18 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-electron-ui-smoke.json',
   'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+  'release-readiness/galactic-survey-manual-gameplay-work-order.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
+  'docs/galactic-survey-manual-gameplay-work-order.md',
   'scripts/build-galactic-survey-edition-assets.mjs',
   'scripts/download-galactic-survey-draft-releases.mjs',
+  'scripts/generate-galactic-survey-manual-gameplay-work-order.mjs',
   'scripts/import-galactic-survey-first-launch-evidence.mjs',
   'scripts/publish-galactic-survey-draft-releases.mjs',
   'scripts/sync-launcher-channel-catalog.mjs',
   'scripts/smoke-galactic-survey-edition-pack-assets.mjs',
+  'scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs',
   'scripts/test-import-galactic-survey-first-launch-evidence.mjs',
   'scripts/test-publish-galactic-survey-draft-releases.mjs',
   'scripts/test-verify-galactic-survey-public-alpha-readiness.mjs',
@@ -33,8 +37,10 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'release-readiness/galactic-survey-electron-ui-smoke.json',
   'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+  'release-readiness/galactic-survey-manual-gameplay-work-order.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
-  'release-readiness/galactic-survey-public-alpha-readiness.json'
+  'release-readiness/galactic-survey-public-alpha-readiness.json',
+  'docs/galactic-survey-manual-gameplay-work-order.md'
 ])
 const MODULE_RELEVANT_STATUS_PATHS = [
   'addons/echoaddonapi/build.gradle',
@@ -777,6 +783,7 @@ const report = {
       launcherLifecycleSmoke: 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
       launcherElectronUiSmoke: 'release-readiness/galactic-survey-electron-ui-smoke.json',
       firstLaunchOpenPlayEvidence: 'release-readiness/galactic-survey-first-launch-open-play.json',
+      manualGameplayWorkOrder: 'release-readiness/galactic-survey-manual-gameplay-work-order.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }

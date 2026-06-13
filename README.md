@@ -59,6 +59,8 @@ Run commands from the repository root.
 - `node scripts/download-galactic-survey-draft-releases.mjs --clean`
 - `node scripts/import-galactic-survey-first-launch-evidence.mjs --capture-root <path> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso>`
 - `node scripts/test-import-galactic-survey-first-launch-evidence.mjs`
+- `node scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write`
+- `node scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs`
 - `node scripts/verify-ashfall-release-readiness.mjs --require-release-ready`
 - `node scripts/verify-galactic-survey-public-alpha-readiness.mjs --write`
 - `node scripts/test-verify-galactic-survey-public-alpha-readiness.mjs`
@@ -108,6 +110,8 @@ Phase 7 Native Platform beta evidence is produced in `ECHO-Native-Platform` by `
 
 `scripts/import-galactic-survey-first-launch-evidence.mjs` is the catalog-side first-launch/open-play intake. It requires a capture root with launcher handoff notes, official Minecraft Launcher open notes, first open/play notes, no-crash review notes, PNG screenshots, launcher and client logs, and a support ZIP. The `--artifact` must be the downloaded pack ZIP whose size and SHA-256 match `release-readiness/galactic-survey-draft-download.json`. A passing import writes `release-readiness/galactic-survey-first-launch-open-play.json`; the readiness reducer accepts that report only when all first-launch claims are true and checksum-backed.
 
+`scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write` turns the Galactic Survey readiness report into exact per-edition manual gameplay capture tasks at `release-readiness/galactic-survey-manual-gameplay-work-order.json` and `docs/galactic-survey-manual-gameplay-work-order.md`. It does not prove gameplay by itself; it names the missing first-30-minute, first-2-hour, Survey Array, save/reload, no-crash, notes, screenshots, log, save ZIP, artifact hash, and local verifier work required before promotion.
+
 `scripts/verify-artifact-urls.mjs` checks live GitHub reachability for approved artifact URLs. Use `--all` before promoting warning entries or after publishing new public alpha assets.
 
 Approved module imports require `echo-release.json` using `schemaVersion: "echo.module.release.v1"` with provenance from `scripts/generate-module-release.mjs`, including the module release workflow ref, commit SHA, `actions/attest@v4`, and `checksums.sha256` attestation subject.
@@ -139,6 +143,7 @@ For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a Gi
 - [docs/codex/repo-routing.md](docs/codex/repo-routing.md)
 - [docs/codex/maintenance.md](docs/codex/maintenance.md)
 - [docs/native-platform-rc1-handoff.md](docs/native-platform-rc1-handoff.md)
+- [docs/galactic-survey-manual-gameplay-work-order.md](docs/galactic-survey-manual-gameplay-work-order.md)
 - [PUBLIC_ALPHA_RELEASE_STATUS.md](PUBLIC_ALPHA_RELEASE_STATUS.md)
 
 ## Related Repos

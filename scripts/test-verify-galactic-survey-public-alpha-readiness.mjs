@@ -37,6 +37,7 @@ assert.equal(report.evidenceSources.reports.editionDraftDownload, 'release-readi
 assert.equal(report.evidenceSources.reports.launcherLifecycleSmoke, 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json')
 assert.equal(report.evidenceSources.reports.launcherElectronUiSmoke, 'release-readiness/galactic-survey-electron-ui-smoke.json')
 assert.equal(report.evidenceSources.reports.firstLaunchOpenPlayEvidence, 'release-readiness/galactic-survey-first-launch-open-play.json')
+assert.equal(report.evidenceSources.reports.manualGameplayWorkOrder, 'release-readiness/galactic-survey-manual-gameplay-work-order.json')
 assert.equal(report.evidenceSources.reports.runtimePlaytest, '../ECHO-Modules/addons/echogalacticsurveyprotocol/build/reports/galactic-survey/runtime-playtest.json')
 assert.equal(report.editionPackEvidence.assets.schemaVersion, 'echo.galactic_survey.edition-pack-assets.v1')
 assert.equal(report.editionPackEvidence.assets.gates.editionPackAssetsBuilt, 'passed')

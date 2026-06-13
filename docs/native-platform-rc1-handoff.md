@@ -79,12 +79,21 @@ The capture root must contain:
 
 The importer rejects missing files, empty files, placeholder/TODO text, non-PNG screenshots, non-ZIP support bundles, and pack artifacts whose size or SHA-256 do not match `release-readiness/galactic-survey-draft-download.json`. A passing import writes `release-readiness/galactic-survey-first-launch-open-play.json`; `scripts/verify-galactic-survey-public-alpha-readiness.mjs` accepts first-launch/open-play only from that PASS report or a future automated launch smoke with `packagedElectronFirstLaunch: "passed"`.
 
+Manual gameplay work-order generation also exists in the Release Index:
+
+```text
+node scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write
+```
+
+It writes `release-readiness/galactic-survey-manual-gameplay-work-order.json` and `docs/galactic-survey-manual-gameplay-work-order.md`. The current work order is `OPEN`; it names the missing first-30-minute, first-2-hour, Survey Array, fresh world, save/reload, no-crash, notes, screenshots, client log, save ZIP, artifact-hash, and local verifier tasks for Native, NeoForge, and Standalone.
+
 ## Approval Boundary
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
 - Packaged Launcher first launch passes through a real runtime path or an official Minecraft Launcher open/play handoff.
 - `release-readiness/galactic-survey-first-launch-open-play.json` is PASS, checksum-backed, and captured from real launcher/open-play evidence unless the packaged Electron smoke gains a real automated first-launch path.
+- `release-readiness/galactic-survey-manual-gameplay-work-order.json` is COMPLETE and all three Galactic Survey edition `verify-manual-gameplay-evidence.mjs --require-release-ready` commands pass.
 - Final public pack promotion evidence is approved.
 - At least one Native pack gameplay smoke passes from the published runtime.
 - Public SDK artifacts have main, source, and Javadoc jars.
