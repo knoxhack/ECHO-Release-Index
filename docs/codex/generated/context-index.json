@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T13:26:13-04:00",
+  "generatedAt": "2026-06-13T13:27:29-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,11 +16,14 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "28ec77b315d1",
-        "commitDate": "2026-06-13T13:26:13-04:00",
+        "commit": "745badcab84d",
+        "commitDate": "2026-06-13T13:26:41-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
+          " M scripts/prepare-galactic-survey-first-launch-capture.mjs",
+          " M scripts/test-prepare-galactic-survey-first-launch-capture.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
           "?? release-readiness/openlands-electron-install-smoke.json",
@@ -31,7 +34,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 22892,
+          "bytes": 23176,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -532,6 +535,7 @@
           "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelLightRuntime.java",
           "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelOpenlandsBiomes.java",
           "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelOpenlandsWorldGeneration.java",
+          "?? scripts/capture-audio-hardware-evidence.ps1",
           "?? scripts/capture-clean-install-uninstall-evidence.ps1",
           "?? scripts/capture-manual-wallclock-playtest.ps1",
           "?? scripts/sign-release-artifacts.ps1"
@@ -739,8 +743,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "757855d247f7",
-        "commitDate": "2026-06-13T13:26:04-04:00",
+        "commit": "0286b4995365",
+        "commitDate": "2026-06-13T13:27:29-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -795,7 +799,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 3170,
-          "summary": "package echo-command-center 0.1.1; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:scanner-smoke"
+          "summary": "package echo-command-center 0.1.2; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:scanner-smoke"
         }
       ],
       "warnings": []
