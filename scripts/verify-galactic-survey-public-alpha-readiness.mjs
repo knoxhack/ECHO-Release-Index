@@ -618,9 +618,15 @@ const phases = []
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronLogExport'), 'packaged Electron log export passed', 'packaged Electron log export must pass')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronMinecraftLauncherHandoffPreparation === 'passed_isolated_prepare_only', 'packaged Electron prepared Minecraft Launcher handoff metadata in isolated mode', 'packaged Electron must prepare Minecraft Launcher handoff metadata in isolated mode')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronFirstLaunch === 'blocked_legacy_native_launch_removed', 'packaged Electron first launch limitation is explicit', 'packaged Electron first launch limitation must be explicit until a real Native launch path passes')
-  requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronRollbackClickThrough === 'not_available_no_visible_ui_command', 'packaged Electron rollback limitation is explicit', 'packaged Electron rollback limitation must be explicit until the UI exposes rollback')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronRollbackClickThrough'), 'packaged Electron rollback click-through passed', 'packaged Electron rollback click-through must pass')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.selectedPack?.packId === 'galactic-survey-native-edition', 'packaged Electron selected Galactic Survey Native Edition', 'packaged Electron smoke must select Galactic Survey Native Edition')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.install?.verifiedModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'packaged Electron install verified the Galactic Survey addon hash', 'packaged Electron install must verify the Galactic Survey addon hash')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.rollback?.ok === true, 'packaged Electron rollback restore report passed', 'packaged Electron rollback restore report must pass')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.rollback?.restored?.includes('.echo/installed-manifest.json'), 'packaged Electron rollback restored the previous installed manifest', 'packaged Electron rollback must restore the previous installed manifest')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.rollback?.restored?.includes('addons/echogalacticsurveyprotocol-0.1.0.echo-addon'), 'packaged Electron rollback restored the previous Galactic Survey addon', 'packaged Electron rollback must restore the previous Galactic Survey addon')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.rollback?.restoredObsoleteFile?.relativePath === 'addons/galactic-survey-obsolete-packaged-ui-smoke.echo-addon', 'packaged Electron rollback restored the obsolete previous-version file fixture', 'packaged Electron rollback must restore the obsolete previous-version file fixture')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.rollback?.verifiedPreviousModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'packaged Electron rollback verified the previous Galactic Survey addon hash', 'packaged Electron rollback must verify the previous Galactic Survey addon hash')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.reupdateAfterRollback?.verifiedModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'packaged Electron re-updated to the current Galactic Survey addon after rollback', 'packaged Electron must re-update to the current Galactic Survey addon after rollback')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.repair?.repaired?.includes('addons/echogalacticsurveyprotocol-0.1.0.echo-addon'), 'packaged Electron repair restored the Galactic Survey addon', 'packaged Electron repair must restore the Galactic Survey addon')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.diagnostics?.summary?.missing === 0, 'packaged Electron diagnostics found no missing files', 'packaged Electron diagnostics must find no missing files')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.diagnostics?.summary?.corrupt === 0, 'packaged Electron diagnostics found no corrupt files', 'packaged Electron diagnostics must find no corrupt files')
@@ -925,6 +931,7 @@ const report = {
           selectedPack: launcherElectronUiSmoke.clickThrough?.selectedPack,
           install: launcherElectronUiSmoke.clickThrough?.install,
           update: launcherElectronUiSmoke.clickThrough?.update,
+          reupdateAfterRollback: launcherElectronUiSmoke.clickThrough?.reupdateAfterRollback,
           repair: launcherElectronUiSmoke.clickThrough?.repair,
           diagnostics: launcherElectronUiSmoke.clickThrough?.diagnostics,
           logs: launcherElectronUiSmoke.clickThrough?.logs,
@@ -986,7 +993,7 @@ const report = {
   notes: [
     'This audit composes source contracts, Release Index routing, and edition evidence validators.',
     'Galactic Survey catalog install is checksum-backed, but release-ready promotion remains blocked until real gameplay evidence passes.',
-    'Packaged Electron rollback remains covered by Launcher lifecycle smoke until a visible rollback command exists in the UI.'
+    'Packaged Electron rollback now has visible Restore Last Known Good click-through evidence; real first launch and gameplay evidence remain separate gates.'
   ]
 }
 

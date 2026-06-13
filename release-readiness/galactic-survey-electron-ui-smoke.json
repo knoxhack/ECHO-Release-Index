@@ -1,22 +1,22 @@
 {
   "schemaVersion": "echo.galactic_survey.electron-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T14:00:53.537Z",
+  "generatedAt": "2026-06-13T14:33:20.453Z",
   "scope": "packaged-electron-ui-and-lifecycle-smoke",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke",
   "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data",
   "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\player-content",
   "isolatedMinecraftRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\isolated-minecraft-root",
-  "debugPort": 56907,
-  "catalogPort": 56908,
+  "debugPort": 59329,
+  "catalogPort": 59330,
   "platform": {
     "os": "win32",
     "release": "10.0.19045",
     "arch": "x64"
   },
   "catalog": {
-    "channelUrl": "http://127.0.0.1:56908/channel.json",
+    "channelUrl": "http://127.0.0.1:59330/channel.json",
     "servedPack": "galactic-survey-native-edition",
     "releaseVersion": "0.1.0",
     "manifestName": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
@@ -46,7 +46,7 @@
     ],
     "releaseIndexAccepted": 1,
     "releaseIndexWarnings": [],
-    "launcherUpdateStatus": "idle",
+    "launcherUpdateStatus": "checking",
     "userData": null
   },
   "ui": {
@@ -190,7 +190,7 @@
         "clicked": true,
         "text": "Install Galactic Survey Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-00-39-778Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-33-02-119Z.json",
       "installed": 23,
       "updated": 0,
       "verified": 0,
@@ -210,11 +210,57 @@
         "clicked": true,
         "text": "Install Galactic Survey Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-00-48-837Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-33-10-791Z.json",
       "installed": 0,
-      "updated": 0,
-      "verified": 23,
-      "downloaded": 0,
+      "updated": 1,
+      "verified": 22,
+      "downloaded": 1,
+      "verifiedModule": {
+        "relativePath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\addons\\echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "sha256": "639de979d987ad16a3be786aa1b00674c385d2049f318c08b5455ca68ef0f519",
+        "expectedSha256": "639de979d987ad16a3be786aa1b00674c385d2049f318c08b5455ca68ef0f519"
+      }
+    },
+    "rollback": {
+      "ok": true,
+      "click": {
+        "clicked": true,
+        "text": "Restore Last Known Good"
+      },
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-restore-2026-06-13T14-33-15-259Z.json",
+      "rollbackPlanPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-install-2026-06-13T14-33-10-791Z.json",
+      "previousVersion": "0.1.0-previous-packaged-ui-smoke",
+      "restored": [
+        ".echo/installed-manifest.json",
+        "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "addons/galactic-survey-obsolete-packaged-ui-smoke.echo-addon"
+      ],
+      "removed": [],
+      "skipped": [],
+      "warnings": [],
+      "verifiedPreviousModule": {
+        "relativePath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\addons\\echogalacticsurveyprotocol-0.1.0.echo-addon",
+        "sha256": "0204030afb4d443040c0bd641be6c1f5d96e428b9464295c2f943d403e69be9d",
+        "expectedSha256": "0204030afb4d443040c0bd641be6c1f5d96e428b9464295c2f943d403e69be9d"
+      },
+      "restoredObsoleteFile": {
+        "relativePath": "addons/galactic-survey-obsolete-packaged-ui-smoke.echo-addon",
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\addons\\galactic-survey-obsolete-packaged-ui-smoke.echo-addon",
+        "sha256": "c362bc6fa318fa28b71f20c15157a5de156362a7e8bacf7c1df78162fef2c570",
+        "expectedSha256": "c362bc6fa318fa28b71f20c15157a5de156362a7e8bacf7c1df78162fef2c570"
+      },
+      "restoredManifestVersion": "0.1.0-previous-packaged-ui-smoke"
+    },
+    "reupdateAfterRollback": {
+      "ok": true,
+      "operation": "update",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-33-15-553Z.json",
+      "installed": 0,
+      "updated": 1,
+      "verified": 22,
+      "downloaded": 1,
       "verifiedModule": {
         "relativePath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\addons\\echogalacticsurveyprotocol-0.1.0.echo-addon",
@@ -228,13 +274,13 @@
         "clicked": true,
         "text": "Repair Now"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T14-00-50-068Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T14-33-16-644Z.json",
       "repaired": [
         "addons/echogalacticsurveyprotocol-0.1.0.echo-addon"
       ],
       "skipped": [],
       "warnings": [],
-      "corruptSha256": "d97fe7f500e7c7177c675261182cea63a873bd79849a41873a34106215caabe6",
+      "corruptSha256": "bd0045e030bd0a19b63a966be543f82ee932384eeda57a6c859bc43048d15c52",
       "verifiedModule": {
         "relativePath": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\addons\\echogalacticsurveyprotocol-0.1.0.echo-addon",
@@ -244,7 +290,7 @@
     },
     "diagnostics": {
       "ok": true,
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\diagnostic-2026-06-13T14-00-52-586Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\diagnostic-2026-06-13T14-33-19-124Z.json",
       "summary": {
         "missing": 0,
         "corrupt": 0,
@@ -266,24 +312,27 @@
     },
     "logs": {
       "ok": true,
-      "zipPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\echo-logs-2026-06-13T14-00-52-982Z.zip",
-      "size": 18076,
-      "generatedAt": "2026-06-13T14:00:52.987Z",
+      "zipPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\echo-logs-2026-06-13T14-33-19-774Z.zip",
+      "size": 23982,
+      "generatedAt": "2026-06-13T14:33:19.782Z",
       "sourceFiles": [
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\diagnostic-2026-06-13T14-00-52-586Z.json",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T14-00-50-068Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\diagnostic-2026-06-13T14-33-19-124Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T14-33-16-644Z.json",
         "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\latest.log",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-repair-2026-06-13T14-00-50-068Z.json",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-00-48-837Z.json",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-install-2026-06-13T14-00-48-837Z.json",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-00-39-778Z.json",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-install-2026-06-13T14-00-39-778Z.json",
-        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\diagnostic-2026-06-13T14-00-52-970Z.json"
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-repair-2026-06-13T14-33-16-644Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-33-15-553Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-install-2026-06-13T14-33-15-553Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-restore-2026-06-13T14-33-15-259Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-33-10-791Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-install-2026-06-13T14-33-10-791Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T14-33-02-119Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\rollback-install-2026-06-13T14-33-02-119Z.json",
+        "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\diagnostic-2026-06-13T14-33-19-759Z.json"
       ],
       "zip": {
-        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\echo-logs-2026-06-13T14-00-52-982Z.zip",
-        "size": 18076,
-        "sha256": "efe187a7a0a180b876f5606d038855db07bd6d044ffd4f049a6f7c9d541865b1"
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\galactic-survey-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\echo-logs-2026-06-13T14-33-19-774Z.zip",
+        "size": 23982,
+        "sha256": "0e9f78b5bbf11776bcc64ca5de5266bbbde97a1288f448ebccb8629ee72648e1"
       }
     },
     "firstLaunch": {
@@ -309,7 +358,7 @@
       "start": {
         "active": false,
         "profileId": "galactic-survey-native-edition",
-        "exitedAt": "2026-06-13T14:00:53.419Z",
+        "exitedAt": "2026-06-13T14:33:20.296Z",
         "exitCode": null,
         "logPath": "",
         "status": "preflight_failed",
@@ -320,7 +369,7 @@
     "minecraftLauncherHandoff": {
       "state": "prepared_profile_in_isolated_minecraft_root",
       "ok": true,
-      "operationId": "handoff-1781359253421-1",
+      "operationId": "handoff-1781361200299-1",
       "runtimeMode": "native-loader-minecraft",
       "runtimeLabel": "Native Loader + Minecraft",
       "phases": [
@@ -328,25 +377,25 @@
           "id": "check",
           "label": "Check installed Galactic Survey Native Edition files",
           "status": "running",
-          "timestamp": "2026-06-13T14:00:53.439Z"
+          "timestamp": "2026-06-13T14:33:20.320Z"
         },
         {
           "id": "check",
           "label": "Check installed Galactic Survey Native Edition files",
           "status": "completed",
-          "timestamp": "2026-06-13T14:00:53.456Z"
+          "timestamp": "2026-06-13T14:33:20.342Z"
         },
         {
           "id": "handoff",
           "label": "Prepare Native Loader + Minecraft profile",
           "status": "running",
-          "timestamp": "2026-06-13T14:00:53.471Z"
+          "timestamp": "2026-06-13T14:33:20.359Z"
         },
         {
           "id": "handoff",
           "label": "Prepare Native Loader + Minecraft profile",
           "status": "completed",
-          "timestamp": "2026-06-13T14:00:53.533Z"
+          "timestamp": "2026-06-13T14:33:20.437Z"
         }
       ],
       "verification": {
@@ -393,9 +442,6 @@
         "inheritsFrom": "26.1.2"
       },
       "limitation": "Prepare-only evidence proves packaged launcher metadata handoff in an isolated Minecraft root. It is not gameplay or official Minecraft Launcher open/play evidence."
-    },
-    "rollback": {
-      "state": "covered_by_node_lifecycle_smoke_no_visible_packaged_ui_command"
     }
   },
   "gates": {
@@ -411,18 +457,18 @@
     "packagedElectronLogExport": "passed",
     "packagedElectronMinecraftLauncherHandoffPreparation": "passed_isolated_prepare_only",
     "packagedElectronFirstLaunch": "blocked_legacy_native_launch_removed",
-    "packagedElectronRollbackClickThrough": "not_available_no_visible_ui_command",
+    "packagedElectronRollbackClickThrough": "passed",
     "realVersionToVersionUpdate": "covered_by_release-readiness/galactic-survey-launcher-lifecycle-smoke.json"
   },
   "process": {
-    "pid": 21080,
+    "pid": 8116,
     "stdout": [
       "Checking for update",
-      "Generated new staging user ID: 92cc7cce-aa21-579d-99bc-499c2e6ac933",
+      "Generated new staging user ID: ae55b4fb-aece-597e-823d-16134fd5a159",
       "Update for version 1.1.2 is not available (latest version: 1.1.2, downgrade is disallowed)."
     ],
     "stderr": [
-      "DevTools listening on ws://127.0.0.1:56907/devtools/browser/932b17c0-a960-4d87-b91e-0805e29a6ad4"
+      "DevTools listening on ws://127.0.0.1:59329/devtools/browser/5f322ccc-72a9-4a7b-bb09-f756ce5ca9b5"
     ]
   }
 }
