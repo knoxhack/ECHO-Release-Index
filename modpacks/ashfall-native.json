@@ -37,7 +37,7 @@
     {
       "id": "echo-native-platform",
       "kind": "runtime",
-      "version": ">=1.0.0"
+      "version": ">=1.0.0-RC1"
     }
   ],
   "compatibility": [
@@ -45,6 +45,6 @@
   ],
   "trust": "source-linked",
   "validation": "warning",
-  "validationReason": "Published Ashfall Native assets are checksum-backed, but install approval is blocked until Phase 7-10 release-readiness evidence passes.",
+  "validationReason": "Published Ashfall Native assets are checksum-backed, but install approval is blocked until the Native Platform RC1 artifact and Phase 7-10 release-readiness evidence pass.",
   "notes": "Do not promote back to approved until node scripts/verify-ashfall-release-readiness.mjs --require-release-ready passes against real public-beta, gameplay, screenshot, draft-download, and RC smoke evidence."
 }

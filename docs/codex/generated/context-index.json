@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-12T20:25:24-04:00",
+  "generatedAt": "2026-06-13T03:28:11-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -15,17 +15,23 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "codex/echo-codex-context-system",
-        "commit": "b98bae0e08b8",
-        "commitDate": "2026-06-12T05:56:37-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "branch": "main",
+        "commit": "54dc750f142b",
+        "commitDate": "2026-06-13T03:24:07-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          "M docs/codex/generated/ECHO_PLATFORM_CONTEXT.md",
+          " M modpacks/arcana-division-native.json",
+          " M modpacks/ashfall-native.json",
+          " M packs/ashfall-native-edition.json",
+          " M products/native-platform.json"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 9028,
+          "bytes": 14103,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -39,21 +45,21 @@
         {
           "path": "docs/codex/platform-primer.md",
           "exists": true,
-          "bytes": 1916,
+          "bytes": 1944,
           "heading": "ECHO Platform Primer",
           "excerpt": "ECHO is a multi-repository platform for first-party experiences, modules, runtimes, launcher distribution, creator tooling, and public release metadata."
         },
         {
           "path": "docs/codex/repo-routing.md",
           "exists": true,
-          "bytes": 1969,
+          "bytes": 1999,
           "heading": "ECHO Repo Routing",
           "excerpt": "Use this guide to choose the first repository to inspect for a task. If the task crosses ownership boundaries, start in `ECHO-Release-Index`, then inspect the owning source repos named by the catalog entry or context packet."
         },
         {
           "path": "docs/codex/maintenance.md",
           "exists": true,
-          "bytes": 1168,
+          "bytes": 1201,
           "heading": "ECHO Codex Context Maintenance",
           "excerpt": "The context system has three layers:"
         }
@@ -62,7 +68,7 @@
         {
           "path": "AGENTS.md",
           "exists": true,
-          "bytes": 693,
+          "bytes": 712,
           "heading": "ECHO Release Index Agent Notes",
           "excerpt": "This repository is the canonical cross-repo orientation point for ECHO platform work."
         }
@@ -71,14 +77,14 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 29226,
+          "bytes": 28086,
           "summary": "release manifest v0.1.0-native-public-alpha; repositories: 12"
         },
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 6426,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-07T23:03:14.3229246Z"
+          "bytes": 11233,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-13T06:41:03.688Z"
         },
         {
           "path": "trust/tiers.json",
@@ -99,10 +105,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1b092a0c9372",
-        "commitDate": "2026-06-12T20:25:24-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "233d00718090",
+        "commitDate": "2026-06-12T20:57:12-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          "M docs/NATIVE_COMPATIBILITY_MATRIX.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -181,7 +189,50 @@
         "commitDate": "2026-06-09T19:22:42-04:00",
         "dirty": true,
         "dirtyFiles": [
-          "?? metadata/templates/openlands_official/"
+          "M docs/NATIVE_API_REFERENCE.md",
+          " M docs/NATIVE_EXAMPLE_ADDON_WALKTHROUGH.md",
+          " M docs/NATIVE_MOD_AUTHOR_GUIDE.md",
+          " M docs/NATIVE_PORTING_GUIDE.md",
+          " M docs/NATIVE_SDK_ARTIFACTS.md",
+          " M docs/NATIVE_TROUBLESHOOTING.md",
+          " M templates/README.md",
+          " M templates/config-example/ConfigExampleAddon.java",
+          " M templates/config-example/build.gradle",
+          " M templates/echo-native-addon/template.json",
+          " M templates/echo-native-config-example/template.json",
+          " M templates/echo-native-event-example/template.json",
+          " M templates/echo-native-module/template.json",
+          " M templates/echo-native-packet-example/template.json",
+          " M templates/echo-native-registry-example/template.json",
+          " M templates/echo-native-screen-hud-example/template.json",
+          " M templates/echo-native-testkit-example/template.json",
+          " M templates/echo-native-worldgen-example/template.json",
+          " M templates/event-example/EventExampleAddon.java",
+          " M templates/event-example/build.gradle",
+          " M templates/native-module-template/NativeModule.java",
+          " M templates/native-module-template/README.md",
+          " M templates/native-module-template/build.gradle",
+          " M templates/native-module-template/template.json",
+          " M templates/new-addon-template/MyAddon.java",
+          " M templates/new-addon-template/README.md",
+          " M templates/new-addon-template/build.gradle",
+          " M templates/new-addon-template/template.json",
+          " M templates/packet-example/PacketExampleAddon.java",
+          " M templates/packet-example/build.gradle",
+          " M templates/registry-example/RegistryExampleAddon.java",
+          " M templates/registry-example/build.gradle",
+          " M templates/screen-hud-example/ScreenHudExampleAddon.java",
+          " M templates/screen-hud-example/build.gradle",
+          " M templates/testkit-example/TestkitExampleAddon.java",
+          " M templates/testkit-example/build.gradle",
+          " M templates/worldgen-example/WorldgenExampleAddon.java",
+          " M templates/worldgen-example/build.gradle",
+          " M tools/validate_echo_sdk_templates.py",
+          "?? build/",
+          "?? metadata/templates/openlands_official/",
+          "?? reports/",
+          "?? templates/_shared/native-addon-module/",
+          "?? tools/__pycache__/"
         ]
       },
       "canonicalDocs": [
@@ -209,7 +260,7 @@
         {
           "path": "templates/README.md",
           "exists": true,
-          "bytes": 1704,
+          "bytes": 1711,
           "heading": "ECHO Native Templates and Examples",
           "excerpt": "| Template | Location | Description |"
         }
@@ -236,10 +287,32 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0ce9fd26b97a",
-        "commitDate": "2026-06-12T06:03:17-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "bd92f7621c13",
+        "commitDate": "2026-06-13T03:26:19-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          "M electron/main.cjs",
+          " M electron/release-index-resolver.mjs",
+          " M src/app/EchoLauncher.tsx",
+          " M src/components/dashboard/HomePage.tsx",
+          " M src/components/dashboard/ModpacksPage.tsx",
+          " M src/components/downloads/DownloadsPage.tsx",
+          " M src/components/runtime/StandaloneRuntimePage.tsx",
+          " M src/components/server/ServerPackPage.tsx",
+          " M src/components/settings/SettingsPage.tsx",
+          " M src/components/shell/TopBar.tsx",
+          " M src/components/tools/ToolsPage.tsx",
+          " M src/services/nativeBridge.ts",
+          " M src/stores/communityChatStore.ts",
+          " M src/stores/readinessStore.test.ts",
+          " M src/stores/readinessStore.ts",
+          " M src/utils/ashfallHomeActions.test.ts",
+          " M src/utils/ashfallHomeActions.ts",
+          " M src/utils/minecraftLauncherHandoff.test.ts",
+          " M src/utils/minecraftLauncherHandoff.ts",
+          " M src/utils/releaseValidation.test.ts",
+          " M src/utils/releaseValidation.ts"
+        ]
       },
       "canonicalDocs": [
         {
@@ -262,8 +335,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 5529,
-          "summary": "package echo-launcher 1.0.4; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 5721,
+          "summary": "package echo-launcher 1.0.6; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -285,11 +358,15 @@
           "M .gitignore",
           " M README.md",
           " M build.gradle",
+          " M docs/echo/native/KNOWN_LIMITATIONS.md",
           " M echo-native-cli/src/qa/java/dev/echo/nativeplatform/cli/EchoNativeQaCli.java",
           " M echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoNativeActivationSurfaceRegistrar.java",
           " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeDescriptorScanner.java",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeModuleLoadTruthGate.java",
           " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLifecycleEventHost.java",
           " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeCoreModuleLoadStateSmokeMain.java",
+          "?? docs/echo/native/RELEASE_CANDIDATE_CHECKLIST.md",
+          "?? echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeMutationTruthGateMain.java",
           "?? fixtures/ashfall/",
           "?? scripts/generate-ashfall-gameplay-qa-evidence.mjs",
           "?? scripts/generate-ashfall-native-code-gate.mjs",
@@ -305,7 +382,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5833,
+          "bytes": 5932,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
@@ -503,8 +580,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4abb07329abb",
-        "commitDate": "2026-06-11T18:05:57-04:00",
+        "commit": "f59faeb52904",
+        "commitDate": "2026-06-12T21:17:18-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -701,27 +778,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1ff2656df47f",
-        "commitDate": "2026-06-08T19:37:28-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M README.md",
-          " M docs/official_packs/ashfall/KNOWN_ISSUES.md",
-          " M docs/official_packs/ashfall/README.md",
-          " M metadata/bundles/ashfall_official.json",
-          " M metadata/official_packs/ashfall.json",
-          " M metadata/official_packs/ashfall/profile.json",
-          "?? docs/RELEASE_READINESS_10_PHASE_PLAN.md",
-          "?? docs/SUPPORT.md",
-          "?? docs/official_packs/ashfall/CHANGELOG_1.7.6.md",
-          "?? docs/official_packs/ashfall/SCREENSHOT_REQUIREMENTS.md"
-        ]
+        "commit": "b5703b22eaef",
+        "commitDate": "2026-06-12T20:57:12-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3097,
+          "bytes": 3514,
           "heading": "ECHO Ashfall Native Edition",
           "excerpt": "Ashfall pack/runtime distribution for the ECHO native platform. It consumes `.echo-addon` module artifacts."
         },
@@ -775,18 +841,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "70ac89fbda75",
-        "commitDate": "2026-06-08T19:37:30-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M release-manifest.template.json"
-        ]
+        "commit": "1c07fc41c37a",
+        "commitDate": "2026-06-12T21:11:05-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2211,
+          "bytes": 2912,
           "heading": "ECHO Ashfall NeoForge Edition",
           "excerpt": "Minecraft/NeoForge Ashfall pack distribution. It consumes `-neoforge.jar` module artifacts."
         },
@@ -807,7 +871,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 536,
+          "bytes": 993,
           "heading": "Ashfall NeoForge Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand."
         }
@@ -826,18 +890,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e4fdc1df8fab",
-        "commitDate": "2026-06-08T19:37:32-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          "M release-manifest.template.json"
-        ]
+        "commit": "a8cd381892ab",
+        "commitDate": "2026-06-12T21:11:12-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2223,
+          "bytes": 2939,
           "heading": "ECHO Ashfall Standalone Edition",
           "excerpt": "Standalone Ashfall runtime distribution. It consumes `-standalone.jar` module artifacts."
         },
@@ -858,7 +920,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 542,
+          "bytes": 1001,
           "heading": "Ashfall Standalone Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand."
         }
@@ -877,8 +939,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "82b9859f93e9",
-        "commitDate": "2026-06-12T20:24:53-04:00",
+        "commit": "1e1aaf03c54a",
+        "commitDate": "2026-06-13T03:20:32-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -886,7 +948,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 876,
+          "bytes": 1650,
           "heading": "ECHO Openlands Native Edition",
           "excerpt": "Openlands Native Edition is the ECHO Native Platform packaging lane for the Openlands official pack."
         },
@@ -933,8 +995,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "6e8e2f0fa5e6",
-        "commitDate": "2026-06-12T20:24:58-04:00",
+        "commit": "bd402c96502a",
+        "commitDate": "2026-06-13T03:20:32-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -942,7 +1004,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 812,
+          "bytes": 1596,
           "heading": "ECHO Openlands NeoForge Edition",
           "excerpt": "Openlands NeoForge Edition is the Minecraft/NeoForge adapter packaging lane for Openlands."
         },
@@ -989,8 +1051,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "03616597cb5b",
-        "commitDate": "2026-06-12T20:25:03-04:00",
+        "commit": "2149bc0cb9fa",
+        "commitDate": "2026-06-13T03:20:32-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -998,7 +1060,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 607,
+          "bytes": 1408,
           "heading": "ECHO Openlands Standalone Edition",
           "excerpt": "Openlands Standalone Edition is the packaging lane for the ECHO Standalone Runtime."
         },
@@ -1045,8 +1107,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d08c9d5ff90a",
-        "commitDate": "2026-06-12T05:02:08-04:00",
+        "commit": "570bd1671e55",
+        "commitDate": "2026-06-13T03:28:11-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1054,7 +1116,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 640,
+          "bytes": 1064,
           "heading": "Arcana Division Native Edition",
           "excerpt": "Launcher-installable beta edition for ECHO: Arcana Division."
         }
@@ -1080,8 +1142,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d7708e033b02",
-        "commitDate": "2026-06-12T05:02:08-04:00",
+        "commit": "fc05f105e934",
+        "commitDate": "2026-06-13T03:28:10-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1089,7 +1151,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 652,
+          "bytes": 1084,
           "heading": "Arcana Division NeoForge Edition",
           "excerpt": "Launcher-installable beta edition for ECHO: Arcana Division."
         }
@@ -1115,8 +1177,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a5371dc5708e",
-        "commitDate": "2026-06-12T05:02:08-04:00",
+        "commit": "690ff4d4d19f",
+        "commitDate": "2026-06-13T03:28:11-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1124,7 +1186,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 664,
+          "bytes": 1104,
           "heading": "Arcana Division Standalone Edition",
           "excerpt": "Launcher-installable beta edition for ECHO: Arcana Division."
         }
@@ -1330,6 +1392,10 @@
       "warnings": []
     }
   ],
-  "discoveredRepos": [],
-  "warnings": []
+  "discoveredRepos": [
+    "ECHO-COMMAND-CENTER"
+  ],
+  "warnings": [
+    "Unconfigured local ECHO repository ECHO-COMMAND-CENTER"
+  ]
 }
