@@ -57,11 +57,34 @@ Launcher lifecycle evidence now exists:
 - Not covered: real packaged first launch, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback is now covered by the visible Restore Last Known Good path and recorded in `release-readiness/galactic-survey-electron-ui-smoke.json`.
 - Gameplay capture intake now exists in all three Galactic Survey edition repos through `scripts/import-manual-gameplay-capture.mjs`; it imports real notes, PNG screenshots, logs, save ZIPs, and the published pack artifact hash into `manual-evidence.json`. This tooling does not satisfy the gameplay gate by itself.
 
+First-launch/open-play capture intake now exists in the Release Index:
+
+```text
+node scripts/import-galactic-survey-first-launch-evidence.mjs --capture-root <path> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso>
+```
+
+The capture root must contain:
+
+- `launcher-handoff-notes.md`
+- `official-launcher-open-notes.md`
+- `first-open-play-notes.md`
+- `no-crash-review.md`
+- `screenshots/echo-managed-profile.png`
+- `screenshots/minecraft-launcher-open.png`
+- `screenshots/pack-profile-selected.png`
+- `screenshots/world-or-title-loaded.png`
+- `logs/echo-launcher-latest.log`
+- `logs/minecraft-client.log`
+- `support-bundles/echo-launcher-support.zip`
+
+The importer rejects missing files, empty files, placeholder/TODO text, non-PNG screenshots, non-ZIP support bundles, and pack artifacts whose size or SHA-256 do not match `release-readiness/galactic-survey-draft-download.json`. A passing import writes `release-readiness/galactic-survey-first-launch-open-play.json`; `scripts/verify-galactic-survey-public-alpha-readiness.mjs` accepts first-launch/open-play only from that PASS report or a future automated launch smoke with `packagedElectronFirstLaunch: "passed"`.
+
 ## Approval Boundary
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
 - Packaged Launcher first launch passes through a real runtime path or an official Minecraft Launcher open/play handoff.
+- `release-readiness/galactic-survey-first-launch-open-play.json` is PASS, checksum-backed, and captured from real launcher/open-play evidence unless the packaged Electron smoke gains a real automated first-launch path.
 - Final public pack promotion evidence is approved.
 - At least one Native pack gameplay smoke passes from the published runtime.
 - Public SDK artifacts have main, source, and Javadoc jars.

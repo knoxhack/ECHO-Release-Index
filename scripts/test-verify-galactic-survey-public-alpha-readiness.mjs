@@ -36,6 +36,7 @@ assert.equal(report.evidenceSources.reports.editionReleasePublication, 'release-
 assert.equal(report.evidenceSources.reports.editionDraftDownload, 'release-readiness/galactic-survey-draft-download.json')
 assert.equal(report.evidenceSources.reports.launcherLifecycleSmoke, 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json')
 assert.equal(report.evidenceSources.reports.launcherElectronUiSmoke, 'release-readiness/galactic-survey-electron-ui-smoke.json')
+assert.equal(report.evidenceSources.reports.firstLaunchOpenPlayEvidence, 'release-readiness/galactic-survey-first-launch-open-play.json')
 assert.equal(report.evidenceSources.reports.runtimePlaytest, '../ECHO-Modules/addons/echogalacticsurveyprotocol/build/reports/galactic-survey/runtime-playtest.json')
 assert.equal(report.editionPackEvidence.assets.schemaVersion, 'echo.galactic_survey.edition-pack-assets.v1')
 assert.equal(report.editionPackEvidence.assets.gates.editionPackAssetsBuilt, 'passed')
@@ -160,6 +161,7 @@ assert.equal(report.launcherElectronUiEvidence.clickThrough.minecraftLauncherHan
 assert.equal(report.launcherElectronUiEvidence.clickThrough.minecraftLauncherHandoff.writtenProfile.profileId, 'galactic-survey-native-edition')
 assert.equal(report.launcherElectronUiEvidence.clickThrough.minecraftLauncherHandoff.writtenProfile.runtimeMode, 'native-loader-minecraft')
 assert.equal(report.launcherElectronUiEvidence.clickThrough.minecraftLauncherHandoff.writtenVersionMetadata.loader, 'native-loader')
+assert.equal(report.firstLaunchOpenPlayEvidence, null)
 assert.equal(report.commandReports.runtimePlaytest.status, 'passed')
 assert.equal(report.runtimePlaytestEvidence.schemaVersion, 'echo.galactic_survey.runtime-playtest.v1')
 assert.equal(report.runtimePlaytestEvidence.ok, true)
@@ -174,6 +176,7 @@ assert.ok(!report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('
 assert.ok(!report.blockers.some((blocker) => blocker.includes('Launcher lifecycle smoke must verify all 23 module files')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('release-ready gameplay evidence is still missing')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('packaged Electron first launch/open-play proof must pass')))
+assert.ok(report.blockers.some((blocker) => blocker.includes('first-launch/open-play evidence report must be imported from a real capture')))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('checksum-backed edition GitHub Release artifacts must be published and downloaded back')))
 assert.equal(

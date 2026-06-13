@@ -10,14 +10,17 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-edition-pack-assets.json',
   'release-readiness/galactic-survey-edition-pack-smoke.json',
   'release-readiness/galactic-survey-electron-ui-smoke.json',
+  'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
   'scripts/build-galactic-survey-edition-assets.mjs',
   'scripts/download-galactic-survey-draft-releases.mjs',
+  'scripts/import-galactic-survey-first-launch-evidence.mjs',
   'scripts/publish-galactic-survey-draft-releases.mjs',
   'scripts/sync-launcher-channel-catalog.mjs',
   'scripts/smoke-galactic-survey-edition-pack-assets.mjs',
+  'scripts/test-import-galactic-survey-first-launch-evidence.mjs',
   'scripts/test-publish-galactic-survey-draft-releases.mjs',
   'scripts/test-verify-galactic-survey-public-alpha-readiness.mjs',
   'scripts/verify-galactic-survey-public-alpha-readiness.mjs'
@@ -28,6 +31,7 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'release-readiness/galactic-survey-edition-pack-assets.json',
   'release-readiness/galactic-survey-edition-pack-smoke.json',
   'release-readiness/galactic-survey-electron-ui-smoke.json',
+  'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
   'release-readiness/galactic-survey-module-release-ingest.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json'
@@ -291,6 +295,27 @@ function reportGatePassed(report, gate) {
   return report?.gates?.[gate] === 'passed'
 }
 
+const requiredFirstLaunchOpenPlayClaims = [
+  'echoManagedProfileVisible',
+  'officialMinecraftLauncherOpened',
+  'packProfileSelected',
+  'firstPlayOpenedWorldOrTitle',
+  'noCrashEvidence',
+  'supportBundleCaptured'
+]
+
+function firstLaunchOpenPlayEvidencePassed(report) {
+  if (report?.schemaVersion !== 'echo.galactic_survey.first-launch-open-play.v1') return false
+  if (report.status !== 'PASS') return false
+  if (report.packId !== 'galactic-survey-native-edition') return false
+  if (report.artifact?.matchesDownloadedRelease !== true) return false
+  if (report.gates?.firstLaunchOpenPlayEvidence !== 'passed') return false
+  if (!requiredFirstLaunchOpenPlayClaims.every((claim) => report.claims?.[claim] === true)) return false
+  if (!Array.isArray(report.capture?.files) || report.capture.files.length < 11) return false
+  if (Number(report.capture?.totalBytes ?? 0) <= 0) return false
+  return true
+}
+
 function setContainsAll(values, requiredValues) {
   const set = new Set(Array.isArray(values) ? values : [])
   return requiredValues.every((value) => set.has(value))
@@ -358,6 +383,7 @@ const editionDraftPublish = readJsonOrNull(path.join(releaseIndexRoot, 'release-
 const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-download.json'))
 const launcherLifecycleSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-launcher-lifecycle-smoke.json'))
 const launcherElectronUiSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-electron-ui-smoke.json'))
+const firstLaunchOpenPlayEvidence = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-first-launch-open-play.json'))
 const moduleReleaseIngest = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-module-release-ingest.json'))
 const galacticModpackCatalog = Object.fromEntries(editions.map((edition) => [
   edition.id,
@@ -390,6 +416,7 @@ const requiredPackagedModules = [
 ]
 const expectedPackagedModuleCount = requiredPackagedModules.length
 const publicPrereleaseDownload = editionDraftDownload?.summary?.publicPrereleasesDownloaded === true
+const importedFirstLaunchOpenPlayPassed = firstLaunchOpenPlayEvidencePassed(firstLaunchOpenPlayEvidence)
 
 const commandReports = {
   moduleContract: runNode(moduleRepo, 'addons/echogalacticsurveyprotocol/scripts/validate-galactic-survey-contract.mjs', ['--module-root', 'addons/echogalacticsurveyprotocol']),
@@ -618,7 +645,28 @@ const phases = []
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronLogExport'), 'packaged Electron log export passed', 'packaged Electron log export must pass')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronMinecraftLauncherHandoffPreparation === 'passed_isolated_prepare_only', 'packaged Electron prepared Minecraft Launcher handoff metadata in isolated mode', 'packaged Electron must prepare Minecraft Launcher handoff metadata in isolated mode')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronFirstLaunch === 'blocked_legacy_native_launch_removed', 'packaged Electron first launch limitation is explicit', 'packaged Electron first launch limitation must be explicit until a real Native launch path passes')
-  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronFirstLaunch'), 'packaged Electron first launch/open-play proof passed', 'packaged Electron first launch/open-play proof must pass through a real Native runtime path or official Minecraft Launcher handoff')
+  const automatedFirstLaunchOpenPlayPassed = reportGatePassed(launcherElectronUiSmoke, 'packagedElectronFirstLaunch')
+  requireCondition(
+    phase,
+    automatedFirstLaunchOpenPlayPassed || importedFirstLaunchOpenPlayPassed,
+    'first launch/open-play proof passed through automation or imported official launcher evidence',
+    'packaged Electron first launch/open-play proof must pass through a real Native runtime path or official Minecraft Launcher handoff'
+  )
+  requireCondition(
+    phase,
+    automatedFirstLaunchOpenPlayPassed || firstLaunchOpenPlayEvidence?.schemaVersion === 'echo.galactic_survey.first-launch-open-play.v1',
+    'first-launch/open-play imported evidence report is present or automated launch passed',
+    'first-launch/open-play evidence report must be imported from a real capture'
+  )
+  if (firstLaunchOpenPlayEvidence) {
+    requireCondition(phase, firstLaunchOpenPlayEvidence.status === 'PASS', 'first-launch/open-play imported report passed', 'first-launch/open-play imported report must pass')
+    requireCondition(phase, firstLaunchOpenPlayEvidence.packId === 'galactic-survey-native-edition', 'first-launch/open-play report targets Galactic Survey Native Edition', 'first-launch/open-play report must target Galactic Survey Native Edition')
+    requireCondition(phase, firstLaunchOpenPlayEvidence.artifact?.matchesDownloadedRelease === true, 'first-launch/open-play artifact matches downloaded GitHub release bytes', 'first-launch/open-play artifact must match downloaded GitHub release bytes')
+    for (const claim of requiredFirstLaunchOpenPlayClaims) {
+      requireCondition(phase, firstLaunchOpenPlayEvidence.claims?.[claim] === true, `first-launch/open-play claim ${claim} is true`, `first-launch/open-play claim ${claim} must be true`)
+    }
+    requireCondition(phase, firstLaunchOpenPlayEvidence.capture?.files?.length >= 11, 'first-launch/open-play report includes required notes, screenshots, logs, and support bundle', 'first-launch/open-play report must include required notes, screenshots, logs, and support bundle')
+  }
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronRollbackClickThrough'), 'packaged Electron rollback click-through passed', 'packaged Electron rollback click-through must pass')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.selectedPack?.packId === 'galactic-survey-native-edition', 'packaged Electron selected Galactic Survey Native Edition', 'packaged Electron smoke must select Galactic Survey Native Edition')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.install?.verifiedModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'packaged Electron install verified the Galactic Survey addon hash', 'packaged Electron install must verify the Galactic Survey addon hash')
@@ -728,6 +776,7 @@ const report = {
       editionDraftDownload: 'release-readiness/galactic-survey-draft-download.json',
       launcherLifecycleSmoke: 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
       launcherElectronUiSmoke: 'release-readiness/galactic-survey-electron-ui-smoke.json',
+      firstLaunchOpenPlayEvidence: 'release-readiness/galactic-survey-first-launch-open-play.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
@@ -943,6 +992,39 @@ const report = {
         gates: launcherElectronUiSmoke.gates
       }
     : null,
+  firstLaunchOpenPlayEvidence: firstLaunchOpenPlayEvidence
+    ? {
+        schemaVersion: firstLaunchOpenPlayEvidence.schemaVersion,
+        status: firstLaunchOpenPlayEvidence.status,
+        generatedAt: firstLaunchOpenPlayEvidence.generatedAt,
+        packId: firstLaunchOpenPlayEvidence.packId,
+        runtimeMode: firstLaunchOpenPlayEvidence.runtimeMode,
+        launcherChannel: firstLaunchOpenPlayEvidence.launcherChannel,
+        claims: firstLaunchOpenPlayEvidence.claims,
+        gates: firstLaunchOpenPlayEvidence.gates,
+        artifact: firstLaunchOpenPlayEvidence.artifact
+          ? {
+              name: firstLaunchOpenPlayEvidence.artifact.name,
+              size: firstLaunchOpenPlayEvidence.artifact.size,
+              sha256: firstLaunchOpenPlayEvidence.artifact.sha256,
+              matchesDownloadedRelease: firstLaunchOpenPlayEvidence.artifact.matchesDownloadedRelease,
+              expectedDownloadedAsset: firstLaunchOpenPlayEvidence.artifact.expectedDownloadedAsset
+            }
+          : null,
+        capture: {
+          fileCount: firstLaunchOpenPlayEvidence.capture?.fileCount,
+          totalBytes: firstLaunchOpenPlayEvidence.capture?.totalBytes,
+          files: firstLaunchOpenPlayEvidence.capture?.files?.map((file) => ({
+            group: file.group,
+            claim: file.claim,
+            relativePath: file.relativePath,
+            size: file.size,
+            sha256: file.sha256
+          })) ?? []
+        },
+        blockers: firstLaunchOpenPlayEvidence.blockers
+      }
+    : null,
   runtimePlaytestEvidence: runtimePlaytest
     ? {
         schemaVersion: runtimePlaytest.schemaVersion,
@@ -994,7 +1076,8 @@ const report = {
   notes: [
     'This audit composes source contracts, Release Index routing, and edition evidence validators.',
     'Galactic Survey catalog install is checksum-backed, but release-ready promotion remains blocked until real gameplay evidence passes.',
-    'Packaged Electron rollback now has visible Restore Last Known Good click-through evidence; real first launch and gameplay evidence remain separate gates.'
+    'Packaged Electron rollback now has visible Restore Last Known Good click-through evidence; real first launch and gameplay evidence remain separate gates.',
+    'Import real first-launch/open-play evidence with scripts/import-galactic-survey-first-launch-evidence.mjs after capturing official launcher open/play notes, screenshots, logs, support bundle, and a downloaded pack artifact hash.'
   ]
 }
 
