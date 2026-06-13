@@ -35,6 +35,7 @@ Public is strongly recommended. A private release index prevents unauthenticated
 Run commands from the repository root.
 
 - `node scripts/docs-audit.mjs`
+- `node scripts/generate-codex-context.mjs --check`
 - `node scripts/validate-index.mjs --strict`
 - `node scripts/verify-artifact-urls.mjs`
 - `node scripts/sync-public-alpha-index.mjs --check`
@@ -88,6 +89,10 @@ For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a Gi
 
 - [README.md](README.md)
 - [docs/ecosystem-artifact-ownership.md](docs/ecosystem-artifact-ownership.md)
+- [docs/codex/README.md](docs/codex/README.md)
+- [docs/codex/platform-primer.md](docs/codex/platform-primer.md)
+- [docs/codex/repo-routing.md](docs/codex/repo-routing.md)
+- [docs/codex/maintenance.md](docs/codex/maintenance.md)
 - [PUBLIC_ALPHA_RELEASE_STATUS.md](PUBLIC_ALPHA_RELEASE_STATUS.md)
 
 ## Related Repos

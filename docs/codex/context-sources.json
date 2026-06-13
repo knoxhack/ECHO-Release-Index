@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "echo.codex.context-sources.v1",
+  "repoRoot": "C:\\Development\\Github",
+  "centralRepoId": "release-index",
+  "repos": [
+    {
+      "id": "release-index",
+      "name": "ECHO-Release-Index",
+      "github": "knoxhack/ECHO-Release-Index",
+      "role": "Canonical catalog, channel, trust, block, release routing, and cross-repo Codex context source.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/ecosystem-artifact-ownership.md",
+        "docs/codex/platform-primer.md",
+        "docs/codex/repo-routing.md",
+        "docs/codex/maintenance.md"
+      ],
+      "agentDocs": [
+        "AGENTS.md"
+      ],
+      "metadata": [
+        "channels/alpha/release-manifest.json",
+        "channels/alpha/launcher-channel.json",
+        "trust/tiers.json"
+      ]
+    },
+    {
+      "id": "modules",
+      "name": "ECHO-Modules",
+      "github": "knoxhack/ECHO-Modules",
+      "role": "First-party module source, module graph, Foundation architecture, platform roadmap, and module release artifacts.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/ECHO_PLATFORM_ROADMAP.md",
+        "docs/echo-foundations-architecture.md",
+        "docs/module-docs-index.md",
+        "docs/module-artifact-contract.md",
+        "docs/ADDON_MATRIX.md",
+        "docs/COMPATIBILITY_MATRIX.md"
+      ],
+      "agentDocs": [
+        "addons/echoscreencore/AGENTS.md"
+      ],
+      "metadata": []
+    },
+    {
+      "id": "sdk",
+      "name": "ECHO-SDK",
+      "github": "knoxhack/ECHO-SDK",
+      "role": "Shared schemas, templates, validation tools, examples, and creator-facing contract docs.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md",
+        "docs/ecosystem-artifact-ownership.md",
+        "templates/README.md"
+      ],
+      "agentDocs": [
+        "AGENTS.md"
+      ],
+      "metadata": []
+    },
+    {
+      "id": "launcher",
+      "name": "ECHO-Launcher",
+      "github": "knoxhack/ECHO-Launcher",
+      "role": "Desktop launcher, install/update/repair/rollback flows, launcher updater metadata, and deep-link handling.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "native-platform",
+      "name": "ECHO-Native-Platform",
+      "github": "knoxhack/ECHO-Native-Platform",
+      "role": "Native runtime, loader, contracts, diagnostics, and PackOS integration assets.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/echo/native/README.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "standalone-runtime",
+      "name": "ECHO-Standalone-Runtime",
+      "github": "knoxhack/ECHO-Standalone-Runtime",
+      "role": "Standalone runtime shell and standalone runtime modules.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "platform-website",
+      "name": "ECHO-Platform-Website",
+      "github": "knoxhack/ECHO-Platform-Website",
+      "role": "Public website, directory pages, download pages, and indexed echo:// install/update UI.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "developer-studio",
+      "name": "ECHO-Developer-Studio",
+      "github": "knoxhack/ECHO-Developer-Studio",
+      "role": "First-party developer tooling desktop app.",
+      "canonicalDocs": [
+        "README.md"
+      ],
+      "agentDocs": [
+        "AGENTS.md"
+      ],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "addons-studio",
+      "name": "ECHO-Addons-Studio",
+      "github": "knoxhack/ECHO-Addons-Studio",
+      "role": "Third-party addon authoring, packaging, SDK validation, and release draft tooling.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md",
+        "docs/release-policy.md"
+      ],
+      "agentDocs": [
+        "AGENTS.md"
+      ],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "studio-mobile",
+      "name": "ECHO-Studio-Mobile",
+      "github": "knoxhack/ECHO-Studio-Mobile",
+      "role": "Mobile Studio app and shared mobile packages.",
+      "canonicalDocs": [
+        "CLAUDE.md"
+      ],
+      "agentDocs": [
+        "AGENTS.md"
+      ],
+      "metadata": [
+        "package.json",
+        "packages/echo-shared/package.json"
+      ]
+    },
+    {
+      "id": "ashfall-native",
+      "name": "ECHO-Ashfall-Native-Edition",
+      "github": "knoxhack/ECHO-Ashfall-Native-Edition",
+      "role": "Ashfall Native Edition pack manifest, assets, install docs, and native release readiness evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md",
+        "docs/NATIVE_INSTALL_GUIDE.md",
+        "docs/NATIVE_COMPATIBILITY_MATRIX.md",
+        "docs/NATIVE_RELEASE_NOTES.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "ashfall-neoforge",
+      "name": "ECHO-Ashfall-NeoForge-Edition",
+      "github": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
+      "role": "Ashfall NeoForge Edition pack manifest, assets, install docs, and update flow.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "ashfall-standalone",
+      "name": "ECHO-Ashfall-Standalone-Edition",
+      "github": "knoxhack/ECHO-Ashfall-Standalone-Edition",
+      "role": "Ashfall Standalone Edition pack manifest, assets, install docs, and experimental standalone lane metadata.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "openlands-native",
+      "name": "ECHO-Openlands-Native-Edition",
+      "github": "knoxhack/ECHO-Openlands-Native-Edition",
+      "role": "Openlands Native Edition pack manifest, assets, install docs, and runtime evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/runtime-evidence.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "openlands-neoforge",
+      "name": "ECHO-Openlands-NeoForge-Edition",
+      "github": "knoxhack/ECHO-Openlands-NeoForge-Edition",
+      "role": "Openlands NeoForge Edition pack manifest, assets, install docs, and runtime evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/runtime-evidence.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "openlands-standalone",
+      "name": "ECHO-Openlands-Standalone-Edition",
+      "github": "knoxhack/ECHO-Openlands-Standalone-Edition",
+      "role": "Openlands Standalone Edition pack manifest, assets, install docs, and runtime evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/runtime-evidence.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "arcana-division-native",
+      "name": "ECHO-Arcana-Division-Native-Edition",
+      "github": "knoxhack/ECHO-Arcana-Division-Native-Edition",
+      "role": "Arcana Division Native Edition pack manifest and assets.",
+      "canonicalDocs": [
+        "README.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "arcana-division-neoforge",
+      "name": "ECHO-Arcana-Division-NeoForge-Edition",
+      "github": "knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
+      "role": "Arcana Division NeoForge Edition pack manifest and assets.",
+      "canonicalDocs": [
+        "README.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "arcana-division-standalone",
+      "name": "ECHO-Arcana-Division-Standalone-Edition",
+      "github": "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
+      "role": "Arcana Division Standalone Edition pack manifest and assets.",
+      "canonicalDocs": [
+        "README.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "package.json"
+      ]
+    },
+    {
+      "id": "sky-relay-native",
+      "name": "ECHO-Sky-Relay-Native-Edition",
+      "github": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "role": "Sky Relay Native Edition pack manifest, assets, runtime evidence, and gameplay QA evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/runtime-evidence.md",
+        "docs/gameplay-evidence.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "sky-relay-neoforge",
+      "name": "ECHO-Sky-Relay-NeoForge-Edition",
+      "github": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "role": "Sky Relay NeoForge Edition pack manifest, assets, runtime evidence, and gameplay QA evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/runtime-evidence.md",
+        "docs/gameplay-evidence.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    },
+    {
+      "id": "sky-relay-standalone",
+      "name": "ECHO-Sky-Relay-Standalone-Edition",
+      "github": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "role": "Sky Relay Standalone Edition pack manifest, assets, runtime evidence, and gameplay QA evidence.",
+      "canonicalDocs": [
+        "README.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/runtime-evidence.md",
+        "docs/gameplay-evidence.md",
+        "docs/module-requirements.md"
+      ],
+      "agentDocs": [],
+      "metadata": []
+    }
+  ]
+}
