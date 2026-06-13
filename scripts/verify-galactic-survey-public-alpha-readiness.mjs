@@ -4,6 +4,28 @@ import process from 'node:process'
 import { spawnSync } from 'node:child_process'
 
 const DEFAULT_OUT = 'release-readiness/galactic-survey-public-alpha-readiness.json'
+const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
+  'release-readiness/galactic-survey-draft-download.json',
+  'release-readiness/galactic-survey-draft-publish.json',
+  'release-readiness/galactic-survey-edition-pack-assets.json',
+  'release-readiness/galactic-survey-edition-pack-smoke.json',
+  'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+  'release-readiness/galactic-survey-public-alpha-readiness.json',
+  'scripts/download-galactic-survey-draft-releases.mjs',
+  'scripts/publish-galactic-survey-draft-releases.mjs',
+  'scripts/smoke-galactic-survey-edition-pack-assets.mjs',
+  'scripts/test-publish-galactic-survey-draft-releases.mjs',
+  'scripts/test-verify-galactic-survey-public-alpha-readiness.mjs',
+  'scripts/verify-galactic-survey-public-alpha-readiness.mjs'
+]
+const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
+  'release-readiness/galactic-survey-draft-download.json',
+  'release-readiness/galactic-survey-draft-publish.json',
+  'release-readiness/galactic-survey-edition-pack-assets.json',
+  'release-readiness/galactic-survey-edition-pack-smoke.json',
+  'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+  'release-readiness/galactic-survey-public-alpha-readiness.json'
+])
 const MODULE_RELEVANT_STATUS_PATHS = [
   'addons/echoaddonapi/build.gradle',
   'addons/echoaddonapi/src/main/templates',
@@ -162,6 +184,10 @@ function gitStatusLines(cwd, pathspecs = []) {
   return status ? status.split(/\r?\n/u).filter(Boolean) : []
 }
 
+function statusPath(statusLine) {
+  return statusLine.slice(3).trim().replace(/^"|"$/gu, '').replace(/\\/g, '/')
+}
+
 function gitDiff(cwd, pathspecs = []) {
   const diffArgs = ['diff', '--']
   diffArgs.push(...pathspecs)
@@ -195,6 +221,24 @@ function repositoryRevision(cwd, metadata = {}) {
     statusLines,
     ignoredStatusLines: [],
     blockingStatusLines: statusLines
+  }
+}
+
+function releaseIndexRepositoryRevision(cwd, metadata = {}) {
+  const commit = gitHead(cwd)
+  const statusLines = gitStatusLines(cwd, RELEASE_INDEX_RELEVANT_STATUS_PATHS)
+  const ignoredStatusLines = statusLines.filter((line) => RELEASE_INDEX_GENERATED_STATUS_PATHS.has(statusPath(line)))
+  const blockingStatusLines = statusLines.filter((line) => !RELEASE_INDEX_GENERATED_STATUS_PATHS.has(statusPath(line)))
+  return {
+    ...metadata,
+    workspaceDir: path.basename(cwd),
+    commit,
+    branch: gitOutput(cwd, ['rev-parse', '--abbrev-ref', 'HEAD']),
+    dirty: statusLines.length > 0,
+    cleanForEvidence: blockingStatusLines.length === 0,
+    statusLines,
+    ignoredStatusLines,
+    blockingStatusLines
   }
 }
 
@@ -304,7 +348,7 @@ const commandReports = {
 const runtimePlaytest = readJsonOrNull(runtimePlaytestReportPath)
 
 const sourceRevisions = {
-  releaseIndex: repositoryRevision(releaseIndexRoot, {
+  releaseIndex: releaseIndexRepositoryRevision(releaseIndexRoot, {
     repository: 'knoxhack/ECHO-Release-Index'
   }),
   module: moduleRepositoryRevision(moduleRepo),
