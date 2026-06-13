@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T09:39:20-04:00",
+  "generatedAt": "2026-06-13T09:52:41-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,49 +16,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "33e972343ddc",
-        "commitDate": "2026-06-13T09:05:29-04:00",
+        "commit": "0e0881bc861a",
+        "commitDate": "2026-06-13T09:44:40-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M docs/ecosystem-artifact-ownership.md",
           " M docs/native-platform-rc1-handoff.md",
-          " M modules/echoadaptercore.json",
-          " M modules/echoaddonapi.json",
-          " M modules/echocontentcore.json",
-          " M modules/echocore.json",
-          " M modules/echogalacticcore.json",
-          " M modules/echogalacticsurveyprotocol.json",
-          " M modules/echoholomap.json",
-          " M modules/echoindex.json",
-          " M modules/echolens.json",
-          " M modules/echologisticsnetwork.json",
-          " M modules/echomissioncore.json",
-          " M modules/echonetcore.json",
-          " M modules/echoorbitalremnants.json",
-          " M modules/echoplatformcore.json",
-          " M modules/echopowergrid.json",
-          " M modules/echoprogressioncore.json",
-          " M modules/echorecipecore.json",
-          " M modules/echoruntimeguard.json",
-          " M modules/echoschemacore.json",
-          " M modules/echosoundcore.json",
-          " M modules/echoterminal.json",
-          " M modules/echovalidationcore.json",
-          " M modules/echovehiclecore.json",
-          " M packs/galactic-survey-native-edition.json",
-          " M packs/galactic-survey-neoforge-edition.json",
-          " M packs/galactic-survey-standalone-edition.json",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-draft-download.json",
-          " M release-readiness/galactic-survey-edition-pack-assets.json",
-          " M release-readiness/galactic-survey-edition-pack-smoke.json",
+          " M products/native-platform.json",
           " M release-readiness/galactic-survey-electron-ui-smoke.json",
-          " M release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
-          " M release-readiness/galactic-survey-module-release-ingest.json",
           " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M scripts/sync-public-alpha-index.mjs",
-          " M scripts/test-sync-public-alpha-index.mjs",
           " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
           " M scripts/verify-galactic-survey-public-alpha-readiness.mjs"
         ]
@@ -67,7 +34,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 17663,
+          "bytes": 17697,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -290,8 +257,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3304d8080e81",
-        "commitDate": "2026-06-13T09:03:17-04:00",
+        "commit": "cd78fd00e155",
+        "commitDate": "2026-06-13T09:52:41-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? tmp/"
@@ -301,14 +268,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3492,
+          "bytes": 3541,
           "heading": "ECHO Launcher",
           "excerpt": "Official desktop launcher, updater, repair tool, profile manager, diagnostics center, and release consumer for Ashfall and the ECHO ecosystem."
         },
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 590,
+          "bytes": 827,
           "heading": "Launcher Release Status",
           "excerpt": "ECHO Launcher is the install, update, repair, rollback, and diagnostics surface for ECHO products. It is not itself the ECHO Native Platform release artifact."
         }
@@ -503,6 +470,7 @@
           "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenContract.java",
           "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenResult.java",
           "?? echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoOpenlandsWorldgenRuntime.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientAudioDiagnosticsSnapshot.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFluidBucketUse.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingMonitor.java",
           "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientFramePacingSnapshot.java",
@@ -742,16 +710,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "939b795728fe",
-        "commitDate": "2026-06-13T09:39:20-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M docs/REMAINING_WORK.md",
-          " M src/main/scanner-smoke.ts",
-          " M src/main/scanner.ts",
-          " M src/renderer/App.tsx",
-          " M src/shared/echo.ts"
-        ]
+        "commit": "050ee9af7490",
+        "commitDate": "2026-06-13T09:50:34-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -785,7 +747,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 8068,
+          "bytes": 8181,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }

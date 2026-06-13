@@ -93,14 +93,16 @@
         "launcherRollbackSimulatedUpdate",
         "packagedElectronRendererMounted",
         "packagedElectronCardUiSmoke",
-        "electronInstallUpdateRepairClickThrough"
+        "electronInstallUpdateRepairClickThrough",
+        "packagedElectronDiagnosticExport",
+        "packagedElectronLogExport"
       ],
       "remainingGates": [
-        "firstLaunch",
-        "diagnosticsExport",
+        "realPackagedFirstLaunch",
         "finalPublicPackPromotion",
         "realGameplayEvidence"
-      ]
+      ],
+      "firstLaunchState": "legacy native launch path fails closed after verifying installed files; real Native runtime launch path or Minecraft Launcher Handoff proof is still required"
     },
     "workflow": ".github/workflows/attest-release-assets.yml",
     "workflowRef": "refs/heads/main",

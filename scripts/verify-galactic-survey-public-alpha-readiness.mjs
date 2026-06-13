@@ -614,10 +614,21 @@ const phases = []
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronInstallClickThrough'), 'packaged Electron install click-through passed', 'packaged Electron install click-through must pass')
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronUpdateReconciliationClickThrough'), 'packaged Electron update reconciliation click-through passed', 'packaged Electron update reconciliation click-through must pass')
   requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronRepairClickThrough'), 'packaged Electron repair click-through passed', 'packaged Electron repair click-through must pass')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronDiagnosticExport'), 'packaged Electron diagnostic export passed', 'packaged Electron diagnostic export must pass')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronLogExport'), 'packaged Electron log export passed', 'packaged Electron log export must pass')
+  requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronFirstLaunch === 'blocked_legacy_native_launch_removed', 'packaged Electron first launch limitation is explicit', 'packaged Electron first launch limitation must be explicit until a real Native launch path passes')
   requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronRollbackClickThrough === 'not_available_no_visible_ui_command', 'packaged Electron rollback limitation is explicit', 'packaged Electron rollback limitation must be explicit until the UI exposes rollback')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.selectedPack?.packId === 'galactic-survey-native-edition', 'packaged Electron selected Galactic Survey Native Edition', 'packaged Electron smoke must select Galactic Survey Native Edition')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.install?.verifiedModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'packaged Electron install verified the Galactic Survey addon hash', 'packaged Electron install must verify the Galactic Survey addon hash')
   requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.repair?.repaired?.includes('addons/echogalacticsurveyprotocol-0.1.0.echo-addon'), 'packaged Electron repair restored the Galactic Survey addon', 'packaged Electron repair must restore the Galactic Survey addon')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.diagnostics?.summary?.missing === 0, 'packaged Electron diagnostics found no missing files', 'packaged Electron diagnostics must find no missing files')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.diagnostics?.summary?.corrupt === 0, 'packaged Electron diagnostics found no corrupt files', 'packaged Electron diagnostics must find no corrupt files')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.diagnostics?.report?.verification?.valid === expectedPackagedModuleCount, `packaged Electron diagnostics verified all ${expectedPackagedModuleCount} module files`, `packaged Electron diagnostics must verify all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, Number(launcherElectronUiSmoke?.clickThrough?.logs?.zip?.size ?? 0) > 0, 'packaged Electron log export wrote a support bundle', 'packaged Electron log export must write a support bundle')
+  requireCondition(phase, Array.isArray(launcherElectronUiSmoke?.clickThrough?.logs?.sourceFiles) && launcherElectronUiSmoke.clickThrough.logs.sourceFiles.length > 0, 'packaged Electron log export included source files', 'packaged Electron log export must include source files')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.firstLaunch?.state === 'fail_closed_legacy_native_launch_removed', 'packaged Electron first launch fails closed on legacy native launch path', 'packaged Electron first launch must fail closed until real launch proof exists')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.firstLaunch?.preflight?.verification?.valid === expectedPackagedModuleCount, `packaged Electron first-launch preflight verified all ${expectedPackagedModuleCount} module files`, `packaged Electron first-launch preflight must verify all ${expectedPackagedModuleCount} module files`)
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.firstLaunch?.preflight?.blockers?.some((blocker) => blocker.id === 'minecraft-launcher-handoff'), 'packaged Electron first-launch preflight names Minecraft Launcher Handoff blocker', 'packaged Electron first-launch preflight must name the real launch blocker')
   const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
   const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
   const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
@@ -900,6 +911,9 @@ const report = {
           install: launcherElectronUiSmoke.clickThrough?.install,
           update: launcherElectronUiSmoke.clickThrough?.update,
           repair: launcherElectronUiSmoke.clickThrough?.repair,
+          diagnostics: launcherElectronUiSmoke.clickThrough?.diagnostics,
+          logs: launcherElectronUiSmoke.clickThrough?.logs,
+          firstLaunch: launcherElectronUiSmoke.clickThrough?.firstLaunch,
           rollback: launcherElectronUiSmoke.clickThrough?.rollback
         },
         gates: launcherElectronUiSmoke.gates
