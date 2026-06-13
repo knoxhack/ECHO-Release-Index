@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T10:25:41-04:00",
+  "generatedAt": "2026-06-13T10:35:16-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,18 +16,24 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b19401e2d153",
-        "commitDate": "2026-06-13T10:17:13-04:00",
+        "commit": "986d8af3c3ea",
+        "commitDate": "2026-06-13T10:26:26-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M products/addons-studio.json"
+          " M docs/native-platform-rc1-handoff.md",
+          " M products/addons-studio.json",
+          " M release-readiness/galactic-survey-electron-ui-smoke.json",
+          " M release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 17762,
+          "bytes": 17771,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -254,8 +260,14 @@
         "commitDate": "2026-06-13T10:04:52-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
+          " M README.md",
+          " M docs/checksum-rollback.md",
           " M electron/main.cjs",
           " M scripts/galactic-survey-electron-ui-smoke.mjs",
+          " M scripts/galactic-survey-launcher-lifecycle-smoke.mjs",
+          " M scripts/sky-relay-electron-ui-smoke.mjs",
+          " M scripts/sky-relay-launcher-lifecycle-smoke.mjs",
           " M src/components/tools/ToolsPage.tsx",
           " M src/services/RepairService.ts",
           " M src/services/nativeBridge.ts",
@@ -267,14 +279,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4127,
+          "bytes": 4263,
           "heading": "ECHO Launcher",
           "excerpt": "Official desktop launcher, updater, repair tool, profile manager, diagnostics center, and release consumer for Ashfall and the ECHO ecosystem."
         },
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 915,
+          "bytes": 924,
           "heading": "Launcher Release Status",
           "excerpt": "ECHO Launcher is the install, update, repair, rollback, and diagnostics surface for ECHO products. It is not itself the ECHO Native Platform release artifact."
         }
@@ -496,6 +508,7 @@
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientFullBlockBehaviorMatrixSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientOpenlandsSessionSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientPlayerProjectileCombatSmokeHarness.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientSessionResilienceSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAddonArchiveCompatibilitySmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeOpenlandsExperienceSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeOpenlandsPlayableRouteSmokeHarness.java",
@@ -716,8 +729,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b87ede0ccd70",
-        "commitDate": "2026-06-13T10:25:41-04:00",
+        "commit": "9c2b54e05f78",
+        "commitDate": "2026-06-13T10:35:16-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -725,7 +738,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2457,
+          "bytes": 2615,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -753,7 +766,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 9003,
+          "bytes": 9208,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
