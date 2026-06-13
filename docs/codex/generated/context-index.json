@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T11:34:50-04:00",
+  "generatedAt": "2026-06-13T11:44:39-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,33 +16,22 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "21f9f6e05303",
-        "commitDate": "2026-06-13T11:26:01-04:00",
+        "commit": "c522e809e0aa",
+        "commitDate": "2026-06-13T11:38:39-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M channels/alpha/launcher-channel.json",
-          " M channels/beta/launcher-channel.json",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M release-readiness/native-sdk-rc1-artifacts.json",
-          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/test-verify-native-sdk-rc1-artifacts.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-native-sdk-rc1-artifacts.mjs",
-          "?? products/native-sdk.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? release-readiness/native-sdk-rc1-download-smoke.json",
-          "?? release-readiness/openlands-standalone-electron-install-smoke.json",
-          "?? scripts/download-native-sdk-rc1-artifacts.mjs",
-          "?? scripts/test-download-native-sdk-rc1-artifacts.mjs"
+          "?? release-readiness/openlands-electron-install-smoke.json",
+          "?? release-readiness/openlands-standalone-electron-install-smoke.json"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 20184,
+          "bytes": 20703,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -361,6 +350,7 @@
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_RUNTIME.md",
+          " M docs/echo/standalone/ECHO_STANDALONE_COMPATIBILITY_MIGRATION.md",
           " M docs/echo/standalone/ECHO_STANDALONE_DATA_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ENTITY_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_GAMEPLAY_RUNTIME.md",
@@ -459,6 +449,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAdapterCoreParitySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAudioCueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallPlayableMissionSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallStabilitySoakSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAssetSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAudioSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeCommandSmokeHarness.java",
@@ -473,6 +464,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeNativeLoaderAbiSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeNetworkSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePackOsSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayableLoopSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayableVoxelSaveSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayerControllerSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeRegistryAssetCoverageSmokeHarness.java",
@@ -738,8 +730,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3e8e439aabe0",
-        "commitDate": "2026-06-13T11:34:50-04:00",
+        "commit": "d39ad5b63d9a",
+        "commitDate": "2026-06-13T11:44:39-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -747,14 +739,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3213,
+          "bytes": 3375,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
         {
           "path": "docs/ARCHITECTURE.md",
           "exists": true,
-          "bytes": 1341,
+          "bytes": 1673,
           "heading": "Architecture",
           "excerpt": "ECHO Command Center is a standalone Electron app with a React renderer and a small read-only main-process scanner."
         },
@@ -775,7 +767,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 10063,
+          "bytes": 10295,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
