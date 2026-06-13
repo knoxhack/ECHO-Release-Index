@@ -13,6 +13,7 @@ Use this guide to choose the first repository to inspect for a task. If the task
 | Public website, directory pages, download pages, indexed deep-link UI | `ECHO-Platform-Website` |
 | First-party developer tooling app | `ECHO-Developer-Studio` |
 | Third-party creator authoring and packaging app | `ECHO-Addons-Studio` |
+| Release cockpit, scanner dashboard, visual universe map, and guarded command surface | `ECHO-COMMAND-CENTER` |
 | Mobile Studio app | `ECHO-Studio-Mobile` |
 | Ashfall pack work | `ECHO-Ashfall-*` edition repo first, then `ECHO-Modules` for shared modules |
 | Openlands pack work | `ECHO-Openlands-*` edition repo first, then `ECHO-Modules` for shared modules |

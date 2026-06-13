@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T07:30:52-04:00",
+  "generatedAt": "2026-06-13T07:46:37-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,17 +16,31 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a9ae967dd6b5",
-        "commitDate": "2026-06-13T07:07:57-04:00",
+        "commit": "24d159632b55",
+        "commitDate": "2026-06-13T07:35:04-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M channels/alpha/launcher-channel.json",
-          " M channels/beta/launcher-channel.json",
+          " M modules/echocore.json",
           " M products/addons-studio.json",
-          " M release-readiness/sky-relay-electron-ui-smoke.json",
-          " M release-readiness/sky-relay-launcher-lifecycle-smoke.json",
-          " M scripts/test-validate-index.mjs",
-          " M scripts/validate-index.mjs"
+          " M scripts/ingest-release.mjs",
+          "?? modules/echoadaptercore.json",
+          "?? modules/echoaddonapi.json",
+          "?? modules/echogalacticcore.json",
+          "?? modules/echogalacticsurveyprotocol.json",
+          "?? modules/echoholomap.json",
+          "?? modules/echoindex.json",
+          "?? modules/echolens.json",
+          "?? modules/echologisticsnetwork.json",
+          "?? modules/echomissioncore.json",
+          "?? modules/echonetcore.json",
+          "?? modules/echoorbitalremnants.json",
+          "?? modules/echopowergrid.json",
+          "?? modules/echoprogressioncore.json",
+          "?? modules/echoruntimeguard.json",
+          "?? modules/echosoundcore.json",
+          "?? modules/echoterminal.json",
+          "?? modules/echovehiclecore.json",
+          "?? release-readiness/galactic-survey-module-release-ingest.json"
         ]
       },
       "canonicalDocs": [
@@ -54,7 +68,7 @@
         {
           "path": "docs/codex/repo-routing.md",
           "exists": true,
-          "bytes": 2112,
+          "bytes": 2221,
           "heading": "ECHO Repo Routing",
           "excerpt": "Use this guide to choose the first repository to inspect for a task. If the task crosses ownership boundaries, start in `ECHO-Release-Index`, then inspect the owning source repos named by the catalog entry or context packet."
         },
@@ -107,10 +121,12 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ab89dac00050",
-        "commitDate": "2026-06-13T07:30:52-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "693c9b1845f9",
+        "commitDate": "2026-06-13T07:44:10-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java"
+        ]
       },
       "canonicalDocs": [
         {
@@ -249,18 +265,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4afe58f4a8d2",
-        "commitDate": "2026-06-13T07:02:35-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M electron/main.cjs",
-          " M package-lock.json",
-          " M package.json",
-          " M scripts/sky-relay-electron-ui-smoke.mjs",
-          " M src/components/dashboard/ModpacksPage.tsx",
-          " M src/data/officialModpacks.test.ts",
-          " M src/data/officialModpacks.ts"
-        ]
+        "commit": "1093e5c1410a",
+        "commitDate": "2026-06-13T07:35:15-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -339,6 +347,7 @@
         "dirty": true,
         "dirtyFiles": [
           " M build.gradle",
+          " M docs/echo/standalone/ASHFALL_PARITY_MATRIX.md",
           " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
@@ -408,6 +417,7 @@
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientVoxelBiomeSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAdapterCoreModuleCoverageSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAdapterCoreParitySmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallAudioCueSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAshfallPlayableMissionSmokeHarness.java",
           " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAssetSmokeHarness.java",
@@ -664,6 +674,77 @@
           "exists": true,
           "bytes": 1671,
           "summary": "package echo-studio 0.1.1; scripts: dev, build, preview, start, typecheck, test, doctor:electron, lint"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "command-center",
+      "name": "ECHO-COMMAND-CENTER",
+      "github": "knoxhack/ECHO-COMMAND-CENTER",
+      "role": "Private read-first release cockpit, scanner, visual universe map, release train planner, and future guarded command surface.",
+      "localPath": "C:\\Development\\Github\\ECHO-COMMAND-CENTER",
+      "exists": true,
+      "git": {
+        "available": true,
+        "branch": "main",
+        "commit": "bd1d62a71765",
+        "commitDate": "2026-06-13T07:46:37-04:00",
+        "dirty": false,
+        "dirtyFiles": []
+      },
+      "canonicalDocs": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "bytes": 2310,
+          "heading": "ECHO Command Center",
+          "excerpt": "Private release cockpit prototype for the ECHO platform."
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "exists": true,
+          "bytes": 1341,
+          "heading": "Architecture",
+          "excerpt": "ECHO Command Center is a standalone Electron app with a React renderer and a small read-only main-process scanner."
+        },
+        {
+          "path": "docs/PHASES.md",
+          "exists": true,
+          "bytes": 287,
+          "heading": "Command Center Phases",
+          "excerpt": "1. Product Foundation"
+        },
+        {
+          "path": "docs/ROADMAP.md",
+          "exists": true,
+          "bytes": 5064,
+          "heading": "10-Phase Roadmap",
+          "excerpt": "Goal: define Command Center as the master release cockpit for first-party ECHO products."
+        },
+        {
+          "path": "docs/REMAINING_WORK.md",
+          "exists": true,
+          "bytes": 4050,
+          "heading": "Remaining Work",
+          "excerpt": "This repository is not a fully working ECHO Command Center yet."
+        }
+      ],
+      "agentDocs": [
+        {
+          "path": "AGENTS.md",
+          "exists": true,
+          "bytes": 1382,
+          "heading": "ECHO Command Center Agent Notes",
+          "excerpt": "ECHO Command Center is a private, read-first release cockpit for the ECHO platform. It starts as a read-only universe scanner and visual product map, then grows toward guarded release train, validation, promotion, and rollback workflows."
+        }
+      ],
+      "metadata": [
+        {
+          "path": "package.json",
+          "exists": true,
+          "bytes": 3170,
+          "summary": "package echo-command-center 0.1.0; scripts: dev, dev:win, dev:vite, dev:electron, typecheck, build, build:electron, build:scanner-smoke"
         }
       ],
       "warnings": []
@@ -1530,10 +1611,6 @@
       "warnings": []
     }
   ],
-  "discoveredRepos": [
-    "ECHO-COMMAND-CENTER"
-  ],
-  "warnings": [
-    "Unconfigured local ECHO repository ECHO-COMMAND-CENTER"
-  ]
+  "discoveredRepos": [],
+  "warnings": []
 }

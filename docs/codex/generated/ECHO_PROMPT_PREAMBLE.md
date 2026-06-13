@@ -24,6 +24,7 @@ Keep AGENTS.md files small; put durable platform knowledge in ECHO-Release-Index
 - `ECHO-Platform-Website`: Public website, directory pages, download pages, and indexed echo:// install/update UI.
 - `ECHO-Developer-Studio`: First-party developer tooling desktop app.
 - `ECHO-Addons-Studio`: Third-party addon authoring, packaging, SDK validation, and release draft tooling.
+- `ECHO-COMMAND-CENTER`: Private read-first release cockpit, scanner, visual universe map, release train planner, and future guarded command surface.
 - `ECHO-Studio-Mobile`: Mobile Studio app and shared mobile packages.
 - `ECHO-Ashfall-Native-Edition`: Ashfall Native Edition pack manifest, assets, install docs, and native release readiness evidence.
 - `ECHO-Ashfall-NeoForge-Edition`: Ashfall NeoForge Edition pack manifest, assets, install docs, and update flow.
