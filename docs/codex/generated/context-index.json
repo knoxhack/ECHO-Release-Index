@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T07:00:06-04:00",
+  "generatedAt": "2026-06-13T07:04:13-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,11 +16,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7d49b66e0af8",
-        "commitDate": "2026-06-13T07:00:06-04:00",
+        "commit": "7865457c3ee5",
+        "commitDate": "2026-06-13T07:04:13-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
           " M release-readiness/sky-relay-electron-ui-smoke.json",
           " M release-readiness/sky-relay-launcher-lifecycle-smoke.json"
         ]
@@ -245,8 +244,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "8f3b415af3a8",
-        "commitDate": "2026-06-13T06:58:55-04:00",
+        "commit": "4afe58f4a8d2",
+        "commitDate": "2026-06-13T07:02:35-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -587,6 +586,18 @@
         "commitDate": "2026-06-10T22:08:19-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M src/main/devWorkspaceService.ts",
+          " M src/main/gitService.ts",
+          " M src/main/ipc.ts",
+          " M src/preload/index.ts",
+          " M src/renderer/src/App.tsx",
+          " M src/renderer/src/pages/ContentBuilder.tsx",
+          " M src/renderer/src/pages/Git.tsx",
+          " M src/renderer/src/state/useContent.ts",
+          " M src/shared/__tests__/gitService.test.ts",
+          " M src/shared/devWorkspace.ts",
+          "?? src/main/projectPaths.ts",
+          "?? src/renderer/src/components/RouteErrorBoundary.tsx",
           "?? tsconfig.node.tsbuildinfo",
           "?? tsconfig.web.tsbuildinfo"
         ]
