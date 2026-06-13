@@ -265,6 +265,7 @@ const descriptor = readJsonOrNull(path.join(moduleRoot, 'src/main/resources/META
 const alphaChannel = readJsonOrNull(path.join(releaseIndexRoot, 'channels', 'alpha', 'launcher-channel.json'))
 const editionPackAssets = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-assets.json'))
 const editionPackSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-edition-pack-smoke.json'))
+const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-download.json'))
 const requiredPackagedModules = [
   'echocore',
   'echoaddonapi',
@@ -436,6 +437,16 @@ const phases = []
   requireCondition(phase, reportGatePassed(editionPackSmoke, 'rollbackSimulatedReplacement'), 'local pack rollback smoke passed', 'local pack rollback smoke must pass')
   requireCondition(phase, setContainsAll(smokeEditionPackIds, editions.map((edition) => edition.id)), 'local lifecycle smoke covers Native, NeoForge, and Standalone packs', 'local lifecycle smoke must cover Native, NeoForge, and Standalone packs')
   requireCondition(phase, smokeEditions.every((edition) => edition.installedFiles === 18 && edition.verifiedAfterInstall === 18 && edition.versionUpdate?.verifiedAfterUpdate === 18 && edition.postRollbackVersionUpdate?.verifiedAfterUpdate === 18 && edition.verifiedAfterRollback === 18), 'local lifecycle smoke verified all 18 module files through install, update, repair, and rollback', 'local lifecycle smoke must verify all 18 module files through install, update, repair, and rollback')
+  const draftDownloadEditions = Array.isArray(editionDraftDownload?.data?.editions) ? editionDraftDownload.data.editions : []
+  const draftDownloadPackIds = draftDownloadEditions.map((edition) => edition.packId)
+  requireCondition(phase, editionDraftDownload?.schemaVersion === 'echo.galactic_survey.draft-download.v1', 'downloaded draft release evidence report exists', 'downloaded draft release evidence report must be generated')
+  requireCondition(phase, editionDraftDownload?.status === 'PASS', 'downloaded draft release evidence passed', 'downloaded draft release evidence must pass')
+  requireCondition(phase, editionDraftDownload?.summary?.downloadedFromGitHubRelease === true, 'draft release assets were downloaded back from GitHub', 'draft release assets must be downloaded back from GitHub')
+  requireCondition(phase, editionDraftDownload?.summary?.downloadedEditionCount === 3, 'downloaded draft release evidence covers all 3 editions', 'downloaded draft release evidence must cover all 3 editions')
+  requireCondition(phase, editionDraftDownload?.summary?.downloadedAssetCount === 15, 'downloaded draft release evidence covers all 15 edition assets', 'downloaded draft release evidence must cover all 15 edition assets')
+  requireCondition(phase, setContainsAll(draftDownloadPackIds, editions.map((edition) => edition.id)), 'downloaded draft release evidence covers Native, NeoForge, and Standalone packs', 'downloaded draft release evidence must cover Native, NeoForge, and Standalone packs')
+  requireCondition(phase, draftDownloadEditions.every((edition) => edition.release?.draft === true && edition.release?.prerelease === true), 'downloaded draft release evidence is from draft prereleases', 'downloaded draft release evidence must come from draft prereleases')
+  requireCondition(phase, draftDownloadEditions.every((edition) => edition.downloadedAssets?.length === 5), 'downloaded draft release evidence contains all required assets per edition', 'downloaded draft release evidence must contain all required assets per edition')
   const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
   const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
   const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
@@ -504,6 +515,7 @@ const report = {
       editionGameplayEvidence: editions.map((edition) => `${edition.repo}/scripts/verify-manual-gameplay-evidence.mjs`),
       editionPackAssets: 'release-readiness/galactic-survey-edition-pack-assets.json',
       editionPackSmoke: 'release-readiness/galactic-survey-edition-pack-smoke.json',
+      editionDraftDownload: 'release-readiness/galactic-survey-draft-download.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
@@ -548,6 +560,30 @@ const report = {
         }
       : null
   },
+  editionDraftDownloadEvidence: editionDraftDownload
+    ? {
+        schemaVersion: editionDraftDownload.schemaVersion,
+        status: editionDraftDownload.status,
+        generatedAt: editionDraftDownload.generatedAt,
+        summary: editionDraftDownload.summary,
+        editions: editionDraftDownload.data?.editions?.map((edition) => ({
+          repoName: edition.repoName,
+          packId: edition.packId,
+          releaseTag: edition.releaseTag,
+          release: {
+            draft: edition.release?.draft,
+            prerelease: edition.release?.prerelease,
+            htmlUrl: edition.release?.htmlUrl
+          },
+          downloadedAssets: edition.downloadedAssets?.map((asset) => ({
+            name: asset.name,
+            size: asset.size,
+            sha256: asset.sha256
+          })) ?? [],
+          verifiedTopLevelChecksumCount: edition.verifiedTopLevelChecksums?.length ?? 0
+        })) ?? []
+      }
+    : null,
   runtimePlaytestEvidence: runtimePlaytest
     ? {
         schemaVersion: runtimePlaytest.schemaVersion,
