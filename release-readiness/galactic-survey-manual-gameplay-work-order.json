@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.galactic_survey.manual-gameplay-work-order.v1",
   "status": "OPEN",
-  "generatedAt": "2026-06-13T17:23:23.985Z",
+  "generatedAt": "2026-06-13T17:51:45.934Z",
   "sourceReport": "release-readiness/galactic-survey-public-alpha-readiness.json",
   "project": {
     "name": "ECHO: Galactic Survey",
@@ -58,7 +58,7 @@
       "sourceRevision": {
         "repository": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
         "workspaceDir": "ECHO-Galactic-Survey-Native-Edition",
-        "commit": "b012ded09881fc9bee18ef61defa40588595c648",
+        "commit": "5f2330caf585fa0428022329e30ec211301f5ca2",
         "branch": "main",
         "dirty": false,
         "cleanForEvidence": true,
@@ -67,9 +67,13 @@
         "blockingStatusLines": []
       },
       "commands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
+          "node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
         "capture": [
           "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
-          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force"
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force"
         ],
         "verify": [
           "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
@@ -78,6 +82,7 @@
         ]
       },
       "blockers": [
+        "phase 10 Full Progression And Release: galactic-survey-native-edition sourceRevision must match ECHO-Galactic-Survey-Native-Edition HEAD",
         "phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing",
         "manualEvidence.sessions missing fresh_world_creation.",
         "manualEvidence.sessions missing first_30_minutes.",
@@ -135,6 +140,12 @@
         "manualEvidence.run.artifactSize must contain real capture data.",
         "manualEvidence.run.worldOrProfile must contain real capture data.",
         "manualEvidence.run.startedAt must contain real capture data.",
+        "manualEvidence.run.expectedArtifactSha256 must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.expectedArtifactSize must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.artifactMatchesExpected must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.artifactMatchesExpected must be true.",
+        "manualEvidence.importedCapture.captureManifest is required.",
+        "manualEvidence.importedCapture.expectedDownloadedAsset is required.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.",
@@ -451,7 +462,7 @@
       "sourceRevision": {
         "repository": "knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
         "workspaceDir": "ECHO-Galactic-Survey-NeoForge-Edition",
-        "commit": "fca2d839cde1e33206d4e068fd1816950985051c",
+        "commit": "e50462aec77118d18301766f8726ddd304ea899c",
         "branch": "main",
         "dirty": false,
         "cleanForEvidence": true,
@@ -460,9 +471,13 @@
         "blockingStatusLines": []
       },
       "commands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
+          "node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
         "capture": [
           "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
-          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force"
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force"
         ],
         "verify": [
           "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
@@ -471,6 +486,7 @@
         ]
       },
       "blockers": [
+        "phase 10 Full Progression And Release: galactic-survey-neoforge-edition sourceRevision must match ECHO-Galactic-Survey-NeoForge-Edition HEAD",
         "phase 10 Full Progression And Release: galactic-survey-neoforge-edition release-ready gameplay evidence is still missing",
         "manualEvidence.sessions missing fresh_world_creation.",
         "manualEvidence.sessions missing first_30_minutes.",
@@ -528,6 +544,12 @@
         "manualEvidence.run.artifactSize must contain real capture data.",
         "manualEvidence.run.worldOrProfile must contain real capture data.",
         "manualEvidence.run.startedAt must contain real capture data.",
+        "manualEvidence.run.expectedArtifactSha256 must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.expectedArtifactSize must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.artifactMatchesExpected must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.artifactMatchesExpected must be true.",
+        "manualEvidence.importedCapture.captureManifest is required.",
+        "manualEvidence.importedCapture.expectedDownloadedAsset is required.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.",
@@ -844,7 +866,7 @@
       "sourceRevision": {
         "repository": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
         "workspaceDir": "ECHO-Galactic-Survey-Standalone-Edition",
-        "commit": "929142506bbd2fd20483d1c9073045adacef817d",
+        "commit": "736edede91e242d808228f125ee7596e6c4174d7",
         "branch": "main",
         "dirty": false,
         "cleanForEvidence": true,
@@ -853,9 +875,13 @@
         "blockingStatusLines": []
       },
       "commands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
+          "node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
         "capture": [
           "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
-          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force"
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force"
         ],
         "verify": [
           "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
@@ -864,6 +890,7 @@
         ]
       },
       "blockers": [
+        "phase 10 Full Progression And Release: galactic-survey-standalone-edition sourceRevision must match ECHO-Galactic-Survey-Standalone-Edition HEAD",
         "phase 10 Full Progression And Release: galactic-survey-standalone-edition release-ready gameplay evidence is still missing",
         "manualEvidence.sessions missing fresh_world_creation.",
         "manualEvidence.sessions missing first_30_minutes.",
@@ -921,6 +948,12 @@
         "manualEvidence.run.artifactSize must contain real capture data.",
         "manualEvidence.run.worldOrProfile must contain real capture data.",
         "manualEvidence.run.startedAt must contain real capture data.",
+        "manualEvidence.run.expectedArtifactSha256 must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.expectedArtifactSize must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.artifactMatchesExpected must prove the artifact matches Release Index download evidence.",
+        "manualEvidence.run.artifactMatchesExpected must be true.",
+        "manualEvidence.importedCapture.captureManifest is required.",
+        "manualEvidence.importedCapture.expectedDownloadedAsset is required.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.",
         "manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.",

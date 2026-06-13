@@ -33,11 +33,18 @@ node scripts\generate-galactic-survey-manual-gameplay-work-order.mjs --write
 | Status | `open` |
 | Open tasks | 9 |
 
-### Capture
+### Prepare Capture
 
 ```powershell
 Set-Location ..\ECHO-Galactic-Survey-Native-Edition
-node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force
+node scripts\prepare-manual-gameplay-capture.mjs --release-index-root ..\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>
+```
+
+### Import Capture
+
+```powershell
+Set-Location ..\ECHO-Galactic-Survey-Native-Edition
+node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force
 ```
 
 ### Verify
@@ -92,6 +99,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 
 ### Current Blockers
 
+- phase 10 Full Progression And Release: galactic-survey-native-edition sourceRevision must match ECHO-Galactic-Survey-Native-Edition HEAD
 - phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing
 - manualEvidence.sessions missing fresh_world_creation.
 - manualEvidence.sessions missing first_30_minutes.
@@ -149,6 +157,12 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 - manualEvidence.run.artifactSize must contain real capture data.
 - manualEvidence.run.worldOrProfile must contain real capture data.
 - manualEvidence.run.startedAt must contain real capture data.
+- manualEvidence.run.expectedArtifactSha256 must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.expectedArtifactSize must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.artifactMatchesExpected must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.artifactMatchesExpected must be true.
+- manualEvidence.importedCapture.captureManifest is required.
+- manualEvidence.importedCapture.expectedDownloadedAsset is required.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.
@@ -173,11 +187,18 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Status | `open` |
 | Open tasks | 9 |
 
-### Capture
+### Prepare Capture
 
 ```powershell
 Set-Location ..\ECHO-Galactic-Survey-NeoForge-Edition
-node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force
+node scripts\prepare-manual-gameplay-capture.mjs --release-index-root ..\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>
+```
+
+### Import Capture
+
+```powershell
+Set-Location ..\ECHO-Galactic-Survey-NeoForge-Edition
+node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force
 ```
 
 ### Verify
@@ -232,6 +253,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 
 ### Current Blockers
 
+- phase 10 Full Progression And Release: galactic-survey-neoforge-edition sourceRevision must match ECHO-Galactic-Survey-NeoForge-Edition HEAD
 - phase 10 Full Progression And Release: galactic-survey-neoforge-edition release-ready gameplay evidence is still missing
 - manualEvidence.sessions missing fresh_world_creation.
 - manualEvidence.sessions missing first_30_minutes.
@@ -289,6 +311,12 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 - manualEvidence.run.artifactSize must contain real capture data.
 - manualEvidence.run.worldOrProfile must contain real capture data.
 - manualEvidence.run.startedAt must contain real capture data.
+- manualEvidence.run.expectedArtifactSha256 must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.expectedArtifactSize must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.artifactMatchesExpected must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.artifactMatchesExpected must be true.
+- manualEvidence.importedCapture.captureManifest is required.
+- manualEvidence.importedCapture.expectedDownloadedAsset is required.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.
@@ -313,11 +341,18 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Status | `open` |
 | Open tasks | 9 |
 
-### Capture
+### Prepare Capture
 
 ```powershell
 Set-Location ..\ECHO-Galactic-Survey-Standalone-Edition
-node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <downloaded-pack-zip> --tester <name> --world-or-profile <name> --started-at <iso> --force
+node scripts\prepare-manual-gameplay-capture.mjs --release-index-root ..\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>
+```
+
+### Import Capture
+
+```powershell
+Set-Location ..\ECHO-Galactic-Survey-Standalone-Edition
+node scripts\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force
 ```
 
 ### Verify
@@ -372,6 +407,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 
 ### Current Blockers
 
+- phase 10 Full Progression And Release: galactic-survey-standalone-edition sourceRevision must match ECHO-Galactic-Survey-Standalone-Edition HEAD
 - phase 10 Full Progression And Release: galactic-survey-standalone-edition release-ready gameplay evidence is still missing
 - manualEvidence.sessions missing fresh_world_creation.
 - manualEvidence.sessions missing first_30_minutes.
@@ -429,6 +465,12 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 - manualEvidence.run.artifactSize must contain real capture data.
 - manualEvidence.run.worldOrProfile must contain real capture data.
 - manualEvidence.run.startedAt must contain real capture data.
+- manualEvidence.run.expectedArtifactSha256 must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.expectedArtifactSize must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.artifactMatchesExpected must prove the artifact matches Release Index download evidence.
+- manualEvidence.run.artifactMatchesExpected must be true.
+- manualEvidence.importedCapture.captureManifest is required.
+- manualEvidence.importedCapture.expectedDownloadedAsset is required.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/fresh-world-notes.md.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-30-minutes-notes.md.
 - manualEvidence.supportingFiles missing file fixtures/galactic-survey/gameplay-qa/evidence/first-2-hours-notes.md.
