@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T13:53:11-04:00",
+  "generatedAt": "2026-06-13T14:09:43-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,28 +16,19 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c3b944d754ab",
-        "commitDate": "2026-06-13T13:53:11-04:00",
+        "commit": "df4e7049718a",
+        "commitDate": "2026-06-13T14:09:43-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/galactic-survey-manual-gameplay-work-order.md",
-          " M packs/galactic-survey-native-edition.json",
-          " M packs/galactic-survey-neoforge-edition.json",
-          " M packs/galactic-survey-standalone-edition.json",
+          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-draft-download.json",
-          " M release-readiness/galactic-survey-draft-publish.json",
-          " M release-readiness/galactic-survey-edition-pack-assets.json",
-          " M release-readiness/galactic-survey-edition-pack-smoke.json",
-          " M release-readiness/galactic-survey-electron-ui-smoke.json",
-          " M release-readiness/galactic-survey-launcher-lifecycle-smoke.json",
           " M release-readiness/galactic-survey-manual-gameplay-work-order.json",
           " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M release-readiness/galactic-survey-real-minecraft-handoff-smoke.json",
-          " M scripts/publish-galactic-survey-draft-releases.mjs",
-          " M scripts/test-publish-galactic-survey-draft-releases.mjs",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
+          "?? release-readiness/galactic-survey-first-launch-official-launcher-attempt.json",
           "?? release-readiness/openlands-electron-install-smoke.json",
           "?? release-readiness/openlands-standalone-electron-install-smoke.json"
         ]
@@ -270,20 +261,14 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5497bef98612",
-        "commitDate": "2026-06-13T13:25:18-04:00",
+        "commit": "635ddd68dcb1",
+        "commitDate": "2026-06-13T14:09:32-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M electron/main.cjs",
           " M electron/release-assets.cjs",
           " M electron/release-assets.test.mjs",
-          " M package.json",
-          " M scripts/lib/pack-export.mjs",
-          " M scripts/lib/pack-export.test.mjs",
-          " M src/data/officialModpacks.ts",
-          "?? electron/version-compare.cjs",
-          "?? electron/version-compare.test.mjs",
-          "?? scripts/all-modpacks-electron-install-smoke.mjs",
+          " M scripts/all-modpacks-electron-install-smoke.mjs",
           "?? tmp/"
         ]
       },
@@ -369,6 +354,7 @@
           " M docs/echo/standalone/ASHFALL_PARITY_MATRIX.md",
           " M docs/echo/standalone/BETA_RELEASE_READINESS.md",
           " M docs/echo/standalone/ECHO_RUNTIME_BOUNDARIES.md",
+          " M docs/echo/standalone/ECHO_STANDALONE_APP_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_ASSET_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_DEVICE_RUNTIME.md",
           " M docs/echo/standalone/ECHO_STANDALONE_AUDIO_RUNTIME.md",
@@ -762,20 +748,25 @@
         "dirtyFiles": [
           " M README.md",
           " M docs/REMAINING_WORK.md",
+          " M src/main/build-runner.ts",
           " M src/main/candidate-reports.ts",
+          " M src/main/run-history.ts",
           " M src/main/scanner-smoke.ts",
           " M src/main/scanner.ts",
           " M src/main/validation-runner.ts",
           " M src/renderer/App.tsx",
           " M src/renderer/styles/app.css",
-          " M src/shared/echo.ts"
+          " M src/shared/echo.ts",
+          "?? .codex-preview-4176.err.log",
+          "?? .codex-preview-4176.out.log",
+          "?? src/shared/command-safety.ts"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3768,
+          "bytes": 3938,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -803,7 +794,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 11127,
+          "bytes": 11391,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }

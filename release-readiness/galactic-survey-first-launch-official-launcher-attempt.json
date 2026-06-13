@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "echo.galactic_survey.first-launch-official-launcher-attempt.v1",
+  "status": "BLOCKED",
+  "generatedAt": "2026-06-13T18:22:00Z",
+  "packId": "galactic-survey-native-edition",
+  "runtimeMode": "native-loader-minecraft",
+  "launcherChannel": "alpha",
+  "capturePrep": {
+    "path": "tmp/galactic-survey-first-launch-open-play/2026-06-13T18-12-11-730Z/capture-manifest.json",
+    "status": "READY_FOR_CAPTURE",
+    "captureRoot": "tmp/galactic-survey-first-launch-open-play/2026-06-13T18-12-11-730Z"
+  },
+  "artifact": {
+    "name": "galactic-survey-native-edition-0.1.0.zip",
+    "size": 73621236,
+    "sha256": "cca021fd89eecadb729cfc9efff6211f4f3da1a7b1279696e613d73519edc538",
+    "matchesDownloadedRelease": true,
+    "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip"
+  },
+  "minecraftRoot": {
+    "path": "C:/Users/knox/AppData/Roaming/.minecraft",
+    "expectedProfileId": "echo-galactic-survey-native-edition-native-loader",
+    "expectedProfileName": "Galactic Survey Native Edition - Native Loader",
+    "expectedVersionId": "echo-galactic-survey-native-edition-native-loader-1.0.0",
+    "expectedProfilePresent": true,
+    "expectedVersionMetadataPresent": true,
+    "gameDir": "C:/Users/knox/ECHOLauncher/Instances/Galactic Survey Native Edition"
+  },
+  "officialLauncher": {
+    "installedLauncherPath": "C:/XboxGames/Minecraft Launcher/Content/Minecraft.exe",
+    "protocolOpenAttempt": {
+      "command": "cmd.exe /c start \"\" minecraft://",
+      "status": 0,
+      "reportedOpened": true
+    },
+    "directLaunchAttempt": {
+      "method": "Windows app automation",
+      "opened": true,
+      "windowTitle": "Minecraft Launcher",
+      "accountVisible": true,
+      "javaEditionVisible": true,
+      "playButtonVisible": true,
+      "selectedProfileVisible": true,
+      "selectedProfileName": "Galactic Survey Native Edition - Native Loader",
+      "selectedVersionId": "echo-galactic-survey-native-edition-native-loader-1.0.0"
+    }
+  },
+  "automationFindings": {
+    "textInspection": "PASS",
+    "screenshotCapture": "BLOCKED",
+    "playInvocation": "BLOCKED",
+    "screenshotCaptureError": "SetIsBorderRequired failed: No such interface supported (0x80004002)",
+    "elementInvocationErrors": [
+      "unsupported secondary action: Invoke; expected Raise, Scroll Up, Scroll Down, Scroll Left, Scroll Right, Expand, or Collapse",
+      "unsupported secondary action: Press; expected Raise, Scroll Up, Scroll Down, Scroll Left, Scroll Right, Expand, or Collapse",
+      "unsupported secondary action: Click; expected Raise, Scroll Up, Scroll Down, Scroll Left, Scroll Right, Expand, or Collapse",
+      "unsupported secondary action: Default; expected Raise, Scroll Up, Scroll Down, Scroll Left, Scroll Right, Expand, or Collapse",
+      "element 41 has no cached secondary actions for Minecraft.exe"
+    ],
+    "keyboardFocusResult": "Focus remained on the launcher document after 30 Tab key attempts.",
+    "releasedEvidenceImpact": "This report is not first-launch/open-play proof because it has no real PNG screenshots, no game title/world load, no current Minecraft client log, and no support bundle import."
+  },
+  "claims": {
+    "echoManagedProfileVisible": true,
+    "officialMinecraftLauncherOpened": true,
+    "packProfileSelected": true,
+    "firstPlayOpenedWorldOrTitle": false,
+    "noCrashEvidence": false,
+    "supportBundleCaptured": false
+  },
+  "gates": {
+    "artifactMatchesDownloadedRelease": "passed",
+    "echoManagedProfileVisible": "passed",
+    "officialMinecraftLauncherOpened": "passed",
+    "packProfileSelected": "passed",
+    "screenshotEvidenceCaptured": "blocked",
+    "playInvocation": "blocked",
+    "firstLaunchOpenPlayEvidence": "blocked"
+  },
+  "blockers": [
+    "Official launcher opened and showed the ECHO-managed Galactic Survey Native Loader profile, but no Play/open-world proof was captured.",
+    "Windows screenshot capture for the Minecraft Launcher failed with SetIsBorderRequired 0x80004002.",
+    "The launcher Play button did not expose a supported automation action, and keyboard focus did not move to the button.",
+    "No real PNG screenshots, current Minecraft client log, support bundle, title/world-loaded state, or no-crash review were imported."
+  ],
+  "nextRequiredEvidence": [
+    "Capture real PNG screenshots for launcher open, profile selected, and title/world loaded.",
+    "Launch the selected Galactic Survey Native Loader profile through the official Minecraft Launcher or a future real Native runtime path.",
+    "Copy the current Minecraft client log and ECHO launcher support bundle into the capture root.",
+    "Run scripts/import-galactic-survey-first-launch-evidence.mjs and keep release-readiness/galactic-survey-first-launch-open-play.json as the only PASS first-launch evidence source."
+  ]
+}

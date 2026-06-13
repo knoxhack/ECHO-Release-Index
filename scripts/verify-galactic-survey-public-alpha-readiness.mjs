@@ -10,6 +10,7 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-edition-pack-assets.json',
   'release-readiness/galactic-survey-edition-pack-smoke.json',
   'release-readiness/galactic-survey-electron-ui-smoke.json',
+  'release-readiness/galactic-survey-first-launch-official-launcher-attempt.json',
   'release-readiness/galactic-survey-first-launch-open-play.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
   'release-readiness/galactic-survey-real-minecraft-handoff-smoke.json',
@@ -403,6 +404,7 @@ const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release
 const launcherLifecycleSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-launcher-lifecycle-smoke.json'))
 const launcherElectronUiSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-electron-ui-smoke.json'))
 const launcherRealMinecraftHandoffSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-real-minecraft-handoff-smoke.json'))
+const firstLaunchOfficialLauncherAttempt = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-first-launch-official-launcher-attempt.json'))
 const firstLaunchOpenPlayEvidence = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-first-launch-open-play.json'))
 const moduleReleaseIngest = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-module-release-ingest.json'))
 const nativeSdkRc1Artifacts = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'native-sdk-rc1-artifacts.json'))
@@ -830,6 +832,7 @@ const report = {
       launcherLifecycleSmoke: 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
       launcherElectronUiSmoke: 'release-readiness/galactic-survey-electron-ui-smoke.json',
       launcherRealMinecraftHandoffSmoke: 'release-readiness/galactic-survey-real-minecraft-handoff-smoke.json',
+      firstLaunchOfficialLauncherAttempt: 'release-readiness/galactic-survey-first-launch-official-launcher-attempt.json',
       firstLaunchOpenPlayEvidence: 'release-readiness/galactic-survey-first-launch-open-play.json',
       manualGameplayWorkOrder: 'release-readiness/galactic-survey-manual-gameplay-work-order.json',
       nativeSdkRc1Artifacts: 'release-readiness/native-sdk-rc1-artifacts.json',
@@ -1161,6 +1164,41 @@ const report = {
         gates: launcherRealMinecraftHandoffSmoke.gates
       }
     : null,
+  firstLaunchOfficialLauncherAttempt: firstLaunchOfficialLauncherAttempt
+    ? {
+        schemaVersion: firstLaunchOfficialLauncherAttempt.schemaVersion,
+        status: firstLaunchOfficialLauncherAttempt.status,
+        generatedAt: firstLaunchOfficialLauncherAttempt.generatedAt,
+        packId: firstLaunchOfficialLauncherAttempt.packId,
+        runtimeMode: firstLaunchOfficialLauncherAttempt.runtimeMode,
+        artifact: firstLaunchOfficialLauncherAttempt.artifact
+          ? {
+              name: firstLaunchOfficialLauncherAttempt.artifact.name,
+              size: firstLaunchOfficialLauncherAttempt.artifact.size,
+              sha256: firstLaunchOfficialLauncherAttempt.artifact.sha256,
+              matchesDownloadedRelease: firstLaunchOfficialLauncherAttempt.artifact.matchesDownloadedRelease
+            }
+          : null,
+        minecraftRoot: {
+          expectedProfilePresent: firstLaunchOfficialLauncherAttempt.minecraftRoot?.expectedProfilePresent,
+          expectedVersionMetadataPresent: firstLaunchOfficialLauncherAttempt.minecraftRoot?.expectedVersionMetadataPresent,
+          expectedProfileId: firstLaunchOfficialLauncherAttempt.minecraftRoot?.expectedProfileId,
+          expectedVersionId: firstLaunchOfficialLauncherAttempt.minecraftRoot?.expectedVersionId
+        },
+        officialLauncher: {
+          opened: firstLaunchOfficialLauncherAttempt.officialLauncher?.directLaunchAttempt?.opened,
+          accountVisible: firstLaunchOfficialLauncherAttempt.officialLauncher?.directLaunchAttempt?.accountVisible,
+          playButtonVisible: firstLaunchOfficialLauncherAttempt.officialLauncher?.directLaunchAttempt?.playButtonVisible,
+          selectedProfileVisible: firstLaunchOfficialLauncherAttempt.officialLauncher?.directLaunchAttempt?.selectedProfileVisible,
+          selectedProfileName: firstLaunchOfficialLauncherAttempt.officialLauncher?.directLaunchAttempt?.selectedProfileName,
+          selectedVersionId: firstLaunchOfficialLauncherAttempt.officialLauncher?.directLaunchAttempt?.selectedVersionId
+        },
+        automationFindings: firstLaunchOfficialLauncherAttempt.automationFindings,
+        claims: firstLaunchOfficialLauncherAttempt.claims,
+        gates: firstLaunchOfficialLauncherAttempt.gates,
+        blockers: firstLaunchOfficialLauncherAttempt.blockers
+      }
+    : null,
   firstLaunchOpenPlayEvidence: firstLaunchOpenPlayEvidence
     ? {
         schemaVersion: firstLaunchOpenPlayEvidence.schemaVersion,
@@ -1247,6 +1285,7 @@ const report = {
     'Galactic Survey catalog install is checksum-backed, but release-ready promotion remains blocked until real gameplay evidence passes.',
     'Packaged Electron rollback now has visible Restore Last Known Good click-through evidence; real first launch and gameplay evidence remain separate gates.',
     'Packaged Launcher real .minecraft prepare-only handoff evidence is green; it proves profile/version metadata preparation, not official launcher open/play.',
+    'Official Minecraft Launcher attempt evidence shows the Galactic Survey Native Loader profile selected, but screenshot capture and Play/open-world proof remain blocked.',
     'Import real first-launch/open-play evidence with scripts/import-galactic-survey-first-launch-evidence.mjs after capturing official launcher open/play notes, screenshots, logs, support bundle, and a downloaded pack artifact hash.'
   ]
 }
