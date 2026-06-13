@@ -9,6 +9,7 @@ const RELEASE_INDEX_RELEVANT_STATUS_PATHS = [
   'release-readiness/galactic-survey-draft-publish.json',
   'release-readiness/galactic-survey-edition-pack-assets.json',
   'release-readiness/galactic-survey-edition-pack-smoke.json',
+  'release-readiness/galactic-survey-electron-ui-smoke.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json',
   'scripts/download-galactic-survey-draft-releases.mjs',
@@ -23,6 +24,7 @@ const RELEASE_INDEX_GENERATED_STATUS_PATHS = new Set([
   'release-readiness/galactic-survey-draft-publish.json',
   'release-readiness/galactic-survey-edition-pack-assets.json',
   'release-readiness/galactic-survey-edition-pack-smoke.json',
+  'release-readiness/galactic-survey-electron-ui-smoke.json',
   'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
   'release-readiness/galactic-survey-public-alpha-readiness.json'
 ])
@@ -312,6 +314,7 @@ const editionPackSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-rea
 const editionDraftPublish = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-publish.json'))
 const editionDraftDownload = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-draft-download.json'))
 const launcherLifecycleSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-launcher-lifecycle-smoke.json'))
+const launcherElectronUiSmoke = readJsonOrNull(path.join(releaseIndexRoot, 'release-readiness', 'galactic-survey-electron-ui-smoke.json'))
 const requiredPackagedModules = [
   'echocore',
   'echoaddonapi',
@@ -525,6 +528,20 @@ const phases = []
     edition.postRollbackUpdate?.verifiedAfterUpdate === 18 &&
     edition.repair?.verifiedAfterRepair === 18
   ), 'Launcher lifecycle smoke verified all 18 module files through install, update, repair, and rollback', 'Launcher lifecycle smoke must verify all 18 module files through install, update, repair, and rollback')
+  requireCondition(phase, launcherElectronUiSmoke?.schemaVersion === 'echo.galactic_survey.electron-ui-smoke.v1', 'packaged Electron UI smoke report exists', 'packaged Electron UI smoke report must be generated')
+  requireCondition(phase, launcherElectronUiSmoke?.ok === true, 'packaged Electron UI smoke passed', 'packaged Electron UI smoke must pass')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronRendererMounted'), 'packaged Electron renderer mounted', 'packaged Electron renderer must mount')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'nativeBridgeBootstrap'), 'packaged Electron native bridge bootstrap passed', 'packaged Electron native bridge bootstrap must pass')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'galacticSurveyLibraryCardsVisible'), 'Galactic Survey library cards rendered in packaged Electron', 'Galactic Survey library cards must render in packaged Electron')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'galacticSurveyScopedCardActions'), 'Galactic Survey packaged card actions are scoped', 'Galactic Survey packaged card actions must be scoped')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'galacticSurveyHeadingOverflow'), 'Galactic Survey packaged card headings fit', 'Galactic Survey packaged card headings must fit')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronInstallClickThrough'), 'packaged Electron install click-through passed', 'packaged Electron install click-through must pass')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronUpdateReconciliationClickThrough'), 'packaged Electron update reconciliation click-through passed', 'packaged Electron update reconciliation click-through must pass')
+  requireCondition(phase, reportGatePassed(launcherElectronUiSmoke, 'packagedElectronRepairClickThrough'), 'packaged Electron repair click-through passed', 'packaged Electron repair click-through must pass')
+  requireCondition(phase, launcherElectronUiSmoke?.gates?.packagedElectronRollbackClickThrough === 'not_available_no_visible_ui_command', 'packaged Electron rollback limitation is explicit', 'packaged Electron rollback limitation must be explicit until the UI exposes rollback')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.selectedPack?.packId === 'galactic-survey-native-edition', 'packaged Electron selected Galactic Survey Native Edition', 'packaged Electron smoke must select Galactic Survey Native Edition')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.install?.verifiedModule?.relativePath === 'addons/echogalacticsurveyprotocol-0.1.0.echo-addon', 'packaged Electron install verified the Galactic Survey addon hash', 'packaged Electron install must verify the Galactic Survey addon hash')
+  requireCondition(phase, launcherElectronUiSmoke?.clickThrough?.repair?.repaired?.includes('addons/echogalacticsurveyprotocol-0.1.0.echo-addon'), 'packaged Electron repair restored the Galactic Survey addon', 'packaged Electron repair must restore the Galactic Survey addon')
   const runtimeChecks = runtimePlaytest?.runtimeChecks ?? {}
   const releasePreview = runtimePlaytest?.releaseGatePreview ?? {}
   const releasePreviewBlockers = Array.isArray(releasePreview.blockers) ? releasePreview.blockers : []
@@ -599,6 +616,7 @@ const report = {
       editionDraftPublish: 'release-readiness/galactic-survey-draft-publish.json',
       editionDraftDownload: 'release-readiness/galactic-survey-draft-download.json',
       launcherLifecycleSmoke: 'release-readiness/galactic-survey-launcher-lifecycle-smoke.json',
+      launcherElectronUiSmoke: 'release-readiness/galactic-survey-electron-ui-smoke.json',
       runtimePlaytest: rel(runtimePlaytestReportPath),
       moduleRelease: '../ECHO-Modules/dist/echo-module-release/echo-release.json'
     }
@@ -719,6 +737,43 @@ const report = {
         residualRisks: launcherLifecycleSmoke.residualRisks
       }
     : null,
+  launcherElectronUiEvidence: launcherElectronUiSmoke
+    ? {
+        schemaVersion: launcherElectronUiSmoke.schemaVersion,
+        ok: launcherElectronUiSmoke.ok,
+        generatedAt: launcherElectronUiSmoke.generatedAt,
+        scope: launcherElectronUiSmoke.scope,
+        executable: launcherElectronUiSmoke.executable,
+        catalog: launcherElectronUiSmoke.catalog,
+        nativeBridge: launcherElectronUiSmoke.nativeBridge,
+        ui: {
+          activeHeading: launcherElectronUiSmoke.ui?.activeHeading,
+          officialPacksLabelVisible: launcherElectronUiSmoke.ui?.officialPacksLabelVisible,
+          cards: launcherElectronUiSmoke.ui?.cards?.map((card) => ({
+            name: card.name,
+            found: card.found,
+            headingOverflow: card.heading?.overflow,
+            hasManifestState: card.hasManifestState,
+            hasCatalogState: card.hasCatalogState,
+            hasInstallState: card.hasInstallState,
+            hasActionState: card.hasActionState,
+            hasDiagnosticsAction: card.hasDiagnosticsAction,
+            hasHomeAction: card.hasHomeAction,
+            hasScopedAction: card.hasScopedAction
+          })) ?? [],
+          hasGlobalInstallUpdate: launcherElectronUiSmoke.ui?.hasGlobalInstallUpdate,
+          hasScopedGalacticSurveyAction: launcherElectronUiSmoke.ui?.hasScopedGalacticSurveyAction
+        },
+        clickThrough: {
+          selectedPack: launcherElectronUiSmoke.clickThrough?.selectedPack,
+          install: launcherElectronUiSmoke.clickThrough?.install,
+          update: launcherElectronUiSmoke.clickThrough?.update,
+          repair: launcherElectronUiSmoke.clickThrough?.repair,
+          rollback: launcherElectronUiSmoke.clickThrough?.rollback
+        },
+        gates: launcherElectronUiSmoke.gates
+      }
+    : null,
   runtimePlaytestEvidence: runtimePlaytest
     ? {
         schemaVersion: runtimePlaytest.schemaVersion,
@@ -769,7 +824,8 @@ const report = {
   blockers,
   notes: [
     'This audit composes source contracts, Release Index routing, and edition evidence validators.',
-    'Galactic Survey must remain non-installable until published artifacts, real gameplay evidence, and launcher lifecycle evidence all pass.'
+    'Galactic Survey must remain non-installable until final public catalog promotion and real gameplay evidence pass.',
+    'Packaged Electron rollback remains covered by Launcher lifecycle smoke until a visible rollback command exists in the UI.'
   ]
 }
 

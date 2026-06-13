@@ -35,16 +35,19 @@ The local external addon proof generated, built, packaged, and loaded a `.echo-a
 Partial Launcher lifecycle evidence now exists:
 
 - Evidence: `release-readiness/galactic-survey-launcher-lifecycle-smoke.json`
+- Packaged Electron evidence: `release-readiness/galactic-survey-electron-ui-smoke.json`
 - Reducer: `release-readiness/galactic-survey-public-alpha-readiness.json`
 - Scope: Galactic Survey draft GitHub pack assets, including `galactic-survey-native-edition`.
 - Passed: Launcher-owned deep-link resolution, pack ZIP install, update reconciliation, version-transition update, corrupt-file repair, rollback, and post-rollback update.
-- Not covered: packaged Electron click-through, first launch, diagnostics export, final public pack promotion, and real gameplay/player evidence.
+- Passed in packaged Electron: renderer mount, native bridge bootstrap, Galactic Survey Library cards, scoped card actions, install click-through, update reconciliation click-through, and corrupt-file repair click-through.
+- Not covered: first launch, diagnostics export, final public pack promotion, and real gameplay/player evidence. Packaged Electron rollback remains covered by the Launcher-owned lifecycle smoke until the UI exposes a visible rollback command.
 
 ## Approval Boundary
 
 Do not approve stable `1.0.0` and do not remove warning validation until all of these are real, current, and attached to Release Index evidence:
 
-- Packaged Launcher install, first launch, diagnostics export, repair, and rollback pass.
+- Packaged Launcher first launch and diagnostics export pass.
+- Final public pack promotion evidence is approved.
 - At least one Native pack gameplay smoke passes from the published runtime.
 - Public SDK artifacts have main, source, and Javadoc jars.
 - Stable-target catalog metadata has no `warning`, `blocked`, or `alpha` release blocker, and no stable artifact remains `source-linked`.
@@ -62,5 +65,6 @@ The current Native release contract is typed-host-receipt based:
 - `products/native-platform.json`
 - `release-readiness/galactic-survey-edition-pack-assets.json`
 - `release-readiness/galactic-survey-edition-pack-smoke.json`
+- `release-readiness/galactic-survey-electron-ui-smoke.json`
 - `release-readiness/galactic-survey-public-alpha-readiness.json`
 - `../ECHO-Native-Platform/docs/echo/native/RELEASE_CANDIDATE_CHECKLIST.md`
