@@ -1,0 +1,30 @@
+{
+  "id": "openlands-native-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
+  "releaseTag": "planned-openlands-native-0.1.0",
+  "commitSha": "2222222",
+  "artifacts": {},
+  "dependencies": [
+    {
+      "id": "echo-native-platform",
+      "kind": "runtime",
+      "version": ">=1.0.0"
+    },
+    {
+      "id": "echoopenlandsprotocol",
+      "kind": "addon",
+      "version": "0.1.0"
+    }
+  ],
+  "compatibility": [
+    "native",
+    "openlands"
+  ],
+  "trust": "source-linked",
+  "validation": "warning",
+  "notes": "Planned Openlands Native Edition. Keep warning until pack manifest and .echo-addon artifacts exist."
+}

@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "echo.skyrelay.launcher-lifecycle-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-11T15:25:47.787Z",
+  "downloadRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\sky-relay-edition-pack-download",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-launcher-lifecycle-smoke",
+  "editions": [
+    {
+      "repoName": "ECHO-Sky-Relay-Native-Edition",
+      "pack": "sky-relay-native-edition",
+      "releaseTag": "sky-relay-native-0.1.0-alpha",
+      "manifestAsset": "sky-relay-native-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "sky-relay-native-edition-0.1.0.zip",
+      "moduleCount": 12,
+      "fileCount": 12,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "sky-relay-native-edition-0.1.0.zip",
+        "sky-relay-native-edition-alpha-0.1.0.pack.json",
+        "sky-relay-pack-build-report.json"
+      ],
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/sky-relay-native-edition",
+          "artifact": "sky-relay-native-edition-alpha-0.1.0.pack.json"
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-native-edition",
+          "artifact": "echoskyrelayprotocol-0.1.0.echo-addon"
+        }
+      },
+      "install": {
+        "installed": 12,
+        "verifiedAfterInstall": 12
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 11,
+        "removed": 1,
+        "verifiedAfterUpdate": 12,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "restoredObsoletePath": "addons/sky-relay-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 12
+      },
+      "repair": {
+        "repaired": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "verifiedAfterRepair": 12
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-launcher-lifecycle-smoke\\ECHO-Sky-Relay-Native-Edition\\install"
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
+      "pack": "sky-relay-neoforge-edition",
+      "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
+      "manifestAsset": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "sky-relay-neoforge-edition-0.1.0.zip",
+      "moduleCount": 12,
+      "fileCount": 12,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "sky-relay-neoforge-edition-0.1.0.zip",
+        "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+        "sky-relay-pack-build-report.json"
+      ],
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/sky-relay-neoforge-edition",
+          "artifact": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json"
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-neoforge-edition",
+          "artifact": "echoskyrelayprotocol-0.1.0-neoforge.jar"
+        }
+      },
+      "install": {
+        "installed": 12,
+        "verifiedAfterInstall": 12
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 11,
+        "removed": 1,
+        "verifiedAfterUpdate": 12,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
+        "restoredObsoletePath": "mods/sky-relay-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 12
+      },
+      "repair": {
+        "repaired": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
+        "verifiedAfterRepair": 12
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-launcher-lifecycle-smoke\\ECHO-Sky-Relay-NeoForge-Edition\\install"
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-Standalone-Edition",
+      "pack": "sky-relay-standalone-edition",
+      "releaseTag": "sky-relay-standalone-0.1.0-alpha",
+      "manifestAsset": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "sky-relay-standalone-edition-0.1.0.zip",
+      "moduleCount": 12,
+      "fileCount": 12,
+      "topLevelChecksums": [
+        "echo-release.json",
+        "sky-relay-pack-build-report.json",
+        "sky-relay-standalone-edition-0.1.0.zip",
+        "sky-relay-standalone-edition-alpha-0.1.0.pack.json"
+      ],
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/sky-relay-standalone-edition",
+          "artifact": "sky-relay-standalone-edition-alpha-0.1.0.pack.json"
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-standalone-edition",
+          "artifact": "echoskyrelayprotocol-0.1.0-standalone.jar"
+        }
+      },
+      "install": {
+        "installed": 12,
+        "verifiedAfterInstall": 12
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 11,
+        "removed": 1,
+        "verifiedAfterUpdate": 12,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
+        "restoredObsoletePath": "mods/sky-relay-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke"
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "verifiedAfterUpdate": 12
+      },
+      "repair": {
+        "repaired": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
+        "verifiedAfterRepair": 12
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-launcher-lifecycle-smoke\\ECHO-Sky-Relay-Standalone-Edition\\install"
+    }
+  ],
+  "gates": {
+    "launcherReleaseIndexDeepLinks": "passed",
+    "launcherInstallFromPackZip": "passed",
+    "launcherUpdateReconciliation": "passed",
+    "launcherVersionTransitionUpdate": "passed",
+    "launcherRepairCorruptFile": "passed",
+    "launcherRollbackSimulatedUpdate": "passed",
+    "realVersionToVersionUpdate": "passed_with_previous_version_fixture",
+    "packagedElectronCardUiSmoke": "covered_separately",
+    "electronInstallUpdateRepairClickThrough": "covered_by_packaged_electron_ui_smoke",
+    "electronRollbackClickThrough": "not_available_no_visible_ui_command"
+  },
+  "blockers": [],
+  "residualRisks": [
+    "The previous Sky Relay version is a fixture-local manifest generated from current public assets plus an older module placeholder; it proves launcher update mechanics without claiming a second public Sky Relay release exists.",
+    "This script uses Launcher-owned resolver and lifecycle contracts from Node; packaged Electron install/update/repair click-through is covered by release-readiness/sky-relay-electron-ui-smoke.json, while rollback has no visible packaged UI command yet."
+  ]
+}

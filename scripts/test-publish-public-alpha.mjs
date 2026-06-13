@@ -335,6 +335,15 @@ try {
       'echo-release.json',
     ],
   )
+
+  await writeFile(
+    ashfallRoot,
+    'tmp/public-alpha-assets/ECHO-Ashfall-Native-Edition/echo-native-product-1.0.0-existing-layout-rc.zip',
+    'placeholder zip\n',
+  )
+  const ashfallForbiddenStaged = await run(ashfallRoot, apiBaseUrl, ['--only', 'ECHO-Ashfall-Native-Edition', '--draft', '--prune-unlisted'])
+  assert.equal(ashfallForbiddenStaged.status, 1, `${ashfallForbiddenStaged.stdout}\n${ashfallForbiddenStaged.stderr}`)
+  assert.match(`${ashfallForbiddenStaged.stdout}\n${ashfallForbiddenStaged.stderr}`, /forbidden staged Ashfall Native asset/u)
 } finally {
   await new Promise((resolve) => server.close(resolve))
   await fs.rm(root, { recursive: true, force: true })

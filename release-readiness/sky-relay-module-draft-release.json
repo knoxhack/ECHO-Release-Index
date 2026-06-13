@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "echo.skyrelay.module-draft-release.v1",
+  "generatedAt": "2026-06-11T13:37:03.105Z",
+  "project": {
+    "name": "ECHO: Sky Relay Protocol",
+    "moduleId": "echoskyrelayprotocol",
+    "version": "0.1.0",
+    "releaseId": "sky-relay-0.1.0-alpha"
+  },
+  "repository": "knoxhack/ECHO-Modules",
+  "releaseTag": "sky-relay-0.1.0-alpha",
+  "draft": false,
+  "prerelease": true,
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Modules/releases/tag/sky-relay-0.1.0-alpha",
+  "targetCommitish": "feature/sky-relay-protocol",
+  "sourceBranch": "feature/sky-relay-protocol",
+  "sourceCommit": "ea45c08c611abbb2331ec3a3e0ebda91c51ca1ee",
+  "generator": "scripts/generate-module-release.mjs",
+  "downloadBackValidation": {
+    "command": "gh release download sky-relay-0.1.0-alpha --repo knoxhack/ECHO-Modules --pattern checksums.sha256 --pattern echo-release.json --pattern *.echo-addon --pattern *-neoforge.jar --pattern *-standalone.jar --pattern *-sources.jar",
+    "downloadDir": "../ECHO-Modules/tmp/sky-relay-draft-download",
+    "verified": true,
+    "checks": [
+      "downloaded echo-release.json records source commit ea45c08c611abbb2331ec3a3e0ebda91c51ca1ee and ref feature/sky-relay-protocol",
+      "downloaded runtime artifacts match echo-release.json SHA-256 values",
+      "downloaded echo-release.json matches checksums.sha256"
+    ]
+  },
+  "assets": [
+    {
+      "name": "checksums.sha256",
+      "size": 927,
+      "sha256": "6bd2f1bf132fa6f2814b1929a2296111ea3b2d27dc254f34f64ed7a50571ef21"
+    },
+    {
+      "name": "echo-release.json",
+      "size": 3388,
+      "sha256": "3a14e6175ae10492d7274a510a56fc65065f0937198699052f325f1be369b66a"
+    },
+    {
+      "name": "echoskyrelayprotocol-0.1.0-neoforge.jar",
+      "size": 53302,
+      "sha256": "461bab4a6a7208bf108a11c2b812b0987935ba30700b41a61c97c5000c8525d1"
+    },
+    {
+      "name": "echoskyrelayprotocol-0.1.0-standalone.jar",
+      "size": 53302,
+      "sha256": "461bab4a6a7208bf108a11c2b812b0987935ba30700b41a61c97c5000c8525d1"
+    },
+    {
+      "name": "echoskyrelayprotocol-0.1.0.echo-addon",
+      "size": 47935,
+      "sha256": "707e487f650dd973699960ca6e193a5bb085f05e0237236909ae8ffa73be33bf"
+    },
+    {
+      "name": "echoskyrelayprotocol-0.1.0-sources.jar",
+      "size": 29517,
+      "sha256": "fc5da7ed657df7a2ae6d654615fbe41ca537ac0561613a22fdb3fd5a9ce33140"
+    }
+  ],
+  "gates": {
+    "sourceBranchPushed": "passed",
+    "draftReleaseExists": "passed",
+    "draftReleaseTargetUpdated": "passed",
+    "releaseManifestProvenance": "passed",
+    "downloadBackHashValidation": "passed",
+    "publicReleasePromotion": "passed",
+    "stableTaggedAssetUrls": "passed"
+  },
+  "promotionBlockers": [
+    "Release Index entries remain warning-gated until real gameplay smoke evidence is attached.",
+    "Real version-to-version update remains blocked until a second Sky Relay version exists."
+  ]
+}

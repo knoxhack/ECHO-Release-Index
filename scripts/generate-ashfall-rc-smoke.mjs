@@ -226,7 +226,10 @@ async function verifyDraftDownloadEvidence(args, expectedAssets) {
 
   const evidence = await readJson(args.draftDownloadEvidence)
   requireTrue(evidence.schemaVersion === 'echo.ashfall.draft-download.v1', 'Draft download evidence must use schemaVersion echo.ashfall.draft-download.v1')
-  requireTrue(['PASS', 'PASS_WITH_WARNINGS'].includes(evidence.status), `Draft download evidence status must pass, found ${evidence.status ?? '(missing)'}`)
+  requireTrue(evidence.status === 'PASS', `Draft download evidence status must be PASS, found ${evidence.status ?? '(missing)'}`)
+  requireTrue(Number(evidence.summary?.blockingDiagnostics) === 0, `Draft download evidence blockingDiagnostics expected 0, found ${evidence.summary?.blockingDiagnostics ?? '(missing)'}`)
+  requireTrue(Number(evidence.summary?.unlistedAssetCount) === 0, `Draft download evidence unlistedAssetCount expected 0, found ${evidence.summary?.unlistedAssetCount ?? '(missing)'}`)
+  requireTrue(Number(evidence.summary?.placeholderAssetCount) === 0, `Draft download evidence placeholderAssetCount expected 0, found ${evidence.summary?.placeholderAssetCount ?? '(missing)'}`)
   requireTrue(evidence.data?.downloadedFromGitHubRelease === true, 'Draft download evidence must prove downloadedFromGitHubRelease=true')
   requireTrue(evidence.data?.draftReleaseDownloaded === true, 'Draft download evidence must prove draftReleaseDownloaded=true')
   requireTrue(evidence.data?.release?.draft === true, 'Draft download evidence release must still be marked draft=true')
@@ -241,6 +244,10 @@ async function verifyDraftDownloadEvidence(args, expectedAssets) {
 
   const assets = evidence.data?.downloadedAssets
   requireTrue(Array.isArray(assets), 'Draft download evidence must include downloadedAssets')
+  const downloadedAssetCount = Number(evidence.summary?.downloadedAssetCount)
+  requireTrue(downloadedAssetCount === assets.length, `Draft download evidence downloadedAssetCount expected ${assets.length}, found ${evidence.summary?.downloadedAssetCount ?? '(missing)'}`)
+  const totalBytes = assets.reduce((sum, asset) => sum + Number(asset?.size ?? 0), 0)
+  requireTrue(Number(evidence.summary?.totalBytes) === totalBytes, `Draft download evidence totalBytes expected ${totalBytes}, found ${evidence.summary?.totalBytes ?? '(missing)'}`)
   const byName = new Map(assets.map((asset) => [asset?.name, asset]))
   for (const [name, expected] of expectedAssets) {
     const asset = byName.get(name)
@@ -254,6 +261,7 @@ async function verifyDraftDownloadEvidence(args, expectedAssets) {
     path: rel(args.root, args.draftDownloadEvidence),
     release: evidence.data.release,
     downloadedAssetCount: assets.length,
+    totalBytes,
   }
 }
 
@@ -495,7 +503,7 @@ async function generate(args) {
       data: {
         localStagedArtifactSmoke: true,
         draftReleaseDownloaded,
-        installedFromDownloadedArtifacts: true,
+        installedFromDownloadedArtifacts: draftReleaseDownloaded,
         launcherInstallSmoke: true,
         updateSmoke: true,
         rollbackPlanVerified: true,

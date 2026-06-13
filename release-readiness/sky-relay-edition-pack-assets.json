@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "echo.skyrelay.edition-pack-assets.v1",
+  "generatedAt": "2026-06-11T15:24:23.004Z",
+  "project": {
+    "name": "ECHO: Sky Relay",
+    "version": "0.1.0",
+    "channel": "alpha"
+  },
+  "builder": {
+    "script": "scripts/build-sky-relay-edition-assets.mjs",
+    "command": "node scripts/build-sky-relay-edition-assets.mjs --clean",
+    "moduleReleaseDir": "../ECHO-Modules/tmp/sky-relay-runtime-module-release",
+    "moduleReleaseId": "sky-relay-runtime-0.1.0-alpha",
+    "stagingRoot": "tmp/sky-relay-edition-assets"
+  },
+  "packagedModules": [
+    "echocore",
+    "echoadaptercore",
+    "echonetcore",
+    "echoruntimeguard",
+    "echolens",
+    "echoterminal",
+    "echoholomap",
+    "echopowergrid",
+    "echoweathercore",
+    "echorecovery",
+    "echologisticsnetwork",
+    "echoskyrelayprotocol"
+  ],
+  "plannedButNotPackaged": [],
+  "downloadBackValidation": {
+    "command": "gh release download <tag> --pattern checksums.txt --pattern echo-release.json --pattern *.pack.json --pattern *.zip --pattern sky-relay-pack-build-report.json",
+    "zipValidation": "downloaded echo-release.json manifestAsset/artifactAsset pairs were verified against downloaded ZIP bytes; every manifest file entry matched SHA-256 and size; .echo/pack-manifest.json, .echo/export-report.json, and .echo/checksums.sha256 were present in each ZIP",
+    "editions": [
+      {
+        "packId": "sky-relay-native-edition",
+        "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+        "releaseTag": "sky-relay-native-0.1.0-alpha",
+        "draft": false,
+        "downloadDir": "tmp/sky-relay-edition-pack-download/ECHO-Sky-Relay-Native-Edition",
+        "assets": [
+          {
+            "name": "checksums.txt",
+            "size": 397,
+            "sha256": "b664f1dcf8e0a71e997c8ed8a09d5435fa1c21a848987c2ede1bba19d6a56d5e"
+          },
+          {
+            "name": "echo-release.json",
+            "size": 4567,
+            "sha256": "ed88b56b7329f55f163a000a38eaa97bcb8eb498e91a954abe90aa737f7db95a"
+          },
+          {
+            "name": "sky-relay-native-edition-0.1.0.zip",
+            "size": 39163330,
+            "sha256": "8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa"
+          },
+          {
+            "name": "sky-relay-native-edition-alpha-0.1.0.pack.json",
+            "size": 11013,
+            "sha256": "3ec3a450e08f92d1a5bd409b552a66c72f21d69be5815d98769357c86ee1c420"
+          },
+          {
+            "name": "sky-relay-pack-build-report.json",
+            "size": 6330,
+            "sha256": "d245f6f17438e2ba4025289de37f9bb81ed817ab2235496c127e5ea73e14709d"
+          }
+        ],
+        "zip": {
+          "name": "sky-relay-native-edition-0.1.0.zip",
+          "manifestFiles": 12,
+          "validated": true
+        }
+      },
+      {
+        "packId": "sky-relay-neoforge-edition",
+        "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+        "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
+        "draft": false,
+        "downloadDir": "tmp/sky-relay-edition-pack-download/ECHO-Sky-Relay-NeoForge-Edition",
+        "assets": [
+          {
+            "name": "checksums.txt",
+            "size": 401,
+            "sha256": "ae0bd0e772c18fe70e08fa07159e49235aa3ec444ca11c7235eae76c50cc53d6"
+          },
+          {
+            "name": "echo-release.json",
+            "size": 4613,
+            "sha256": "8c26437008b3e3eb0bd0b366c3290c15327effeb0fcfdeff97dd5245f8ae9d5f"
+          },
+          {
+            "name": "sky-relay-neoforge-edition-0.1.0.zip",
+            "size": 40132235,
+            "sha256": "04fde5ab03cd89ee3717a90491d818de2659cf77cfc5ea9b0e1ad43e64a9ca7b"
+          },
+          {
+            "name": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+            "size": 11225,
+            "sha256": "977193ea843bc1aafc6a817d1487358acd25cb9105a2a2b34346678f02ea6ce1"
+          },
+          {
+            "name": "sky-relay-pack-build-report.json",
+            "size": 6362,
+            "sha256": "05b64f4aaf8c3d125174abfa780096f6511ebd9bf20f6553a47f635ba1edf474"
+          }
+        ],
+        "zip": {
+          "name": "sky-relay-neoforge-edition-0.1.0.zip",
+          "manifestFiles": 12,
+          "validated": true
+        }
+      },
+      {
+        "packId": "sky-relay-standalone-edition",
+        "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+        "releaseTag": "sky-relay-standalone-0.1.0-alpha",
+        "draft": false,
+        "downloadDir": "tmp/sky-relay-edition-pack-download/ECHO-Sky-Relay-Standalone-Edition",
+        "assets": [
+          {
+            "name": "checksums.txt",
+            "size": 405,
+            "sha256": "46b8c36eedf98d45746ff1ea290dd418b6d94601345623982f803e182721bf50"
+          },
+          {
+            "name": "echo-release.json",
+            "size": 4683,
+            "sha256": "ac55bca204e6dd8f12c7563d1f21c400cf28d2c1d88e9392cf91b425a1c3c49a"
+          },
+          {
+            "name": "sky-relay-pack-build-report.json",
+            "size": 6466,
+            "sha256": "0dc9c8a82827eda3e73037a36b2a0dc70368f045acdda00e6126065c42dce319"
+          },
+          {
+            "name": "sky-relay-standalone-edition-0.1.0.zip",
+            "size": 40131817,
+            "sha256": "93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2"
+          },
+          {
+            "name": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+            "size": 10729,
+            "sha256": "dc4a0b668a83ec9d00f7875ba67fc632cd326cd0fee576cf1ae4d0363095d913"
+          }
+        ],
+        "zip": {
+          "name": "sky-relay-standalone-edition-0.1.0.zip",
+          "manifestFiles": 12,
+          "validated": true
+        }
+      }
+    ]
+  },
+  "gates": {
+    "editionPackAssetsBuilt": "passed",
+    "editionDraftAssetsUploaded": "passed",
+    "editionDraftDownloadBack": "passed",
+    "editionPublicPrereleasesPromoted": "passed",
+    "stableTaggedArtifactUrls": "passed",
+    "zipMatchesPackManifest": "passed",
+    "releaseIndexApproval": "blocked",
+    "launcherInstallUpdateRepairRollback": "node_contract_passed_packaged_install_update_repair_passed",
+    "gameplayRouteContractSmoke": "passed",
+    "gameplaySmoke": "not_started",
+    "launcherLifecycleContractSmoke": "passed",
+    "launcherBrowserPreviewUiSmoke": "passed",
+    "launcherPackagedElectronUiSmoke": "passed",
+    "launcherPackagedElectronInstallUpdateRepair": "passed",
+    "launcherPackagedElectronRollback": "not_available_no_visible_ui_command",
+    "electronUiEndToEnd": "packaged_install_update_repair_passed",
+    "gameplayEvidenceVerifier": "blocked_missing_manual_playthrough_evidence"
+  },
+  "relatedEvidence": {
+    "moduleDraftRelease": "release-readiness/sky-relay-module-draft-release.json",
+    "launcherLifecycleSmoke": "release-readiness/sky-relay-launcher-lifecycle-smoke.json",
+    "launcherUiSmoke": "release-readiness/sky-relay-launcher-ui-smoke.json",
+    "launcherElectronUiSmoke": "release-readiness/sky-relay-electron-ui-smoke.json",
+    "packSmoke": "release-readiness/sky-relay-edition-pack-smoke.json",
+    "gameplayRouteSmoke": "release-readiness/sky-relay-gameplay-route-smoke.json",
+    "gameplayEvidence": "release-readiness/sky-relay-gameplay-evidence.json"
+  },
+  "promotionBlockers": [
+    "Release Index modpack entries now point at stable public prerelease URLs but remain warning-gated until gameplay smoke evidence is available.",
+    "Browser-preview UI smoke passed for the Library pack cards.",
+    "Packaged Electron UI smoke passed for renderer mount, native bridge bootstrap, Sky Relay preview card gating, install click-through, update reconciliation, and repair click-through; rollback has no visible packaged UI command.",
+    "Launcher Node lifecycle smoke passed for deep links, install, fixture-local version-transition update, repair, rollback, and post-rollback update.",
+    "Pack smoke passed for downloaded assets, fixture-local version-transition update, repair, rollback, and post-rollback update.",
+    "Gameplay route contract smoke passed; release-readiness/sky-relay-gameplay-evidence.json now enforces missing real first 30 minutes, first 2 hours, and Signal Crown playthrough evidence for Native, NeoForge, and Standalone editions.",
+    "Version-transition update mechanics use a fixture-local previous Sky Relay manifest plus current public 0.1.0 assets; this proves update behavior without claiming a second public Sky Relay release exists."
+  ]
+}

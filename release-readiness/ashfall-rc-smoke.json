@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "echo.ashfall.rc-smoke.v1",
+  "generatedAt": "2026-06-11T10:14:37.355Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": {
+    "blockingDiagnostics": 2,
+    "warningCount": 2,
+    "installedFileCount": 13,
+    "packFileCount": 10,
+    "zipEntryCount": 13,
+    "embeddedChecksumCount": 12,
+    "warnings": [
+      "GitHub draft release download has not been recorded; smoke used local staged assets.",
+      "Release has not been promoted after all readiness gates were green."
+    ]
+  },
+  "data": {
+    "localStagedArtifactSmoke": true,
+    "draftReleaseDownloaded": false,
+    "installedFromDownloadedArtifacts": false,
+    "launcherInstallSmoke": true,
+    "updateSmoke": true,
+    "rollbackPlanVerified": true,
+    "promotedAfterGreen": false,
+    "artifactSource": "local-public-alpha-staging",
+    "launcherInstallSmokeMode": "pack-manifest-checksum-install",
+    "updateSmokeMode": "same-artifact-reinstall-with-rollback-plan",
+    "publishBlockedReason": "GitHub draft release download has not been recorded; smoke used local staged assets. Release has not been promoted after all readiness gates were green.",
+    "nativeStage": "tmp/public-alpha-assets/ECHO-Ashfall-Native-Edition",
+    "moduleStage": "tmp/public-alpha-assets/ECHO-Modules",
+    "draftDownloadEvidence": null,
+    "artifact": {
+      "file": "ashfall-native-edition-0.1.0.zip",
+      "sha256": "941848f5d4b47bfb279bd0134cd87cf9f6b06b1b0886f71e355d7da3340a2cdc",
+      "size": 93423349
+    },
+    "manifest": {
+      "file": "ashfall-native-edition-alpha-0.1.0.pack.json",
+      "sha256": "ea024a32c083b14b1205ac53f905597a7fc110df658692b79712046c1c299a01",
+      "size": 9233
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "sha256": "91ec930514ef1732d2dfb9181f4e960c42e67fb6e00b5dd1e401a84d9bc1e9df",
+      "size": 3948
+    },
+    "moduleRelease": {
+      "moduleCount": 10,
+      "requiredModules": [
+        "echocore",
+        "echoplatformcore",
+        "echoadaptercore",
+        "echonetcore",
+        "echoruntimeguard",
+        "echolens",
+        "echopresencelink",
+        "echoterminal",
+        "echoblockworks",
+        "echoashfallprotocol"
+      ]
+    },
+    "installRoot": null,
+    "tempRoot": null,
+    "repairSmoke": {
+      "ok": true,
+      "target": "addons/echocore-1.0.0.echo-addon",
+      "restoredSha256": "a00395f5818b0d31aa8c36e0be611feab31d35bd95364aca1144d4eb5fb0ac55"
+    },
+    "rollbackPlan": {
+      "backedUp": [
+        {
+          "path": "addons/echocore-1.0.0.echo-addon",
+          "backupPath": ".echo/rollback/rc-smoke/addons/echocore-1.0.0.echo-addon"
+        }
+      ],
+      "removed": [
+        "addons/echocore-1.0.0.echo-addon"
+      ]
+    },
+    "tempCleaned": true
+  }
+}

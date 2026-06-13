@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sky-relay-native-edition",
+  "name": "Sky Relay Native Edition",
+  "channel": "alpha",
+  "loader": "echo-native-loader",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
+    "nativePlatform": "https://github.com/knoxhack/ECHO-Native-Platform",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "echo-addon",
+  "moduleArtifactPattern": "<module>-<version>.echo-addon",
+  "updatePolicy": "Use this manifest for Sky Relay Native Edition launcher pack updates. Module entries must pin .echo-addon artifacts from ECHO-Modules.",
+  "moduleRequirements": [
+    {
+      "id": "echoskyrelayprotocol",
+      "version": "0.1.0"
+    }
+  ],
+  "assets": []
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "sky-relay-neoforge-edition",
+  "name": "Sky Relay NeoForge Edition",
+  "channel": "alpha",
+  "loader": "neoforge",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "neoforge",
+  "moduleArtifactPattern": "<module>-<version>-neoforge.jar",
+  "updatePolicy": "Use this manifest for Sky Relay NeoForge Edition launcher pack updates. Module entries must pin -neoforge.jar artifacts from ECHO-Modules.",
+  "moduleRequirements": [
+    {
+      "id": "echoskyrelayprotocol",
+      "version": "0.1.0"
+    }
+  ],
+  "assets": []
+}

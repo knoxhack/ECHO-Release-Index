@@ -193,8 +193,15 @@ async function uploadAssets(owner, repository, release, args, authToken, result)
   if (skipped.length) {
     result.skippedStagedAssets = skipped.map((asset) => asset.name)
   }
+  const forbiddenSkipped = repository.repoName === 'ECHO-Ashfall-Native-Edition'
+    ? skipped.filter((asset) => ASHFALL_NATIVE_FORBIDDEN_STAGED_ASSET.test(asset.name))
+    : []
+  if (forbiddenSkipped.length) {
+    result.forbiddenStagedAssets = forbiddenSkipped.map((asset) => asset.name)
+  }
   const stagedByName = new Map(staged.map((asset) => [asset.name, asset]))
   const missing = [...publishNames].filter((name) => !stagedByName.has(name))
+  missing.push(...forbiddenSkipped.map((asset) => `forbidden staged Ashfall Native asset ${asset.name}`))
   result.missingStagedAssets = missing
 
   const liveAssets = await listAssets(owner, repository.repoName, release, authToken)
@@ -251,6 +258,7 @@ const ASHFALL_NATIVE_RELEASE_READY_ASSETS = [
   'ashfall-native-edition-alpha-0.1.0.pack.json',
   'ashfall-native-edition-0.1.0.zip',
 ]
+const ASHFALL_NATIVE_FORBIDDEN_STAGED_ASSET = /echo-native-product|existing-layout|placeholder/iu
 
 function expectedNamesForPublish(repository) {
   const expected = expectedAssetNames(repository)
@@ -334,7 +342,7 @@ async function main() {
   }
   if (args.out) await writeJson(path.resolve(args.root, args.out), summary)
   console.log(JSON.stringify(summary, null, 2))
-  if (missing.length > 0 && args.strictAssets) process.exit(1)
+  if (missing.length > 0 && args.strictAssets) process.exitCode = 1
 }
 
 main().catch((error) => {

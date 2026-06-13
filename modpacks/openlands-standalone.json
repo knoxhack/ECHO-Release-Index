@@ -1,0 +1,30 @@
+{
+  "id": "openlands-standalone-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "experimental",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
+  "releaseTag": "planned-openlands-standalone-0.1.0",
+  "commitSha": "4444444",
+  "artifacts": {},
+  "dependencies": [
+    {
+      "id": "echo-standalone-runtime",
+      "kind": "runtime",
+      "version": ">=0.1.0"
+    },
+    {
+      "id": "echoopenlandsprotocol",
+      "kind": "addon",
+      "version": "0.1.0"
+    }
+  ],
+  "compatibility": [
+    "standalone",
+    "openlands"
+  ],
+  "trust": "source-linked",
+  "validation": "warning",
+  "notes": "Planned Openlands Standalone Edition. Keep warning until pack manifest and -standalone.jar artifacts exist."
+}

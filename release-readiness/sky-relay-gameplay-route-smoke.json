@@ -1,0 +1,254 @@
+{
+  "schemaVersion": "echo.skyrelay.gameplay-route-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-11T11:59:29.858Z",
+  "moduleId": "echoskyrelayprotocol",
+  "scope": "data-contract-smoke",
+  "note": "This validates route and proof data for gameplay smoke planning. It does not replace a visible in-game playthrough.",
+  "catalogCounts": {
+    "blocks": 14,
+    "items": 16,
+    "fragments": 9,
+    "chapters": 12,
+    "anchorRules": 9,
+    "terminalPages": 4,
+    "lensProfiles": 5,
+    "holoMapLayers": 4,
+    "weatherRoutes": 4,
+    "recoveryBindings": 1
+  },
+  "routes": [
+    {
+      "id": "first_30_minutes",
+      "targetDurationMinutes": 30,
+      "stepCount": 12,
+      "chapters": [
+        "awakening",
+        "power_critical",
+        "first_anchor",
+        "water_problem",
+        "storm_warning"
+      ],
+      "requiredChaptersCovered": [
+        "awakening",
+        "power_critical",
+        "first_anchor",
+        "storm_warning"
+      ],
+      "requiredProofsCovered": [
+        "block_seen:damaged_relay_core",
+        "terminal_page:relay_status",
+        "lens_scan:damaged_relay_core",
+        "fragment:hydroponics_deck"
+      ],
+      "externalProofs": [
+        "external_block:hydroponic_tray",
+        "item:recovered_seed_capsule",
+        "power:hand_crank_online",
+        "power:small_battery_bank_stable"
+      ],
+      "resolvedProofs": [
+        {
+          "stepId": "wake_at_core",
+          "proof": "block_seen:damaged_relay_core",
+          "scope": "internal"
+        },
+        {
+          "stepId": "open_terminal",
+          "proof": "terminal_page:relay_status",
+          "scope": "internal"
+        },
+        {
+          "stepId": "scan_relay_core",
+          "proof": "lens_scan:damaged_relay_core",
+          "scope": "internal"
+        },
+        {
+          "stepId": "repair_hand_crank",
+          "proof": "power:hand_crank_online",
+          "scope": "external"
+        },
+        {
+          "stepId": "charge_small_battery",
+          "proof": "power:small_battery_bank_stable",
+          "scope": "external"
+        },
+        {
+          "stepId": "claim_anchor_key",
+          "proof": "item:relay_anchor_key",
+          "scope": "internal"
+        },
+        {
+          "stepId": "reveal_hydroponics",
+          "proof": "holomap:hydroponics_deck",
+          "scope": "internal-fragment"
+        },
+        {
+          "stepId": "attach_hydroponics",
+          "proof": "fragment:hydroponics_deck",
+          "scope": "internal"
+        },
+        {
+          "stepId": "place_hydroponic_tray",
+          "proof": "external_block:hydroponic_tray",
+          "scope": "external"
+        },
+        {
+          "stepId": "open_seed_capsule",
+          "proof": "item:recovered_seed_capsule",
+          "scope": "external"
+        },
+        {
+          "stepId": "receive_forecast",
+          "proof": "terminal_page:storm_forecast",
+          "scope": "internal"
+        },
+        {
+          "stepId": "build_basic_shelter",
+          "proof": "block:pressure_bulkhead",
+          "scope": "internal"
+        }
+      ]
+    },
+    {
+      "id": "first_2_hours",
+      "targetDurationMinutes": 120,
+      "stepCount": 10,
+      "chapters": [
+        "water_problem",
+        "salvage_expansion",
+        "storm_warning",
+        "solar_recovery",
+        "network_routing",
+        "weather_control",
+        "machine_restoration"
+      ],
+      "requiredChaptersCovered": [
+        "water_problem",
+        "salvage_expansion",
+        "storm_warning",
+        "solar_recovery",
+        "weather_control",
+        "network_routing",
+        "machine_restoration"
+      ],
+      "requiredProofsCovered": [
+        "block:atmospheric_condenser",
+        "fragment:aero_salvage_yard",
+        "block:storm_shield_pylon",
+        "fragment:solar_wing",
+        "fragment:weather_mast",
+        "item:stabilized_platform_core"
+      ],
+      "externalProofs": [
+        "integration:logistics_first_route",
+        "weather:severe_storm_survived"
+      ],
+      "resolvedProofs": [
+        {
+          "stepId": "stabilize_food",
+          "proof": "fragment:hydroponics_deck",
+          "scope": "internal"
+        },
+        {
+          "stepId": "build_condenser",
+          "proof": "block:atmospheric_condenser",
+          "scope": "internal"
+        },
+        {
+          "stepId": "attach_salvage_yard",
+          "proof": "fragment:aero_salvage_yard",
+          "scope": "internal"
+        },
+        {
+          "stepId": "process_relay_plates",
+          "proof": "item:relay_alloy_plate",
+          "scope": "internal"
+        },
+        {
+          "stepId": "build_shield_pylon",
+          "proof": "block:storm_shield_pylon",
+          "scope": "internal"
+        },
+        {
+          "stepId": "attach_solar_wing",
+          "proof": "fragment:solar_wing",
+          "scope": "internal"
+        },
+        {
+          "stepId": "start_logistics_route",
+          "proof": "integration:logistics_first_route",
+          "scope": "external"
+        },
+        {
+          "stepId": "unlock_weather_mast",
+          "proof": "fragment:weather_mast",
+          "scope": "internal"
+        },
+        {
+          "stepId": "survive_severe_storm",
+          "proof": "weather:severe_storm_survived",
+          "scope": "external"
+        },
+        {
+          "stepId": "craft_platform_core",
+          "proof": "item:stabilized_platform_core",
+          "scope": "internal"
+        }
+      ]
+    }
+  ],
+  "signalCrown": {
+    "id": "signal_crown",
+    "requirementCount": 6,
+    "reward": "sky_relay_badge",
+    "fragment": "signal_crown",
+    "anchorRule": "signal_crown",
+    "requirements": [
+      {
+        "id": "stabilized_platform_cores",
+        "requiredCount": 5,
+        "proof": "item:stabilized_platform_core",
+        "scope": "internal"
+      },
+      {
+        "id": "relay_signal_array",
+        "requiredCount": 1,
+        "proof": "block:relay_signal_array",
+        "scope": "internal"
+      },
+      {
+        "id": "storm_shield_network",
+        "requiredCount": 1,
+        "proof": "integration:shield_network_online",
+        "scope": "external"
+      },
+      {
+        "id": "automated_logistics_route",
+        "requiredCount": 1,
+        "proof": "integration:logistics_automated_route",
+        "scope": "external"
+      },
+      {
+        "id": "orbital_alloy_components",
+        "requiredCount": 3,
+        "proof": "item:orbital_alloy_scrap",
+        "scope": "internal"
+      },
+      {
+        "id": "terminal_restoration_sequence",
+        "requiredCount": 1,
+        "proof": "terminal:final_restoration_sequence",
+        "scope": "external"
+      }
+    ]
+  },
+  "gates": {
+    "first30RouteContract": "passed",
+    "first2HourRouteContract": "passed",
+    "signalCrownContract": "passed",
+    "realFirst30Playthrough": "not_started",
+    "realFirst2HourPlaythrough": "not_started",
+    "realSignalCrownPlaythrough": "not_started"
+  }
+}

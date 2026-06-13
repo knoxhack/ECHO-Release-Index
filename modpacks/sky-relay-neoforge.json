@@ -1,0 +1,57 @@
+{
+  "id": "sky-relay-neoforge-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+  "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
+  "commitSha": "60c3f66a26586fbe68e4509c52ceb4b91f98fe94",
+  "artifacts": {
+    "pack": {
+      "file": "sky-relay-neoforge-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-0.1.0.zip",
+      "sha256": "04fde5ab03cd89ee3717a90491d818de2659cf77cfc5ea9b0e1ad43e64a9ca7b",
+      "size": 40132235
+    },
+    "manifest": {
+      "file": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+      "sha256": "977193ea843bc1aafc6a817d1487358acd25cb9105a2a2b34346678f02ea6ce1",
+      "size": 11225
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
+      "sha256": "ae0bd0e772c18fe70e08fa07159e49235aa3ec444ca11c7235eae76c50cc53d6",
+      "size": 401
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
+      "sha256": "8c26437008b3e3eb0bd0b366c3290c15327effeb0fcfdeff97dd5245f8ae9d5f",
+      "size": 4613
+    },
+    "buildReport": {
+      "file": "sky-relay-pack-build-report.json",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-pack-build-report.json",
+      "sha256": "05b64f4aaf8c3d125174abfa780096f6511ebd9bf20f6553a47f635ba1edf474",
+      "size": 6362
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoskyrelayprotocol",
+      "kind": "addon",
+      "version": "0.1.0"
+    }
+  ],
+  "compatibility": [
+    "neoforge",
+    "sky-relay"
+  ],
+  "trust": "echo-workflow-built",
+  "validation": "warning",
+  "validationReason": "Public prerelease pack assets are published and checksum-backed; keep warning until real gameplay evidence is attached for public alpha.",
+  "notes": "Sky Relay NeoForge Edition prerelease. Launcher Node lifecycle evidence covers install/update/repair/rollback for this edition."
+}

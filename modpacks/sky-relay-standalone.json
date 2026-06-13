@@ -1,0 +1,62 @@
+{
+  "id": "sky-relay-standalone-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+  "releaseTag": "sky-relay-standalone-0.1.0-alpha",
+  "commitSha": "17ada1c865b41e4cb382fd573777d298ad53146f",
+  "artifacts": {
+    "pack": {
+      "file": "sky-relay-standalone-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-0.1.0.zip",
+      "sha256": "93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2",
+      "size": 40131817
+    },
+    "manifest": {
+      "file": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+      "sha256": "dc4a0b668a83ec9d00f7875ba67fc632cd326cd0fee576cf1ae4d0363095d913",
+      "size": 10729
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/checksums.txt",
+      "sha256": "46b8c36eedf98d45746ff1ea290dd418b6d94601345623982f803e182721bf50",
+      "size": 405
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/echo-release.json",
+      "sha256": "ac55bca204e6dd8f12c7563d1f21c400cf28d2c1d88e9392cf91b425a1c3c49a",
+      "size": 4683
+    },
+    "buildReport": {
+      "file": "sky-relay-pack-build-report.json",
+      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-pack-build-report.json",
+      "sha256": "0dc9c8a82827eda3e73037a36b2a0dc70368f045acdda00e6126065c42dce319",
+      "size": 6466
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echo-standalone-runtime",
+      "kind": "runtime",
+      "version": ">=0.1.0"
+    },
+    {
+      "id": "echoskyrelayprotocol",
+      "kind": "addon",
+      "version": "0.1.0"
+    }
+  ],
+  "compatibility": [
+    "standalone",
+    "sky-relay"
+  ],
+  "trust": "echo-workflow-built",
+  "validation": "warning",
+  "validationReason": "Public prerelease pack assets are published and checksum-backed; keep warning until real gameplay evidence is attached for public alpha.",
+  "notes": "Sky Relay Standalone Edition prerelease. Launcher Node lifecycle evidence covers install/update/repair/rollback for this edition."
+}

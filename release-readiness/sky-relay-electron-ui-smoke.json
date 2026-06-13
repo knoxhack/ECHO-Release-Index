@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-11T15:24:23.004Z",
+  "scope": "packaged-electron-ui-and-lifecycle-smoke",
+  "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
+  "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data",
+  "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content",
+  "debugPort": 63219,
+  "catalogPort": 63220,
+  "platform": {
+    "os": "win32",
+    "release": "10.0.19045",
+    "arch": "x64"
+  },
+  "catalog": {
+    "channelUrl": "http://127.0.0.1:63220/channel.json",
+    "servedPack": "sky-relay-native-edition",
+    "releaseVersion": "0.1.0",
+    "manifestName": "sky-relay-native-edition-alpha-0.1.0.pack.json",
+    "artifactName": "sky-relay-native-edition-0.1.0.zip",
+    "manifestSha256": "3ec3a450e08f92d1a5bd409b552a66c72f21d69be5815d98769357c86ee1c420",
+    "artifactSha256": "8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa"
+  },
+  "nativeBridge": {
+    "available": true,
+    "protocolVersion": 3,
+    "profileIds": [
+      "ashfall-native-edition",
+      "ashfall-neoforge-edition",
+      "ashfall-standalone-edition",
+      "sky-relay-native-edition",
+      "sky-relay-neoforge-edition",
+      "sky-relay-standalone-edition"
+    ],
+    "releaseIndexAccepted": 1,
+    "releaseIndexWarnings": [],
+    "launcherUpdateStatus": "checking",
+    "userData": null
+  },
+  "ui": {
+    "title": "ECHO Launcher",
+    "href": "file:///C:/Development/Github/ECHO-Launcher/installer-artifacts/win-unpacked/resources/app.asar/dist/index.html",
+    "activeHeading": "Library",
+    "rootMounted": true,
+    "startupRecovery": false,
+    "nativeBridgeAvailable": true,
+    "officialPacksLabelVisible": true,
+    "cards": [
+      {
+        "name": "Sky Relay Native Edition",
+        "found": true,
+        "heading": {
+          "clientWidth": 496,
+          "scrollWidth": 496,
+          "overflow": false,
+          "rect": {
+            "left": 871,
+            "top": 1647,
+            "width": 496,
+            "height": 38
+          }
+        },
+        "statusPreview": true,
+        "modeViewOnly": true,
+        "playLocked": true,
+        "noInstallProfile": true
+      },
+      {
+        "name": "Sky Relay NeoForge Edition",
+        "found": true,
+        "heading": {
+          "clientWidth": 496,
+          "scrollWidth": 496,
+          "overflow": false,
+          "rect": {
+            "left": 318,
+            "top": 2420,
+            "width": 496,
+            "height": 38
+          }
+        },
+        "statusPreview": true,
+        "modeViewOnly": true,
+        "playLocked": true,
+        "noInstallProfile": true
+      },
+      {
+        "name": "Sky Relay Standalone Edition",
+        "found": true,
+        "heading": {
+          "clientWidth": 496,
+          "scrollWidth": 496,
+          "overflow": false,
+          "rect": {
+            "left": 871,
+            "top": 2396,
+            "width": 496,
+            "height": 38
+          }
+        },
+        "statusPreview": true,
+        "modeViewOnly": true,
+        "playLocked": true,
+        "noInstallProfile": true
+      }
+    ],
+    "hasInstallSkyRelay": false,
+    "hasPlaySkyRelay": false
+  },
+  "clickThrough": {
+    "selectedPack": {
+      "packId": "sky-relay-native-edition",
+      "name": "Sky Relay Native Edition",
+      "profile": {
+        "id": "sky-relay-native-edition",
+        "name": "Sky Relay Native Edition",
+        "version": "0.1.0",
+        "status": "healthy",
+        "installPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition",
+        "manifestPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\.echo\\installed-manifest.json"
+      }
+    },
+    "install": {
+      "ok": true,
+      "operation": "install",
+      "click": {
+        "clicked": true,
+        "text": "Install Ashfall 0.1.0"
+      },
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-11T13-24-47-776Z.json",
+      "installed": 12,
+      "updated": 0,
+      "verified": 0,
+      "downloaded": 1,
+      "installPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition",
+      "verifiedModule": {
+        "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
+        "sha256": "cfb1a2e4baabfe453bf3ab05621944b6e1f0af9e634340a8f6874ebbb71da10b",
+        "expectedSha256": "cfb1a2e4baabfe453bf3ab05621944b6e1f0af9e634340a8f6874ebbb71da10b"
+      }
+    },
+    "update": {
+      "ok": true,
+      "operation": "update",
+      "click": {
+        "clicked": true,
+        "text": "Install Ashfall"
+      },
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-11T13-24-50-763Z.json",
+      "installed": 0,
+      "updated": 0,
+      "verified": 12,
+      "downloaded": 0,
+      "verifiedModule": {
+        "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
+        "sha256": "cfb1a2e4baabfe453bf3ab05621944b6e1f0af9e634340a8f6874ebbb71da10b",
+        "expectedSha256": "cfb1a2e4baabfe453bf3ab05621944b6e1f0af9e634340a8f6874ebbb71da10b"
+      }
+    },
+    "repair": {
+      "ok": true,
+      "click": {
+        "clicked": true,
+        "text": "Repair Now"
+      },
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-11T13-24-51-539Z.json",
+      "repaired": [
+        "addons/echoskyrelayprotocol-0.1.0.echo-addon"
+      ],
+      "skipped": [],
+      "warnings": [],
+      "corruptSha256": "83554426d6d613e4077131af5c5c9b61a692fad7a71f5d1633eb627c089849b9",
+      "verifiedModule": {
+        "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
+        "sha256": "cfb1a2e4baabfe453bf3ab05621944b6e1f0af9e634340a8f6874ebbb71da10b",
+        "expectedSha256": "cfb1a2e4baabfe453bf3ab05621944b6e1f0af9e634340a8f6874ebbb71da10b"
+      }
+    },
+    "rollback": {
+      "state": "covered_by_node_lifecycle_smoke_no_visible_packaged_ui_command"
+    }
+  },
+  "gates": {
+    "packagedElectronRendererMounted": "passed",
+    "nativeBridgeBootstrap": "passed",
+    "skyRelayLibraryCardsVisible": "passed",
+    "skyRelayPreviewGating": "passed",
+    "skyRelayHeadingOverflow": "passed",
+    "packagedElectronInstallClickThrough": "passed",
+    "packagedElectronUpdateReconciliationClickThrough": "passed",
+    "packagedElectronRepairClickThrough": "passed",
+    "packagedElectronRollbackClickThrough": "not_available_no_visible_ui_command",
+    "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
+  },
+  "process": {
+    "pid": 34736,
+    "stdout": [
+      "Checking for update",
+      "Generated new staging user ID: e05de2e2-5e12-5794-abf3-c1bed6fecad4",
+      "Update for version 1.0.4 is not available (latest version: 1.0.4, downgrade is disallowed)."
+    ],
+    "stderr": [
+      "DevTools listening on ws://127.0.0.1:63219/devtools/browser/d83a60da-4d5b-4d96-98f1-ac471dafa603"
+    ]
+  }
+}
