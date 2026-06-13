@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T11:18:52-04:00",
+  "generatedAt": "2026-06-13T11:21:09-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,22 +16,14 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "cff8e874ff57",
-        "commitDate": "2026-06-13T11:12:21-04:00",
+        "commit": "b4bf8e7fad31",
+        "commitDate": "2026-06-13T11:21:09-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
-          " M release-readiness/galactic-survey-public-alpha-readiness.json",
-          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
-          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
-          "?? release-readiness/native-sdk-rc1-artifacts.json",
-          "?? release-readiness/openlands-standalone-electron-install-smoke.json",
-          "?? scripts/test-verify-native-sdk-rc1-artifacts.mjs",
-          "?? scripts/verify-native-sdk-rc1-artifacts.mjs"
+          "?? release-readiness/openlands-standalone-electron-install-smoke.json"
         ]
       },
       "canonicalDocs": [
@@ -732,8 +724,11 @@
         "branch": "main",
         "commit": "7a7b835978fe",
         "commitDate": "2026-06-13T11:18:52-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M src/main/scanner.ts",
+          " M src/shared/echo.ts"
+        ]
       },
       "canonicalDocs": [
         {
