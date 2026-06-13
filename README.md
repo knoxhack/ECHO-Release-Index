@@ -74,7 +74,7 @@ Index JSON and catalog metadata belong here. Binary release assets stay in their
 
 ## Native Platform RC1
 
-The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, SDK export, external addon release-mode proof, GitHub upload/download-back, and published asset attestation evidence exist, but public approval is blocked until launcher install/rollback/diagnostics and real pack gameplay evidence pass. See `docs/native-platform-rc1-handoff.md`.
+The Native Platform product entry currently points at `1.0.0-RC1` and remains warning-gated. Local artifact, SDK export, external addon release-mode proof, GitHub upload/download-back, published asset attestation, and Galactic Survey launcher install/update/repair/rollback evidence exist, but public approval is blocked until packaged first launch, diagnostics export, final catalog promotion, and real pack gameplay evidence pass. See `docs/native-platform-rc1-handoff.md`.
 
 Each installable entry must include stable fields for `id`, `kind`, `version`, `channel`, `publisher`, `sourceRepo`, `releaseTag`, `commitSha`, `artifacts`, `dependencies`, `compatibility`, `trust`, and `validation`.
 

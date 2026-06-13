@@ -32,15 +32,15 @@ Local artifact evidence exists:
 
 The local external addon proof generated, built, packaged, and loaded a `.echo-addon` through Native release mode. That proves the developer export path, but it does not prove public distribution.
 
-Partial Launcher lifecycle evidence now exists:
+Launcher lifecycle evidence now exists:
 
 - Evidence: `release-readiness/galactic-survey-launcher-lifecycle-smoke.json`
 - Packaged Electron evidence: `release-readiness/galactic-survey-electron-ui-smoke.json`
 - Reducer: `release-readiness/galactic-survey-public-alpha-readiness.json`
-- Scope: Galactic Survey draft GitHub pack assets, including `galactic-survey-native-edition`.
+- Scope: Galactic Survey public prerelease GitHub pack assets, including `galactic-survey-native-edition`.
 - Passed: Launcher-owned deep-link resolution, pack ZIP install, update reconciliation, version-transition update, corrupt-file repair, rollback, and post-rollback update.
 - Passed in packaged Electron: renderer mount, native bridge bootstrap, Galactic Survey Library cards, scoped card actions, install click-through, update reconciliation click-through, and corrupt-file repair click-through.
-- Not covered: first launch, diagnostics export, final public pack promotion, and real gameplay/player evidence. Packaged Electron rollback remains covered by the Launcher-owned lifecycle smoke until the UI exposes a visible rollback command.
+- Not covered: packaged first launch, diagnostics export, final catalog promotion, and real gameplay/player evidence. Packaged Electron rollback remains covered by the Launcher-owned lifecycle smoke until the UI exposes a visible rollback command.
 
 ## Approval Boundary
 
