@@ -2,7 +2,7 @@
 
 ## Current State
 
-`echo-native-platform` is indexed as `1.0.0-RC1` and remains warning-gated.
+`echo-native-platform` is indexed as `1.0.0-RC1` with approved runtime provenance. The wider Native full-release train remains gated by real launcher first-launch/open-play evidence and real gameplay/player evidence.
 
 The RC1 GitHub prerelease now exists and the product assets have passed download-back smoke from GitHub bytes:
 
@@ -36,11 +36,15 @@ Native SDK RC1 artifact evidence now exists:
 
 - Evidence: `release-readiness/native-sdk-rc1-artifacts.json`
 - Download smoke: `release-readiness/native-sdk-rc1-download-smoke.json`
+- Attestation evidence: `release-readiness/native-sdk-rc1-attestation.json`
+- Provenance workflow: `https://github.com/knoxhack/ECHO-SDK/actions/runs/27472775602`
+- Provenance workflow commit: `d167e4cae7a5643d7cca978aca6cdaeb132862cc`
 - Scope: `echo-native-contracts`, `echoaddonapi`, `echoadaptercore`, `echo-native-testkit`, and the SDK Gradle plugin.
 - Local status: all 15 required main/source/Javadoc jars exist in the owning repos.
 - Public status: passed. All 15 jars are indexed in `products/native-sdk.json` with GitHub release URLs, exact size, and SHA-256.
 - Download-back status: passed. All 15 jars downloaded from the public SDK RC1 release and matched their indexed size/SHA-256 values.
-- Stable provenance status: blocked. The SDK jar set must be approved with non-source-linked provenance before stable `1.0.0`.
+- Attestation status: passed. `gh attestation verify` confirms the workflow-built SLSA statement covers all 15 public SDK jars plus `checksums.sha256` and `native-sdk-rc1-manifest.json`.
+- Stable provenance status: passed for the SDK artifact set. `products/native-sdk.json` is now `provenance-attested` and `approved`.
 
 Galactic Survey module and pack prerelease evidence now exists:
 
@@ -106,8 +110,9 @@ Do not approve stable `1.0.0` and do not remove warning validation until all of 
 - `release-readiness/galactic-survey-manual-gameplay-work-order.json` is COMPLETE and all three Galactic Survey edition `verify-manual-gameplay-evidence.mjs --require-release-ready` commands pass.
 - Final public pack promotion evidence is approved.
 - At least one Native pack gameplay smoke passes from the published runtime.
-- `release-readiness/native-sdk-rc1-download-smoke.json` is PASS, proving public SDK main/source/Javadoc jar URLs download back with exact size/SHA-256 matches.
-- `release-readiness/native-sdk-rc1-artifacts.json` is PASS, proving public SDK main/source/Javadoc jars are cataloged, download-smoked, and approved with non-source-linked provenance.
+- `release-readiness/native-sdk-rc1-download-smoke.json` remains PASS, proving public SDK main/source/Javadoc jar URLs download back with exact size/SHA-256 matches.
+- `release-readiness/native-sdk-rc1-attestation.json` remains passed, proving the public SDK bytes are covered by GitHub workflow-built SLSA provenance.
+- `release-readiness/native-sdk-rc1-artifacts.json` remains PASS, proving public SDK main/source/Javadoc jars are cataloged, download-smoked, attested, and approved with non-source-linked provenance.
 - Stable-target catalog metadata has no `warning`, `blocked`, or `alpha` release blocker, and no stable artifact remains `source-linked`.
 
 ## Mutation Truth
@@ -126,5 +131,6 @@ The current Native release contract is typed-host-receipt based:
 - `release-readiness/galactic-survey-electron-ui-smoke.json`
 - `release-readiness/galactic-survey-public-alpha-readiness.json`
 - `release-readiness/native-sdk-rc1-artifacts.json`
+- `release-readiness/native-sdk-rc1-attestation.json`
 - `release-readiness/native-sdk-rc1-download-smoke.json`
 - `../ECHO-Native-Platform/docs/echo/native/RELEASE_CANDIDATE_CHECKLIST.md`

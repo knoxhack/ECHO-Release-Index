@@ -6,6 +6,7 @@ import process from 'node:process'
 
 const DEFAULT_OUT = 'release-readiness/native-sdk-rc1-artifacts.json'
 const DEFAULT_DOWNLOAD_SMOKE = 'release-readiness/native-sdk-rc1-download-smoke.json'
+const DEFAULT_ATTESTATION = 'release-readiness/native-sdk-rc1-attestation.json'
 const RELEASE_LINE = '1.0.0-RC1'
 const SHA256_PATTERN = /^[a-f0-9]{64}$/iu
 const GITHUB_RELEASE_URL_PATTERN = /^https:\/\/github\.com\/knoxhack\//u
@@ -56,6 +57,7 @@ function parseArgs(argv) {
     workspaceRoot: null,
     out: DEFAULT_OUT,
     downloadSmoke: DEFAULT_DOWNLOAD_SMOKE,
+    attestation: DEFAULT_ATTESTATION,
     write: false,
     requireReleaseReady: false,
     help: false
@@ -66,6 +68,7 @@ function parseArgs(argv) {
     else if (arg === '--workspace-root') args.workspaceRoot = path.resolve(argv[++index])
     else if (arg === '--out') args.out = argv[++index]
     else if (arg === '--download-smoke') args.downloadSmoke = argv[++index]
+    else if (arg === '--attestation') args.attestation = argv[++index]
     else if (arg === '--write') args.write = true
     else if (arg === '--require-release-ready') args.requireReleaseReady = true
     else if (arg === '--help') args.help = true
@@ -87,6 +90,7 @@ Options:
   --workspace-root <dir>       Workspace containing sibling ECHO repos. Default: parent of --root.
   --out <path>                 Report path relative to --root. Default: ${DEFAULT_OUT}.
   --download-smoke <path>      Download smoke report relative to --root. Default: ${DEFAULT_DOWNLOAD_SMOKE}.
+  --attestation <path>         Attestation report relative to --root. Default: ${DEFAULT_ATTESTATION}.
   --write                      Write the JSON report.
   --require-release-ready      Fail if local jars or public provenance are incomplete.
   --help                       Print this help text.
@@ -192,11 +196,16 @@ async function catalogArtifactRecords(root) {
   return records
 }
 
-function recordMatchesLocal(record, local) {
+function recordIsPublicCatalogArtifact(record) {
   if (!record.url || !GITHUB_RELEASE_URL_PATTERN.test(record.url)) return false
   if (!SHA256_PATTERN.test(String(record.sha256 ?? ''))) return false
   if (!Number.isFinite(record.size) || record.size <= 0) return false
-  if (!local.exists) return true
+  return true
+}
+
+function recordMatchesLocal(record, local) {
+  if (!recordIsPublicCatalogArtifact(record)) return false
+  if (!local.exists) return false
   return record.sha256 === local.sha256 && record.size === local.size
 }
 
@@ -207,6 +216,7 @@ function recordIsStableProvenance(record) {
 function summarizeMatches(records, local) {
   return records.map((record) => ({
     ...record,
+    publicCatalogArtifact: recordIsPublicCatalogArtifact(record),
     matchesLocalBytes: recordMatchesLocal(record, local),
     stableProvenance: recordIsStableProvenance(record)
   }))
@@ -246,11 +256,47 @@ function downloadSmokeBlockers(report, reportPath) {
   return blockers
 }
 
+function attestationIsComplete(report) {
+  if (report?.schemaVersion !== 'echo.native_sdk.rc1-attestation.v1') return false
+  if (report.status !== 'passed') return false
+  if (report.sourceRepo !== 'knoxhack/ECHO-SDK') return false
+  if (report.releaseTag !== `v${RELEASE_LINE}`) return false
+  if (report.summary?.publicJarArtifactCount !== 15) return false
+  if (report.summary?.downloadedJarArtifactCount !== 15) return false
+  if (report.summary?.matchedJarArtifactCount !== 15) return false
+  if (report.summary?.expectedSubjectMatchedCount !== report.summary?.expectedSubjectCount) return false
+  for (const value of Object.values(report.gates ?? {})) {
+    if (value !== 'passed') return false
+  }
+  return true
+}
+
+function attestationBlockers(report, reportPath) {
+  if (!report) return [`Native SDK RC1 attestation report is missing at ${reportPath}`]
+  const blockers = []
+  if (report.schemaVersion !== 'echo.native_sdk.rc1-attestation.v1') blockers.push('Native SDK RC1 attestation report has an unexpected schema')
+  if (report.status !== 'passed') blockers.push('Native SDK RC1 attestation report is not passed')
+  if (report.sourceRepo !== 'knoxhack/ECHO-SDK') blockers.push('Native SDK RC1 attestation report does not target knoxhack/ECHO-SDK')
+  if (report.releaseTag !== `v${RELEASE_LINE}`) blockers.push(`Native SDK RC1 attestation report releaseTag is not v${RELEASE_LINE}`)
+  if (report.summary?.publicJarArtifactCount !== 15) blockers.push(`Native SDK RC1 attestation must cover 15 public jars, found ${report.summary?.publicJarArtifactCount ?? 'unknown'}`)
+  if (report.summary?.downloadedJarArtifactCount !== 15) blockers.push(`Native SDK RC1 attestation must download 15 public jars, found ${report.summary?.downloadedJarArtifactCount ?? 'unknown'}`)
+  if (report.summary?.matchedJarArtifactCount !== 15) blockers.push(`Native SDK RC1 attestation must checksum-match 15 public jars, found ${report.summary?.matchedJarArtifactCount ?? 'unknown'}`)
+  if (report.summary?.expectedSubjectMatchedCount !== report.summary?.expectedSubjectCount) blockers.push('Native SDK RC1 attestation subject coverage is incomplete')
+  for (const [gate, value] of Object.entries(report.gates ?? {})) {
+    if (value !== 'passed') blockers.push(`Native SDK RC1 attestation gate ${gate} is ${value}`)
+  }
+  for (const blocker of report.errors ?? []) blockers.push(`Native SDK RC1 attestation: ${blocker}`)
+  return blockers
+}
+
 async function verify(args) {
   const catalogRecords = await catalogArtifactRecords(args.root)
   const downloadSmokePath = path.isAbsolute(args.downloadSmoke) ? args.downloadSmoke : path.join(args.root, args.downloadSmoke)
   const downloadSmoke = await readJsonOrNull(downloadSmokePath)
   const downloadBackArtifactsComplete = downloadSmokeIsComplete(downloadSmoke)
+  const attestationPath = path.isAbsolute(args.attestation) ? args.attestation : path.join(args.root, args.attestation)
+  const attestation = await readJsonOrNull(attestationPath)
+  const attestationComplete = attestationIsComplete(attestation)
   const blockers = []
   const componentReports = []
 
@@ -266,8 +312,8 @@ async function verify(args) {
         catalogRecords.filter((record) => record.fileName === required.fileName),
         local
       )
-      const hasMatchingPublicCatalog = matches.some((record) => record.matchesLocalBytes)
-      const hasStablePublicProvenance = matches.some((record) => record.matchesLocalBytes && record.stableProvenance)
+      const hasMatchingPublicCatalog = matches.some((record) => record.publicCatalogArtifact)
+      const hasStablePublicProvenance = matches.some((record) => record.publicCatalogArtifact && record.stableProvenance)
 
       fileReports.push({
         classifier: required.classifier,
@@ -317,12 +363,15 @@ async function verify(args) {
 
   const smokeBlockers = downloadSmokeBlockers(downloadSmoke, rel(args.root, downloadSmokePath))
   if (!downloadBackArtifactsComplete) blockers.push(...smokeBlockers)
+  const attestationReportBlockers = attestationBlockers(attestation, rel(args.root, attestationPath))
+  if (!attestationComplete) blockers.push(...attestationReportBlockers)
 
   const gates = {
     localMainSourceJavadocJars: localPresentFiles === totalRequiredFiles ? 'passed' : 'blocked',
     publicCatalogArtifacts: publicCatalogMatchedFiles === totalRequiredFiles ? 'passed' : 'blocked',
     downloadBackArtifacts: downloadBackArtifactsComplete ? 'passed' : 'blocked',
-    stablePublicProvenance: stableProvenanceFiles === totalRequiredFiles ? 'passed' : 'blocked'
+    attestedPublicArtifacts: attestationComplete ? 'passed' : 'blocked',
+    stablePublicProvenance: stableProvenanceFiles === totalRequiredFiles && attestationComplete ? 'passed' : 'blocked'
   }
   const status = Object.values(gates).every((gate) => gate === 'passed') ? 'PASS' : 'BLOCKED'
 
@@ -340,6 +389,7 @@ async function verify(args) {
       localPresentFileCount: localPresentFiles,
       publicCatalogMatchedFileCount: publicCatalogMatchedFiles,
       downloadBackMatchedFileCount: downloadBackArtifactsComplete ? totalRequiredFiles : 0,
+      attestedPublicFileCount: attestationComplete ? totalRequiredFiles : 0,
       stableProvenanceFileCount: stableProvenanceFiles
     },
     gates,
@@ -360,6 +410,24 @@ async function verify(args) {
           status: 'missing',
           blockers: smokeBlockers
         },
+    attestation: attestation
+      ? {
+          path: rel(args.root, attestationPath),
+          schemaVersion: attestation.schemaVersion,
+          status: attestation.status,
+          generatedAt: attestation.generatedAt,
+          sourceRepo: attestation.sourceRepo,
+          releaseTag: attestation.releaseTag,
+          workflowRun: attestation.workflowRun,
+          summary: attestation.summary,
+          gates: attestation.gates,
+          errors: attestation.errors ?? []
+        }
+      : {
+          path: rel(args.root, attestationPath),
+          status: 'missing',
+          blockers: attestationReportBlockers
+        },
     components: componentReports,
     promotion: {
       localSdkArtifactSetComplete: gates.localMainSourceJavadocJars === 'passed',
@@ -371,7 +439,8 @@ async function verify(args) {
     notes: [
       'Local Gradle outputs prove only that the SDK jars were built in this workspace.',
       'Download-back evidence proves the indexed SDK release URLs return bytes with exact size/SHA-256 matches.',
-      'Stable release approval requires matching public catalog artifacts with GitHub URLs, exact size/SHA-256, validation approved, and a non-source-linked trust tier.',
+      'Attestation evidence proves those public SDK bytes are covered by the workflow-built GitHub SLSA provenance statement.',
+      'Stable release approval requires matching public catalog artifacts with GitHub URLs, exact size/SHA-256, validation approved, a non-source-linked trust tier, and passing attestation evidence.',
       'Keep echo-native-loader out of this public SDK set; it is loader-internal and must not be an addon-facing dependency.'
     ]
   }

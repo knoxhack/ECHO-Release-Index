@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.native_sdk.rc1-artifacts.v1",
-  "status": "BLOCKED",
-  "generatedAt": "2026-06-13T15:37:43.965Z",
+  "status": "PASS",
+  "generatedAt": "2026-06-13T16:50:26.165Z",
   "releaseLine": "1.0.0-RC1",
   "scope": "Native public SDK RC1 main/source/Javadoc artifact set",
   "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
@@ -12,19 +12,21 @@
     "localPresentFileCount": 15,
     "publicCatalogMatchedFileCount": 15,
     "downloadBackMatchedFileCount": 15,
-    "stableProvenanceFileCount": 0
+    "attestedPublicFileCount": 15,
+    "stableProvenanceFileCount": 15
   },
   "gates": {
     "localMainSourceJavadocJars": "passed",
     "publicCatalogArtifacts": "passed",
     "downloadBackArtifacts": "passed",
-    "stablePublicProvenance": "blocked"
+    "attestedPublicArtifacts": "passed",
+    "stablePublicProvenance": "passed"
   },
   "downloadSmoke": {
     "path": "release-readiness/native-sdk-rc1-download-smoke.json",
     "schemaVersion": "echo.native_sdk.rc1-download-smoke.v1",
     "status": "PASS",
-    "generatedAt": "2026-06-13T15:37:37.890Z",
+    "generatedAt": "2026-06-13T16:49:43.672Z",
     "mode": "live-download",
     "release": {
       "id": "echo-native-sdk",
@@ -46,6 +48,40 @@
     },
     "blockers": []
   },
+  "attestation": {
+    "path": "release-readiness/native-sdk-rc1-attestation.json",
+    "schemaVersion": "echo.native_sdk.rc1-attestation.v1",
+    "status": "passed",
+    "generatedAt": "2026-06-13T16:49:58.454Z",
+    "sourceRepo": "knoxhack/ECHO-SDK",
+    "releaseTag": "v1.0.0-RC1",
+    "workflowRun": {
+      "id": 27472775602,
+      "url": "https://github.com/knoxhack/ECHO-SDK/actions/runs/27472775602",
+      "name": "Native SDK RC1 Provenance",
+      "status": "completed",
+      "conclusion": "success",
+      "headSha": "d167e4cae7a5643d7cca978aca6cdaeb132862cc",
+      "event": "workflow_dispatch",
+      "runAttempt": 1
+    },
+    "summary": {
+      "publicJarArtifactCount": 15,
+      "downloadedJarArtifactCount": 15,
+      "matchedJarArtifactCount": 15,
+      "expectedSubjectCount": 17,
+      "verifiedSubjectCount": 17,
+      "expectedSubjectMatchedCount": 17
+    },
+    "gates": {
+      "releaseArtifactBytes": "passed",
+      "ghAttestationVerify": "passed",
+      "workflowIdentity": "passed",
+      "attestedSubjectCoverage": "passed",
+      "workflowRun": "passed"
+    },
+    "errors": []
+  },
   "components": [
     {
       "id": "echo-native-contracts",
@@ -56,7 +92,7 @@
       "artifactDir": "echo-native-contracts/build/libs",
       "localStatus": "PASS",
       "publicCatalogStatus": "PASS",
-      "stableProvenanceStatus": "BLOCKED",
+      "stableProvenanceStatus": "PASS",
       "files": [
         {
           "classifier": "main",
@@ -70,8 +106,8 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
@@ -79,12 +115,13 @@
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-contracts-1.0.0-RC1.jar",
               "sha256": "c01baf430b5f168c376d76dee673b6dafa38998435ee9bf8da89c66da56e01c2",
               "size": 356817,
+              "publicCatalogArtifact": true,
               "matchesLocalBytes": true,
-              "stableProvenance": false
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "sources",
@@ -98,21 +135,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echo-native-contracts-1.0.0-RC1-sources.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-contracts-1.0.0-RC1-sources.jar",
-              "sha256": "93286de1113a8076635579313fd874925f8cdb6779688a10facae5ae6ae32610",
-              "size": 120390,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "06d2faab9b5a309df685039c10de25b3599d25252df056daf91a921e86b0449c",
+              "size": 118949,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "javadoc",
@@ -126,28 +164,25 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echo-native-contracts-1.0.0-RC1-javadoc.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-contracts-1.0.0-RC1-javadoc.jar",
-              "sha256": "c28cd8693adb1b2373117d7237e50bb944d98a27e49d4a9ee8745c413048c188",
-              "size": 5111385,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "f2defda0ceb35c381557d0311e70b279177d305a1fbf152d6efaed1ca7018665",
+              "size": 5107775,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         }
       ],
-      "blockers": [
-        "echo-native-contracts echo-native-contracts-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-        "echo-native-contracts echo-native-contracts-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-        "echo-native-contracts echo-native-contracts-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance"
-      ]
+      "blockers": []
     },
     {
       "id": "echoaddonapi",
@@ -158,7 +193,7 @@
       "artifactDir": "addons/echoaddonapi/build/libs",
       "localStatus": "PASS",
       "publicCatalogStatus": "PASS",
-      "stableProvenanceStatus": "BLOCKED",
+      "stableProvenanceStatus": "PASS",
       "files": [
         {
           "classifier": "main",
@@ -172,21 +207,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echoaddonapi-1.0.0-RC1.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoaddonapi-1.0.0-RC1.jar",
-              "sha256": "2237dc0a6adfead95cf01fadf6097b409d3d67db4a001ab4758124ad74c8cb94",
-              "size": 62820,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "90fe8ea78f83c05260f5081287dc41d90d58cdbd4eefa8227022506d93253e58",
+              "size": 62815,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "sources",
@@ -200,21 +236,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echoaddonapi-1.0.0-RC1-sources.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoaddonapi-1.0.0-RC1-sources.jar",
-              "sha256": "862ee3ac17d2f3a59f95749221a48452ab0fc5311687d8930bceade0eeec3557",
-              "size": 27145,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "26dd2154603947a8d5ea0d5049478802bd10d310eaeea8e56c8a86a9964b662d",
+              "size": 27318,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "javadoc",
@@ -228,28 +265,25 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echoaddonapi-1.0.0-RC1-javadoc.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoaddonapi-1.0.0-RC1-javadoc.jar",
-              "sha256": "aaafc17f9d81dd339328b36e1c5bdf4830d07b96a38f80d79a7c9d7b7ea87d67",
-              "size": 4409551,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "0c1fe4b95c120254c90abfcbcf331915865ac92e4bbaba5a5fecdf51e63d3ea6",
+              "size": 4408423,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         }
       ],
-      "blockers": [
-        "echoaddonapi echoaddonapi-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-        "echoaddonapi echoaddonapi-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-        "echoaddonapi echoaddonapi-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance"
-      ]
+      "blockers": []
     },
     {
       "id": "echoadaptercore",
@@ -260,7 +294,7 @@
       "artifactDir": "addons/echoadaptercore/build/libs",
       "localStatus": "PASS",
       "publicCatalogStatus": "PASS",
-      "stableProvenanceStatus": "BLOCKED",
+      "stableProvenanceStatus": "PASS",
       "files": [
         {
           "classifier": "main",
@@ -274,21 +308,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echoadaptercore-1.0.0-RC1.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoadaptercore-1.0.0-RC1.jar",
-              "sha256": "f12f9e5f19e91f9b2aff1f6ebd1e0baea2175acb62f2f982a11c5606a68fed09",
-              "size": 948486,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "1d3420dc272ac9f39e58411e455185ce0ac1aa48fdfb9af3d2e96e8922666d94",
+              "size": 948472,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "sources",
@@ -302,21 +337,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echoadaptercore-1.0.0-RC1-sources.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoadaptercore-1.0.0-RC1-sources.jar",
-              "sha256": "66bd964c78ac5584c922c5eb14442eaba40525e619e2bd7d93568a54a34f587f",
-              "size": 378316,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "265873f07293a4f5aa395a608be9bda0e855a53623a01840848a64bccf322078",
+              "size": 375188,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "javadoc",
@@ -330,28 +366,25 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echoadaptercore-1.0.0-RC1-javadoc.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoadaptercore-1.0.0-RC1-javadoc.jar",
-              "sha256": "21dcfbccc0e4e1e131729bc0d881cc9d26afe92fc78cb35c8b4e1ad95b9aa5d3",
-              "size": 5832252,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "7b23d75c4b05d017e003cf055e049d5ae525288c01fef4c89cbd53e6783ecd1f",
+              "size": 5827169,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         }
       ],
-      "blockers": [
-        "echoadaptercore echoadaptercore-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-        "echoadaptercore echoadaptercore-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-        "echoadaptercore echoadaptercore-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance"
-      ]
+      "blockers": []
     },
     {
       "id": "echo-native-testkit",
@@ -362,7 +395,7 @@
       "artifactDir": "echo-native-testkit/build/libs",
       "localStatus": "PASS",
       "publicCatalogStatus": "PASS",
-      "stableProvenanceStatus": "BLOCKED",
+      "stableProvenanceStatus": "PASS",
       "files": [
         {
           "classifier": "main",
@@ -376,8 +409,8 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
@@ -385,12 +418,13 @@
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-testkit-1.0.0-RC1.jar",
               "sha256": "67294b2e4f11c5af1a2b6e32965feadd88989d2f681e92bc6c388c3adc0d858a",
               "size": 36931,
+              "publicCatalogArtifact": true,
               "matchesLocalBytes": true,
-              "stableProvenance": false
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "sources",
@@ -404,21 +438,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echo-native-testkit-1.0.0-RC1-sources.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-testkit-1.0.0-RC1-sources.jar",
-              "sha256": "1a4f232f0c7e5900db087c7d92d1da08da2dd79d52c43606e8075b44f9382887",
-              "size": 7232,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "bec00732326e84a48c87a120a7d4cfacc4bd369545bcf0b112169954ae1856e7",
+              "size": 7184,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "javadoc",
@@ -432,28 +467,25 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echo-native-testkit-1.0.0-RC1-javadoc.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-testkit-1.0.0-RC1-javadoc.jar",
-              "sha256": "562ef1da13304c1de03d462585fbfe76126cf951ed607a57964d0deff7242868",
-              "size": 4215798,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "70c8fe09cfd27951fbca2c681693a8a5af2d2663dde5fe75aa4432642c80c158",
+              "size": 4215371,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         }
       ],
-      "blockers": [
-        "echo-native-testkit echo-native-testkit-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-        "echo-native-testkit echo-native-testkit-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-        "echo-native-testkit echo-native-testkit-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance"
-      ]
+      "blockers": []
     },
     {
       "id": "sdk-gradle-plugin",
@@ -464,7 +496,7 @@
       "artifactDir": "gradle-plugin/echo-addon-gradle-plugin/build/libs",
       "localStatus": "PASS",
       "publicCatalogStatus": "PASS",
-      "stableProvenanceStatus": "BLOCKED",
+      "stableProvenanceStatus": "PASS",
       "files": [
         {
           "classifier": "main",
@@ -478,8 +510,8 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
@@ -487,12 +519,13 @@
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-sdk-gradle-plugin-1.0.0-RC1.jar",
               "sha256": "92200944bce54af8c118825fb90182cb6487b98e8367afe94363fc7ca0457383",
               "size": 5973,
+              "publicCatalogArtifact": true,
               "matchesLocalBytes": true,
-              "stableProvenance": false
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "sources",
@@ -506,21 +539,22 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar",
-              "sha256": "3ec441b0be2a920647cb4dec0ad66cc0bce758533ac7b9c60843474c08ef2873",
-              "size": 2622,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "61af7ebce08b7e1a2d6b1c068a627f39ddf1172b16db5cac7f9ddb7ce392d908",
+              "size": 2604,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         },
         {
           "classifier": "javadoc",
@@ -534,57 +568,39 @@
             {
               "entryId": "echo-native-sdk",
               "entryKind": "product",
-              "entryValidation": "warning",
-              "entryTrust": "source-linked",
+              "entryValidation": "approved",
+              "entryTrust": "provenance-attested",
               "entryReleaseTag": "v1.0.0-RC1",
               "entrySourceRepo": "knoxhack/ECHO-SDK",
               "catalogPath": "products/native-sdk.json",
               "fileName": "echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar",
               "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar",
-              "sha256": "9b62a412ccab9a540e5948382524c11df513fc0e09eb8b037973a0d9ae9105ba",
-              "size": 4153572,
-              "matchesLocalBytes": true,
-              "stableProvenance": false
+              "sha256": "d6dda05d263d09bf2772fab970f25d7ee79d806d5819b3a099644cb2a17380ed",
+              "size": 4153297,
+              "publicCatalogArtifact": true,
+              "matchesLocalBytes": false,
+              "stableProvenance": true
             }
           ],
           "hasMatchingPublicCatalog": true,
-          "hasStablePublicProvenance": false
+          "hasStablePublicProvenance": true
         }
       ],
-      "blockers": [
-        "sdk-gradle-plugin echo-sdk-gradle-plugin-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-        "sdk-gradle-plugin echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-        "sdk-gradle-plugin echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance"
-      ]
+      "blockers": []
     }
   ],
   "promotion": {
     "localSdkArtifactSetComplete": true,
     "publicSdkArtifactDistributionComplete": true,
-    "stableSdkProvenanceComplete": false,
-    "stableReleaseCanUseSdkEvidence": false
+    "stableSdkProvenanceComplete": true,
+    "stableReleaseCanUseSdkEvidence": true
   },
-  "blockers": [
-    "echo-native-contracts echo-native-contracts-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-    "echo-native-contracts echo-native-contracts-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-    "echo-native-contracts echo-native-contracts-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance",
-    "echoaddonapi echoaddonapi-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-    "echoaddonapi echoaddonapi-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-    "echoaddonapi echoaddonapi-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance",
-    "echoadaptercore echoadaptercore-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-    "echoadaptercore echoadaptercore-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-    "echoadaptercore echoadaptercore-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance",
-    "echo-native-testkit echo-native-testkit-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-    "echo-native-testkit echo-native-testkit-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-    "echo-native-testkit echo-native-testkit-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance",
-    "sdk-gradle-plugin echo-sdk-gradle-plugin-1.0.0-RC1.jar is not backed by approved non-source-linked catalog provenance",
-    "sdk-gradle-plugin echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar is not backed by approved non-source-linked catalog provenance",
-    "sdk-gradle-plugin echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar is not backed by approved non-source-linked catalog provenance"
-  ],
+  "blockers": [],
   "notes": [
     "Local Gradle outputs prove only that the SDK jars were built in this workspace.",
     "Download-back evidence proves the indexed SDK release URLs return bytes with exact size/SHA-256 matches.",
-    "Stable release approval requires matching public catalog artifacts with GitHub URLs, exact size/SHA-256, validation approved, and a non-source-linked trust tier.",
+    "Attestation evidence proves those public SDK bytes are covered by the workflow-built GitHub SLSA provenance statement.",
+    "Stable release approval requires matching public catalog artifacts with GitHub URLs, exact size/SHA-256, validation approved, a non-source-linked trust tier, and passing attestation evidence.",
     "Keep echo-native-loader out of this public SDK set; it is loader-internal and must not be an addon-facing dependency."
   ]
 }

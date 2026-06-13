@@ -1,0 +1,396 @@
+{
+  "schemaVersion": "echo.native_sdk.rc1-attestation.v1",
+  "status": "passed",
+  "generatedAt": "2026-06-13T16:49:58.454Z",
+  "sourceRepo": "knoxhack/ECHO-SDK",
+  "releaseTag": "v1.0.0-RC1",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-SDK/releases/tag/v1.0.0-RC1",
+  "productCommitSha": "d167e4cae7a5643d7cca978aca6cdaeb132862cc",
+  "workflowRun": {
+    "id": 27472775602,
+    "url": "https://github.com/knoxhack/ECHO-SDK/actions/runs/27472775602",
+    "name": "Native SDK RC1 Provenance",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "d167e4cae7a5643d7cca978aca6cdaeb132862cc",
+    "event": "workflow_dispatch",
+    "runAttempt": 1
+  },
+  "verification": {
+    "action": "gh attestation verify",
+    "ghExecutable": "gh",
+    "predicateType": "https://slsa.dev/provenance/v1",
+    "signerWorkflow": "knoxhack/ECHO-SDK/.github/workflows/native-sdk-rc1-provenance.yml",
+    "workflowPath": ".github/workflows/native-sdk-rc1-provenance.yml",
+    "sourceRef": "refs/heads/main",
+    "sourceRepositoryDigest": "d167e4cae7a5643d7cca978aca6cdaeb132862cc",
+    "buildSignerDigest": "d167e4cae7a5643d7cca978aca6cdaeb132862cc",
+    "workflowTrigger": "workflow_dispatch",
+    "runnerEnvironment": "github-hosted",
+    "sourceRepositoryVisibilityAtSigning": "public",
+    "runInvocationUri": "https://github.com/knoxhack/ECHO-SDK/actions/runs/27472775602/attempts/1",
+    "verifiedTimestamp": "2026-06-13T12:44:31-04:00",
+    "verifiedPrimarySubject": "echo-native-contracts-1.0.0-RC1.jar",
+    "verifiedSubjectCount": 17,
+    "expectedSubjectCount": 17
+  },
+  "summary": {
+    "publicJarArtifactCount": 15,
+    "downloadedJarArtifactCount": 15,
+    "matchedJarArtifactCount": 15,
+    "expectedSubjectCount": 17,
+    "verifiedSubjectCount": 17,
+    "expectedSubjectMatchedCount": 17
+  },
+  "gates": {
+    "releaseArtifactBytes": "passed",
+    "ghAttestationVerify": "passed",
+    "workflowIdentity": "passed",
+    "attestedSubjectCoverage": "passed",
+    "workflowRun": "passed"
+  },
+  "artifacts": [
+    {
+      "key": "echoNativeContracts",
+      "file": "echo-native-contracts-1.0.0-RC1.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-contracts-1.0.0-RC1.jar",
+      "downloaded": true,
+      "expectedSize": 356817,
+      "size": 356817,
+      "expectedSha256": "c01baf430b5f168c376d76dee673b6dafa38998435ee9bf8da89c66da56e01c2",
+      "sha256": "c01baf430b5f168c376d76dee673b6dafa38998435ee9bf8da89c66da56e01c2",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoNativeContractsSources",
+      "file": "echo-native-contracts-1.0.0-RC1-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-contracts-1.0.0-RC1-sources.jar",
+      "downloaded": true,
+      "expectedSize": 118949,
+      "size": 118949,
+      "expectedSha256": "06d2faab9b5a309df685039c10de25b3599d25252df056daf91a921e86b0449c",
+      "sha256": "06d2faab9b5a309df685039c10de25b3599d25252df056daf91a921e86b0449c",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoNativeContractsJavadoc",
+      "file": "echo-native-contracts-1.0.0-RC1-javadoc.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-contracts-1.0.0-RC1-javadoc.jar",
+      "downloaded": true,
+      "expectedSize": 5107775,
+      "size": 5107775,
+      "expectedSha256": "f2defda0ceb35c381557d0311e70b279177d305a1fbf152d6efaed1ca7018665",
+      "sha256": "f2defda0ceb35c381557d0311e70b279177d305a1fbf152d6efaed1ca7018665",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoAddonApi",
+      "file": "echoaddonapi-1.0.0-RC1.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoaddonapi-1.0.0-RC1.jar",
+      "downloaded": true,
+      "expectedSize": 62815,
+      "size": 62815,
+      "expectedSha256": "90fe8ea78f83c05260f5081287dc41d90d58cdbd4eefa8227022506d93253e58",
+      "sha256": "90fe8ea78f83c05260f5081287dc41d90d58cdbd4eefa8227022506d93253e58",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoAddonApiSources",
+      "file": "echoaddonapi-1.0.0-RC1-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoaddonapi-1.0.0-RC1-sources.jar",
+      "downloaded": true,
+      "expectedSize": 27318,
+      "size": 27318,
+      "expectedSha256": "26dd2154603947a8d5ea0d5049478802bd10d310eaeea8e56c8a86a9964b662d",
+      "sha256": "26dd2154603947a8d5ea0d5049478802bd10d310eaeea8e56c8a86a9964b662d",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoAddonApiJavadoc",
+      "file": "echoaddonapi-1.0.0-RC1-javadoc.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoaddonapi-1.0.0-RC1-javadoc.jar",
+      "downloaded": true,
+      "expectedSize": 4408423,
+      "size": 4408423,
+      "expectedSha256": "0c1fe4b95c120254c90abfcbcf331915865ac92e4bbaba5a5fecdf51e63d3ea6",
+      "sha256": "0c1fe4b95c120254c90abfcbcf331915865ac92e4bbaba5a5fecdf51e63d3ea6",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoAdapterCore",
+      "file": "echoadaptercore-1.0.0-RC1.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoadaptercore-1.0.0-RC1.jar",
+      "downloaded": true,
+      "expectedSize": 948472,
+      "size": 948472,
+      "expectedSha256": "1d3420dc272ac9f39e58411e455185ce0ac1aa48fdfb9af3d2e96e8922666d94",
+      "sha256": "1d3420dc272ac9f39e58411e455185ce0ac1aa48fdfb9af3d2e96e8922666d94",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoAdapterCoreSources",
+      "file": "echoadaptercore-1.0.0-RC1-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoadaptercore-1.0.0-RC1-sources.jar",
+      "downloaded": true,
+      "expectedSize": 375188,
+      "size": 375188,
+      "expectedSha256": "265873f07293a4f5aa395a608be9bda0e855a53623a01840848a64bccf322078",
+      "sha256": "265873f07293a4f5aa395a608be9bda0e855a53623a01840848a64bccf322078",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoAdapterCoreJavadoc",
+      "file": "echoadaptercore-1.0.0-RC1-javadoc.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echoadaptercore-1.0.0-RC1-javadoc.jar",
+      "downloaded": true,
+      "expectedSize": 5827169,
+      "size": 5827169,
+      "expectedSha256": "7b23d75c4b05d017e003cf055e049d5ae525288c01fef4c89cbd53e6783ecd1f",
+      "sha256": "7b23d75c4b05d017e003cf055e049d5ae525288c01fef4c89cbd53e6783ecd1f",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoNativeTestkit",
+      "file": "echo-native-testkit-1.0.0-RC1.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-testkit-1.0.0-RC1.jar",
+      "downloaded": true,
+      "expectedSize": 36931,
+      "size": 36931,
+      "expectedSha256": "67294b2e4f11c5af1a2b6e32965feadd88989d2f681e92bc6c388c3adc0d858a",
+      "sha256": "67294b2e4f11c5af1a2b6e32965feadd88989d2f681e92bc6c388c3adc0d858a",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoNativeTestkitSources",
+      "file": "echo-native-testkit-1.0.0-RC1-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-testkit-1.0.0-RC1-sources.jar",
+      "downloaded": true,
+      "expectedSize": 7184,
+      "size": 7184,
+      "expectedSha256": "bec00732326e84a48c87a120a7d4cfacc4bd369545bcf0b112169954ae1856e7",
+      "sha256": "bec00732326e84a48c87a120a7d4cfacc4bd369545bcf0b112169954ae1856e7",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "echoNativeTestkitJavadoc",
+      "file": "echo-native-testkit-1.0.0-RC1-javadoc.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-native-testkit-1.0.0-RC1-javadoc.jar",
+      "downloaded": true,
+      "expectedSize": 4215371,
+      "size": 4215371,
+      "expectedSha256": "70c8fe09cfd27951fbca2c681693a8a5af2d2663dde5fe75aa4432642c80c158",
+      "sha256": "70c8fe09cfd27951fbca2c681693a8a5af2d2663dde5fe75aa4432642c80c158",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "sdkGradlePlugin",
+      "file": "echo-sdk-gradle-plugin-1.0.0-RC1.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-sdk-gradle-plugin-1.0.0-RC1.jar",
+      "downloaded": true,
+      "expectedSize": 5973,
+      "size": 5973,
+      "expectedSha256": "92200944bce54af8c118825fb90182cb6487b98e8367afe94363fc7ca0457383",
+      "sha256": "92200944bce54af8c118825fb90182cb6487b98e8367afe94363fc7ca0457383",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "sdkGradlePluginSources",
+      "file": "echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar",
+      "downloaded": true,
+      "expectedSize": 2604,
+      "size": 2604,
+      "expectedSha256": "61af7ebce08b7e1a2d6b1c068a627f39ddf1172b16db5cac7f9ddb7ce392d908",
+      "sha256": "61af7ebce08b7e1a2d6b1c068a627f39ddf1172b16db5cac7f9ddb7ce392d908",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    },
+    {
+      "key": "sdkGradlePluginJavadoc",
+      "file": "echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar",
+      "url": "https://github.com/knoxhack/ECHO-SDK/releases/download/v1.0.0-RC1/echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar",
+      "downloaded": true,
+      "expectedSize": 4153297,
+      "size": 4153297,
+      "expectedSha256": "d6dda05d263d09bf2772fab970f25d7ee79d806d5819b3a099644cb2a17380ed",
+      "sha256": "d6dda05d263d09bf2772fab970f25d7ee79d806d5819b3a099644cb2a17380ed",
+      "matchesCatalog": true,
+      "attested": true,
+      "errors": []
+    }
+  ],
+  "expectedSubjects": [
+    {
+      "name": "checksums.sha256",
+      "sha256": "22773c898013335973eea610414d3f9225e449220fc1a9cf017b13375bfff369"
+    },
+    {
+      "name": "echo-native-contracts-1.0.0-RC1-javadoc.jar",
+      "sha256": "f2defda0ceb35c381557d0311e70b279177d305a1fbf152d6efaed1ca7018665"
+    },
+    {
+      "name": "echo-native-contracts-1.0.0-RC1-sources.jar",
+      "sha256": "06d2faab9b5a309df685039c10de25b3599d25252df056daf91a921e86b0449c"
+    },
+    {
+      "name": "echo-native-contracts-1.0.0-RC1.jar",
+      "sha256": "c01baf430b5f168c376d76dee673b6dafa38998435ee9bf8da89c66da56e01c2"
+    },
+    {
+      "name": "echo-native-testkit-1.0.0-RC1-javadoc.jar",
+      "sha256": "70c8fe09cfd27951fbca2c681693a8a5af2d2663dde5fe75aa4432642c80c158"
+    },
+    {
+      "name": "echo-native-testkit-1.0.0-RC1-sources.jar",
+      "sha256": "bec00732326e84a48c87a120a7d4cfacc4bd369545bcf0b112169954ae1856e7"
+    },
+    {
+      "name": "echo-native-testkit-1.0.0-RC1.jar",
+      "sha256": "67294b2e4f11c5af1a2b6e32965feadd88989d2f681e92bc6c388c3adc0d858a"
+    },
+    {
+      "name": "echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar",
+      "sha256": "d6dda05d263d09bf2772fab970f25d7ee79d806d5819b3a099644cb2a17380ed"
+    },
+    {
+      "name": "echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar",
+      "sha256": "61af7ebce08b7e1a2d6b1c068a627f39ddf1172b16db5cac7f9ddb7ce392d908"
+    },
+    {
+      "name": "echo-sdk-gradle-plugin-1.0.0-RC1.jar",
+      "sha256": "92200944bce54af8c118825fb90182cb6487b98e8367afe94363fc7ca0457383"
+    },
+    {
+      "name": "echoadaptercore-1.0.0-RC1-javadoc.jar",
+      "sha256": "7b23d75c4b05d017e003cf055e049d5ae525288c01fef4c89cbd53e6783ecd1f"
+    },
+    {
+      "name": "echoadaptercore-1.0.0-RC1-sources.jar",
+      "sha256": "265873f07293a4f5aa395a608be9bda0e855a53623a01840848a64bccf322078"
+    },
+    {
+      "name": "echoadaptercore-1.0.0-RC1.jar",
+      "sha256": "1d3420dc272ac9f39e58411e455185ce0ac1aa48fdfb9af3d2e96e8922666d94"
+    },
+    {
+      "name": "echoaddonapi-1.0.0-RC1-javadoc.jar",
+      "sha256": "0c1fe4b95c120254c90abfcbcf331915865ac92e4bbaba5a5fecdf51e63d3ea6"
+    },
+    {
+      "name": "echoaddonapi-1.0.0-RC1-sources.jar",
+      "sha256": "26dd2154603947a8d5ea0d5049478802bd10d310eaeea8e56c8a86a9964b662d"
+    },
+    {
+      "name": "echoaddonapi-1.0.0-RC1.jar",
+      "sha256": "90fe8ea78f83c05260f5081287dc41d90d58cdbd4eefa8227022506d93253e58"
+    },
+    {
+      "name": "native-sdk-rc1-manifest.json",
+      "sha256": "9169137f942079a122fd2199f91c842b38f3cd9d4f0ac5ab973be5a1c61d6dcb"
+    }
+  ],
+  "verifiedSubjects": [
+    {
+      "name": "checksums.sha256",
+      "sha256": "22773c898013335973eea610414d3f9225e449220fc1a9cf017b13375bfff369"
+    },
+    {
+      "name": "echo-native-contracts-1.0.0-RC1-javadoc.jar",
+      "sha256": "f2defda0ceb35c381557d0311e70b279177d305a1fbf152d6efaed1ca7018665"
+    },
+    {
+      "name": "echo-native-contracts-1.0.0-RC1-sources.jar",
+      "sha256": "06d2faab9b5a309df685039c10de25b3599d25252df056daf91a921e86b0449c"
+    },
+    {
+      "name": "echo-native-contracts-1.0.0-RC1.jar",
+      "sha256": "c01baf430b5f168c376d76dee673b6dafa38998435ee9bf8da89c66da56e01c2"
+    },
+    {
+      "name": "echo-native-testkit-1.0.0-RC1-javadoc.jar",
+      "sha256": "70c8fe09cfd27951fbca2c681693a8a5af2d2663dde5fe75aa4432642c80c158"
+    },
+    {
+      "name": "echo-native-testkit-1.0.0-RC1-sources.jar",
+      "sha256": "bec00732326e84a48c87a120a7d4cfacc4bd369545bcf0b112169954ae1856e7"
+    },
+    {
+      "name": "echo-native-testkit-1.0.0-RC1.jar",
+      "sha256": "67294b2e4f11c5af1a2b6e32965feadd88989d2f681e92bc6c388c3adc0d858a"
+    },
+    {
+      "name": "echo-sdk-gradle-plugin-1.0.0-RC1-javadoc.jar",
+      "sha256": "d6dda05d263d09bf2772fab970f25d7ee79d806d5819b3a099644cb2a17380ed"
+    },
+    {
+      "name": "echo-sdk-gradle-plugin-1.0.0-RC1-sources.jar",
+      "sha256": "61af7ebce08b7e1a2d6b1c068a627f39ddf1172b16db5cac7f9ddb7ce392d908"
+    },
+    {
+      "name": "echo-sdk-gradle-plugin-1.0.0-RC1.jar",
+      "sha256": "92200944bce54af8c118825fb90182cb6487b98e8367afe94363fc7ca0457383"
+    },
+    {
+      "name": "echoadaptercore-1.0.0-RC1-javadoc.jar",
+      "sha256": "7b23d75c4b05d017e003cf055e049d5ae525288c01fef4c89cbd53e6783ecd1f"
+    },
+    {
+      "name": "echoadaptercore-1.0.0-RC1-sources.jar",
+      "sha256": "265873f07293a4f5aa395a608be9bda0e855a53623a01840848a64bccf322078"
+    },
+    {
+      "name": "echoadaptercore-1.0.0-RC1.jar",
+      "sha256": "1d3420dc272ac9f39e58411e455185ce0ac1aa48fdfb9af3d2e96e8922666d94"
+    },
+    {
+      "name": "echoaddonapi-1.0.0-RC1-javadoc.jar",
+      "sha256": "0c1fe4b95c120254c90abfcbcf331915865ac92e4bbaba5a5fecdf51e63d3ea6"
+    },
+    {
+      "name": "echoaddonapi-1.0.0-RC1-sources.jar",
+      "sha256": "26dd2154603947a8d5ea0d5049478802bd10d310eaeea8e56c8a86a9964b662d"
+    },
+    {
+      "name": "echoaddonapi-1.0.0-RC1.jar",
+      "sha256": "90fe8ea78f83c05260f5081287dc41d90d58cdbd4eefa8227022506d93253e58"
+    },
+    {
+      "name": "native-sdk-rc1-manifest.json",
+      "sha256": "9169137f942079a122fd2199f91c842b38f3cd9d4f0ac5ab973be5a1c61d6dcb"
+    }
+  ],
+  "additionalAttestedSubjects": [],
+  "remainingHardGates": [
+    "launcher-install-first-launch-diagnostics-repair-rollback",
+    "real-native-pack-gameplay-smoke",
+    "stable-catalog-metadata-without-warning-blocked-alpha"
+  ],
+  "errors": []
+}

@@ -159,6 +159,44 @@ async function writeDownloadSmoke(root, artifacts, overrides = {}) {
   })
 }
 
+async function writeAttestation(root, artifacts, overrides = {}) {
+  const rows = [...artifacts.values()]
+  const blocked = overrides.blocked ?? false
+  await writeJson(root, 'release-readiness/native-sdk-rc1-attestation.json', {
+    schemaVersion: 'echo.native_sdk.rc1-attestation.v1',
+    status: blocked ? 'failed' : 'passed',
+    generatedAt: '2026-06-13T00:00:00.000Z',
+    sourceRepo: 'knoxhack/ECHO-SDK',
+    releaseTag: 'v1.0.0-RC1',
+    workflowRun: {
+      id: 1,
+      url: 'https://github.com/knoxhack/ECHO-SDK/actions/runs/1',
+      name: 'Native SDK RC1 Provenance',
+      status: blocked ? 'failure' : 'completed',
+      conclusion: blocked ? 'failure' : 'success',
+      headSha: 'a'.repeat(40),
+      event: 'workflow_dispatch',
+      runAttempt: 1
+    },
+    summary: {
+      publicJarArtifactCount: rows.length,
+      downloadedJarArtifactCount: rows.length,
+      matchedJarArtifactCount: blocked ? rows.length - 1 : rows.length,
+      expectedSubjectCount: rows.length,
+      verifiedSubjectCount: rows.length,
+      expectedSubjectMatchedCount: blocked ? rows.length - 1 : rows.length
+    },
+    gates: {
+      releaseArtifactBytes: blocked ? 'blocked' : 'passed',
+      ghAttestationVerify: blocked ? 'blocked' : 'passed',
+      workflowIdentity: blocked ? 'blocked' : 'passed',
+      attestedSubjectCoverage: blocked ? 'blocked' : 'passed',
+      workflowRun: blocked ? 'blocked' : 'passed'
+    },
+    errors: blocked ? ['fixture attestation failure'] : []
+  })
+}
+
 async function withFixture(name, body) {
   const workspaceRoot = await fs.mkdtemp(path.join(os.tmpdir(), `echo-sdk-artifacts-${name}-`))
   const root = path.join(workspaceRoot, 'ECHO-Release-Index')
@@ -184,9 +222,11 @@ await withFixture('local-complete-public-missing', async ({ root, workspaceRoot 
   assert.equal(report.gates.localMainSourceJavadocJars, 'passed')
   assert.equal(report.gates.publicCatalogArtifacts, 'blocked')
   assert.equal(report.gates.downloadBackArtifacts, 'blocked')
+  assert.equal(report.gates.attestedPublicArtifacts, 'blocked')
   assert.equal(report.gates.stablePublicProvenance, 'blocked')
   assert.ok(report.blockers.some((blocker) => blocker.includes('has no matching public catalog artifact')))
   assert.ok(report.blockers.some((blocker) => blocker.includes('download smoke report is missing')))
+  assert.ok(report.blockers.some((blocker) => blocker.includes('attestation report is missing')))
 
   const releaseReady = run(root, workspaceRoot, ['--require-release-ready'])
   assert.notEqual(releaseReady.status, 0, 'require-release-ready must fail without public SDK catalog provenance')
@@ -207,6 +247,7 @@ await withFixture('public-provenance-complete', async ({ root, workspaceRoot }) 
   const artifacts = await writeLocalArtifacts(workspaceRoot)
   await writeCatalog(root, artifacts)
   await writeDownloadSmoke(root, artifacts)
+  await writeAttestation(root, artifacts)
   const result = run(root, workspaceRoot, ['--require-release-ready'])
   assert.equal(result.status, 0, result.stderr)
   const report = JSON.parse(result.stdout)
@@ -214,13 +255,16 @@ await withFixture('public-provenance-complete', async ({ root, workspaceRoot }) 
   assert.equal(report.summary.localPresentFileCount, 15)
   assert.equal(report.summary.publicCatalogMatchedFileCount, 15)
   assert.equal(report.summary.downloadBackMatchedFileCount, 15)
+  assert.equal(report.summary.attestedPublicFileCount, 15)
   assert.equal(report.summary.stableProvenanceFileCount, 15)
   assert.equal(report.gates.localMainSourceJavadocJars, 'passed')
   assert.equal(report.gates.publicCatalogArtifacts, 'passed')
   assert.equal(report.gates.downloadBackArtifacts, 'passed')
+  assert.equal(report.gates.attestedPublicArtifacts, 'passed')
   assert.equal(report.gates.stablePublicProvenance, 'passed')
   assert.equal(report.promotion.stableReleaseCanUseSdkEvidence, true)
   assert.equal(report.downloadSmoke.status, 'PASS')
+  assert.equal(report.attestation.status, 'passed')
 })
 
 console.log('Native SDK RC1 artifact verifier fixtures passed.')

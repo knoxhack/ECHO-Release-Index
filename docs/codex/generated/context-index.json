@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T12:46:57-04:00",
+  "generatedAt": "2026-06-13T12:55:01-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,15 +16,26 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9ee56bba8e62",
-        "commitDate": "2026-06-13T12:39:03-04:00",
+        "commit": "123e77d2b812",
+        "commitDate": "2026-06-13T12:47:39-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M docs/native-platform-rc1-handoff.md",
           " M products/addons-studio.json",
+          " M products/native-sdk.json",
+          " M release-readiness/galactic-survey-public-alpha-readiness.json",
+          " M release-readiness/native-sdk-rc1-artifacts.json",
+          " M release-readiness/native-sdk-rc1-download-smoke.json",
+          " M scripts/test-verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/test-verify-native-sdk-rc1-artifacts.mjs",
+          " M scripts/verify-galactic-survey-public-alpha-readiness.mjs",
+          " M scripts/verify-native-sdk-rc1-artifacts.mjs",
           "?? release-readiness/all-modpacks-electron-install-smoke.json",
           "?? release-readiness/all-modpacks-electron-install-smoke.manual.json",
+          "?? release-readiness/native-sdk-rc1-attestation.json",
           "?? release-readiness/openlands-electron-install-smoke.json",
-          "?? release-readiness/openlands-standalone-electron-install-smoke.json"
+          "?? release-readiness/openlands-standalone-electron-install-smoke.json",
+          "?? scripts/verify-native-sdk-rc1-attestation.mjs"
         ]
       },
       "canonicalDocs": [
@@ -736,8 +747,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "60436bb3eb0c",
-        "commitDate": "2026-06-13T12:46:57-04:00",
+        "commit": "f31b196eb3b8",
+        "commitDate": "2026-06-13T12:55:01-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -745,14 +756,14 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3512,
+          "bytes": 3541,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
         {
           "path": "docs/ARCHITECTURE.md",
           "exists": true,
-          "bytes": 1673,
+          "bytes": 1710,
           "heading": "Architecture",
           "excerpt": "ECHO Command Center is a standalone Electron app with a React renderer and a small read-only main-process scanner."
         },
@@ -773,7 +784,7 @@
         {
           "path": "docs/REMAINING_WORK.md",
           "exists": true,
-          "bytes": 10503,
+          "bytes": 10709,
           "heading": "Remaining Work",
           "excerpt": "This repository is not a fully working ECHO Command Center yet."
         }
