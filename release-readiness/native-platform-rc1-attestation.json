@@ -1,25 +1,25 @@
 {
   "schemaVersion": "echo.native-platform.rc1-attestation.v1",
   "status": "passed",
-  "generatedAt": "2026-06-13T23:00:41.213Z",
+  "generatedAt": "2026-06-13T23:34:00.604Z",
   "sourceRepo": "knoxhack/ECHO-Native-Platform",
   "releaseTag": "v1.0.0-RC1",
   "releaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
-  "productCommitSha": "964d7fb6ae75358adf8e2965315729644f37230a",
+  "productCommitSha": "a524d5945bc350115cd48f3f6a14fdbac4b914e3",
   "archive": {
     "file": "echo-native-platform-1.0.0-RC1.zip",
     "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-platform-1.0.0-RC1.zip",
     "source": "github-release-download",
-    "size": 1222,
-    "sha256": "53eefdb291438ffe30ffffbeb84a47303571037cf108d6603220b5eaaf6c45f1"
+    "size": 1221,
+    "sha256": "8dcd3e3f300c9b570c9d8f2bc85dab932b7d1d5c9110e5c0651926737e3ed141"
   },
   "workflowRun": {
-    "id": 27481633550,
-    "url": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27481633550",
+    "id": 27482291068,
+    "url": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27482291068",
     "name": "Attest Release Assets",
     "status": "completed",
     "conclusion": "success",
-    "headSha": "964d7fb6ae75358adf8e2965315729644f37230a",
+    "headSha": "a524d5945bc350115cd48f3f6a14fdbac4b914e3",
     "event": "workflow_dispatch",
     "runAttempt": 1
   },
@@ -30,15 +30,15 @@
     "signerWorkflow": "knoxhack/ECHO-Native-Platform/.github/workflows/attest-release-assets.yml",
     "workflowPath": ".github/workflows/attest-release-assets.yml",
     "sourceRef": "refs/heads/main",
-    "sourceRepositoryDigest": "964d7fb6ae75358adf8e2965315729644f37230a",
-    "buildSignerDigest": "964d7fb6ae75358adf8e2965315729644f37230a",
+    "sourceRepositoryDigest": "a524d5945bc350115cd48f3f6a14fdbac4b914e3",
+    "buildSignerDigest": "a524d5945bc350115cd48f3f6a14fdbac4b914e3",
     "workflowTrigger": "workflow_dispatch",
     "runnerEnvironment": "github-hosted",
     "sourceRepositoryVisibilityAtSigning": "public",
-    "runInvocationUri": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27481633550/attempts/1",
-    "verifiedTimestamp": "2026-06-13T18:57:50-04:00",
+    "runInvocationUri": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27482291068/attempts/1",
+    "verifiedTimestamp": "2026-06-13T19:29:26-04:00",
     "subjectCount": 10,
-    "verifiedSubjectSha256": "53eefdb291438ffe30ffffbeb84a47303571037cf108d6603220b5eaaf6c45f1"
+    "verifiedSubjectSha256": "8dcd3e3f300c9b570c9d8f2bc85dab932b7d1d5c9110e5c0651926737e3ed141"
   },
   "releaseAssetVerifier": {
     "action": "gh release verify-asset",
@@ -49,15 +49,19 @@
   "verifiedSubjects": [
     {
       "name": "checksums.txt",
-      "sha256": "2d261efb54a80afafcacf758441ae370bfc0dfad82d0e2b5f100becc7f65881a"
+      "sha256": "1c99073c9b31b0b718d42ddee805ef85ce413daea2e856dde389554c20d23402"
+    },
+    {
+      "name": "echo-native-loader-1.0.0.jar",
+      "sha256": "413d0146654b37fdf58345ed396180b44286ba98eb9e7da495eae1b98ccd98c5"
     },
     {
       "name": "echo-native-platform-1.0.0-RC1.zip",
-      "sha256": "53eefdb291438ffe30ffffbeb84a47303571037cf108d6603220b5eaaf6c45f1"
+      "sha256": "8dcd3e3f300c9b570c9d8f2bc85dab932b7d1d5c9110e5c0651926737e3ed141"
     },
     {
       "name": "echo-release.json",
-      "sha256": "55a8e60babbdb2deb5d4d9d1f9177f8336d9b680e0e812f44d726a0ffa5b45c2"
+      "sha256": "1dd88367ec903158ad4bccb3f4dcdf31cc163888e4f18fd7b2c87159ccbb9d03"
     },
     {
       "name": "native-addon-source-truth.md",
@@ -65,27 +69,23 @@
     },
     {
       "name": "native-live-proof-gate.json",
-      "sha256": "d4f7b95804484a16bf4e38611db47661b8f1d55072dbcc4bf8d963f1977bc2a4"
-    },
-    {
-      "name": "native-loader-1.0.0.jar",
-      "sha256": "413d0146654b37fdf58345ed396180b44286ba98eb9e7da495eae1b98ccd98c5"
+      "sha256": "6304f1dc2d6063ab66fca03a89721d04e5ca287bb33875bc107a01921b79cb2f"
     },
     {
       "name": "native-module-inventory.json",
-      "sha256": "a588117fb81480cb8a33b39890f014ccb5c0b22af0635342ebf6e8769edf2c34"
+      "sha256": "417656bf9e3708f4e45cd21fd6efb8c7ec9b39d3d1f71da08e658d1c944acddb"
     },
     {
       "name": "plan3-dependency-vulnerability-scan.json",
-      "sha256": "36bba5bcbd0802e14124615632dbf4ac31105cfbb3601417f17efa0f073f9d0c"
+      "sha256": "b878a8eb7a484a9d911ad68e71e19c2412fe6e396e6c47e49674aaa9a8d92612"
     },
     {
       "name": "plan3-final-qa.json",
-      "sha256": "372f273ffc18271b0c72a6680e6b179fb3536f73f98b33141648b9a45cf0108e"
+      "sha256": "852725703e281e24bf8319045555daea9f1c1ccc260ea71561e2d6934bf81cfe"
     },
     {
       "name": "plan3-release-prep.json",
-      "sha256": "42e703f2da6e29e6b890ff2bdf9b5e59aa39a4ca7649c42f23d669098adf70bb"
+      "sha256": "dba50196bb4bfabdc61c769aeebd011be59aaf9cdbb85ba73dd09a62c7e0ca90"
     }
   ],
   "remainingHardGates": [

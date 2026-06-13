@@ -7,33 +7,33 @@
 The RC1 GitHub prerelease now exists and the platform runtime assets have passed download-back smoke from GitHub bytes:
 
 - Release: `https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1`
-- Release target: `964d7fb6ae75358adf8e2965315729644f37230a`
+- Release target: `a524d5945bc350115cd48f3f6a14fdbac4b914e3`
 - Evidence: `release-readiness/native-platform-rc1-download-smoke.json`
 - Ingestion: `release-readiness/native-platform-rc1-ingestion.json`
 - Published asset count: 10
-- Native Loader handoff asset: `native-loader-1.0.0.jar`
+- Native Loader handoff asset: `echo-native-loader-1.0.0.jar`
 
 Published asset attestation evidence now exists:
 
-- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27481633550`
-- Attestation workflow commit: `964d7fb6ae75358adf8e2965315729644f37230a`
+- Attestation workflow: `https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27482291068`
+- Attestation workflow commit: `a524d5945bc350115cd48f3f6a14fdbac4b914e3`
 - Evidence: `release-readiness/native-platform-rc1-attestation.json`
 - Verified command: `gh attestation verify`
-- Scope: published release asset bytes for all 10 RC1 release assets, including `echo-native-platform-1.0.0-RC1.zip` and `native-loader-1.0.0.jar`.
+- Scope: published release asset bytes for all 10 RC1 release assets, including `echo-native-platform-1.0.0-RC1.zip` and `echo-native-loader-1.0.0.jar`.
 
 `gh release verify-asset` still reports no release-tag-scoped attestations for this tag. Do not treat that command as green unless it starts passing in a future GitHub CLI/API behavior. The accepted RC1 evidence is the asset-byte `gh attestation verify` result recorded above.
 
 Local artifact evidence exists:
 
 - Platform runtime artifact: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-platform-1.0.0-RC1.zip`
-- Platform runtime size: `1222`
-- Platform runtime SHA-256: `53eefdb291438ffe30ffffbeb84a47303571037cf108d6603220b5eaaf6c45f1`
+- Platform runtime size: `1221`
+- Platform runtime SHA-256: `8dcd3e3f300c9b570c9d8f2bc85dab932b7d1d5c9110e5c0651926737e3ed141`
 - Platform runtime scope: no `echo.pack.json`, no `echo-native-product-package.json`, no `modules/`, no Ashfall content, and no embedded jars.
-- Native Loader launcher library: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/native-loader-1.0.0.jar`
+- Native Loader launcher library: `C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-loader-1.0.0.jar`
 - Native Loader library size: `1141527`
 - Native Loader library SHA-256: `413d0146654b37fdf58345ed396180b44286ba98eb9e7da495eae1b98ccd98c5`
 - Native Loader library proof: contains `com/echo/NativeLoaderClient.class`.
-- Native Platform commit: `964d7fb6ae75358adf8e2965315729644f37230a`
+- Native Platform commit: `a524d5945bc350115cd48f3f6a14fdbac4b914e3`
 - SDK proof commit: `ec0d9b83b695309ef895c8e591ec41bf84336211`
 - Module proof commit: `7f452ce44db8628ca0724f0e5b94f252ffa5bb1a`
 
