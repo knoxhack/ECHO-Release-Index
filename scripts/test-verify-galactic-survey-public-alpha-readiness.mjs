@@ -173,6 +173,7 @@ assert.ok(report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('n
 assert.ok(!report.runtimePlaytestEvidence.releaseGatePreview.blockers.includes('launcher_install_update_repair_rollback'))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('Launcher lifecycle smoke must verify all 23 module files')))
 assert.ok(report.blockers.some((blocker) => blocker.includes('release-ready gameplay evidence is still missing')))
+assert.ok(report.blockers.some((blocker) => blocker.includes('packaged Electron first launch/open-play proof must pass')))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('downloaded GitHub Release launcher install, update, repair, and rollback evidence is not present')))
 assert.ok(!report.blockers.some((blocker) => blocker.includes('checksum-backed edition GitHub Release artifacts must be published and downloaded back')))
 assert.equal(
