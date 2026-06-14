@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echonpcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echonpcore-1.0.0-neoforge.jar",
-      "sha256": "1d34a3d58da5f55e5d0615d40a4288287c8fc117e52e46bf0b0bba79111976b4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0-neoforge.jar",
-      "size": 312813,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echonpcore-1.0.0-standalone.jar",
-      "sha256": "a91130625f6df16a4b6c9dc4fdee5628aaf4bed18fe5a6a8f16aa0fea05f025d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0-standalone.jar",
-      "size": 312804,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echonpcore-1.0.0.echo-addon",
-      "sha256": "b0f009e9227864c55e077b776c9e06099ab10fa7c3a4bb18bfad88e4865ebc14",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0.echo-addon",
-      "size": 290398,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echonpcore-1.0.0-sources.jar",
-      "sha256": "be53df86565e896d152c2194c8d6c6663c97a996f546662aed502fc3e14368d4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0-sources.jar",
-      "size": 178538
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echonpcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echonpcore-1.0.0-neoforge.jar",
+                                       "sha256":  "3ab638d8b712006c4b03a00a46b577a2acc18450d00b734403dad0783532ee3c",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0-neoforge.jar",
+                                       "size":  312813,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echonpcore-1.0.0-standalone.jar",
+                                         "sha256":  "9f3cd06cd434a752fa2ed12264badc2e30a389142183c9ea1e26f3013c9d421c",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0-standalone.jar",
+                                         "size":  312804,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echonpcore-1.0.0.echo-addon",
+                                     "sha256":  "4042e2f38b72691b0b8bfa5a2ec707fb768bb62a8bc4d377e40e62066ef96761",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0.echo-addon",
+                                     "size":  290398,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echonpcore-1.0.0-sources.jar",
+                                      "sha256":  "e52cc258fd738ce47bfe1462c22e9578090acfd7992337f824cfb35559ae7942",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonpcore-1.0.0-sources.jar",
+                                      "size":  178538
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

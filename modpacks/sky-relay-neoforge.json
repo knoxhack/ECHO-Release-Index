@@ -1,51 +1,51 @@
 {
-  "id": "sky-relay-neoforge-edition",
-  "kind": "modpack",
-  "version": "0.1.0",
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
-  "releaseTag": "sky-relay-neoforge-0.1.0-alpha",
-  "commitSha": "d125dc4df1bcc5df62d22e2dbb16bf7015a2e676",
-  "artifacts": {
-    "pack": {
-      "file": "sky-relay-neoforge-edition-0.1.0.zip",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-0.1.0.zip",
-      "sha256": "0c2aa38462e78c98593249274d3574de15d8c74e7e77c65887d1c114e948f92b",
-      "size": 157101476
-    },
-    "manifest": {
-      "file": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
-      "sha256": "55eb1ef51436c8abe21a7ab0cac05a2aabfa840af2e69ad62e6bb880f3cc6abf",
-      "size": 50717
-    },
-    "checksums": {
-      "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
-      "sha256": "8a8f1d5f8cbd0e487c97bbcb6e2b1009324aed19349bcaea0e566cfa1b4de7ea",
-      "size": 302
-    },
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
-      "sha256": "52d06f0fdb760d44280e1c903f7564532ba1bef7a760aa1a249ea56c3157437f",
-      "size": 12621
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoskyrelayprotocol",
-      "kind": "module",
-      "version": "0.1.0"
-    }
-  ],
-  "compatibility": [
-    "neoforge",
-    "sky-relay"
-  ],
-  "trust": "source-linked",
-  "validation": "approved",
-  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+    "id":  "sky-relay-neoforge-edition",
+    "kind":  "modpack",
+    "version":  "0.1.0",
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+    "releaseTag":  "sky-relay-neoforge-0.1.0-alpha",
+    "commitSha":  "d125dc4df1bcc5df62d22e2dbb16bf7015a2e676",
+    "artifacts":  {
+                      "pack":  {
+                                   "file":  "sky-relay-neoforge-edition-0.1.0.zip",
+                                   "url":  "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-0.1.0.zip",
+                                   "sha256":  "02bee9d837ea5d4e9a1ecb5d0cce95d55554a14b3d67d1264e2d3d21c0280ad3",
+                                   "size":  154774519
+                               },
+                      "manifest":  {
+                                       "file":  "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+                                       "url":  "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+                                       "sha256":  "17c208a7d92a06d9484fa66f5705e35bd765466cd42f327265799d1cb9e761cf",
+                                       "size":  46374
+                                   },
+                      "checksums":  {
+                                        "file":  "checksums.txt",
+                                        "url":  "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
+                                        "sha256":  "f57ad7d832418be45c4a0dd9c98d6a281c8419b08b7b15b7ad44ed801885d08c",
+                                        "size":  308
+                                    },
+                      "releaseManifest":  {
+                                              "file":  "echo-release.json",
+                                              "url":  "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
+                                              "sha256":  "38346c68192d8a4d43f9eba554c63152314a784619c6cf688b059e6b5548ee19",
+                                              "size":  18583
+                                          }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoskyrelayprotocol",
+                             "kind":  "module",
+                             "version":  "0.1.0"
+                         }
+                     ],
+    "compatibility":  [
+                          "neoforge",
+                          "sky-relay"
+                      ],
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }

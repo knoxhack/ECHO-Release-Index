@@ -1,51 +1,51 @@
 {
-  "id": "openlands-standalone-edition",
-  "kind": "modpack",
-  "version": "0.1.0",
-  "channel": "experimental",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
-  "releaseTag": "v0.1.0-openlands-standalone-edition",
-  "commitSha": "30041038a23b9c1273e544829afd72aa12c1f749",
-  "artifacts": {
-    "pack": {
-      "file": "openlands-standalone-edition-0.1.0.zip",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-0.1.0.zip",
-      "sha256": "cc5f506a9922013250e96d49aa8df10be219db7feb24e4446154832ca1489fe2",
-      "size": 113967781
-    },
-    "manifest": {
-      "file": "openlands-standalone-edition-experimental-0.1.0.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
-      "sha256": "c794d39d9303194b4128d320248c3188173343b735c6275de597eaf9d926d0ba",
-      "size": 50812
-    },
-    "checksums": {
-      "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/checksums.txt",
-      "sha256": "d0d5ab36ac1b536aae5dfa7ae29f032d9e7c720488e2d941dfb060ada33b65c2",
-      "size": 313
-    },
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/echo-release.json",
-      "sha256": "cbbe01eac43f062593c892524f302e6b5d5a80a9a68a415c9a134f9fa0f04620",
-      "size": 12512
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echo-standalone-runtime",
-      "kind": "runtime",
-      "version": ">=0.1.0"
-    }
-  ],
-  "compatibility": [
-    "standalone",
-    "openlands"
-  ],
-  "trust": "source-linked",
-  "validation": "approved",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
-  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only."
+    "id":  "openlands-standalone-edition",
+    "kind":  "modpack",
+    "version":  "0.1.0",
+    "channel":  "experimental",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Openlands-Standalone-Edition",
+    "releaseTag":  "v0.1.0-openlands-standalone-edition",
+    "commitSha":  "30041038a23b9c1273e544829afd72aa12c1f749",
+    "artifacts":  {
+                      "pack":  {
+                                   "file":  "openlands-standalone-edition-0.1.0.zip",
+                                   "url":  "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-0.1.0.zip",
+                                   "sha256":  "08e7045913810edf83435f1e066d2962502705106b8403b6b767855e5dafbc19",
+                                   "size":  112306557
+                               },
+                      "manifest":  {
+                                       "file":  "openlands-standalone-edition-experimental-0.1.0.pack.json",
+                                       "url":  "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
+                                       "sha256":  "b30e5e75d54bf1f861eb79f110f6b5ca18c75f7e6c90640a20e158f85b1b4529",
+                                       "size":  46570
+                                   },
+                      "checksums":  {
+                                        "file":  "checksums.txt",
+                                        "url":  "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/checksums.txt",
+                                        "sha256":  "1a4158d09342a19c1b6e062c43fd18c795b5880a9c310559c82039bf3afe867c",
+                                        "size":  319
+                                    },
+                      "releaseManifest":  {
+                                              "file":  "echo-release.json",
+                                              "url":  "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/echo-release.json",
+                                              "sha256":  "174821d85579271ddf0fd052f3baaea062d5e68b3bfe6d6d05cd0c96671ff6fa",
+                                              "size":  18347
+                                          }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echo-standalone-runtime",
+                             "kind":  "runtime",
+                             "version":  "\u003e=0.1.0"
+                         }
+                     ],
+    "compatibility":  [
+                          "standalone",
+                          "openlands"
+                      ],
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
+    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only."
 }

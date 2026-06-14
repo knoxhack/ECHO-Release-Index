@@ -1,64 +1,66 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoassetpipeline",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoassetpipeline-0.1.0-neoforge.jar",
-      "sha256": "0f12de3795454e7877687c5650398d1c756a4065fe85798b18654d70a8a5da67",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0-neoforge.jar",
-      "size": 6071,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoassetpipeline-0.1.0-standalone.jar",
-      "sha256": "0f12de3795454e7877687c5650398d1c756a4065fe85798b18654d70a8a5da67",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0-standalone.jar",
-      "size": 6071,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoassetpipeline-0.1.0.echo-addon",
-      "sha256": "300115984275b909c1de9aff2e76440ad8a0d16e3285f269d33e6fbb4ddc5185",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0.echo-addon",
-      "size": 8503,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoassetpipeline-0.1.0-sources.jar",
-      "sha256": "e660050bc2fedfcdea50c2bab3aedcab56f61a1e89d08a60fff9286d1b297350",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0-sources.jar",
-      "size": 5747
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echoassetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echotextureforge",
-      "kind": "module"
-    },
-    {
-      "id": "echosoundcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoassetpipeline",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoassetpipeline-0.1.0-neoforge.jar",
+                                       "sha256":  "c87ba503c37ba083a6baf2f091ec968394fc5b5cacee482ff5ab14ae8c710a5e",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0-neoforge.jar",
+                                       "size":  6071,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoassetpipeline-0.1.0-standalone.jar",
+                                         "sha256":  "c87ba503c37ba083a6baf2f091ec968394fc5b5cacee482ff5ab14ae8c710a5e",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0-standalone.jar",
+                                         "size":  6071,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoassetpipeline-0.1.0.echo-addon",
+                                     "sha256":  "343230a0cd3404464c65f73e538acdf2712830ce32acd9c7e0d815ced2b15936",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0.echo-addon",
+                                     "size":  8503,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoassetpipeline-0.1.0-sources.jar",
+                                      "sha256":  "eaa4f5e44cec45b52118c414b9ef141b7db386296cd05032e65a288f9b7ea451",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetpipeline-0.1.0-sources.jar",
+                                      "size":  5747
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoassetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echotextureforge",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echosoundcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

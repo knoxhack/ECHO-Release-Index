@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echofoundationcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echofoundationcore-0.1.0-neoforge.jar",
-      "sha256": "dbd1cc79474b597183fadb67923cac94c73be0572ec115844a5acaa410be9a36",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0-neoforge.jar",
-      "size": 10970,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echofoundationcore-0.1.0-standalone.jar",
-      "sha256": "cf357c5ae2ddaf95abb160dbfeb9d65fd3f04c246c07f1a77487dbd583146db3",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0-standalone.jar",
-      "size": 10963,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echofoundationcore-0.1.0.echo-addon",
-      "sha256": "7316cac39808729fff9249c326a5cdaf72b4175eb392bfead274692145d30bcf",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0.echo-addon",
-      "size": 12276,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echofoundationcore-0.1.0-sources.jar",
-      "sha256": "8e4ac75c6eb4e134d3d4936e928d6fc8f7adc44a9638cfd54cc32b7ea1f8a678",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0-sources.jar",
-      "size": 9908
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echofoundationcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echofoundationcore-0.1.0-neoforge.jar",
+                                       "sha256":  "d738b627e35aa3227df500efc0aeba225f0115b110f6494cf04c4c58d3eb2b02",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0-neoforge.jar",
+                                       "size":  10970,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echofoundationcore-0.1.0-standalone.jar",
+                                         "sha256":  "f2567d80994fda7019d9c730b00567e2d26f0e3eb1e28393272e27990f13150d",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0-standalone.jar",
+                                         "size":  10963,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echofoundationcore-0.1.0.echo-addon",
+                                     "sha256":  "15691deaa6da72efd42e95c172360721082382dc6196206c05cce6b8bc65abd5",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0.echo-addon",
+                                     "size":  12276,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echofoundationcore-0.1.0-sources.jar",
+                                      "sha256":  "70d754a0d096896667c397d22c6ebd84976c28ca5caee971a53af212eeb4ab02",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofoundationcore-0.1.0-sources.jar",
+                                      "size":  9908
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

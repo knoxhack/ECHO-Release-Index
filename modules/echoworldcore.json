@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoworldcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoworldcore-1.0.0-neoforge.jar",
-      "sha256": "6c3b418bb73f8b8905a9735980096f267060777c40bb4f080606d50587b99099",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0-neoforge.jar",
-      "size": 177332,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoworldcore-1.0.0-standalone.jar",
-      "sha256": "726023c813ae3bc321f1ea988731373ae190170fa04f677e2693686df81ce0a4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0-standalone.jar",
-      "size": 177323,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoworldcore-1.0.0.echo-addon",
-      "sha256": "f7bf8fa1f1a33e2bbe11024694be3ff727571d9b8c9f4bbdfe27b635aa8dfb91",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0.echo-addon",
-      "size": 168140,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoworldcore-1.0.0-sources.jar",
-      "sha256": "4652dfb38ed6501f8b4f7e7539bfdf61133c2d4b12df79bbf020f7403777805a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0-sources.jar",
-      "size": 78881
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoworldcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoworldcore-1.0.0-neoforge.jar",
+                                       "sha256":  "1571dc08d4f94c9e0935cb491c85787b932cc1fcb0239f7cc47418aee39d03c2",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0-neoforge.jar",
+                                       "size":  177332,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoworldcore-1.0.0-standalone.jar",
+                                         "sha256":  "c6d2710827b039b051ecf18286617d39bbf7ab73e926caf21ea77ebdf99b692b",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0-standalone.jar",
+                                         "size":  177323,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoworldcore-1.0.0.echo-addon",
+                                     "sha256":  "a30fb6932dadd5f2c52cdbd3d56ac2ba19930297ff99564d704708ee3de7deaa",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0.echo-addon",
+                                     "size":  168140,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoworldcore-1.0.0-sources.jar",
+                                      "sha256":  "263a849a236f235d7845b22b606c57d6cf8ab56397e8b0a1cc3b01b5a12aafe3",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoworldcore-1.0.0-sources.jar",
+                                      "size":  78881
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

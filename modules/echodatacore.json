@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echodatacore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echodatacore-1.0.0-neoforge.jar",
-      "sha256": "4150d4711f9ad7f489b8b8d8fecf3d8b140f723c39f266bde133c459186c75bf",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0-neoforge.jar",
-      "size": 105214,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echodatacore-1.0.0-standalone.jar",
-      "sha256": "51623a590b45164d0a516ce51b6db11e43994f59def9fe5f8a3543f13c2f0452",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0-standalone.jar",
-      "size": 105202,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echodatacore-1.0.0.echo-addon",
-      "sha256": "9fc4b369490fc42c3080eb6de6fdd76819bbae247e9a8bec788b999ff4dacff6",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0.echo-addon",
-      "size": 102513,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echodatacore-1.0.0-sources.jar",
-      "sha256": "d3905924bcbb196bfecae96d72b32fabaf980a61a10fcd09a466ec645914ac8f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0-sources.jar",
-      "size": 42856
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echodatacore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echodatacore-1.0.0-neoforge.jar",
+                                       "sha256":  "e50c18c8acdd7d899f2ccd89764c678f77e632eef7b1a6450d8ca98bebc6467c",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0-neoforge.jar",
+                                       "size":  105214,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echodatacore-1.0.0-standalone.jar",
+                                         "sha256":  "72a7ed917dc0a87993e7a7db25d6a3d5a9525ccc59ec1a988a703420b7d353e7",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0-standalone.jar",
+                                         "size":  105202,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echodatacore-1.0.0.echo-addon",
+                                     "sha256":  "5acf48d04a1d4dd5c2a4f83dc056fbe1c3a4d8caccc4b541acf5d10281c3d075",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0.echo-addon",
+                                     "size":  102513,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echodatacore-1.0.0-sources.jar",
+                                      "sha256":  "2dfbd31379db7a6088dfbcbd7f63193231e4601ef3a081758dd0a1b22c1a8cfc",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodatacore-1.0.0-sources.jar",
+                                      "size":  42856
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

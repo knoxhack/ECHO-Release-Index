@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echonotificationcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echonotificationcore-1.0.0-neoforge.jar",
-      "sha256": "64b6f79e32c6c6fdc02755e5ea5d38e66010ddea694134f0b8cf7e93bd82700f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0-neoforge.jar",
-      "size": 22350,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echonotificationcore-1.0.0-standalone.jar",
-      "sha256": "7d2a3ff7fa7e9709ae52e26d6b4ff6aaa4e954755b09bb5aeb2f333e727e1089",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0-standalone.jar",
-      "size": 22336,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echonotificationcore-1.0.0.echo-addon",
-      "sha256": "fa58898e541b07998a75af486c1ab3c6d6a4278ce8a7ef43f40e77789067260f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0.echo-addon",
-      "size": 23270,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echonotificationcore-1.0.0-sources.jar",
-      "sha256": "54fa1eb3810ab1695bc6ce2b163411efbeca0e283c7be30ba04959567a5a4535",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0-sources.jar",
-      "size": 11973
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echonotificationcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echonotificationcore-1.0.0-neoforge.jar",
+                                       "sha256":  "dc15ace55904f5fe24b0dbcde56f7e72f86bb57b2fe1663d4729ac1d7fa84f7a",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0-neoforge.jar",
+                                       "size":  22350,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echonotificationcore-1.0.0-standalone.jar",
+                                         "sha256":  "5119fdd4d676448c6ada12249ff9b67da1ae2af715a4745a30f5bc9704f050ca",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0-standalone.jar",
+                                         "size":  22336,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echonotificationcore-1.0.0.echo-addon",
+                                     "sha256":  "bc3b7318aec90fd7cb601802328c1dd9948da03e066e78ad1d562b036829a7c1",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0.echo-addon",
+                                     "size":  23270,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echonotificationcore-1.0.0-sources.jar",
+                                      "sha256":  "8bdca28ef629172dd43a8be91ac15c20dc5c417eba65702227131dff9fff3de4",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonotificationcore-1.0.0-sources.jar",
+                                      "size":  11973
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

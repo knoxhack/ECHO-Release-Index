@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echosettlementcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echosettlementcore-0.1.0-neoforge.jar",
-      "sha256": "eec83ab352a9b2b1b06d2178218bf7ce53554d493f78137a6d5ab3ed1ca487f9",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0-neoforge.jar",
-      "size": 6166,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echosettlementcore-0.1.0-standalone.jar",
-      "sha256": "eec83ab352a9b2b1b06d2178218bf7ce53554d493f78137a6d5ab3ed1ca487f9",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0-standalone.jar",
-      "size": 6166,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echosettlementcore-0.1.0.echo-addon",
-      "sha256": "39691cde94c53f7d22e820adbee135791d2770d016ba0fe8a98836b765120323",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0.echo-addon",
-      "size": 8649,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echosettlementcore-0.1.0-sources.jar",
-      "sha256": "8e764edc71e3b454412d51adf399104bcc34a5ec8921e9a99c4af6d367dcabda",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0-sources.jar",
-      "size": 5855
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echobasegrid",
-      "kind": "module"
-    },
-    {
-      "id": "echonpcore",
-      "kind": "module"
-    },
-    {
-      "id": "echologisticscore",
-      "kind": "module"
-    },
-    {
-      "id": "echoworldcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echosettlementcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echosettlementcore-0.1.0-neoforge.jar",
+                                       "sha256":  "0b54ed8167291386b8ab862f46585f066fe24108ca46148dc47af0f2df0ea14c",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0-neoforge.jar",
+                                       "size":  6166,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echosettlementcore-0.1.0-standalone.jar",
+                                         "sha256":  "0b54ed8167291386b8ab862f46585f066fe24108ca46148dc47af0f2df0ea14c",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0-standalone.jar",
+                                         "size":  6166,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echosettlementcore-0.1.0.echo-addon",
+                                     "sha256":  "592fdf61e53bb2d6c3e18cd73c72b5bd3d425ae9351eb3f6bd9a8143dd021377",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0.echo-addon",
+                                     "size":  8649,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echosettlementcore-0.1.0-sources.jar",
+                                      "sha256":  "59b2d2bf9294ec6ad2d81ea286510626e61f009fd3d5e0e422fc9877a76860b2",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosettlementcore-0.1.0-sources.jar",
+                                      "size":  5855
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echobasegrid",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonpcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echologisticscore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoworldcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

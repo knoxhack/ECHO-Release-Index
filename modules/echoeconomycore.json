@@ -1,76 +1,78 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoeconomycore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoeconomycore-1.0.0-neoforge.jar",
-      "sha256": "b14440a06624f187c95db8539e5925462655ba0a8c573e82180adb3699c5e7a0",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0-neoforge.jar",
-      "size": 28968,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoeconomycore-1.0.0-standalone.jar",
-      "sha256": "0f906cf034313b55a7f79c9575eaa12f3b741f5272b82758d933694a607a4db0",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0-standalone.jar",
-      "size": 28953,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoeconomycore-1.0.0.echo-addon",
-      "sha256": "d78c0be95697e3f0cd65ed1bc03f8dda9565c81cf8aaf3960965368278e9e4fc",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0.echo-addon",
-      "size": 29492,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoeconomycore-1.0.0-sources.jar",
-      "sha256": "d081e1358f81d1b19fbc5cd88e782d07a11180b4011191d9fa1b19e6609f3842",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0-sources.jar",
-      "size": 14314
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoprogressioncore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echosocialcore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoeconomycore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoeconomycore-1.0.0-neoforge.jar",
+                                       "sha256":  "52f5fe020977dc6e72046e6c3f8c54f29b215abf2638f7b692f5a860251b6a4f",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0-neoforge.jar",
+                                       "size":  28968,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoeconomycore-1.0.0-standalone.jar",
+                                         "sha256":  "d86bb217a2a907767f05f2b3e14f32253d26b8981848c944d59abf1761e217e1",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0-standalone.jar",
+                                         "size":  28953,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoeconomycore-1.0.0.echo-addon",
+                                     "sha256":  "f110b80d62eb9415f713338b25b6f941f9d9bdb5e6d6ac9b39682cac29a595c9",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0.echo-addon",
+                                     "size":  29492,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoeconomycore-1.0.0-sources.jar",
+                                      "sha256":  "591b7d1e8fae6326acaee9520711eed7414616c8c721b95d57c0841c01425727",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeconomycore-1.0.0-sources.jar",
+                                      "size":  14314
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoprogressioncore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echosocialcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

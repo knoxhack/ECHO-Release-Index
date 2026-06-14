@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoplaytestcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoplaytestcore-0.1.0-neoforge.jar",
-      "sha256": "d7891ada24c52f9cc0844a6f441ebfc409d2a253ad8115259559eee3caa1cd03",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0-neoforge.jar",
-      "size": 6534,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoplaytestcore-0.1.0-standalone.jar",
-      "sha256": "d7891ada24c52f9cc0844a6f441ebfc409d2a253ad8115259559eee3caa1cd03",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0-standalone.jar",
-      "size": 6534,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoplaytestcore-0.1.0.echo-addon",
-      "sha256": "499c55dfb490fe3d78fc81d618423c6797a912f3983473fc61dc07c19824bad7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0.echo-addon",
-      "size": 9212,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoplaytestcore-0.1.0-sources.jar",
-      "sha256": "54c7e50bc023a9cc1641d9c1287bfa34232ad17887f75a9044dd5e0bd44d01a4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0-sources.jar",
-      "size": 6252
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echoreportcore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    },
-    {
-      "id": "echomodulegraph",
-      "kind": "module"
-    },
-    {
-      "id": "echoruntimeguard",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoplaytestcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoplaytestcore-0.1.0-neoforge.jar",
+                                       "sha256":  "c65e832bc9fda13401b169923f786beb5e63927f19b5e7aa3879a94eeca68131",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0-neoforge.jar",
+                                       "size":  6534,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoplaytestcore-0.1.0-standalone.jar",
+                                         "sha256":  "c65e832bc9fda13401b169923f786beb5e63927f19b5e7aa3879a94eeca68131",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0-standalone.jar",
+                                         "size":  6534,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoplaytestcore-0.1.0.echo-addon",
+                                     "sha256":  "08aae8168c40984148db4203c9e24b76f2c58451fb1e69790468a624bc06ba3d",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0.echo-addon",
+                                     "size":  9212,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoplaytestcore-0.1.0-sources.jar",
+                                      "sha256":  "8ccc517d33d8859fe97b7defc2afe93fb794b8405eaf38a57a3490761f27f124",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoplaytestcore-0.1.0-sources.jar",
+                                      "size":  6252
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoreportcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echomodulegraph",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoruntimeguard",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

@@ -1,51 +1,51 @@
 {
-  "id": "arcana-division-neoforge-edition",
-  "kind": "modpack",
-  "version": "1.0.0",
-  "channel": "beta",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
-  "releaseTag": "arcana-division-neoforge-1.0.0-beta",
-  "commitSha": "b45839075e7a9c5dd8569e5c0879d65bba4ada39",
-  "artifacts": {
-    "pack": {
-      "file": "arcana-division-neoforge-edition-1.0.0.zip",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-1.0.0.zip",
-      "sha256": "2e88283769b31fc6a29271e9d6d962f9a90f1b7037af91a5b646c93de27bee1a",
-      "size": 118409717
-    },
-    "manifest": {
-      "file": "arcana-division-neoforge-edition-beta-1.0.0.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
-      "sha256": "7a5953f7d93c2e13d1ec19b9927d04f386fab310034c486a1022e148fa2c150e",
-      "size": 50908
-    },
-    "checksums": {
-      "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/checksums.txt",
-      "sha256": "e480615cea9df72e7ac14d52354c847a4fff13233e2b71011af890c8d4137712",
-      "size": 313
-    },
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/echo-release.json",
-      "sha256": "61d2751de4f1c2014c0ece08504d12c0151461d034750c98a252b8450072d426",
-      "size": 11646
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoarcanadivisionprotocol",
-      "kind": "module",
-      "version": "1.0.0"
-    }
-  ],
-  "compatibility": [
-    "neoforge",
-    "arcana-division"
-  ],
-  "trust": "source-linked",
-  "validation": "approved",
-  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+    "id":  "arcana-division-neoforge-edition",
+    "kind":  "modpack",
+    "version":  "1.0.0",
+    "channel":  "beta",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
+    "releaseTag":  "arcana-division-neoforge-1.0.0-beta",
+    "commitSha":  "b45839075e7a9c5dd8569e5c0879d65bba4ada39",
+    "artifacts":  {
+                      "pack":  {
+                                   "file":  "arcana-division-neoforge-edition-1.0.0.zip",
+                                   "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-1.0.0.zip",
+                                   "sha256":  "13fb8ab91f6148ce523edc23f8baeb630f0661978a9e5128cd9c0025e6c4da03",
+                                   "size":  116843365
+                               },
+                      "manifest":  {
+                                       "file":  "arcana-division-neoforge-edition-beta-1.0.0.pack.json",
+                                       "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
+                                       "sha256":  "3fbb2ac9c9ed4eb18c08809384b2061819e353483ee5722c401be7a77f5a1047",
+                                       "size":  46969
+                                   },
+                      "checksums":  {
+                                        "file":  "checksums.txt",
+                                        "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/checksums.txt",
+                                        "sha256":  "cc6f3499004ad0cf44841092088d90d26cbe6a6933fa2ac2f1ca358b1bbc8985",
+                                        "size":  319
+                                    },
+                      "releaseManifest":  {
+                                              "file":  "echo-release.json",
+                                              "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/echo-release.json",
+                                              "sha256":  "eacaa1ca2854ccd0b1e6eff81b1c1418fd14433b9770c1b51fe8dacef830d45a",
+                                              "size":  17104
+                                          }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoarcanadivisionprotocol",
+                             "kind":  "module",
+                             "version":  "1.0.0"
+                         }
+                     ],
+    "compatibility":  [
+                          "neoforge",
+                          "arcana-division"
+                      ],
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }

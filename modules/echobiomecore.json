@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echobiomecore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echobiomecore-1.0.0-neoforge.jar",
-      "sha256": "2bdc35b9d50a00fbfc8b49710dc1ddcc149697d4a95ba6a6db55ec5552af34b1",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0-neoforge.jar",
-      "size": 23331,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echobiomecore-1.0.0-standalone.jar",
-      "sha256": "b8ad1bf308ff4254d30f5291d65532d713b38160d456bc841280ef9d9e2b9f9d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0-standalone.jar",
-      "size": 23317,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echobiomecore-1.0.0.echo-addon",
-      "sha256": "9ea1f74a78da1b7204416b2e8170406fe9e50c30fe54e86b855267390b8ab392",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0.echo-addon",
-      "size": 24694,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echobiomecore-1.0.0-sources.jar",
-      "sha256": "dab7ea2becc49eaa7bd18e6cdf8d18fc1ce33b83510037e764fa4ab45d022b9f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0-sources.jar",
-      "size": 13036
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echoassetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echobiomecore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echobiomecore-1.0.0-neoforge.jar",
+                                       "sha256":  "4725849332a7bb292f9f53fc534095ad3520d617119aad3c2a15f1e970fa80a5",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0-neoforge.jar",
+                                       "size":  23331,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echobiomecore-1.0.0-standalone.jar",
+                                         "sha256":  "a09b78702db10f589fafc52154e786e39f8f9147245b5c31ab3dab9d780fc81e",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0-standalone.jar",
+                                         "size":  23317,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echobiomecore-1.0.0.echo-addon",
+                                     "sha256":  "2a0c2c5238c8572f5a713bca69f2a9f5ae4189fca0805c8d077fc250c86872dd",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0.echo-addon",
+                                     "size":  24694,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echobiomecore-1.0.0-sources.jar",
+                                      "sha256":  "d4b3a8c161911b55bb76340b406088cc9bdb57ed697eef7d959c79691c85c1f0",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobiomecore-1.0.0-sources.jar",
+                                      "size":  13036
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoassetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

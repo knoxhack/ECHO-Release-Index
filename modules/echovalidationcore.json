@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echovalidationcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echovalidationcore-1.0.0-neoforge.jar",
-      "sha256": "5d84504b005f54ca2f042fcb2cf7fea4f85597755bf4dd43a0e31c2d0cc8792d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0-neoforge.jar",
-      "size": 42001,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echovalidationcore-1.0.0-standalone.jar",
-      "sha256": "cb225e62372b01b27d853d42aadd8bf0d65def28b9edc8891e4d8826ffcd8170",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0-standalone.jar",
-      "size": 41988,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echovalidationcore-1.0.0.echo-addon",
-      "sha256": "31eb4ff0bb00403d124986653ef932fa2e95759aa306c6ac5ce2b3d3719e42cd",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0.echo-addon",
-      "size": 41824,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echovalidationcore-1.0.0-sources.jar",
-      "sha256": "3c3dc667bbba9601d2f5967640e7310e487eb5b564d730b7db6e9d71d35990a9",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0-sources.jar",
-      "size": 19041
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echovalidationcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echovalidationcore-1.0.0-neoforge.jar",
+                                       "sha256":  "b1efd0f32138c91cdac5758b73a067327822a959d8ad8e93bf36391105f1d9c0",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0-neoforge.jar",
+                                       "size":  42001,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echovalidationcore-1.0.0-standalone.jar",
+                                         "sha256":  "dd870a9613d88624b29cd447547da4c2a651aadd8fd64636be7c8330a21dbd2d",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0-standalone.jar",
+                                         "size":  41988,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echovalidationcore-1.0.0.echo-addon",
+                                     "sha256":  "ba2ad0c87bbbb744e9bca1142dc5cea538a13e88fd8fe0e8b77812b22a25083b",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0.echo-addon",
+                                     "size":  41824,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echovalidationcore-1.0.0-sources.jar",
+                                      "sha256":  "a8ea0d3c953e717737372f79112cf3444d9bd38776fe680feb6ac302e497d1f2",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echovalidationcore-1.0.0-sources.jar",
+                                      "size":  19041
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echostationcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echostationcore-0.1.0-neoforge.jar",
-      "sha256": "6098aa27b4e9d5651774c904dda5fc8b2efd080101b2ce9fdb6d950fd0bfbe7d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0-neoforge.jar",
-      "size": 9178,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echostationcore-0.1.0-standalone.jar",
-      "sha256": "6beb982df3fd5b15cfede6b9292aaa7b082ff24c7f2d93032e4a2560ff952ec0",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0-standalone.jar",
-      "size": 9170,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echostationcore-0.1.0.echo-addon",
-      "sha256": "6047614aac63b0889639caf7414b44b25e4f150e7740cac2d17479d4cbc7033c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0.echo-addon",
-      "size": 10578,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echostationcore-0.1.0-sources.jar",
-      "sha256": "894301b5754dffa48509504d365c34574a887a89dad449c21c2d97d412de5b89",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0-sources.jar",
-      "size": 8135
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echofoundationcore",
-      "kind": "module"
-    },
-    {
-      "id": "echomaterialcore",
-      "kind": "module"
-    },
-    {
-      "id": "echotoolcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echostationcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echostationcore-0.1.0-neoforge.jar",
+                                       "sha256":  "9749ce968fa8722e98bd718f1e7d0d9ad7e5730fd0044cbb001dfbbbe8b63e14",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0-neoforge.jar",
+                                       "size":  9178,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echostationcore-0.1.0-standalone.jar",
+                                         "sha256":  "76438e766600ae7073876306ad5740dba0dafbab2700ce659c2f885b0dbe8e90",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0-standalone.jar",
+                                         "size":  9170,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echostationcore-0.1.0.echo-addon",
+                                     "sha256":  "0bc2fe29306d3c5cf194deba026605a48a0170b327a04e54fd5322f40983a64d",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0.echo-addon",
+                                     "size":  10578,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echostationcore-0.1.0-sources.jar",
+                                      "sha256":  "c1d8142f24a3ed89a77b03700f482a027649e8a1f9b9d6883318dec6a9476487",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationcore-0.1.0-sources.jar",
+                                      "size":  8135
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echofoundationcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echomaterialcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echotoolcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

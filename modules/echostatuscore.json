@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echostatuscore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echostatuscore-1.0.0-neoforge.jar",
-      "sha256": "2e13a320817664ed0ecde4a96facebb9bc3fe75f3fc94b28a58a464380695ab0",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0-neoforge.jar",
-      "size": 28265,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echostatuscore-1.0.0-standalone.jar",
-      "sha256": "5456d4718ae68b4d2cfb932c7b4fda903ff8f07123313aeb08862740adc9f97d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0-standalone.jar",
-      "size": 28252,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echostatuscore-1.0.0.echo-addon",
-      "sha256": "6281ae8bc3ad66918ac2abd842301b90734128d3a9db0f674ac6e6ff0344b84c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0.echo-addon",
-      "size": 29229,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echostatuscore-1.0.0-sources.jar",
-      "sha256": "aa09ba4c8ca53460eab878a564b4344c931bf9fe9c920c9e8c6d0d51c4acaac9",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0-sources.jar",
-      "size": 14096
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echostatuscore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echostatuscore-1.0.0-neoforge.jar",
+                                       "sha256":  "3abfb57aab8e42b8bbef3e3541982ea0b294075ce354ff43fc926d0855139ed0",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0-neoforge.jar",
+                                       "size":  28265,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echostatuscore-1.0.0-standalone.jar",
+                                         "sha256":  "c2edb83f665bbe1b29c640ff7609efe708e25bc8947d3bf214e0d99d3884644c",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0-standalone.jar",
+                                         "size":  28252,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echostatuscore-1.0.0.echo-addon",
+                                     "sha256":  "262fe35cfcbde8d655b7864b15116491a36c2d65843299a6dbc4c440ec903c85",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0.echo-addon",
+                                     "size":  29229,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echostatuscore-1.0.0-sources.jar",
+                                      "sha256":  "83b31cd494d6922121878660c3cefe11812afdb582b9e1e242743b812c72a14a",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostatuscore-1.0.0-sources.jar",
+                                      "size":  14096
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

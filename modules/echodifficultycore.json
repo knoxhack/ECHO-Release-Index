@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echodifficultycore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echodifficultycore-1.0.0-neoforge.jar",
-      "sha256": "c061a516ffbaf957fc814864e881f06571e2df5fc72a51aa342bfd34bd41a2e7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0-neoforge.jar",
-      "size": 27856,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echodifficultycore-1.0.0-standalone.jar",
-      "sha256": "5a2b11e52f75fdd6d5080a589a17166226057af761559f7a45da4f94838bbf9a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0-standalone.jar",
-      "size": 27842,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echodifficultycore-1.0.0.echo-addon",
-      "sha256": "a787b3d58b68696badf22a320383ed8fcb521209fa45b85fae43d8c7ffb9437d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0.echo-addon",
-      "size": 28603,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echodifficultycore-1.0.0-sources.jar",
-      "sha256": "29962e2760275a79d14f7bf3e93974de3a83ac8742c4bd9c1373b2b50e879d98",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0-sources.jar",
-      "size": 14666
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echopackcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echodifficultycore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echodifficultycore-1.0.0-neoforge.jar",
+                                       "sha256":  "80a293e10f35ded5b3f5510452f45dc8224ab56019c4a9aebc682c01c9d30b52",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0-neoforge.jar",
+                                       "size":  27856,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echodifficultycore-1.0.0-standalone.jar",
+                                         "sha256":  "37c13fe1284c438e47e374c13cab5ad1218620849f78726d10cca07ade289a4b",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0-standalone.jar",
+                                         "size":  27842,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echodifficultycore-1.0.0.echo-addon",
+                                     "sha256":  "412deeaded8dd992e69904cb75e68c17bc9ee26e9f937b8a8c85b9147d9cee78",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0.echo-addon",
+                                     "size":  28603,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echodifficultycore-1.0.0-sources.jar",
+                                      "sha256":  "e065717ed041c4c73c35e58652677cc46daf2c1881a3082a9efc1e5c8199792f",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodifficultycore-1.0.0-sources.jar",
+                                      "size":  14666
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echopackcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

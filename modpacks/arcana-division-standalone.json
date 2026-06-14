@@ -1,56 +1,56 @@
 {
-  "id": "arcana-division-standalone-edition",
-  "kind": "modpack",
-  "version": "1.0.0",
-  "channel": "beta",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
-  "releaseTag": "arcana-division-standalone-1.0.0-beta",
-  "commitSha": "1d88b677c9769561d60c89270acfdef424115870",
-  "artifacts": {
-    "pack": {
-      "file": "arcana-division-standalone-edition-1.0.0.zip",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-1.0.0.zip",
-      "sha256": "e569ccb9a378925a3c2e97d58cad914d25b1f2b63566f0a6053d78439db6e5a4",
-      "size": 118455457
-    },
-    "manifest": {
-      "file": "arcana-division-standalone-edition-beta-1.0.0.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
-      "sha256": "03499a095e056dbe97789ad0d3d2d4776a9d8358455eb3fff4c91218e255cf05",
-      "size": 51198
-    },
-    "checksums": {
-      "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/checksums.txt",
-      "sha256": "843f4dbab8c5453a57e934fffb78bbe3b525225c81f3fcc47586975ce4311ad8",
-      "size": 317
-    },
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/echo-release.json",
-      "sha256": "229f53e3b35b224b79c79b4443eff38993f0f44423f800a88d1c530b6c6f086a",
-      "size": 11774
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echo-standalone-runtime",
-      "kind": "runtime",
-      "version": ">=0.1.0"
-    },
-    {
-      "id": "echoarcanadivisionprotocol",
-      "kind": "module",
-      "version": "1.0.0"
-    }
-  ],
-  "compatibility": [
-    "standalone",
-    "arcana-division"
-  ],
-  "trust": "source-linked",
-  "validation": "approved",
-  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+    "id":  "arcana-division-standalone-edition",
+    "kind":  "modpack",
+    "version":  "1.0.0",
+    "channel":  "beta",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
+    "releaseTag":  "arcana-division-standalone-1.0.0-beta",
+    "commitSha":  "1d88b677c9769561d60c89270acfdef424115870",
+    "artifacts":  {
+                      "pack":  {
+                                   "file":  "arcana-division-standalone-edition-1.0.0.zip",
+                                   "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-1.0.0.zip",
+                                   "sha256":  "e4b3f143127905acec8f2d3109994f2f36968901ed06365baaebfdc2688475be",
+                                   "size":  116889106
+                               },
+                      "manifest":  {
+                                       "file":  "arcana-division-standalone-edition-beta-1.0.0.pack.json",
+                                       "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
+                                       "sha256":  "92e02c05ab80cfe8115e52a7e826a4d5fd35de5305ce847463585b200df71f79",
+                                       "size":  47259
+                                   },
+                      "checksums":  {
+                                        "file":  "checksums.txt",
+                                        "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/checksums.txt",
+                                        "sha256":  "34f9a84b56177f323ddfc2e3094f43db4695f9e0266b6e2f9d40595407b53d1a",
+                                        "size":  323
+                                    },
+                      "releaseManifest":  {
+                                              "file":  "echo-release.json",
+                                              "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/echo-release.json",
+                                              "sha256":  "57bc6ec2430a4d4f94a87041d6b6cf828efda32237382d2215a8a5fbaae13349",
+                                              "size":  17228
+                                          }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echo-standalone-runtime",
+                             "kind":  "runtime",
+                             "version":  "\u003e=0.1.0"
+                         },
+                         {
+                             "id":  "echoarcanadivisionprotocol",
+                             "kind":  "module",
+                             "version":  "1.0.0"
+                         }
+                     ],
+    "compatibility":  [
+                          "standalone",
+                          "arcana-division"
+                      ],
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }

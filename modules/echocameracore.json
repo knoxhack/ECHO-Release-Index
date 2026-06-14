@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echocameracore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echocameracore-1.0.0-neoforge.jar",
-      "sha256": "e7e42fe07b78006f0ac9cde84de080774107ef4ee63f2faa4b7c8bb0e0a64ad5",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0-neoforge.jar",
-      "size": 18136,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echocameracore-1.0.0-standalone.jar",
-      "sha256": "4642daf555c9a1cf975dca914f6117976ba3579ec6c6cd128f56d25f0acdba9c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0-standalone.jar",
-      "size": 18123,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echocameracore-1.0.0.echo-addon",
-      "sha256": "b64957d47bd3ac1e80e2436d2c7fdc14d16728e814bd4ceb1d1eb8060047b9af",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0.echo-addon",
-      "size": 19600,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echocameracore-1.0.0-sources.jar",
-      "sha256": "c3e3f548bbb4da3f1fd45528f46566cb57a49ef848fd61c3eae5790ba1257259",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0-sources.jar",
-      "size": 10717
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echoassetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echocameracore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echocameracore-1.0.0-neoforge.jar",
+                                       "sha256":  "b0cc77d4f60398a23b6c9e4b215e730e8a6e7b1204759a1095e3e115b90ede06",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0-neoforge.jar",
+                                       "size":  18136,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echocameracore-1.0.0-standalone.jar",
+                                         "sha256":  "51bfc4aab72d813c7579a2ace15c98ca5970865858f8b5bd0eaf75577aca9d05",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0-standalone.jar",
+                                         "size":  18123,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echocameracore-1.0.0.echo-addon",
+                                     "sha256":  "fce70925f29c3db004d39b68a313b5866748e7793b843047b9e627db3e8d9368",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0.echo-addon",
+                                     "size":  19600,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echocameracore-1.0.0-sources.jar",
+                                      "sha256":  "b8319318b7bd6db45958fd5621d0ec13797ca7d9e219e5e18ac812cca21d9e3c",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocameracore-1.0.0-sources.jar",
+                                      "size":  10717
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoassetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

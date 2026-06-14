@@ -1,64 +1,66 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echotoolcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echotoolcore-0.1.0-neoforge.jar",
-      "sha256": "f6c3d86f35ac307850ae7cc33b194b19d004e52e1b97bd31cb4ca49562d71754",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0-neoforge.jar",
-      "size": 8990,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echotoolcore-0.1.0-standalone.jar",
-      "sha256": "2fba09fdaf6baccca49581624cac97381658d659d138f33720c57b87e10adfee",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0-standalone.jar",
-      "size": 8982,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echotoolcore-0.1.0.echo-addon",
-      "sha256": "6fa20195e99339aa8969eb82e1836aded205eeb873b0b63129d04213b32aa399",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0.echo-addon",
-      "size": 10473,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echotoolcore-0.1.0-sources.jar",
-      "sha256": "55d688c640a66f03f87d30d558abd4e8ac93ca48309701752f537586a7c97786",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0-sources.jar",
-      "size": 7953
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echofoundationcore",
-      "kind": "module"
-    },
-    {
-      "id": "echomaterialcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echotoolcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echotoolcore-0.1.0-neoforge.jar",
+                                       "sha256":  "ffba003385408e3a0e7f618a3da21074b7f25afed56816ad2fc73edf2df90f19",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0-neoforge.jar",
+                                       "size":  8990,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echotoolcore-0.1.0-standalone.jar",
+                                         "sha256":  "bae54855dffa7f10c396fdb7716b4221189c81747ffac3fac2fc14727270df7d",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0-standalone.jar",
+                                         "size":  8982,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echotoolcore-0.1.0.echo-addon",
+                                     "sha256":  "531ba484bf0343a06154cc6b866f58f11fa6d56056003f897e46b5c277d8c167",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0.echo-addon",
+                                     "size":  10473,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echotoolcore-0.1.0-sources.jar",
+                                      "sha256":  "b9dacfc702409c1ad6efab2c8b51beb1ba8573f58eadec4d2584393bbb74d8c3",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotoolcore-0.1.0-sources.jar",
+                                      "size":  7953
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echofoundationcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echomaterialcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

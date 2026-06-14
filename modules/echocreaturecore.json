@@ -1,76 +1,78 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echocreaturecore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echocreaturecore-1.0.0-neoforge.jar",
-      "sha256": "9031584f1fc5990a26d1d33a0d8af632d8172abc959f8cf2316ffd188aec2467",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0-neoforge.jar",
-      "size": 21047,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echocreaturecore-1.0.0-standalone.jar",
-      "sha256": "e54ad5fead2333b599cad5bee8047d4b9b1155324158f867a09b2fc755ba08cc",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0-standalone.jar",
-      "size": 21032,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echocreaturecore-1.0.0.echo-addon",
-      "sha256": "8e80c1f5e5094cf3b6653b53b66d2bc66666219aaaa04488eaa19948747e12e6",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0.echo-addon",
-      "size": 22244,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echocreaturecore-1.0.0-sources.jar",
-      "sha256": "25b892f5af1d8d68d7d02a791d6da1dc18b92d2a8dce117723d4b84db68d19c1",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0-sources.jar",
-      "size": 11049
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoprogressioncore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echosocialcore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echocreaturecore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echocreaturecore-1.0.0-neoforge.jar",
+                                       "sha256":  "56706a776503bd9f929c939cc7cda88f0416875e379db9fa30b0f9c18998e373",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0-neoforge.jar",
+                                       "size":  21047,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echocreaturecore-1.0.0-standalone.jar",
+                                         "sha256":  "ba3b70519bac0df1d7e798f2b5c9105d13d1d1011190b29859c54df095ed26ea",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0-standalone.jar",
+                                         "size":  21032,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echocreaturecore-1.0.0.echo-addon",
+                                     "sha256":  "a1cbe183cbba617f658f9b4ac95cea32eae29b940ad8cf5927ee7d7897637375",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0.echo-addon",
+                                     "size":  22244,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echocreaturecore-1.0.0-sources.jar",
+                                      "sha256":  "d57fbf07efdf545dae827bcc1d586221637ca63b753c5b9182b7fa77a55946f3",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreaturecore-1.0.0-sources.jar",
+                                      "size":  11049
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoprogressioncore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echosocialcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

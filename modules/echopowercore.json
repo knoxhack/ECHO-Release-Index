@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echopowercore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echopowercore-1.0.0-neoforge.jar",
-      "sha256": "096823e4d42796b6c79b02fad87dc09b1f26fd285a50c28d7bfba3057d729b45",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0-neoforge.jar",
-      "size": 23108,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echopowercore-1.0.0-standalone.jar",
-      "sha256": "a4ee41a6dfb3ee27d391a6938c80469b8bb742a612bff77b314d169bad6f895a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0-standalone.jar",
-      "size": 23095,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echopowercore-1.0.0.echo-addon",
-      "sha256": "9c777e0f8f22278f04a39c627fb935df73cdcc4dbced50b90c505fa45922e1e8",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0.echo-addon",
-      "size": 24099,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echopowercore-1.0.0-sources.jar",
-      "sha256": "2b77a2cdd45c638bbdf1183ba3a87ac202acb2be5be9f402e9dc5d8048449f6d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0-sources.jar",
-      "size": 12703
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echoassetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echopowercore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echopowercore-1.0.0-neoforge.jar",
+                                       "sha256":  "e0d648d8b845703e9b76e8cc6403a5ae48faff0500f0f3a140f63f831808dfa2",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0-neoforge.jar",
+                                       "size":  23108,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echopowercore-1.0.0-standalone.jar",
+                                         "sha256":  "071b3fc6b6a12ba652b35074f2a691ca4a734ba59d37cb3d46401cef84b49170",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0-standalone.jar",
+                                         "size":  23095,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echopowercore-1.0.0.echo-addon",
+                                     "sha256":  "2b3e9a62ce65d98223bf8ca51f9767ed2e3d39c38b540e15cf2e964294594ae5",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0.echo-addon",
+                                     "size":  24099,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echopowercore-1.0.0-sources.jar",
+                                      "sha256":  "96d29e1b45b734dad07a09e64838a4a69da4967443a914b065f00ac58e51e2db",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopowercore-1.0.0-sources.jar",
+                                      "size":  12703
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoassetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

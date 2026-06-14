@@ -1,60 +1,62 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoskyrelayprotocol",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoskyrelayprotocol-0.1.0-neoforge.jar",
-      "sha256": "1e7b703f3e83bc5a2ac779a5b9b82339b701ea40f45a01aaaa7b42a476a52d3d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0-neoforge.jar",
-      "size": 50340,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoskyrelayprotocol-0.1.0-standalone.jar",
-      "sha256": "dd9b351e3d950882d31920eac01446b3131a96120bc86fabbd30be9cc09e2680",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0-standalone.jar",
-      "size": 50327,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoskyrelayprotocol-0.1.0.echo-addon",
-      "sha256": "edc50865d4180cb359c21f86fee131f8e063293fa5a08ed837a3b9db06b49e0d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0.echo-addon",
-      "size": 48415,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoskyrelayprotocol-0.1.0-sources.jar",
-      "sha256": "498f5688e214350e9436c6452b0217b9e70d0d9877d4e14c878477a303b04540",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0-sources.jar",
-      "size": 29718
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoruntimeguard",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoskyrelayprotocol",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoskyrelayprotocol-0.1.0-neoforge.jar",
+                                       "sha256":  "6ec1748cba52816b10d993a69fc24fe90aba768d05595c6bd4af09cb84007932",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0-neoforge.jar",
+                                       "size":  50340,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoskyrelayprotocol-0.1.0-standalone.jar",
+                                         "sha256":  "daf1456ffc20025bb58178aeae9249cea9e906dc2acb7f5c7bf9f4609cb8ebf5",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0-standalone.jar",
+                                         "size":  50327,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoskyrelayprotocol-0.1.0.echo-addon",
+                                     "sha256":  "448376bafbe1f64384f844ffd32e532c57df5b110d7de49d8b416c4eaa816927",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0.echo-addon",
+                                     "size":  48415,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoskyrelayprotocol-0.1.0-sources.jar",
+                                      "sha256":  "d7fc8fba4fe7fd10fcf18fe0c66ecc689d00c202314f50bb7fa843bd6276d419",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskyrelayprotocol-0.1.0-sources.jar",
+                                      "size":  29718
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoruntimeguard",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

@@ -1,64 +1,66 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echocurationcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echocurationcore-0.1.0-neoforge.jar",
-      "sha256": "19229b98a695fe58348cc546819fe9305de759fb6aa977786b20b1f060ba32bc",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0-neoforge.jar",
-      "size": 6116,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echocurationcore-0.1.0-standalone.jar",
-      "sha256": "19229b98a695fe58348cc546819fe9305de759fb6aa977786b20b1f060ba32bc",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0-standalone.jar",
-      "size": 6116,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echocurationcore-0.1.0.echo-addon",
-      "sha256": "4967bcb6958603c49bcf466f3cb3ba72e1967ee422fcb2d02085f51c485d5490",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0.echo-addon",
-      "size": 8573,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echocurationcore-0.1.0-sources.jar",
-      "sha256": "e7483631bc3eed08341bd3be6413846aef0fff1118c3a011b9771346d4af7466",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0-sources.jar",
-      "size": 5802
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocapabilitycore",
-      "kind": "module"
-    },
-    {
-      "id": "echodependencydoctor",
-      "kind": "module"
-    },
-    {
-      "id": "echometadatacore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echocurationcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echocurationcore-0.1.0-neoforge.jar",
+                                       "sha256":  "992bcecb49e46757311374b2ab45aa3f5f0212c8d9714a7a1935dafc38258fe3",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0-neoforge.jar",
+                                       "size":  6116,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echocurationcore-0.1.0-standalone.jar",
+                                         "sha256":  "992bcecb49e46757311374b2ab45aa3f5f0212c8d9714a7a1935dafc38258fe3",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0-standalone.jar",
+                                         "size":  6116,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echocurationcore-0.1.0.echo-addon",
+                                     "sha256":  "b78ad8a9aaf17b83f89e6342eb170fe2981dc0a51dd080f34353986217b348c7",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0.echo-addon",
+                                     "size":  8573,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echocurationcore-0.1.0-sources.jar",
+                                      "sha256":  "42040490954632ae0ea8f3f191ae2029fcaab7abd11ee0f4052d0bec2df931a0",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocurationcore-0.1.0-sources.jar",
+                                      "size":  5802
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocapabilitycore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echodependencydoctor",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echometadatacore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

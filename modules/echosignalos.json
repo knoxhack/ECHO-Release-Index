@@ -1,0 +1,59 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echosignalos",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echosignalos-1.0.0-neoforge.jar",
+      "sha256": "4d5303e2ffdb32ce344d412da9964d33a32c231814b384eafdcd2de4cbb806b1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0-neoforge.jar",
+      "size": 1849685,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echosignalos-1.0.0-standalone.jar",
+      "sha256": "09bc5974caf0b988e176d1b4433828895f246f1b52b8ab6326e41df6b7d3df76",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0-standalone.jar",
+      "size": 1849673,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echosignalos-1.0.0.echo-addon",
+      "sha256": "f0972c4c609555bb013b9ce6e5ddbac6d4be55bda067e4757963b3d2305b5ff5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0.echo-addon",
+      "size": 1824247,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echosignalos-1.0.0-sources.jar",
+      "sha256": "e38e25fef12f37e4abd5b8961ee9f4b62ef28de9bed03ee58e833cb71098c54b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0-sources.jar",
+      "size": 1658799
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [],
+  "legacyAliases": [
+    "signalos"
+  ]
+}

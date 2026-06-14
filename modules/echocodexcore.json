@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echocodexcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echocodexcore-1.0.0-neoforge.jar",
-      "sha256": "aa75c42d460c5b8f5c15fde2c2d4d8b979b0630b8297e7ebf4eed38638fa1fc7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0-neoforge.jar",
-      "size": 23055,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echocodexcore-1.0.0-standalone.jar",
-      "sha256": "5fbb09f01fe788e1113a172df9d0fb05a174e45825132728f650b85721563b24",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0-standalone.jar",
-      "size": 23040,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echocodexcore-1.0.0.echo-addon",
-      "sha256": "c7f98d2e532e09c64b196a8ac680887df86f650c8bca84de09c846b5fafa0a0f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0.echo-addon",
-      "size": 24288,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echocodexcore-1.0.0-sources.jar",
-      "sha256": "ffd0bc6dfd0d58580d6d19867dd60d05616ff7cb44bebe1089fc373b39b47f2f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0-sources.jar",
-      "size": 12363
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echocodexcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echocodexcore-1.0.0-neoforge.jar",
+                                       "sha256":  "d25ad2b3959e2c1aa2841d64a407b0a7831f81a12c2675de6ffbc2c972e661e0",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0-neoforge.jar",
+                                       "size":  23055,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echocodexcore-1.0.0-standalone.jar",
+                                         "sha256":  "0f206133582bc7161367fa87775ca71996a29fc03894537fb9c1c6c189174aac",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0-standalone.jar",
+                                         "size":  23040,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echocodexcore-1.0.0.echo-addon",
+                                     "sha256":  "dc5c71e522b555c905ec3f67b20d094f83e8c5ac4368f99fa435dd5f625204e7",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0.echo-addon",
+                                     "size":  24288,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echocodexcore-1.0.0-sources.jar",
+                                      "sha256":  "9edaa44c7dd4e0dab686e8878bfe97dd05a08956f8cae625c8a10503dde82581",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocodexcore-1.0.0-sources.jar",
+                                      "size":  12363
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echometadatacore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echometadatacore-1.0.0-neoforge.jar",
-      "sha256": "1373e7d7a693bcc2c67fd213dbafd0872f33f7c556067c558159153de4081b06",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0-neoforge.jar",
-      "size": 50089,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echometadatacore-1.0.0-standalone.jar",
-      "sha256": "147a52c8a7dc6c841489507aab72469daaf2349790bc79eee9a620b27304c5a1",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0-standalone.jar",
-      "size": 50071,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echometadatacore-1.0.0.echo-addon",
-      "sha256": "3ee24ff8cb00eb053af903e612c84fbed717820f3cac49e78e2d6d55eeb3b727",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0.echo-addon",
-      "size": 48720,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echometadatacore-1.0.0-sources.jar",
-      "sha256": "0efe2ebb02d0e799c10240b488565890141b1b6f5edf2e3edbd78030aa2b40ab",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0-sources.jar",
-      "size": 24650
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    },
-    {
-      "id": "echopackcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echometadatacore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echometadatacore-1.0.0-neoforge.jar",
+                                       "sha256":  "995ba564aab63678129c9c4d60724429a1ad1bbad74ce2e79dc8bd61d95b2459",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0-neoforge.jar",
+                                       "size":  50089,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echometadatacore-1.0.0-standalone.jar",
+                                         "sha256":  "51ba818ffe7493c97617ff54f632e5d2a34e287d4f113edeb4052defc2c04580",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0-standalone.jar",
+                                         "size":  50071,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echometadatacore-1.0.0.echo-addon",
+                                     "sha256":  "db5dea6dbb35466c25a26e41278f4931256e2cdff6b3de3b593c4c43b28e4b1d",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0.echo-addon",
+                                     "size":  48720,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echometadatacore-1.0.0-sources.jar",
+                                      "sha256":  "7314cdd33621e3e0d39148c0520dfcdf6dab81a62822af7e09a9a14abb4d1d6c",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echometadatacore-1.0.0-sources.jar",
+                                      "size":  24650
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echopackcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

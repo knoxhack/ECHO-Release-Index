@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoruntimeguard",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoruntimeguard-1.0.0-neoforge.jar",
-      "sha256": "6380ef0e48cdf203ed4e4e5a008344b83fdc101fe3b195824786aa10753c4433",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-neoforge.jar",
-      "size": 127454,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoruntimeguard-1.0.0-standalone.jar",
-      "sha256": "927979d825103b3704f2e5481a598df6ee90542cb5efd6dc02bdab30cf701b43",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-standalone.jar",
-      "size": 127439,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoruntimeguard-1.0.0.echo-addon",
-      "sha256": "a8956932374b1faf256bd0e3f41ab1a7e6ea816492869aaa4c8d1b578aafdd57",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0.echo-addon",
-      "size": 121543,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoruntimeguard-1.0.0-sources.jar",
-      "sha256": "6d8c943cba836b5efd33b6169a3c03dcc437d576cb3b5d9b3900688b65540151",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-sources.jar",
-      "size": 54303
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoruntimeguard",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoruntimeguard-1.0.0-neoforge.jar",
+                                       "sha256":  "508fad959c88491dcaa45584c19adc174f5cc1b0b79845994c8e0ce51bf0f4db",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-neoforge.jar",
+                                       "size":  127454,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoruntimeguard-1.0.0-standalone.jar",
+                                         "sha256":  "0da962e0def0e57dc4d488a0d1d554eeee8961c4e123d1ce753927d070efd596",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-standalone.jar",
+                                         "size":  127439,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoruntimeguard-1.0.0.echo-addon",
+                                     "sha256":  "31e91a6dcba5889a177d48a031b16472ff42c334e53fbe49e69f68ed737eea44",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0.echo-addon",
+                                     "size":  121543,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoruntimeguard-1.0.0-sources.jar",
+                                      "sha256":  "f4c7ab8aa0fd5a9588b846543d78fe37e781f8ee4504f7caa8ebb34b7064354f",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-sources.jar",
+                                      "size":  54303
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

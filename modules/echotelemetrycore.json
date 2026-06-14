@@ -1,64 +1,66 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echotelemetrycore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echotelemetrycore-0.1.0-neoforge.jar",
-      "sha256": "829ebbb875dee43e4bcf33182f3a49677c8aedeb7906efc95e3673c9bc4212a2",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-neoforge.jar",
-      "size": 6137,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echotelemetrycore-0.1.0-standalone.jar",
-      "sha256": "829ebbb875dee43e4bcf33182f3a49677c8aedeb7906efc95e3673c9bc4212a2",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-standalone.jar",
-      "size": 6137,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echotelemetrycore-0.1.0.echo-addon",
-      "sha256": "e5cb78ad3209715b635edcd2045d9a3848de1bc9cae1ace4a666391e64a3e400",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0.echo-addon",
-      "size": 8627,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echotelemetrycore-0.1.0-sources.jar",
-      "sha256": "7d51abc028a4f1e86ebf3827de45efc6e39faf2df2ac6ea6967272e21db364f3",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-sources.jar",
-      "size": 5855
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echopolicycore",
-      "kind": "module"
-    },
-    {
-      "id": "echoreportcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplaytestcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echotelemetrycore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echotelemetrycore-0.1.0-neoforge.jar",
+                                       "sha256":  "20bd96b8109ddd383ab62592e79edcfeadae716b49f2a6b477cc05b2e6136de9",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-neoforge.jar",
+                                       "size":  6137,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echotelemetrycore-0.1.0-standalone.jar",
+                                         "sha256":  "20bd96b8109ddd383ab62592e79edcfeadae716b49f2a6b477cc05b2e6136de9",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-standalone.jar",
+                                         "size":  6137,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echotelemetrycore-0.1.0.echo-addon",
+                                     "sha256":  "a9a18b2dd76fcf02c09f8057d4f48c3b4997dee2e3d355dda196cc8687d487cc",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0.echo-addon",
+                                     "size":  8627,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echotelemetrycore-0.1.0-sources.jar",
+                                      "sha256":  "f930e33a3e1126173a1dcc0f5f5e3dca7e673f05c85c06e6a269b68dd0d7ffc4",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-sources.jar",
+                                      "size":  5855
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echopolicycore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoreportcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplaytestcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

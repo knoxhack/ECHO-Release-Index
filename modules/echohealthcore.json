@@ -1,60 +1,62 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echohealthcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echohealthcore-1.0.0-neoforge.jar",
-      "sha256": "3ef1cbfd0a4f3868bffed6537809a70a1b462313ea9b34a20fdf6c8b0c4911aa",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0-neoforge.jar",
-      "size": 42532,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echohealthcore-1.0.0-standalone.jar",
-      "sha256": "3b8ca074f006171073d63e5f258a0863c7d9fb179c870c58dba7293bcc8587a4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0-standalone.jar",
-      "size": 42519,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echohealthcore-1.0.0.echo-addon",
-      "sha256": "ebe3bd947310a8990ddd3da46858258713c473c2b43935b2183c25afc9affee3",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0.echo-addon",
-      "size": 42957,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echohealthcore-1.0.0-sources.jar",
-      "sha256": "15f3a8e6afacaef21031321928983ca37c395a984e1269e7d326d3fb649cbb8c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0-sources.jar",
-      "size": 19591
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echohealthcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echohealthcore-1.0.0-neoforge.jar",
+                                       "sha256":  "b9b58bdf9ac05ca9d4f274931efee1926fdb7700d662de62b0a4cf2706cfe21f",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0-neoforge.jar",
+                                       "size":  42532,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echohealthcore-1.0.0-standalone.jar",
+                                         "sha256":  "4c7ce5316971d506fe18e3c72ddca1a391045d109f13307513b0a91966934415",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0-standalone.jar",
+                                         "size":  42519,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echohealthcore-1.0.0.echo-addon",
+                                     "sha256":  "0abfae44df3038ac240e05295fb82f786876073941df51c3d072a15bc964bf2a",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0.echo-addon",
+                                     "size":  42957,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echohealthcore-1.0.0-sources.jar",
+                                      "sha256":  "e0ed6b5b72113a033ee1a68d58ab137fc53f62348177cff77abed91453546bc4",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohealthcore-1.0.0-sources.jar",
+                                      "size":  19591
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

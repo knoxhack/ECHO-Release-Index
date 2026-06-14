@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echolorecore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echolorecore-1.0.0-neoforge.jar",
-      "sha256": "a04a66d9ebbad5d1681038824e09476211c45c4bc924ac170d8d35ca7b930e4f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0-neoforge.jar",
-      "size": 20709,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echolorecore-1.0.0-standalone.jar",
-      "sha256": "7d36e96119b3d5e384eb01ae6301661635c3ec6a7a4ace46fd1fe65910ed093e",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0-standalone.jar",
-      "size": 20696,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echolorecore-1.0.0.echo-addon",
-      "sha256": "3af79dbac15191b02ea96c588a747b8b4917e5247253d2978f29f9c691113cfa",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0.echo-addon",
-      "size": 22158,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echolorecore-1.0.0-sources.jar",
-      "sha256": "7d498cd34201b6b42a6b3566f2437569a32175cd1153079f6ccf99714ba363ed",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0-sources.jar",
-      "size": 10973
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echolorecore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echolorecore-1.0.0-neoforge.jar",
+                                       "sha256":  "95f465718179e1f0469f7a5a78b625e685eeb01f65d0ed63eb59966bd2eefcca",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0-neoforge.jar",
+                                       "size":  20709,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echolorecore-1.0.0-standalone.jar",
+                                         "sha256":  "bb32b5927eaf9bf4bd1697fdedfd747d0c9c62f145d4fe3bb8f12171107f4901",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0-standalone.jar",
+                                         "size":  20696,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echolorecore-1.0.0.echo-addon",
+                                     "sha256":  "02050cd3de6fc275a1ed1a52de6419df64c814e7a15bb42ac485e791b2760bf7",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0.echo-addon",
+                                     "size":  22158,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echolorecore-1.0.0-sources.jar",
+                                      "sha256":  "c4ef18bce9c10b06c2d89f41fffab963337cb06bd7b20aa71faab5911f4a5886",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolorecore-1.0.0-sources.jar",
+                                      "size":  10973
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

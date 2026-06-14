@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echorecipecore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echorecipecore-1.0.0-neoforge.jar",
-      "sha256": "979954599b93cd8526c1a4ad9d5483e405fb80e812e01de52903bca265500221",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0-neoforge.jar",
-      "size": 37919,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echorecipecore-1.0.0-standalone.jar",
-      "sha256": "f448d1d766df7d98933b564d67fcc071342b136e64198b1499946b1f3531c701",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0-standalone.jar",
-      "size": 37905,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echorecipecore-1.0.0.echo-addon",
-      "sha256": "ea2efc2117bf6ce151b595ecbd290fa4f638c8927b49d49cab31277d8009a2ff",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0.echo-addon",
-      "size": 38508,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echorecipecore-1.0.0-sources.jar",
-      "sha256": "c5797372fd040153869e7f7c6f91987d49e69779ea024a1e3654eb7d8d92dbde",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0-sources.jar",
-      "size": 17224
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echorecipecore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echorecipecore-1.0.0-neoforge.jar",
+                                       "sha256":  "3cf7a289dd87e60076a07f5207eb4ca488b5ebdd2ec9d70a2bfec9a4ebda51f2",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0-neoforge.jar",
+                                       "size":  37919,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echorecipecore-1.0.0-standalone.jar",
+                                         "sha256":  "a437365946e42e3c9ce372f02cbe9b16aa7eabdf446e8c1b76567bfa88893ed0",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0-standalone.jar",
+                                         "size":  37905,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echorecipecore-1.0.0.echo-addon",
+                                     "sha256":  "385dc2cf7db487a69e670867e77afcc9a60bb7a6141dcf39d1bbfce5760be1dd",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0.echo-addon",
+                                     "size":  38508,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echorecipecore-1.0.0-sources.jar",
+                                      "sha256":  "6d64d69fbdf10061d7fdfe828552af22b5d81ffe0e1c65cfbea8e60f63af99d3",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorecipecore-1.0.0-sources.jar",
+                                      "size":  17224
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

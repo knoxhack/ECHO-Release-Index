@@ -1,64 +1,66 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echosupplycore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echosupplycore-0.1.0-neoforge.jar",
-      "sha256": "e37dd5b8dffbf7ac78a215ea9a95d6d4d71a8aa9d54a8f0c5a383fb1f89d4814",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0-neoforge.jar",
-      "size": 5928,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echosupplycore-0.1.0-standalone.jar",
-      "sha256": "e37dd5b8dffbf7ac78a215ea9a95d6d4d71a8aa9d54a8f0c5a383fb1f89d4814",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0-standalone.jar",
-      "size": 5928,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echosupplycore-0.1.0.echo-addon",
-      "sha256": "befb46f6788dd1c7925e343e3f30df5a8eb77ee5131710d4352ffb2c17839ff4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0.echo-addon",
-      "size": 8341,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echosupplycore-0.1.0-sources.jar",
-      "sha256": "4105d430447044ebe407f9d7362a66adfef99de4ad47dd1f23fdbbf03d17ee14",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0-sources.jar",
-      "size": 5611
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echologisticscore",
-      "kind": "module"
-    },
-    {
-      "id": "echoeconomycore",
-      "kind": "module"
-    },
-    {
-      "id": "echolootcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echosupplycore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echosupplycore-0.1.0-neoforge.jar",
+                                       "sha256":  "e079397322291cd38822a71d20dd523a8095bccec8d08cc29453084d683508e6",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0-neoforge.jar",
+                                       "size":  5928,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echosupplycore-0.1.0-standalone.jar",
+                                         "sha256":  "e079397322291cd38822a71d20dd523a8095bccec8d08cc29453084d683508e6",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0-standalone.jar",
+                                         "size":  5928,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echosupplycore-0.1.0.echo-addon",
+                                     "sha256":  "a15936ead33b3a58612f71689bfccda0ada9b8eb5edecff52c941f0850b97251",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0.echo-addon",
+                                     "size":  8341,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echosupplycore-0.1.0-sources.jar",
+                                      "sha256":  "7d42115c53d57f62eda1606f3c19f11cb640f9b3baeea8ac87c0e8af1460ed0c",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosupplycore-0.1.0-sources.jar",
+                                      "size":  5611
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echologisticscore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoeconomycore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echolootcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

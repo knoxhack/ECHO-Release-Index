@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echohudcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echohudcore-1.0.0-neoforge.jar",
-      "sha256": "0a8fa7ea23c6a0de64cfbb14a7acdef7efbb817cacbb1109473b77d47c5304ee",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0-neoforge.jar",
-      "size": 46592,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echohudcore-1.0.0-standalone.jar",
-      "sha256": "82b4fac5799a85fb158c1f093fdd6a64f2438f0f7d7bbd39373d4f5cf024d3d8",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0-standalone.jar",
-      "size": 46577,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echohudcore-1.0.0.echo-addon",
-      "sha256": "a35d8c0043e826ad0ee54269c032d1b2e8aaac5f862377c11388e5502859ca7b",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0.echo-addon",
-      "size": 47347,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echohudcore-1.0.0-sources.jar",
-      "sha256": "4f19a095549de808bdbb86f805513540f70c2c4828ffd1084c94538144341d2c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0-sources.jar",
-      "size": 21709
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echohudcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echohudcore-1.0.0-neoforge.jar",
+                                       "sha256":  "42f1a8ae22330a97bdb11e2b36e88ad57c6ccd7cd4231e0993fbdd4f95433d2c",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0-neoforge.jar",
+                                       "size":  46592,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echohudcore-1.0.0-standalone.jar",
+                                         "sha256":  "c51929866409c7f4ff743d5ef5097ca4e2be00093724aea29b8df3abc1256e77",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0-standalone.jar",
+                                         "size":  46577,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echohudcore-1.0.0.echo-addon",
+                                     "sha256":  "9fa4829f7ac910f19d4e4c07b70325a6719c40e18f44bf616ab1ca673d22e942",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0.echo-addon",
+                                     "size":  47347,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echohudcore-1.0.0-sources.jar",
+                                      "sha256":  "1f0ff8d8483e530bff123fb9b8006574440fa3662694de638d2afbd01b00d120",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohudcore-1.0.0-sources.jar",
+                                      "size":  21709
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

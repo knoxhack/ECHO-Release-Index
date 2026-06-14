@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echosocialcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echosocialcore-1.0.0-neoforge.jar",
-      "sha256": "31fc512e4aacfb1b2db2440eec5ee6c99a2bd76b089d0abda220287dbee857f7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-neoforge.jar",
-      "size": 57108,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echosocialcore-1.0.0-standalone.jar",
-      "sha256": "2fed795b9ae3add289e102cb3f46b5759607ba5627499f1a9f93dfdfb3c32ecd",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-standalone.jar",
-      "size": 57094,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echosocialcore-1.0.0.echo-addon",
-      "sha256": "cc684182bc2e43328421c907bcda50f0e052e8be52b32df2b06de9ee9107ccdb",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0.echo-addon",
-      "size": 55903,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echosocialcore-1.0.0-sources.jar",
-      "sha256": "bf557b186b54d9ce5d4aaf68f0f7a73b270a008915bb670ab9b7411e2b9edc4c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-sources.jar",
-      "size": 24347
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoprogressioncore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echosocialcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echosocialcore-1.0.0-neoforge.jar",
+                                       "sha256":  "0f7140f79e4a74431bcb5a36276d86a54be248eb92753257929967837dc96865",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-neoforge.jar",
+                                       "size":  57108,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echosocialcore-1.0.0-standalone.jar",
+                                         "sha256":  "6edc507d48f04cb21ae9e9a051da3cc3d4a3ba82662dceb8a4e00a794fc0027f",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-standalone.jar",
+                                         "size":  57094,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echosocialcore-1.0.0.echo-addon",
+                                     "sha256":  "98e5aeddcf02c99ffba1d147925d2a588ff2436e72ce38536a96fa119088d270",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0.echo-addon",
+                                     "size":  55903,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echosocialcore-1.0.0-sources.jar",
+                                      "sha256":  "5df0923e9704baf4f141331d34421ebb01bbb9883d6d676a05e36e14b55899b1",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-sources.jar",
+                                      "size":  24347
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoprogressioncore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

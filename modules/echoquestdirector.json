@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoquestdirector",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoquestdirector-1.0.0-neoforge.jar",
-      "sha256": "93da2ccb9967963877f38c67b9143731b6375406b84bf52f92a67284f4beb177",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0-neoforge.jar",
-      "size": 28671,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoquestdirector-1.0.0-standalone.jar",
-      "sha256": "c84a5424be7486fefeaa81988eb649ab62a097a093f82b05b6e8fac18fea8a45",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0-standalone.jar",
-      "size": 28658,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoquestdirector-1.0.0.echo-addon",
-      "sha256": "bc84021ca9759dbfe8dc07a63cf52a3841b493344ce27ab7e45836ea344e4783",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0.echo-addon",
-      "size": 29188,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoquestdirector-1.0.0-sources.jar",
-      "sha256": "41461c230e06a5b27a719dcbf25fc3be11333015e49d0905b5732cc4c1f91030",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0-sources.jar",
-      "size": 14188
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echopackcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoquestdirector",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoquestdirector-1.0.0-neoforge.jar",
+                                       "sha256":  "7ab3942b64e08bb6682a0c3d4bbc025446b8d1ae20bada337c6dbe8bae4bf924",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0-neoforge.jar",
+                                       "size":  28671,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoquestdirector-1.0.0-standalone.jar",
+                                         "sha256":  "53a0ea00394c81731043fca76ff36615a7dbf0090691e082c4be96d74e2192e0",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0-standalone.jar",
+                                         "size":  28658,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoquestdirector-1.0.0.echo-addon",
+                                     "sha256":  "3c6455d06846bc4002b8b9312e56d4def1f6c53040846e956a8f246544c7dcf8",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0.echo-addon",
+                                     "size":  29188,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoquestdirector-1.0.0-sources.jar",
+                                      "sha256":  "5416f257fde4b12454a140376358bba2e62623c44ed086a111a5dac97150bfef",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoquestdirector-1.0.0-sources.jar",
+                                      "size":  14188
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echopackcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

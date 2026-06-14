@@ -1,76 +1,78 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echolootcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echolootcore-1.0.0-neoforge.jar",
-      "sha256": "88d6e9e7d3c065c2030ab303834be2ff3872a745c47c4fea216db7052261d203",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0-neoforge.jar",
-      "size": 24122,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echolootcore-1.0.0-standalone.jar",
-      "sha256": "023a640d4af749221d08a95e7299bcfbb44a4db615f369e3870d491c1e2abdc2",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0-standalone.jar",
-      "size": 24110,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echolootcore-1.0.0.echo-addon",
-      "sha256": "23dfb477a9930f3c7f025f4bd3f366fc98f0208e09871fbeee503567578a0210",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0.echo-addon",
-      "size": 25212,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echolootcore-1.0.0-sources.jar",
-      "sha256": "9c87f414623a531b13a837cd1c12ab876cb26083ebf51910f1d7a4ffb101290d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0-sources.jar",
-      "size": 12494
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoprogressioncore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echosocialcore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echolootcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echolootcore-1.0.0-neoforge.jar",
+                                       "sha256":  "6cc78b1cdce81b5836252ca46359d7367ef1edd665e0faac28161aa966664f02",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0-neoforge.jar",
+                                       "size":  24122,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echolootcore-1.0.0-standalone.jar",
+                                         "sha256":  "567beb93c2a565f1c6171a10cc0c254f02712a66ea6ce407753f66e1f949435c",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0-standalone.jar",
+                                         "size":  24110,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echolootcore-1.0.0.echo-addon",
+                                     "sha256":  "130d331688a96cb9a79cf2628b1ffc8ebf0dcc7e288cd47702cc303788a0bae2",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0.echo-addon",
+                                     "size":  25212,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echolootcore-1.0.0-sources.jar",
+                                      "sha256":  "baeba7966e3ae01651293a5211ec2f6894cece138556679db4cfce755cbd73d8",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolootcore-1.0.0-sources.jar",
+                                      "size":  12494
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoprogressioncore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echosocialcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

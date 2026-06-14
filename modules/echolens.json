@@ -1,56 +1,58 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echolens",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echolens-1.0.0-neoforge.jar",
-      "sha256": "35e6f1c85988327e5ad2b32e6423dbe6bc71d5fd7d5e59914cc5ce527aaea0c6",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0-neoforge.jar",
-      "size": 215164,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echolens-1.0.0-standalone.jar",
-      "sha256": "63cba1ad0d28d846c1a39a3c63e85a421729157b4ad24f58cb299f243f71d0b2",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0-standalone.jar",
-      "size": 215156,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echolens-1.0.0.echo-addon",
-      "sha256": "c18e8b30686b223835769e8c085a503e8b5e477b42ada6275faf7e34a1ca133c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0.echo-addon",
-      "size": 206659,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echolens-1.0.0-sources.jar",
-      "sha256": "16204591f547d2d1d308420fdf016105581b71acb0f0de09ed78475e83f33d56",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0-sources.jar",
-      "size": 87897
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echonetcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echolens",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echolens-1.0.0-neoforge.jar",
+                                       "sha256":  "7fdf9e462af02733884bc2429971942d6de6fd7e22a0ee2d43aea386aa76781d",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0-neoforge.jar",
+                                       "size":  215164,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echolens-1.0.0-standalone.jar",
+                                         "sha256":  "70909522ee8bedece934e5789e2946245a9562550f2c2ce74fa7da3f397d3e7b",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0-standalone.jar",
+                                         "size":  215156,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echolens-1.0.0.echo-addon",
+                                     "sha256":  "6bdb5bedc6c8e1cf71c124d1891ce832ec7d620afda92ef94a9491b1cb28f0c6",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0.echo-addon",
+                                     "size":  206659,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echolens-1.0.0-sources.jar",
+                                      "sha256":  "a712e75d0cec457b1edca30568681e808fa6f0cf999fe8eb8370a4061cabefd7",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolens-1.0.0-sources.jar",
+                                      "size":  87897
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echonetcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

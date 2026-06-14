@@ -1,68 +1,70 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoassetcore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoassetcore-1.0.0-neoforge.jar",
-      "sha256": "7079b6c2c9255824fa39b170dae9d34993f191bc984b3da286f02b563c2dbd94",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-neoforge.jar",
-      "size": 45265,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoassetcore-1.0.0-standalone.jar",
-      "sha256": "27063f77c0de5c47ec610f77b0ab79f87d0475a098e525be048ee2ecd0515409",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-standalone.jar",
-      "size": 45251,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoassetcore-1.0.0.echo-addon",
-      "sha256": "3f786019f522ed8df75623991a96c6d921a4a88025a1e5209ab38d4e4624588b",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0.echo-addon",
-      "size": 45062,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoassetcore-1.0.0-sources.jar",
-      "sha256": "fbb91b2336808f46b7532225c3be062412f8757722192f3e5eb6c16382914e2e",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-sources.jar",
-      "size": 20472
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoassetcore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoassetcore-1.0.0-neoforge.jar",
+                                       "sha256":  "3bc6ff8dc17ed31ad878812e022e50ee977a4035e7fe6cc6e97860f25f88dccc",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-neoforge.jar",
+                                       "size":  45265,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoassetcore-1.0.0-standalone.jar",
+                                         "sha256":  "fed911c5b31e2093dc97409f5b6efc43e9c211f18fef62e429ee17924c56ff5a",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-standalone.jar",
+                                         "size":  45251,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoassetcore-1.0.0.echo-addon",
+                                     "sha256":  "51645c1d8e5a6efa2159c733b274835bdcfe5f5b2667176525889b225d214ab8",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0.echo-addon",
+                                     "size":  45062,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoassetcore-1.0.0-sources.jar",
+                                      "sha256":  "6a75ed19cec5318dbbdfc088a1654c7b70c124a58b67eec682b0b38d5a428bb5",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-sources.jar",
+                                      "size":  20472
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

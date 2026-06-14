@@ -1,64 +1,66 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echomigrationcore",
-  "kind": "module",
-  "version": "0.1.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echomigrationcore-0.1.0-neoforge.jar",
-      "sha256": "6e4918da14c90997709c6bcf0a9ed27bd33484089b8b160dd5a8f0edbbe08163",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0-neoforge.jar",
-      "size": 6206,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echomigrationcore-0.1.0-standalone.jar",
-      "sha256": "6e4918da14c90997709c6bcf0a9ed27bd33484089b8b160dd5a8f0edbbe08163",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0-standalone.jar",
-      "size": 6206,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echomigrationcore-0.1.0.echo-addon",
-      "sha256": "e0e03e3033ffa5d434adf9cb5f5074fb829c5b0f9fb0d8a132d481e2399fc903",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0.echo-addon",
-      "size": 8685,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echomigrationcore-0.1.0-sources.jar",
-      "sha256": "04d4ef1b5bc511feec88bef8cbc29cf93bf3ff0e97e74bdd832a0db63ff8d6e1",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0-sources.jar",
-      "size": 5878
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echodatacore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echomigrationcore",
+    "kind":  "module",
+    "version":  "0.1.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echomigrationcore-0.1.0-neoforge.jar",
+                                       "sha256":  "7f1eec4ffefe128d065545fe4da4f6a8aa063c8a7c1c6eeb161c4bdd9afacde3",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0-neoforge.jar",
+                                       "size":  6206,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echomigrationcore-0.1.0-standalone.jar",
+                                         "sha256":  "7f1eec4ffefe128d065545fe4da4f6a8aa063c8a7c1c6eeb161c4bdd9afacde3",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0-standalone.jar",
+                                         "size":  6206,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echomigrationcore-0.1.0.echo-addon",
+                                     "sha256":  "7562a74ae97b0cdefb5847b4a350ac2660bb4e88c30fea78a6ea8ddaa1395a04",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0.echo-addon",
+                                     "size":  8685,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echomigrationcore-0.1.0-sources.jar",
+                                      "sha256":  "3bafd2a5f597d96ed78b01363388187961d7f1177160b012b0d9b176d5729744",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomigrationcore-0.1.0-sources.jar",
+                                      "size":  5878
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echodatacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

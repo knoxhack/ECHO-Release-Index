@@ -1,72 +1,74 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
-  "trust": "source-linked",
-  "validation": "approved",
-  "id": "echoatmospherecore",
-  "kind": "module",
-  "version": "1.0.0",
-  "artifacts": {
-    "neoforge": {
-      "file": "echoatmospherecore-1.0.0-neoforge.jar",
-      "sha256": "20f391ea4ba6090ac504a95ae3f000cd81fcce260415432a534e0cca20c31c77",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-neoforge.jar",
-      "size": 28674,
-      "buildMode": "compiled-runtime"
-    },
-    "standalone": {
-      "file": "echoatmospherecore-1.0.0-standalone.jar",
-      "sha256": "0cd8bb497ded949a3a7638c10a0fbcb6c86cbb74b6f7df40892df69fc8f92ec5",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-standalone.jar",
-      "size": 28662,
-      "buildMode": "compiled-runtime"
-    },
-    "native": {
-      "file": "echoatmospherecore-1.0.0.echo-addon",
-      "sha256": "068605873bd23e12273dac65637c07539879ffbba5e8b2abdb88c8d8e4d949df",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0.echo-addon",
-      "size": 29399,
-      "buildMode": "compiled-runtime"
-    },
-    "sources": {
-      "file": "echoatmospherecore-1.0.0-sources.jar",
-      "sha256": "33b54a1d95a31c5e2e23bd892331dc63c532c0326fbb4bb9452cc0bc9d8bf70a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-sources.jar",
-      "size": 15219
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echoadaptercore",
-      "kind": "module"
-    },
-    {
-      "id": "echoassetcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocontentcore",
-      "kind": "module"
-    },
-    {
-      "id": "echocore",
-      "kind": "module"
-    },
-    {
-      "id": "echoplatformcore",
-      "kind": "module"
-    },
-    {
-      "id": "echoschemacore",
-      "kind": "module"
-    },
-    {
-      "id": "echovalidationcore",
-      "kind": "module"
-    }
-  ],
-  "compatibility": []
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Modules",
+    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
+    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "id":  "echoatmospherecore",
+    "kind":  "module",
+    "version":  "1.0.0",
+    "artifacts":  {
+                      "neoforge":  {
+                                       "file":  "echoatmospherecore-1.0.0-neoforge.jar",
+                                       "sha256":  "a5443d38d9b3e7044c61f32ffa2c6f0289f529f141adc83b5016a0a3e907ce44",
+                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-neoforge.jar",
+                                       "size":  28674,
+                                       "buildMode":  "compiled-runtime"
+                                   },
+                      "standalone":  {
+                                         "file":  "echoatmospherecore-1.0.0-standalone.jar",
+                                         "sha256":  "0db46b20c4a172cfc00a70f67d39e71b93ce14d0bded155463f74d10deb3d6b0",
+                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-standalone.jar",
+                                         "size":  28662,
+                                         "buildMode":  "compiled-runtime"
+                                     },
+                      "native":  {
+                                     "file":  "echoatmospherecore-1.0.0.echo-addon",
+                                     "sha256":  "d6fd7010c0cdea15ecda3251b9cf638248bffbbf0a779cb3f7266a177cfbc6c2",
+                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0.echo-addon",
+                                     "size":  29399,
+                                     "buildMode":  "compiled-runtime"
+                                 },
+                      "sources":  {
+                                      "file":  "echoatmospherecore-1.0.0-sources.jar",
+                                      "sha256":  "dbe1524d17e08e415e36b09a82d7281554600af499816a44ff0eeeebf0f36dc8",
+                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-sources.jar",
+                                      "size":  15219
+                                  }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echoadaptercore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoassetcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocontentcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echocore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoplatformcore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echoschemacore",
+                             "kind":  "module"
+                         },
+                         {
+                             "id":  "echovalidationcore",
+                             "kind":  "module"
+                         }
+                     ],
+    "compatibility":  [
+
+                      ]
 }

@@ -1,51 +1,51 @@
 {
-  "id": "galactic-survey-native-edition",
-  "kind": "modpack",
-  "version": "0.1.0",
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
-  "releaseTag": "galactic-survey-native-0.1.0-alpha",
-  "commitSha": "85aa624b818590a12c589f6f19720f17ce34fe8a",
-  "artifacts": {
-    "pack": {
-      "file": "galactic-survey-native-edition-0.1.0.zip",
-      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip",
-      "sha256": "4a339c20def10cdaf144d0864694d8a4a391d961ec0224a37887796130a95ab4",
-      "size": 73633773
-    },
-    "manifest": {
-      "file": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
-      "sha256": "220e9cea56cfa45d31700c3e9a58038c2070b64a7f7e2fb8bff8c644e08362af",
-      "size": 28314
-    },
-    "checksums": {
-      "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/checksums.txt",
-      "sha256": "8954ff13e7cafd2e6b7240220f7d65133dc9884de07703b598805946c5e5d85a",
-      "size": 310
-    },
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/echo-release.json",
-      "sha256": "e8b74bae9b6f952bca28ed30bfe92777d8e6b5d24d646366f3fda9c64e07d683",
-      "size": 7566
-    }
-  },
-  "dependencies": [
-    {
-      "id": "echo-native-platform",
-      "kind": "runtime",
-      "version": ">=1.0.0-RC1"
-    }
-  ],
-  "compatibility": [
-    "native",
-    "galactic-survey"
-  ],
-  "trust": "source-linked",
-  "validation": "approved",
-  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+    "id":  "galactic-survey-native-edition",
+    "kind":  "modpack",
+    "version":  "0.1.0",
+    "channel":  "alpha",
+    "publisher":  "knoxhack",
+    "sourceRepo":  "knoxhack/ECHO-Galactic-Survey-Native-Edition",
+    "releaseTag":  "galactic-survey-native-0.1.0-alpha",
+    "commitSha":  "85aa624b818590a12c589f6f19720f17ce34fe8a",
+    "artifacts":  {
+                      "pack":  {
+                                   "file":  "galactic-survey-native-edition-0.1.0.zip",
+                                   "url":  "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip",
+                                   "sha256":  "34362978e16adf08e656e5bde51f30bc68caa411bb87afd7bc8158a1aac74581",
+                                   "size":  145056800
+                               },
+                      "manifest":  {
+                                       "file":  "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+                                       "url":  "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
+                                       "sha256":  "28662c3a70529dd91e84b54c6a6274fd9e09b4b83df590580ccda74fead46db8",
+                                       "size":  34224
+                                   },
+                      "checksums":  {
+                                        "file":  "checksums.txt",
+                                        "url":  "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/checksums.txt",
+                                        "sha256":  "95785beffc21f8108ec4301732c9639b9417830f871c8d6695203062870d37b8",
+                                        "size":  316
+                                    },
+                      "releaseManifest":  {
+                                              "file":  "echo-release.json",
+                                              "url":  "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/echo-release.json",
+                                              "sha256":  "14545c31f40900fb5633f0d9cde140bcc4ed8f9d2141bec3e2557f694579b004",
+                                              "size":  17785
+                                          }
+                  },
+    "dependencies":  [
+                         {
+                             "id":  "echo-native-platform",
+                             "kind":  "runtime",
+                             "version":  "\u003e=1.0.0-RC1"
+                         }
+                     ],
+    "compatibility":  [
+                          "native",
+                          "galactic-survey"
+                      ],
+    "trust":  "source-linked",
+    "validation":  "approved",
+    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }
