@@ -1,54 +1,71 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoadaptercore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoadaptercore-1.0.0-neoforge.jar",
-                                       "sha256":  "ec8c4e2dbda2a14eea270d8f74aee95ae373978c422d4b0f61b5be20a1533bb0",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0-neoforge.jar",
-                                       "size":  945091,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoadaptercore-1.0.0-standalone.jar",
-                                         "sha256":  "69ff3d4405fd369301252354e0d1c924df414bfa27c71f8cbe3231ba54f529fc",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0-standalone.jar",
-                                         "size":  945079,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoadaptercore-1.0.0.echo-addon",
-                                     "sha256":  "61db05fdf9d4ae5da1f7bc4bc2c064b28cc3f7da116c57d2f0fd7b874c85735c",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0.echo-addon",
-                                     "size":  815660,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoadaptercore-1.0.0-sources.jar",
-                                      "sha256":  "3c62a921ba75ce9c7bc634809ad9183a05fe245f4fce1772e9bacbdefc8788ea",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0-sources.jar",
-                                      "size":  377412
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoadaptercore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoadaptercore-1.0.0-neoforge.jar",
+      "sha256": "6a29432aaa9156e5af0da5592ef02c79eca948ca6d1678c6a38fb8f52b369445",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0-neoforge.jar",
+      "size": 949214,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoadaptercore-1.0.0-standalone.jar",
+      "sha256": "959687e551c83873d4e2c7ae3dcb221342347d5614068092633ae8148533757a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0-standalone.jar",
+      "size": 949202,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoadaptercore-1.0.0.echo-addon",
+      "sha256": "280f187007105ba217c7ac9d8a0ef66c36c46e9f693513349093dfd00eb65b8f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0.echo-addon",
+      "size": 819388,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoadaptercore-1.0.0-sources.jar",
+      "sha256": "37dc3108ac898eb5ddd649872021cb358020490af16028f3cdd7b9f2a95b35b2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoadaptercore-1.0.0-sources.jar",
+      "size": 379329,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

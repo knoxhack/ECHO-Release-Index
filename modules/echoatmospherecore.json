@@ -1,74 +1,91 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoatmospherecore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoatmospherecore-1.0.0-neoforge.jar",
-                                       "sha256":  "a5443d38d9b3e7044c61f32ffa2c6f0289f529f141adc83b5016a0a3e907ce44",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-neoforge.jar",
-                                       "size":  28674,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoatmospherecore-1.0.0-standalone.jar",
-                                         "sha256":  "0db46b20c4a172cfc00a70f67d39e71b93ce14d0bded155463f74d10deb3d6b0",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-standalone.jar",
-                                         "size":  28662,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoatmospherecore-1.0.0.echo-addon",
-                                     "sha256":  "d6fd7010c0cdea15ecda3251b9cf638248bffbbf0a779cb3f7266a177cfbc6c2",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0.echo-addon",
-                                     "size":  29399,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoatmospherecore-1.0.0-sources.jar",
-                                      "sha256":  "dbe1524d17e08e415e36b09a82d7281554600af499816a44ff0eeeebf0f36dc8",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-sources.jar",
-                                      "size":  15219
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoassetcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocontentcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoatmospherecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoatmospherecore-1.0.0-neoforge.jar",
+      "sha256": "888df580db8aeb9b432c228d2999ca1df6892ec4a7331b5870b6f5d244fa2c4b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-neoforge.jar",
+      "size": 28735,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoatmospherecore-1.0.0-standalone.jar",
+      "sha256": "246d9a1a60787f25be599365ff881794c83799c840f0499a1d587c6f5ba79489",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-standalone.jar",
+      "size": 28711,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoatmospherecore-1.0.0.echo-addon",
+      "sha256": "33cc3c5b7439719719049643cf46adb27b74eff460b3f5de5fa52f6a19b33727",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0.echo-addon",
+      "size": 29454,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoatmospherecore-1.0.0-sources.jar",
+      "sha256": "352b5427a85771c416cbe0adc8e068df87d5525ad6253662968904b2e78e15a1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-sources.jar",
+      "size": 15219,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoassetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

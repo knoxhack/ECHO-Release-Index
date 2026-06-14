@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoassetcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoassetcore-1.0.0-neoforge.jar",
-                                       "sha256":  "3bc6ff8dc17ed31ad878812e022e50ee977a4035e7fe6cc6e97860f25f88dccc",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-neoforge.jar",
-                                       "size":  45265,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoassetcore-1.0.0-standalone.jar",
-                                         "sha256":  "fed911c5b31e2093dc97409f5b6efc43e9c211f18fef62e429ee17924c56ff5a",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-standalone.jar",
-                                         "size":  45251,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoassetcore-1.0.0.echo-addon",
-                                     "sha256":  "51645c1d8e5a6efa2159c733b274835bdcfe5f5b2667176525889b225d214ab8",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0.echo-addon",
-                                     "size":  45062,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoassetcore-1.0.0-sources.jar",
-                                      "sha256":  "6a75ed19cec5318dbbdfc088a1654c7b70c124a58b67eec682b0b38d5a428bb5",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-sources.jar",
-                                      "size":  20472
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocontentcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoassetcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoassetcore-1.0.0-neoforge.jar",
+      "sha256": "fac1ffefb75b351943020b1640bce82986fe96650b832ad5243e5b5a78d5eb17",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-neoforge.jar",
+      "size": 45334,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoassetcore-1.0.0-standalone.jar",
+      "sha256": "7481c1213586a960bea890211f2bb9f626b87c7be3ee6fe6b677549e6f14199e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-standalone.jar",
+      "size": 45303,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoassetcore-1.0.0.echo-addon",
+      "sha256": "503d753e4ee6f81e505105f5c2f0a9a85e2860584fded695c3bfcecdf4b96e65",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0.echo-addon",
+      "size": 45121,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoassetcore-1.0.0-sources.jar",
+      "sha256": "b59331c4b157a50edbf68446b50e2d144eeb7d48b27fdb124841dbd1a5b695e4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoassetcore-1.0.0-sources.jar",
+      "size": 20484,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

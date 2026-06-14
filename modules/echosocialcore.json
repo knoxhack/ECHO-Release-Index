@@ -1,74 +1,91 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echosocialcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echosocialcore-1.0.0-neoforge.jar",
-                                       "sha256":  "0f7140f79e4a74431bcb5a36276d86a54be248eb92753257929967837dc96865",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-neoforge.jar",
-                                       "size":  57108,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echosocialcore-1.0.0-standalone.jar",
-                                         "sha256":  "6edc507d48f04cb21ae9e9a051da3cc3d4a3ba82662dceb8a4e00a794fc0027f",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-standalone.jar",
-                                         "size":  57094,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echosocialcore-1.0.0.echo-addon",
-                                     "sha256":  "98e5aeddcf02c99ffba1d147925d2a588ff2436e72ce38536a96fa119088d270",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0.echo-addon",
-                                     "size":  55903,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echosocialcore-1.0.0-sources.jar",
-                                      "sha256":  "5df0923e9704baf4f141331d34421ebb01bbb9883d6d676a05e36e14b55899b1",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-sources.jar",
-                                      "size":  24347
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocontentcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoprogressioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echosocialcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echosocialcore-1.0.0-neoforge.jar",
+      "sha256": "d38f5645dbfc4c7f59c7095c0c19120d3a2852d594b61b70cd774adcd002677d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-neoforge.jar",
+      "size": 57175,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echosocialcore-1.0.0-standalone.jar",
+      "sha256": "9c39c8860f826af3bd34cfebfcfdfea441855a1243ab9b209bb42e9d93243508",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-standalone.jar",
+      "size": 57144,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echosocialcore-1.0.0.echo-addon",
+      "sha256": "9edb2158d559f42315ce97babeb4f9d901cc3e7b39da9cda4bbb37db3e2b7609",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0.echo-addon",
+      "size": 55955,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echosocialcore-1.0.0-sources.jar",
+      "sha256": "2ca04105fab2f3ba32407f2897215f15716c8be17893d0d2b13621e2869938e4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosocialcore-1.0.0-sources.jar",
+      "size": 24357,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoprogressioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

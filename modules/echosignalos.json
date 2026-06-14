@@ -3,7 +3,7 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
   "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
   "trust": "source-linked",
   "validation": "approved",
   "id": "echosignalos",
@@ -12,30 +12,49 @@
   "artifacts": {
     "neoforge": {
       "file": "echosignalos-1.0.0-neoforge.jar",
-      "sha256": "4d5303e2ffdb32ce344d412da9964d33a32c231814b384eafdcd2de4cbb806b1",
+      "sha256": "e494d94220d76b0998706b430edf61b87f0b69bbe6a3a85644c440294d55d075",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0-neoforge.jar",
-      "size": 1849685,
-      "buildMode": "compiled-runtime"
+      "size": 1850597,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
     },
     "standalone": {
       "file": "echosignalos-1.0.0-standalone.jar",
-      "sha256": "09bc5974caf0b988e176d1b4433828895f246f1b52b8ab6326e41df6b7d3df76",
+      "sha256": "db48e7635413431c9225e88fabb89e8e07059d774514a3b7af57e366de7d65c6",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0-standalone.jar",
-      "size": 1849673,
-      "buildMode": "compiled-runtime"
+      "size": 1850568,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
     },
     "native": {
       "file": "echosignalos-1.0.0.echo-addon",
-      "sha256": "f0972c4c609555bb013b9ce6e5ddbac6d4be55bda067e4757963b3d2305b5ff5",
+      "sha256": "733a0c53299f16e33b8534f7f029f01b7ffc639eb741d5a48d65db9c9fb26806",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0.echo-addon",
-      "size": 1824247,
-      "buildMode": "compiled-runtime"
+      "size": 1825197,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
     },
     "sources": {
       "file": "echosignalos-1.0.0-sources.jar",
-      "sha256": "e38e25fef12f37e4abd5b8961ee9f4b62ef28de9bed03ee58e833cb71098c54b",
+      "sha256": "01021e774a03a962a586a218a4213b17dd3a7a538e4b8599494611d6bced4eaa",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosignalos-1.0.0-sources.jar",
-      "size": 1658799
+      "size": 1659314,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
     }
   },
   "dependencies": [

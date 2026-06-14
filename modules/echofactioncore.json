@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echofactioncore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echofactioncore-0.1.0-neoforge.jar",
-                                       "sha256":  "fa08c4532352713b08672922a8139c046dbfb1cf6805f35c25e06fc2a9cb4559",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0-neoforge.jar",
-                                       "size":  6075,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echofactioncore-0.1.0-standalone.jar",
-                                         "sha256":  "fa08c4532352713b08672922a8139c046dbfb1cf6805f35c25e06fc2a9cb4559",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0-standalone.jar",
-                                         "size":  6075,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echofactioncore-0.1.0.echo-addon",
-                                     "sha256":  "b8bf99ed1b69be9111a1d5940375dc63b1b12abd5cc29127f7a0583ca75a4787",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0.echo-addon",
-                                     "size":  8526,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echofactioncore-0.1.0-sources.jar",
-                                      "sha256":  "7ce6abcb358d2ec4b1954518a4d76561425f6f4d06565052714efab670c8d12e",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0-sources.jar",
-                                      "size":  5785
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomissioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoeconomycore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echosocialcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echofactioncore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echofactioncore-0.1.0-neoforge.jar",
+      "sha256": "45d93d6ca30ae3f5fdbea53081cf8cfd67c2b2998c421635cc5676e882ed0445",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0-neoforge.jar",
+      "size": 6163,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echofactioncore-0.1.0-standalone.jar",
+      "sha256": "45d93d6ca30ae3f5fdbea53081cf8cfd67c2b2998c421635cc5676e882ed0445",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0-standalone.jar",
+      "size": 6163,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echofactioncore-0.1.0.echo-addon",
+      "sha256": "942491ae57671d3ec5bd3aca19d7e16036e83248b27f2cc01070620efd5ecf06",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0.echo-addon",
+      "size": 8616,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echofactioncore-0.1.0-sources.jar",
+      "sha256": "b1e9af779b3f072da6389659f5d60939bdaa68fc2ba5e471f7df61a402b0234c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofactioncore-0.1.0-sources.jar",
+      "size": 5785,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomissioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoeconomycore",
+      "kind": "module"
+    },
+    {
+      "id": "echosocialcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

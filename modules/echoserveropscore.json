@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoserveropscore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoserveropscore-0.1.0-neoforge.jar",
-                                       "sha256":  "e0fe72b386a5c46aaa7f0a20c229cd2467feb7107f431bcb5031e5c0fc120d1c",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-neoforge.jar",
-                                       "size":  6114,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoserveropscore-0.1.0-standalone.jar",
-                                         "sha256":  "e0fe72b386a5c46aaa7f0a20c229cd2467feb7107f431bcb5031e5c0fc120d1c",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-standalone.jar",
-                                         "size":  6114,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoserveropscore-0.1.0.echo-addon",
-                                     "sha256":  "a9760b85194fd8b79fc16e2e7cd65c0741af6762999c2ed733100c6dc9bb9aca",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0.echo-addon",
-                                     "size":  8561,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoserveropscore-0.1.0-sources.jar",
-                                      "sha256":  "14406730bbb5d53227c17abd3679954734dd31b5b04a205419598d206fa31adf",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-sources.jar",
-                                      "size":  5771
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echopolicycore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoreportcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echotelemetrycore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoserveropscore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoserveropscore-0.1.0-neoforge.jar",
+      "sha256": "313ec28ccd4f742db0a339d08c8ab5ef68ed1dadb00465ee171aa4b3b3d6f21c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-neoforge.jar",
+      "size": 6206,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoserveropscore-0.1.0-standalone.jar",
+      "sha256": "313ec28ccd4f742db0a339d08c8ab5ef68ed1dadb00465ee171aa4b3b3d6f21c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-standalone.jar",
+      "size": 6206,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoserveropscore-0.1.0.echo-addon",
+      "sha256": "1c30879ddd4030ae5eb7bd16c8580a6f514e4f995df354b6aea4bc12b7dd5a51",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0.echo-addon",
+      "size": 8649,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoserveropscore-0.1.0-sources.jar",
+      "sha256": "b694fd35559cdba6f3f9f051ea4f3730b882b7dafb0fe5891c07fb5c7b2b3abc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-sources.jar",
+      "size": 5771,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echopolicycore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    },
+    {
+      "id": "echotelemetrycore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

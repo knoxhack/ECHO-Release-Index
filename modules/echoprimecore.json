@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoprimecore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoprimecore-1.0.0-neoforge.jar",
-                                       "sha256":  "fe77cdf03c1d512fe60aafda2cf611abf3e87c76422e393c88dcfa9645cf2710",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0-neoforge.jar",
-                                       "size":  92515,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoprimecore-1.0.0-standalone.jar",
-                                         "sha256":  "e609d65af3238e9de2259160d31dedf854f4d78c94dd65d3ca7ad65b1a1f611a",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0-standalone.jar",
-                                         "size":  92505,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoprimecore-1.0.0.echo-addon",
-                                     "sha256":  "814343301e5e3124ce74063959305ae38ce8601334424fe85a3bcb177f277c34",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0.echo-addon",
-                                     "size":  90542,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoprimecore-1.0.0-sources.jar",
-                                      "sha256":  "00de674027cb0e3ea53cd12a35cad09227a83bfaf342d886124a5f9ff6a1c650",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0-sources.jar",
-                                      "size":  45071
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoprimecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoprimecore-1.0.0-neoforge.jar",
+      "sha256": "68df597f032c7ccbd5aecd53a91decb62f994e95cb0d76612fc97e8d8bbfceeb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0-neoforge.jar",
+      "size": 92581,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoprimecore-1.0.0-standalone.jar",
+      "sha256": "4022ef8134211bf33e9fd5cd70fdb53dd49b728326374433c082bcb076f3a857",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0-standalone.jar",
+      "size": 92557,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoprimecore-1.0.0.echo-addon",
+      "sha256": "da0de2174680fe31e16117c4102f2c963a8425fcc8c6ccdb83d8a348ed2e1bc5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0.echo-addon",
+      "size": 90600,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoprimecore-1.0.0-sources.jar",
+      "sha256": "2d5cd824664eb43c36f64c315cc925a86531774809bd365969014cd5c3732461",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoprimecore-1.0.0-sources.jar",
+      "size": 45071,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

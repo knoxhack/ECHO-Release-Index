@@ -1,62 +1,79 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echospellcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echospellcore-1.0.0-neoforge.jar",
-                                       "sha256":  "387ece46e8b09aa8777c5bcaf3f5bbf4808136c28b3be2f6e1806a668849650f",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0-neoforge.jar",
-                                       "size":  167056,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echospellcore-1.0.0-standalone.jar",
-                                         "sha256":  "c64fc4f94536e312f612b210343e3e282d1273b301fb4c0ba0a733e4beb7968c",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0-standalone.jar",
-                                         "size":  167040,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echospellcore-1.0.0.echo-addon",
-                                     "sha256":  "18d8d288d904796d44edffae6aae309d070ce154442294a69105cb3954314cf4",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0.echo-addon",
-                                     "size":  150557,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echospellcore-1.0.0-sources.jar",
-                                      "sha256":  "fa58786d94d7fd7b91d779eaf441e335cd6a592e80a137ff973d75f92e167861",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0-sources.jar",
-                                      "size":  85077
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echospellcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echospellcore-1.0.0-neoforge.jar",
+      "sha256": "58660fb02996f2ed3fd8452733b5dacd7c82a3520d019319013e7d03d047ff97",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0-neoforge.jar",
+      "size": 167121,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echospellcore-1.0.0-standalone.jar",
+      "sha256": "510ae8c976a3c9448ab51212c5dd4a0cb5bd0a6bc69a9cdf1a0d71c571e663a3",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0-standalone.jar",
+      "size": 167090,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echospellcore-1.0.0.echo-addon",
+      "sha256": "1a8af354fc347b90ce41fb41016dcbf24225cb12ba95131aea2afab06427a469",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0.echo-addon",
+      "size": 150609,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echospellcore-1.0.0-sources.jar",
+      "sha256": "314bdd0139450f60a1bff8197c96206f275587c33593ad76569c68f545e785b0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echospellcore-1.0.0-sources.jar",
+      "size": 85077,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

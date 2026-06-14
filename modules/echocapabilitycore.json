@@ -1,62 +1,79 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echocapabilitycore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echocapabilitycore-0.1.0-neoforge.jar",
-                                       "sha256":  "2576d605edaff4d145648d971b1baa2d4e28f54899629e4399d18582fa6e2d89",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-neoforge.jar",
-                                       "size":  6136,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echocapabilitycore-0.1.0-standalone.jar",
-                                         "sha256":  "2576d605edaff4d145648d971b1baa2d4e28f54899629e4399d18582fa6e2d89",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-standalone.jar",
-                                         "size":  6136,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echocapabilitycore-0.1.0.echo-addon",
-                                     "sha256":  "8a9301f40916d62c4a1e1020b8e77b84d7c439de5aa92983daf69b1b84b575fd",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0.echo-addon",
-                                     "size":  8583,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echocapabilitycore-0.1.0-sources.jar",
-                                      "sha256":  "7331780400af0bea4f7746b773d35e7005f865e4fbd8105c8b004679e47a316a",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-sources.jar",
-                                      "size":  5827
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomodulegraph",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocapabilitycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocapabilitycore-0.1.0-neoforge.jar",
+      "sha256": "b7d159ea397110cf20ebac6b0850eae61145f98a70e8dcf8da54424271f7a04d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-neoforge.jar",
+      "size": 6220,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echocapabilitycore-0.1.0-standalone.jar",
+      "sha256": "b7d159ea397110cf20ebac6b0850eae61145f98a70e8dcf8da54424271f7a04d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-standalone.jar",
+      "size": 6220,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echocapabilitycore-0.1.0.echo-addon",
+      "sha256": "542d41c4861439d85b316f542d070d1fe1dd06647aebd76c325f5656976cf5bf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0.echo-addon",
+      "size": 8668,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echocapabilitycore-0.1.0-sources.jar",
+      "sha256": "8ea984bee75434498d482d05db8f8f86c5238016f86a331b79649b1b42081a17",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-sources.jar",
+      "size": 5827,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomodulegraph",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

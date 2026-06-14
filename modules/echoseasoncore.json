@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoseasoncore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoseasoncore-0.1.0-neoforge.jar",
-                                       "sha256":  "331b034cd8e0f0df00626a667fcc53cdf231967e759a1561251c571e5c3feb0a",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0-neoforge.jar",
-                                       "size":  5971,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoseasoncore-0.1.0-standalone.jar",
-                                         "sha256":  "331b034cd8e0f0df00626a667fcc53cdf231967e759a1561251c571e5c3feb0a",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0-standalone.jar",
-                                         "size":  5971,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoseasoncore-0.1.0.echo-addon",
-                                     "sha256":  "a54dc6544f2a616aaf4802d2eb81b5978ee2b75e49415057d4651d5b11a13b96",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0.echo-addon",
-                                     "size":  8393,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoseasoncore-0.1.0-sources.jar",
-                                      "sha256":  "cd73058ebf69407a46c3f2ab69c9e138feda1c6ef8a109fa9f58728cdb8cf361",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0-sources.jar",
-                                      "size":  5651
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomissioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echolootcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echopolicycore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoseasoncore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoseasoncore-0.1.0-neoforge.jar",
+      "sha256": "0e56e28521e873dd2640a45d2a60be22c5a953f5d95151ea98c05bae79b5a446",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0-neoforge.jar",
+      "size": 6062,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoseasoncore-0.1.0-standalone.jar",
+      "sha256": "0e56e28521e873dd2640a45d2a60be22c5a953f5d95151ea98c05bae79b5a446",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0-standalone.jar",
+      "size": 6062,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoseasoncore-0.1.0.echo-addon",
+      "sha256": "fdf11159eaa14833d691fa5fb8438ffdce3cb52ccb2d2187c3a1bf9820a047ff",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0.echo-addon",
+      "size": 8481,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoseasoncore-0.1.0-sources.jar",
+      "sha256": "e4036b6c270dd3286f16586756039b4ec4e9f3e6f5cd97cdc6048d9005566ce1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoseasoncore-0.1.0-sources.jar",
+      "size": 5651,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomissioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echolootcore",
+      "kind": "module"
+    },
+    {
+      "id": "echopolicycore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

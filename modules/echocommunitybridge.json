@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echocommunitybridge",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echocommunitybridge-1.0.0-neoforge.jar",
-                                       "sha256":  "451bcc291a5fd63d911728e55e70621d2c235bdc95a92d820ffafd42cdd2f129",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0-neoforge.jar",
-                                       "size":  70733,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echocommunitybridge-1.0.0-standalone.jar",
-                                         "sha256":  "bbc2768c79ab8085bb5ea469234b94aee5a8cb507147fba4860d148852b05c8b",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0-standalone.jar",
-                                         "size":  70727,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echocommunitybridge-1.0.0.echo-addon",
-                                     "sha256":  "d925456a9f84ec5b6f3a243531ada724ad0817cf23e96f8115c8f9ee59ae1f92",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0.echo-addon",
-                                     "size":  70250,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echocommunitybridge-1.0.0-sources.jar",
-                                      "sha256":  "582bfea87c8dc49856d17c87dc7aa4fafdf612933b450b47ae5c16e820bbad35",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0-sources.jar",
-                                      "size":  31430
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocommunitybridge",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocommunitybridge-1.0.0-neoforge.jar",
+      "sha256": "550696c8fba0584d7eaaf0876fe5751ac870244d17ccb64405a753c2663ad379",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0-neoforge.jar",
+      "size": 70815,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echocommunitybridge-1.0.0-standalone.jar",
+      "sha256": "a39ec4397029dfb5e836975d142d995e465fa576977bd15f5db598f9cb09caee",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0-standalone.jar",
+      "size": 70793,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echocommunitybridge-1.0.0.echo-addon",
+      "sha256": "df3ef06ae989e06584fbc4ca094a9e96614643310deac3d265d051dd1dee7b3f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0.echo-addon",
+      "size": 70307,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echocommunitybridge-1.0.0-sources.jar",
+      "sha256": "e78ff95b742927e08310be2b09754737c3e25b1ab89f4ce42757214fbe350ac6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocommunitybridge-1.0.0-sources.jar",
+      "size": 31440,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

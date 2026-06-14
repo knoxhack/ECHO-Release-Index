@@ -1,54 +1,71 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echorendercore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echorendercore-1.0.0-neoforge.jar",
-                                       "sha256":  "0f40e27c125d6857a2508303ccf65437b6e8fb8b9eafae26dbb316547da0e958",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0-neoforge.jar",
-                                       "size":  510555,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echorendercore-1.0.0-standalone.jar",
-                                         "sha256":  "dd2bff2349e510a91276646e20b73eedb3b192cc4a4b77417bbed037334d788b",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0-standalone.jar",
-                                         "size":  510544,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echorendercore-1.0.0.echo-addon",
-                                     "sha256":  "7661c5f213b2925e92d10294fd5008abfe7c9ce333f59b9ef0248b49a004e86d",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0.echo-addon",
-                                     "size":  476755,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echorendercore-1.0.0-sources.jar",
-                                      "sha256":  "dbdf85a97aaa0cf9c32b00d7e7d1e268a0a9378067cf8d22e5e5ce9731d838e2",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0-sources.jar",
-                                      "size":  229822
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echorendercore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echorendercore-1.0.0-neoforge.jar",
+      "sha256": "0a8c281c109303764aeedd391e5acf70f466719a0c59715ad67f70adae693150",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0-neoforge.jar",
+      "size": 510620,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echorendercore-1.0.0-standalone.jar",
+      "sha256": "1e07602274537d3612a4c485f421b01eb44d8f38c9053cfb4febb011f361f790",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0-standalone.jar",
+      "size": 510593,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echorendercore-1.0.0.echo-addon",
+      "sha256": "ff96ca368602eecfb3453fe31d4b0520e5fc37d7246282b074b26471df86aaaf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0.echo-addon",
+      "size": 476803,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echorendercore-1.0.0-sources.jar",
+      "sha256": "a90653bdd7b7e4c3bb1f71fb5d7576ee9a39494a7eb2f28917582e0ea00d3ea4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echorendercore-1.0.0-sources.jar",
+      "size": 229827,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

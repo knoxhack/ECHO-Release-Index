@@ -1,78 +1,95 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoagentcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoagentcore-1.0.0-neoforge.jar",
-                                       "sha256":  "bb4c5f9ee9789e00d28581349c94d544bf26f9a80852b9277ff8b248de7b1cb7",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0-neoforge.jar",
-                                       "size":  52152,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoagentcore-1.0.0-standalone.jar",
-                                         "sha256":  "6e1e2aaf49713d2563096f453ec61dc0b7f7c03ce69e7f6d156698ae0adbdadb",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0-standalone.jar",
-                                         "size":  52139,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoagentcore-1.0.0.echo-addon",
-                                     "sha256":  "f18c604e7d58a04a58aa81667cd643d6cecf469dcc468944230000712b6bfc34",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0.echo-addon",
-                                     "size":  51274,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoagentcore-1.0.0-sources.jar",
-                                      "sha256":  "eda7da982d5f4561d5b5d63af5c46912529a857bb2c256befff782c02360af5a",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0-sources.jar",
-                                      "size":  24434
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echometadatacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomodulegraph",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echohealthcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoagentcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoagentcore-1.0.0-neoforge.jar",
+      "sha256": "9c2be28e5d4dcf053d5abd59e39eb0410321a881dabdbde0e5cb84961ceddc9a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0-neoforge.jar",
+      "size": 52218,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoagentcore-1.0.0-standalone.jar",
+      "sha256": "c1b03e8212fd9740d1fe9222d209017b46c58ace9182b7ddf6f7b87225229249",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0-standalone.jar",
+      "size": 52187,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoagentcore-1.0.0.echo-addon",
+      "sha256": "44dbe01e9be7f64a1ea963dc79997cdd71893ae057963336087512ea00c13637",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0.echo-addon",
+      "size": 51325,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoagentcore-1.0.0-sources.jar",
+      "sha256": "2427b5631bc38d1b7e4d1f9ac0dc4679a076ec29d427c558e2c9f0eb43e85090",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoagentcore-1.0.0-sources.jar",
+      "size": 24446,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echometadatacore",
+      "kind": "module"
+    },
+    {
+      "id": "echomodulegraph",
+      "kind": "module"
+    },
+    {
+      "id": "echohealthcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

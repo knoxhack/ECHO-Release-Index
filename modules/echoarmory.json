@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoarmory",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoarmory-1.0.0-neoforge.jar",
-                                       "sha256":  "1b086fd4ffe357ea5268a3157ca9a88cd3ddf0ed28d3e0f193006bc0bc254e04",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0-neoforge.jar",
-                                       "size":  10422891,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoarmory-1.0.0-standalone.jar",
-                                         "sha256":  "1b086fd4ffe357ea5268a3157ca9a88cd3ddf0ed28d3e0f193006bc0bc254e04",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0-standalone.jar",
-                                         "size":  10422891,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoarmory-1.0.0.echo-addon",
-                                     "sha256":  "593f094c623d649e3a9c14adf299a63dc9a53688ef4bd6612ded157aacb4c7d0",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0.echo-addon",
-                                     "size":  10366114,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoarmory-1.0.0-sources.jar",
-                                      "sha256":  "053d8a0fc2b79a62cc0ac80918b783ebee7dbe558ee4511b40532b9e911434ac",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0-sources.jar",
-                                      "size":  10267683
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoarmory",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoarmory-1.0.0-neoforge.jar",
+      "sha256": "78740cc90cb0d9030c7171b723dd2a4ea1261c2888ac633399485009c7f34b1d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0-neoforge.jar",
+      "size": 10423776,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoarmory-1.0.0-standalone.jar",
+      "sha256": "78740cc90cb0d9030c7171b723dd2a4ea1261c2888ac633399485009c7f34b1d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0-standalone.jar",
+      "size": 10423776,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoarmory-1.0.0.echo-addon",
+      "sha256": "77af88c0558c93fb2b21225fd07beb92d93f1be830fadf32469897c2a13bc34d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0.echo-addon",
+      "size": 10367042,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoarmory-1.0.0-sources.jar",
+      "sha256": "86759e2c6a4290df88f4bafb3e1ee1a9aed2fec70ab01cc614660f70ac547655",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarmory-1.0.0-sources.jar",
+      "size": 10268224,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echobalancecore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echobalancecore-0.1.0-neoforge.jar",
-                                       "sha256":  "b39860b6f4926b178d86109fbad6ec8214e85726702d9bc7ebe0d5445eea6868",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0-neoforge.jar",
-                                       "size":  6079,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echobalancecore-0.1.0-standalone.jar",
-                                         "sha256":  "b39860b6f4926b178d86109fbad6ec8214e85726702d9bc7ebe0d5445eea6868",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0-standalone.jar",
-                                         "size":  6079,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echobalancecore-0.1.0.echo-addon",
-                                     "sha256":  "ec7182fa93c56d0adeee43fa83ed97480b7c34802d48f3a6c50d8eb672873d00",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0.echo-addon",
-                                     "size":  8555,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echobalancecore-0.1.0-sources.jar",
-                                      "sha256":  "423ef887b916c90041c75655d9b08a9e107bce3215d2a4c77f06c5c1ac0e24db",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0-sources.jar",
-                                      "size":  5802
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echorecipecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echolootcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoeconomycore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoprogressioncore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echobalancecore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echobalancecore-0.1.0-neoforge.jar",
+      "sha256": "84399255109f1f3f06970bc2a13d8f3e657ce8f87ca1a00ab70563dd251b7919",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0-neoforge.jar",
+      "size": 6167,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echobalancecore-0.1.0-standalone.jar",
+      "sha256": "84399255109f1f3f06970bc2a13d8f3e657ce8f87ca1a00ab70563dd251b7919",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0-standalone.jar",
+      "size": 6167,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echobalancecore-0.1.0.echo-addon",
+      "sha256": "be84b2f94c66092e5228f1505ff1e4e6b14c4fd95d300dfd9c94c8b5dc256ba2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0.echo-addon",
+      "size": 8651,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echobalancecore-0.1.0-sources.jar",
+      "sha256": "129512d8f90d5c125d6c8ef70b57465da1f02e21cab5174beba96aa368063631",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobalancecore-0.1.0-sources.jar",
+      "size": 5802,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echorecipecore",
+      "kind": "module"
+    },
+    {
+      "id": "echolootcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoeconomycore",
+      "kind": "module"
+    },
+    {
+      "id": "echoprogressioncore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echopolicycore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echopolicycore-0.1.0-neoforge.jar",
-                                       "sha256":  "39bda78f7117046725fa3e32f88bb218132e358c98c8f9f5ad68811893592b2d",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0-neoforge.jar",
-                                       "size":  6204,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echopolicycore-0.1.0-standalone.jar",
-                                         "sha256":  "39bda78f7117046725fa3e32f88bb218132e358c98c8f9f5ad68811893592b2d",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0-standalone.jar",
-                                         "size":  6204,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echopolicycore-0.1.0.echo-addon",
-                                     "sha256":  "74c655cdf9afaa253bd898e1dd890ef28136e63fbc1f5f46ae92c6c9590ce701",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0.echo-addon",
-                                     "size":  8730,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echopolicycore-0.1.0-sources.jar",
-                                      "sha256":  "ca00d13a38c74a2e4e491e8023000d2297727c2e57f802ff96877830bd9b86cd",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0-sources.jar",
-                                      "size":  5877
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoreportcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echometadatacore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echopolicycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echopolicycore-0.1.0-neoforge.jar",
+      "sha256": "39f6d37e33a22612a466204688628fbbacea3cebffb5e282aa46c7b4b3717b4a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0-neoforge.jar",
+      "size": 6296,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echopolicycore-0.1.0-standalone.jar",
+      "sha256": "39f6d37e33a22612a466204688628fbbacea3cebffb5e282aa46c7b4b3717b4a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0-standalone.jar",
+      "size": 6296,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echopolicycore-0.1.0.echo-addon",
+      "sha256": "56f6bc4cde39790c0bbea046872df1725c4e17ecc6fd8dc05f8ea9a75b81e256",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0.echo-addon",
+      "size": 8817,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echopolicycore-0.1.0-sources.jar",
+      "sha256": "149ceed7fc03de802125e2f8b9257ba2801a165425de09f48c03ad9390b49f19",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopolicycore-0.1.0-sources.jar",
+      "size": 5877,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    },
+    {
+      "id": "echometadatacore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

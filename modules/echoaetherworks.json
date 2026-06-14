@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoaetherworks",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoaetherworks-1.0.0-neoforge.jar",
-                                       "sha256":  "792f0864bbbec101436c2aedd372dd7c4275f0a77e4b85b24931e674e31f578a",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-neoforge.jar",
-                                       "size":  91171,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoaetherworks-1.0.0-standalone.jar",
-                                         "sha256":  "a5b9e0a62279d3a1dac55f2a29c36b675f6d51f92fe879640e9822fd99c243ee",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-standalone.jar",
-                                         "size":  91160,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoaetherworks-1.0.0.echo-addon",
-                                     "sha256":  "8284581a6a776ef7fc39fb93d21612f25363959bc518cdde0a2e8af77952f33e",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0.echo-addon",
-                                     "size":  86497,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoaetherworks-1.0.0-sources.jar",
-                                      "sha256":  "3570df5cde08c0833b8e7dd6c8b3c506b1fceec50425afd7594a450892c320d9",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-sources.jar",
-                                      "size":  45603
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoaetherworks",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoaetherworks-1.0.0-neoforge.jar",
+      "sha256": "04574ce77bb54c6f25b230f790b80da03d40e2d6be168c750cc7b18789a0c76f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-neoforge.jar",
+      "size": 91243,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoaetherworks-1.0.0-standalone.jar",
+      "sha256": "0060e7bd9e08c27604b4bcbc3b4dcbfb88edc83f0aa31c4ff855e69684903a77",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-standalone.jar",
+      "size": 91215,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoaetherworks-1.0.0.echo-addon",
+      "sha256": "2dceb135d471ed95aa968e06987ff6a2208b69a02ab43392177cbe13fd28ffec",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0.echo-addon",
+      "size": 86531,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoaetherworks-1.0.0-sources.jar",
+      "sha256": "b951773d8883fac35ed6e98c852d1c299f244ee0a7d78e61b402311688ae5441",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-sources.jar",
+      "size": 45603,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

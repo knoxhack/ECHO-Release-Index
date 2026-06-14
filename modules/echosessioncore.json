@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echosessioncore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echosessioncore-0.1.0-neoforge.jar",
-                                       "sha256":  "2d7186325792a7ddd02c6b49000ea5ca109cc9b989b2e7ba490ef981d39c311d",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0-neoforge.jar",
-                                       "size":  6115,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echosessioncore-0.1.0-standalone.jar",
-                                         "sha256":  "2d7186325792a7ddd02c6b49000ea5ca109cc9b989b2e7ba490ef981d39c311d",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0-standalone.jar",
-                                         "size":  6115,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echosessioncore-0.1.0.echo-addon",
-                                     "sha256":  "5b8b914e6a3246295aedd24f221f06e9309821de385444c81e99bc1ac88ac04f",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0.echo-addon",
-                                     "size":  8581,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echosessioncore-0.1.0-sources.jar",
-                                      "sha256":  "792265a0e7368e49e2a9c66ab77afadbcf83c81303152920137e34bb4931ce37",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0-sources.jar",
-                                      "size":  5810
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echodatacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomissioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplayercore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echosessioncore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echosessioncore-0.1.0-neoforge.jar",
+      "sha256": "0fabb2d1ecfbb36f23d0bd687532e41781309e9318992ee825e3f6c878599ab0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0-neoforge.jar",
+      "size": 6200,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echosessioncore-0.1.0-standalone.jar",
+      "sha256": "0fabb2d1ecfbb36f23d0bd687532e41781309e9318992ee825e3f6c878599ab0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0-standalone.jar",
+      "size": 6200,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echosessioncore-0.1.0.echo-addon",
+      "sha256": "d075161d57691e271748f2230000ef4a169f232abedc8b3251a55529b13bf188",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0.echo-addon",
+      "size": 8670,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echosessioncore-0.1.0-sources.jar",
+      "sha256": "91edfdfc14b6a20b10de95111554e0bf082f6da0ea480a3e3209320243826782",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echosessioncore-0.1.0-sources.jar",
+      "size": 5810,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echodatacore",
+      "kind": "module"
+    },
+    {
+      "id": "echomissioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplayercore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

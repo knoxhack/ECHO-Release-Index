@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echodependencydoctor",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echodependencydoctor-0.1.0-neoforge.jar",
-                                       "sha256":  "c64c7145af07531ad5b03ce307570d2d07b5b32cd0fe5c0981a54eb3fba2d6bf",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-neoforge.jar",
-                                       "size":  6264,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echodependencydoctor-0.1.0-standalone.jar",
-                                         "sha256":  "c64c7145af07531ad5b03ce307570d2d07b5b32cd0fe5c0981a54eb3fba2d6bf",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-standalone.jar",
-                                         "size":  6264,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echodependencydoctor-0.1.0.echo-addon",
-                                     "sha256":  "5ef2f3a4496cd8016b417521e4beaeda22c8b75074808cdaa96af1495e7a1439",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0.echo-addon",
-                                     "size":  8766,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echodependencydoctor-0.1.0-sources.jar",
-                                      "sha256":  "d88083497279c476b3da5df586f0793d1d965ca65ca2b1d828efae3b0f4ef3ea",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-sources.jar",
-                                      "size":  5993
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomodulegraph",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocapabilitycore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoreportcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echodependencydoctor",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echodependencydoctor-0.1.0-neoforge.jar",
+      "sha256": "40b06d0f355727f108cb6af601cc3867cbbc88a2eed11f0b19371d770c714375",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-neoforge.jar",
+      "size": 6351,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echodependencydoctor-0.1.0-standalone.jar",
+      "sha256": "40b06d0f355727f108cb6af601cc3867cbbc88a2eed11f0b19371d770c714375",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-standalone.jar",
+      "size": 6351,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echodependencydoctor-0.1.0.echo-addon",
+      "sha256": "8ea8c0bde176aca34639eb61099f5603441953fc8f43adc2e60be4d29d875383",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0.echo-addon",
+      "size": 8860,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echodependencydoctor-0.1.0-sources.jar",
+      "sha256": "9b3b11dd1116f2b8aa469ffec2fb9f0ce6a81a83c54d1a46095f24af3033b635",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-sources.jar",
+      "size": 5993,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomodulegraph",
+      "kind": "module"
+    },
+    {
+      "id": "echocapabilitycore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoritualcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoritualcore-1.0.0-neoforge.jar",
-                                       "sha256":  "00bbc7ef37b52304e78d41cde09b7309f95d2383ba3105eecf3c3e8da3dcc0e0",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0-neoforge.jar",
-                                       "size":  105134,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoritualcore-1.0.0-standalone.jar",
-                                         "sha256":  "1a4e6190488c2ff6b90f78eb293c1b8ba25f40d449100b8a3228b3b0e4861a21",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0-standalone.jar",
-                                         "size":  105120,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoritualcore-1.0.0.echo-addon",
-                                     "sha256":  "aa6a0d3913f10116b8b102ec506ac2c3c7e144340df3c2141de12627e555ca26",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0.echo-addon",
-                                     "size":  92110,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoritualcore-1.0.0-sources.jar",
-                                      "sha256":  "e578518008d33f46afe7e5911249f4440c5c556894721eda9847bf752ca83ac2",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0-sources.jar",
-                                      "size":  60596
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoritualcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoritualcore-1.0.0-neoforge.jar",
+      "sha256": "98f380459a83225199a92c1de5900d14388cb335179950431fa5c6e1e9ad574e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0-neoforge.jar",
+      "size": 105199,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoritualcore-1.0.0-standalone.jar",
+      "sha256": "d359cf1a3121f41abdeaa4206dc1387b7b523a42966ff0c24630f95a6460fa7d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0-standalone.jar",
+      "size": 105169,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoritualcore-1.0.0.echo-addon",
+      "sha256": "4ed250944132499b6abb60d0321482efab55383176d77d5d8a2bce6949a4bc14",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0.echo-addon",
+      "size": 92165,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoritualcore-1.0.0-sources.jar",
+      "sha256": "da2a2ac23403d86c359be4d9cd67804c2ee318eb249c18a339c5308fff55acdb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoritualcore-1.0.0-sources.jar",
+      "size": 60596,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

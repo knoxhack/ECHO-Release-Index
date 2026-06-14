@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echohazardcore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echohazardcore-0.1.0-neoforge.jar",
-                                       "sha256":  "e1fc72a74bffd2c0e1c740ac6d7959057185d2fa4fe7bf591778e38e314f4628",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-neoforge.jar",
-                                       "size":  6041,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echohazardcore-0.1.0-standalone.jar",
-                                         "sha256":  "e1fc72a74bffd2c0e1c740ac6d7959057185d2fa4fe7bf591778e38e314f4628",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-standalone.jar",
-                                         "size":  6041,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echohazardcore-0.1.0.echo-addon",
-                                     "sha256":  "8f21a28d8b73baeaac645fa934082a75061483bd04bd0e72251d8e8550bbe780",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0.echo-addon",
-                                     "size":  8513,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echohazardcore-0.1.0-sources.jar",
-                                      "sha256":  "3341602332ee5dc02068d5eaf2c7ef3a47d75619d6832e369c5d2a86234a4ac4",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-sources.jar",
-                                      "size":  5746
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echostatuscore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echohealthcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoweathercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echohazardcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echohazardcore-0.1.0-neoforge.jar",
+      "sha256": "557fe98cb214e3279d4840500346119efd261ccb525e1a40623b76cef50932fe",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-neoforge.jar",
+      "size": 6128,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echohazardcore-0.1.0-standalone.jar",
+      "sha256": "557fe98cb214e3279d4840500346119efd261ccb525e1a40623b76cef50932fe",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-standalone.jar",
+      "size": 6128,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echohazardcore-0.1.0.echo-addon",
+      "sha256": "b440b714157e1fc0b96caccc8354f45b772da6e31de5de7d4c5a8a224044e0df",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0.echo-addon",
+      "size": 8608,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echohazardcore-0.1.0-sources.jar",
+      "sha256": "2362df7c4e8618e2ebf68ab0cee4478de2b8ca82bd6e700a2cdfc3e4a5229a21",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-sources.jar",
+      "size": 5746,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echostatuscore",
+      "kind": "module"
+    },
+    {
+      "id": "echohealthcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoweathercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

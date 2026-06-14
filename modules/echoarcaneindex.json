@@ -1,62 +1,79 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoarcaneindex",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoarcaneindex-1.0.0-neoforge.jar",
-                                       "sha256":  "1a3f9bae0904ae1b81e2a57bc30953aaf3501898ad566002eb21363b55ca351b",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0-neoforge.jar",
-                                       "size":  31407,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoarcaneindex-1.0.0-standalone.jar",
-                                         "sha256":  "ac8eb789d7322f0f934753151b93d9ea127a691d77160637544a34724fb9e334",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0-standalone.jar",
-                                         "size":  31393,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoarcaneindex-1.0.0.echo-addon",
-                                     "sha256":  "fd4ac2d6d1b4440bca8e3daae7c16bec50c90634d371ec4df872c4c7537c4ffc",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0.echo-addon",
-                                     "size":  33239,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoarcaneindex-1.0.0-sources.jar",
-                                      "sha256":  "54aad632692fb61e0bf49ac09ba27f6696a88719ec3e42e52dd34e8f9f7bfb60",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0-sources.jar",
-                                      "size":  18946
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoindex",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoarcaneindex",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoarcaneindex-1.0.0-neoforge.jar",
+      "sha256": "a2ea4677fbcf1e6211e09b8e107f2712ee4bc7cdb47d61e1ce471b7344710c73",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0-neoforge.jar",
+      "size": 31476,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoarcaneindex-1.0.0-standalone.jar",
+      "sha256": "7266a48003ad66c6582c59fdca68e96f1e0a5a19bf2e6c552e871b4d6e75eb55",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0-standalone.jar",
+      "size": 31449,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoarcaneindex-1.0.0.echo-addon",
+      "sha256": "5155437cb0e7d6f5ca542e546fbbfddb87c07da6df315d8fd0de801268200c04",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0.echo-addon",
+      "size": 33293,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoarcaneindex-1.0.0-sources.jar",
+      "sha256": "4d681ab166a7b9f36956cd30f66248ee4324d66302e17969b8d2985f92ec9dfc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcaneindex-1.0.0-sources.jar",
+      "size": 18946,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoindex",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

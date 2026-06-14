@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echofamiliarcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echofamiliarcore-1.0.0-neoforge.jar",
-                                       "sha256":  "5b448d68e78fd743248c54a462cd07819591e603518ac689e68a9f33133a2f21",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0-neoforge.jar",
-                                       "size":  50030,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echofamiliarcore-1.0.0-standalone.jar",
-                                         "sha256":  "638d2107d7d59b3fe1b0853d13b2a490b72240fd43d26da73595e22116c361ae",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0-standalone.jar",
-                                         "size":  50019,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echofamiliarcore-1.0.0.echo-addon",
-                                     "sha256":  "5184faf5ce0f8d07025e6ea75dd80c5fe76ad37307b2ad97151694d2bf5e235d",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0.echo-addon",
-                                     "size":  49168,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echofamiliarcore-1.0.0-sources.jar",
-                                      "sha256":  "9a5a5370bbcc03a2044959e06e70e0ac35b8a0eae1b920069c182029dc841257",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0-sources.jar",
-                                      "size":  27806
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echofamiliarcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echofamiliarcore-1.0.0-neoforge.jar",
+      "sha256": "76ab08cc1c146ea0b9e7cfe6137c0d91815b7e35f7b66fe71e8e51c12427fbbf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0-neoforge.jar",
+      "size": 50100,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echofamiliarcore-1.0.0-standalone.jar",
+      "sha256": "07e6da52420f018854295c47eb5af4ecd7bfd85086d59a519a71785670c41b47",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0-standalone.jar",
+      "size": 50073,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echofamiliarcore-1.0.0.echo-addon",
+      "sha256": "cdfafdc0920b0398c471bd7ccfc8f420b52b4939719b5cdb7efd2214b149a065",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0.echo-addon",
+      "size": 49219,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echofamiliarcore-1.0.0-sources.jar",
+      "sha256": "9cc5eaa30fcb8521e3d30a4d84cb56985e1f9b097d5ef35e5b12a2648aa3ffde",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echofamiliarcore-1.0.0-sources.jar",
+      "size": 27806,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

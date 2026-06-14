@@ -1,54 +1,71 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echocreatorcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echocreatorcore-1.0.0-neoforge.jar",
-                                       "sha256":  "f2d4511def81037a046fd9248522b166132e317260c88963a568e7ac82c4cae2",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0-neoforge.jar",
-                                       "size":  245916,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echocreatorcore-1.0.0-standalone.jar",
-                                         "sha256":  "2173417cd7ec83b352bbc8764698abb8cf2a848f1e2a1845ab8f5a046410e1e9",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0-standalone.jar",
-                                         "size":  245898,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echocreatorcore-1.0.0.echo-addon",
-                                     "sha256":  "9d566d9690ed09e1ea632c5caab905f142bf257295a1c9a98abadbc07d9b911e",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0.echo-addon",
-                                     "size":  237326,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echocreatorcore-1.0.0-sources.jar",
-                                      "sha256":  "22175260688e0b141820dea84ad260b3d95b1de390174f138870b19e1e471ed4",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0-sources.jar",
-                                      "size":  103232
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocreatorcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocreatorcore-1.0.0-neoforge.jar",
+      "sha256": "55f0faeaf2668333299d929a5e6f21fd59013d28b1aa11514170ce0d8e8b2abd",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0-neoforge.jar",
+      "size": 245981,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echocreatorcore-1.0.0-standalone.jar",
+      "sha256": "26f6700d6b96cc207d5ca1cb2e8f9fd180f342ce3090f4c9e453b86a0c3bdb5a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0-standalone.jar",
+      "size": 245950,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echocreatorcore-1.0.0.echo-addon",
+      "sha256": "e79c0fa4a89599c39ae6fece6210acd922e8511b768229ff8956bad2d45c849c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0.echo-addon",
+      "size": 237376,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echocreatorcore-1.0.0-sources.jar",
+      "sha256": "83d7e5eadda0a026c78ef2ae396530fac321613d6dc43032f729de37041af2d7",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocreatorcore-1.0.0-sources.jar",
+      "size": 103232,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echodisastercore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echodisastercore-0.1.0-neoforge.jar",
-                                       "sha256":  "155fa62e74d7b88c6b50df44091d953c399834a52e4b9a66e2a1721c3e6bb39f",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0-neoforge.jar",
-                                       "size":  6104,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echodisastercore-0.1.0-standalone.jar",
-                                         "sha256":  "155fa62e74d7b88c6b50df44091d953c399834a52e4b9a66e2a1721c3e6bb39f",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0-standalone.jar",
-                                         "size":  6104,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echodisastercore-0.1.0.echo-addon",
-                                     "sha256":  "09d7bca0e96668755f15cafd36d69a5ea91436978dd817f072f8457b67d0f2fa",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0.echo-addon",
-                                     "size":  8562,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echodisastercore-0.1.0-sources.jar",
-                                      "sha256":  "41394bbef64964c899075bf833ae51a7d7b108df14fb1c252d12446aa9d3e51d",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0-sources.jar",
-                                      "size":  5762
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echohazardcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoweathercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echosessioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echodisastercore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echodisastercore-0.1.0-neoforge.jar",
+      "sha256": "6f174c659b0af8871858131a21b7bc5926c865bc3dc69eb8713122b4a67262b2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0-neoforge.jar",
+      "size": 6195,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echodisastercore-0.1.0-standalone.jar",
+      "sha256": "6f174c659b0af8871858131a21b7bc5926c865bc3dc69eb8713122b4a67262b2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0-standalone.jar",
+      "size": 6195,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echodisastercore-0.1.0.echo-addon",
+      "sha256": "afcce872411eb872af38fc455f21193db05e5922dd44a4c7491d33a0c44769d4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0.echo-addon",
+      "size": 8646,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echodisastercore-0.1.0-sources.jar",
+      "sha256": "5f30814216f63b19e6d88bad66c8a1ddf8769e645b9ee02919e1c3a58612ecfb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodisastercore-0.1.0-sources.jar",
+      "size": 5762,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echohazardcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoweathercore",
+      "kind": "module"
+    },
+    {
+      "id": "echosessioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

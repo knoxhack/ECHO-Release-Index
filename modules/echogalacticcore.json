@@ -1,50 +1,67 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echogalacticcore",
-    "kind":  "module",
-    "version":  "0.1.0-native-alpha",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echogalacticcore-0.1.0-native-alpha-neoforge.jar",
-                                       "sha256":  "d8e3ee9b7d37abd4b3a54b62dd23c2020f5a4d6bd3346b319a024dbbde47668f",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-neoforge.jar",
-                                       "size":  12074779,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echogalacticcore-0.1.0-native-alpha-standalone.jar",
-                                         "sha256":  "d8e3ee9b7d37abd4b3a54b62dd23c2020f5a4d6bd3346b319a024dbbde47668f",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-standalone.jar",
-                                         "size":  12074779,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echogalacticcore-0.1.0-native-alpha.echo-addon",
-                                     "sha256":  "17ba8915ac734656bf4d35a3476e65da84a35890a0e448087939979d40b137d1",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha.echo-addon",
-                                     "size":  10869544,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echogalacticcore-0.1.0-native-alpha-sources.jar",
-                                      "sha256":  "84becf7adc685bd8d00c4d188d99a130bbc447c2c93792d72da6ab4e098ad64f",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-sources.jar",
-                                      "size":  11867025
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echogalacticcore",
+  "kind": "module",
+  "version": "0.1.0-native-alpha",
+  "artifacts": {
+    "neoforge": {
+      "file": "echogalacticcore-0.1.0-native-alpha-neoforge.jar",
+      "sha256": "79d71a937fe61d3658afc5a9c5c72f203f4c9012b7e05dad975205173148a22a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-neoforge.jar",
+      "size": 12074779,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echogalacticcore-0.1.0-native-alpha-standalone.jar",
+      "sha256": "c492eb544b093d4b1b2d11089f65c6e8f5a508e40a0d1886bb4b0adc0af7612d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-standalone.jar",
+      "size": 12074779,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echogalacticcore-0.1.0-native-alpha.echo-addon",
+      "sha256": "6e60eb9cb85423e5238a4ae10f41d3f44714c8f45150e3a92429cbcb9aa21db6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha.echo-addon",
+      "size": 10869544,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echogalacticcore-0.1.0-native-alpha-sources.jar",
+      "sha256": "28b272045adb014f20e9afd5d434eee3ce44a027ac413e5917f1aa542154b798",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-sources.jar",
+      "size": 11867025,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

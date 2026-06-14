@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echostationfall",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echostationfall-1.0.0-neoforge.jar",
-                                       "sha256":  "43041a31832570465f635dada01b2273d7d5dc9896d13c53ff4a99758717639b",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0-neoforge.jar",
-                                       "size":  3926033,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echostationfall-1.0.0-standalone.jar",
-                                         "sha256":  "bfc3320545d790869842507f4ca125d217d1905e10d38af5f30ada7c564572c4",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0-standalone.jar",
-                                         "size":  3926018,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echostationfall-1.0.0.echo-addon",
-                                     "sha256":  "874f194114948659f578df99684c2189773b156471bf8ca4212eaaad7b784f3c",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0.echo-addon",
-                                     "size":  3876479,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echostationfall-1.0.0-sources.jar",
-                                      "sha256":  "6e322316490a607945327d7381ba240064af635898efd155f5039df6c9256fba",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0-sources.jar",
-                                      "size":  3824958
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echostationfall",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echostationfall-1.0.0-neoforge.jar",
+      "sha256": "707106edc3f7511ee462bca2efeeb939f87454faadfcdfa3ac9c4f47924092dc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0-neoforge.jar",
+      "size": 3926096,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echostationfall-1.0.0-standalone.jar",
+      "sha256": "096be3649161fd4e5ba27454d6d96a8d39b46b91a0100cdf870a87cedced6371",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0-standalone.jar",
+      "size": 3926064,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echostationfall-1.0.0.echo-addon",
+      "sha256": "177b55bc764f973313c8bc703e49f43d7c3b2ccf3835f63c6c7b0772ce688f68",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0.echo-addon",
+      "size": 3876559,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echostationfall-1.0.0-sources.jar",
+      "sha256": "9a1da4b9d90e9a402d029fd782922c06fe6fd249dc8ce1821847367d862cdf7a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echostationfall-1.0.0-sources.jar",
+      "size": 3824958,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

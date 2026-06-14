@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echopackdiff",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echopackdiff-0.1.0-neoforge.jar",
-                                       "sha256":  "27483884df840fc6fcaae58c6271de63ee1f4bd18a53c764a0fa278cff51dcad",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0-neoforge.jar",
-                                       "size":  6042,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echopackdiff-0.1.0-standalone.jar",
-                                         "sha256":  "27483884df840fc6fcaae58c6271de63ee1f4bd18a53c764a0fa278cff51dcad",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0-standalone.jar",
-                                         "size":  6042,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echopackdiff-0.1.0.echo-addon",
-                                     "sha256":  "acc758fc30256f032f7ea46a28a239e24f85b90dc6df367bb1084d8121a51e48",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0.echo-addon",
-                                     "size":  8494,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echopackdiff-0.1.0-sources.jar",
-                                      "sha256":  "e64c77ee9c4a0690b2754946457e403ea47cf4b2d5f5d4048f83b5f54db55b6b",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0-sources.jar",
-                                      "size":  5709
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomigrationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echometadatacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoreportcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echopackdiff",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echopackdiff-0.1.0-neoforge.jar",
+      "sha256": "ec7a6df6b1b9e60bfd34b7fbea003b3f5b28b60dbc07785f62f5f7f2748ed029",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0-neoforge.jar",
+      "size": 6133,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echopackdiff-0.1.0-standalone.jar",
+      "sha256": "ec7a6df6b1b9e60bfd34b7fbea003b3f5b28b60dbc07785f62f5f7f2748ed029",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0-standalone.jar",
+      "size": 6133,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echopackdiff-0.1.0.echo-addon",
+      "sha256": "179942a1a847c8c674a8751caf9d90c20d551e25a0d4da5b38dbb4f74d11154c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0.echo-addon",
+      "size": 8587,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echopackdiff-0.1.0-sources.jar",
+      "sha256": "5757a8e3b3fd303d68d50c727f48d98d305c9d4c16fed51dc5a5dbff62ee20d4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackdiff-0.1.0-sources.jar",
+      "size": 5709,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomigrationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echometadatacore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

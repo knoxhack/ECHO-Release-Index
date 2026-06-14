@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echonexusprotocol",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echonexusprotocol-1.0.0-neoforge.jar",
-                                       "sha256":  "aba8db15a11f5aeecf0540afa89c52f2839d69984c31f83f0f07f12227f3467c",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0-neoforge.jar",
-                                       "size":  13873708,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echonexusprotocol-1.0.0-standalone.jar",
-                                         "sha256":  "aba8db15a11f5aeecf0540afa89c52f2839d69984c31f83f0f07f12227f3467c",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0-standalone.jar",
-                                         "size":  13873708,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echonexusprotocol-1.0.0.echo-addon",
-                                     "sha256":  "31cbb9a350de760356a341976eea19f08a8dec2d3287f56545c61ddbfc7f68a1",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0.echo-addon",
-                                     "size":  13788313,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echonexusprotocol-1.0.0-sources.jar",
-                                      "sha256":  "62d4f6d1a984b8f35ae6f159c9c4763eea6d206283ca731ad4c5654b72152143",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0-sources.jar",
-                                      "size":  13734994
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echonexusprotocol",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echonexusprotocol-1.0.0-neoforge.jar",
+      "sha256": "b91aa143d2cc53c9e7d419e677a92bc41edb1706090ee244e9edc04900343d85",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0-neoforge.jar",
+      "size": 13874305,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echonexusprotocol-1.0.0-standalone.jar",
+      "sha256": "b91aa143d2cc53c9e7d419e677a92bc41edb1706090ee244e9edc04900343d85",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0-standalone.jar",
+      "size": 13874305,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echonexusprotocol-1.0.0.echo-addon",
+      "sha256": "5ae4a0f012af3cb1321e5f33ee7e773bafe5eaf6f826ab83cb3668ab1a5aca1a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0.echo-addon",
+      "size": 13788880,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echonexusprotocol-1.0.0-sources.jar",
+      "sha256": "c14fc84bd517a9c4d1b78b5263c7001e0a1566e4be570a7a2b0149302ab17141",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echonexusprotocol-1.0.0-sources.jar",
+      "size": 13735448,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoskillcore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoskillcore-0.1.0-neoforge.jar",
-                                       "sha256":  "5cf5781848e94db25f556c4a882ad159e535a230441738f3050fb2a0e3019bc5",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0-neoforge.jar",
-                                       "size":  5906,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoskillcore-0.1.0-standalone.jar",
-                                         "sha256":  "5cf5781848e94db25f556c4a882ad159e535a230441738f3050fb2a0e3019bc5",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0-standalone.jar",
-                                         "size":  5906,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoskillcore-0.1.0.echo-addon",
-                                     "sha256":  "b9c8a1d70f2ad757bb651ac8dc186fbd8fe6b410f3c33ba4931c23c113d2734c",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0.echo-addon",
-                                     "size":  8299,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoskillcore-0.1.0-sources.jar",
-                                      "sha256":  "f6f45cff7c225e6ab4d2699d56e660f76397e4d1826ce57615514cf9127e0944",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0-sources.jar",
-                                      "size":  5576
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoprogressioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplayercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomissioncore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoskillcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoskillcore-0.1.0-neoforge.jar",
+      "sha256": "bc08d80e6cb2aa838e6be2d9724bab794b8cc1e8d78600848ff47126dab71b8e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0-neoforge.jar",
+      "size": 5997,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoskillcore-0.1.0-standalone.jar",
+      "sha256": "bc08d80e6cb2aa838e6be2d9724bab794b8cc1e8d78600848ff47126dab71b8e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0-standalone.jar",
+      "size": 5997,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoskillcore-0.1.0.echo-addon",
+      "sha256": "269442bbaed14810b869ed626fa0b47143656655d5f191c61add670fc52fd065",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0.echo-addon",
+      "size": 8397,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoskillcore-0.1.0-sources.jar",
+      "sha256": "852a218b022f6433c2938ecaf71a0ef48b0b1972b3828953b7accc675576d049",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoskillcore-0.1.0-sources.jar",
+      "size": 5576,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoprogressioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplayercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomissioncore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

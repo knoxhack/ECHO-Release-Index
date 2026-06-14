@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echotextureforge",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echotextureforge-1.0.0-neoforge.jar",
-                                       "sha256":  "73d07a62a055a3b12d6ff5344a601bd7dfc742a34110e54680aecddb58a6d87b",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0-neoforge.jar",
-                                       "size":  177924,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echotextureforge-1.0.0-standalone.jar",
-                                         "sha256":  "5257659473cd6a6cd2f210f8b75d7d8708b4636a86a0486dbdbefddc8d67ae95",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0-standalone.jar",
-                                         "size":  177911,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echotextureforge-1.0.0.echo-addon",
-                                     "sha256":  "5de0ed859f9b934a3ed88ef83f0dd7bb65f3a92bae9d312dfb8ba3229f400f00",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0.echo-addon",
-                                     "size":  171897,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echotextureforge-1.0.0-sources.jar",
-                                      "sha256":  "616433e3722522ae6d50ad365d6bafd33d28e2e983e8457ff25b08b6a119e6ee",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0-sources.jar",
-                                      "size":  71476
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echotextureforge",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echotextureforge-1.0.0-neoforge.jar",
+      "sha256": "3cefa9d75ee9a7f8f953c9bccf887934f503b1b81be810b8ec2b32fda9ada324",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0-neoforge.jar",
+      "size": 177990,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echotextureforge-1.0.0-standalone.jar",
+      "sha256": "a53d704271152106d45589a9eceec5b43cd339d596660492858ee5e13aa09e51",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0-standalone.jar",
+      "size": 177965,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echotextureforge-1.0.0.echo-addon",
+      "sha256": "f27b8de00e6e3e1d733ae3c80b59acf88d9058a84591fa00e8093bdd8d282a94",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0.echo-addon",
+      "size": 171954,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echotextureforge-1.0.0-sources.jar",
+      "sha256": "d652c7b114e0efce4773d4026cc4a34fa784c1276a262842037396896f508264",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotextureforge-1.0.0-sources.jar",
+      "size": 71476,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

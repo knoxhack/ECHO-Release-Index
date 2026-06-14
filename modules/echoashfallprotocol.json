@@ -1,90 +1,107 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoashfallprotocol",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoashfallprotocol-1.0.0-neoforge.jar",
-                                       "sha256":  "d170a72c8feb12c3bbf8acbbed5ae8dee43dc590303911d1e7809f31460dfbd3",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0-neoforge.jar",
-                                       "size":  59364144,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoashfallprotocol-1.0.0-standalone.jar",
-                                         "sha256":  "de92afe088abd9aeed2a3b8dcb62145ce2c7962e0e02e795f044db01a786a460",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0-standalone.jar",
-                                         "size":  59364128,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoashfallprotocol-1.0.0.echo-addon",
-                                     "sha256":  "29e46620e88e32431f3b70409a0bccc23c1688f9763312f0612c1bdc2c353d04",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0.echo-addon",
-                                     "size":  58627252,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoashfallprotocol-1.0.0-sources.jar",
-                                      "sha256":  "3376bdece24b829cc70da8bf3631e4a9fc929756ec92aab528ae334c57dc3fd2",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0-sources.jar",
-                                      "size":  57637515
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoblockworks",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echofoundationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomaterialcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echotoolcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echostationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldstarter",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocommonloot",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocreatureroles",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoashfallprotocol",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoashfallprotocol-1.0.0-neoforge.jar",
+      "sha256": "d0421a23a713c2c66ef5250736532f411d4a89e07e54c39ee45c28a29eda0019",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0-neoforge.jar",
+      "size": 59365741,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoashfallprotocol-1.0.0-standalone.jar",
+      "sha256": "8c1ba27576ecd5b0ae9330b287f1b0c9f17734e2cdfd4c331035ffa866c73772",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0-standalone.jar",
+      "size": 59365707,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoashfallprotocol-1.0.0.echo-addon",
+      "sha256": "4136cfc52f2fe64c6076c94476ab263d10b4db30d0d196fa1d08c795572db5d4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0.echo-addon",
+      "size": 58628496,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoashfallprotocol-1.0.0-sources.jar",
+      "sha256": "9ed266fc40462d0a16998860644535bf20bfa8db2f28ec6e893c9ad35f71efbb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoashfallprotocol-1.0.0-sources.jar",
+      "size": 57638441,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoblockworks",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echofoundationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echomaterialcore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echotoolcore",
+      "kind": "module"
+    },
+    {
+      "id": "echostationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldstarter",
+      "kind": "module"
+    },
+    {
+      "id": "echocommonloot",
+      "kind": "module"
+    },
+    {
+      "id": "echocreatureroles",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

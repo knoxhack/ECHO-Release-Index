@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echowiki",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echowiki-1.0.0-neoforge.jar",
-                                       "sha256":  "c746da971c7075ebc963a11636343cfe857e8addad2001fa24890370cbd691d6",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0-neoforge.jar",
-                                       "size":  4712023,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echowiki-1.0.0-standalone.jar",
-                                         "sha256":  "d9ee0a890904fb9425c4fa77150a5878009c2ff474790268a0ffea97e56b23c7",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0-standalone.jar",
-                                         "size":  4712008,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echowiki-1.0.0.echo-addon",
-                                     "sha256":  "ca5818880fd0fc30f627846fa3fb0e907d43a45267f4eecc1cf22f44e0e723e8",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0.echo-addon",
-                                     "size":  4659361,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echowiki-1.0.0-sources.jar",
-                                      "sha256":  "8368a4d7b016c310e7ab173579d9c8e1d4edee7f9b47e843eeb4f4f96723c923",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0-sources.jar",
-                                      "size":  4637056
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echowiki",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echowiki-1.0.0-neoforge.jar",
+      "sha256": "0fe277b3e02e47b71bb19fb09909c6ad974f9a225e182d0594f5942eeb5afd86",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0-neoforge.jar",
+      "size": 4712338,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echowiki-1.0.0-standalone.jar",
+      "sha256": "02a5be15a65c16c0bc862d1e07f4428ce50b56cea02f1975ce834ce2623dbfe2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0-standalone.jar",
+      "size": 4712306,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echowiki-1.0.0.echo-addon",
+      "sha256": "f0904b7fd0ec99c7b2ebe2821b92c46107cec153c1b03c95f26ba9b562c80243",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0.echo-addon",
+      "size": 4659686,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echowiki-1.0.0-sources.jar",
+      "sha256": "83a7dffdd04c3260accc3e8a070b28e3e8900a7694944284c29a59a12ddb674a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echowiki-1.0.0-sources.jar",
+      "size": 4637207,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

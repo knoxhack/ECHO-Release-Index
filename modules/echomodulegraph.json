@@ -1,74 +1,91 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echomodulegraph",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echomodulegraph-1.0.0-neoforge.jar",
-                                       "sha256":  "f7dbba85bfa96deb0bcc084d633882d069f5e368325ccd29f7ba0eb67d3b0001",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-neoforge.jar",
-                                       "size":  85514,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echomodulegraph-1.0.0-standalone.jar",
-                                         "sha256":  "ab0fa747a52e4daf2b978d78549eacb058f6a89b68c18095097d640901be1193",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-standalone.jar",
-                                         "size":  85498,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echomodulegraph-1.0.0.echo-addon",
-                                     "sha256":  "563b030b3591ada1bc43901c92fee053675ae6390588e2fcc533666fa5c49ac8",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0.echo-addon",
-                                     "size":  83911,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echomodulegraph-1.0.0-sources.jar",
-                                      "sha256":  "993c8d0610e59416f9d13fcabf080793655a81aa2c2e6df3776a643cca2e36bb",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-sources.jar",
-                                      "size":  35284
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echopackcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echometadatacore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echomodulegraph",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echomodulegraph-1.0.0-neoforge.jar",
+      "sha256": "7c5d85e00f764a3beba8c34443e41f5193fa3162712042181ec1792591b4eb3a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-neoforge.jar",
+      "size": 85585,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echomodulegraph-1.0.0-standalone.jar",
+      "sha256": "1b82f441a0129e1796481830218726367a96953f0aed4267236a8656009c7e76",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-standalone.jar",
+      "size": 85553,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echomodulegraph-1.0.0.echo-addon",
+      "sha256": "64462ed2c97ba6633260d1f29720f19e7ed8360fcf67b4651b61719a74f9d31f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0.echo-addon",
+      "size": 83956,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echomodulegraph-1.0.0-sources.jar",
+      "sha256": "e408c4925e6618e1c7d933098570b2fa6684f99247e5bf73956f96220f3f62cc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-sources.jar",
+      "size": 35296,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echopackcore",
+      "kind": "module"
+    },
+    {
+      "id": "echometadatacore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

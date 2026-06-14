@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoriftworlds",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoriftworlds-1.0.0-neoforge.jar",
-                                       "sha256":  "6f4332a8a2871fd30bb19c8344e861fe63b62dcb53d6c949fb50f2c0031fc8b7",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0-neoforge.jar",
-                                       "size":  33389,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoriftworlds-1.0.0-standalone.jar",
-                                         "sha256":  "268292b15e306143b1e7898c9a7c866ebf55f582925f423a689e04c71d82a273",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0-standalone.jar",
-                                         "size":  33380,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoriftworlds-1.0.0.echo-addon",
-                                     "sha256":  "ddb9de4a6e14bc2cb3386991cb4cc64ee33d37a62096802c6b1e21ac7e6b4d87",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0.echo-addon",
-                                     "size":  32973,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoriftworlds-1.0.0-sources.jar",
-                                      "sha256":  "39b92b5496733ea45d7254d6bf679bd91ed7d397c9eb2274a890de9a1bcc6c53",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0-sources.jar",
-                                      "size":  20078
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoriftworlds",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoriftworlds-1.0.0-neoforge.jar",
+      "sha256": "90e376e86348266696ea65a0ac80785c746a7d8f05c02128eac4fb9d6f5c20ff",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0-neoforge.jar",
+      "size": 33460,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoriftworlds-1.0.0-standalone.jar",
+      "sha256": "cd04c635241e4e979d46deff377f7287081174a85f23e7ad05f38e26786fcfec",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0-standalone.jar",
+      "size": 33434,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoriftworlds-1.0.0.echo-addon",
+      "sha256": "2ff435d7706a01fe27ad69e4961b05d30c1b413b4ebed941046621b74235ef66",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0.echo-addon",
+      "size": 33030,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoriftworlds-1.0.0-sources.jar",
+      "sha256": "fa4f03f5aa15035f2642daddaeca8ee8d67800ed8d442ea3f44560c59b451df5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoriftworlds-1.0.0-sources.jar",
+      "size": 20078,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

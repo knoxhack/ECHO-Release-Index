@@ -1,86 +1,103 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoreportcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoreportcore-1.0.0-neoforge.jar",
-                                       "sha256":  "7f0cd62b1cf16e59e8163090a8b817e39805ed80a34efceb5528c004b0e2b90b",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0-neoforge.jar",
-                                       "size":  92027,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoreportcore-1.0.0-standalone.jar",
-                                         "sha256":  "04b94365ea330b6d004e355195ac4f73483a8a2ea3fdef57db6b6dcb37d951f7",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0-standalone.jar",
-                                         "size":  92010,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoreportcore-1.0.0.echo-addon",
-                                     "sha256":  "5184dee6561c5fd44e9580e7001a24a61474215e247a576afe3b175611dde50f",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0.echo-addon",
-                                     "size":  89592,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoreportcore-1.0.0-sources.jar",
-                                      "sha256":  "f7d9cd1e9259b3d1ba8d940bb3c2eb806e5e8a2bfa4a9a642c7c58f62f03c224",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0-sources.jar",
-                                      "size":  38162
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echopackcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomodulegraph",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echohealthcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoagentcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoassetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoreportcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoreportcore-1.0.0-neoforge.jar",
+      "sha256": "72587eee2048dea752e9fe9509e9e09cdd5b193ddfe42d79502d162a6a168462",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0-neoforge.jar",
+      "size": 92027,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoreportcore-1.0.0-standalone.jar",
+      "sha256": "e29b213d361b94feec730663e004d3224af33609391e134facb73edaa6262801",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0-standalone.jar",
+      "size": 92010,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoreportcore-1.0.0.echo-addon",
+      "sha256": "75ce40294ba4d5804814a2c5b857e84ae944870d18add51bc00c97d9ebbefaf0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0.echo-addon",
+      "size": 89592,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoreportcore-1.0.0-sources.jar",
+      "sha256": "4fd4e150390beef45a6e40cd94be503fd2e874dc97979424d21708e97eadcb59",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoreportcore-1.0.0-sources.jar",
+      "size": 38162,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echopackcore",
+      "kind": "module"
+    },
+    {
+      "id": "echomodulegraph",
+      "kind": "module"
+    },
+    {
+      "id": "echohealthcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoagentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoassetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

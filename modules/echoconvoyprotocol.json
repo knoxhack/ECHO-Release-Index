@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoconvoyprotocol",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoconvoyprotocol-1.0.0-neoforge.jar",
-                                       "sha256":  "c3fd56b9a442a9d4b53d1a87981aee8bf13eddc1034261068123cfe463b83a99",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-neoforge.jar",
-                                       "size":  903864,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoconvoyprotocol-1.0.0-standalone.jar",
-                                         "sha256":  "6f5cc0903003633ae7a617e6bda0cbc2fb8f4298ff3b57ce79ae1eb30f1eea10",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-standalone.jar",
-                                         "size":  903855,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoconvoyprotocol-1.0.0.echo-addon",
-                                     "sha256":  "2ceb4a502113e04e395c93d0d5187aa8c85925d3a632b1feb13bb5cf194aebd6",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0.echo-addon",
-                                     "size":  737675,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoconvoyprotocol-1.0.0-sources.jar",
-                                      "sha256":  "13560bd20f8e3047fb04cc46529ea8817c7d2b5f53b8173ce4e9bd27a0cf9b58",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-sources.jar",
-                                      "size":  687225
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoconvoyprotocol",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoconvoyprotocol-1.0.0-neoforge.jar",
+      "sha256": "b273195b8ccdf6f307f24d1af379b02341515bc01797adcefae7eb3b6ca30611",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-neoforge.jar",
+      "size": 903925,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoconvoyprotocol-1.0.0-standalone.jar",
+      "sha256": "26c83e80864c6c1cb7a389a6f011d70ef80bc3e02389ee37dbbf3b324d23d90d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-standalone.jar",
+      "size": 903903,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoconvoyprotocol-1.0.0.echo-addon",
+      "sha256": "01ea8abf695dc2a63274b033e9985baccbbe054fc56a6dd55b0f540680f09c1b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0.echo-addon",
+      "size": 737723,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoconvoyprotocol-1.0.0-sources.jar",
+      "sha256": "39838506eb20979a617dc1c28e8e99dee730ec5f45dbdf3c326cb9946b13e867",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-sources.jar",
+      "size": 687225,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

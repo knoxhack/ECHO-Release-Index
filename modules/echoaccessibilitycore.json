@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoaccessibilitycore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoaccessibilitycore-0.1.0-neoforge.jar",
-                                       "sha256":  "e8aeccff52b9cb38b191c48c5ef8994c83f3cb8c9234bba07dbe694954e28bc7",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-neoforge.jar",
-                                       "size":  6280,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoaccessibilitycore-0.1.0-standalone.jar",
-                                         "sha256":  "e8aeccff52b9cb38b191c48c5ef8994c83f3cb8c9234bba07dbe694954e28bc7",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-standalone.jar",
-                                         "size":  6280,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoaccessibilitycore-0.1.0.echo-addon",
-                                     "sha256":  "794235a4d9a706785fbb67eec14db1bfc8df393a5eb625db58c190671e127433",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0.echo-addon",
-                                     "size":  8764,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoaccessibilitycore-0.1.0-sources.jar",
-                                      "sha256":  "81a2c071e78e7844335021ddbae7a9af6d763d9cb75f8f4478b5dbdc967be9ef",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-sources.jar",
-                                      "size":  5940
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echothemecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoscreencore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoinputcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echosoundcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoaccessibilitycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoaccessibilitycore-0.1.0-neoforge.jar",
+      "sha256": "14b2a91fe4de1650029f7b0bac024b1baf821205a8f8aa889220fb1403ea28f8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-neoforge.jar",
+      "size": 6367,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoaccessibilitycore-0.1.0-standalone.jar",
+      "sha256": "14b2a91fe4de1650029f7b0bac024b1baf821205a8f8aa889220fb1403ea28f8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-standalone.jar",
+      "size": 6367,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoaccessibilitycore-0.1.0.echo-addon",
+      "sha256": "9d9525c8c6a364f5d9fb1095737ee3c737d4d769573090554b7b11d5a7f2e9f9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0.echo-addon",
+      "size": 8851,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoaccessibilitycore-0.1.0-sources.jar",
+      "sha256": "909cc4b8c5b734f74410b907e3a7b77e623ca32083617b4b19ee46c6bd92d596",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-sources.jar",
+      "size": 5940,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echothemecore",
+      "kind": "module"
+    },
+    {
+      "id": "echoscreencore",
+      "kind": "module"
+    },
+    {
+      "id": "echoinputcore",
+      "kind": "module"
+    },
+    {
+      "id": "echosoundcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

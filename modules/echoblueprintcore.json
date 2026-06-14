@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoblueprintcore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoblueprintcore-0.1.0-neoforge.jar",
-                                       "sha256":  "59b43696913be78d99f1f33fe8fec3e967913cdee2cfe4b591cd7f3205bd8381",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0-neoforge.jar",
-                                       "size":  5995,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoblueprintcore-0.1.0-standalone.jar",
-                                         "sha256":  "59b43696913be78d99f1f33fe8fec3e967913cdee2cfe4b591cd7f3205bd8381",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0-standalone.jar",
-                                         "size":  5995,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoblueprintcore-0.1.0.echo-addon",
-                                     "sha256":  "cb28c8a1fe0e94bb90934c5b8b9f6f8b3323bfbe8932ce17eae4a79bf9d48367",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0.echo-addon",
-                                     "size":  8417,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoblueprintcore-0.1.0-sources.jar",
-                                      "sha256":  "b061db35c022d099fb15bcaecd92bb6a4fb58ebecd617c19ca0b0e18c56be5fa",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0-sources.jar",
-                                      "size":  5695
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoschemacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocreatorcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocontentcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoblueprintcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoblueprintcore-0.1.0-neoforge.jar",
+      "sha256": "82739ce00c23b219745a8f81655bd25bbebf8da8c407bf68f1dd51a84e490545",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0-neoforge.jar",
+      "size": 6085,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoblueprintcore-0.1.0-standalone.jar",
+      "sha256": "82739ce00c23b219745a8f81655bd25bbebf8da8c407bf68f1dd51a84e490545",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0-standalone.jar",
+      "size": 6085,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoblueprintcore-0.1.0.echo-addon",
+      "sha256": "4c84cd0eb59b309eeb003183af0b71f4832067c03c012e73eef2b0abb9c70ba2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0.echo-addon",
+      "size": 8503,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoblueprintcore-0.1.0-sources.jar",
+      "sha256": "93d2c7311e1bd82d1dee0834a3e3b3e661a88c6c7c356fa16478d1bee29e7bf7",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblueprintcore-0.1.0-sources.jar",
+      "size": 5695,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocreatorcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoblackboxprotocol",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoblackboxprotocol-1.0.0-neoforge.jar",
-                                       "sha256":  "7db420fa68d197aecc4467993698e0bd0d66238ec444bf970ef6d2daf9831f50",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0-neoforge.jar",
-                                       "size":  10846257,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoblackboxprotocol-1.0.0-standalone.jar",
-                                         "sha256":  "b3dec441f45fc3b782f230a76332328891898269f9a96c961a2a850412e828d5",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0-standalone.jar",
-                                         "size":  10846243,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoblackboxprotocol-1.0.0.echo-addon",
-                                     "sha256":  "5d581758b1f50b2017fa21e938e0b08d808cf5e6b687d342bfcc18efdfba7709",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0.echo-addon",
-                                     "size":  10779580,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoblackboxprotocol-1.0.0-sources.jar",
-                                      "sha256":  "7a98ce515dc9aa8dd4d08aeef32599ceb550b9158bc48ece527b72d9d0b4086f",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0-sources.jar",
-                                      "size":  10740170
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoblackboxprotocol",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoblackboxprotocol-1.0.0-neoforge.jar",
+      "sha256": "3630755bcbd05620893de2204f4045ff4fa8f3a9cee40d6c399e86378f980981",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0-neoforge.jar",
+      "size": 10846629,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoblackboxprotocol-1.0.0-standalone.jar",
+      "sha256": "e2bb2d50946e601c454d5b549a3bfd169b7da62bdc546b362046738c70eafb4c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0-standalone.jar",
+      "size": 10846597,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoblackboxprotocol-1.0.0.echo-addon",
+      "sha256": "138ca5c222ea412cd79fc347b4d62638d6d12f2596e2586d6f7ee2ac7483fa36",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0.echo-addon",
+      "size": 10779948,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoblackboxprotocol-1.0.0-sources.jar",
+      "sha256": "0ff72789234656cf0f116f953d8b5b7e687a8352847b3dd16d4581d9d7003255",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoblackboxprotocol-1.0.0-sources.jar",
+      "size": 10740380,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

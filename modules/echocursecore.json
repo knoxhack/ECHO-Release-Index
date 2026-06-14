@@ -1,58 +1,75 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echocursecore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echocursecore-1.0.0-neoforge.jar",
-                                       "sha256":  "c081eda30ff37cb9cb36ab61e69e6853fa53b2779cf32d121367081544438809",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0-neoforge.jar",
-                                       "size":  64080,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echocursecore-1.0.0-standalone.jar",
-                                         "sha256":  "ebe956ae0e4960cc9e98c3dda9e5066cd7a01c068b5ea1e87855b61c97303204",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0-standalone.jar",
-                                         "size":  64066,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echocursecore-1.0.0.echo-addon",
-                                     "sha256":  "8d9cf9b2bb09297b4dc4ec6a75747f4c849b22553ae0451e85d0292612064fd5",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0.echo-addon",
-                                     "size":  62704,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echocursecore-1.0.0-sources.jar",
-                                      "sha256":  "7ebb706857f1d10658409fbaeaf7b6cf37094cf82ceeac08368dd73a9fd7d556",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0-sources.jar",
-                                      "size":  33453
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocursecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocursecore-1.0.0-neoforge.jar",
+      "sha256": "2d9efe96dad25a750de50475e0f63f77dab8dc83754fe8f7a7e0483dc725cd54",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0-neoforge.jar",
+      "size": 64147,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echocursecore-1.0.0-standalone.jar",
+      "sha256": "177df5a2887bccf52ac55bbe8057fd7a95959a56b345a8d47215ac050359db25",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0-standalone.jar",
+      "size": 64116,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echocursecore-1.0.0.echo-addon",
+      "sha256": "780a88253503e94a54f38d7c8712410cd847ad92ed55fe8ef4e61ca8f7e4b150",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0.echo-addon",
+      "size": 62755,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echocursecore-1.0.0-sources.jar",
+      "sha256": "cf255ca9d44c2986f30000b7e5c66cb38e1fd973f426828937e8c985f5a1cde1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocursecore-1.0.0-sources.jar",
+      "size": 33453,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

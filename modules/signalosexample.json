@@ -3,7 +3,7 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
   "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
   "trust": "source-linked",
   "validation": "approved",
   "id": "signalosexample",
@@ -12,30 +12,49 @@
   "artifacts": {
     "neoforge": {
       "file": "signalosexample-1.0.0-neoforge.jar",
-      "sha256": "b35e5042dc275ed76897eab932e1c063c15fa041122fb4407a08e3872add858b",
+      "sha256": "de2372419f92b0c606131650288be330d653e4fb953e87691e06d40cff4c26e6",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0-neoforge.jar",
-      "size": 13526,
-      "buildMode": "compiled-runtime"
+      "size": 13620,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
     },
     "standalone": {
       "file": "signalosexample-1.0.0-standalone.jar",
-      "sha256": "05f3bfa174f0f1e92b8100144eb897f2081aaa7c190d2bc113584d98d75e29cd",
+      "sha256": "45e4054dddab562028325542b100897cb8c8cc52a05a92959597e0ad8f87e628",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0-standalone.jar",
-      "size": 13516,
-      "buildMode": "compiled-runtime"
+      "size": 13595,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
     },
     "native": {
       "file": "signalosexample-1.0.0.echo-addon",
-      "sha256": "eff285a44bec3d6dc219fe5ab0bde3a9d241a0fa8cbbce0bace54d6b48017da1",
+      "sha256": "8e65fe9369054433886f0800fd914cdcd248d7ad0f2989974e02d38b9f3ccc11",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0.echo-addon",
-      "size": 15014,
-      "buildMode": "compiled-runtime"
+      "size": 15106,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
     },
     "sources": {
       "file": "signalosexample-1.0.0-sources.jar",
-      "sha256": "ceaf705e68e53c791cb35a0d7c402ec3ae14e3122b9d27c13b3ce6477853e3df",
+      "sha256": "c4e18c4434bf338b040b8f29a1385dacba2ab0c99fbfdbf96793ceecc2878f60",
       "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0-sources.jar",
-      "size": 9508
+      "size": 9514,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
     }
   },
   "dependencies": [

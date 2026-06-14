@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echobridgecore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echobridgecore-1.0.0-neoforge.jar",
-                                       "sha256":  "89a157c9f02ce7899dc4dcd090b5ce69a993007daa4e1d336b57c1bd16fcefb6",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0-neoforge.jar",
-                                       "size":  60901,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echobridgecore-1.0.0-standalone.jar",
-                                         "sha256":  "8a20021cbd5379e755a434222b4348c330e04d671f530a67b1e451328430907e",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0-standalone.jar",
-                                         "size":  60887,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echobridgecore-1.0.0.echo-addon",
-                                     "sha256":  "8e8f462988c83767f2e850db4e6424c52ed58f4564743b1e8bde6b90156f5c43",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0.echo-addon",
-                                     "size":  60132,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echobridgecore-1.0.0-sources.jar",
-                                      "sha256":  "4568602c9c6625ca33791a727179f124d53df58ffbf993ff1caf920247f17599",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0-sources.jar",
-                                      "size":  26353
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echohealthcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoagentcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echobridgecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echobridgecore-1.0.0-neoforge.jar",
+      "sha256": "3fe4079af79c873172a3cbebefa44536687dd3510d917f196f7757330164fdb5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0-neoforge.jar",
+      "size": 60965,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echobridgecore-1.0.0-standalone.jar",
+      "sha256": "32ede8d147ef9e805ba26ccf13aa43dc8d8d4a1f3ea59c1c35911b253588bed5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0-standalone.jar",
+      "size": 60934,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echobridgecore-1.0.0.echo-addon",
+      "sha256": "2ebe979e770a83fc28e04def0ab1bb186d147f05425c871d75c7316955fddf96",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0.echo-addon",
+      "size": 60183,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echobridgecore-1.0.0-sources.jar",
+      "sha256": "9f8e58d6fa39813ee0b8534199a50a94250bb792f0f722430cbb7bc0b7a2ac42",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echobridgecore-1.0.0-sources.jar",
+      "size": 26363,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echohealthcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoagentcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

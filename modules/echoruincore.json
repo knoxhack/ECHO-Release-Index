@@ -1,66 +1,83 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoruincore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoruincore-0.1.0-neoforge.jar",
-                                       "sha256":  "e191212a0d3359524477af6bd48663243f3ebee1d05dbf1b28db15f2f9cdb5c5",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0-neoforge.jar",
-                                       "size":  5942,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoruincore-0.1.0-standalone.jar",
-                                         "sha256":  "e191212a0d3359524477af6bd48663243f3ebee1d05dbf1b28db15f2f9cdb5c5",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0-standalone.jar",
-                                         "size":  5942,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoruincore-0.1.0.echo-addon",
-                                     "sha256":  "cf4585943b3eb7262234b3209b0d5b6289de7342d8f98159a927bad4ae686907",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0.echo-addon",
-                                     "size":  8340,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoruincore-0.1.0-sources.jar",
-                                      "sha256":  "37c4babfec06b76b3953445f96498efefb5734c2793c80aa7535b61b2564120a",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0-sources.jar",
-                                      "size":  5587
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echostructurecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echolootcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoruincore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoruincore-0.1.0-neoforge.jar",
+      "sha256": "eae0db9ee48541d773438b7b06492c365202bb48fbe4de269c9c383f8fc2a3de",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0-neoforge.jar",
+      "size": 6032,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoruincore-0.1.0-standalone.jar",
+      "sha256": "eae0db9ee48541d773438b7b06492c365202bb48fbe4de269c9c383f8fc2a3de",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0-standalone.jar",
+      "size": 6032,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoruincore-0.1.0.echo-addon",
+      "sha256": "941f1e8a6acbad0cd7614cac5ad8e4433042dff68529ca8e99e56ff697d90f7e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0.echo-addon",
+      "size": 8431,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoruincore-0.1.0-sources.jar",
+      "sha256": "b93ce13eb4a7447869133faba53ae136b6c9bc0df1ab11eb328a464f85824dc0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruincore-0.1.0-sources.jar",
+      "size": 5587,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echostructurecore",
+      "kind": "module"
+    },
+    {
+      "id": "echolootcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

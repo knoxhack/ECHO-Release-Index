@@ -1,70 +1,87 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoterritorycore",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoterritorycore-0.1.0-neoforge.jar",
-                                       "sha256":  "858b3641a68ef73070cc6aa003effe806e034319571c45741d0b8f6925a4e3aa",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0-neoforge.jar",
-                                       "size":  6159,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoterritorycore-0.1.0-standalone.jar",
-                                         "sha256":  "858b3641a68ef73070cc6aa003effe806e034319571c45741d0b8f6925a4e3aa",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0-standalone.jar",
-                                         "size":  6159,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoterritorycore-0.1.0.echo-addon",
-                                     "sha256":  "21b83920011acd926175026355f806b8abe03cb32dfc0768f0678bba06baa719",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0.echo-addon",
-                                     "size":  8627,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoterritorycore-0.1.0-sources.jar",
-                                      "sha256":  "b8cc747c0ca5bcd92081d5050ebeab549976fcf5e422718a11729baf26a14f33",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0-sources.jar",
-                                      "size":  5832
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echofactioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoholomap",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echopolicycore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoterritorycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoterritorycore-0.1.0-neoforge.jar",
+      "sha256": "cb709277aa90852da1f54196473bfd920999f0c9ca52ed21836c2d73c58866bd",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0-neoforge.jar",
+      "size": 6252,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoterritorycore-0.1.0-standalone.jar",
+      "sha256": "cb709277aa90852da1f54196473bfd920999f0c9ca52ed21836c2d73c58866bd",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0-standalone.jar",
+      "size": 6252,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoterritorycore-0.1.0.echo-addon",
+      "sha256": "c5778c00ddd807c06fd17e389b6522a9b7d8c3f0689ba52d4e9a28f86e832ee9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0.echo-addon",
+      "size": 8713,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoterritorycore-0.1.0-sources.jar",
+      "sha256": "18935a6a50e0895a0380686e1b8015fbab6b1546feb922345cb7022ac5f4f0a1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterritorycore-0.1.0-sources.jar",
+      "size": 5832,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echofactioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoholomap",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module"
+    },
+    {
+      "id": "echopolicycore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,62 +1,79 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echogrimoire",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echogrimoire-1.0.0-neoforge.jar",
-                                       "sha256":  "4854d92967a1afb266bf97e049c5a57c4eb0e184e5fa3a12dfa2eb9ec30091f4",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0-neoforge.jar",
-                                       "size":  29522,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echogrimoire-1.0.0-standalone.jar",
-                                         "sha256":  "cb34c89337ce45a94bfde74075a8829c896ebdb655c82bb811694ca01ce77fde",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0-standalone.jar",
-                                         "size":  29510,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echogrimoire-1.0.0.echo-addon",
-                                     "sha256":  "0cb1c24d552d1e1a9710625980b45683a23326511e133d998029bcbc2b82374d",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0.echo-addon",
-                                     "size":  31064,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echogrimoire-1.0.0-sources.jar",
-                                      "sha256":  "7aabb85ed2869d57b8afa735674bec3d2bcf8d3b070cc1bddf1173b4aada887f",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0-sources.jar",
-                                      "size":  16842
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoarcanacore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoterminal",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echogrimoire",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echogrimoire-1.0.0-neoforge.jar",
+      "sha256": "5bf27aa8210b0295f90495c2de0ab47bf697e0a91e951fbbf0b9068d374444d1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0-neoforge.jar",
+      "size": 29590,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echogrimoire-1.0.0-standalone.jar",
+      "sha256": "c23ce91b20b05a0cde4ae5cd6e7367e5c13b96e2d89cae949354f158a893f6b1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0-standalone.jar",
+      "size": 29563,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echogrimoire-1.0.0.echo-addon",
+      "sha256": "d824fa4a6dbcec26faef1a87cb1d48cb459c6a3571002bfb71daedd432bc8656",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0.echo-addon",
+      "size": 31115,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echogrimoire-1.0.0-sources.jar",
+      "sha256": "07618424c8c1ba0f5f86c604eea524880b9a0deae51e56bca29fe48a469128e7",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogrimoire-1.0.0-sources.jar",
+      "size": 16842,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoterminal",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

@@ -1,118 +1,135 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echoopenlandsprotocol",
-    "kind":  "module",
-    "version":  "0.1.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echoopenlandsprotocol-0.1.0-neoforge.jar",
-                                       "sha256":  "55c642e8fab7d221407e1094a749ec5ae3ea4d4e09f24eec4565e6137326ee00",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0-neoforge.jar",
-                                       "size":  282272,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echoopenlandsprotocol-0.1.0-standalone.jar",
-                                         "sha256":  "a2ae1868d66843e73c9c900876a8b856de6fd2856b17e82c7bde041762569f63",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0-standalone.jar",
-                                         "size":  282258,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echoopenlandsprotocol-0.1.0.echo-addon",
-                                     "sha256":  "c6bf064dfda0db52a4ab7116a0daee03fbee8eacb23d78df47d539b07975cd29",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0.echo-addon",
-                                     "size":  216943,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echoopenlandsprotocol-0.1.0-sources.jar",
-                                      "sha256":  "d3eecdb3e0f4a900a4f210ec9e5090cb7ae8449bbf21595080628abc5643275f",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0-sources.jar",
-                                      "size":  255724
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoassetcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echobiomecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocontentcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocreaturecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echofoundationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echomaterialcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echonetcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echotoolcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echostationcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldstarter",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocommonloot",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocreatureroles",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoprogressioncore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echorecipecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echostructurecore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoworldcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoopenlandsprotocol",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoopenlandsprotocol-0.1.0-neoforge.jar",
+      "sha256": "1b0766dece736f3fa97368a47f7ff673c724b1bbadc0d6c8a036d3c9cdce7afa",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0-neoforge.jar",
+      "size": 282272,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echoopenlandsprotocol-0.1.0-standalone.jar",
+      "sha256": "50d54b9cb01a035a2f8468149a0f80c1cb1b4795961835212372645787d69767",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0-standalone.jar",
+      "size": 282258,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echoopenlandsprotocol-0.1.0.echo-addon",
+      "sha256": "a3c3103f02f6eb3ee02b6ff2e0828ae0337572fc8847355de7ba0ec1bde650a4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0.echo-addon",
+      "size": 216943,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echoopenlandsprotocol-0.1.0-sources.jar",
+      "sha256": "3e577ec68e8f4c630b46fbb70b0b62ad0ed46b61e05ac9f7c772854f6fb4728b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoopenlandsprotocol-0.1.0-sources.jar",
+      "size": 255724,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoassetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echobiomecore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echocreaturecore",
+      "kind": "module"
+    },
+    {
+      "id": "echofoundationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echomaterialcore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echotoolcore",
+      "kind": "module"
+    },
+    {
+      "id": "echostationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldstarter",
+      "kind": "module"
+    },
+    {
+      "id": "echocommonloot",
+      "kind": "module"
+    },
+    {
+      "id": "echocreatureroles",
+      "kind": "module"
+    },
+    {
+      "id": "echoprogressioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echorecipecore",
+      "kind": "module"
+    },
+    {
+      "id": "echostructurecore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }

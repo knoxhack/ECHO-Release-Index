@@ -1,62 +1,79 @@
 {
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Modules",
-    "releaseTag":  "modules-all-official-modpacks-runtime-fix-20260614",
-    "commitSha":  "0beb164098526cf791cc6c649704e6a434769a17",
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "id":  "echopackcore",
-    "kind":  "module",
-    "version":  "1.0.0",
-    "artifacts":  {
-                      "neoforge":  {
-                                       "file":  "echopackcore-1.0.0-neoforge.jar",
-                                       "sha256":  "d7451521488b120e025aa28a4805e32f6d9b2eaa25bf61beee864e02cbe9bab1",
-                                       "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0-neoforge.jar",
-                                       "size":  125745,
-                                       "buildMode":  "compiled-runtime"
-                                   },
-                      "standalone":  {
-                                         "file":  "echopackcore-1.0.0-standalone.jar",
-                                         "sha256":  "ed00cdb56792a0789f24fd530987d0308a8f8d82f06c012ebb158bc0ded38e7f",
-                                         "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0-standalone.jar",
-                                         "size":  125730,
-                                         "buildMode":  "compiled-runtime"
-                                     },
-                      "native":  {
-                                     "file":  "echopackcore-1.0.0.echo-addon",
-                                     "sha256":  "f96781c27ce10615c59bbccf1e7b3eda3bbd879199f57a841116212f848b606c",
-                                     "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0.echo-addon",
-                                     "size":  119521,
-                                     "buildMode":  "compiled-runtime"
-                                 },
-                      "sources":  {
-                                      "file":  "echopackcore-1.0.0-sources.jar",
-                                      "sha256":  "830523d0b50834dcb0f60e51559b70094f1cf0ba72e95a71187e6df52ccfc7d0",
-                                      "url":  "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0-sources.jar",
-                                      "size":  50787
-                                  }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echoadaptercore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echocore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echoplatformcore",
-                             "kind":  "module"
-                         },
-                         {
-                             "id":  "echovalidationcore",
-                             "kind":  "module"
-                         }
-                     ],
-    "compatibility":  [
-
-                      ]
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echopackcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echopackcore-1.0.0-neoforge.jar",
+      "sha256": "ae096d62f8506c59dad5c6046986e9a2367c48cdb6ff2f5e1e3223abdb11522e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0-neoforge.jar",
+      "size": 125816,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "neoforge",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml"
+      ]
+    },
+    "standalone": {
+      "file": "echopackcore-1.0.0-standalone.jar",
+      "sha256": "17e0b0edf121c80d3b3881dac8a37fc5b1696be8d0ee114a7068a9e98f445824",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0-standalone.jar",
+      "size": 125785,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "standalone",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "native": {
+      "file": "echopackcore-1.0.0.echo-addon",
+      "sha256": "d50fc60466004f6b02cf96ad00cfa8c2088187d59486e38247c2724778de0037",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0.echo-addon",
+      "size": 119564,
+      "buildMode": "compiled-runtime",
+      "runtimeTarget": "echo-native",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256"
+      ]
+    },
+    "sources": {
+      "file": "echopackcore-1.0.0-sources.jar",
+      "sha256": "aecaf4d492cb104d298909f044b1d18db3d74ec0f07387024ce5793cb0a2b580",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echopackcore-1.0.0-sources.jar",
+      "size": 50792,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
 }
