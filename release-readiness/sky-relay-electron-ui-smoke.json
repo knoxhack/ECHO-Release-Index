@@ -1,21 +1,21 @@
 {
   "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-14T02:45:39.174Z",
+  "generatedAt": "2026-06-14T13:16:35.170Z",
   "scope": "packaged-electron-ui-and-lifecycle-smoke",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
   "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data",
   "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content",
-  "debugPort": 57380,
-  "catalogPort": 57381,
+  "debugPort": 64445,
+  "catalogPort": 64446,
   "platform": {
     "os": "win32",
     "release": "10.0.19045",
     "arch": "x64"
   },
   "catalog": {
-    "channelUrl": "http://127.0.0.1:57381/channel.json",
+    "channelUrl": "http://127.0.0.1:64446/channel.json",
     "servedPack": "sky-relay-native-edition",
     "releaseVersion": "0.1.0",
     "manifestName": "sky-relay-native-edition-alpha-0.1.0.pack.json",
@@ -45,7 +45,7 @@
     ],
     "releaseIndexAccepted": 1,
     "releaseIndexWarnings": [],
-    "launcherUpdateStatus": "idle",
+    "launcherUpdateStatus": "checking",
     "userData": null
   },
   "ui": {
@@ -195,7 +195,7 @@
         "clicked": true,
         "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T02-45-35-513Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T13-16-30-208Z.json",
       "installed": 12,
       "updated": 0,
       "verified": 0,
@@ -215,7 +215,7 @@
         "clicked": true,
         "text": "Update Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T02-45-37-922Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T13-16-33-155Z.json",
       "installed": 0,
       "updated": 1,
       "verified": 11,
@@ -233,13 +233,13 @@
         "clicked": true,
         "text": "Repair Now"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-14T02-45-38-659Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-14T13-16-34-668Z.json",
       "repaired": [
         "addons/echoskyrelayprotocol-0.1.0.echo-addon"
       ],
       "skipped": [],
       "warnings": [],
-      "corruptSha256": "fe093af7ef42960dbf277c4b972263da7339eba7ae50a23d4bc33f23a208c469",
+      "corruptSha256": "a7c1328811d1c95140e90d4402c4bc9684a5552239a26c3001c626e8296a4c64",
       "verifiedModule": {
         "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
@@ -265,14 +265,14 @@
     "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "process": {
-    "pid": 18676,
+    "pid": 4156,
     "stdout": [
       "Checking for update",
-      "Generated new staging user ID: e4c907d0-4d4d-5c2c-ab57-6476e02a410c",
-      "Update for version 1.1.3 is not available (latest version: 1.1.3, downgrade is disallowed)."
+      "Generated new staging user ID: c6f68c63-3e33-5fd9-874e-80bd882da915",
+      "Update for version 1.1.5 is not available (latest version: 1.1.5, downgrade is disallowed)."
     ],
     "stderr": [
-      "DevTools listening on ws://127.0.0.1:57380/devtools/browser/a6019cee-7f32-4eb3-83a8-5620e7fdd989"
+      "DevTools listening on ws://127.0.0.1:64445/devtools/browser/01aab9ef-5508-4bef-bfd0-7f6462734370"
     ]
   }
 }
