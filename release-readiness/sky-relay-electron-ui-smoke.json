@@ -1,21 +1,21 @@
 {
   "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-13T20:36:21.068Z",
+  "generatedAt": "2026-06-14T02:45:39.174Z",
   "scope": "packaged-electron-ui-and-lifecycle-smoke",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
   "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data",
   "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content",
-  "debugPort": 63532,
-  "catalogPort": 63533,
+  "debugPort": 57380,
+  "catalogPort": 57381,
   "platform": {
     "os": "win32",
     "release": "10.0.19045",
     "arch": "x64"
   },
   "catalog": {
-    "channelUrl": "http://127.0.0.1:63533/channel.json",
+    "channelUrl": "http://127.0.0.1:57381/channel.json",
     "servedPack": "sky-relay-native-edition",
     "releaseVersion": "0.1.0",
     "manifestName": "sky-relay-native-edition-alpha-0.1.0.pack.json",
@@ -45,7 +45,7 @@
     ],
     "releaseIndexAccepted": 1,
     "releaseIndexWarnings": [],
-    "launcherUpdateStatus": "checking",
+    "launcherUpdateStatus": "idle",
     "userData": null
   },
   "ui": {
@@ -61,13 +61,13 @@
         "name": "Sky Relay Native Edition",
         "found": true,
         "heading": {
-          "clientWidth": 496,
-          "scrollWidth": 496,
+          "clientWidth": 338,
+          "scrollWidth": 338,
           "overflow": false,
           "rect": {
-            "left": 871,
-            "top": 1159,
-            "width": 496,
+            "left": 314,
+            "top": 1449,
+            "width": 338,
             "height": 30
           }
         },
@@ -79,7 +79,6 @@
         "hasHomeAction": true,
         "hasScopedAction": true,
         "actionPreview": [
-          "Reading exact pack state from the desktop backend.",
           "MANIFEST",
           "checking",
           "CATALOG",
@@ -89,6 +88,7 @@
           "ACTION",
           "checking",
           "Checking...",
+          "Details",
           "Diagnostics",
           "Home"
         ]
@@ -97,13 +97,13 @@
         "name": "Sky Relay NeoForge Edition",
         "found": true,
         "heading": {
-          "clientWidth": 496,
-          "scrollWidth": 496,
+          "clientWidth": 338,
+          "scrollWidth": 338,
           "overflow": false,
           "rect": {
-            "left": 318,
-            "top": 1758,
-            "width": 496,
+            "left": 683,
+            "top": 1449,
+            "width": 338,
             "height": 30
           }
         },
@@ -115,7 +115,6 @@
         "hasHomeAction": true,
         "hasScopedAction": true,
         "actionPreview": [
-          "Reading exact pack state from the desktop backend.",
           "MANIFEST",
           "checking",
           "CATALOG",
@@ -125,6 +124,7 @@
           "ACTION",
           "checking",
           "Checking...",
+          "Details",
           "Diagnostics",
           "Home"
         ]
@@ -133,14 +133,14 @@
         "name": "Sky Relay Standalone Edition",
         "found": true,
         "heading": {
-          "clientWidth": 496,
-          "scrollWidth": 496,
+          "clientWidth": 338,
+          "scrollWidth": 338,
           "overflow": false,
           "rect": {
-            "left": 871,
-            "top": 1738,
-            "width": 496,
-            "height": 30
+            "left": 1052,
+            "top": 1419,
+            "width": 338,
+            "height": 60
           }
         },
         "hasManifestState": true,
@@ -151,7 +151,6 @@
         "hasHomeAction": true,
         "hasScopedAction": true,
         "actionPreview": [
-          "Reading exact pack state from the desktop backend.",
           "MANIFEST",
           "checking",
           "CATALOG",
@@ -161,6 +160,7 @@
           "ACTION",
           "checking",
           "Checking...",
+          "Details",
           "Diagnostics",
           "Home"
         ]
@@ -195,7 +195,7 @@
         "clicked": true,
         "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T20-36-16-760Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T02-45-35-513Z.json",
       "installed": 12,
       "updated": 0,
       "verified": 0,
@@ -213,13 +213,13 @@
       "operation": "update",
       "click": {
         "clicked": true,
-        "text": "Install Sky Relay Native Edition"
+        "text": "Update Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-13T20-36-19-328Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T02-45-37-922Z.json",
       "installed": 0,
-      "updated": 0,
-      "verified": 12,
-      "downloaded": 0,
+      "updated": 1,
+      "verified": 11,
+      "downloaded": 1,
       "verifiedModule": {
         "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
@@ -233,13 +233,13 @@
         "clicked": true,
         "text": "Repair Now"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-13T20-36-20-039Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-14T02-45-38-659Z.json",
       "repaired": [
         "addons/echoskyrelayprotocol-0.1.0.echo-addon"
       ],
       "skipped": [],
       "warnings": [],
-      "corruptSha256": "ccee01e7242b45983fd1b2c64fe252a4b156481f95b87eec2e4b1dee2ec9a0f5",
+      "corruptSha256": "fe093af7ef42960dbf277c4b972263da7339eba7ae50a23d4bc33f23a208c469",
       "verifiedModule": {
         "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
@@ -265,14 +265,14 @@
     "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "process": {
-    "pid": 3388,
+    "pid": 18676,
     "stdout": [
       "Checking for update",
-      "Generated new staging user ID: 9be7d7e1-7ec5-582d-9876-225049e576f2",
-      "Update for version 1.1.2 is not available (latest version: 1.1.2, downgrade is disallowed)."
+      "Generated new staging user ID: e4c907d0-4d4d-5c2c-ab57-6476e02a410c",
+      "Update for version 1.1.3 is not available (latest version: 1.1.3, downgrade is disallowed)."
     ],
     "stderr": [
-      "DevTools listening on ws://127.0.0.1:63532/devtools/browser/2f957880-97a0-4cf4-bdd2-8252479d4d16"
+      "DevTools listening on ws://127.0.0.1:57380/devtools/browser/a6019cee-7f32-4eb3-83a8-5620e7fdd989"
     ]
   }
 }
