@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T19:34:40-04:00",
+  "generatedAt": "2026-06-13T23:58:48-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,10 +16,13 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "de5af28e10b5",
-        "commitDate": "2026-06-13T19:34:40-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "9408aec6549e",
+        "commitDate": "2026-06-13T23:58:48-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M channels/alpha/launcher-channel.json",
+          " M products/launcher.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -77,8 +80,8 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 17831,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-13T15:34:28.345Z"
+          "bytes": 29530,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-14T08:30:37.461Z"
         },
         {
           "path": "trust/tiers.json",
@@ -99,16 +102,23 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "93ae0dcf2ea0",
-        "commitDate": "2026-06-13T19:15:51-04:00",
+        "commit": "4e44c5341433",
+        "commitDate": "2026-06-13T23:28:49-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoBackendLifecycleBridge.java",
           " M addons/echoashfallprotocol/build.gradle",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallProtocol.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/AshCampfireBlock.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/entity/CrystallineSynthesizerBlockEntity.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/entity/IsotopeRefinerBlockEntity.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/entity/RadiationCleanserBlockEntity.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/entity/ModEntities.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/AshfallAdapterCoreEarlyEventRuntime.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/MinecraftEchoRuntimeHost.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/NativeLoaderEchoRuntimeHost.java",
+          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/faction/AshfallFactionContractProgression.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/faction/AshfallFactionInteractionHandler.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/integration/AshfallMissionCoreIntegration.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModAttachments.java",
@@ -122,6 +132,7 @@
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModMenuTypes.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModPoiTypes.java",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModSounds.java",
+          " M addons/echoashfallprotocol/src/test/java/com/knoxhack/echoashfallprotocol/test/ModGameTests.java",
           " M addons/echoblockworks/build.gradle",
           " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/EchoBlockworks.java",
           " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/integration/BlockworksMissionCoreIntegration.java",
@@ -146,6 +157,7 @@
           " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminal.java",
           " M addons/echoworldcore/src/main/java/com/knoxhack/echoworldcore/EchoWorldCore.java",
           " M build.gradle",
+          " M reports/echo-native/core-module-integration-audit.json",
           " M reports/runtime-parity/echo-module-runtime-parity-audit.json",
           " M reports/runtime-parity/echo-module-runtime-parity-audit.md",
           " M reports/runtime-parity/echo-module-runtime-parity-fix-backlog.md",
@@ -157,15 +169,15 @@
           " M reports/runtime-parity/manual-acceptance-matrix.json",
           " M reports/runtime-parity/module-feature-contracts.json",
           " M reports/runtime-parity/module-play-completion.json",
+          " M reports/runtime-parity/neoforge-module-gametest-results.json",
+          " M reports/runtime-parity/neoforge-runtime-evidence.json",
           " M reports/runtime-parity/pack-acceptance-report-index.json",
           " M reports/runtime-parity/strict-play-evidence-refresh.json",
-          " M scripts/generate-module-release.mjs",
-          " M scripts/generate-module-release.test.mjs",
           " M scripts/generate-pack-acceptance-reports.mjs",
           " M scripts/generate-runtime-parity-audit.test.mjs",
           " M scripts/generate-runtime-play-audit.mjs",
+          " M scripts/generate-strict-play-evidence.mjs",
           " M scripts/test-generate-pack-acceptance-reports.mjs",
-          " M scripts/verify-module-release.mjs",
           " M settings.gradle",
           "?? addons/echoashfallprotocol/run/",
           "?? addons/echoindex/run/",
@@ -305,8 +317,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e462c76c91f6",
-        "commitDate": "2026-06-13T19:34:40-04:00",
+        "commit": "ee2d8a3a9857",
+        "commitDate": "2026-06-13T23:45:44-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -332,7 +344,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 6124,
-          "summary": "package echo-launcher 1.1.2; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "summary": "package echo-launcher 1.1.4; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -347,8 +359,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a524d5945bc3",
-        "commitDate": "2026-06-13T19:27:38-04:00",
+        "commit": "6cd51553cb82",
+        "commitDate": "2026-06-13T19:50:50-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -356,7 +368,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 6871,
+          "bytes": 7414,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
@@ -683,8 +695,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7174499cfc32",
-        "commitDate": "2026-06-13T18:36:56-04:00",
+        "commit": "2d845e88be8f",
+        "commitDate": "2026-06-13T21:39:27-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/pack-acceptance/"
@@ -748,8 +760,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1cb99a507668",
-        "commitDate": "2026-06-13T18:37:00-04:00",
+        "commit": "d3200f2e5894",
+        "commitDate": "2026-06-13T21:40:25-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -799,8 +811,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "025efa7a7abb",
-        "commitDate": "2026-06-13T18:37:04-04:00",
+        "commit": "9dcdd533b02c",
+        "commitDate": "2026-06-13T21:41:19-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -850,8 +862,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4143913addd5",
-        "commitDate": "2026-06-13T18:37:08-04:00",
+        "commit": "57e5906c8e9f",
+        "commitDate": "2026-06-13T21:51:17-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -908,8 +920,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9b0ca69bc67a",
-        "commitDate": "2026-06-13T18:37:12-04:00",
+        "commit": "b72bb40ddde5",
+        "commitDate": "2026-06-13T21:51:33-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -966,8 +978,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "30041038a23b",
-        "commitDate": "2026-06-13T18:37:16-04:00",
+        "commit": "9eccf8460daa",
+        "commitDate": "2026-06-13T21:51:52-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1024,8 +1036,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4ba6c490c713",
-        "commitDate": "2026-06-13T18:37:20-04:00",
+        "commit": "04560d757094",
+        "commitDate": "2026-06-13T21:52:08-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1061,8 +1073,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "59a4039d81c5",
-        "commitDate": "2026-06-13T18:37:24-04:00",
+        "commit": "b45839075e7a",
+        "commitDate": "2026-06-13T23:24:28-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1098,8 +1110,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1d88b677c976",
-        "commitDate": "2026-06-13T18:37:28-04:00",
+        "commit": "888f1889002e",
+        "commitDate": "2026-06-13T21:52:38-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1135,8 +1147,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b1f6260f8839",
-        "commitDate": "2026-06-13T19:18:45-04:00",
+        "commit": "5d6d6eca6d34",
+        "commitDate": "2026-06-13T21:49:17-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1199,8 +1211,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d125dc4df1bc",
-        "commitDate": "2026-06-13T19:18:50-04:00",
+        "commit": "635d2e6b9d09",
+        "commitDate": "2026-06-13T21:49:41-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1263,8 +1275,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "515def2e2395",
-        "commitDate": "2026-06-13T19:18:54-04:00",
+        "commit": "0f2da14538c1",
+        "commitDate": "2026-06-13T21:50:01-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1327,8 +1339,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "85aa624b8185",
-        "commitDate": "2026-06-13T19:16:15-04:00",
+        "commit": "6422550d719b",
+        "commitDate": "2026-06-13T21:50:36-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1392,8 +1404,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4664a9dd964a",
-        "commitDate": "2026-06-13T19:16:15-04:00",
+        "commit": "9990b025f252",
+        "commitDate": "2026-06-13T21:50:51-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
@@ -1457,8 +1469,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "21ace87d4b96",
-        "commitDate": "2026-06-13T19:16:15-04:00",
+        "commit": "61ccf27ae923",
+        "commitDate": "2026-06-13T21:51:06-04:00",
         "dirty": true,
         "dirtyFiles": [
           "?? reports/"
