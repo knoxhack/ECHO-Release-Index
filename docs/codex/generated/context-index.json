@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-14T12:23:45-04:00",
+  "generatedAt": "2026-06-14T12:51:45-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "77319e03c2b5",
-        "commitDate": "2026-06-14T09:44:29-04:00",
+        "commit": "1c97176970b7",
+        "commitDate": "2026-06-14T12:31:30-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M channels/alpha/launcher-channel.json",
@@ -52,8 +52,7 @@
           " M packs/sky-relay-native-edition.json",
           " M packs/sky-relay-neoforge-edition.json",
           " M packs/sky-relay-standalone-edition.json",
-          " M products/launcher.json",
-          " M products/native-platform.json",
+          " M products/echo-arcana-division-neoforge-edition.json",
           " M release-readiness/all-modpacks-electron-install-smoke.json",
           " M release-readiness/all-modpacks-pipeline-audit.json",
           "?? release-readiness/ashfall-native-electron-install-smoke-final.json",
@@ -119,7 +118,7 @@
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
           "bytes": 29534,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-14T16:28:34.992Z"
+          "summary": "launcher channel alpha; generatedAt: 2026-06-14T16:58:55.787Z"
         },
         {
           "path": "trust/tiers.json",
@@ -140,17 +139,24 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c1b43ac48f8f",
-        "commitDate": "2026-06-14T11:47:36-04:00",
+        "commit": "96384c3829fe",
+        "commitDate": "2026-06-14T12:44:49-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M addons/echoequipmentcore/README.md",
           " M addons/echoequipmentcore/build.gradle",
+          " M addons/echoequipmentcore/docs/artifacts.md",
           " M addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/EchoEquipmentCore.java",
           " M addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/EchoEquipmentCoreNativeModule.java",
           " M addons/echoequipmentcore/src/main/resources/META-INF/echo.mod.json",
+          " M addons/echoequipmentcore/src/main/resources/data/echoequipmentcore/roadmap/contracts.json",
           " M addons/echoequipmentcore/src/main/templates/META-INF/neoforge.mods.toml",
+          " M addons/echohazardcore/README.md",
+          " M addons/echohazardcore/docs/artifacts.md",
           " M addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/EchoHazardCore.java",
           " M addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/EchoHazardCoreNativeModule.java",
+          " M addons/echohazardcore/src/main/resources/META-INF/echo.mod.json",
+          " M addons/echohazardcore/src/main/resources/data/echohazardcore/roadmap/contracts.json",
           " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/game_rules.dat",
           " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/random_sequences.dat",
           " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/world_clocks.dat",
@@ -173,10 +179,13 @@
           " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/stats/9ca15cdd-bde9-4344-9873-3520dd5eaf76.json",
           " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/serverconfig/readme.txt",
           " M addons/echonexusprotocol/run-gametest/usernamecache.json",
+          " M addons/echosettlementcore/README.md",
           " M addons/echosettlementcore/build.gradle",
+          " M addons/echosettlementcore/docs/artifacts.md",
           " M addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/EchoSettlementCore.java",
           " M addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/EchoSettlementCoreNativeModule.java",
           " M addons/echosettlementcore/src/main/resources/META-INF/echo.mod.json",
+          " M addons/echosettlementcore/src/main/resources/data/echosettlementcore/roadmap/contracts.json",
           " M docs/ECHO_PLATFORM_ROADMAP.md",
           " M docs/MODULE_BUNDLES.md",
           " M metadata/modules/index.json",
@@ -500,19 +509,20 @@
           " M build.gradle",
           " M echo-runtime-contracts/src/main/java/dev/echo/standalone/runtime/contracts/voxel/EchoBlockBehaviorContract.java",
           " M echo-runtime-contracts/src/main/java/dev/echo/standalone/runtime/contracts/voxel/EchoBlockStateContract.java",
+          " M echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoDataJson.java",
           " M settings.gradle",
           "?? echo-runtime-core/src/main/java/dev/echo/standalone/runtime/core/EchoRuntimeFeatureFlags.java",
-          "?? echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoBlockBehaviorDefinition.java",
-          "?? echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoBlockBehaviorRegistry.java",
-          "?? echo-runtime-data/src/main/resources/data/echo/",
           "?? echo-runtime-nbt/",
           "?? echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/anvil/",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoBlockBehaviorDataDrivenSmokeHarness.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoLevelDatRoundTripSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoMinecraftWorldRoundTripSmokeHarness.java",
           "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoMinecraftWorld.java",
           "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/block/",
           "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/chunk/",
-          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/gen/"
+          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/gen/",
+          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/openlands/",
+          "?? echo-runtime-world/src/main/resources/"
         ]
       },
       "canonicalDocs": [
@@ -807,8 +817,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "861c5a75b9ce",
-        "commitDate": "2026-06-14T11:47:42-04:00",
+        "commit": "e5e3aae997e9",
+        "commitDate": "2026-06-14T12:45:47-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -870,8 +880,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0fb4ab47fc7b",
-        "commitDate": "2026-06-14T11:47:42-04:00",
+        "commit": "ddf1cbbd571c",
+        "commitDate": "2026-06-14T12:46:18-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -919,8 +929,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d3451a3fc8bd",
-        "commitDate": "2026-06-14T11:47:43-04:00",
+        "commit": "90286f53325e",
+        "commitDate": "2026-06-14T12:46:46-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -968,8 +978,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b46b54235fa0",
-        "commitDate": "2026-06-14T11:47:44-04:00",
+        "commit": "822fb2b4c5d3",
+        "commitDate": "2026-06-14T12:47:24-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1024,8 +1034,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "cb8e41b673ea",
-        "commitDate": "2026-06-14T11:47:45-04:00",
+        "commit": "789ac77938a2",
+        "commitDate": "2026-06-14T12:47:42-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1080,8 +1090,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e09ea4acccfc",
-        "commitDate": "2026-06-14T11:47:45-04:00",
+        "commit": "1cbb52c039fb",
+        "commitDate": "2026-06-14T12:48:10-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1136,8 +1146,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "45d99ff536f8",
-        "commitDate": "2026-06-14T11:47:46-04:00",
+        "commit": "3ea99366cc22",
+        "commitDate": "2026-06-14T12:48:34-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1171,8 +1181,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7c9dfab08c74",
-        "commitDate": "2026-06-14T11:47:46-04:00",
+        "commit": "9c739daa909f",
+        "commitDate": "2026-06-14T12:48:52-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1206,8 +1216,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "54d950fae592",
-        "commitDate": "2026-06-14T11:47:47-04:00",
+        "commit": "b5df33e8986e",
+        "commitDate": "2026-06-14T12:49:18-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1241,8 +1251,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a0c1cec734ac",
-        "commitDate": "2026-06-14T11:47:48-04:00",
+        "commit": "d4a0fd8508be",
+        "commitDate": "2026-06-14T12:49:37-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1303,8 +1313,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c870d3049fce",
-        "commitDate": "2026-06-14T11:47:48-04:00",
+        "commit": "a4bc33e4371e",
+        "commitDate": "2026-06-14T12:50:02-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1365,8 +1375,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0ebd91ccefe0",
-        "commitDate": "2026-06-14T11:47:49-04:00",
+        "commit": "eefa322699fc",
+        "commitDate": "2026-06-14T12:50:31-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1427,8 +1437,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "6af7e5be75a0",
-        "commitDate": "2026-06-14T11:53:14-04:00",
+        "commit": "420459904f27",
+        "commitDate": "2026-06-14T12:50:55-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1490,8 +1500,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9ffa4a9244af",
-        "commitDate": "2026-06-14T11:53:16-04:00",
+        "commit": "823bbf91fe8c",
+        "commitDate": "2026-06-14T12:51:15-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1553,8 +1563,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3b00e119bd17",
-        "commitDate": "2026-06-14T11:53:18-04:00",
+        "commit": "df4cc675d221",
+        "commitDate": "2026-06-14T12:51:45-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
