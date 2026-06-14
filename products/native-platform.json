@@ -1,66 +1,66 @@
 {
   "id": "echo-native-platform",
   "kind": "runtime",
-  "version": "1.0.0-RC1",
+  "version": "1.0.0",
   "channel": "beta",
-  "targetReleaseLine": "1.0.0-RC1",
+  "targetReleaseLine": "1.0.0",
   "targetStableVersion": "1.0.0",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Native-Platform",
-  "releaseTag": "v1.0.0-RC1",
-  "commitSha": "6cd51553cb822897e75f5b3df7fbc599fcfd0d82",
+  "releaseTag": "v1.0.0",
+  "commitSha": "2b41ecd6203ad1332c1c495783c772c5554817d3",
   "artifacts": {
     "archive": {
-      "file": "echo-native-platform-1.0.0-RC1.zip",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-platform-1.0.0-RC1.zip",
-      "sha256": "404ce2957e14a696a0e5cff0b511da5b744dc3fb747437c8b23d8646b386b011",
-      "size": 1220,
+      "file": "echo-native-platform-1.0.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/echo-native-platform-1.0.0.zip",
+      "sha256": "d030277996b931d6f9e4c1407dfb0eae910f688f417cd681ccbe678403cb3939",
+      "size": 1209,
       "artifactRole": "native-platform-package",
       "launcherFacing": true,
       "moduleArtifact": false,
       "packContent": false,
-      "status": "github-rc1-download-smoked",
-      "downloadSmoke": "release-readiness/native-platform-rc1-download-smoke.json",
+      "status": "github-v1.0.0-published-download-smoked",
+      "downloadSmoke": "release-readiness/native-platform-v1.0.0-download-smoke.json",
       "contains": [
         "echo-native-platform-package.json",
         "runtime/native-loader-runtime.json"
       ],
       "excludes": [
         "echo.pack.json",
-        "echo-native-product-package.json",
+        "legacy product package manifest",
         "modules/",
         "pack-owned module jars"
       ]
     },
     "checksums": {
       "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/checksums.txt",
-      "sha256": "c14ddcb6ab8f6650ec587a2d7f9eb1d95e020c78e60f64e84950bd7520e097e6",
-      "size": 957
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/checksums.txt",
+      "sha256": "946b81a9f72694068f155ce35700140d92f60285e9bdab653c0586d6f3dcb1a3",
+      "size": 953
     },
     "echoReleaseMetadata": {
       "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-release.json",
-      "sha256": "5b8004822dc65023d4de56f50deeb4211e726846c2830ee1393bcf1fcdde92f3",
-      "size": 5784
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/echo-release.json",
+      "sha256": "8fdf9b3e1fbfc30f7b2971e7b67a0bc44d0bd37e3f228363b581d67ed241c4b1",
+      "size": 5730
     },
     "nativeAddonSourceTruth": {
       "file": "native-addon-source-truth.md",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-addon-source-truth.md",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/native-addon-source-truth.md",
       "sha256": "c8913934116bc36f396cf7ed59c8209bdf0fa8006f3b0f9cf14082983bc7c0ee",
       "size": 1484
     },
     "nativeLiveProofGate": {
       "file": "native-live-proof-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-live-proof-gate.json",
-      "sha256": "ff56404a4117fd8287bd77c1537b4f4e9dec467dbe11326b9e9e27f60c8c20b9",
-      "size": 421
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/native-live-proof-gate.json",
+      "sha256": "5b5a811c90d65ab925abda17c9b9573596b7fe6eba5bebd3daf77de8c0bfe226",
+      "size": 420
     },
     "nativeLoaderDirectInstall": {
       "file": "native-loader-direct-install.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-loader-direct-install.json",
-      "sha256": "283126b360acfe0f9a4aeb8093aef0ea09090c97eaedbfb7fe184362812eecf3",
-      "size": 1279,
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/native-loader-direct-install.json",
+      "sha256": "582cfd22304336410c37ad9ba3c4aeed4d506a3831b759d27453f61074966dbd",
+      "size": 1358,
       "artifactRole": "native-loader-direct-install-descriptor",
       "manualInstall": true,
       "developerDirectDownload": true,
@@ -70,84 +70,70 @@
     },
     "nativeModuleInventory": {
       "file": "native-module-inventory.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/native-module-inventory.json",
-      "sha256": "be0b753f83aced463bb8be0543f93301b802405e8c796e8a85d8cfcbc23c2cd6",
-      "size": 427
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/native-module-inventory.json",
+      "sha256": "eabe93c87878b1ac997c04eacdbcb99095ccd6f6e9cf6368541b32785c3a946c",
+      "size": 423
     },
     "plan3DependencyVulnerabilityScan": {
       "file": "plan3-dependency-vulnerability-scan.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-dependency-vulnerability-scan.json",
-      "sha256": "a3a209c89eb94fb520b706297ad1a6cd8aea18f992333c7f6411f1ac7f6f2c79",
-      "size": 341
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/plan3-dependency-vulnerability-scan.json",
+      "sha256": "c79a684160e9280607112662f935c9f031a07941b5a74ace07ec41d159aa3eeb",
+      "size": 340
     },
     "plan3FinalQa": {
       "file": "plan3-final-qa.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-final-qa.json",
-      "sha256": "9b38172480f7f8e007f874386d0c23d21c267ce5a93c6138039df3d826f70140",
-      "size": 289
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/plan3-final-qa.json",
+      "sha256": "65510361968abf27f5400936a799745071dad419066023a470f62853fb3a0974",
+      "size": 288
     },
     "plan3ReleasePrep": {
       "file": "plan3-release-prep.json",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/plan3-release-prep.json",
-      "sha256": "b31e51f558d387a42d49add5de5d7bfd856883a57eafe8e880890b8e8d6a9c8f",
-      "size": 341
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/plan3-release-prep.json",
+      "sha256": "cb5b3dc5a3d8ee4c1684c939c1e9b82b4065e77e82c2e5314e2f6f1bd107cf55",
+      "size": 340
     },
     "nativeLoaderLibrary": {
       "file": "echo-native-loader-1.0.0.jar",
-      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0-RC1/echo-native-loader-1.0.0.jar",
-      "sha256": "413d0146654b37fdf58345ed396180b44286ba98eb9e7da495eae1b98ccd98c5",
-      "size": 1141527,
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.0/echo-native-loader-1.0.0.jar",
+      "sha256": "597a90088de0845c5da9b3e3bec4805eab56aba565f34222d60837ee768a9ed0",
+      "size": 1827299,
       "artifactRole": "native-loader-library",
       "manualInstall": true,
       "developerDirectDownload": true,
       "launcherFacing": false,
       "moduleArtifact": false,
       "packContent": false,
-      "status": "github-rc1-download-smoked",
+      "status": "github-v1.0.0-published-download-smoked",
       "directInstallDescriptor": "native-loader-direct-install.json",
       "contains": [
         "com/echo/NativeLoaderClient.class",
-        "dev/echo/nativeplatform/loader/NativeLoaderCoreServiceRegistrar.class"
+        "dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapMain.class",
+        "dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapEntrypointRunner.class",
+        "dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapActivationRunner.class",
+        "dev/echo/nativeplatform/loader/NativeLoaderCoreServiceRegistrar.class",
+        "dev/echo/nativeplatform/loader/NativeLoaderThemeResolver.class",
+        "dev/echo/nativeplatform/loader/NativeLoaderClientUiHost.class"
       ]
     }
   },
   "provenance": {
-    "status": "github-rc1-published-download-smoked-attested",
-    "nativePlatformCommitSha": "6cd51553cb822897e75f5b3df7fbc599fcfd0d82",
-    "builtAt": "2026-06-13T23:54:12.260Z",
+    "status": "github-v1.0.0-published-download-smoked",
+    "nativePlatformCommitSha": "2b41ecd6203ad1332c1c495783c772c5554817d3",
+    "builtAt": "2026-06-14T09:47:50.672Z",
     "buildCommand": ".\\gradlew.bat packagePublicAlphaRelease --rerun-tasks --no-daemon --no-parallel --max-workers=1",
-    "artifactPath": "C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-platform-1.0.0-RC1.zip",
-    "githubReleaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0-RC1",
-    "githubDownloadSmoke": "release-readiness/native-platform-rc1-download-smoke.json",
-    "githubIngestion": "release-readiness/native-platform-rc1-ingestion.json",
+    "artifactPath": "C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-platform-1.0.0.zip",
+    "githubReleaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.0",
+    "githubDownloadSmoke": "release-readiness/native-platform-v1.0.0-download-smoke.json",
+    "githubIngestion": "release-readiness/native-platform-v1.0.0-ingestion.json",
     "workflow": ".github/workflows/attest-release-assets.yml",
     "workflowRef": "refs/heads/main",
-    "verifiedBy": "scripts/verify-native-platform-rc1-attestation.mjs",
+    "verifiedBy": "manual release asset checksum metadata until workflow attestation is generated",
     "attestation": {
-      "status": "github-attested",
+      "status": "pending-attestation",
       "scope": "published-release-assets",
-      "action": "gh attestation verify",
-      "releaseAssetAction": "gh release verify-asset",
-      "workflow": ".github/workflows/attest-release-assets.yml",
-      "workflowTrigger": "workflow_dispatch",
-      "workflowRunId": 27482758336,
-      "workflowRunUrl": "https://github.com/knoxhack/ECHO-Native-Platform/actions/runs/27482758336",
-      "workflowRunConclusion": "success",
-      "sourceDigest": "6cd51553cb822897e75f5b3df7fbc599fcfd0d82",
-      "signerDigest": "6cd51553cb822897e75f5b3df7fbc599fcfd0d82",
-      "sourceRef": "refs/heads/main",
-      "signerWorkflow": "knoxhack/ECHO-Native-Platform/.github/workflows/attest-release-assets.yml",
-      "verifiedSubjectSha256": "404ce2957e14a696a0e5cff0b511da5b744dc3fb747437c8b23d8646b386b011",
-      "verifiedSubjectCount": 11,
-      "evidence": "release-readiness/native-platform-rc1-attestation.json",
-      "releaseAssetVerifier": {
-        "action": "gh release verify-asset",
-        "status": "not-available",
-        "exitCode": 1,
-        "reason": "gh release verify-asset does not currently expose workflow-dispatch asset attestations; gh attestation verify is authoritative for these bytes."
-      }
+      "reason": "v1.0.0 assets are published and checksum-smoked; workflow attestation evidence is not attached yet."
     },
-    "commitSha": "6cd51553cb822897e75f5b3df7fbc599fcfd0d82",
+    "commitSha": "2b41ecd6203ad1332c1c495783c772c5554817d3",
     "nativeLoaderPath": "C:/Development/Github/ECHO-Native-Platform/build/public-alpha/echo-native-loader-1.0.0.jar",
     "nativeLoaderDirectInstallDescriptor": "C:/Development/Github/ECHO-Native-Platform/build/public-alpha/native-loader-direct-install.json",
     "packageScope": {
@@ -159,11 +145,16 @@
   },
   "dependencies": [],
   "compatibility": [
-    "native-loader-runtime"
+    "native-loader-runtime",
+    "ashfall-native-edition",
+    "sky-relay-native-edition",
+    "openlands-native-edition",
+    "arcana-division-native-edition",
+    "galactic-survey-native-edition"
   ],
-  "trust": "provenance-attested",
+  "trust": "source-linked",
   "validation": "approved",
-  "validationReason": "RC1 Native Platform loader/runtime assets are rebuilt from 6cd5155, published to GitHub as echo-native-platform-1.0.0-RC1.zip without pack or module content, direct loader jar is named echo-native-loader-1.0.0.jar with native-loader-direct-install.json manual-install metadata, checksum/download-smoked, and attested by workflow run 27482758336. Stable release remains blocked by launcher/player and real gameplay gates recorded in provenance.",
+  "validationReason": "Native Platform v1.0.0 ships a runtime-only Native Loader client jar with bootstrap and theme classes required for ECHO Native handoff. Pack modules remain owned by pack .echo-addon releases, and Launcher v1.1.5 materializes addon runtime classpaths per installed pack.",
   "directDistribution": {
     "artifactRole": "native-loader-library",
     "file": "echo-native-loader-1.0.0.jar",
@@ -178,6 +169,7 @@
       "path": "com/echo/native-loader/1.0.0/native-loader-1.0.0.jar"
     },
     "mainClass": "com.echo.NativeLoaderClient",
-    "packContentOwner": "pack/module releases"
+    "packContentOwner": "pack/module releases",
+    "bootstrapMainClass": "dev.echo.nativeplatform.bootstrap.EchoNativeBootstrapMain"
   }
 }
