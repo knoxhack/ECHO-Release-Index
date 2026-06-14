@@ -1,7 +1,7 @@
 {
   "ok": true,
   "phase": "completed",
-  "generatedAt": "2026-06-14T19:35:44.952Z",
+  "generatedAt": "2026-06-14T20:15:30.145Z",
   "channelUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/launcher-channel.json",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke",
@@ -16,7 +16,7 @@
     {
       "profileId": "openlands-native-edition",
       "name": "Openlands Native Edition",
-      "startedAt": "2026-06-14T19:35:53.111Z",
+      "startedAt": "2026-06-14T20:15:38.156Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
@@ -25,7 +25,7 @@
           "source": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/launcher-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-14T19:35:56.254Z",
+          "fetchedAt": "2026-06-14T20:15:41.498Z",
           "status": "approved",
           "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
           "release": {
@@ -37,7 +37,7 @@
             "name": "openlands-native-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-14T19:35:56.250Z",
+            "publishedAt": "2026-06-14T20:15:41.495Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.0-openlands-native-edition",
             "releaseNotes": [
               "Resolved through the approved Catalog entry openlands-native-edition."
@@ -127,9 +127,9 @@
         "clicked": true,
         "label": "Install Openlands Native Edition"
       },
-      "completedAt": "2026-06-14T19:36:46.176Z",
-      "durationMs": 53065,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T19-36-02-472Z.json",
+      "completedAt": "2026-06-14T20:16:29.534Z",
+      "durationMs": 51378,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T20-15-47-901Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition\\.echo\\installed-manifest.json",
       "manifestPack": "openlands-native-edition",
@@ -141,9 +141,9 @@
         "runtimeMode": "native-loader-minecraft",
         "profileId": "echo-openlands-native-edition-native-loader",
         "profileName": "Openlands Native Edition - Native Loader",
-        "versionId": "echo-openlands-native-edition-native-loader-1.0.2",
+        "versionId": "echo-openlands-native-edition-native-loader-1.0.3",
         "versionSource": "echo-managed",
-        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\echo-openlands-native-edition-native-loader-1.0.2\\echo-openlands-native-edition-native-loader-1.0.2.json",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\echo-openlands-native-edition-native-loader-1.0.3\\echo-openlands-native-edition-native-loader-1.0.3.json",
         "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
         "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition",
         "validatedModsCount": 42,
@@ -152,7 +152,7 @@
           "moduleCount": 42,
           "classpathEntryCount": 84,
           "launcherLibraryCount": 1,
-          "nativeLoaderLibraryPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\libraries\\com\\echo\\native-loader\\1.0.2\\native-loader-1.0.2.jar",
+          "nativeLoaderLibraryPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\libraries\\com\\echo\\native-loader\\1.0.3\\native-loader-1.0.3.jar",
           "handoffFile": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition\\.echo\\native-loader\\module-activation-handoff.json",
           "jvmArgCharCount": 618,
           "gameArgCharCount": 478,
@@ -162,8 +162,8 @@
         "warnings": [
           "Minecraft Launcher base version '26.1.2' metadata was missing. ECHO wrote it from Mojang metadata so assets can download.",
           "Minecraft 26.1.2 client jar was missing or corrupt. ECHO downloaded it so NeoForge can generate its patched client.",
-          "Native Loader client library was missing. ECHO downloaded com/echo/native-loader/1.0.2/native-loader-1.0.2.jar from the ECHO Native Platform GitHub release.",
-          "Minecraft Launcher Native Loader + Minecraft version metadata 'echo-openlands-native-edition-native-loader-1.0.2' was missing. ECHO wrote it from the verified Openlands Native Edition manifest."
+          "Native Loader client library was missing. ECHO tried the ECHO Native Platform GitHub release first, then installed com/echo/native-loader/1.0.3/native-loader-1.0.3.jar from the bundled verified fallback.",
+          "Minecraft Launcher Native Loader + Minecraft version metadata 'echo-openlands-native-edition-native-loader-1.0.3' was missing. ECHO wrote it from the verified Openlands Native Edition manifest."
         ]
       }
     }
@@ -172,11 +172,12 @@
   "stdout": [
     "\r\n",
     "Checking for update\n",
-    "Generated new staging user ID: 8129adf6-f416-569f-94ed-c377d7b4184b\n",
-    "Update for version 1.1.8 is not available (latest version: 1.1.8, downgrade is disallowed).\n"
+    "Generated new staging user ID: 581dae21-47fe-5efe-842c-b99471ef83c4\n",
+    "Update for version 1.1.9 is not available (latest version: 1.1.8, downgrade is disallowed).\n"
   ],
   "stderr": [
-    "\r\nDevTools listening on ws://127.0.0.1:50676/devtools/browser/86b4113d-13fc-4706-a4fa-38ac50a37b39\r\n"
+    "\r\nDevTools listening on ws://127.0.0.1:52433/devtools/browser/23616dff-eb64-49f8-9e80-2de83c78018f\r\n",
+    "(node:27552) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.\n(Use `ECHOLauncher --trace-deprecation ...` to show where the warning was created)\n"
   ],
-  "completedAt": "2026-06-14T19:36:46.178Z"
+  "completedAt": "2026-06-14T20:16:29.536Z"
 }

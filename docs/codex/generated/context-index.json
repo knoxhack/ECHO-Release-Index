@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-14T15:31:20-04:00",
+  "generatedAt": "2026-06-14T16:16:55-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,22 +16,20 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b68714cfcbc1",
-        "commitDate": "2026-06-14T13:37:54-04:00",
+        "commit": "349a355ed1a2",
+        "commitDate": "2026-06-14T15:56:45-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M channels/alpha/launcher-channel.json",
           " M channels/beta/launcher-channel.json",
           " M products/launcher.json",
           " M products/native-platform.json",
-          " M release-readiness/all-modpacks-electron-install-smoke.json",
           " M release-readiness/all-modpacks-pipeline-audit.json",
-          " M scripts/validate-index.mjs",
+          " M release-readiness/openlands-native-electron-install-smoke.json",
           "?? release-readiness/ashfall-native-electron-install-smoke-local.json",
           "?? release-readiness/ashfall-native-runtime-load-smoke.json",
-          "?? release-readiness/launcher-v1.1.8-update-smoke.json",
-          "?? release-readiness/native-platform-v1.0.2-download-smoke.json",
-          "?? release-readiness/openlands-native-electron-install-smoke.json",
+          "?? release-readiness/launcher-v1.1.9-update-smoke.json",
+          "?? release-readiness/native-platform-v1.0.3-download-smoke.json",
           "?? release-readiness/sky-relay-native-runtime-load-smoke.json"
         ]
       },
@@ -92,7 +90,7 @@
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
           "bytes": 29534,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-14T19:34:14.272Z"
+          "summary": "launcher channel alpha; generatedAt: 2026-06-14T20:18:41.996Z"
         },
         {
           "path": "trust/tiers.json",
@@ -400,8 +398,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5bed1656bbec",
-        "commitDate": "2026-06-14T15:31:20-04:00",
+        "commit": "1efb6978ac2c",
+        "commitDate": "2026-06-14T16:16:55-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -426,8 +424,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 6740,
-          "summary": "package echo-launcher 1.1.8; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 6741,
+          "summary": "package echo-launcher 1.1.9; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -442,8 +440,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5e94bf8e856f",
-        "commitDate": "2026-06-14T15:31:00-04:00",
+        "commit": "6e5bb7f5fa72",
+        "commitDate": "2026-06-14T16:13:51-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -485,11 +483,22 @@
           " M echo-runtime-contracts/src/main/java/dev/echo/standalone/runtime/contracts/voxel/EchoBlockBehaviorContract.java",
           " M echo-runtime-contracts/src/main/java/dev/echo/standalone/runtime/contracts/voxel/EchoBlockStateContract.java",
           " M echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoDataJson.java",
+          " M echo-runtime-entity/src/main/java/dev/echo/standalone/runtime/entity/EchoEntityRuntime.java",
+          " M echo-runtime-entity/src/main/java/dev/echo/standalone/runtime/entity/EchoEntityRuntimeResult.java",
+          " M echo-runtime-item/src/main/java/dev/echo/standalone/runtime/item/EchoItemCraftingSystem.java",
+          " M echo-runtime-item/src/main/java/dev/echo/standalone/runtime/item/EchoItemLootRuntime.java",
+          " M echo-runtime-item/src/main/java/dev/echo/standalone/runtime/item/EchoItemRuntime.java",
           " M echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/EchoSaveRuntime.java",
           " M echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/EchoSaveRuntimeResult.java",
+          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelWorld.java",
           " M settings.gradle",
+          "?? echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoNeoForgeDatapackLoader.java",
+          "?? echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoNeoForgeDatapackScanResult.java",
+          "?? echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoVanillaToOpenlandsAliasBridge.java",
           "?? echo-runtime-core/src/main/java/dev/echo/standalone/runtime/core/EchoRuntimeFeatureFlags.java",
           "?? echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoUnifiedRegistry.java",
+          "?? echo-runtime-entity/src/main/java/dev/echo/standalone/runtime/entity/EchoEntitySpawnDefinition.java",
+          "?? echo-runtime-entity/src/main/java/dev/echo/standalone/runtime/entity/EchoEntitySpawner.java",
           "?? echo-runtime-nbt/",
           "?? echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/EchoSaveRegistryCompatibilityChecker.java",
           "?? echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/EchoSaveRegistryCompatibilityReport.java",
@@ -498,9 +507,11 @@
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoBlockBehaviorDataDrivenSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoLevelDatRoundTripSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoMinecraftWorldRoundTripSmokeHarness.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoNeoForgeDatapackSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsBiomeDistributionSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsBlockBehaviorSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsContentLoadSmokeHarness.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsGameplayWiringSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsItems.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsTerrainGenerationSmokeHarness.java",
           "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoOpenlandsWorldSaveSmokeHarness.java",
@@ -1022,15 +1033,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "8cd77b9033d4",
-        "commitDate": "2026-06-14T13:20:40-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-manifest.template.json",
-          "?? rebuild-pack.mjs",
-          "?? tmp/",
-          "?? update-manifest.mjs"
-        ]
+        "commit": "afbd9d7b6492",
+        "commitDate": "2026-06-14T15:56:28-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
