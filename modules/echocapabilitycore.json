@@ -1,0 +1,60 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocapabilitycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocapabilitycore-0.1.0-neoforge.jar",
+      "sha256": "e5393e2598119d8963c000aa929f0cece3beb789030c0e5349cedf9550197a13",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-neoforge.jar",
+      "size": 6136,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echocapabilitycore-0.1.0-standalone.jar",
+      "sha256": "e5393e2598119d8963c000aa929f0cece3beb789030c0e5349cedf9550197a13",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-standalone.jar",
+      "size": 6136,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echocapabilitycore-0.1.0.echo-addon",
+      "sha256": "a6d1f5f792b0549264bae9e9c9fad110842b3cd667406b0be43c5fa36a786216",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0.echo-addon",
+      "size": 8583,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echocapabilitycore-0.1.0-sources.jar",
+      "sha256": "53ea094fd5cf10b9b8025ac73dc5d0244fa98dabcc74021e613099f142badd74",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocapabilitycore-0.1.0-sources.jar",
+      "size": 5827
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomodulegraph",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

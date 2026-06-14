@@ -1,0 +1,64 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echotelemetrycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echotelemetrycore-0.1.0-neoforge.jar",
+      "sha256": "829ebbb875dee43e4bcf33182f3a49677c8aedeb7906efc95e3673c9bc4212a2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-neoforge.jar",
+      "size": 6137,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echotelemetrycore-0.1.0-standalone.jar",
+      "sha256": "829ebbb875dee43e4bcf33182f3a49677c8aedeb7906efc95e3673c9bc4212a2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-standalone.jar",
+      "size": 6137,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echotelemetrycore-0.1.0.echo-addon",
+      "sha256": "e5cb78ad3209715b635edcd2045d9a3848de1bc9cae1ace4a666391e64a3e400",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0.echo-addon",
+      "size": 8627,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echotelemetrycore-0.1.0-sources.jar",
+      "sha256": "7d51abc028a4f1e86ebf3827de45efc6e39faf2df2ac6ea6967272e21db364f3",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echotelemetrycore-0.1.0-sources.jar",
+      "size": 5855
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echopolicycore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplaytestcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

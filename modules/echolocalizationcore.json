@@ -1,0 +1,60 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echolocalizationcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echolocalizationcore-0.1.0-neoforge.jar",
+      "sha256": "9946846920726ceed54297ad431f29109ea2aedb0a1b75df58441598821451e1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolocalizationcore-0.1.0-neoforge.jar",
+      "size": 6156,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echolocalizationcore-0.1.0-standalone.jar",
+      "sha256": "9946846920726ceed54297ad431f29109ea2aedb0a1b75df58441598821451e1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolocalizationcore-0.1.0-standalone.jar",
+      "size": 6156,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echolocalizationcore-0.1.0.echo-addon",
+      "sha256": "27cadd1ee05121d6dd4c03302e6f0ee876b0b8799168115696ba1f9007d56114",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolocalizationcore-0.1.0.echo-addon",
+      "size": 8572,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echolocalizationcore-0.1.0-sources.jar",
+      "sha256": "33271f7ef5eea59209688b1e86cc73a291ed2c534e25577d5022df7f9723dc28",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echolocalizationcore-0.1.0-sources.jar",
+      "size": 5838
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

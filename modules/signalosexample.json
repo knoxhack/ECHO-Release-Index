@@ -1,0 +1,60 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "signalosexample",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "signalosexample-1.0.0-neoforge.jar",
+      "sha256": "c82b22573d8bbdd1d78959e8987a1efffe23651bab1d1314afe4a49a7e715c04",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0-neoforge.jar",
+      "size": 13526,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "signalosexample-1.0.0-standalone.jar",
+      "sha256": "279bbfee473e2f8c0439b336ea93a601284295fb09a3cf7275bc69779d57e0e8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0-standalone.jar",
+      "size": 13516,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "signalosexample-1.0.0.echo-addon",
+      "sha256": "1e6aaabd2a087f0e03570a7d408ed7d6811e31440e695348b1fddf24ab98ab39",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0.echo-addon",
+      "size": 15014,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "signalosexample-1.0.0-sources.jar",
+      "sha256": "a637456d1f0d711e4cfc0a29fa4f1ded39cbb5a5cf8f90132dacc2ee7477b4f8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/signalosexample-1.0.0-sources.jar",
+      "size": 9508
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    },
+    {
+      "id": "signalos",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

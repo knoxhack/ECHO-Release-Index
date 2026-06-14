@@ -1,0 +1,68 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoserveropscore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoserveropscore-0.1.0-neoforge.jar",
+      "sha256": "b710f08bedb3813df1a8cd64182ad7d318437723c725ade0599663e3bc1f231c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-neoforge.jar",
+      "size": 6114,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoserveropscore-0.1.0-standalone.jar",
+      "sha256": "b710f08bedb3813df1a8cd64182ad7d318437723c725ade0599663e3bc1f231c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-standalone.jar",
+      "size": 6114,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoserveropscore-0.1.0.echo-addon",
+      "sha256": "0df12358a6389769cf1113129b8fbdef2dcaed36ae58fe9ca1e3ec2530a86c62",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0.echo-addon",
+      "size": 8561,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoserveropscore-0.1.0-sources.jar",
+      "sha256": "7ff436d00109f31bcdf1d1a6b5e8713a54dc50b2574b61c132ed47824bb91981",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-sources.jar",
+      "size": 5771
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echopolicycore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    },
+    {
+      "id": "echotelemetrycore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

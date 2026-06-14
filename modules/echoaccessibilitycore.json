@@ -1,0 +1,68 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoaccessibilitycore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoaccessibilitycore-0.1.0-neoforge.jar",
+      "sha256": "4b9b28156a0af50ec1f9a19c9bacd28509b5e0c1c73ca44c7a2593d02da8898b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-neoforge.jar",
+      "size": 6280,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoaccessibilitycore-0.1.0-standalone.jar",
+      "sha256": "4b9b28156a0af50ec1f9a19c9bacd28509b5e0c1c73ca44c7a2593d02da8898b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-standalone.jar",
+      "size": 6280,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoaccessibilitycore-0.1.0.echo-addon",
+      "sha256": "9bd51ee107166eaeaf120c616be726ecc9781c2c5a6941d12b046a4d7b0c18bb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0.echo-addon",
+      "size": 8764,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoaccessibilitycore-0.1.0-sources.jar",
+      "sha256": "0a8d71f8bdcf6fc0d785b9eca692c248b3a7dad0a09d6506bb307054ab0171a6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaccessibilitycore-0.1.0-sources.jar",
+      "size": 5940
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echothemecore",
+      "kind": "module"
+    },
+    {
+      "id": "echoscreencore",
+      "kind": "module"
+    },
+    {
+      "id": "echoinputcore",
+      "kind": "module"
+    },
+    {
+      "id": "echosoundcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

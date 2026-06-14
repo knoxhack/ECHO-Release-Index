@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoeventcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoeventcore-1.0.0-neoforge.jar",
+      "sha256": "a4403f98e0cdf1f92f949f82372f7e4dc834ab4e534d5eb281e880938b02ea27",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeventcore-1.0.0-neoforge.jar",
+      "size": 24595,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoeventcore-1.0.0-standalone.jar",
+      "sha256": "7381ab39fc5ebf87e2a9e74878d0ef52bd173f7b85846c0ef3050027e619477c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeventcore-1.0.0-standalone.jar",
+      "size": 24582,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoeventcore-1.0.0.echo-addon",
+      "sha256": "91279b05c6ae054c52082affcaa6c0c7045c0e81d5fab8e20ec7b265fcb29269",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeventcore-1.0.0.echo-addon",
+      "size": 25601,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoeventcore-1.0.0-sources.jar",
+      "sha256": "91328b667a543512f9abcbed2406be4a2b547abaa0c2008fbc38004343c31afc",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoeventcore-1.0.0-sources.jar",
+      "size": 12235
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echopackcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

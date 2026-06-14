@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echomodulegraph",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echomodulegraph-1.0.0-neoforge.jar",
+      "sha256": "3376444d938ade7f339441645c03cd7236e15c39aacde1d4645aa7a50e5851a1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-neoforge.jar",
+      "size": 85514,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echomodulegraph-1.0.0-standalone.jar",
+      "sha256": "99bf349c28d229b707f84e9ecb1437c070577caa6e0bbd32a30efcecafe72bd1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-standalone.jar",
+      "size": 85498,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echomodulegraph-1.0.0.echo-addon",
+      "sha256": "36226a031dd15136cbfe7b2e11bcbe947383dd5e76b13786ba1a8c07ab242838",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0.echo-addon",
+      "size": 83911,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echomodulegraph-1.0.0-sources.jar",
+      "sha256": "d2e54b91f9207023c679edbdc1fc0cc5eefa4f4fc97c4e63f6e0efbc16454f14",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomodulegraph-1.0.0-sources.jar",
+      "size": 35284
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    },
+    {
+      "id": "echopackcore",
+      "kind": "module"
+    },
+    {
+      "id": "echometadatacore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

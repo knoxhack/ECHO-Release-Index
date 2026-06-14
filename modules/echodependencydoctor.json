@@ -1,0 +1,64 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echodependencydoctor",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echodependencydoctor-0.1.0-neoforge.jar",
+      "sha256": "421f0302b9864a32be76ce6f83a2f29d28db50ae56c7abc549fa32398e183ad2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-neoforge.jar",
+      "size": 6264,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echodependencydoctor-0.1.0-standalone.jar",
+      "sha256": "421f0302b9864a32be76ce6f83a2f29d28db50ae56c7abc549fa32398e183ad2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-standalone.jar",
+      "size": 6264,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echodependencydoctor-0.1.0.echo-addon",
+      "sha256": "78af6766858e49d5c70e2d002a7e17e246d0a1d0d56edcd640b6b8ff594b53b5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0.echo-addon",
+      "size": 8766,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echodependencydoctor-0.1.0-sources.jar",
+      "sha256": "da4fcd8223e33f3cfea3ddfaf55e2dcc6c35d0cd441acf9a1acc268bb01f08de",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echodependencydoctor-0.1.0-sources.jar",
+      "size": 5993
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echomodulegraph",
+      "kind": "module"
+    },
+    {
+      "id": "echocapabilitycore",
+      "kind": "module"
+    },
+    {
+      "id": "echoreportcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

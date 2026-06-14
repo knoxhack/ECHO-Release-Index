@@ -1,0 +1,64 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoequipmentcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoequipmentcore-0.1.0-neoforge.jar",
+      "sha256": "95422745a41e64f43bb4b7f0fa2e81e3e16c592e3bf2d79b2c8cb3114d9502b9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoequipmentcore-0.1.0-neoforge.jar",
+      "size": 6035,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoequipmentcore-0.1.0-standalone.jar",
+      "sha256": "95422745a41e64f43bb4b7f0fa2e81e3e16c592e3bf2d79b2c8cb3114d9502b9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoequipmentcore-0.1.0-standalone.jar",
+      "size": 6035,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoequipmentcore-0.1.0.echo-addon",
+      "sha256": "03385ad86bd7b11b7239ee36f362bd511b56f941b5150a56914d20e440e1ed15",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoequipmentcore-0.1.0.echo-addon",
+      "size": 8442,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoequipmentcore-0.1.0-sources.jar",
+      "sha256": "90f2fb3a0b45a006ffd82b37ee438b871268c779f5b3954402ae48bbcc791909",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoequipmentcore-0.1.0-sources.jar",
+      "size": 5715
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarmory",
+      "kind": "module"
+    },
+    {
+      "id": "echocombatcore",
+      "kind": "module"
+    },
+    {
+      "id": "echotoolcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

@@ -1,0 +1,68 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echohazardcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echohazardcore-0.1.0-neoforge.jar",
+      "sha256": "f09a7c88cabe819113fc4954216e3ada6f41c9e5a34439fcd5200ce163fa3edb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-neoforge.jar",
+      "size": 6041,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echohazardcore-0.1.0-standalone.jar",
+      "sha256": "f09a7c88cabe819113fc4954216e3ada6f41c9e5a34439fcd5200ce163fa3edb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-standalone.jar",
+      "size": 6041,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echohazardcore-0.1.0.echo-addon",
+      "sha256": "8bff5895b5ed59570fe31e4b1d9d96cdaf30ef0b82693c08000e25451249245d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0.echo-addon",
+      "size": 8513,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echohazardcore-0.1.0-sources.jar",
+      "sha256": "3aaa062d74f26ddc79fb5f40f164fc0f113fa29feb944c87a80df56634c9363a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echohazardcore-0.1.0-sources.jar",
+      "size": 5746
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echostatuscore",
+      "kind": "module"
+    },
+    {
+      "id": "echohealthcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoweathercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}

@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
+  "commitSha": "0beb164098526cf791cc6c649704e6a434769a17",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocombatcore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocombatcore-1.0.0-neoforge.jar",
+      "sha256": "fc506e00acdbab3f1035836fa7c17b1f840c67f762460e5a0869a43efffe12ab",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-neoforge.jar",
+      "size": 37401,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echocombatcore-1.0.0-standalone.jar",
+      "sha256": "c4a76c63788f8703c3be7f64e866d573a57e93823fadcbef81dee4542ed81518",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-standalone.jar",
+      "size": 37388,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echocombatcore-1.0.0.echo-addon",
+      "sha256": "08f1e6b446a0b0f9b268c97ce9e9e231de71ed4428b28f5d0c9ae0857ca14b5e",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0.echo-addon",
+      "size": 37830,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echocombatcore-1.0.0-sources.jar",
+      "sha256": "305ac2998de73bbaa65824392f97821c15155d97ffffebabfb96101e475e5e80",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-sources.jar",
+      "size": 17391
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoprogressioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": []
+}
