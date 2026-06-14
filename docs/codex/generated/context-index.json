@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-13T23:58:48-04:00",
+  "generatedAt": "2026-06-14T06:22:57-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,13 +16,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9408aec6549e",
-        "commitDate": "2026-06-13T23:58:48-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M channels/alpha/launcher-channel.json",
-          " M products/launcher.json"
-        ]
+        "commit": "4d3106f2f9cd",
+        "commitDate": "2026-06-14T06:22:57-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -74,14 +71,14 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 28086,
+          "bytes": 29114,
           "summary": "release manifest v0.1.0-native-public-alpha; repositories: 12"
         },
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
           "bytes": 29530,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-14T08:30:37.461Z"
+          "summary": "launcher channel alpha; generatedAt: 2026-06-14T10:16:51.959Z"
         },
         {
           "path": "trust/tiers.json",
@@ -106,6 +103,7 @@
         "commitDate": "2026-06-13T23:28:49-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M addons/echoadaptercore/gradle.properties",
           " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoBackendLifecycleBridge.java",
           " M addons/echoashfallprotocol/build.gradle",
           " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
@@ -169,21 +167,29 @@
           " M reports/runtime-parity/manual-acceptance-matrix.json",
           " M reports/runtime-parity/module-feature-contracts.json",
           " M reports/runtime-parity/module-play-completion.json",
+          " M reports/runtime-parity/neoforge-client-ui-results.json",
           " M reports/runtime-parity/neoforge-module-gametest-results.json",
+          " M reports/runtime-parity/neoforge-play-evidence.json",
+          " M reports/runtime-parity/neoforge-registry-content-results.json",
           " M reports/runtime-parity/neoforge-runtime-evidence.json",
           " M reports/runtime-parity/pack-acceptance-report-index.json",
           " M reports/runtime-parity/strict-play-evidence-refresh.json",
+          " M scripts/generate-neoforge-runtime-evidence.mjs",
           " M scripts/generate-pack-acceptance-reports.mjs",
+          " M scripts/generate-runtime-parity-audit.mjs",
           " M scripts/generate-runtime-parity-audit.test.mjs",
           " M scripts/generate-runtime-play-audit.mjs",
           " M scripts/generate-strict-play-evidence.mjs",
+          " M scripts/sync-official-pack-module-selections.mjs",
           " M scripts/test-generate-pack-acceptance-reports.mjs",
           " M settings.gradle",
           "?? addons/echoashfallprotocol/run/",
           "?? addons/echoindex/run/",
           "?? reports/neoforge-strict-play/",
           "?? reports/runtime-parity/codex-active-goal-context.md",
+          "?? scripts/generate-all-module-creative-tab-visibility.mjs",
           "?? scripts/run-neoforge-gametests-and-write-evidence.mjs",
+          "?? scripts/test-generate-all-module-creative-tab-visibility.mjs",
           "?? scripts/test-run-neoforge-gametests-and-write-evidence.mjs"
         ]
       },
@@ -317,8 +323,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ee2d8a3a9857",
-        "commitDate": "2026-06-13T23:45:44-04:00",
+        "commit": "49d40477324f",
+        "commitDate": "2026-06-14T06:11:59-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -343,8 +349,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 6124,
-          "summary": "package echo-launcher 1.1.4; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 6240,
+          "summary": "package echo-launcher 1.1.5; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -359,10 +365,13 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "6cd51553cb82",
-        "commitDate": "2026-06-13T19:50:50-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "2b41ecd6203a",
+        "commitDate": "2026-06-14T05:46:21-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M build.gradle",
+          "?? echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAllModuleCreativeTabLiveEvidenceSmokeMain.java"
+        ]
       },
       "canonicalDocs": [
         {
@@ -399,6 +408,10 @@
         "dirty": true,
         "dirtyFiles": [
           " M build.gradle",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSession.java",
+          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplay.java",
+          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientCreativeInventoryController.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCreativeInventorySmokeHarness.java",
           "?? scripts/generate-standalone-strict-play-evidence.mjs",
           "?? scripts/test-generate-standalone-strict-play-evidence.mjs"
         ]
@@ -699,6 +712,11 @@
         "commitDate": "2026-06-13T21:39:27-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-native-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-native-edition/echo-release.json",
+          " M release-assets/v0.1.0-ashfall-native-edition/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/pack-acceptance/"
         ]
       },
@@ -764,6 +782,11 @@
         "commitDate": "2026-06-13T21:40:25-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/echo-release.json",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -815,6 +838,11 @@
         "commitDate": "2026-06-13T21:41:19-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/echo-release.json",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -866,6 +894,11 @@
         "commitDate": "2026-06-13T21:51:17-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-native-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-native-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-openlands-native-edition/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -924,6 +957,11 @@
         "commitDate": "2026-06-13T21:51:33-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-neoforge-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-neoforge-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-openlands-neoforge-edition/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -982,6 +1020,11 @@
         "commitDate": "2026-06-13T21:51:52-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-standalone-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-standalone-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
+          " M release-assets/v0.1.0-openlands-standalone-edition/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1040,6 +1083,11 @@
         "commitDate": "2026-06-13T21:52:08-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
+          " M release-assets/arcana-division-native-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-native-1.0.0-beta/echo-release.json",
+          " M release-assets/arcana-division-native-1.0.0-beta/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1077,6 +1125,11 @@
         "commitDate": "2026-06-13T23:24:28-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/echo-release.json",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1114,6 +1167,11 @@
         "commitDate": "2026-06-13T21:52:38-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/echo-release.json",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/release-audit.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1151,6 +1209,11 @@
         "commitDate": "2026-06-13T21:49:17-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/sky-relay-native-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-native-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-native-0.1.0-alpha/release-audit.json",
+          " M release-assets/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1215,6 +1278,11 @@
         "commitDate": "2026-06-13T21:49:41-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/release-audit.json",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1279,6 +1347,11 @@
         "commitDate": "2026-06-13T21:50:01-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/release-audit.json",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1343,6 +1416,10 @@
         "commitDate": "2026-06-13T21:50:36-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/galactic-survey-native-0.1.0-alpha/checksums.txt",
+          " M release-assets/galactic-survey-native-0.1.0-alpha/echo-release.json",
+          " M release-assets/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1408,6 +1485,10 @@
         "commitDate": "2026-06-13T21:50:51-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/checksums.txt",
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/echo-release.json",
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
@@ -1473,6 +1554,10 @@
         "commitDate": "2026-06-13T21:51:06-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/checksums.txt",
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/echo-release.json",
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json",
           "?? reports/"
         ]
       },
