@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-14T06:22:57-04:00",
+  "generatedAt": "2026-06-14T12:23:45-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,10 +16,51 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4d3106f2f9cd",
-        "commitDate": "2026-06-14T06:22:57-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "77319e03c2b5",
+        "commitDate": "2026-06-14T09:44:29-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M channels/alpha/launcher-channel.json",
+          " M channels/alpha/release-manifest.json",
+          " M modpacks/arcana-division-native.json",
+          " M modpacks/arcana-division-neoforge.json",
+          " M modpacks/arcana-division-standalone.json",
+          " M modpacks/ashfall-native.json",
+          " M modpacks/ashfall-neoforge.json",
+          " M modpacks/ashfall-standalone.json",
+          " M modpacks/galactic-survey-native.json",
+          " M modpacks/galactic-survey-neoforge.json",
+          " M modpacks/galactic-survey-standalone.json",
+          " M modpacks/openlands-native.json",
+          " M modpacks/openlands-neoforge.json",
+          " M modpacks/openlands-standalone.json",
+          " M modpacks/sky-relay-native.json",
+          " M modpacks/sky-relay-neoforge.json",
+          " M modpacks/sky-relay-standalone.json",
+          " M packs/arcana-division-native-edition.json",
+          " M packs/arcana-division-neoforge-edition.json",
+          " M packs/arcana-division-standalone-edition.json",
+          " M packs/ashfall-native-edition.json",
+          " M packs/ashfall-neoforge-edition.json",
+          " M packs/ashfall-standalone-edition.json",
+          " M packs/galactic-survey-native-edition.json",
+          " M packs/galactic-survey-neoforge-edition.json",
+          " M packs/galactic-survey-standalone-edition.json",
+          " M packs/openlands-native-edition.json",
+          " M packs/openlands-neoforge-edition.json",
+          " M packs/openlands-standalone-edition.json",
+          " M packs/sky-relay-native-edition.json",
+          " M packs/sky-relay-neoforge-edition.json",
+          " M packs/sky-relay-standalone-edition.json",
+          " M products/launcher.json",
+          " M products/native-platform.json",
+          " M release-readiness/all-modpacks-electron-install-smoke.json",
+          " M release-readiness/all-modpacks-pipeline-audit.json",
+          "?? release-readiness/ashfall-native-electron-install-smoke-final.json",
+          "?? release-readiness/ashfall-native-electron-install-smoke-local.json",
+          "?? release-readiness/ashfall-native-runtime-load-smoke.json",
+          "?? release-readiness/sky-relay-native-runtime-load-smoke.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -71,14 +112,14 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 29114,
-          "summary": "release manifest v0.1.0-native-public-alpha; repositories: 12"
+          "bytes": 261782,
+          "summary": "release manifest v0.1.0-native-public-alpha; repositories: 24"
         },
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 29530,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-14T10:16:51.959Z"
+          "bytes": 29534,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-14T16:28:34.992Z"
         },
         {
           "path": "trust/tiers.json",
@@ -99,98 +140,150 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4e44c5341433",
-        "commitDate": "2026-06-13T23:28:49-04:00",
+        "commit": "c1b43ac48f8f",
+        "commitDate": "2026-06-14T11:47:36-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M addons/echoadaptercore/gradle.properties",
-          " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoBackendLifecycleBridge.java",
-          " M addons/echoashfallprotocol/build.gradle",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallProtocol.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/AshCampfireBlock.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/entity/CrystallineSynthesizerBlockEntity.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/entity/IsotopeRefinerBlockEntity.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/block/entity/RadiationCleanserBlockEntity.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/entity/ModEntities.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/AshfallAdapterCoreEarlyEventRuntime.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/MinecraftEchoRuntimeHost.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/NativeLoaderEchoRuntimeHost.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/faction/AshfallFactionContractProgression.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/faction/AshfallFactionInteractionHandler.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/integration/AshfallMissionCoreIntegration.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModAttachments.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModBiomes.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModBlockEntities.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModBlocks.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModCreativeTabs.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModDataComponents.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModEffects.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModItems.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModMenuTypes.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModPoiTypes.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/registry/ModSounds.java",
-          " M addons/echoashfallprotocol/src/test/java/com/knoxhack/echoashfallprotocol/test/ModGameTests.java",
-          " M addons/echoblockworks/build.gradle",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/EchoBlockworks.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/integration/BlockworksMissionCoreIntegration.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModBlockEntities.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModBlocks.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModCreativeTabs.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModItems.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/ModMenus.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/registry/NativeRegistryHolder.java",
-          " M addons/echocore/src/main/java/com/echoplatform/echocore/api/EchoCoreServices.java",
-          " M addons/echocore/src/main/java/com/echoplatform/echocore/api/EchoFactionProfile.java",
-          " M addons/echocore/src/main/java/com/echoplatform/echocore/api/EchoRuntimeModules.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/EchoHoloMap.java",
-          " M addons/echohudcore/src/main/java/com/knoxhack/echo/hudcore/EchoHudCore.java",
-          " M addons/echoindex/build.gradle",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/EchoIndex.java",
-          " M addons/echolens/src/main/java/com/knoxhack/echolens/EchoLens.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/EchoMissionCore.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/content/MissionCoreReloaders.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/service/MissionCoreService.java",
-          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/EchoScreenCoreMod.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminal.java",
-          " M addons/echoworldcore/src/main/java/com/knoxhack/echoworldcore/EchoWorldCore.java",
-          " M build.gradle",
-          " M reports/echo-native/core-module-integration-audit.json",
-          " M reports/runtime-parity/echo-module-runtime-parity-audit.json",
-          " M reports/runtime-parity/echo-module-runtime-parity-audit.md",
-          " M reports/runtime-parity/echo-module-runtime-parity-fix-backlog.md",
-          " M reports/runtime-parity/echo-module-runtime-play-audit.json",
-          " M reports/runtime-parity/echo-module-runtime-play-audit.md",
-          " M reports/runtime-parity/echo-module-runtime-play-fix-backlog.json",
-          " M reports/runtime-parity/echo-module-runtime-play-fix-backlog.md",
-          " M reports/runtime-parity/evidence-manifest.json",
-          " M reports/runtime-parity/manual-acceptance-matrix.json",
-          " M reports/runtime-parity/module-feature-contracts.json",
-          " M reports/runtime-parity/module-play-completion.json",
-          " M reports/runtime-parity/neoforge-client-ui-results.json",
-          " M reports/runtime-parity/neoforge-module-gametest-results.json",
-          " M reports/runtime-parity/neoforge-play-evidence.json",
-          " M reports/runtime-parity/neoforge-registry-content-results.json",
-          " M reports/runtime-parity/neoforge-runtime-evidence.json",
-          " M reports/runtime-parity/pack-acceptance-report-index.json",
-          " M reports/runtime-parity/strict-play-evidence-refresh.json",
-          " M scripts/generate-neoforge-runtime-evidence.mjs",
-          " M scripts/generate-pack-acceptance-reports.mjs",
-          " M scripts/generate-runtime-parity-audit.mjs",
-          " M scripts/generate-runtime-parity-audit.test.mjs",
-          " M scripts/generate-runtime-play-audit.mjs",
-          " M scripts/generate-strict-play-evidence.mjs",
-          " M scripts/sync-official-pack-module-selections.mjs",
-          " M scripts/test-generate-pack-acceptance-reports.mjs",
+          " M addons/echoequipmentcore/build.gradle",
+          " M addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/EchoEquipmentCore.java",
+          " M addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/EchoEquipmentCoreNativeModule.java",
+          " M addons/echoequipmentcore/src/main/resources/META-INF/echo.mod.json",
+          " M addons/echoequipmentcore/src/main/templates/META-INF/neoforge.mods.toml",
+          " M addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/EchoHazardCore.java",
+          " M addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/EchoHazardCoreNativeModule.java",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/game_rules.dat",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/random_sequences.dat",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/world_clocks.dat",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/data/minecraft/raids.dat",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.-10345.-6640.mca",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.-10344.-6640.mca",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.-10345.-6640.mca",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-1.-1.mca",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-1.0.mca",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-10344.-6640.mca",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-10345.-6640.mca",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.0.-1.mca",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.0.0.mca",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/the_end/data/minecraft/raids.dat",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/the_nether/data/minecraft/raids.dat",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/level.dat",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/advancements/9ca15cdd-bde9-4344-9873-3520dd5eaf76.json",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/9ca15cdd-bde9-4344-9873-3520dd5eaf76.dat",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/9ca15cdd-bde9-4344-9873-3520dd5eaf76.dat_old",
+          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/stats/9ca15cdd-bde9-4344-9873-3520dd5eaf76.json",
+          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/serverconfig/readme.txt",
+          " M addons/echonexusprotocol/run-gametest/usernamecache.json",
+          " M addons/echosettlementcore/build.gradle",
+          " M addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/EchoSettlementCore.java",
+          " M addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/EchoSettlementCoreNativeModule.java",
+          " M addons/echosettlementcore/src/main/resources/META-INF/echo.mod.json",
+          " M docs/ECHO_PLATFORM_ROADMAP.md",
+          " M docs/MODULE_BUNDLES.md",
+          " M metadata/modules/index.json",
+          " M scripts/generate-platform-roadmap-modules.mjs",
+          " M scripts/validate-platform-roadmap.mjs",
           " M settings.gradle",
+          "?? .vscode/",
+          "?? addons/echoaetherworks/run/",
+          "?? addons/echoagriculturereclamation/run/",
+          "?? addons/echoarmory/run/",
           "?? addons/echoashfallprotocol/run/",
+          "?? addons/echobasegrid/run/",
+          "?? addons/echoblackboxprotocol/run/",
+          "?? addons/echoblockworks/run/",
+          "?? addons/echocommunitybridge/run/",
+          "?? addons/echoconvoyprotocol/run/",
+          "?? addons/echocreatorcore/run/",
+          "?? addons/echocursecore/run/",
+          "?? addons/echodatacore/run/",
+          "?? addons/echodeepreachprotocol/",
+          "?? addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/api/",
+          "?? addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/data/",
+          "?? addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/event/",
+          "?? addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/integration/",
+          "?? addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/item/",
+          "?? addons/echoequipmentcore/src/main/java/com/knoxhack/echo/equipmentcore/registry/",
+          "?? addons/echoequipmentcore/src/main/resources/assets/",
+          "?? addons/echoequipmentcore/src/test/",
+          "?? addons/echofamiliarcore/run/",
+          "?? addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/api/",
+          "?? addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/event/",
+          "?? addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/player/",
+          "?? addons/echohazardcore/src/main/java/com/knoxhack/echo/hazardcore/source/",
+          "?? addons/echoholomap/run/",
           "?? addons/echoindex/run/",
-          "?? reports/neoforge-strict-play/",
-          "?? reports/runtime-parity/codex-active-goal-context.md",
-          "?? scripts/generate-all-module-creative-tab-visibility.mjs",
-          "?? scripts/run-neoforge-gametests-and-write-evidence.mjs",
-          "?? scripts/test-generate-all-module-creative-tab-visibility.mjs",
-          "?? scripts/test-run-neoforge-gametests-and-write-evidence.mjs"
+          "?? addons/echoindustrialnexus/run/",
+          "?? addons/echolens/run/",
+          "?? addons/echologisticsnetwork/run/",
+          "?? addons/echomissioncore/run/",
+          "?? addons/echomultiblockcore/run/",
+          "?? addons/echonetcore/run/",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/data/echonexusprotocol/",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.-1.-1.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.-1.0.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.0.-1.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.11268.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.11268.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.11269.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.11269.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.11267.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.11267.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.11268.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.11268.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.11269.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.11269.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.11267.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.11267.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.11268.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.11268.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.11269.-16609.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.11269.-16610.mca",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/advancements/236606ca-667d-4d7e-8a5b-dd3244ea82dc.json",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/advancements/5ef5508a-e83f-485c-8021-37f6b390c9fb.json",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/advancements/8d1451d9-3719-458e-bf9e-8e31e823e778.json",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/236606ca-667d-4d7e-8a5b-dd3244ea82dc.dat",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/236606ca-667d-4d7e-8a5b-dd3244ea82dc.dat_old",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/5ef5508a-e83f-485c-8021-37f6b390c9fb.dat",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/5ef5508a-e83f-485c-8021-37f6b390c9fb.dat_old",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/8d1451d9-3719-458e-bf9e-8e31e823e778.dat",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/stats/236606ca-667d-4d7e-8a5b-dd3244ea82dc.json",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/stats/5ef5508a-e83f-485c-8021-37f6b390c9fb.json",
+          "?? addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/stats/8d1451d9-3719-458e-bf9e-8e31e823e778.json",
+          "?? addons/echonexusprotocol/run-gametest/logs/",
+          "?? addons/echonpcore/run/",
+          "?? addons/echoplayercore/run/",
+          "?? addons/echopowergrid/run/",
+          "?? addons/echopresencelink/run/",
+          "?? addons/echorecovery/run/",
+          "?? addons/echorelictech/run/",
+          "?? addons/echorendercore/run/",
+          "?? addons/echoriftworlds/run/",
+          "?? addons/echoritualcore/run/",
+          "?? addons/echoruntimeguard/run/",
+          "?? addons/echoscreencore/run/",
+          "?? addons/echoscriptcore/run/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/api/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/block/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/hazard/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/job/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/menu/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/registry/",
+          "?? addons/echosettlementcore/src/main/java/com/knoxhack/echo/settlementcore/settlement/",
+          "?? addons/echosettlementcore/src/main/resources/assets/",
+          "?? addons/echosettlementcore/src/main/resources/data/echosettlementcore/loot_table/",
+          "?? addons/echosettlementcore/src/main/resources/data/echosettlementcore/recipe/",
+          "?? addons/echosettlementcore/src/test/",
+          "?? addons/echosignalos/run/",
+          "?? addons/echosoundcore/run/",
+          "?? addons/echospellcore/run/",
+          "?? addons/echostationfall/run/",
+          "?? addons/echoterminal/run/",
+          "?? addons/echothemecore/run/",
+          "?? addons/echotutorialcore/run/",
+          "?? addons/echoweathercore/run/",
+          "?? addons/echowiki/run/",
+          "?? addons/echoworldcore/run/",
+          "?? metadata/bundles/deep_reach_official.json"
         ]
       },
       "canonicalDocs": [
@@ -218,7 +311,7 @@
         {
           "path": "docs/module-docs-index.md",
           "exists": true,
-          "bytes": 11526,
+          "bytes": 11530,
           "heading": "Module Docs Index",
           "excerpt": "This index is generated from `addons/<module>/gradle.properties` and `META-INF/echo.mod.json` so every module has a visible documentation landing page."
         },
@@ -232,14 +325,14 @@
         {
           "path": "docs/ADDON_MATRIX.md",
           "exists": true,
-          "bytes": 14051,
+          "bytes": 14067,
           "heading": "Addon Matrix",
           "excerpt": "| Addon | Required deps | Optional deps | Standalone features | ThemeCore | Terminal | Index | MissionCore | HoloMap | Ashfall |"
         },
         {
           "path": "docs/COMPATIBILITY_MATRIX.md",
           "exists": true,
-          "bytes": 7237,
+          "bytes": 7241,
           "heading": "ECHO 1.3.4 Compatibility Matrix",
           "excerpt": "Cell values: Required, Recommended, Optional, Not Needed, Experimental, or Official Pack Only. Reusable modules do not require Ashfall unless their metadata says so."
         }
@@ -323,8 +416,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "49d40477324f",
-        "commitDate": "2026-06-14T06:11:59-04:00",
+        "commit": "a3fd42419951",
+        "commitDate": "2026-06-14T12:23:45-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -349,7 +442,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 6240,
+          "bytes": 6701,
           "summary": "package echo-launcher 1.1.5; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
@@ -365,13 +458,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2b41ecd6203a",
-        "commitDate": "2026-06-14T05:46:21-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M build.gradle",
-          "?? echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAllModuleCreativeTabLiveEvidenceSmokeMain.java"
-        ]
+        "commit": "d45433929cc8",
+        "commitDate": "2026-06-14T11:47:41-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -403,17 +493,26 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e2d20467c57e",
-        "commitDate": "2026-06-13T16:49:51-04:00",
+        "commit": "3f9f9da6f448",
+        "commitDate": "2026-06-14T11:47:41-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M build.gradle",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameSession.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientGameplay.java",
-          "?? echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientCreativeInventoryController.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientCreativeInventorySmokeHarness.java",
-          "?? scripts/generate-standalone-strict-play-evidence.mjs",
-          "?? scripts/test-generate-standalone-strict-play-evidence.mjs"
+          " M echo-runtime-contracts/src/main/java/dev/echo/standalone/runtime/contracts/voxel/EchoBlockBehaviorContract.java",
+          " M echo-runtime-contracts/src/main/java/dev/echo/standalone/runtime/contracts/voxel/EchoBlockStateContract.java",
+          " M settings.gradle",
+          "?? echo-runtime-core/src/main/java/dev/echo/standalone/runtime/core/EchoRuntimeFeatureFlags.java",
+          "?? echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoBlockBehaviorDefinition.java",
+          "?? echo-runtime-data/src/main/java/dev/echo/standalone/runtime/data/EchoBlockBehaviorRegistry.java",
+          "?? echo-runtime-data/src/main/resources/data/echo/",
+          "?? echo-runtime-nbt/",
+          "?? echo-runtime-save/src/main/java/dev/echo/standalone/runtime/save/anvil/",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoBlockBehaviorDataDrivenSmokeHarness.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoMinecraftWorldRoundTripSmokeHarness.java",
+          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoMinecraftWorld.java",
+          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/block/",
+          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/chunk/",
+          "?? echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/gen/"
         ]
       },
       "canonicalDocs": [
@@ -708,17 +807,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2d845e88be8f",
-        "commitDate": "2026-06-13T21:39:27-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-          " M release-assets/v0.1.0-ashfall-native-edition/checksums.txt",
-          " M release-assets/v0.1.0-ashfall-native-edition/echo-release.json",
-          " M release-assets/v0.1.0-ashfall-native-edition/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/pack-acceptance/"
-        ]
+        "commit": "861c5a75b9ce",
+        "commitDate": "2026-06-14T11:47:42-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -778,17 +870,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d3200f2e5894",
-        "commitDate": "2026-06-13T21:40:25-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "0fb4ab47fc7b",
+        "commitDate": "2026-06-14T11:47:42-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -834,17 +919,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9dcdd533b02c",
-        "commitDate": "2026-06-13T21:41:19-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-          " M release-assets/v0.1.0-ashfall-standalone-edition/checksums.txt",
-          " M release-assets/v0.1.0-ashfall-standalone-edition/echo-release.json",
-          " M release-assets/v0.1.0-ashfall-standalone-edition/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "d3451a3fc8bd",
+        "commitDate": "2026-06-14T11:47:43-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -890,17 +968,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "57e5906c8e9f",
-        "commitDate": "2026-06-13T21:51:17-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-openlands-native-edition/checksums.txt",
-          " M release-assets/v0.1.0-openlands-native-edition/echo-release.json",
-          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
-          " M release-assets/v0.1.0-openlands-native-edition/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "b46b54235fa0",
+        "commitDate": "2026-06-14T11:47:44-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -953,17 +1024,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b72bb40ddde5",
-        "commitDate": "2026-06-13T21:51:33-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-openlands-neoforge-edition/checksums.txt",
-          " M release-assets/v0.1.0-openlands-neoforge-edition/echo-release.json",
-          " M release-assets/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json",
-          " M release-assets/v0.1.0-openlands-neoforge-edition/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "cb8e41b673ea",
+        "commitDate": "2026-06-14T11:47:45-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1016,17 +1080,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9eccf8460daa",
-        "commitDate": "2026-06-13T21:51:52-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-openlands-standalone-edition/checksums.txt",
-          " M release-assets/v0.1.0-openlands-standalone-edition/echo-release.json",
-          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
-          " M release-assets/v0.1.0-openlands-standalone-edition/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "e09ea4acccfc",
+        "commitDate": "2026-06-14T11:47:45-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1079,17 +1136,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "04560d757094",
-        "commitDate": "2026-06-13T21:52:08-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
-          " M release-assets/arcana-division-native-1.0.0-beta/checksums.txt",
-          " M release-assets/arcana-division-native-1.0.0-beta/echo-release.json",
-          " M release-assets/arcana-division-native-1.0.0-beta/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "45d99ff536f8",
+        "commitDate": "2026-06-14T11:47:46-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1121,17 +1171,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b45839075e7a",
-        "commitDate": "2026-06-13T23:24:28-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
-          " M release-assets/arcana-division-neoforge-1.0.0-beta/checksums.txt",
-          " M release-assets/arcana-division-neoforge-1.0.0-beta/echo-release.json",
-          " M release-assets/arcana-division-neoforge-1.0.0-beta/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "7c9dfab08c74",
+        "commitDate": "2026-06-14T11:47:46-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1163,17 +1206,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "888f1889002e",
-        "commitDate": "2026-06-13T21:52:38-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
-          " M release-assets/arcana-division-standalone-1.0.0-beta/checksums.txt",
-          " M release-assets/arcana-division-standalone-1.0.0-beta/echo-release.json",
-          " M release-assets/arcana-division-standalone-1.0.0-beta/release-audit.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "54d950fae592",
+        "commitDate": "2026-06-14T11:47:47-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1205,17 +1241,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5d6d6eca6d34",
-        "commitDate": "2026-06-13T21:49:17-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/sky-relay-native-0.1.0-alpha/checksums.txt",
-          " M release-assets/sky-relay-native-0.1.0-alpha/echo-release.json",
-          " M release-assets/sky-relay-native-0.1.0-alpha/release-audit.json",
-          " M release-assets/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "a0c1cec734ac",
+        "commitDate": "2026-06-14T11:47:48-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1274,17 +1303,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "635d2e6b9d09",
-        "commitDate": "2026-06-13T21:49:41-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
-          " M release-assets/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
-          " M release-assets/sky-relay-neoforge-0.1.0-alpha/release-audit.json",
-          " M release-assets/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "c870d3049fce",
+        "commitDate": "2026-06-14T11:47:48-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1343,17 +1365,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0f2da14538c1",
-        "commitDate": "2026-06-13T21:50:01-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/sky-relay-standalone-0.1.0-alpha/checksums.txt",
-          " M release-assets/sky-relay-standalone-0.1.0-alpha/echo-release.json",
-          " M release-assets/sky-relay-standalone-0.1.0-alpha/release-audit.json",
-          " M release-assets/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "0ebd91ccefe0",
+        "commitDate": "2026-06-14T11:47:49-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1412,16 +1427,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "6422550d719b",
-        "commitDate": "2026-06-13T21:50:36-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/galactic-survey-native-0.1.0-alpha/checksums.txt",
-          " M release-assets/galactic-survey-native-0.1.0-alpha/echo-release.json",
-          " M release-assets/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "6af7e5be75a0",
+        "commitDate": "2026-06-14T11:53:14-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1481,16 +1490,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9990b025f252",
-        "commitDate": "2026-06-13T21:50:51-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/checksums.txt",
-          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/echo-release.json",
-          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "9ffa4a9244af",
+        "commitDate": "2026-06-14T11:53:16-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -1550,16 +1553,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "61ccf27ae923",
-        "commitDate": "2026-06-13T21:51:06-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/galactic-survey-standalone-0.1.0-alpha/checksums.txt",
-          " M release-assets/galactic-survey-standalone-0.1.0-alpha/echo-release.json",
-          " M release-assets/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
-          " M release-manifest.template.json",
-          "?? reports/"
-        ]
+        "commit": "3b00e119bd17",
+        "commitDate": "2026-06-14T11:53:18-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
