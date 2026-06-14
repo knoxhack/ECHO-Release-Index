@@ -1,0 +1,88 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoatmospherecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoatmospherecore-1.0.0-neoforge.jar",
+      "sha256": "e6b90948987602e99484630cb7bf0d4250f823fa85f443f06aa78e2f8bb2e51d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoatmospherecore-1.0.0-neoforge.jar",
+      "size": 28677,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoatmospherecore-1.0.0-standalone.jar",
+      "sha256": "2e4b1ab5bd156a113aa414cbd5c5e79c475dd12b0988542ebd1f4eb880473c0b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoatmospherecore-1.0.0-standalone.jar",
+      "size": 28662,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoatmospherecore-1.0.0.echo-addon",
+      "sha256": "01da57a94dc6f445d8dc1c002b01c7f707a551b5630c14295dd46df29f64394d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoatmospherecore-1.0.0.echo-addon",
+      "size": 29399,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoatmospherecore-1.0.0-sources.jar",
+      "sha256": "9b74c9dd04b336683650e0508d371ead268e093069796287a5edacfd82b9dcdf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoatmospherecore-1.0.0-sources.jar",
+      "size": 15219
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoassetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

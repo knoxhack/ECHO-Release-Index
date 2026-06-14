@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echowiki",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echowiki-1.0.0-neoforge.jar",
+      "sha256": "cc58859ac4e4ab54c957014f73e1260e05a3f4adcd7944a29b00a6d374b86a56",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echowiki-1.0.0-neoforge.jar",
+      "size": 4712028,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echowiki-1.0.0-standalone.jar",
+      "sha256": "0b0ae39ec211455e5160b8e2609756d1af5dc4a0483bf604ab6f00f17fb6fde7",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echowiki-1.0.0-standalone.jar",
+      "size": 4712008,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echowiki-1.0.0.echo-addon",
+      "sha256": "98b33c4d51e3a5b67a7869356f597a84037eb6f68eac83e812800aa756641c03",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echowiki-1.0.0.echo-addon",
+      "size": 4659361,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echowiki-1.0.0-sources.jar",
+      "sha256": "1deb4a8307ede18fe3f90dbbc2d2ca470216f10d4c12b3227aa4432a4da989a4",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echowiki-1.0.0-sources.jar",
+      "size": 4637056
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

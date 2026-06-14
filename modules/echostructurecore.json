@@ -1,0 +1,92 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echostructurecore",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echostructurecore-1.0.0-neoforge.jar",
+      "sha256": "dfb116678bbe72f14c182135c80932d8dbeea04b6fe56e443bd21c69032c2a2f",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostructurecore-1.0.0-neoforge.jar",
+      "size": 28961,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echostructurecore-1.0.0-standalone.jar",
+      "sha256": "79c51e8693ab81c0bbd98068a1dc0ac1b747c6376a602f997809b1036f719d84",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostructurecore-1.0.0-standalone.jar",
+      "size": 28943,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echostructurecore-1.0.0.echo-addon",
+      "sha256": "0a0f6e68870f305dd5a96d52ecac7986c382fbcce8ad0d5ab75cc00994f59bf6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostructurecore-1.0.0.echo-addon",
+      "size": 29596,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echostructurecore-1.0.0-sources.jar",
+      "sha256": "60010b7a521bdb2136d17d9d6c38019e9cbf185b782946944049ef50167e29e5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostructurecore-1.0.0-sources.jar",
+      "size": 14609
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoplatformcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoprogressioncore",
+      "kind": "module"
+    },
+    {
+      "id": "echoschemacore",
+      "kind": "module"
+    },
+    {
+      "id": "echosocialcore",
+      "kind": "module"
+    },
+    {
+      "id": "echovalidationcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

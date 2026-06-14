@@ -1,0 +1,76 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoarcaneindex",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoarcaneindex-1.0.0-neoforge.jar",
+      "sha256": "f4a276fa669d2d3f4b0322a520ddb0b831605c78883c5a976fcec4f4b9f1b20d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoarcaneindex-1.0.0-neoforge.jar",
+      "size": 31412,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoarcaneindex-1.0.0-standalone.jar",
+      "sha256": "77bf4dd3b93a54d4c21fd5b6334ab34ee23bf611ae5923c171cfadfc4a94b29a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoarcaneindex-1.0.0-standalone.jar",
+      "size": 31393,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoarcaneindex-1.0.0.echo-addon",
+      "sha256": "2beb70aa05fb862f58f33e470d144f6231942ff8c5b6df42a9c6f9f31bd789b6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoarcaneindex-1.0.0.echo-addon",
+      "size": 33239,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoarcaneindex-1.0.0-sources.jar",
+      "sha256": "59258e3cc63be4b44db36aaf9834cd959a3114886386b2a367d8f6108816b3da",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoarcaneindex-1.0.0-sources.jar",
+      "size": 18946
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoindex",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

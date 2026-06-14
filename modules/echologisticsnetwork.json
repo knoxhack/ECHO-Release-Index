@@ -2,53 +2,40 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "galactic-survey-0.1.0-alpha",
-  "commitSha": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-  "trust": "provenance-attested",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
   "validation": "approved",
-  "provenance": {
-    "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
-    "verifiedBy": "scripts/ingest-release.mjs",
-    "attestation": {
-      "action": "gh attestation verify",
-      "releaseAssetAction": "gh release verify-asset",
-      "releaseAssetActionMode": "best-effort",
-      "sourceDigest": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
-    }
-  },
   "id": "echologisticsnetwork",
   "kind": "module",
   "version": "1.0.0",
   "artifacts": {
     "neoforge": {
       "file": "echologisticsnetwork-1.0.0-neoforge.jar",
-      "sha256": "695cc70c36e79cc760e42f75786fba71c857639a7f0cdd89818b2845b1753964",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0-neoforge.jar",
-      "size": 3672634,
+      "sha256": "fa076320b1a51c3aaa86eb5c5c9d65a4938f5ea9f0580479bd491b7742a193f2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echologisticsnetwork-1.0.0-neoforge.jar",
+      "size": 3672999,
       "buildMode": "compiled-runtime"
     },
     "standalone": {
       "file": "echologisticsnetwork-1.0.0-standalone.jar",
-      "sha256": "695cc70c36e79cc760e42f75786fba71c857639a7f0cdd89818b2845b1753964",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0-standalone.jar",
-      "size": 3672634,
+      "sha256": "e7b36891065348658e45d5bb8d294aac3e1ce93db3799ee2b3e718234432a70a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echologisticsnetwork-1.0.0-standalone.jar",
+      "size": 3672994,
       "buildMode": "compiled-runtime"
     },
     "native": {
       "file": "echologisticsnetwork-1.0.0.echo-addon",
-      "sha256": "a6b8c691a289e23339d5895be182119574b63fe2484ffe821867d6b16509212a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0.echo-addon",
-      "size": 3640459,
+      "sha256": "1857c61600022c33735f97151088ce4ac26eff028d9cec910101d3db30aedd99",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echologisticsnetwork-1.0.0.echo-addon",
+      "size": 3640652,
       "buildMode": "compiled-runtime"
     },
     "sources": {
       "file": "echologisticsnetwork-1.0.0-sources.jar",
-      "sha256": "5e5c6cb92549a8cba9e2b768faabe47937477720bbd0bad7ef0cbff6450ba97c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echologisticsnetwork-1.0.0-sources.jar",
-      "size": 3536758
+      "sha256": "fe4d61587cc1ea99067745fffbd3d437fcc67af88e6ce338a30ae264033de3bf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echologisticsnetwork-1.0.0-sources.jar",
+      "size": 3537638
     }
   },
   "dependencies": [
@@ -66,8 +53,20 @@
     }
   ],
   "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
     "galactic-survey-native-edition",
     "galactic-survey-neoforge-edition",
-    "galactic-survey-standalone-edition"
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
   ]
 }

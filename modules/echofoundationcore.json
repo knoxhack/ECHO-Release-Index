@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echofoundationcore",
+  "kind": "module",
+  "version": "0.1.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echofoundationcore-0.1.0-neoforge.jar",
+      "sha256": "27353b883ccf37d38e2f8545f2d7529e88913292fc21b8e6799557a11a60721d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echofoundationcore-0.1.0-neoforge.jar",
+      "size": 10974,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echofoundationcore-0.1.0-standalone.jar",
+      "sha256": "08490039470e6eb12206bd25421fdce3e702208abbf784fc59c2b90d9e6a5f71",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echofoundationcore-0.1.0-standalone.jar",
+      "size": 10963,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echofoundationcore-0.1.0.echo-addon",
+      "sha256": "053999c4ee4cfbafdcaf7464286653d53d3d2f2773454985eb98d376096862f0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echofoundationcore-0.1.0.echo-addon",
+      "size": 12276,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echofoundationcore-0.1.0-sources.jar",
+      "sha256": "97f3d861c2a25064c3740e12b30b38b68fff6a6ac54950a058e01ee8c4285544",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echofoundationcore-0.1.0-sources.jar",
+      "size": 9908
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echogrimoire",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echogrimoire-1.0.0-neoforge.jar",
+      "sha256": "e4ae6a3e03c9355fabf7a5c7e20ec1d328344eca3d71363952bc0c65fbc9d100",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echogrimoire-1.0.0-neoforge.jar",
+      "size": 29528,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echogrimoire-1.0.0-standalone.jar",
+      "sha256": "6d01ec0c81a853a1bb5ba5bed0665dd68a7c3a0569bdba1087ae2b3486a6b34d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echogrimoire-1.0.0-standalone.jar",
+      "size": 29510,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echogrimoire-1.0.0.echo-addon",
+      "sha256": "5cb9125259cad80a4048d81150642398afccd6c7aea21366b81d3a2c90fa7190",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echogrimoire-1.0.0.echo-addon",
+      "size": 31064,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echogrimoire-1.0.0-sources.jar",
+      "sha256": "130d71adee607d4de8966365c68692695ba6568e07c64ca66cff0a5503171dca",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echogrimoire-1.0.0-sources.jar",
+      "size": 16842
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echoterminal",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

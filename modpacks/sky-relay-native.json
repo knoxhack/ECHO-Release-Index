@@ -6,37 +6,31 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
   "releaseTag": "sky-relay-native-0.1.0-alpha",
-  "commitSha": "2f6d722d05810bfc3299afe1ad67ef58ce4e19d8",
+  "commitSha": "b1f6260f8839c76ab0d25bda77b95377354f4bf1",
   "artifacts": {
     "pack": {
       "file": "sky-relay-native-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-0.1.0.zip",
-      "sha256": "8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa",
-      "size": 39163330
+      "sha256": "953b626a7453fbcc9bbfca33ad9a598abf5ffafa0e098e775f9939c36143b366",
+      "size": 8086
     },
     "manifest": {
       "file": "sky-relay-native-edition-alpha-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
-      "sha256": "3ec3a450e08f92d1a5bd409b552a66c72f21d69be5815d98769357c86ee1c420",
-      "size": 11013
+      "sha256": "4c9f2ae91855aeb25c4864be3729e4a4608dd47d14edd98aa1b691c929ad8eec",
+      "size": 52922
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/checksums.txt",
-      "sha256": "b664f1dcf8e0a71e997c8ed8a09d5435fa1c21a848987c2ede1bba19d6a56d5e",
-      "size": 397
+      "sha256": "6aebda815b1a58e70d90bf53e80184d70466ac36949eabc0d8a4749f5f5c0236",
+      "size": 298
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/echo-release.json",
-      "sha256": "ed88b56b7329f55f163a000a38eaa97bcb8eb498e91a954abe90aa737f7db95a",
-      "size": 4567
-    },
-    "buildReport": {
-      "file": "sky-relay-pack-build-report.json",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-pack-build-report.json",
-      "sha256": "d245f6f17438e2ba4025289de37f9bb81ed817ab2235496c127e5ea73e14709d",
-      "size": 6330
+      "sha256": "a0d05922bd55d27febbcb9709e9e49df671f5359e424b7f1a7f7aec19be38f8e",
+      "size": 1618
     }
   },
   "dependencies": [
@@ -47,7 +41,7 @@
     },
     {
       "id": "echoskyrelayprotocol",
-      "kind": "addon",
+      "kind": "module",
       "version": "0.1.0"
     }
   ],
@@ -57,6 +51,6 @@
   ],
   "trust": "source-linked",
   "validation": "approved",
-  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy.",
-  "notes": "Sky Relay Native Edition prerelease. Launcher packaged Electron install/update/repair evidence and Node rollback evidence are recorded in release-readiness."
+  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }

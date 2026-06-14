@@ -6,31 +6,31 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
   "releaseTag": "v0.1.0-openlands-standalone-edition",
-  "commitSha": "2149bc0cb9fad4f676aab233e2ca4c2c003e6b65",
+  "commitSha": "30041038a23b9c1273e544829afd72aa12c1f749",
   "artifacts": {
     "pack": {
       "file": "openlands-standalone-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-0.1.0.zip",
-      "sha256": "47ce5ecd37e3bc051a2d01ec0d04cf7e419c99d8cccb4b057809dde0903ae858",
-      "size": 211769
+      "sha256": "f36a35f73b4a2c365b4188fb902b464e7bb42cdd5e1824f5c2061064a6794d92",
+      "size": 8109
     },
     "manifest": {
       "file": "openlands-standalone-edition-experimental-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
-      "sha256": "d1f881cbc9d39e5724ec2bc353df8bba0c127b53fb04f500d44973168d6caa64",
-      "size": 4866
+      "sha256": "629a06b7f9ed2bd9c856fcad20caefe4a3afc108b77b95ec4edfee937a93f05d",
+      "size": 53227
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/checksums.txt",
-      "sha256": "e9a16c5c63af5f7a6a12c4617313e24483ba1afbb3d7f613a70df1b291e25eed",
+      "sha256": "df895662021df0351e1a2a3d515e37d194371b3674b06d7bd86041649c7cbffa",
       "size": 313
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/echo-release.json",
-      "sha256": "80f36d2ba08a8c5c5bd6f866c4c842c86631117e45c440dddc29e43ca7295271",
-      "size": 2130
+      "sha256": "d84f7e45967d4852da8355764af889f3b18d476e60509f273bcf1ca7c56e4d76",
+      "size": 1697
     }
   },
   "dependencies": [
@@ -46,6 +46,6 @@
   ],
   "trust": "source-linked",
   "validation": "approved",
-  "notes": "Install-approved catalog entry. Gameplay/readiness evidence may continue separately, but it no longer blocks launcher installation.",
-  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy."
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
+  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only."
 }

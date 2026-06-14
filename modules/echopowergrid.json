@@ -2,53 +2,40 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "galactic-survey-0.1.0-alpha",
-  "commitSha": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-  "trust": "provenance-attested",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
   "validation": "approved",
-  "provenance": {
-    "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
-    "verifiedBy": "scripts/ingest-release.mjs",
-    "attestation": {
-      "action": "gh attestation verify",
-      "releaseAssetAction": "gh release verify-asset",
-      "releaseAssetActionMode": "best-effort",
-      "sourceDigest": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
-    }
-  },
   "id": "echopowergrid",
   "kind": "module",
   "version": "1.0.0",
   "artifacts": {
     "neoforge": {
       "file": "echopowergrid-1.0.0-neoforge.jar",
-      "sha256": "b267d30c8e24cbc0fb747770114b01a5f8037465f910c2f337a33eaa6f86404a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0-neoforge.jar",
-      "size": 7184851,
+      "sha256": "56face09668ca185ff0632bc4a83db6f8c3afdab72eb7b2ec810bb5766315230",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopowergrid-1.0.0-neoforge.jar",
+      "size": 7185427,
       "buildMode": "compiled-runtime"
     },
     "standalone": {
       "file": "echopowergrid-1.0.0-standalone.jar",
-      "sha256": "b267d30c8e24cbc0fb747770114b01a5f8037465f910c2f337a33eaa6f86404a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0-standalone.jar",
-      "size": 7184851,
+      "sha256": "f258a21b1d9f972f7b76fa60ef3e43b0c52795ea1e4878b4a3a8c1f210ede9e7",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopowergrid-1.0.0-standalone.jar",
+      "size": 7185421,
       "buildMode": "compiled-runtime"
     },
     "native": {
       "file": "echopowergrid-1.0.0.echo-addon",
-      "sha256": "1612d83b731e2f872539c3ae89b3079e86badc0a119d3892ae157279d0085bc7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0.echo-addon",
-      "size": 7142503,
+      "sha256": "e563e3ea70af670e7fa188be22bb12bcbc352877aa047740cb8403cf789ad796",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopowergrid-1.0.0.echo-addon",
+      "size": 7141545,
       "buildMode": "compiled-runtime"
     },
     "sources": {
       "file": "echopowergrid-1.0.0-sources.jar",
-      "sha256": "7888a28c7dcfa9f64e3beb68ceb48058b8fcee0adde412de4c386faca2287f58",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echopowergrid-1.0.0-sources.jar",
-      "size": 7055955
+      "sha256": "25cf005eb84dba0e218509f68f6aa6ea85df2913d41f4c18d41a74f8f6abcc07",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopowergrid-1.0.0-sources.jar",
+      "size": 7057124
     }
   },
   "dependencies": [
@@ -66,8 +53,20 @@
     }
   ],
   "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
     "galactic-survey-native-edition",
     "galactic-survey-neoforge-edition",
-    "galactic-survey-standalone-edition"
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
   ]
 }

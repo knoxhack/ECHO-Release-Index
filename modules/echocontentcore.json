@@ -2,53 +2,40 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "galactic-survey-0.1.0-alpha",
-  "commitSha": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-  "trust": "provenance-attested",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
   "validation": "approved",
-  "provenance": {
-    "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-    "workflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml",
-    "verifiedBy": "scripts/ingest-release.mjs",
-    "attestation": {
-      "action": "gh attestation verify",
-      "releaseAssetAction": "gh release verify-asset",
-      "releaseAssetActionMode": "best-effort",
-      "sourceDigest": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
-      "signerWorkflow": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml"
-    }
-  },
   "id": "echocontentcore",
   "kind": "module",
   "version": "1.0.0",
   "artifacts": {
     "neoforge": {
       "file": "echocontentcore-1.0.0-neoforge.jar",
-      "sha256": "ecac66b3f7d6577b0bde1ef5ecdb54f41b1bdeaf1bac07d9e7b1880d3bd2389b",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echocontentcore-1.0.0-neoforge.jar",
-      "size": 33231,
+      "sha256": "61e02d63d0cc4aac9479d60465e7deea3bbdc4d3a852434f08e7fcd5784742c6",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocontentcore-1.0.0-neoforge.jar",
+      "size": 33278,
       "buildMode": "compiled-runtime"
     },
     "standalone": {
       "file": "echocontentcore-1.0.0-standalone.jar",
-      "sha256": "99eaa301413eaea875523f60832b381e0647182c75bccff2ea94c1639299f84c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echocontentcore-1.0.0-standalone.jar",
-      "size": 33238,
+      "sha256": "4bf49389a6413a009923463e3ecc23e1ce2ff9eaf4f8fadedf64c7796e21c9e0",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocontentcore-1.0.0-standalone.jar",
+      "size": 33258,
       "buildMode": "compiled-runtime"
     },
     "native": {
       "file": "echocontentcore-1.0.0.echo-addon",
-      "sha256": "14d80e6e28fb4d85f176407680c1361e1625c63ea0f99eb5495158820930a0bd",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echocontentcore-1.0.0.echo-addon",
-      "size": 33630,
+      "sha256": "ad5452d3d1b0814f28db3e6028439c6a43e5f8e5d6ba3b78b7b9e1122c730634",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocontentcore-1.0.0.echo-addon",
+      "size": 33666,
       "buildMode": "compiled-runtime"
     },
     "sources": {
       "file": "echocontentcore-1.0.0-sources.jar",
-      "sha256": "831f75213c977daf2d01c966835b4e8bee5bc6f239b558e1dfb0b816f96c0e92",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/galactic-survey-0.1.0-alpha/echocontentcore-1.0.0-sources.jar",
-      "size": 15877
+      "sha256": "31c702fbe9619ba1cedb8186e1f5952c7e1173a905858404b292e6986879100b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocontentcore-1.0.0-sources.jar",
+      "size": 16034
     }
   },
   "dependencies": [
@@ -74,8 +61,20 @@
     }
   ],
   "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
     "galactic-survey-native-edition",
     "galactic-survey-neoforge-edition",
-    "galactic-survey-standalone-edition"
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
   ]
 }

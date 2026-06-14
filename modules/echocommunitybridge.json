@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "632662df934e3a32e2dc713c438e562d6367331d",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echocommunitybridge",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echocommunitybridge-1.0.0-neoforge.jar",
+      "sha256": "5f72acab53ca6e4a1f6b75e21c37669954e48d01d122b6dcafd9fbe3538fb9d1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocommunitybridge-1.0.0-neoforge.jar",
+      "size": 70738,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echocommunitybridge-1.0.0-standalone.jar",
+      "sha256": "c0e8889935dd3645ff7ede7e26d29a9c4989f326e9a6af22bf8d863a975051df",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocommunitybridge-1.0.0-standalone.jar",
+      "size": 70727,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echocommunitybridge-1.0.0.echo-addon",
+      "sha256": "23c8dcbe328ed0ad9779c51536fedbd9459e907b649e5605833117a593bf9663",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocommunitybridge-1.0.0.echo-addon",
+      "size": 70250,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echocommunitybridge-1.0.0-sources.jar",
+      "sha256": "249b78c866fe140b362f81272dc0250ef91255d7e60f5ca4e81290ee2e87cf26",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echocommunitybridge-1.0.0-sources.jar",
+      "size": 31430
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

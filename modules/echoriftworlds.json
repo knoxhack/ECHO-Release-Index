@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoriftworlds",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoriftworlds-1.0.0-neoforge.jar",
+      "sha256": "e5a5dd47735f99fbc84a9b376667aa6c6877b895c4e70ff69e57931c36b0e5d8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoriftworlds-1.0.0-neoforge.jar",
+      "size": 33394,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoriftworlds-1.0.0-standalone.jar",
+      "sha256": "ad052a16b6936fe8235f8d169286ab3c3f1ef58251318cd0f4e3a0826287a77b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoriftworlds-1.0.0-standalone.jar",
+      "size": 33380,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoriftworlds-1.0.0.echo-addon",
+      "sha256": "f001fabaac8f164948a4d288e0d54514605a6f99305c567b566482891f3f2baf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoriftworlds-1.0.0.echo-addon",
+      "size": 32973,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoriftworlds-1.0.0-sources.jar",
+      "sha256": "54221a06b36ec2f02c35bcfd50a26e1cb2c2659553466f6056f751515dd0d312",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoriftworlds-1.0.0-sources.jar",
+      "size": 20078
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echoarcanacore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

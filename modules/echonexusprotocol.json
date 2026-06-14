@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echonexusprotocol",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echonexusprotocol-1.0.0-neoforge.jar",
+      "sha256": "adbab5040ae2a9ac1461dab86760d70264dfe92ad384b827f05a5415477c8c59",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echonexusprotocol-1.0.0-neoforge.jar",
+      "size": 13873714,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echonexusprotocol-1.0.0-standalone.jar",
+      "sha256": "4c68bed2b790caa0603339e12f02bd0c7337636a68bb24b8726914707e4ed947",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echonexusprotocol-1.0.0-standalone.jar",
+      "size": 13873708,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echonexusprotocol-1.0.0.echo-addon",
+      "sha256": "c8ef6dc135717eb81de840e5cf448734f686e21cc6e06d631c09dd9404e5c467",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echonexusprotocol-1.0.0.echo-addon",
+      "size": 13788313,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echonexusprotocol-1.0.0-sources.jar",
+      "sha256": "c2bc6f4a12c00ad03eb3a0bf28cc81f2724d4b84ba10ab3a4c7d7020d039caf9",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echonexusprotocol-1.0.0-sources.jar",
+      "size": 13734994
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

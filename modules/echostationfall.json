@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echostationfall",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echostationfall-1.0.0-neoforge.jar",
+      "sha256": "04bbe3b5aac3da70fec19e95783911e5bab1054570a3ced91a9b86e5dc4c5fbf",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostationfall-1.0.0-neoforge.jar",
+      "size": 3926039,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echostationfall-1.0.0-standalone.jar",
+      "sha256": "8ee7d70354eb52ba002b639d0c06df12a7a41eb56192f17272deb8dead6e775b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostationfall-1.0.0-standalone.jar",
+      "size": 3926018,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echostationfall-1.0.0.echo-addon",
+      "sha256": "fe47d30b80d21dcb65e8cbc2d1b7e1ee6524bb0155b234fe2351e95ee27120f8",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostationfall-1.0.0.echo-addon",
+      "size": 3876479,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echostationfall-1.0.0-sources.jar",
+      "sha256": "0dac13ff191827661e3601de9570357139dd1f7b812af8ee17c951f9f5d6ca2c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echostationfall-1.0.0-sources.jar",
+      "size": 3824958
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

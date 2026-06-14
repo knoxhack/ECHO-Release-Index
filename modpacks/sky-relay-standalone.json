@@ -6,37 +6,31 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
   "releaseTag": "sky-relay-standalone-0.1.0-alpha",
-  "commitSha": "17ada1c865b41e4cb382fd573777d298ad53146f",
+  "commitSha": "515def2e239501abb83e06dc4b3c6d63757f83e8",
   "artifacts": {
     "pack": {
       "file": "sky-relay-standalone-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-0.1.0.zip",
-      "sha256": "93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2",
-      "size": 40131817
+      "sha256": "ea6b7912989cd1887f5360a87721537d904f1e524a5ce0bb8f35ffa4cb0e0ca3",
+      "size": 7856
     },
     "manifest": {
       "file": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
-      "sha256": "dc4a0b668a83ec9d00f7875ba67fc632cd326cd0fee576cf1ae4d0363095d913",
-      "size": 10729
+      "sha256": "4681b76bca19017f95f0ecd284bebd9b0637cba9a46ce1244d71a3a3d2205aab",
+      "size": 53341
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/checksums.txt",
-      "sha256": "46b8c36eedf98d45746ff1ea290dd418b6d94601345623982f803e182721bf50",
-      "size": 405
+      "sha256": "ca81bb32e4158f10b2a34f6a2f027b7df46f4c22d5f64ee4d90ad8a2c8b8f45b",
+      "size": 306
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/echo-release.json",
-      "sha256": "ac55bca204e6dd8f12c7563d1f21c400cf28d2c1d88e9392cf91b425a1c3c49a",
-      "size": 4683
-    },
-    "buildReport": {
-      "file": "sky-relay-pack-build-report.json",
-      "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-pack-build-report.json",
-      "sha256": "0dc9c8a82827eda3e73037a36b2a0dc70368f045acdda00e6126065c42dce319",
-      "size": 6466
+      "sha256": "4a57f0444a3053068548e855f578f97e7db1ae600aacce48efe80da57cc5c423",
+      "size": 1662
     }
   },
   "dependencies": [
@@ -47,7 +41,7 @@
     },
     {
       "id": "echoskyrelayprotocol",
-      "kind": "addon",
+      "kind": "module",
       "version": "0.1.0"
     }
   ],
@@ -57,6 +51,6 @@
   ],
   "trust": "source-linked",
   "validation": "approved",
-  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy.",
-  "notes": "Sky Relay Standalone Edition prerelease. Launcher Node lifecycle evidence covers install/update/repair/rollback for this edition."
+  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }

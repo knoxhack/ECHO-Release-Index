@@ -1,0 +1,76 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "632662df934e3a32e2dc713c438e562d6367331d",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echobasegrid",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echobasegrid-1.0.0-neoforge.jar",
+      "sha256": "a5974108a7642c0ae4db7422b7d53629d417fb42c8043864551fbdab08321b34",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echobasegrid-1.0.0-neoforge.jar",
+      "size": 103079,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echobasegrid-1.0.0-standalone.jar",
+      "sha256": "fbefac4c4cc8ba7998ef844d20945541997d2bf4e16a027a8baa441c97750ae1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echobasegrid-1.0.0-standalone.jar",
+      "size": 103063,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echobasegrid-1.0.0.echo-addon",
+      "sha256": "d931f8ee4ca9a698c313e20213f586a7ca200a16f8e0caed8ae1c231bfb4d72a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echobasegrid-1.0.0.echo-addon",
+      "size": 99716,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echobasegrid-1.0.0-sources.jar",
+      "sha256": "8955f38bfc1df9b8b52a4dc02712d0eb9ce09ab15067b3a1613e7a9b9a48c838",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echobasegrid-1.0.0-sources.jar",
+      "size": 41147
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    },
+    {
+      "id": "echoscreencore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

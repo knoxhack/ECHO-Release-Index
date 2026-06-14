@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoindustrialnexus",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoindustrialnexus-1.0.0-neoforge.jar",
+      "sha256": "9fb9e9a38711bcef9a1f9a4fe2aef08b834f32ece32564b1befd2413abe31676",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoindustrialnexus-1.0.0-neoforge.jar",
+      "size": 5310391,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoindustrialnexus-1.0.0-standalone.jar",
+      "sha256": "9f3c9d314cf8937e74896af1ca7060ea3001210ce0eb8496dff3951ecac52756",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoindustrialnexus-1.0.0-standalone.jar",
+      "size": 5310384,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoindustrialnexus-1.0.0.echo-addon",
+      "sha256": "72b32b6c82efc194c58ee0d95965307995299e23c462db1d39795617c8b5664d",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoindustrialnexus-1.0.0.echo-addon",
+      "size": 5000165,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoindustrialnexus-1.0.0-sources.jar",
+      "sha256": "fb3b307dd20de6d52b6e843b961425b65542dbdd05956d577bfa04b20e13d23b",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoindustrialnexus-1.0.0-sources.jar",
+      "size": 5064658
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

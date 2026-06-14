@@ -1,0 +1,68 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "632662df934e3a32e2dc713c438e562d6367331d",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echopresencelink",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echopresencelink-1.0.0-neoforge.jar",
+      "sha256": "3123f50570ec33bc6fc8dcf52c501ab1b68f08c165a52cadbcb6c2e5eab44377",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopresencelink-1.0.0-neoforge.jar",
+      "size": 10139025,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echopresencelink-1.0.0-standalone.jar",
+      "sha256": "140bfd7c2dd19d8281520b96a80b2e1e6403108ae34256bc4f85ed62c3bd9a4a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopresencelink-1.0.0-standalone.jar",
+      "size": 10139011,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echopresencelink-1.0.0.echo-addon",
+      "sha256": "5e524f8924941d5d32f276cdac5a8467b9bb5c2a46c7ae7f350435fb9f529fd5",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopresencelink-1.0.0.echo-addon",
+      "size": 10140620,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echopresencelink-1.0.0-sources.jar",
+      "sha256": "8cfe5453502cb5557b6841def748651976c10b8de4143dd0ba13f797b3ea7396",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echopresencelink-1.0.0-sources.jar",
+      "size": 10103063
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "a2e0823ba175b79be9a67031f7b6da77159720a1",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echoagriculturereclamation",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echoagriculturereclamation-1.0.0-neoforge.jar",
+      "sha256": "0f3b386ba871abfb46c30494202a94697e896b082f090eb60f05fd2854d544ee",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoagriculturereclamation-1.0.0-neoforge.jar",
+      "size": 502472,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echoagriculturereclamation-1.0.0-standalone.jar",
+      "sha256": "5eff7d1755996dafcbfbff1f5d5f1e9ace5819b018c2942efdf15621b7966abb",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoagriculturereclamation-1.0.0-standalone.jar",
+      "size": 502465,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echoagriculturereclamation-1.0.0.echo-addon",
+      "sha256": "c1d656d4e765313a9bb9ac213298fe515413125ccb2ecc26d64dd9fbce894e84",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoagriculturereclamation-1.0.0.echo-addon",
+      "size": 383092,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echoagriculturereclamation-1.0.0-sources.jar",
+      "sha256": "92c335dd26543dd7726e5b4611d1b64cf3df06bebe7f471baf57644c941e2109",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echoagriculturereclamation-1.0.0-sources.jar",
+      "size": 329350
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

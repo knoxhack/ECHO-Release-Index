@@ -1,0 +1,72 @@
+{
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-all-official-modpacks-install-fix-20260613",
+  "commitSha": "632662df934e3a32e2dc713c438e562d6367331d",
+  "trust": "source-linked",
+  "validation": "approved",
+  "id": "echotextureforge",
+  "kind": "module",
+  "version": "1.0.0",
+  "artifacts": {
+    "neoforge": {
+      "file": "echotextureforge-1.0.0-neoforge.jar",
+      "sha256": "f1fbd4d6aa4830bb4af3fda120c13dfb898a4f85c23c9d5f41fc816d5a61d482",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echotextureforge-1.0.0-neoforge.jar",
+      "size": 177930,
+      "buildMode": "compiled-runtime"
+    },
+    "standalone": {
+      "file": "echotextureforge-1.0.0-standalone.jar",
+      "sha256": "beccb9b3bcd230918f6ba295a7380987003d5f378c74a9bf1214f3b942320aa2",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echotextureforge-1.0.0-standalone.jar",
+      "size": 177911,
+      "buildMode": "compiled-runtime"
+    },
+    "native": {
+      "file": "echotextureforge-1.0.0.echo-addon",
+      "sha256": "e75a1b07a558cf8121716b2b5684a57326165478a76ff09145df3e9efec3af27",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echotextureforge-1.0.0.echo-addon",
+      "size": 171897,
+      "buildMode": "compiled-runtime"
+    },
+    "sources": {
+      "file": "echotextureforge-1.0.0-sources.jar",
+      "sha256": "49468e686d16dfca64d765b408c6066d48568279ac091ba3f1eaeac92d2ca97a",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-install-fix-20260613/echotextureforge-1.0.0-sources.jar",
+      "size": 71476
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echoadaptercore",
+      "kind": "module"
+    },
+    {
+      "id": "echocore",
+      "kind": "module"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module"
+    }
+  ],
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "sky-relay-native-edition",
+    "sky-relay-neoforge-edition",
+    "sky-relay-standalone-edition",
+    "galactic-survey-native-edition",
+    "galactic-survey-neoforge-edition",
+    "galactic-survey-standalone-edition",
+    "openlands-native-edition",
+    "openlands-neoforge-edition",
+    "openlands-standalone-edition",
+    "arcana-division-native-edition",
+    "arcana-division-neoforge-edition",
+    "arcana-division-standalone-edition"
+  ]
+}

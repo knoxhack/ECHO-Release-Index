@@ -6,31 +6,31 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
   "releaseTag": "v0.1.0-ashfall-neoforge-edition",
-  "commitSha": "ce637c725444ce1aca06b7f25611c176d0de676e",
+  "commitSha": "1cb99a507668d68e7d10d67e925b82deaf992619",
   "artifacts": {
     "pack": {
       "file": "ashfall-neoforge-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
-      "sha256": "a6ac9e6a9702dff01904d7cb8eb359496c3aec2581e6802eabd53121a9740ddb",
-      "size": 236842664
+      "sha256": "3b1fdd82b284610eeda97129d4a68e13680eca980652f7e217158f896a605466",
+      "size": 12902
     },
     "manifest": {
       "file": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-      "sha256": "06288aa12b25a80c2fb96daea564a32be04c0d962a4b8e2f1f3cd08f983a6da1",
-      "size": 96848
+      "sha256": "12dbe6c632a8f74f4765e371a412e24f504cfd3c683ef344b4490eba27e2ab9e",
+      "size": 107207
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-      "sha256": "49b2f93bfb2113084036f2907749fa8c54fdee16ac85ef4e3c59e3d6a0e00c2c",
-      "size": 5038
+      "sha256": "b4253e7836a1345767fcf57102a36e5149c0ed7288e1fb94cb0a52f0672f6ef3",
+      "size": 298
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-      "sha256": "bbc52408e50f653f95af6b960ab2fb2f4cd8a65ab089caa4bb5df1810779655c",
-      "size": 37762
+      "sha256": "0649a0ef78c20fb65262963565dd0c6cff36730f67ec35cb5a62ac63250dae9f",
+      "size": 1622
     }
   },
   "dependencies": [],
@@ -39,6 +39,6 @@
   ],
   "trust": "source-linked",
   "validation": "approved",
-  "validationReason": "Checksum-backed public pack artifacts are indexed with manifest, pack archive, checksums, and release metadata; launcher installs are unlocked by Catalog policy.",
-  "notes": "Install-approved catalog entry. Gameplay/readiness evidence may continue separately, but it no longer blocks launcher installation."
+  "validationReason": "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }
