@@ -1,75 +1,93 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoholomap",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-ashfall-neoforge-native-probe-hotfix-20260614",
+  "commitSha": "8b894bcf0a989b35db2d84f55be290636d108fbd",
   "artifacts": {
     "neoforge": {
       "file": "echoholomap-1.0.0-neoforge.jar",
-      "sha256": "a0e7a2737d28c8b078885b4b0eb1c2e82f643c535d504d239c848d94cfa21129",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoholomap-1.0.0-neoforge.jar",
-      "size": 1497255,
-      "buildMode": "compiled-runtime",
+      "sha256": "cda9bfe2f1221791ab3aee37274e19db1deda9d32d0512571f0f072254fc7fcc",
+      "size": 1497433,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "META-INF/neoforge.mods.toml"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoholomap-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoholomap-1.0.0-standalone.jar",
-      "sha256": "91a6ea8a7cdbd141d6779b79be4550f45155ca2133b2ae6f5c1343a2d377d135",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoholomap-1.0.0-standalone.jar",
-      "size": 1497231,
-      "buildMode": "compiled-runtime",
+      "sha256": "cda9bfe2f1221791ab3aee37274e19db1deda9d32d0512571f0f072254fc7fcc",
+      "size": 1497433,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoholomap-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoholomap-1.0.0.echo-addon",
-      "sha256": "8581c9e05167678e92ea22da13931c85278b6dd64814f478b4922b231dcd9842",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoholomap-1.0.0.echo-addon",
-      "size": 1471376,
-      "buildMode": "compiled-runtime",
+      "sha256": "461a83573687aad1cdaa2926e8dcff0eb1af6b9443833aebdd96aada75e9e3d9",
+      "size": 1471573,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
         "checksums.sha256"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoholomap-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoholomap-1.0.0-sources.jar",
-      "sha256": "4bdd9250e73dc467ffaae42ea3373798e5960c31410a8d110583549cd0c9aaf3",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoholomap-1.0.0-sources.jar",
-      "size": 1148996,
+      "sha256": "9729034ad8d1850e360a8cc8d42fa2a872fbb7372b6c768504b13764e7f5d3c5",
+      "size": 1147994,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoholomap-1.0.0-sources.jar"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "8b894bcf0a989b35db2d84f55be290636d108fbd",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "checksums.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

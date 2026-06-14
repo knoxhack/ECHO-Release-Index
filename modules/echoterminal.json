@@ -1,75 +1,93 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoterminal",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-ashfall-neoforge-native-probe-hotfix-20260614",
+  "commitSha": "8b894bcf0a989b35db2d84f55be290636d108fbd",
   "artifacts": {
     "neoforge": {
       "file": "echoterminal-1.0.0-neoforge.jar",
-      "sha256": "eeb8cf829fb8a76ccb5381ccbd9731bbac3e02612f734788fc43d8f06cda00fe",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterminal-1.0.0-neoforge.jar",
-      "size": 22988524,
-      "buildMode": "compiled-runtime",
+      "sha256": "09025ff291936e85cc7ec44a40e0a8170c6ff820cdf8c5f80f33bfd038d14a64",
+      "size": 22988294,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "META-INF/neoforge.mods.toml"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoterminal-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoterminal-1.0.0-standalone.jar",
-      "sha256": "bcc3bcc545982fd430a42701366352ecee98853b36f95360c9eeac3f70655d47",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterminal-1.0.0-standalone.jar",
-      "size": 22988499,
-      "buildMode": "compiled-runtime",
+      "sha256": "093a6f0ba761ae36ab0d96f903d542154542bd13ef8bff9158a43d14293cc9f2",
+      "size": 22988294,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoterminal-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoterminal-1.0.0.echo-addon",
-      "sha256": "9f14e4573a128542b77190762cf6e5eaad3aeed5739128d4ad4b750b6cf700b7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterminal-1.0.0.echo-addon",
-      "size": 22458319,
-      "buildMode": "compiled-runtime",
+      "sha256": "cd671d3c0bbec5a24935fea4f84700aece2d397a46981d69d9515972a70f0d3a",
+      "size": 22458129,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
         "checksums.sha256"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoterminal-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoterminal-1.0.0-sources.jar",
-      "sha256": "364b329967bb009d32b26224cc29c7829c1b0d9986fb7d02c8fbb6b4793dbe28",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoterminal-1.0.0-sources.jar",
-      "size": 22461057,
+      "sha256": "96d29474de93b20f538c1b50d1b14326d959dbf6853eb3bc772e88d1b7df18fd",
+      "size": 22459017,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoterminal-1.0.0-sources.jar"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "8b894bcf0a989b35db2d84f55be290636d108fbd",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "checksums.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

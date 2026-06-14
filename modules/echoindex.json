@@ -1,75 +1,93 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoindex",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-ashfall-neoforge-native-probe-hotfix-20260614",
+  "commitSha": "8b894bcf0a989b35db2d84f55be290636d108fbd",
   "artifacts": {
     "neoforge": {
       "file": "echoindex-1.0.0-neoforge.jar",
-      "sha256": "72cca14d33a142abddc291cf693ba05908305187327d7a6b8494aebae88b96d0",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoindex-1.0.0-neoforge.jar",
-      "size": 587597,
-      "buildMode": "compiled-runtime",
+      "sha256": "5486942bda6b2e64f1570658f8fa1d52b0e70e9de7d0d475c945483a9a4e5de5",
+      "size": 587447,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "META-INF/neoforge.mods.toml"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoindex-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoindex-1.0.0-standalone.jar",
-      "sha256": "73ff203abbaf10a16fc2261556b02bfa351789ed076672d98a7620255708f39f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoindex-1.0.0-standalone.jar",
-      "size": 587570,
-      "buildMode": "compiled-runtime",
+      "sha256": "5486942bda6b2e64f1570658f8fa1d52b0e70e9de7d0d475c945483a9a4e5de5",
+      "size": 587447,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoindex-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoindex-1.0.0.echo-addon",
-      "sha256": "9ca8da64ba6daed19eb65f2578a2cc236c2ac3017bd7e0657b5fc295fd51dcba",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoindex-1.0.0.echo-addon",
-      "size": 562026,
-      "buildMode": "compiled-runtime",
+      "sha256": "02417dc082711e5f293f3ec71c0a39e0c340af900c9ae8e0385f6b4807f8cdb9",
+      "size": 562007,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
         "checksums.sha256"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoindex-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoindex-1.0.0-sources.jar",
-      "sha256": "e4f6b7989fd7f318d0527a7740405f12a17c4755c4126c643443f850d6fbc5b7",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoindex-1.0.0-sources.jar",
-      "size": 240503,
+      "sha256": "70a788d59cb0e433f46ea2f9cac3816f0714696f5a07841e9aba9be6eafc9950",
+      "size": 239167,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-neoforge-native-probe-hotfix-20260614/echoindex-1.0.0-sources.jar"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "8b894bcf0a989b35db2d84f55be290636d108fbd",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "checksums.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }
