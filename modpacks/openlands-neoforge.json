@@ -1,47 +1,45 @@
 {
-    "id":  "openlands-neoforge-edition",
-    "kind":  "modpack",
-    "version":  "0.1.0",
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Openlands-NeoForge-Edition",
-    "releaseTag":  "v0.1.0-openlands-neoforge-edition",
-    "commitSha":  "9b0ca69bc67a3c870f6d16dc0212d8743f3456ee",
-    "artifacts":  {
-                      "pack":  {
-                                   "file":  "openlands-neoforge-edition-0.1.0.zip",
-                                   "url":  "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-0.1.0.zip",
-                                   "sha256":  "603eb6f660930479c6cdce6f821d5f56b07ce69c81e0f7515908294796f0bd19",
-                                   "size":  112306627
-                               },
-                      "manifest":  {
-                                       "file":  "openlands-neoforge-edition-alpha-0.1.0.pack.json",
-                                       "url":  "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json",
-                                       "sha256":  "15640311805a6395b8c219fb65c2525301ccf293be3f9f4529c1026cf9f08907",
-                                       "size":  46476
-                                   },
-                      "checksums":  {
-                                        "file":  "checksums.txt",
-                                        "url":  "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/checksums.txt",
-                                        "sha256":  "4388569404940ae0d2a350aedb8057b2912f0c17aa656d36c6c665bba84e4f29",
-                                        "size":  308
-                                    },
-                      "releaseManifest":  {
-                                              "file":  "echo-release.json",
-                                              "url":  "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/echo-release.json",
-                                              "sha256":  "44240715dc96b7227a32192460c5946a8aa67881525da3725c06162fbe7c9aa3",
-                                              "size":  18122
-                                          }
-                  },
-    "dependencies":  [
-
-                     ],
-    "compatibility":  [
-                          "neoforge",
-                          "openlands"
-                      ],
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
-    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only."
+  "id": "openlands-neoforge-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Openlands-NeoForge-Edition",
+  "releaseTag": "v0.1.0-openlands-neoforge-edition",
+  "commitSha": "9b0ca69bc67a3c870f6d16dc0212d8743f3456ee",
+  "artifacts": {
+    "pack": {
+      "file": "openlands-neoforge-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-0.1.0.zip",
+      "sha256": "603eb6f660930479c6cdce6f821d5f56b07ce69c81e0f7515908294796f0bd19",
+      "size": 112306627
+    },
+    "manifest": {
+      "file": "openlands-neoforge-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.0.pack.json",
+      "sha256": "7dc9c309c231267f9536fe00099b67577d8afa17162a8ddd80b5b583de9004cb",
+      "size": 46476
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/checksums.txt",
+      "sha256": "095936d764142d38c86379b430f647d0b581459ca4fb63894d2c168df4889e49",
+      "size": 302
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.0-openlands-neoforge-edition/echo-release.json",
+      "sha256": "3b09658ab9994d02e3ff3cdc35b5fb01260f91ee1e02ae444bc7bdd45a6f2570",
+      "size": 12287
+    }
+  },
+  "dependencies": [],
+  "compatibility": [
+    "neoforge",
+    "openlands"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
+  "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly."
 }

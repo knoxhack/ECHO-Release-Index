@@ -1,56 +1,56 @@
 {
-    "id":  "arcana-division-native-edition",
-    "kind":  "modpack",
-    "version":  "1.0.0",
-    "channel":  "beta",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Arcana-Division-Native-Edition",
-    "releaseTag":  "arcana-division-native-1.0.0-beta",
-    "commitSha":  "4ba6c490c7130fced51233d5d51fbb9a4bff47da",
-    "artifacts":  {
-                      "pack":  {
-                                   "file":  "arcana-division-native-edition-1.0.0.zip",
-                                   "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-1.0.0.zip",
-                                   "sha256":  "29c2ca22660538af245db0e6fd10e2d49e1af0d2ac582a2520949d76a65a1cb9",
-                                   "size":  116998122
-                               },
-                      "manifest":  {
-                                       "file":  "arcana-division-native-edition-beta-1.0.0.pack.json",
-                                       "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
-                                       "sha256":  "7b912587e5efd224b5dac3b4f3a8a7237eabfde0ab4f1fac74e26f5f68391f54",
-                                       "size":  47217
-                                   },
-                      "checksums":  {
-                                        "file":  "checksums.txt",
-                                        "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/checksums.txt",
-                                        "sha256":  "c2d32c551b0cc5bfec56afe9548f442895b8bc3b5f7c4dd1e66bf5d9ca7621bd",
-                                        "size":  315
-                                    },
-                      "releaseManifest":  {
-                                              "file":  "echo-release.json",
-                                              "url":  "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/echo-release.json",
-                                              "sha256":  "7128659d0dc93410d69dd1caff995788dcb390db4a0dfedc2ece439fa1fbd857",
-                                              "size":  16951
-                                          }
-                  },
-    "dependencies":  [
-                         {
-                             "id":  "echo-native-platform",
-                             "kind":  "runtime",
-                             "version":  "\u003e=1.0.0"
-                         },
-                         {
-                             "id":  "echoarcanadivisionprotocol",
-                             "kind":  "module",
-                             "version":  "1.0.0"
-                         }
-                     ],
-    "compatibility":  [
-                          "native",
-                          "arcana-division"
-                      ],
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
-    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+  "id": "arcana-division-native-edition",
+  "kind": "modpack",
+  "version": "1.0.0",
+  "channel": "beta",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Arcana-Division-Native-Edition",
+  "releaseTag": "arcana-division-native-1.0.0-beta",
+  "commitSha": "4ba6c490c7130fced51233d5d51fbb9a4bff47da",
+  "artifacts": {
+    "pack": {
+      "file": "arcana-division-native-edition-1.0.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-1.0.0.zip",
+      "sha256": "29c2ca22660538af245db0e6fd10e2d49e1af0d2ac582a2520949d76a65a1cb9",
+      "size": 116998122
+    },
+    "manifest": {
+      "file": "arcana-division-native-edition-beta-1.0.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
+      "sha256": "c392856c48c7de85c0615eaa1b127ddf5c375266af316e86cc285941bc09b722",
+      "size": 47217
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/checksums.txt",
+      "sha256": "8ba0cdf3d33acc5759bb65b185a70db0410914ade891ca6a0f5163f097bbf1a5",
+      "size": 309
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/echo-release.json",
+      "sha256": "70e0320688a183d10566d7d14fdd94b7bacc116e1f632bf2ab9c773212c904df",
+      "size": 11497
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echo-native-platform",
+      "kind": "runtime",
+      "version": ">=1.0.0"
+    },
+    {
+      "id": "echoarcanadivisionprotocol",
+      "kind": "module",
+      "version": "1.0.0"
+    }
+  ],
+  "compatibility": [
+    "native",
+    "arcana-division"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }

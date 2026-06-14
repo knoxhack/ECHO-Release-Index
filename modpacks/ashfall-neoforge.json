@@ -1,46 +1,44 @@
 {
-    "id":  "ashfall-neoforge-edition",
-    "kind":  "modpack",
-    "version":  "0.1.0",
-    "channel":  "alpha",
-    "publisher":  "knoxhack",
-    "sourceRepo":  "knoxhack/ECHO-Ashfall-NeoForge-Edition",
-    "releaseTag":  "v0.1.0-ashfall-neoforge-edition",
-    "commitSha":  "54b177cbb25a94b2c1472ca1c5bedb62baaeb654",
-    "artifacts":  {
-                      "pack":  {
-                                   "file":  "ashfall-neoforge-edition-0.1.0.zip",
-                                   "url":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
-                                   "sha256":  "ec0bf92387893c9377b393eab067cb2fdf993ada527007edb7919d5ab8c45725",
-                                   "size":  267385168
-                               },
-                      "manifest":  {
-                                       "file":  "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-                                       "url":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-                                       "sha256":  "f23d888dac7c2080f45089d6f62c06e69958e2b99d816d3f691bb38a373a4993",
-                                       "size":  82250
-                                   },
-                      "checksums":  {
-                                        "file":  "checksums.txt",
-                                        "url":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-                                        "sha256":  "22670bb728c2403c96608a61395cb98bd7bcaaabf7bdcc04ef84f9443634a00e",
-                                        "size":  304
-                                    },
-                      "releaseManifest":  {
-                                              "file":  "echo-release.json",
-                                              "url":  "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-                                              "sha256":  "a9534378e7130cddd626f7ffa6396c0c4579d92f8b7d87755c441e18b6d7a8c4",
-                                              "size":  19688
-                                          }
-                  },
-    "dependencies":  [
-
-                     ],
-    "compatibility":  [
-                          "neoforge"
-                      ],
-    "trust":  "source-linked",
-    "validation":  "approved",
-    "validationReason":  "Checksum-backed pack manifest and archive are rebuilt from approved module catalog artifacts; install, repair, update, and handoff use the selected pack lane only.",
-    "notes":  "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+  "id": "ashfall-neoforge-edition",
+  "kind": "modpack",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
+  "releaseTag": "v0.1.0-ashfall-neoforge-edition",
+  "commitSha": "54b177cbb25a94b2c1472ca1c5bedb62baaeb654",
+  "artifacts": {
+    "pack": {
+      "file": "ashfall-neoforge-edition-0.1.0.zip",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
+      "sha256": "ec0bf92387893c9377b393eab067cb2fdf993ada527007edb7919d5ab8c45725",
+      "size": 267385168
+    },
+    "manifest": {
+      "file": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+      "sha256": "62a8f8c9b55824ae20f54dfc6942d171b0d081feb7b066abc8c9ecf89580e58a",
+      "size": 82250
+    },
+    "checksums": {
+      "file": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
+      "sha256": "dcaf8ada89c7b942efec858f7855f8bd0a9f72ca08f65386f8266db46fcadb19",
+      "size": 298
+    },
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
+      "sha256": "76f882044f3df45a7a5424865354f0a9a67af9cc7557bd5db3f11cc40d266395",
+      "size": 13345
+    }
+  },
+  "dependencies": [],
+  "compatibility": [
+    "neoforge"
+  ],
+  "trust": "source-linked",
+  "validation": "approved",
+  "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
 }
