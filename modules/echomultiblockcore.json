@@ -2,8 +2,8 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
+  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
   "trust": "source-linked",
   "validation": "approved",
   "id": "echomultiblockcore",
@@ -12,60 +12,87 @@
   "artifacts": {
     "neoforge": {
       "file": "echomultiblockcore-1.0.0-neoforge.jar",
-      "sha256": "814ec975f7154e3cbecdc86e68b526ac3eb18c8dc0600cc5c1d26d52c829159a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomultiblockcore-1.0.0-neoforge.jar",
-      "size": 12686093,
-      "buildMode": "compiled-runtime",
+      "sha256": "d120da87f3a8af949635441a73424d0a4263b64e6575e00a5b6883156537db55",
+      "size": 12701606,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomultiblockcore-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echomultiblockcore-1.0.0-standalone.jar",
-      "sha256": "280131449fbd1497766812de76c328ff2468fb6fa5b1de5c478c34ac721dc12f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomultiblockcore-1.0.0-standalone.jar",
-      "size": 12686062,
-      "buildMode": "compiled-runtime",
+      "sha256": "25f0c4bdfa73d3b0673f0a39b4594f49471e975fc2088cbc831bb17d0d2844b6",
+      "size": 12701606,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomultiblockcore-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echomultiblockcore-1.0.0.echo-addon",
-      "sha256": "b5d51c84459886f720da68b122515bc6a52c2fca6a8b39d60ecdfc28e895a4af",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomultiblockcore-1.0.0.echo-addon",
-      "size": 12611993,
-      "buildMode": "compiled-runtime",
+      "sha256": "5714ae692e0d105926f6e340334da3a996d586177c6d74cacfc136177ee2cf0f",
+      "size": 12627969,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomultiblockcore-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echomultiblockcore-1.0.0-sources.jar",
-      "sha256": "d668e008b2f51b8457dcc71fdd68ce8beaa4e0c9fdee58d35715cffe0f79e5a4",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomultiblockcore-1.0.0-sources.jar",
-      "size": 12373828,
+      "sha256": "18fa9cc1f3d8a335c19091c63aadc0700b06017107845c4551f34ec38f3682eb",
+      "size": 12373859,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomultiblockcore-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echomultiblockcore-1.0.0-content-graph.json",
-      "sha256": "d4bfb706743246712d640be9780d4096db3bf7a6337d973ddb6a98ced9241c28",
+      "sha256": "92b623ddba2ed1906c01852fd965e021b5ea694f9b68d280d546322660ca1d94",
       "size": 173147,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echomultiblockcore-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomultiblockcore-1.0.0-content-graph.json"
     }
   },
   "dependencies": [
@@ -82,5 +109,32 @@
       "kind": "module"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
+    "workflow": "Manual Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
+      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
+      "size": 130336
+    },
+    "checksums": {
+      "file": "checksums.sha256",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
+      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
+      "size": 182891
+    },
+    "attestation": {
+      "status": "pending-attestation",
+      "subjectChecksums": "checksums.sha256"
+    }
+  }
 }

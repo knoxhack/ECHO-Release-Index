@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "echo.native-platform.download-smoke.v1",
+  "product": "echo-native-platform",
+  "version": "1.0.5",
+  "releaseTag": "v1.0.5",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.5",
+  "sourceCommitSha": "307abc71749eb6b9c716437f0b0d85f4b95031d8",
+  "checkedAt": "2026-06-15T07:08:08.020Z",
+  "result": "passed",
+  "assets": [
+    {
+      "name": "echo-native-loader-1.0.5.jar",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.5/echo-native-loader-1.0.5.jar",
+      "expectedSha256": "eb1931c4205cdc9fba82fcb7fa23d0205dd91579528cab7a0b5b4e7d48aefb1d",
+      "actualSha256": "eb1931c4205cdc9fba82fcb7fa23d0205dd91579528cab7a0b5b4e7d48aefb1d",
+      "size": 1840324,
+      "ok": true
+    },
+    {
+      "name": "echo-native-platform-1.0.5.zip",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.5/echo-native-platform-1.0.5.zip",
+      "expectedSha256": "3256856eea85409e71e39db26f56f234df2a284f6937413c751077b119ff7e81",
+      "actualSha256": "3256856eea85409e71e39db26f56f234df2a284f6937413c751077b119ff7e81",
+      "size": 1211,
+      "ok": true
+    },
+    {
+      "name": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.5/echo-release.json",
+      "expectedSha256": "1c0f9fdf6342124f866964924d51186d5919ca73e43e7aad7aafc8fa8af4cb7a",
+      "actualSha256": "1c0f9fdf6342124f866964924d51186d5919ca73e43e7aad7aafc8fa8af4cb7a",
+      "size": 5730,
+      "ok": true
+    },
+    {
+      "name": "checksums.txt",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.5/checksums.txt",
+      "expectedSha256": "745fcf6ddd193f2da6440b4273cc03abfaacb8e9db69ec0affae7b011d99b565",
+      "actualSha256": "745fcf6ddd193f2da6440b4273cc03abfaacb8e9db69ec0affae7b011d99b565",
+      "size": 953,
+      "ok": true
+    },
+    {
+      "name": "native-loader-direct-install.json",
+      "url": "https://github.com/knoxhack/ECHO-Native-Platform/releases/download/v1.0.5/native-loader-direct-install.json",
+      "expectedSha256": "e2754c966139b905d97b4ea45f75e6bdd81d67c2013831d9e0b2c94ff0b0dec2",
+      "actualSha256": "e2754c966139b905d97b4ea45f75e6bdd81d67c2013831d9e0b2c94ff0b0dec2",
+      "size": 1359,
+      "ok": true
+    }
+  ],
+  "gates": {
+    "githubReleasePublished": "passed",
+    "metadataDownloaded": "passed",
+    "selectedAssetsHashMatched": "passed",
+    "nativeLoaderDirectDescriptorPresent": "passed"
+  }
+}

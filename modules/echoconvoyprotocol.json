@@ -2,8 +2,8 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
+  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
   "trust": "source-linked",
   "validation": "approved",
   "id": "echoconvoyprotocol",
@@ -12,60 +12,87 @@
   "artifacts": {
     "neoforge": {
       "file": "echoconvoyprotocol-1.0.0-neoforge.jar",
-      "sha256": "b273195b8ccdf6f307f24d1af379b02341515bc01797adcefae7eb3b6ca30611",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-neoforge.jar",
-      "size": 903925,
-      "buildMode": "compiled-runtime",
+      "sha256": "42aa37ee27db2fbd656eea2d985f01da07e37e01f80c1b0c4b4e5d6f58dc2f05",
+      "size": 922878,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoconvoyprotocol-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoconvoyprotocol-1.0.0-standalone.jar",
-      "sha256": "26c83e80864c6c1cb7a389a6f011d70ef80bc3e02389ee37dbbf3b324d23d90d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-standalone.jar",
-      "size": 903903,
-      "buildMode": "compiled-runtime",
+      "sha256": "42aa37ee27db2fbd656eea2d985f01da07e37e01f80c1b0c4b4e5d6f58dc2f05",
+      "size": 922878,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoconvoyprotocol-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoconvoyprotocol-1.0.0.echo-addon",
-      "sha256": "01ea8abf695dc2a63274b033e9985baccbbe054fc56a6dd55b0f540680f09c1b",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0.echo-addon",
-      "size": 737723,
-      "buildMode": "compiled-runtime",
+      "sha256": "6e5daace3b20afb4526ecc3747bb69a54486b92186a6a0970a47bd189e3cdf82",
+      "size": 757123,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoconvoyprotocol-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoconvoyprotocol-1.0.0-sources.jar",
-      "sha256": "39838506eb20979a617dc1c28e8e99dee730ec5f45dbdf3c326cb9946b13e867",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-sources.jar",
-      "size": 687225,
+      "sha256": "610c88d34ba04f02f26cc4bb90ad17d711e24f019238d8f75b7c76725e7ca7e3",
+      "size": 687265,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoconvoyprotocol-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echoconvoyprotocol-1.0.0-content-graph.json",
-      "sha256": "46cfb181830e645673d2e5ee17dee02de8fee41afa593e320fbb29634c42a16c",
+      "sha256": "36f89e5b77ce165aef2f9f87415f18b0ddccfdf717e7e1012a4dcd873cdc74d5",
       "size": 287645,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoconvoyprotocol-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoconvoyprotocol-1.0.0-content-graph.json"
     }
   },
   "dependencies": [
@@ -82,5 +109,32 @@
       "kind": "module"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
+    "workflow": "Manual Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
+      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
+      "size": 130336
+    },
+    "checksums": {
+      "file": "checksums.sha256",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
+      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
+      "size": 182891
+    },
+    "attestation": {
+      "status": "pending-attestation",
+      "subjectChecksums": "checksums.sha256"
+    }
+  }
 }

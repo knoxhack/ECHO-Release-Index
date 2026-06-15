@@ -2,8 +2,8 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
+  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
+  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
   "trust": "source-linked",
   "validation": "approved",
   "id": "echoruntimeguard",
@@ -12,60 +12,87 @@
   "artifacts": {
     "neoforge": {
       "file": "echoruntimeguard-1.0.0-neoforge.jar",
-      "sha256": "a080b3b018be1e50c6d6880bafc1dccddf204a76bf48546c32ab4f925650126e",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-neoforge.jar",
-      "size": 127749,
-      "buildMode": "compiled-runtime",
+      "sha256": "054ec6f7bcfbe7b9adfd330f9079892f6ad180d0404ccbf5aece51575d6931e2",
+      "size": 133538,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoruntimeguard-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoruntimeguard-1.0.0-standalone.jar",
-      "sha256": "0817883fd65df0fe2487095c36c3bca9ba4d15b538b33e2ce716a81edf71291a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-standalone.jar",
-      "size": 127720,
-      "buildMode": "compiled-runtime",
+      "sha256": "054ec6f7bcfbe7b9adfd330f9079892f6ad180d0404ccbf5aece51575d6931e2",
+      "size": 133538,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoruntimeguard-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoruntimeguard-1.0.0.echo-addon",
-      "sha256": "f430250dd8ea14f650941fd4174bd01a67bb65abcf81de4458abf383ee47a280",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0.echo-addon",
-      "size": 121825,
-      "buildMode": "compiled-runtime",
+      "sha256": "2a46a73bca0203eef47c328baf1882782301df8c0a9f0635a817fb8364f9780a",
+      "size": 128097,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoruntimeguard-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoruntimeguard-1.0.0-sources.jar",
-      "sha256": "9d4c6db6d8dbfdb3625f555b12b3e25af2f1028142043a27c21b0ba571e6124c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-sources.jar",
-      "size": 54451,
+      "sha256": "9b971a48e36ae9f252f81722c14695d4ffb65a4d458128987d90c39d5b955f43",
+      "size": 54483,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoruntimeguard-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echoruntimeguard-1.0.0-content-graph.json",
-      "sha256": "4a84275f2da01229d51ac88a8be311c1c8affb164c27f4156f5ad003c8f5db24",
+      "sha256": "1187db0e50d282d6b52b93bc218e9591b151a28d346913d927e7c6e9b3a92ef9",
       "size": 22927,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoruntimeguard-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoruntimeguard-1.0.0-content-graph.json"
     }
   },
   "dependencies": [
@@ -82,5 +109,32 @@
       "kind": "module"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-native-edition",
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
+    "workflow": "Manual Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "releaseManifest": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
+      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
+      "size": 130336
+    },
+    "checksums": {
+      "file": "checksums.sha256",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
+      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
+      "size": 182891
+    },
+    "attestation": {
+      "status": "pending-attestation",
+      "subjectChecksums": "checksums.sha256"
+    }
+  }
 }
