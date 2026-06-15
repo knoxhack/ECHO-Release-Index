@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/content-graph-edge.schema.json",
+  "title": "ECHO Content Graph Edge",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "kind", "from", "to"],
+  "properties": {
+    "schemaVersion": { "const": "echo.content_graph.edge.v1" },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9_-]*:[a-zA-Z0-9_/.-]+$"
+    },
+    "kind": {
+      "enum": [
+        "addon_contains_module",
+        "module_requires_module",
+        "module_declares_runtime",
+        "block_uses_asset",
+        "item_uses_asset",
+        "creative_tab_contains_item",
+        "recipe_consumes_item",
+        "recipe_outputs_item",
+        "mission_has_objective",
+        "objective_targets_node",
+        "ui_intent_controls_node",
+        "trigger_invokes_effect",
+        "region_contains_trigger",
+        "setting_affects_system",
+        "system_declares_capability"
+      ]
+    },
+    "from": { "type": "string", "minLength": 1 },
+    "to": { "type": "string", "minLength": 1 },
+    "moduleId": { "type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_-]*$" },
+    "optional": { "type": "boolean" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "data": { "type": "object", "additionalProperties": true },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["generatedBy", "generatedAt"],
+      "properties": {
+        "generatedBy": { "type": "string", "minLength": 1 },
+        "generatedAt": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

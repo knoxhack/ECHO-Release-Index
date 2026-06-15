@@ -5,7 +5,7 @@ The Release Index owns catalog records, trust policy, and channel routing. It do
 | Repository | Owns | Release Index responsibility |
 | --- | --- | --- |
 | `knoxhack/ECHO-Launcher` | Desktop launcher installers, updater metadata, and launcher release notes. | `products/launcher.json` routes launcher self-updates through exact installer, blockmap, executable, and `latest.yml` records. |
-| `knoxhack/ECHO-Modules` | First-party module source plus `.echo-addon`, `-neoforge.jar`, `-standalone.jar`, and `-sources.jar` release assets. | `modules/*.json` records imported module artifacts, dependency edges, trust, validation, and pack compatibility. |
+| `knoxhack/ECHO-Modules` | First-party module source plus `.echo-addon`, `-neoforge.jar`, `-standalone.jar`, `-sources.jar`, and per-module `.echo/content-graph/` release assets. | `modules/*.json` records imported module artifacts, dependency edges, trust, validation, and pack compatibility. |
 | `knoxhack/ECHO-Ashfall-Native-Edition` | Native Edition pack manifest and pack assets. | `modpacks/ashfall-native.json` routes Native Edition installs and updates through the approved pack manifest and archive records. |
 | `knoxhack/ECHO-Ashfall-NeoForge-Edition` | NeoForge Edition pack manifest and pack assets. | `modpacks/ashfall-neoforge.json` routes NeoForge Edition installs and updates through the approved pack manifest and archive records. |
 | `knoxhack/ECHO-Ashfall-Standalone-Edition` | Standalone Edition pack manifest and pack assets. | `modpacks/ashfall-standalone.json` routes Standalone Edition installs and updates through indexed pack metadata while the standalone lane remains experimental. |
@@ -17,7 +17,7 @@ The Release Index owns catalog records, trust policy, and channel routing. It do
 | `knoxhack/ECHO-Addons-Studio` | Third-party addon authoring, packaging, SDK validation, and release draft tooling. | `products/addons-studio.json` routes Addons Studio updates and its publishing workflow uses the final addon package contract. |
 | `knoxhack/ECHO-Developer-Studio` | First-party developer tooling app. | `products/developer-studio.json` routes Developer Studio updates through indexed updater artifacts. |
 | `knoxhack/ECHO-Platform-Website` | Public website, directory pages, download pages, and deep-link UI. | Website pages consume `channels/alpha/launcher-channel.json` and emit `echo://` install/update links only for approved indexed entries. |
-| `knoxhack/ECHO-SDK` | Shared schemas, templates, local validation tools, and contract documentation. | SDK schemas mirror Release Index schemas so creators and CI can validate package, pack, publisher, trust, block, product, and module-release records before publishing. |
+| `knoxhack/ECHO-SDK` | Shared schemas, templates, local validation tools, and contract documentation, including canonical `.ECHO Content Graph` schemas. | SDK schemas mirror Release Index schemas so creators and CI can validate package, pack, publisher, trust, block, product, module-release, and content-graph records before publishing. |
 
 ## Catalog Ownership
 

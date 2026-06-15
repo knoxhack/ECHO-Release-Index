@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/content-graph-export-plan.schema.json",
+  "title": "ECHO Content Graph Export Plan",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "target", "sourceGraphId", "plannedAt", "nodes"],
+  "properties": {
+    "schemaVersion": { "const": "echo.content_graph.export_plan.v1" },
+    "target": {
+      "type": "string",
+      "enum": ["neoforge", "echo_native", "echo_runtime_standalone", "hytale"]
+    },
+    "sourceGraphId": { "type": "string", "minLength": 1 },
+    "plannedAt": { "type": "string", "minLength": 1 },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["nodeId", "status"],
+        "properties": {
+          "nodeId": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": ["direct", "adapter_required", "fallback", "blocked", "not_applicable"]
+          },
+          "rationale": { "type": "string" },
+          "mappedTo": { "type": "string" },
+          "runtimeHints": { "type": "object", "additionalProperties": true }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "direct": { "type": "integer", "minimum": 0 },
+        "adapter_required": { "type": "integer", "minimum": 0 },
+        "fallback": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 },
+        "not_applicable": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["generatedBy", "generatedAt"],
+      "properties": {
+        "generatedBy": { "type": "string", "minLength": 1 },
+        "generatedAt": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

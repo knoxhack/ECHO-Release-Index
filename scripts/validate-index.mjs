@@ -32,6 +32,11 @@ const nativeLoaderDescriptorRole = 'native-loader-direct-install-descriptor'
 const requiredSchemas = [
   'block.schema.json',
   'channel.schema.json',
+  'content-graph.schema.json',
+  'content-graph-node.schema.json',
+  'content-graph-edge.schema.json',
+  'content-graph-export-plan.schema.json',
+  'content-feature-list.schema.json',
   'echo-addon-package.schema.json',
   'echo-pack.schema.json',
   'module-release-manifest.schema.json',
@@ -304,6 +309,7 @@ function hasExactArtifactRole(entry, role) {
 function requiredArtifactRolesForEntry(entry) {
   if (entry.kind === 'modpack') return ['manifest']
   if (entry.kind === 'runtime') return ['archive']
+  if (['module', 'addon'].includes(entry.kind)) return ['content-graph']
   if (['product', 'studio'].includes(entry.kind) && Array.isArray(entry.compatibility) && entry.compatibility.includes('windows-x64')) {
     return ['latestYml', 'windowsSetup']
   }
@@ -421,7 +427,9 @@ function validateSchemaInventory(errors) {
         errors.push(`schemas/${schemaName} must use JSON Schema draft 2020-12`)
       }
       const expectedId = `https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/schemas/${schemaName}`
-      if (schema.$id !== expectedId) {
+      // Content-graph schemas are canonical in ECHO-SDK; mirrored copies keep the SDK $id.
+      const sdkId = `https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/${schemaName}`
+      if (schema.$id !== expectedId && schema.$id !== sdkId) {
         errors.push(`schemas/${schemaName} has unexpected $id ${schema.$id ?? '(missing)'}`)
       }
     } catch (error) {

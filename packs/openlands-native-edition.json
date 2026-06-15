@@ -188,31 +188,31 @@
     {
       "name": "checksums.txt",
       "size": 298,
-      "sha256": "f2121f9c7b97e882bafeba5494a3eeebe90c3ab12461f7e4072172443d1f2516",
+      "sha256": "4b2a80816b9be1fc7394b7197f2888de437e934c4803cc15b8e2f6c89e85ebf1",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/checksums.txt"
     },
     {
       "name": "echo-release.json",
-      "size": 12182,
-      "sha256": "d65ea73651781ddc49777bee04a68e1103dfb498cedcfe4b88f592d94bb10f67",
+      "size": 12184,
+      "sha256": "cec5268357fc2bf15e6741e071f9d7b14e7cbd60317f700189a05b6d07b0a733",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/echo-release.json"
     },
     {
       "name": "openlands-native-edition-0.1.0.zip",
-      "size": 112401875,
-      "sha256": "5450e43e77e2602bcada23f08e10e1e763e67cfd0ed963957f8b86950be6efb6",
+      "size": 112691203,
+      "sha256": "90ae5c3cc46267377a4c72d7adb267c217d939c97ea30457adbdc891bb456908",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/openlands-native-edition-0.1.0.zip"
     },
     {
       "name": "openlands-native-edition-alpha-0.1.0.pack.json",
-      "size": 52977,
-      "sha256": "cbbe36b5727e239faa0e54fa92962a3903cf8a3a96f014fc55766dfeeae49cde",
+      "size": 54830,
+      "sha256": "a53f3f65be49b893aa4b5595dc0da1a636e2ec1bb9349ba6e78f733f95b4b3fe",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json"
     },
     {
       "name": "release-audit.json",
-      "size": 18716,
-      "sha256": "8f77408c1639a9973a4426da3b07096e773cb062bdaa7ea6cd3cae3a3a3ef5b5",
+      "size": 18718,
+      "sha256": "b5152307021243115fda46b7cacd3bddec6446703f64f71f8fe395feb16ad97e",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/release-audit.json"
     }
   ],
@@ -230,5 +230,7 @@
     ],
     "auditCommand": "node addons/echoopenlandsprotocol/scripts/validate-openlands-release-readiness-report.mjs --module-root addons/echoopenlandsprotocol --report dist/echo-module-release/echoopenlandsprotocol/openlands-release-readiness-report.json"
   },
-  "validation": "approved"
+  "validation": "approved",
+  "releaseTag": "v0.1.0-openlands-native-edition",
+  "commitSha": "024c90f"
 }

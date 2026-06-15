@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/content-feature-list.schema.json",
+  "title": "ECHO Content Feature List",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "moduleId", "features"],
+  "properties": {
+    "schemaVersion": { "const": "echo.content_feature_list.v1" },
+    "moduleId": { "type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_-]*$" },
+    "generatedAt": { "type": "string", "minLength": 1 },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "title", "nodes", "runtimes"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_-]*:[a-zA-Z0-9_/.-]+$"
+          },
+          "title": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" },
+          "nodes": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "runtimes": {
+            "type": "object",
+            "additionalProperties": { "type": "string", "minLength": 1 },
+            "properties": {
+              "neoforge": { "type": "string", "minLength": 1 },
+              "echo_native": { "type": "string", "minLength": 1 },
+              "echo_runtime_standalone": { "type": "string", "minLength": 1 },
+              "hytale": { "type": "string", "minLength": 1 }
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["generatedBy", "generatedAt"],
+      "properties": {
+        "generatedBy": { "type": "string", "minLength": 1 },
+        "generatedAt": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

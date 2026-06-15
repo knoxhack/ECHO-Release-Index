@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/content-graph-node.schema.json",
+  "title": "ECHO Content Graph Node",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "id", "moduleId"],
+  "properties": {
+    "schemaVersion": { "const": "echo.content_graph.node.v1" },
+    "kind": {
+      "enum": [
+        "echo:module",
+        "echo:addon",
+        "echo:dependency",
+        "echo:asset",
+        "echo:block",
+        "echo:item",
+        "echo:creative_tab",
+        "echo:recipe",
+        "echo:entity",
+        "echo:npc",
+        "echo:region",
+        "echo:trigger",
+        "echo:effect",
+        "echo:mission",
+        "echo:objective",
+        "echo:ui_intent",
+        "echo:setting",
+        "echo:system"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9_-]*:[a-zA-Z0-9_/.-]+$"
+    },
+    "moduleId": { "type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_-]*$" },
+    "addonId": { "type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_-]*$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["repo", "path", "format"],
+      "properties": {
+        "repo": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "format": { "enum": ["json", "toml", "xml", "java", "generated"] },
+        "commitSha": { "type": "string", "minLength": 7 }
+      }
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "runtimeHints": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "neoforge": { "type": "object", "additionalProperties": true },
+        "echo_native": { "type": "object", "additionalProperties": true },
+        "echo_runtime_standalone": { "type": "object", "additionalProperties": true },
+        "hytale": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "intent": {
+      "type": "string",
+      "enum": [
+        "selection_menu",
+        "detail_panel",
+        "notification",
+        "terminal_page",
+        "map_overlay",
+        "scanner_result",
+        "inventory_action",
+        "confirmation_prompt",
+        "settings_panel",
+        "progress_tracker"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "label"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 },
+          "requires": { "type": "string" }
+        }
+      }
+    },
+    "fallbacks": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 },
+      "properties": {
+        "neoforge": { "type": "string", "minLength": 1 },
+        "echo_native": { "type": "string", "minLength": 1 },
+        "echo_runtime_standalone": { "type": "string", "minLength": 1 },
+        "hytale": { "type": "string", "minLength": 1 }
+      }
+    },
+    "data": { "type": "object", "additionalProperties": true },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["generatedBy", "generatedAt"],
+      "properties": {
+        "generatedBy": { "type": "string", "minLength": 1 },
+        "generatedAt": { "type": "string", "minLength": 1 },
+        "sourceSchema": { "type": "string" }
+      }
+    }
+  }
+}

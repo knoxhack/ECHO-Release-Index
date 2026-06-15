@@ -1,0 +1,290 @@
+{
+  "id": "echodeepreachprotocol",
+  "kind": "module",
+  "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-2026-06-15T00-27-23-222Z",
+  "commitSha": "8e04d90dd5c3a34751cc8693b03dcfe47c505ab4",
+  "artifacts": {
+    "neoforge": {
+      "file": "echodeepreachprotocol-0.1.0-neoforge.jar",
+      "sha256": "b0dbbf12dda573f971c1f42ae7c4f5416e7eee0bc040b85d83c9db1691032235",
+      "size": 150926,
+      "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ]
+    },
+    "standalone": {
+      "file": "echodeepreachprotocol-0.1.0-standalone.jar",
+      "sha256": "b0dbbf12dda573f971c1f42ae7c4f5416e7eee0bc040b85d83c9db1691032235",
+      "size": 150926,
+      "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
+      "contains": [
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ]
+    },
+    "native": {
+      "file": "echodeepreachprotocol-0.1.0.echo-addon",
+      "sha256": "40b1aeb7d7b01b9d3f46486f1a377016bcf91b1d310444d035e78536902e1b2e",
+      "size": 124140,
+      "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
+      "contains": [
+        "META-INF/echo.mod.json",
+        "echo-addon-package.json",
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ]
+    },
+    "sources": {
+      "file": "echodeepreachprotocol-0.1.0-sources.jar",
+      "sha256": "f8b2bf23341db1418d92c3de6fdef02b09d1aea61c049fa62a9f16bae6f82132",
+      "size": 110852,
+      "runtimeTarget": "sources",
+      "contains": [
+        "META-INF/echo.mod.json"
+      ]
+    },
+    "content-graph": {
+      "file": "echodeepreachprotocol-0.1.0-content-graph.json",
+      "sha256": "4e691cc7160993fb3e5a958fcadf126566c87bc2313560ffcee394169171ead6",
+      "size": 127579,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [
+        ".echo/content-graph/content-graph.json"
+      ]
+    }
+  },
+  "dependencies": [
+    {
+      "id": "echofoundationcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echomaterialcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echotoolcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echostationcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoworldstarter",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echocommonloot",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echocreatureroles",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echocore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echonetcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoadaptercore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echocontentcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoworldcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echobiomecore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echostructurecore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echocreaturecore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echocombatcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echohealthcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echolootcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echorecipecore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoassetcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echosoundcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echothemecore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoscreencore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echohudcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoplayercore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echonpcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoeconomycore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echohazardcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoequipmentcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echosettlementcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoskillcore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echomissioncore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoexpeditioncore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoruincore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echovehiclecore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echoseasoncore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echosessioncore",
+      "kind": "module",
+      "version": "*"
+    },
+    {
+      "id": "echotelemetrycore",
+      "kind": "module",
+      "version": "*"
+    }
+  ],
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "trust": "source-linked",
+  "validation": "warning"
+}

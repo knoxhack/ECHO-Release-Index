@@ -186,32 +186,32 @@
   "assets": [
     {
       "name": "checksums.txt",
-      "sha256": "07b97cc02f8df0495d83c699ebf1fb0aa8be321c56abcc32ddad3c21901a71c9",
       "size": 302,
+      "sha256": "3e2ae1d7da8ecc4ed3a85dbc1048f261430868b393004638e50ba073f1125e13",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/checksums.txt"
     },
     {
       "name": "echo-release.json",
-      "sha256": "b040f2f21933b71447ecee6fe3a235f90b25b40c0a06b7cfb43c47c60e3afff2",
-      "size": 12274,
+      "size": 12278,
+      "sha256": "8f480c43396e7b77214fdd3d73bde51be052d5e0bc18512c86fd9a3a3c78269b",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/echo-release.json"
     },
     {
       "name": "openlands-neoforge-edition-0.1.1.zip",
-      "sha256": "a2023012ca9441dffc9444dff095dd74486c35f7b60cb2bf55d319a8c99e36f5",
-      "size": 112277135,
+      "size": 112541951,
+      "sha256": "0c4a31873d718f0e222acb25dbae5197c03c6b14c1b05f0b007ee1136a2bd5f5",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/openlands-neoforge-edition-0.1.1.zip"
     },
     {
       "name": "openlands-neoforge-edition-alpha-0.1.1.pack.json",
-      "sha256": "12ea78f805c64a6c9f0d4b31c70b543ffc9a870a03f87a994d563b97776e91e0",
-      "size": 52105,
+      "size": 54970,
+      "sha256": "b1d54b0785618c7c5a75fdcc25f99cf6e439fb4ea6fbe07890ea6b80337cceb3",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.1.pack.json"
     },
     {
       "name": "release-audit.json",
-      "sha256": "5075694faef38338f6519b8f330d5719f5c0d70927b649fad26758efbd3d034a",
-      "size": 18827,
+      "size": 18831,
+      "sha256": "88779cfeb50a0b020ea157c766b75caad434c4cb7de1340b897554629137a98e",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/release-audit.json"
     }
   ],
@@ -229,5 +229,7 @@
     ],
     "auditCommand": "node addons/echoopenlandsprotocol/scripts/validate-openlands-release-readiness-report.mjs --module-root addons/echoopenlandsprotocol --report dist/echo-module-release/echoopenlandsprotocol/openlands-release-readiness-report.json"
   },
-  "validation": "approved"
+  "validation": "approved",
+  "releaseTag": "v0.1.1-openlands-neoforge-edition",
+  "commitSha": "829f2b0"
 }
