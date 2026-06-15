@@ -1,98 +1,157 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoserveropscore",
   "kind": "module",
   "version": "0.1.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echoserveropscore-0.1.0-neoforge.jar",
-      "sha256": "313ec28ccd4f742db0a339d08c8ab5ef68ed1dadb00465ee171aa4b3b3d6f21c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-neoforge.jar",
-      "size": 6206,
-      "buildMode": "compiled-runtime",
+      "sha256": "c8f3e418abbbe32f51796dc57d408e5dc11e7d50eca5cf7ef71a96894b48ec5c",
+      "size": 11878,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoserveropscore-0.1.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoserveropscore-0.1.0-standalone.jar",
-      "sha256": "313ec28ccd4f742db0a339d08c8ab5ef68ed1dadb00465ee171aa4b3b3d6f21c",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-standalone.jar",
-      "size": 6206,
-      "buildMode": "compiled-runtime",
+      "sha256": "c8f3e418abbbe32f51796dc57d408e5dc11e7d50eca5cf7ef71a96894b48ec5c",
+      "size": 11878,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoserveropscore-0.1.0-standalone.jar"
     },
     "native": {
       "file": "echoserveropscore-0.1.0.echo-addon",
-      "sha256": "1c30879ddd4030ae5eb7bd16c8580a6f514e4f995df354b6aea4bc12b7dd5a51",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0.echo-addon",
-      "size": 8649,
-      "buildMode": "compiled-runtime",
+      "sha256": "9dba7522500ee8b015794db489dec249fb42e56b1b8bece30bc3eab9f31ae828",
+      "size": 14762,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoserveropscore-0.1.0.echo-addon"
     },
     "sources": {
       "file": "echoserveropscore-0.1.0-sources.jar",
-      "sha256": "b694fd35559cdba6f3f9f051ea4f3730b882b7dafb0fe5891c07fb5c7b2b3abc",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-sources.jar",
+      "sha256": "bfd9922e5c52d40383b28ee2796cfca4be7f2668b223deab31157b2fe36134fb",
       "size": 5771,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoserveropscore-0.1.0-sources.jar"
     },
     "content-graph": {
       "file": "echoserveropscore-0.1.0-content-graph.json",
-      "sha256": "b9e41bb584df57d95aa5bb192a642144e77ab4bb981e98b845410f90b9515099",
+      "sha256": "a8d8db23d69c5fedcdcd39d885ff8645a0aa1319fced2e5e639565f7e08072a1",
       "size": 20505,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoserveropscore-0.1.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoserveropscore-0.1.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echopolicycore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoreportcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echotelemetrycore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

@@ -1,102 +1,162 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echocombatcore",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echocombatcore-1.0.0-neoforge.jar",
-      "sha256": "e03a21a6755dcb79753a48b431c8887a7ffb237d229597bca9c97fd494a388cf",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-neoforge.jar",
-      "size": 37483,
-      "buildMode": "compiled-runtime",
+      "sha256": "a5dd0e519cfa7444f5ede6328c54dcf7ec44f6b02f70d2b7bb33ca7a243b2fdb",
+      "size": 42768,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocombatcore-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echocombatcore-1.0.0-standalone.jar",
-      "sha256": "c857c79e31e384e14273608a53ff241b34f3e85fbd48c98edd3bd41e96b0c44e",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-standalone.jar",
-      "size": 37456,
-      "buildMode": "compiled-runtime",
+      "sha256": "a5dd0e519cfa7444f5ede6328c54dcf7ec44f6b02f70d2b7bb33ca7a243b2fdb",
+      "size": 42768,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocombatcore-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echocombatcore-1.0.0.echo-addon",
-      "sha256": "8281304a2e81063a9c6e5f93e78892e93f4795c0fe4e264fa228d21628cd3298",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0.echo-addon",
-      "size": 37903,
-      "buildMode": "compiled-runtime",
+      "sha256": "e343599a42a0328f58a3851ea66c5776ee0540e77e860767c5dc447d38d4007f",
+      "size": 43645,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocombatcore-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echocombatcore-1.0.0-sources.jar",
-      "sha256": "31a1317f095f73015c212782e97af363624bd3ac94fe17156f54427dba38edf6",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-sources.jar",
-      "size": 17391,
+      "sha256": "799047f667262a115c5d81f2e23ee34e971a7139cbc928e4a353401e230b052f",
+      "size": 17205,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocombatcore-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echocombatcore-1.0.0-content-graph.json",
-      "sha256": "8190ff2b45032614ab1097eb6ce653a0d62248d6b0593148881affbe309c2e34",
+      "sha256": "5a53c755edb62ef77bcb3641b16309200732772455bf9ad566040f868f44a5a5",
       "size": 16420,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echocombatcore-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocombatcore-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocontentcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoplatformcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoprogressioncore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoschemacore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echovalidationcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

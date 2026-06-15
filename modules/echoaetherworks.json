@@ -1,86 +1,142 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoaetherworks",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echoaetherworks-1.0.0-neoforge.jar",
-      "sha256": "04574ce77bb54c6f25b230f790b80da03d40e2d6be168c750cc7b18789a0c76f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-neoforge.jar",
-      "size": 91243,
-      "buildMode": "compiled-runtime",
+      "sha256": "9b7dcf3183acd7443d052d8d12e3ff106ef7d834dc761cfd04a9e26db7b73371",
+      "size": 96610,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoaetherworks-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoaetherworks-1.0.0-standalone.jar",
-      "sha256": "0060e7bd9e08c27604b4bcbc3b4dcbfb88edc83f0aa31c4ff855e69684903a77",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-standalone.jar",
-      "size": 91215,
-      "buildMode": "compiled-runtime",
+      "sha256": "9b7dcf3183acd7443d052d8d12e3ff106ef7d834dc761cfd04a9e26db7b73371",
+      "size": 96610,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoaetherworks-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoaetherworks-1.0.0.echo-addon",
-      "sha256": "2dceb135d471ed95aa968e06987ff6a2208b69a02ab43392177cbe13fd28ffec",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0.echo-addon",
-      "size": 86531,
-      "buildMode": "compiled-runtime",
+      "sha256": "ec4f389d91ab566ae82318a51a2bd687cad8cb547510397a55f596ca3d390b29",
+      "size": 92359,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoaetherworks-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoaetherworks-1.0.0-sources.jar",
-      "sha256": "b951773d8883fac35ed6e98c852d1c299f244ee0a7d78e61b402311688ae5441",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-sources.jar",
-      "size": 45603,
+      "sha256": "085c3a567fd8a3af46d08e253cb92027533ef0c8c286c29005a5779f610bd15e",
+      "size": 45321,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoaetherworks-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echoaetherworks-1.0.0-content-graph.json",
-      "sha256": "caadabddf828023914b29d5ac2b19170d27c615dd92ba3ae2cbdf32728860d22",
+      "sha256": "225f37a37bbeffb080fb00c4a436fb9021b68a69222f1c2f6890617c2c9b156e",
       "size": 17059,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoaetherworks-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoaetherworks-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoarcanacore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

@@ -8,7 +8,7 @@ Public catalog, channel, and release index metadata used by the launcher, websit
 
 ## What Lives Here
 
-Release catalog JSON, channel metadata, public status docs, validation notes, and download/index references.
+Release catalog JSON, channel metadata, public status docs, validation notes, download/index references, and `content-graph` artifact roles for module/addon entries.
 
 The canonical catalog is organized by install/update lane:
 
@@ -92,7 +92,29 @@ Each installable entry must include stable fields for `id`, `kind`, `version`, `
 
 The required schema inventory is enforced by `scripts/validate-index.mjs` and includes addon package, pack manifest, module release manifest, product update entry, Release Index entry, publisher, channel, trust, and block schemas.
 
-`scripts/sync-public-alpha-index.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
+## Content Graph Artifact Role
+
+Every `module` and `addon` entry must index a `content-graph` artifact that points to the module's `-content-graph.json` sidecar:
+
+```json
+{
+  "artifacts": {
+    "content-graph": {
+      "file": "echocore-1.0.0-content-graph.json",
+      "sha256": "...",
+      "size": 12345,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/.../echocore-1.0.0-content-graph.json",
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [".echo/content-graph/content-graph.json"]
+    }
+  }
+}
+```
+
+`scripts/validate-index.mjs --strict` rejects approved entries that lack this role. Non-approved entries receive a warning so cataloging can proceed before the sidecar URL is published.
+
+`scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` verifies that each launcher channel references every catalog entry in `products/`, `modpacks/`, `modules/`, and `addons/`. Run it without `--check` after adding or removing catalog files so `channels/<channel>/launcher-channel.json` stays aligned with strict validation.
 

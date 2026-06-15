@@ -1,102 +1,162 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoatmospherecore",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echoatmospherecore-1.0.0-neoforge.jar",
-      "sha256": "888df580db8aeb9b432c228d2999ca1df6892ec4a7331b5870b6f5d244fa2c4b",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-neoforge.jar",
-      "size": 28735,
-      "buildMode": "compiled-runtime",
+      "sha256": "e75efefdd1f5754af9bbbc119c003a377d97ce296a2f07fc6e962c81d049be54",
+      "size": 34267,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoatmospherecore-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoatmospherecore-1.0.0-standalone.jar",
-      "sha256": "246d9a1a60787f25be599365ff881794c83799c840f0499a1d587c6f5ba79489",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-standalone.jar",
-      "size": 28711,
-      "buildMode": "compiled-runtime",
+      "sha256": "e75efefdd1f5754af9bbbc119c003a377d97ce296a2f07fc6e962c81d049be54",
+      "size": 34267,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoatmospherecore-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoatmospherecore-1.0.0.echo-addon",
-      "sha256": "33cc3c5b7439719719049643cf46adb27b74eff460b3f5de5fa52f6a19b33727",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0.echo-addon",
-      "size": 29454,
-      "buildMode": "compiled-runtime",
+      "sha256": "41a77b845e4c39a0d8442fd9bbb52fd32038fb7015f4f7b0756bcb78ea40ac1a",
+      "size": 35435,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoatmospherecore-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoatmospherecore-1.0.0-sources.jar",
-      "sha256": "352b5427a85771c416cbe0adc8e068df87d5525ad6253662968904b2e78e15a1",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-sources.jar",
-      "size": 15219,
+      "sha256": "0134b182ec3e4753ffcee655ac230967d6bc214f1cbdc955b503bad0f6041d31",
+      "size": 15079,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoatmospherecore-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echoatmospherecore-1.0.0-content-graph.json",
-      "sha256": "625ad9d570c43e2dc5d5e6057930d8ccfe22e5bf6433e6e33608840da2ff9b54",
+      "sha256": "5d4f3ebc1ad200925688c89a73d9f10285ac502401fa3a96141bcbfd3a80d075",
       "size": 19750,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoatmospherecore-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoatmospherecore-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoassetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocontentcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoplatformcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoschemacore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echovalidationcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

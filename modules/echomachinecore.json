@@ -1,19 +1,17 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
-  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echomachinecore",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echomachinecore-1.0.0-neoforge.jar",
-      "sha256": "c30ec2005877fd8ff11d5793d9972cafc24b81c987b2ca96c4019db22181f272",
-      "size": 73846,
+      "sha256": "1a644db772c34f52d80e4cbba3964746e7fe17e04e560d63321e7fa7f7ea0ee2",
+      "size": 73839,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -29,12 +27,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomachinecore-1.0.0-neoforge.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomachinecore-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echomachinecore-1.0.0-standalone.jar",
-      "sha256": "c30ec2005877fd8ff11d5793d9972cafc24b81c987b2ca96c4019db22181f272",
-      "size": 73846,
+      "sha256": "1a644db772c34f52d80e4cbba3964746e7fe17e04e560d63321e7fa7f7ea0ee2",
+      "size": 73839,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -49,12 +47,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomachinecore-1.0.0-standalone.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomachinecore-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echomachinecore-1.0.0.echo-addon",
-      "sha256": "5fbdfddeb41c57ca9b442a01ca56b432accb5eccfd15b0e8159cd97338a88db2",
-      "size": 72689,
+      "sha256": "a27b87b30cc6fa411c12e3118d2d85a9cc5792a48933ae7b0c740103fe82ebab",
+      "size": 72658,
       "runtimeTarget": "echo-native",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -71,90 +69,99 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomachinecore-1.0.0.echo-addon"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomachinecore-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echomachinecore-1.0.0-sources.jar",
-      "sha256": "c2763d547e7c58298af63ade52b54f27cb84946545f1e04efe00291f95adda69",
-      "size": 25045,
+      "sha256": "c4fc984272c946f64128f9acd79f5301ae3e7da1f8cbf12ff2a5087553c8c976",
+      "size": 24831,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomachinecore-1.0.0-sources.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomachinecore-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echomachinecore-1.0.0-content-graph.json",
-      "sha256": "6965ed0efeb6ea61a2d851661d21c60cbe3dea291115314e87e94df07bc0aa0a",
+      "sha256": "52a3e14184b711e4ef217eb1372abc4fcc3ab9a2c52eb0cb84b378f89d82795a",
       "size": 15476,
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echomachinecore-1.0.0-content-graph.json"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomachinecore-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoassetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocontentcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoplatformcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echorecipecore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoschemacore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echovalidationcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
   "compatibility": [
-    "ashfall-native-edition",
     "ashfall-neoforge-edition",
-    "ashfall-standalone-edition"
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
   ],
   "provenance": {
     "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-    "workflow": "Manual Release Modules",
-    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
     "generatedBy": "scripts/generate-module-release.mjs",
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
-      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
-      "size": 130336
-    },
-    "checksums": {
-      "file": "checksums.sha256",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
-      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
-      "size": 182891
-    },
     "attestation": {
-      "status": "pending-attestation",
-      "subjectChecksums": "checksums.sha256"
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
     }
-  }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

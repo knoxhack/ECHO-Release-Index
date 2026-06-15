@@ -20,7 +20,7 @@ const moduleReleaseProvenance = {
   generatedBy: 'scripts/generate-module-release.mjs',
   attestation: {
     action: 'actions/attest@v4',
-    subjectChecksums: 'checksums.sha256',
+    subjectChecksums: 'echo-module-release.tar.gz.sha256',
   },
 }
 
@@ -67,6 +67,22 @@ function approvedEntry(overrides = {}) {
         file: 'fixture-addon-1.0.0.echo-addon',
         sha256: sha,
         url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/fixture-addon-1.0.0.echo-addon',
+      },
+      'content-graph': {
+        file: 'fixture-addon-1.0.0-content-graph.json',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/fixture-addon-1.0.0-content-graph.json',
+        runtimeTarget: 'content-graph',
+        buildMode: 'generated',
+      },
+      'content-graph-evidence': {
+        artifactRole: 'content-graph-evidence',
+        file: 'content-graph-evidence.json',
+        sha256: sha,
+        url: 'https://github.com/knoxhack/ECHO-Fixture/releases/download/v1.0.0/content-graph-evidence.json',
+        runtimeTarget: 'content-graph',
+        buildMode: 'generated',
+        schemaVersion: 'echo.content_graph.evidence.v1',
       },
     },
     dependencies: [],
@@ -390,6 +406,16 @@ await runFixture('module-import', async (root) => {
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
     provenance: moduleReleaseProvenance,
+    contentGraphEvidence: {
+      kind: 'content-graph-evidence',
+      filename: 'content-graph-evidence.json',
+      sha256: sha,
+      size: 100,
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-fixture/content-graph-evidence.json',
+      runtimeTarget: 'content-graph',
+      buildMode: 'generated',
+      schemaVersion: 'echo.content_graph.evidence.v1',
+    },
     modules: [
       {
         moduleId: 'echocore',
@@ -399,6 +425,7 @@ await runFixture('module-import', async (root) => {
         optional: [],
         artifacts: [
           { kind: 'echo-addon', filename: 'echocore-1.0.0.echo-addon', sha256: sha, size: 10, runtimeTarget: 'echo-native', buildMode: 'compiled-runtime' },
+          { kind: 'content-graph', filename: 'echocore-1.0.0-content-graph.json', sha256: sha, size: 10, runtimeTarget: 'content-graph', buildMode: 'generated' },
         ],
       },
       {
@@ -410,11 +437,12 @@ await runFixture('module-import', async (root) => {
         artifacts: [
           { kind: 'neoforge', filename: 'echoarmory-1.0.0-neoforge.jar', sha256: sha, size: 10, runtimeTarget: 'neoforge', buildMode: 'source-packaged' },
           { kind: 'sources', filename: 'echoarmory-1.0.0-sources.jar', sha256: sha, size: 10, runtimeTarget: 'sources' },
+          { kind: 'content-graph', filename: 'echoarmory-1.0.0-content-graph.json', sha256: sha, size: 10, runtimeTarget: 'content-graph', buildMode: 'generated' },
         ],
       },
     ],
   })
-  const result = spawnSync(process.execPath, [importer, '--root', root, '--manifest', manifestPath, '--release-tag', 'modules-fixture', '--commit-sha', 'abc1234', '--approved'], {
+  const result = spawnSync(process.execPath, [importer, '--root', root, '--manifest', manifestPath, '--release-tag', 'modules-fixture', '--commit-sha', 'abc1234', '--asset-base-url', 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-fixture', '--approved'], {
     encoding: 'utf8',
     windowsHide: true,
   })
@@ -435,6 +463,16 @@ await runFixture('module-import-approved', async (root) => {
     generatedAt: '2026-06-09T00:00:00Z',
     sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
     provenance: moduleReleaseProvenance,
+    contentGraphEvidence: {
+      kind: 'content-graph-evidence',
+      filename: 'content-graph-evidence.json',
+      sha256: sha,
+      size: 100,
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-compiled-fixture/content-graph-evidence.json',
+      runtimeTarget: 'content-graph',
+      buildMode: 'generated',
+      schemaVersion: 'echo.content_graph.evidence.v1',
+    },
     modules: [
       {
         moduleId: 'echocore',
@@ -447,11 +485,12 @@ await runFixture('module-import-approved', async (root) => {
           { kind: 'neoforge', filename: 'echocore-1.0.0-neoforge.jar', sha256: sha, size: 10, runtimeTarget: 'neoforge', buildMode: 'compiled-runtime' },
           { kind: 'standalone', filename: 'echocore-1.0.0-standalone.jar', sha256: sha, size: 10, runtimeTarget: 'standalone', buildMode: 'compiled-runtime' },
           { kind: 'sources', filename: 'echocore-1.0.0-sources.jar', sha256: sha, size: 10, runtimeTarget: 'sources' },
+          { kind: 'content-graph', filename: 'echocore-1.0.0-content-graph.json', sha256: sha, size: 10, runtimeTarget: 'content-graph', buildMode: 'generated' },
         ],
       },
     ],
   })
-  const result = spawnSync(process.execPath, [importer, '--root', root, '--manifest', manifestPath, '--release-tag', 'modules-compiled-fixture', '--commit-sha', 'abc1234', '--approved'], {
+  const result = spawnSync(process.execPath, [importer, '--root', root, '--manifest', manifestPath, '--release-tag', 'modules-compiled-fixture', '--commit-sha', 'abc1234', '--asset-base-url', 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-compiled-fixture', '--approved'], {
     encoding: 'utf8',
     windowsHide: true,
   })
@@ -464,6 +503,9 @@ await runFixture('module-import-approved', async (root) => {
   }
   if (imported.provenance?.attestation?.action !== 'actions/attest@v4') {
     throw new Error('compiled approved module import must preserve attestation provenance')
+  }
+  if (imported.artifacts?.['content-graph-evidence']?.artifactRole !== 'content-graph-evidence') {
+    throw new Error('compiled approved module import must expose content-graph-evidence role')
   }
 }, 0, 'validation passed')
 

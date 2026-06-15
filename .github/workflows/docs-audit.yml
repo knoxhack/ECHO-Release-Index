@@ -14,6 +14,14 @@ jobs:
           node-version: 22
       - run: node scripts/docs-audit.mjs
       - run: node scripts/validate-index.mjs --strict
+      - name: Check Codex context when sibling ECHO repos are present
+        shell: bash
+        run: |
+          if [ -d ../ECHO-Modules ] && [ -d ../ECHO-SDK ]; then
+            node scripts/generate-codex-context.mjs --check
+          else
+            echo "Skipping Codex context check because the full ECHO source-root layout is not present."
+          fi
       - run: node scripts/sync-public-alpha-index.mjs --check
       - run: node scripts/test-validate-index.mjs
       - run: node scripts/test-sync-public-alpha-index.mjs

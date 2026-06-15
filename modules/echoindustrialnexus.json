@@ -1,19 +1,17 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
-  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoindustrialnexus",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echoindustrialnexus-1.0.0-neoforge.jar",
-      "sha256": "f10f635d82f60e3a3327995cbc75efe5d358c22ef3f7fc72d6740e3b753f58b7",
-      "size": 5346310,
+      "sha256": "4697c59d4848053898f1884ed475baf6a23156fc458e8b90ef668ae99064c21f",
+      "size": 5342626,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -29,12 +27,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoindustrialnexus-1.0.0-neoforge.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoindustrialnexus-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoindustrialnexus-1.0.0-standalone.jar",
-      "sha256": "f10f635d82f60e3a3327995cbc75efe5d358c22ef3f7fc72d6740e3b753f58b7",
-      "size": 5346310,
+      "sha256": "4697c59d4848053898f1884ed475baf6a23156fc458e8b90ef668ae99064c21f",
+      "size": 5342626,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -49,12 +47,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoindustrialnexus-1.0.0-standalone.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoindustrialnexus-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoindustrialnexus-1.0.0.echo-addon",
-      "sha256": "353776a76951db7447ef06bfe0ae209e307fa0cf8a2b22d60a4008591d00fafa",
-      "size": 5036682,
+      "sha256": "9b8b8af3a0c3733fcb1034e72ea8567e4f059f59283ee46f934573fabc615a07",
+      "size": 5038321,
       "runtimeTarget": "echo-native",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -71,70 +69,74 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoindustrialnexus-1.0.0.echo-addon"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoindustrialnexus-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoindustrialnexus-1.0.0-sources.jar",
-      "sha256": "cb0d184f2341d1bc79f202462df20647a3edd7d83d78359f44fab1be549f77f0",
-      "size": 5065077,
+      "sha256": "fd6ed95e77d4af82557374d5b132900a8c5a01496aa7c2c9d37cccb23a1197c8",
+      "size": 5060406,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoindustrialnexus-1.0.0-sources.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoindustrialnexus-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echoindustrialnexus-1.0.0-content-graph.json",
-      "sha256": "af47f265b447d2be65ffbb5fc029e5b54babd0ced9ee6ebdc58f7b81fc899fd6",
+      "sha256": "be40ddb91be0401b85a7ab4f133aa90fc8e7adc789c7c976eeafba2f1001a36d",
       "size": 579483,
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echoindustrialnexus-1.0.0-content-graph.json"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoindustrialnexus-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
   "compatibility": [
-    "ashfall-native-edition",
     "ashfall-neoforge-edition",
-    "ashfall-standalone-edition"
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
   ],
   "provenance": {
     "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-    "workflow": "Manual Release Modules",
-    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
     "generatedBy": "scripts/generate-module-release.mjs",
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
-      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
-      "size": 130336
-    },
-    "checksums": {
-      "file": "checksums.sha256",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
-      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
-      "size": 182891
-    },
     "attestation": {
-      "status": "pending-attestation",
-      "subjectChecksums": "checksums.sha256"
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
     }
-  }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

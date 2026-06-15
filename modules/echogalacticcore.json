@@ -1,78 +1,132 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echogalacticcore",
   "kind": "module",
   "version": "0.1.0-native-alpha",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echogalacticcore-0.1.0-native-alpha-neoforge.jar",
-      "sha256": "79d71a937fe61d3658afc5a9c5c72f203f4c9012b7e05dad975205173148a22a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-neoforge.jar",
-      "size": 12074779,
-      "buildMode": "compiled-runtime",
+      "sha256": "d957a797db9ea838cdf7619cb5ef74b7789854bcd01c12cb6b4a4924d5ca9060",
+      "size": 12073317,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticcore-0.1.0-native-alpha-neoforge.jar"
     },
     "standalone": {
       "file": "echogalacticcore-0.1.0-native-alpha-standalone.jar",
-      "sha256": "c492eb544b093d4b1b2d11089f65c6e8f5a508e40a0d1886bb4b0adc0af7612d",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-standalone.jar",
-      "size": 12074779,
-      "buildMode": "compiled-runtime",
+      "sha256": "d957a797db9ea838cdf7619cb5ef74b7789854bcd01c12cb6b4a4924d5ca9060",
+      "size": 12073317,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticcore-0.1.0-native-alpha-standalone.jar"
     },
     "native": {
       "file": "echogalacticcore-0.1.0-native-alpha.echo-addon",
-      "sha256": "6e60eb9cb85423e5238a4ae10f41d3f44714c8f45150e3a92429cbcb9aa21db6",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha.echo-addon",
-      "size": 10869544,
-      "buildMode": "compiled-runtime",
+      "sha256": "ebb9584a21244d42da33b527aef3b881b1c23d19b17049f039b39917bbf4cdfb",
+      "size": 10870125,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticcore-0.1.0-native-alpha.echo-addon"
     },
     "sources": {
       "file": "echogalacticcore-0.1.0-native-alpha-sources.jar",
-      "sha256": "28b272045adb014f20e9afd5d434eee3ce44a027ac413e5917f1aa542154b798",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-sources.jar",
-      "size": 11867025,
+      "sha256": "f00cee48a842f25395e1ff66ea516238867894c0ffa41378557e077c6133f11a",
+      "size": 11857759,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticcore-0.1.0-native-alpha-sources.jar"
     },
     "content-graph": {
       "file": "echogalacticcore-0.1.0-native-alpha-content-graph.json",
-      "sha256": "5a66e6e171f831a62b43798a8500e9fb011d6b674656545c484f3afa518b9574",
+      "sha256": "a35278b4ffaaae8bab45e85c0f9ad894e8be7aa36f0db6bb0b3bbda35c5288af",
       "size": 36980,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echogalacticcore-0.1.0-native-alpha-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticcore-0.1.0-native-alpha-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

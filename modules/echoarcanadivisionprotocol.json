@@ -1,170 +1,247 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-all-official-modpacks-runtime-fix-20260614",
-  "commitSha": "c1b43ac48f8fa5065c421781cab4bd1e44418946",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echoarcanadivisionprotocol",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echoarcanadivisionprotocol-1.0.0-neoforge.jar",
-      "sha256": "2656cc931615252cf1ec886ef6c5bcfc1c8003239f72904720ebb1a98336618f",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcanadivisionprotocol-1.0.0-neoforge.jar",
-      "size": 8457,
-      "buildMode": "compiled-runtime",
+      "sha256": "c28a8adab447acfd539b8d4c4fbc74bd584148cb6c35c0383e895e7ce23de178",
+      "size": 15251,
       "runtimeTarget": "neoforge",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
-        "META-INF/neoforge.mods.toml"
-      ]
+        "META-INF/neoforge.mods.toml",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoarcanadivisionprotocol-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echoarcanadivisionprotocol-1.0.0-standalone.jar",
-      "sha256": "83de1c1ef816e4574574bf9e872149caae469171b37c64f18cb7186e9c0b0b6e",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcanadivisionprotocol-1.0.0-standalone.jar",
-      "size": 8443,
-      "buildMode": "compiled-runtime",
+      "sha256": "751aa9c0a617dce61a46e68cea7d2241a2171808dc544ce2dc112dbb8f6b1e60",
+      "size": 15251,
       "runtimeTarget": "standalone",
+      "buildMode": "compiled-runtime",
       "contains": [
-        "META-INF/echo.mod.json"
-      ]
+        "META-INF/echo.mod.json",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoarcanadivisionprotocol-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echoarcanadivisionprotocol-1.0.0.echo-addon",
-      "sha256": "b00ed0a7ec1ff8cbf04fd4cd23cb9cfb8afccf9a22b139d9b0e69b860e9abf3a",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcanadivisionprotocol-1.0.0.echo-addon",
-      "size": 10257,
-      "buildMode": "compiled-runtime",
+      "sha256": "fb127ef83aab9b0b7b8bb9c282977f52a3325775efbb0c4054e42a72f63cf1ba",
+      "size": 17472,
       "runtimeTarget": "echo-native",
+      "buildMode": "compiled-runtime",
       "contains": [
         "META-INF/echo.mod.json",
         "echo-addon-package.json",
-        "checksums.sha256"
-      ]
+        "checksums.sha256",
+        ".echo/content-graph/content-graph.json",
+        ".echo/content-graph/content-graph.md",
+        ".echo/content-graph/export-plans/echo_native.json",
+        ".echo/content-graph/export-plans/echo_runtime_standalone.json",
+        ".echo/content-graph/export-plans/hytale.json",
+        ".echo/content-graph/export-plans/neoforge.json",
+        ".echo/content-graph/features.json",
+        ".echo/content-graph/provenance.json",
+        ".echo/content-graph/unresolved-references.json"
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoarcanadivisionprotocol-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echoarcanadivisionprotocol-1.0.0-sources.jar",
-      "sha256": "e86d69fc62964af81fb51762f7fa6ef2b6b1ddbeb34d5810fc0ed82770e78f94",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcanadivisionprotocol-1.0.0-sources.jar",
-      "size": 8561,
+      "sha256": "b4b0e82abeff63709a356e11db87b370053460d420e73a18660dc0331ff1c43c",
+      "size": 8442,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoarcanadivisionprotocol-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echoarcanadivisionprotocol-1.0.0-content-graph.json",
-      "sha256": "9979a576a0add00ab8efe87ee058a71b794ea486c9bee73104cf96dd61b474fe",
+      "sha256": "b2d66dbc7bef48a7067ed019ddcd6da46814f98b1a5622677a6cb1b619d04e83",
       "size": 43720,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-all-official-modpacks-runtime-fix-20260614/echoarcanadivisionprotocol-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoarcanadivisionprotocol-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echofoundationcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echomaterialcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echotoolcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echostationcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoworldstarter",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocommonloot",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocreatureroles",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoarcanacore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoaetherworks",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocursecore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echofamiliarcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echogrimoire",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoriftworlds",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoritualcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echospellcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoholomap",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoindex",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echolens",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoterminal",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echothemecore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echomissioncore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
-  "compatibility": []
+  "compatibility": [
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
+  ],
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

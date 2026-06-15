@@ -5,13 +5,13 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-2026-06-15T00-27-23-222Z",
-  "commitSha": "8e04d90dd5c3a34751cc8693b03dcfe47c505ab4",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echodeepreachprotocol-0.1.0-neoforge.jar",
-      "sha256": "b0dbbf12dda573f971c1f42ae7c4f5416e7eee0bc040b85d83c9db1691032235",
-      "size": 150926,
+      "sha256": "e9f44a132ab08d94e477a1b81d6e15ddb1474d0d6758f9d2a516a3f50aa5869b",
+      "size": 150636,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -26,12 +26,13 @@
         ".echo/content-graph/features.json",
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echodeepreachprotocol-0.1.0-neoforge.jar"
     },
     "standalone": {
       "file": "echodeepreachprotocol-0.1.0-standalone.jar",
-      "sha256": "b0dbbf12dda573f971c1f42ae7c4f5416e7eee0bc040b85d83c9db1691032235",
-      "size": 150926,
+      "sha256": "e9f44a132ab08d94e477a1b81d6e15ddb1474d0d6758f9d2a516a3f50aa5869b",
+      "size": 150636,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -45,12 +46,13 @@
         ".echo/content-graph/features.json",
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echodeepreachprotocol-0.1.0-standalone.jar"
     },
     "native": {
       "file": "echodeepreachprotocol-0.1.0.echo-addon",
-      "sha256": "40b1aeb7d7b01b9d3f46486f1a377016bcf91b1d310444d035e78536902e1b2e",
-      "size": 124140,
+      "sha256": "497c62b47fc91dc024a08afcf1e60f4fff5d61e6ea2ce05500a21221485cdd5f",
+      "size": 123891,
       "runtimeTarget": "echo-native",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -66,26 +68,40 @@
         ".echo/content-graph/features.json",
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echodeepreachprotocol-0.1.0.echo-addon"
     },
     "sources": {
       "file": "echodeepreachprotocol-0.1.0-sources.jar",
-      "sha256": "f8b2bf23341db1418d92c3de6fdef02b09d1aea61c049fa62a9f16bae6f82132",
-      "size": 110852,
+      "sha256": "915123ba1a54ca8400476b4b84a32b6f6dcee123da0ac9016718eb289eea60d5",
+      "size": 110639,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echodeepreachprotocol-0.1.0-sources.jar"
     },
     "content-graph": {
       "file": "echodeepreachprotocol-0.1.0-content-graph.json",
-      "sha256": "4e691cc7160993fb3e5a958fcadf126566c87bc2313560ffcee394169171ead6",
+      "sha256": "01da7cc5dbe150b26dd6f4380d936e59f13186526affd6af6a5d9bbb93c456b6",
       "size": 127579,
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
-      ]
+      ],
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echodeepreachprotocol-0.1.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
@@ -285,6 +301,17 @@
     "ashfall-standalone-edition",
     "ashfall-native-edition"
   ],
-  "trust": "source-linked",
-  "validation": "warning"
+  "provenance": {
+    "sourceRepo": "knoxhack/ECHO-Modules",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
+    "generatedBy": "scripts/generate-module-release.mjs",
+    "attestation": {
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
+    }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

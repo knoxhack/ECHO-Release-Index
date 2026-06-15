@@ -4,7 +4,7 @@
   "title": "ECHO Module Release Manifest",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "provenance", "modules"],
+  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "provenance", "contentGraphEvidence", "modules"],
   "properties": {
     "schemaVersion": { "const": "echo.module.release.v1" },
     "releaseId": { "type": "string", "minLength": 1 },
@@ -30,9 +30,24 @@
           "required": ["action", "subjectChecksums"],
           "properties": {
             "action": { "const": "actions/attest@v4" },
-            "subjectChecksums": { "const": "checksums.sha256" }
+            "subjectChecksums": { "const": "echo-module-release.tar.gz.sha256" }
           }
         }
+      }
+    },
+    "contentGraphEvidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["kind", "filename", "sha256", "size", "runtimeTarget", "buildMode", "schemaVersion"],
+      "properties": {
+        "kind": { "const": "content-graph-evidence" },
+        "filename": { "const": "content-graph-evidence.json" },
+        "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "size": { "type": "integer", "minimum": 0 },
+        "downloadUrl": { "type": "string" },
+        "runtimeTarget": { "const": "content-graph" },
+        "buildMode": { "const": "generated" },
+        "schemaVersion": { "const": "echo.content_graph.evidence.v1" }
       }
     },
     "modules": {
@@ -63,13 +78,13 @@
               "additionalProperties": true,
               "required": ["kind", "filename", "sha256", "size"],
               "properties": {
-                "kind": { "enum": ["echo-addon", "neoforge", "standalone", "sources"] },
+                "kind": { "enum": ["echo-addon", "neoforge", "standalone", "sources", "content-graph"] },
                 "filename": { "type": "string", "minLength": 1 },
                 "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
                 "size": { "type": "integer", "minimum": 0 },
                 "downloadUrl": { "type": "string" },
                 "runtimeTarget": { "type": "string" },
-                "buildMode": { "enum": ["compiled-runtime", "source-packaged", null] },
+                "buildMode": { "enum": ["compiled-runtime", "source-packaged", "generated", null] },
                 "contains": {
                   "type": "array",
                   "items": { "type": "string" }

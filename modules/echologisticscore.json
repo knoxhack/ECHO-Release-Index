@@ -1,19 +1,17 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
-  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echologisticscore",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echologisticscore-1.0.0-neoforge.jar",
-      "sha256": "65b333b8ccb374a2d26667ef333883019c5b0b5ec152a0d415084078a6c9c461",
-      "size": 30666,
+      "sha256": "514ba6eeeecf06346fafe08a6d35453de9f42102099e25d03ef9d18d4b3ea9ad",
+      "size": 30667,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -29,12 +27,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echologisticscore-1.0.0-neoforge.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echologisticscore-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echologisticscore-1.0.0-standalone.jar",
-      "sha256": "65b333b8ccb374a2d26667ef333883019c5b0b5ec152a0d415084078a6c9c461",
-      "size": 30666,
+      "sha256": "514ba6eeeecf06346fafe08a6d35453de9f42102099e25d03ef9d18d4b3ea9ad",
+      "size": 30667,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -49,12 +47,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echologisticscore-1.0.0-standalone.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echologisticscore-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echologisticscore-1.0.0.echo-addon",
-      "sha256": "c509d762f4b833ee73e6cadf3a50c27ff7fc6658bba765364e0094ef2c9062e4",
-      "size": 31557,
+      "sha256": "3cec4809fa8ede68036437531ebb0531098af2c8078342ce7a1be84ba5283ac4",
+      "size": 31543,
       "runtimeTarget": "echo-native",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -71,86 +69,94 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echologisticscore-1.0.0.echo-addon"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echologisticscore-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echologisticscore-1.0.0-sources.jar",
-      "sha256": "b2b9ed1d54ed2339bc87f08bfab6033099a82a173c9355bcf6650839947b466e",
-      "size": 13796,
+      "sha256": "e0e0713d4347fd578a74c57a5ca431e5dd28a2aed47493b3a5ec772bccab8aa4",
+      "size": 13647,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echologisticscore-1.0.0-sources.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echologisticscore-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echologisticscore-1.0.0-content-graph.json",
-      "sha256": "8ef4d0eae69aa2871d857f6c20824f670321d9ba562d48c1153641fc4af3cf82",
+      "sha256": "3039b3cb43fe577f2d1af237119806cf26a1809c2fcc0097a8e5c91342109810",
       "size": 15172,
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echologisticscore-1.0.0-content-graph.json"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echologisticscore-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoassetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocontentcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoplatformcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echoschemacore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echovalidationcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
   "compatibility": [
-    "ashfall-native-edition",
     "ashfall-neoforge-edition",
-    "ashfall-standalone-edition"
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
   ],
   "provenance": {
     "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-    "workflow": "Manual Release Modules",
-    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
     "generatedBy": "scripts/generate-module-release.mjs",
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
-      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
-      "size": 130336
-    },
-    "checksums": {
-      "file": "checksums.sha256",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
-      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
-      "size": 182891
-    },
     "attestation": {
-      "status": "pending-attestation",
-      "subjectChecksums": "checksums.sha256"
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
     }
-  }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

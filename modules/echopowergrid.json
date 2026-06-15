@@ -1,19 +1,17 @@
 {
-  "channel": "alpha",
-  "publisher": "knoxhack",
-  "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-ashfall-native-content-hotfix-20260615",
-  "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-  "trust": "source-linked",
-  "validation": "approved",
   "id": "echopowergrid",
   "kind": "module",
   "version": "1.0.0",
+  "channel": "alpha",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Modules",
+  "releaseTag": "modules-content-graph-evidence-proof-20260615",
+  "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
   "artifacts": {
     "neoforge": {
       "file": "echopowergrid-1.0.0-neoforge.jar",
-      "sha256": "ed3ba8ab1c89c6b9b2c6b679f7309acebc62ff505c60aef4bd7612f2b654126f",
-      "size": 7202724,
+      "sha256": "a8d2d01d73dcfea57f309f47278065ff9c2c503d5eb69c76bb339c3dda57245f",
+      "size": 7202123,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -29,12 +27,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echopowergrid-1.0.0-neoforge.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowergrid-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echopowergrid-1.0.0-standalone.jar",
-      "sha256": "ed3ba8ab1c89c6b9b2c6b679f7309acebc62ff505c60aef4bd7612f2b654126f",
-      "size": 7202724,
+      "sha256": "a8d2d01d73dcfea57f309f47278065ff9c2c503d5eb69c76bb339c3dda57245f",
+      "size": 7202123,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -49,12 +47,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echopowergrid-1.0.0-standalone.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowergrid-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echopowergrid-1.0.0.echo-addon",
-      "sha256": "a6481860516b4bc7ec42bef4c600f7974cfc9a1c0e724d04020106dadcc72999",
-      "size": 7159422,
+      "sha256": "666fa4bf2e1e81cbd9c6188cb7699d2cc554a441affac4ab6cf38d2a5346afae",
+      "size": 7160311,
       "runtimeTarget": "echo-native",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -71,70 +69,74 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echopowergrid-1.0.0.echo-addon"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowergrid-1.0.0.echo-addon"
     },
     "sources": {
       "file": "echopowergrid-1.0.0-sources.jar",
-      "sha256": "bf15f45c8be18a40b792fdfd5dd46e686814d289c336e6025e735d73076f76f6",
-      "size": 7058930,
+      "sha256": "6c73b10274d9a2875eccfa357fcf7166168fa9c4fb89649de9e2f72e4f9a9926",
+      "size": 7057668,
       "runtimeTarget": "sources",
       "contains": [
         "META-INF/echo.mod.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echopowergrid-1.0.0-sources.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowergrid-1.0.0-sources.jar"
     },
     "content-graph": {
       "file": "echopowergrid-1.0.0-content-graph.json",
-      "sha256": "8342b48fbe45930a52b823bd73b1ce3ec7f60605203fb3b1faec35d64f53bf6d",
+      "sha256": "f86352efa89c62bb41dba01c9faf970f26e56cd24b24022dcf4460cfea3c22d9",
       "size": 121106,
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
         ".echo/content-graph/content-graph.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echopowergrid-1.0.0-content-graph.json"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowergrid-1.0.0-content-graph.json"
+    },
+    "content-graph-evidence": {
+      "file": "content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "contains": [],
+      "schemaVersion": "echo.content_graph.evidence.v1",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "artifactRole": "content-graph-evidence"
     }
   },
   "dependencies": [
     {
       "id": "echoadaptercore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echocore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     },
     {
       "id": "echonetcore",
-      "kind": "module"
+      "kind": "module",
+      "version": "*"
     }
   ],
   "compatibility": [
-    "ashfall-native-edition",
     "ashfall-neoforge-edition",
-    "ashfall-standalone-edition"
+    "ashfall-standalone-edition",
+    "ashfall-native-edition"
   ],
   "provenance": {
     "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "fb29079e15b9eb06317d4f090f8fdd9d70c27702",
-    "workflow": "Manual Release Modules",
-    "workflowRef": "knoxhack/ECHO-Modules@refs/heads/main",
+    "commitSha": "88d17f50dc14915ab3ea21802490bc5e43a69550",
+    "workflow": "Release Modules",
+    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
     "generatedBy": "scripts/generate-module-release.mjs",
-    "releaseManifest": {
-      "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/echo-release.json",
-      "sha256": "f5dd44292cf28f9ae31b427ef4855f6140d696742a9944c321770e0a94a4233b",
-      "size": 130336
-    },
-    "checksums": {
-      "file": "checksums.sha256",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-native-content-hotfix-20260615/checksums.sha256",
-      "sha256": "57a4e2f5ad753531a8eb03a7a6fd8f852d8325d4b7e58b62334ae0b658afe6ab",
-      "size": 182891
-    },
     "attestation": {
-      "status": "pending-attestation",
-      "subjectChecksums": "checksums.sha256"
+      "action": "actions/attest@v4",
+      "subjectChecksums": "echo-module-release.tar.gz.sha256"
     }
-  }
+  },
+  "trust": "provenance-attested",
+  "validation": "approved"
 }

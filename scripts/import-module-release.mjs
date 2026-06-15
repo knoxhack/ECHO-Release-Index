@@ -47,6 +47,21 @@ function artifactUrl(args, filename, artifact) {
   return `${args.assetBaseUrl.replace(/\/$/, '')}/${encodeURIComponent(filename)}`
 }
 
+function artifactRow(args, filename, artifact) {
+  const row = {
+    file: filename,
+    sha256: artifact.sha256,
+    size: artifact.size ?? 0,
+    runtimeTarget: artifact.runtimeTarget,
+    buildMode: artifact.buildMode,
+    contains: artifact.contains ?? [],
+  }
+  if (artifact.schemaVersion) row.schemaVersion = artifact.schemaVersion
+  const url = artifactUrl(args, filename, artifact)
+  if (url) row.url = url
+  return row
+}
+
 function compatibilityFromArtifacts(artifacts) {
   const compatibility = new Set()
   for (const artifact of artifacts) {
@@ -67,7 +82,7 @@ function validateProvenanceForApproval(manifest) {
   const errors = []
   if (provenance.generatedBy !== 'scripts/generate-module-release.mjs') errors.push('generatedBy')
   if (attestation.action !== 'actions/attest@v4') errors.push('attestation.action')
-  if (attestation.subjectChecksums !== 'checksums.sha256') errors.push('attestation.subjectChecksums')
+  if (attestation.subjectChecksums !== 'echo-module-release.tar.gz.sha256') errors.push('attestation.subjectChecksums')
   if (!/^[a-f0-9]{7,40}$/i.test(String(provenance.commitSha ?? ''))) errors.push('commitSha')
   if (!String(provenance.workflowRef ?? '').includes('.github/workflows/release-modules.yml@')) errors.push('workflowRef')
   if (errors.length) {
@@ -84,17 +99,13 @@ function moduleEntry(moduleRecord, manifest, args) {
   for (const artifact of moduleRecord.artifacts ?? []) {
     const filename = artifact.filename ?? artifact.file ?? artifact.name
     if (!filename) continue
-    const row = {
-      file: filename,
-      sha256: artifact.sha256,
-      size: artifact.size ?? 0,
-      runtimeTarget: artifact.runtimeTarget,
-      buildMode: artifact.buildMode,
-      contains: artifact.contains ?? [],
+    artifacts[artifactKey(artifact)] = artifactRow(args, filename, artifact)
+  }
+  if (manifest.contentGraphEvidence?.filename) {
+    artifacts['content-graph-evidence'] = {
+      ...artifactRow(args, manifest.contentGraphEvidence.filename, manifest.contentGraphEvidence),
+      artifactRole: 'content-graph-evidence',
     }
-    const url = artifactUrl(args, filename, artifact)
-    if (url) row.url = url
-    artifacts[artifactKey(artifact)] = row
   }
   return {
     id: moduleRecord.moduleId,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-15T03:11:37-04:00",
+  "generatedAt": "2026-06-15T18:29:40-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -15,56 +15,168 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "c12542c9215b",
-        "commitDate": "2026-06-15T03:11:34-04:00",
+        "branch": "codex/content-graph-evidence-release-index",
+        "commit": "054a4ed0625b",
+        "commitDate": "2026-06-15T03:53:30-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M .github/workflows/docs-audit.yml",
+          " M addons/echoopenlandsprotocol.json",
+          " M docs/ecosystem-artifact-ownership.md",
+          " M modules/README.md",
+          " M modules/echoaccessibilitycore.json",
           " M modules/echoadaptercore.json",
+          " M modules/echoaddonapi.json",
+          " M modules/echoaetherworks.json",
+          " M modules/echoagentcore.json",
+          " M modules/echoagriculturereclamation.json",
+          " M modules/echoarcanacore.json",
+          " M modules/echoarcanadivisionprotocol.json",
+          " M modules/echoarcaneindex.json",
+          " M modules/echoarmory.json",
           " M modules/echoashfallprotocol.json",
+          " M modules/echoassetcore.json",
+          " M modules/echoassetpipeline.json",
+          " M modules/echoatmospherecore.json",
+          " M modules/echobalancecore.json",
           " M modules/echobasegrid.json",
+          " M modules/echobiomecore.json",
+          " M modules/echoblackboxprotocol.json",
           " M modules/echoblockworks.json",
+          " M modules/echoblueprintcore.json",
+          " M modules/echobridgecore.json",
+          " M modules/echocameracore.json",
+          " M modules/echocapabilitycore.json",
+          " M modules/echocinematiccore.json",
+          " M modules/echocodexcore.json",
+          " M modules/echocombatcore.json",
+          " M modules/echocommonloot.json",
+          " M modules/echocommunitybridge.json",
+          " M modules/echocontentcore.json",
           " M modules/echoconvoyprotocol.json",
           " M modules/echocore.json",
+          " M modules/echocreatorcore.json",
+          " M modules/echocreaturecore.json",
+          " M modules/echocreatureroles.json",
+          " M modules/echocurationcore.json",
+          " M modules/echocursecore.json",
+          " M modules/echodatacore.json",
+          " M modules/echodeepreachprotocol.json",
+          " M modules/echodependencydoctor.json",
+          " M modules/echodifficultycore.json",
+          " M modules/echodisastercore.json",
           " M modules/echoeconomycore.json",
+          " M modules/echoencountercore.json",
+          " M modules/echoequipmentcore.json",
+          " M modules/echoeventcore.json",
+          " M modules/echoexpeditioncore.json",
+          " M modules/echofactioncore.json",
+          " M modules/echofamiliarcore.json",
+          " M modules/echofoundationcore.json",
+          " M modules/echogalacticcore.json",
+          " M modules/echogalacticsurveyprotocol.json",
+          " M modules/echogrimoire.json",
+          " M modules/echoguidecore.json",
+          " M modules/echohazardcore.json",
+          " M modules/echohealthcore.json",
           " M modules/echoholomap.json",
+          " M modules/echohudcore.json",
           " M modules/echoindex.json",
           " M modules/echoindustrialnexus.json",
+          " M modules/echoinputcore.json",
           " M modules/echolens.json",
+          " M modules/echolocalizationcore.json",
           " M modules/echologisticscore.json",
           " M modules/echologisticsnetwork.json",
           " M modules/echolootcore.json",
+          " M modules/echolorecore.json",
           " M modules/echomachinecore.json",
+          " M modules/echomaterialcore.json",
+          " M modules/echometadatacore.json",
+          " M modules/echomigrationcore.json",
           " M modules/echomissioncore.json",
+          " M modules/echomodulegraph.json",
           " M modules/echomultiblockcore.json",
           " M modules/echonetcore.json",
+          " M modules/echonexusprotocol.json",
+          " M modules/echonotificationcore.json",
+          " M modules/echonpcore.json",
+          " M modules/echoopenlandsprotocol.json",
+          " M modules/echoorbitalremnants.json",
+          " M modules/echopackcore.json",
+          " M modules/echopackdiff.json",
           " M modules/echoplatformcore.json",
+          " M modules/echoplayercore.json",
+          " M modules/echoplaytestcore.json",
+          " M modules/echopolicycore.json",
           " M modules/echopowercore.json",
           " M modules/echopowergrid.json",
           " M modules/echopresencelink.json",
+          " M modules/echoprimecore.json",
+          " M modules/echoprogressioncore.json",
+          " M modules/echoquestdirector.json",
           " M modules/echorecipecore.json",
+          " M modules/echorecovery.json",
+          " M modules/echorelictech.json",
+          " M modules/echorendercore.json",
+          " M modules/echoreportcore.json",
+          " M modules/echoriftworlds.json",
+          " M modules/echoritualcore.json",
+          " M modules/echoruincore.json",
           " M modules/echoruntimeguard.json",
+          " M modules/echoschemacore.json",
+          " M modules/echoscreencore.json",
+          " M modules/echoscriptcore.json",
+          " M modules/echoseasoncore.json",
+          " M modules/echoserveropscore.json",
+          " M modules/echosessioncore.json",
+          " M modules/echosettlementcore.json",
+          " M modules/echosignalos.json",
+          " M modules/echoskillcore.json",
+          " M modules/echoskyrelayprotocol.json",
           " M modules/echosocialcore.json",
+          " M modules/echosoundcore.json",
+          " M modules/echospawncore.json",
+          " M modules/echospellcore.json",
+          " M modules/echostationcore.json",
+          " M modules/echostationfall.json",
+          " M modules/echostatuscore.json",
+          " M modules/echostructurecore.json",
+          " M modules/echosupplycore.json",
+          " M modules/echotelemetrycore.json",
           " M modules/echoterminal.json",
+          " M modules/echoterritorycore.json",
+          " M modules/echotextureforge.json",
+          " M modules/echothemecore.json",
+          " M modules/echotoolcore.json",
+          " M modules/echotutorialcore.json",
+          " M modules/echovalidationcore.json",
           " M modules/echovehiclecore.json",
-          " M products/native-platform.json",
+          " M modules/echoweathercore.json",
+          " M modules/echowiki.json",
+          " M modules/echoworldcore.json",
+          " M modules/echoworldstarter.json",
+          " M modules/module-release-manifest.schema.json",
+          " M modules/signalosexample.json",
+          " M schemas/module-release-manifest.schema.json",
+          " M scripts/import-module-release.mjs",
+          " M scripts/test-validate-index.mjs",
           " M scripts/validate-index.mjs",
-          "?? release-readiness/modules-ashfall-native-content-hotfix-20260615-ingestion.json",
-          "?? release-readiness/native-platform-v1.0.5-download-smoke.json"
+          "?? schemas/content-graph-evidence.schema.json"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 23176,
+          "bytes": 23883,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
         {
           "path": "docs/ecosystem-artifact-ownership.md",
           "exists": true,
-          "bytes": 5194,
+          "bytes": 5331,
           "heading": "ECHO Artifact Ownership",
           "excerpt": "The Release Index owns catalog records, trust policy, and channel routing. It does not own binary release assets. Each source repository publishes its own artifacts, then the Release Index records the approved artifact URLs, SHA-256 hashes, trust tier, validation state, depend..."
         },
@@ -130,17 +242,34 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "fb29079ef02c",
-        "commitDate": "2026-06-14T22:09:12-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "branch": "codex/content-graph-evidence-modules",
+        "commit": "5be342b6e590",
+        "commitDate": "2026-06-15T18:29:40-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          "M  addons/echoadaptercore/README.md",
+          "M  addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoNativeLoaderAttachedRuntimeHost.java",
+          "M  addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoNativeRuntimeHost.java",
+          "M  addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoRuntimeActionDispatcher.java",
+          "M  addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoRuntimeHostCapabilities.java",
+          "M  addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoRuntimeMutationLedger.java",
+          "M  addons/echoadaptercore/src/qa/java/com/knoxhack/echo/adaptercore/EchoNativeLoaderAttachedRuntimeHostSmoke.java",
+          "M  addons/echoadaptercore/src/qa/java/com/knoxhack/echo/adaptercore/EchoRuntimeTruthLayerSmoke.java",
+          "M  addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/AshfallNativeRuntimeMutationEvidence.java",
+          "M  addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/nativebridge/AshfallAdapterCoreMachineRuntimeHost.java",
+          "A  docs/ADAPTERCORE_GAMEPLAY_MUTATION_SPINE_REVIEW.md",
+          "M  docs/NATIVE_ADAPTERCORE_GUIDE.md",
+          "A  reports/echo/adaptercore/echoadaptercore-registry-backend-parity-smoke.json",
+          "M  scripts/generate-adaptercore-strict-port-audit.mjs",
+          "M  scripts/test-generate-adaptercore-strict-port-audit.mjs",
+          "?? scripts/update-artifacts-content-graph.mjs"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4285,
+          "bytes": 5234,
           "heading": "ECHO Modules",
           "excerpt": "Canonical source for all shared ECHO module code, module descriptors, generated per-module docs, and module release artifact contracts."
         },
@@ -168,7 +297,7 @@
         {
           "path": "docs/module-artifact-contract.md",
           "exists": true,
-          "bytes": 6473,
+          "bytes": 7130,
           "heading": "ECHO Module Release Contract",
           "excerpt": "`knoxhack/ECHO-Modules` is the canonical source for module artifacts consumed by Ashfall editions."
         },
@@ -189,7 +318,7 @@
         {
           "path": "docs/content-graph.md",
           "exists": true,
-          "bytes": 980,
+          "bytes": 4362,
           "heading": ".ECHO Content Graph",
           "excerpt": "ECHO-Modules generates a runtime-neutral `.ECHO Content Graph` for every first-party module."
         }
@@ -215,26 +344,21 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "c029bfaf5d91",
-        "commitDate": "2026-06-13T16:53:29-04:00",
+        "branch": "codex/content-graph-evidence-sdk",
+        "commit": "1780bb1f4bdf",
+        "commitDate": "2026-06-15T18:20:12-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M docs/schemas/index.md",
-          " M tools/test_echo_contract_schemas.py",
-          "?? docs/schemas/content-graph.md",
-          "?? schemas/content-feature-list.schema.json",
-          "?? schemas/content-graph-edge.schema.json",
-          "?? schemas/content-graph-export-plan.schema.json",
-          "?? schemas/content-graph-node.schema.json",
-          "?? schemas/content-graph.schema.json"
+          "M  docs/NATIVE_ADAPTERCORE_GUIDE.md",
+          "M  docs/NATIVE_API_REFERENCE.md",
+          "M  templates/native-module-template/README.md"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4824,
+          "bytes": 5003,
           "heading": "ECHO SDK",
           "excerpt": "Source of truth for ECHO schemas, contracts, templates, API docs, and developer/creator onboarding."
         },
@@ -255,14 +379,14 @@
         {
           "path": "docs/schemas/index.md",
           "exists": true,
-          "bytes": 1228,
+          "bytes": 1626,
           "heading": "Schemas",
           "excerpt": "Schemas define the machine-readable contracts used by launchers, modules, packs, and tools."
         },
         {
           "path": "docs/schemas/content-graph.md",
           "exists": true,
-          "bytes": 3878,
+          "bytes": 15885,
           "heading": "ECHO Content Graph",
           "excerpt": "The `.ECHO Content Graph` is a runtime-neutral, portable semantic model of ECHO modules, addons, and gameplay content."
         },
@@ -295,25 +419,17 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "94da35677e34",
-        "commitDate": "2026-06-14T22:10:23-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M electron/main.cjs",
-          " M electron/native-loader-handoff.cjs",
-          " M electron/native-loader-handoff.test.mjs",
-          " M src/components/library/LibraryCatalog.tsx",
-          " M src/services/nativeBridge.ts",
-          " M src/types/native.ts",
-          "?? src/stores/contentGraphStore.ts"
-        ]
+        "branch": "codex/content-graph-evidence-launcher",
+        "commit": "06498ff56a1a",
+        "commitDate": "2026-06-15T18:10:23-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4863,
+          "bytes": 5659,
           "heading": "ECHO Launcher",
           "excerpt": "Official desktop launcher, updater, repair tool, profile manager, diagnostics center, and release consumer for Ashfall and the ECHO ecosystem."
         },
@@ -345,17 +461,20 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "307abc71749e",
-        "commitDate": "2026-06-15T02:55:08-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "branch": "codex/content-graph-evidence-native",
+        "commit": "77239ad0bc8e",
+        "commitDate": "2026-06-15T18:16:09-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          "A  echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoAdapterCoreGameplayMutationService.java",
+          "M  echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderAdapterCoreBackend.java"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 7414,
+          "bytes": 8455,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
@@ -380,11 +499,12 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "d0e061da830b",
-        "commitDate": "2026-06-14T22:09:12-04:00",
+        "branch": "codex/content-graph-evidence-standalone",
+        "commit": "289be1bc790e",
+        "commitDate": "2026-06-15T18:16:09-04:00",
         "dirty": true,
         "dirtyFiles": [
+          "M  docs/echo/standalone/ECHO_ADAPTERCORE_PARITY_MATRIX.md",
           "?? echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoContentGraphAdapterCoreBridge.java"
         ]
       },
@@ -392,7 +512,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 4419,
+          "bytes": 5375,
           "heading": "ECHO Standalone Runtime",
           "excerpt": "Standalone runtime shell and engine layer for running ECHO/Ashfall outside Minecraft."
         },
@@ -417,9 +537,9 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "f59faeb52904",
-        "commitDate": "2026-06-12T21:17:18-04:00",
+        "branch": "codex/content-graph-evidence-website",
+        "commit": "e7b8112b84de",
+        "commitDate": "2026-06-15T18:10:23-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -459,9 +579,9 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "9312503fbb31",
-        "commitDate": "2026-06-13T16:53:29-04:00",
+        "branch": "codex/content-graph-evidence-developer-studio",
+        "commit": "846475eb5d3e",
+        "commitDate": "2026-06-15T18:10:23-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -469,7 +589,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2374,
+          "bytes": 2774,
           "heading": "ECHO Developer Studio",
           "excerpt": "Desktop app for ECHO module, platform, release, and developer workflows."
         }
@@ -487,7 +607,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 3217,
+          "bytes": 3216,
           "summary": "package echo-developer-studio 0.1.0; scripts: dev, dev:win, dev:vite, build, build:electron, clean:dist, clean:tsc, dist"
         }
       ],
@@ -507,15 +627,19 @@
         "commitDate": "2026-06-13T16:47:32-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M AGENTS.md",
+          " M README.md",
+          " M src/renderer/src/pages/ContentGraph.tsx",
           " M src/shared/content/paths.ts",
-          " M src/shared/content/schemas.ts"
+          " M src/shared/content/schemas.ts",
+          "?? src/renderer/src/components/GraphEditor.tsx"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2830,
+          "bytes": 2944,
           "heading": "ECHO Studio",
           "excerpt": "Desktop app for building ECHO experiences, addons, modules, local dev workspaces, validation runs, release assets, and publishing handoffs."
         },
@@ -538,7 +662,7 @@
         {
           "path": "AGENTS.md",
           "exists": true,
-          "bytes": 2228,
+          "bytes": 2633,
           "heading": "ECHO Studio Project Notes",
           "excerpt": "Electron desktop app (React + Vite + TypeScript via electron-vite), focused on public SDK creator workflows and local development tooling for the ECHO Platform."
         }
@@ -562,9 +686,9 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "7eb5f4557caa",
-        "commitDate": "2026-06-13T16:48:02-04:00",
+        "branch": "codex/content-graph-evidence-command-center",
+        "commit": "bdf122976aa7",
+        "commitDate": "2026-06-15T18:10:22-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -572,7 +696,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 6298,
+          "bytes": 6734,
           "heading": "ECHO Command Center",
           "excerpt": "Private release cockpit prototype for the ECHO platform."
         },
@@ -633,9 +757,9 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "main",
-        "commit": "ef0065a89177",
-        "commitDate": "2026-06-12T18:09:19-04:00",
+        "branch": "codex/content-graph-evidence-mobile",
+        "commit": "61f7c2200eae",
+        "commitDate": "2026-06-15T18:10:22-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -746,8 +870,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "326b946a1c87",
-        "commitDate": "2026-06-15T03:11:37-04:00",
+        "commit": "4fdf4cfeb1f5",
+        "commitDate": "2026-06-15T03:44:43-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -900,8 +1024,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "00b3a7d2f08b",
-        "commitDate": "2026-06-15T03:11:36-04:00",
+        "commit": "fc86dfbd2478",
+        "commitDate": "2026-06-15T03:45:35-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1047,8 +1171,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0832f729fc4f",
-        "commitDate": "2026-06-15T03:11:36-04:00",
+        "commit": "77ec9e4e1a4c",
+        "commitDate": "2026-06-15T03:45:56-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1179,8 +1303,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "afd35311a80e",
-        "commitDate": "2026-06-15T03:11:36-04:00",
+        "commit": "8d5e6ab13c9e",
+        "commitDate": "2026-06-15T03:46:19-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1366,8 +1490,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9729eebe29c9",
-        "commitDate": "2026-06-15T03:11:36-04:00",
+        "commit": "3600adbc9bc2",
+        "commitDate": "2026-06-15T03:46:46-04:00",
         "dirty": false,
         "dirtyFiles": []
       },

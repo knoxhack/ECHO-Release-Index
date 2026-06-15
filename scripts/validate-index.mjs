@@ -36,6 +36,7 @@ const requiredSchemas = [
   'content-graph-node.schema.json',
   'content-graph-edge.schema.json',
   'content-graph-export-plan.schema.json',
+  'content-graph-evidence.schema.json',
   'content-feature-list.schema.json',
   'echo-addon-package.schema.json',
   'echo-pack.schema.json',
@@ -216,6 +217,9 @@ function artifactRoleRecords(artifacts) {
         launcherFacing: node.launcherFacing,
         moduleArtifact: node.moduleArtifact,
         packContent: node.packContent,
+        runtimeTarget: node.runtimeTarget,
+        buildMode: node.buildMode,
+        schemaVersion: node.schemaVersion,
       })
     }
     Object.entries(node).forEach(([key, value]) => visit(value, key))
@@ -299,7 +303,7 @@ function validateNativeLoaderDirectArtifactBoundaries(errors, filePath, entry) {
 
 function hasExactArtifactRole(entry, role) {
   return artifactRoleRecords(entry.artifacts).some((artifact) =>
-    artifact.role === role &&
+    (artifact.role === role || artifact.artifactRole === role) &&
     artifact.url &&
     /^https:\/\/github\.com\/|^https:\/\/raw\.githubusercontent\.com\//.test(String(artifact.url)) &&
     sha256Pattern.test(String(artifact.sha256 ?? ''))
@@ -322,6 +326,45 @@ function validateRequiredArtifactRoles(errors, warnings, filePath, entry) {
     const message = `${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no exact indexed artifact for role ${role}`
     if (entry.validation === 'approved') errors.push(message)
     else warnings.push(message)
+  }
+}
+
+function validateContentGraphEvidenceRole(errors, warnings, filePath, entry) {
+  if (!['module', 'addon'].includes(entry.kind)) return
+  const records = artifactRoleRecords(entry.artifacts)
+  const evidenceRecords = records.filter((artifact) =>
+    artifact.role === 'content-graph-evidence' ||
+    artifact.artifactRole === 'content-graph-evidence' ||
+    artifact.file === 'content-graph-evidence.json' ||
+    artifact.name === 'content-graph-evidence.json'
+  )
+  if (!evidenceRecords.length) {
+    warnings.push(`${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no release-level content-graph-evidence artifact; consumers must fall back to per-module content-graph sidecars`)
+    return
+  }
+  for (const artifact of evidenceRecords) {
+    const name = String(artifact.file ?? artifact.name ?? '')
+    if (artifact.role !== 'content-graph-evidence' && artifact.artifactRole !== 'content-graph-evidence') {
+      errors.push(`${rel(filePath)} content graph evidence artifact must use role content-graph-evidence`)
+    }
+    if (name !== 'content-graph-evidence.json') {
+      errors.push(`${rel(filePath)} content graph evidence artifact file must be content-graph-evidence.json`)
+    }
+    if (!artifact.url || !/^https:\/\/github\.com\/|^https:\/\/raw\.githubusercontent\.com\//.test(String(artifact.url))) {
+      errors.push(`${rel(filePath)} content graph evidence artifact must use a GitHub HTTPS URL`)
+    }
+    if (!sha256Pattern.test(String(artifact.sha256 ?? ''))) {
+      errors.push(`${rel(filePath)} content graph evidence artifact must include a valid sha256`)
+    }
+    if (artifact.runtimeTarget !== undefined && artifact.runtimeTarget !== 'content-graph') {
+      errors.push(`${rel(filePath)} content graph evidence runtimeTarget must be content-graph`)
+    }
+    if (artifact.buildMode !== undefined && artifact.buildMode !== 'generated') {
+      errors.push(`${rel(filePath)} content graph evidence buildMode must be generated`)
+    }
+    if (artifact.schemaVersion !== undefined && artifact.schemaVersion !== 'echo.content_graph.evidence.v1') {
+      errors.push(`${rel(filePath)} content graph evidence schemaVersion must be echo.content_graph.evidence.v1`)
+    }
   }
 }
 
@@ -469,6 +512,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   validateArtifacts(errors, warnings, filePath, entry)
   validateNativeLoaderDirectArtifactBoundaries(errors, filePath, entry)
   validateRequiredArtifactRoles(errors, warnings, filePath, entry)
+  validateContentGraphEvidenceRole(errors, warnings, filePath, entry)
   validateAttestedProvenance(errors, filePath, entry)
 }
 

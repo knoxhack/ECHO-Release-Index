@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/content-graph-evidence.schema.json",
+  "title": "ECHO Content Graph Evidence Summary",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "generatedAt", "source", "graphCount", "moduleCount", "nodeCount", "edgeCount", "featureCount", "exportPlanCount", "hytaleBlockerCount"],
+  "properties": {
+    "schemaVersion": { "const": "echo.content_graph.evidence.v1" },
+    "generatedAt": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "graphCount": { "type": "integer", "minimum": 0 },
+    "moduleCount": { "type": "integer", "minimum": 0 },
+    "nodeCount": { "type": "integer", "minimum": 0 },
+    "edgeCount": { "type": "integer", "minimum": 0 },
+    "featureCount": { "type": "integer", "minimum": 0 },
+    "exportPlanCount": { "type": "integer", "minimum": 0 },
+    "unresolvedReferenceCount": { "type": "integer", "minimum": 0 },
+    "hytaleBlockerCount": { "type": "integer", "minimum": 0 },
+    "validationState": {
+      "type": "string",
+      "enum": ["valid", "warning", "invalid", "missing"]
+    },
+    "hytaleSummary": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "direct": { "type": "integer", "minimum": 0 },
+        "adapter_required": { "type": "integer", "minimum": 0 },
+        "fallback": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 },
+        "not_applicable": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["moduleId", "nodeCount", "edgeCount", "featureCount", "exportPlanCount", "hytaleBlockerCount", "validationState"],
+        "properties": {
+          "moduleId": { "type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_-]*$" },
+          "version": { "type": "string", "minLength": 1 },
+          "graphPath": { "type": "string", "minLength": 1 },
+          "schemaVersion": { "type": "string", "minLength": 1 },
+          "nodeCount": { "type": "integer", "minimum": 0 },
+          "edgeCount": { "type": "integer", "minimum": 0 },
+          "featureCount": { "type": "integer", "minimum": 0 },
+          "exportPlanCount": { "type": "integer", "minimum": 0 },
+          "unresolvedReferenceCount": { "type": "integer", "minimum": 0 },
+          "hytaleBlockerCount": { "type": "integer", "minimum": 0 },
+          "validationState": {
+            "type": "string",
+            "enum": ["valid", "warning", "invalid", "missing"]
+          },
+          "hytaleBlockers": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "validationIssues": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["severity", "message"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["info", "warning", "error", "fatal"]
+          },
+          "code": { "type": "string", "minLength": 1 },
+          "path": { "type": "string" },
+          "message": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

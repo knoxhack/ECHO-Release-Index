@@ -13,10 +13,14 @@ For each module, generate:
 <module>-<version>.echo-addon
 <module>-<version>-standalone.jar
 <module>-<version>-sources.jar
+<module>-<version>-content-graph.json
 META-INF/echo.mod.json
 META-INF/neoforge.mods.toml
 echo-addon-package.json
+.echo/content-graph/
 ```
+
+Each ECHO-Modules release also publishes a release-root `content-graph-evidence.json` artifact using `schemaVersion: "echo.content_graph.evidence.v1"`. Release Index should expose it with role `content-graph-evidence` when imported, while the per-module `<module>-<version>-content-graph.json` sidecar remains the module-specific fallback.
 
 Applicability:
 
@@ -26,7 +30,10 @@ Applicability:
 | `<module>-<version>.echo-addon` | The module supports the ECHO native addon/module runtime. |
 | `<module>-<version>-standalone.jar` | The module supports the standalone runtime. |
 | `<module>-<version>-sources.jar` | Always, for traceability and developer debugging. |
+| `<module>-<version>-content-graph.json` | Always, indexed as the `content-graph` artifact role for this module. |
+| `content-graph-evidence.json` | Always at the release root, indexed as `content-graph-evidence` when available for canonical release evidence counts. |
 | `META-INF/echo.mod.json` | Always, embedded in each runtime artifact where applicable. |
+| `.echo/content-graph/` | Always, embedded in each runtime archive and also available via the content-graph sidecar. |
 | `META-INF/neoforge.mods.toml` | NeoForge artifacts only. |
 | `echo-addon-package.json` | `.echo-addon` packages only. |
 
