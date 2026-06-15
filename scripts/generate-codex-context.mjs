@@ -91,8 +91,8 @@ function gitInfo(repoPath, repoName) {
   }
 
   const branch = run("git", ["branch", "--show-current"], repoPath) || run("git", ["rev-parse", "--abbrev-ref", "HEAD"], repoPath);
-  const commit = run("git", ["rev-parse", "--short=12", "HEAD"], repoPath);
-  const commitDate = run("git", ["log", "-1", "--format=%cI"], repoPath);
+  const commit = selfContextCommit(repoPath, repoName, "%h") || run("git", ["rev-parse", "--short=12", "HEAD"], repoPath);
+  const commitDate = selfContextCommit(repoPath, repoName, "%cI") || run("git", ["log", "-1", "--format=%cI"], repoPath);
   const statusText = runRaw("git", ["status", "--short"], repoPath) || "";
   const dirtyFiles = statusText
     .split(/\r?\n/)
@@ -109,6 +109,22 @@ function gitInfo(repoPath, repoName) {
     dirty: dirtyFiles.length > 0,
     dirtyFiles,
   };
+}
+
+function selfContextCommit(repoPath, repoName, format) {
+  if (repoName !== "ECHO-Release-Index") return null;
+  return run("git", [
+    "log",
+    "-1",
+    "--abbrev=12",
+    `--format=${format}`,
+    "--",
+    ".",
+    ":(exclude)AGENTS.md",
+    ":(exclude)README.md",
+    ":(exclude)scripts/generate-codex-context.mjs",
+    ":(exclude)docs/codex"
+  ], repoPath);
 }
 
 function isSelfContextStatus(repoName, statusLine) {
