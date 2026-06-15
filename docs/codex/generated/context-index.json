@@ -1,10 +1,10 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-15T19:19:41-04:00",
+  "generatedAt": "2026-06-15T19:20:06-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
-  "releaseIndexRoot": "C:\\Development\\Temp\\release-index-main-verify",
+  "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
   "repos": [
     {
       "id": "release-index",
@@ -15,26 +15,24 @@
       "exists": true,
       "git": {
         "available": true,
-        "branch": "codex/content-graph-evidence-release-index",
-        "commit": "79293e58ffb9",
-        "commitDate": "2026-06-15T19:16:26-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M addons/echoopenlandsprotocol.json"
-        ]
+        "branch": "main",
+        "commit": "54ec2a59bb03",
+        "commitDate": "2026-06-15T19:20:06-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 23883,
+          "bytes": 24087,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
         {
           "path": "docs/ecosystem-artifact-ownership.md",
           "exists": true,
-          "bytes": 5331,
+          "bytes": 5365,
           "heading": "ECHO Artifact Ownership",
           "excerpt": "The Release Index owns catalog records, trust policy, and channel routing. It does not own binary release assets. Each source repository publishes its own artifacts, then the Release Index records the approved artifact URLs, SHA-256 hashes, trust tier, validation state, depend..."
         },
