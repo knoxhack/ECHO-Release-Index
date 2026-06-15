@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.all-modpacks-pipeline-audit.v1",
-  "ok": false,
-  "generatedAt": "2026-06-15T01:18:10.074Z",
+  "ok": true,
+  "generatedAt": "2026-06-15T01:59:48.015Z",
   "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
   "cacheRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\all-modpacks-pipeline-audit",
   "packs": [
@@ -9,23 +9,8 @@
       "profileId": "ashfall-native-edition",
       "name": "Ashfall Native Edition",
       "lane": "native",
-      "ok": false,
-      "issues": [
-        "manifest ashfall-native-edition-alpha-0.1.0.pack.json SHA-256 mismatch: 58c830427839720fd4bba136c844c3c44a04ee20bf3d69bc27258f2f81e43b25 != 3c4a69971b8566adeda6d1ebda5522a4e005fe749307479dff8d5b591e61d09b.",
-        "manifest ashfall-native-edition-alpha-0.1.0.pack.json size mismatch: 58337 != 58977.",
-        "checksums checksums.txt SHA-256 mismatch: 0f03a8351012b79e85b8e1dcf598936d13da8b3a72b4959e5b0b624118fbe7dc != 109abb128d035d216ed49f488d6ae73dd8d16983358eb7269a290c5168a57acf.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 0d36117dd061e70d681c5c98893da8801359fbc400d976cc3fdf773ea7c8954d != 79e5d4bce8625cdb8de52b7db9ca2882563838cf6c74e1f7df9e9bcd9534633d.",
-        "releaseManifest echo-release.json size mismatch: 13242 != 13240.",
-        "checksums.txt hash for ashfall-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for ashfall-native-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for ashfall-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for ashfall-native-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack ashfall-native-edition-0.1.0.zip SHA-256 mismatch: f02ac8177decb2a5cb327fdb14be5ed45c24a6299e03ad9b9c1078e50a7b4af7 != 64a80909ea90b8676fbf0d7b13e9fccef6219cbeb31af99637e3c3d92ab7d726.",
-        "pack ashfall-native-edition-0.1.0.zip size mismatch: 267988098 != 267534598."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -41,29 +26,29 @@
           "role": "pack",
           "file": "ashfall-native-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
-          "sha256": "64a80909ea90b8676fbf0d7b13e9fccef6219cbeb31af99637e3c3d92ab7d726",
-          "size": 267534598
+          "sha256": "f02ac8177decb2a5cb327fdb14be5ed45c24a6299e03ad9b9c1078e50a7b4af7",
+          "size": 267988098
         },
         "manifest": {
           "role": "manifest",
           "file": "ashfall-native-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-          "sha256": "3c4a69971b8566adeda6d1ebda5522a4e005fe749307479dff8d5b591e61d09b",
-          "size": 58977
+          "sha256": "58c830427839720fd4bba136c844c3c44a04ee20bf3d69bc27258f2f81e43b25",
+          "size": 58337
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
-          "sha256": "109abb128d035d216ed49f488d6ae73dd8d16983358eb7269a290c5168a57acf",
+          "sha256": "0f03a8351012b79e85b8e1dcf598936d13da8b3a72b4959e5b0b624118fbe7dc",
           "size": 294
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
-          "sha256": "79e5d4bce8625cdb8de52b7db9ca2882563838cf6c74e1f7df9e9bcd9534633d",
-          "size": 13240
+          "sha256": "0d36117dd061e70d681c5c98893da8801359fbc400d976cc3fdf773ea7c8954d",
+          "size": 13242
         }
       },
       "downloads": {
@@ -1038,23 +1023,8 @@
       "profileId": "ashfall-neoforge-edition",
       "name": "Ashfall NeoForge Edition",
       "lane": "neoforge",
-      "ok": false,
-      "issues": [
-        "manifest ashfall-neoforge-edition-alpha-0.1.0.pack.json SHA-256 mismatch: 0fb0f919e16525f55e61cb246075d8143659ba7fbd4d588ab9573a814ea477fc != 05e5a3802caa55b769e1489452f83be8b7803f11b49a2494f42e783fbc73d511.",
-        "manifest ashfall-neoforge-edition-alpha-0.1.0.pack.json size mismatch: 91672 != 92308.",
-        "checksums checksums.txt SHA-256 mismatch: 3fe15d12f494c8794eda3edb8b8deebae0530dd55a9440abd91f664d810bf2d4 != 277e8a50635e3abfc100fafc138a670c4b0f8aff1f8add48ce3b9df5d3425a48.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 380c4fb6b28be4dabbd7a562020ba43a82d43804009385d54cd6cc23656f45ef != 6b2a3ce4197ff3af96ea1a7339b83b2d22f69c67660fa4dd72686377c7a78d95.",
-        "releaseManifest echo-release.json size mismatch: 13357 != 13353.",
-        "checksums.txt hash for ashfall-neoforge-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for ashfall-neoforge-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for ashfall-neoforge-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for ashfall-neoforge-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack ashfall-neoforge-edition-0.1.0.zip SHA-256 mismatch: 00a0ce15ff5809393301e85731173d1b03b6046a439754f7c1ec353f654f6abb != 1dff92fac8aaabd9ec75b79efbf7d1a265d223545786ae1ca6dbcb225ff51daf.",
-        "pack ashfall-neoforge-edition-0.1.0.zip size mismatch: 267769246 != 267335328."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [
         "NeoForge manifest loader.versionJson is a launcher stub; ECHO Launcher must replace it with official installer metadata before handoff."
       ],
@@ -1072,29 +1042,29 @@
           "role": "pack",
           "file": "ashfall-neoforge-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
-          "sha256": "1dff92fac8aaabd9ec75b79efbf7d1a265d223545786ae1ca6dbcb225ff51daf",
-          "size": 267335328
+          "sha256": "00a0ce15ff5809393301e85731173d1b03b6046a439754f7c1ec353f654f6abb",
+          "size": 267769246
         },
         "manifest": {
           "role": "manifest",
           "file": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-          "sha256": "05e5a3802caa55b769e1489452f83be8b7803f11b49a2494f42e783fbc73d511",
-          "size": 92308
+          "sha256": "0fb0f919e16525f55e61cb246075d8143659ba7fbd4d588ab9573a814ea477fc",
+          "size": 91672
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-          "sha256": "277e8a50635e3abfc100fafc138a670c4b0f8aff1f8add48ce3b9df5d3425a48",
+          "sha256": "3fe15d12f494c8794eda3edb8b8deebae0530dd55a9440abd91f664d810bf2d4",
           "size": 298
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-          "sha256": "6b2a3ce4197ff3af96ea1a7339b83b2d22f69c67660fa4dd72686377c7a78d95",
-          "size": 13353
+          "sha256": "380c4fb6b28be4dabbd7a562020ba43a82d43804009385d54cd6cc23656f45ef",
+          "size": 13357
         }
       },
       "downloads": {
@@ -2086,23 +2056,8 @@
       "profileId": "ashfall-standalone-edition",
       "name": "Ashfall Standalone Edition",
       "lane": "standalone",
-      "ok": false,
-      "issues": [
-        "manifest ashfall-standalone-edition-experimental-0.1.0.pack.json SHA-256 mismatch: c24298087214421345d6c5c3e6f5ecf9ce79b5b9d12e86583f888afe9af1fd7c != e90acfebdad3defe6f69c3d9a41dd7761f7a68ea33ec801a243fed82998c1d5c.",
-        "manifest ashfall-standalone-edition-experimental-0.1.0.pack.json size mismatch: 59256 != 59892.",
-        "checksums checksums.txt SHA-256 mismatch: f062b4623191aad531f2af6e76ef428023c52938d891b636876020c8bae74523 != e60b9b957cdce9c2929d4e8b5a2dad7e0cb3d96dffcebb7b272f4eb73e4ae5ca.",
-        "releaseManifest echo-release.json SHA-256 mismatch: e7a7092e8071ee7203dd6b8855bd3c3625f74bce8799053e75d8d7512c41894f != 5bf95065e8814f15d5b8ba72c19b4f71dc0b06bae60891257028c2817f6e64e3.",
-        "releaseManifest echo-release.json size mismatch: 13598 != 13594.",
-        "checksums.txt hash for ashfall-standalone-edition-experimental-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for ashfall-standalone-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for ashfall-standalone-edition-experimental-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for ashfall-standalone-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack ashfall-standalone-edition-0.1.0.zip SHA-256 mismatch: 1547511a5f5e52d72967e14bf63d45d9ded46572802fe26a3bf8fb6474137e76 != eca292427b2bf435fbc6dfd07b03d955fe01bda8dcf90ba9e8507ba2ccaab406.",
-        "pack ashfall-standalone-edition-0.1.0.zip size mismatch: 267765793 != 267331874."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -2118,29 +2073,29 @@
           "role": "pack",
           "file": "ashfall-standalone-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
-          "sha256": "eca292427b2bf435fbc6dfd07b03d955fe01bda8dcf90ba9e8507ba2ccaab406",
-          "size": 267331874
+          "sha256": "1547511a5f5e52d72967e14bf63d45d9ded46572802fe26a3bf8fb6474137e76",
+          "size": 267765793
         },
         "manifest": {
           "role": "manifest",
           "file": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-          "sha256": "e90acfebdad3defe6f69c3d9a41dd7761f7a68ea33ec801a243fed82998c1d5c",
-          "size": 59892
+          "sha256": "c24298087214421345d6c5c3e6f5ecf9ce79b5b9d12e86583f888afe9af1fd7c",
+          "size": 59256
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
-          "sha256": "e60b9b957cdce9c2929d4e8b5a2dad7e0cb3d96dffcebb7b272f4eb73e4ae5ca",
+          "sha256": "f062b4623191aad531f2af6e76ef428023c52938d891b636876020c8bae74523",
           "size": 309
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
-          "sha256": "5bf95065e8814f15d5b8ba72c19b4f71dc0b06bae60891257028c2817f6e64e3",
-          "size": 13594
+          "sha256": "e7a7092e8071ee7203dd6b8855bd3c3625f74bce8799053e75d8d7512c41894f",
+          "size": 13598
         }
       },
       "downloads": {
@@ -3116,23 +3071,8 @@
       "profileId": "sky-relay-native-edition",
       "name": "Sky Relay Native Edition",
       "lane": "native",
-      "ok": false,
-      "issues": [
-        "manifest sky-relay-native-edition-alpha-0.1.0.pack.json SHA-256 mismatch: a09379b62bfb3912455080e958de8073fef1d9027f578499d5d7bea28662fc2c != c5553c0b5befcc04131fcd202bd79e8555c730cebd5452daa60127d4ed4f37ec.",
-        "manifest sky-relay-native-edition-alpha-0.1.0.pack.json size mismatch: 55003 != 53070.",
-        "checksums checksums.txt SHA-256 mismatch: 672b0d46979929165047e3d2efb237387a9abbf3fc7d7f688b16118ffd9f02ee != 30588c38056b9406aaec3b35c93f99101bc40b3aa0699c41eed0bdae0b72c34e.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 5064a970863a6de879e969a585faa34e5307c1b6c692f7e76acffadfc2a91daf != f26601d6d7dc150654b8ccaa9222cef2318551c79866df709457727218194820.",
-        "releaseManifest echo-release.json size mismatch: 12516 != 12514.",
-        "checksums.txt hash for sky-relay-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for sky-relay-native-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for sky-relay-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for sky-relay-native-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack sky-relay-native-edition-0.1.0.zip SHA-256 mismatch: 1f66d178f71c8a458295399000f40cad00290c347fc2024d93ab239f58e6eafe != a5cbaee41f97378ad21395883d2049d076a1066bd0d0e20ddb429b89ef14dec9.",
-        "pack sky-relay-native-edition-0.1.0.zip size mismatch: 155247484 != 154888169."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -3148,29 +3088,29 @@
           "role": "pack",
           "file": "sky-relay-native-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-0.1.0.zip",
-          "sha256": "a5cbaee41f97378ad21395883d2049d076a1066bd0d0e20ddb429b89ef14dec9",
-          "size": 154888169
+          "sha256": "1f66d178f71c8a458295399000f40cad00290c347fc2024d93ab239f58e6eafe",
+          "size": 155247484
         },
         "manifest": {
           "role": "manifest",
           "file": "sky-relay-native-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
-          "sha256": "c5553c0b5befcc04131fcd202bd79e8555c730cebd5452daa60127d4ed4f37ec",
-          "size": 53070
+          "sha256": "a09379b62bfb3912455080e958de8073fef1d9027f578499d5d7bea28662fc2c",
+          "size": 55003
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/checksums.txt",
-          "sha256": "30588c38056b9406aaec3b35c93f99101bc40b3aa0699c41eed0bdae0b72c34e",
+          "sha256": "672b0d46979929165047e3d2efb237387a9abbf3fc7d7f688b16118ffd9f02ee",
           "size": 298
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/echo-release.json",
-          "sha256": "f26601d6d7dc150654b8ccaa9222cef2318551c79866df709457727218194820",
-          "size": 12514
+          "sha256": "5064a970863a6de879e969a585faa34e5307c1b6c692f7e76acffadfc2a91daf",
+          "size": 12516
         }
       },
       "downloads": {
@@ -4085,23 +4025,8 @@
       "profileId": "sky-relay-neoforge-edition",
       "name": "Sky Relay NeoForge Edition",
       "lane": "neoforge",
-      "ok": false,
-      "issues": [
-        "manifest sky-relay-neoforge-edition-alpha-0.1.0.pack.json SHA-256 mismatch: 6dd5897aa089403d0e1cdd026357686ef53d19584d83a9995c37375e88e08bca != d1957f9d4d945e7977a1987bc086ad4e9d67067ff71606b0a675d8d3fcdfbae7.",
-        "manifest sky-relay-neoforge-edition-alpha-0.1.0.pack.json size mismatch: 55142 != 53291.",
-        "checksums checksums.txt SHA-256 mismatch: a5b4b9f02e8a755541e0b678cc7e6ddfedfe21832d97e6b25a67d6f2c7613af2 != 75e6d26b3afd368ac248ef6162abb1b9bf0f469a680e09acc3a1be2bbbc07a57.",
-        "releaseManifest echo-release.json SHA-256 mismatch: afe149d1dcbbe8f1673c43e43bb7cfdd337ed1ab2694d7c257a33ef4ae5131a9 != 4d87849566e01af7a20d0710296cfba2f9fcd8ef844bfa0a35b12b49470dbd62.",
-        "releaseManifest echo-release.json size mismatch: 12625 != 12621.",
-        "checksums.txt hash for sky-relay-neoforge-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for sky-relay-neoforge-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for sky-relay-neoforge-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for sky-relay-neoforge-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack sky-relay-neoforge-edition-0.1.0.zip SHA-256 mismatch: 6fb1c204d7375cb6ec071cde969a74560d742113bf8a43366bfff9bf8f30aeba != 2c719be3ae2e2d42e5bf7c9f465d3106d11f72eca1ba4af1d429268541a0467c.",
-        "pack sky-relay-neoforge-edition-0.1.0.zip size mismatch: 155087317 != 154747552."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [
         "NeoForge manifest loader.versionJson is a launcher stub; ECHO Launcher must replace it with official installer metadata before handoff."
       ],
@@ -4119,29 +4044,29 @@
           "role": "pack",
           "file": "sky-relay-neoforge-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-0.1.0.zip",
-          "sha256": "2c719be3ae2e2d42e5bf7c9f465d3106d11f72eca1ba4af1d429268541a0467c",
-          "size": 154747552
+          "sha256": "6fb1c204d7375cb6ec071cde969a74560d742113bf8a43366bfff9bf8f30aeba",
+          "size": 155087317
         },
         "manifest": {
           "role": "manifest",
           "file": "sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
-          "sha256": "d1957f9d4d945e7977a1987bc086ad4e9d67067ff71606b0a675d8d3fcdfbae7",
-          "size": 53291
+          "sha256": "6dd5897aa089403d0e1cdd026357686ef53d19584d83a9995c37375e88e08bca",
+          "size": 55142
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
-          "sha256": "75e6d26b3afd368ac248ef6162abb1b9bf0f469a680e09acc3a1be2bbbc07a57",
+          "sha256": "a5b4b9f02e8a755541e0b678cc7e6ddfedfe21832d97e6b25a67d6f2c7613af2",
           "size": 302
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
-          "sha256": "4d87849566e01af7a20d0710296cfba2f9fcd8ef844bfa0a35b12b49470dbd62",
-          "size": 12621
+          "sha256": "afe149d1dcbbe8f1673c43e43bb7cfdd337ed1ab2694d7c257a33ef4ae5131a9",
+          "size": 12625
         }
       },
       "downloads": {
@@ -5073,23 +4998,8 @@
       "profileId": "sky-relay-standalone-edition",
       "name": "Sky Relay Standalone Edition",
       "lane": "standalone",
-      "ok": false,
-      "issues": [
-        "manifest sky-relay-standalone-edition-alpha-0.1.0.pack.json SHA-256 mismatch: d505a3f282ca8665ba09f20e28081db599c4319aa136253fa2a91798d0a5c9e8 != 5bc99daff0d047d506eb109bf00594d89dd8927f2b2534fd8e7411bb5460f44e.",
-        "manifest sky-relay-standalone-edition-alpha-0.1.0.pack.json size mismatch: 55426 != 53489.",
-        "checksums checksums.txt SHA-256 mismatch: 7fa18b16ad057be54da6ba218ca2bd96e65707d911ec025cf39b97a9a016a2e2 != b7910777e5b744e59e1b323927336d1088a2b5df4d664866228e76741c8a072e.",
-        "releaseManifest echo-release.json SHA-256 mismatch: d1a367d79b6385c7706d41b10381c9fe4750f0e21d94a4ab88e5f5a4daebdbdf != 0afdd809ae1d550dc166e195e50fd80bc90e19e48707143738e508fbdab41338.",
-        "releaseManifest echo-release.json size mismatch: 12819 != 12815.",
-        "checksums.txt hash for sky-relay-standalone-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for sky-relay-standalone-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for sky-relay-standalone-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for sky-relay-standalone-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack sky-relay-standalone-edition-0.1.0.zip SHA-256 mismatch: 88de4428b56a02fbc0b2a6c2469e1d3e61c1e9cfbddfa8dcd753170d0bea9b03 != 36caa2279283a5ab287d0e6fdb16df2eb75facde1149024fbd7a6d3a0f460b82.",
-        "pack sky-relay-standalone-edition-0.1.0.zip size mismatch: 155087307 != 154746675."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -5105,29 +5015,29 @@
           "role": "pack",
           "file": "sky-relay-standalone-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-0.1.0.zip",
-          "sha256": "36caa2279283a5ab287d0e6fdb16df2eb75facde1149024fbd7a6d3a0f460b82",
-          "size": 154746675
+          "sha256": "88de4428b56a02fbc0b2a6c2469e1d3e61c1e9cfbddfa8dcd753170d0bea9b03",
+          "size": 155087307
         },
         "manifest": {
           "role": "manifest",
           "file": "sky-relay-standalone-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
-          "sha256": "5bc99daff0d047d506eb109bf00594d89dd8927f2b2534fd8e7411bb5460f44e",
-          "size": 53489
+          "sha256": "d505a3f282ca8665ba09f20e28081db599c4319aa136253fa2a91798d0a5c9e8",
+          "size": 55426
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/checksums.txt",
-          "sha256": "b7910777e5b744e59e1b323927336d1088a2b5df4d664866228e76741c8a072e",
+          "sha256": "7fa18b16ad057be54da6ba218ca2bd96e65707d911ec025cf39b97a9a016a2e2",
           "size": 306
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.0-alpha/echo-release.json",
-          "sha256": "0afdd809ae1d550dc166e195e50fd80bc90e19e48707143738e508fbdab41338",
-          "size": 12815
+          "sha256": "d1a367d79b6385c7706d41b10381c9fe4750f0e21d94a4ab88e5f5a4daebdbdf",
+          "size": 12819
         }
       },
       "downloads": {
@@ -6043,23 +5953,8 @@
       "profileId": "galactic-survey-native-edition",
       "name": "Galactic Survey Native Edition",
       "lane": "native",
-      "ok": false,
-      "issues": [
-        "manifest galactic-survey-native-edition-alpha-0.1.0.pack.json SHA-256 mismatch: 26debfdc0e3ce902125eea65bab1d7859730b62634e55c6e32093a7392c4a5ed != fbf89dbbda414a461260acbe858cd9482a637d8c0e9920e78bee6caad86bdf0f.",
-        "manifest galactic-survey-native-edition-alpha-0.1.0.pack.json size mismatch: 52578 != 40740.",
-        "checksums checksums.txt SHA-256 mismatch: 954af61400a42aef438d4874b3991e38c58f92d70e415b4c6d7ccca1c1f25c2e != c8e30d85c2161a44e8f19979c010bd54d72d739ebdaebbdea39f3573f17c1813.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 4c6a4d0884efb4ee8c2609b370a7741a8e1f6a9947c25f03a3b05bdec923d834 != fb33163eb305b044cb62a72f04b513120e35c479f5859bb3d758f5b7a5539bd5.",
-        "releaseManifest echo-release.json size mismatch: 12079 != 12077.",
-        "checksums.txt hash for galactic-survey-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for galactic-survey-native-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for galactic-survey-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for galactic-survey-native-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack galactic-survey-native-edition-0.1.0.zip SHA-256 mismatch: 1a631dc5fea8d188de1ea88f113eec7c9d34203cd633c7087a4f18c85b76c2a9 != 7f203433a2e7c0b8ceef724fdd80551eb09f50a42b26a61e3cd497a4a3169fe5.",
-        "pack galactic-survey-native-edition-0.1.0.zip size mismatch: 145297564 != 145002021."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -6075,29 +5970,29 @@
           "role": "pack",
           "file": "galactic-survey-native-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip",
-          "sha256": "7f203433a2e7c0b8ceef724fdd80551eb09f50a42b26a61e3cd497a4a3169fe5",
-          "size": 145002021
+          "sha256": "1a631dc5fea8d188de1ea88f113eec7c9d34203cd633c7087a4f18c85b76c2a9",
+          "size": 145297564
         },
         "manifest": {
           "role": "manifest",
           "file": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
-          "sha256": "fbf89dbbda414a461260acbe858cd9482a637d8c0e9920e78bee6caad86bdf0f",
-          "size": 40740
+          "sha256": "26debfdc0e3ce902125eea65bab1d7859730b62634e55c6e32093a7392c4a5ed",
+          "size": 52578
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/checksums.txt",
-          "sha256": "c8e30d85c2161a44e8f19979c010bd54d72d739ebdaebbdea39f3573f17c1813",
+          "sha256": "954af61400a42aef438d4874b3991e38c58f92d70e415b4c6d7ccca1c1f25c2e",
           "size": 310
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/echo-release.json",
-          "sha256": "fb33163eb305b044cb62a72f04b513120e35c479f5859bb3d758f5b7a5539bd5",
-          "size": 12077
+          "sha256": "4c6a4d0884efb4ee8c2609b370a7741a8e1f6a9947c25f03a3b05bdec923d834",
+          "size": 12079
         }
       },
       "downloads": {
@@ -6972,23 +6867,8 @@
       "profileId": "galactic-survey-neoforge-edition",
       "name": "Galactic Survey NeoForge Edition",
       "lane": "neoforge",
-      "ok": false,
-      "issues": [
-        "manifest galactic-survey-neoforge-edition-alpha-0.1.0.pack.json SHA-256 mismatch: 17bb782f8b33401a63c584aac2118166e6c01539cae28e10bee714ccab1de2c5 != ce0a6bc0c0f78a1e4ce3a11afaa2d39f9705bceb46671087726a745b73fd5442.",
-        "manifest galactic-survey-neoforge-edition-alpha-0.1.0.pack.json size mismatch: 52701 != 40828.",
-        "checksums checksums.txt SHA-256 mismatch: a535ad3b3c22bc02507976f23ca2dfa1a186696f742756db5517d80d9568370e != 22388775d15d55a71b21ca7420931f16b9c0662046efb958c8d755e2da63831f.",
-        "releaseManifest echo-release.json SHA-256 mismatch: b21379d44888d92aaa939bb9ec97028df122febeeaf1d97d3b6853823ea15b99 != 55c2a4e47b7739d426113a1097990d909bb4fef2a2ad07481c6e5a83df980236.",
-        "releaseManifest echo-release.json size mismatch: 12184 != 12180.",
-        "checksums.txt hash for galactic-survey-neoforge-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for galactic-survey-neoforge-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for galactic-survey-neoforge-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for galactic-survey-neoforge-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack galactic-survey-neoforge-edition-0.1.0.zip SHA-256 mismatch: a8ea2dc2dc4f0955a47f59c5f2a0c0a097657b946e378401e6926bf74acf415d != 3ed47297ffad46fce89b9de6390dcb7379051a7cb930605c7ca3067e1537dcf2.",
-        "pack galactic-survey-neoforge-edition-0.1.0.zip size mismatch: 145132583 != 144856725."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [
         "NeoForge manifest loader.versionJson is a launcher stub; ECHO Launcher must replace it with official installer metadata before handoff."
       ],
@@ -7006,29 +6886,29 @@
           "role": "pack",
           "file": "galactic-survey-neoforge-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.0-alpha/galactic-survey-neoforge-edition-0.1.0.zip",
-          "sha256": "3ed47297ffad46fce89b9de6390dcb7379051a7cb930605c7ca3067e1537dcf2",
-          "size": 144856725
+          "sha256": "a8ea2dc2dc4f0955a47f59c5f2a0c0a097657b946e378401e6926bf74acf415d",
+          "size": 145132583
         },
         "manifest": {
           "role": "manifest",
           "file": "galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.0-alpha/galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
-          "sha256": "ce0a6bc0c0f78a1e4ce3a11afaa2d39f9705bceb46671087726a745b73fd5442",
-          "size": 40828
+          "sha256": "17bb782f8b33401a63c584aac2118166e6c01539cae28e10bee714ccab1de2c5",
+          "size": 52701
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.0-alpha/checksums.txt",
-          "sha256": "22388775d15d55a71b21ca7420931f16b9c0662046efb958c8d755e2da63831f",
+          "sha256": "a535ad3b3c22bc02507976f23ca2dfa1a186696f742756db5517d80d9568370e",
           "size": 314
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.0-alpha/echo-release.json",
-          "sha256": "55c2a4e47b7739d426113a1097990d909bb4fef2a2ad07481c6e5a83df980236",
-          "size": 12180
+          "sha256": "b21379d44888d92aaa939bb9ec97028df122febeeaf1d97d3b6853823ea15b99",
+          "size": 12184
         }
       },
       "downloads": {
@@ -7920,23 +7800,8 @@
       "profileId": "galactic-survey-standalone-edition",
       "name": "Galactic Survey Standalone Edition",
       "lane": "standalone",
-      "ok": false,
-      "issues": [
-        "manifest galactic-survey-standalone-edition-alpha-0.1.0.pack.json SHA-256 mismatch: 7294bfcabecf422611b42fb1a56df5716cbe205125c22128f2443078a7b6bb94 != c74521b9c171e10c31af92e1a7b7141eb7f8b331fd1ec8b460b70315629897f1.",
-        "manifest galactic-survey-standalone-edition-alpha-0.1.0.pack.json size mismatch: 52957 != 40850.",
-        "checksums checksums.txt SHA-256 mismatch: 29081b42c3bfb15e6672df620bf0653778259b5f2c20c81bed44f74c4653769b != 9f31ff693e760fbe2511496dc2a3d4d7de9556388c523a01272434c1eef30f6c.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 2ab689581c594b7e03b0a6e7cef7156e45dd76fee10d9ffd9a96ed9b1ad5ab01 != f523aafa1bcd6b2649dbf46dfec59fdc497dbe093ec15757a4cddbcc93402c22.",
-        "releaseManifest echo-release.json size mismatch: 12370 != 12366.",
-        "checksums.txt hash for galactic-survey-standalone-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for galactic-survey-standalone-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for galactic-survey-standalone-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for galactic-survey-standalone-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack galactic-survey-standalone-edition-0.1.0.zip SHA-256 mismatch: 9fc434878f027381c915f435f8a9993ad5038fb380cf88db14125a2298d15cd4 != 9f777441f3dbeeeb9a78ea52484644687866624296a2ff82b86421196649e87c.",
-        "pack galactic-survey-standalone-edition-0.1.0.zip size mismatch: 145132555 != 144855841."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -7952,29 +7817,29 @@
           "role": "pack",
           "file": "galactic-survey-standalone-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-0.1.0.zip",
-          "sha256": "9f777441f3dbeeeb9a78ea52484644687866624296a2ff82b86421196649e87c",
-          "size": 144855841
+          "sha256": "9fc434878f027381c915f435f8a9993ad5038fb380cf88db14125a2298d15cd4",
+          "size": 145132555
         },
         "manifest": {
           "role": "manifest",
           "file": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
-          "sha256": "c74521b9c171e10c31af92e1a7b7141eb7f8b331fd1ec8b460b70315629897f1",
-          "size": 40850
+          "sha256": "7294bfcabecf422611b42fb1a56df5716cbe205125c22128f2443078a7b6bb94",
+          "size": 52957
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/checksums.txt",
-          "sha256": "9f31ff693e760fbe2511496dc2a3d4d7de9556388c523a01272434c1eef30f6c",
+          "sha256": "29081b42c3bfb15e6672df620bf0653778259b5f2c20c81bed44f74c4653769b",
           "size": 318
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/echo-release.json",
-          "sha256": "f523aafa1bcd6b2649dbf46dfec59fdc497dbe093ec15757a4cddbcc93402c22",
-          "size": 12366
+          "sha256": "2ab689581c594b7e03b0a6e7cef7156e45dd76fee10d9ffd9a96ed9b1ad5ab01",
+          "size": 12370
         }
       },
       "downloads": {
@@ -8850,23 +8715,8 @@
       "profileId": "openlands-native-edition",
       "name": "Openlands Native Edition",
       "lane": "native",
-      "ok": false,
-      "issues": [
-        "manifest openlands-native-edition-alpha-0.1.0.pack.json SHA-256 mismatch: a53f3f65be49b893aa4b5595dc0da1a636e2ec1bb9349ba6e78f733f95b4b3fe != cbbe36b5727e239faa0e54fa92962a3903cf8a3a96f014fc55766dfeeae49cde.",
-        "manifest openlands-native-edition-alpha-0.1.0.pack.json size mismatch: 54830 != 52977.",
-        "checksums checksums.txt SHA-256 mismatch: 4b2a80816b9be1fc7394b7197f2888de437e934c4803cc15b8e2f6c89e85ebf1 != f2121f9c7b97e882bafeba5494a3eeebe90c3ab12461f7e4072172443d1f2516.",
-        "releaseManifest echo-release.json SHA-256 mismatch: cec5268357fc2bf15e6741e071f9d7b14e7cbd60317f700189a05b6d07b0a733 != d65ea73651781ddc49777bee04a68e1103dfb498cedcfe4b88f592d94bb10f67.",
-        "releaseManifest echo-release.json size mismatch: 12184 != 12182.",
-        "checksums.txt hash for openlands-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for openlands-native-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for openlands-native-edition-alpha-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for openlands-native-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack openlands-native-edition-0.1.0.zip SHA-256 mismatch: 90ae5c3cc46267377a4c72d7adb267c217d939c97ea30457adbdc891bb456908 != 5450e43e77e2602bcada23f08e10e1e763e67cfd0ed963957f8b86950be6efb6.",
-        "pack openlands-native-edition-0.1.0.zip size mismatch: 112691203 != 112401875."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -8882,29 +8732,29 @@
           "role": "pack",
           "file": "openlands-native-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/openlands-native-edition-0.1.0.zip",
-          "sha256": "5450e43e77e2602bcada23f08e10e1e763e67cfd0ed963957f8b86950be6efb6",
-          "size": 112401875
+          "sha256": "90ae5c3cc46267377a4c72d7adb267c217d939c97ea30457adbdc891bb456908",
+          "size": 112691203
         },
         "manifest": {
           "role": "manifest",
           "file": "openlands-native-edition-alpha-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
-          "sha256": "cbbe36b5727e239faa0e54fa92962a3903cf8a3a96f014fc55766dfeeae49cde",
-          "size": 52977
+          "sha256": "a53f3f65be49b893aa4b5595dc0da1a636e2ec1bb9349ba6e78f733f95b4b3fe",
+          "size": 54830
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/checksums.txt",
-          "sha256": "f2121f9c7b97e882bafeba5494a3eeebe90c3ab12461f7e4072172443d1f2516",
+          "sha256": "4b2a80816b9be1fc7394b7197f2888de437e934c4803cc15b8e2f6c89e85ebf1",
           "size": 298
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.0-openlands-native-edition/echo-release.json",
-          "sha256": "d65ea73651781ddc49777bee04a68e1103dfb498cedcfe4b88f592d94bb10f67",
-          "size": 12182
+          "sha256": "cec5268357fc2bf15e6741e071f9d7b14e7cbd60317f700189a05b6d07b0a733",
+          "size": 12184
         }
       },
       "downloads": {
@@ -9800,23 +9650,8 @@
       "profileId": "openlands-neoforge-edition",
       "name": "Openlands NeoForge Edition",
       "lane": "neoforge",
-      "ok": false,
-      "issues": [
-        "manifest openlands-neoforge-edition-alpha-0.1.1.pack.json SHA-256 mismatch: b1d54b0785618c7c5a75fdcc25f99cf6e439fb4ea6fbe07890ea6b80337cceb3 != 12ea78f805c64a6c9f0d4b31c70b543ffc9a870a03f87a994d563b97776e91e0.",
-        "manifest openlands-neoforge-edition-alpha-0.1.1.pack.json size mismatch: 54970 != 52105.",
-        "checksums checksums.txt SHA-256 mismatch: 3e2ae1d7da8ecc4ed3a85dbc1048f261430868b393004638e50ba073f1125e13 != 07b97cc02f8df0495d83c699ebf1fb0aa8be321c56abcc32ddad3c21901a71c9.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 8f480c43396e7b77214fdd3d73bde51be052d5e0bc18512c86fd9a3a3c78269b != b040f2f21933b71447ecee6fe3a235f90b25b40c0a06b7cfb43c47c60e3afff2.",
-        "releaseManifest echo-release.json size mismatch: 12278 != 12274.",
-        "checksums.txt hash for openlands-neoforge-edition-alpha-0.1.1.pack.json does not match catalog.",
-        "checksums.txt hash for openlands-neoforge-edition-0.1.1.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for openlands-neoforge-edition-alpha-0.1.1.pack.json does not match catalog.",
-        "echo-release.json hash for openlands-neoforge-edition-0.1.1.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack openlands-neoforge-edition-0.1.1.zip SHA-256 mismatch: 0c4a31873d718f0e222acb25dbae5197c03c6b14c1b05f0b007ee1136a2bd5f5 != a2023012ca9441dffc9444dff095dd74486c35f7b60cb2bf55d319a8c99e36f5.",
-        "pack openlands-neoforge-edition-0.1.1.zip size mismatch: 112541951 != 112277135."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [
         "NeoForge manifest loader.versionJson is a launcher stub; ECHO Launcher must replace it with official installer metadata before handoff."
       ],
@@ -9834,29 +9669,29 @@
           "role": "pack",
           "file": "openlands-neoforge-edition-0.1.1.zip",
           "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/openlands-neoforge-edition-0.1.1.zip",
-          "sha256": "a2023012ca9441dffc9444dff095dd74486c35f7b60cb2bf55d319a8c99e36f5",
-          "size": 112277135
+          "sha256": "0c4a31873d718f0e222acb25dbae5197c03c6b14c1b05f0b007ee1136a2bd5f5",
+          "size": 112541951
         },
         "manifest": {
           "role": "manifest",
           "file": "openlands-neoforge-edition-alpha-0.1.1.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.1.pack.json",
-          "sha256": "12ea78f805c64a6c9f0d4b31c70b543ffc9a870a03f87a994d563b97776e91e0",
-          "size": 52105
+          "sha256": "b1d54b0785618c7c5a75fdcc25f99cf6e439fb4ea6fbe07890ea6b80337cceb3",
+          "size": 54970
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/checksums.txt",
-          "sha256": "07b97cc02f8df0495d83c699ebf1fb0aa8be321c56abcc32ddad3c21901a71c9",
+          "sha256": "3e2ae1d7da8ecc4ed3a85dbc1048f261430868b393004638e50ba073f1125e13",
           "size": 302
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.1-openlands-neoforge-edition/echo-release.json",
-          "sha256": "b040f2f21933b71447ecee6fe3a235f90b25b40c0a06b7cfb43c47c60e3afff2",
-          "size": 12274
+          "sha256": "8f480c43396e7b77214fdd3d73bde51be052d5e0bc18512c86fd9a3a3c78269b",
+          "size": 12278
         }
       },
       "downloads": {
@@ -10768,23 +10603,8 @@
       "profileId": "openlands-standalone-edition",
       "name": "Openlands Standalone Edition",
       "lane": "standalone",
-      "ok": false,
-      "issues": [
-        "manifest openlands-standalone-edition-experimental-0.1.0.pack.json SHA-256 mismatch: 8fce5d48e68d0b3fbd818d26671e444b4233e427fdc182fffd45208c4c986874 != 1814e0eb548290f48a2757fceb973dae931f8cb52f81bb321aa5b77e9047edd2.",
-        "manifest openlands-standalone-edition-experimental-0.1.0.pack.json size mismatch: 55232 != 53375.",
-        "checksums checksums.txt SHA-256 mismatch: 017848124da9512b9c4f4607b80e505a7619c5f5b9186b9aa66185db87f932e7 != eaad7001bb79ec3b8845d9877a882ec65fdf75ea1816943e6586bc777cfc7945.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 822c6bebdc879e823efc0a326e9cf89144c384500f965c99bac64f1afe7b2db1 != e131700bdb9dc0f164f67198efe71419636dc87612e2ddbdf7e1b398653b2e49.",
-        "releaseManifest echo-release.json size mismatch: 12516 != 12512.",
-        "checksums.txt hash for openlands-standalone-edition-experimental-0.1.0.pack.json does not match catalog.",
-        "checksums.txt hash for openlands-standalone-edition-0.1.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for openlands-standalone-edition-experimental-0.1.0.pack.json does not match catalog.",
-        "echo-release.json hash for openlands-standalone-edition-0.1.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack openlands-standalone-edition-0.1.0.zip SHA-256 mismatch: 072cbc3d15dcc1dfafaffcc408ae9dad5fc8c15a79d93ed7f119a7c50a7adea4 != 58283037c43dfe493390d1ba8d16a13417ea16bf3d89fd66ffb5bbfae5fa75c7.",
-        "pack openlands-standalone-edition-0.1.0.zip size mismatch: 112541943 != 112271156."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -10800,29 +10620,29 @@
           "role": "pack",
           "file": "openlands-standalone-edition-0.1.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-0.1.0.zip",
-          "sha256": "58283037c43dfe493390d1ba8d16a13417ea16bf3d89fd66ffb5bbfae5fa75c7",
-          "size": 112271156
+          "sha256": "072cbc3d15dcc1dfafaffcc408ae9dad5fc8c15a79d93ed7f119a7c50a7adea4",
+          "size": 112541943
         },
         "manifest": {
           "role": "manifest",
           "file": "openlands-standalone-edition-experimental-0.1.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
-          "sha256": "1814e0eb548290f48a2757fceb973dae931f8cb52f81bb321aa5b77e9047edd2",
-          "size": 53375
+          "sha256": "8fce5d48e68d0b3fbd818d26671e444b4233e427fdc182fffd45208c4c986874",
+          "size": 55232
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/checksums.txt",
-          "sha256": "eaad7001bb79ec3b8845d9877a882ec65fdf75ea1816943e6586bc777cfc7945",
+          "sha256": "017848124da9512b9c4f4607b80e505a7619c5f5b9186b9aa66185db87f932e7",
           "size": 313
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.0-openlands-standalone-edition/echo-release.json",
-          "sha256": "e131700bdb9dc0f164f67198efe71419636dc87612e2ddbdf7e1b398653b2e49",
-          "size": 12512
+          "sha256": "822c6bebdc879e823efc0a326e9cf89144c384500f965c99bac64f1afe7b2db1",
+          "size": 12516
         }
       },
       "downloads": {
@@ -11718,23 +11538,8 @@
       "profileId": "arcana-division-native-edition",
       "name": "Arcana Division Native Edition",
       "lane": "native",
-      "ok": false,
-      "issues": [
-        "manifest arcana-division-native-edition-beta-1.0.0.pack.json SHA-256 mismatch: a299a7764d5278fc808e1370785d675605adf1d81ae3dbdf7cf1f5ae36e05fd0 != cef069f1880eaf5d89515298a7e65946e003f2744085c373c4def636a0bbed16.",
-        "manifest arcana-division-native-edition-beta-1.0.0.pack.json size mismatch: 55105 != 53381.",
-        "checksums checksums.txt SHA-256 mismatch: 04ca191b79517f10c068dc73aa97d5f8392ef44a5742fbcd4b4d5e70fc5dc725 != 80d41c31844dfb348411c44e9de22f4b2417fa09835750ed15a6c902bf1ac846.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 358e1d3421960e0730a8557564d45b3173dc0d65a7655e30982e159902331c3a != b8adde7311ecdfbdf56494352c2ba7eb445684b5321c33888676aec1f8478edb.",
-        "releaseManifest echo-release.json size mismatch: 11500 != 11497.",
-        "checksums.txt hash for arcana-division-native-edition-beta-1.0.0.pack.json does not match catalog.",
-        "checksums.txt hash for arcana-division-native-edition-1.0.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for arcana-division-native-edition-beta-1.0.0.pack.json does not match catalog.",
-        "echo-release.json hash for arcana-division-native-edition-1.0.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack arcana-division-native-edition-1.0.0.zip SHA-256 mismatch: dd6c672d7ebb5f31fd870527135eb8c26fc736a9aeaeaa02e0d05e72832eb2ee != cf8417817a0d9152427d0c72f9d773f9f53de126e1a10c04f5d19d9d7e12812a.",
-        "pack arcana-division-native-edition-1.0.0.zip size mismatch: 117229557 != 116965198."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -11750,29 +11555,29 @@
           "role": "pack",
           "file": "arcana-division-native-edition-1.0.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-1.0.0.zip",
-          "sha256": "cf8417817a0d9152427d0c72f9d773f9f53de126e1a10c04f5d19d9d7e12812a",
-          "size": 116965198
+          "sha256": "dd6c672d7ebb5f31fd870527135eb8c26fc736a9aeaeaa02e0d05e72832eb2ee",
+          "size": 117229557
         },
         "manifest": {
           "role": "manifest",
           "file": "arcana-division-native-edition-beta-1.0.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
-          "sha256": "cef069f1880eaf5d89515298a7e65946e003f2744085c373c4def636a0bbed16",
-          "size": 53381
+          "sha256": "a299a7764d5278fc808e1370785d675605adf1d81ae3dbdf7cf1f5ae36e05fd0",
+          "size": 55105
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/checksums.txt",
-          "sha256": "80d41c31844dfb348411c44e9de22f4b2417fa09835750ed15a6c902bf1ac846",
+          "sha256": "04ca191b79517f10c068dc73aa97d5f8392ef44a5742fbcd4b4d5e70fc5dc725",
           "size": 309
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.0-beta/echo-release.json",
-          "sha256": "b8adde7311ecdfbdf56494352c2ba7eb445684b5321c33888676aec1f8478edb",
-          "size": 11497
+          "sha256": "358e1d3421960e0730a8557564d45b3173dc0d65a7655e30982e159902331c3a",
+          "size": 11500
         }
       },
       "downloads": {
@@ -12607,23 +12412,8 @@
       "profileId": "arcana-division-neoforge-edition",
       "name": "Arcana Division NeoForge Edition",
       "lane": "neoforge",
-      "ok": false,
-      "issues": [
-        "manifest arcana-division-neoforge-edition-beta-1.0.0.pack.json SHA-256 mismatch: 5eb9ca4eac6383f54b4a78f1ed2c72544ea0254158f4f73f130c806d2e6d2eb1 != 629dfcc24dfdcdec6e305f3d7e98dea82cdb997391b0623a5f59711c9ee6eee5.",
-        "manifest arcana-division-neoforge-edition-beta-1.0.0.pack.json size mismatch: 54861 != 53211.",
-        "checksums checksums.txt SHA-256 mismatch: a482e3be171a712ee74b99b3d48787e953e4a7efbaf5a3f3805a048b3128e983 != 36def64ff6fd1205350bc1ddeaeafd326bef6d1dff45f32135ab78027f179ba2.",
-        "releaseManifest echo-release.json SHA-256 mismatch: cefd4a21a9d1a224ab7e919566a5af318d9c303cecc8c19801522e3d9c351ca4 != 460276742d5c0879ecfe96fe233af1c3eaa57ca1d0701c6f9578133400939104.",
-        "releaseManifest echo-release.json size mismatch: 11651 != 11646.",
-        "checksums.txt hash for arcana-division-neoforge-edition-beta-1.0.0.pack.json does not match catalog.",
-        "checksums.txt hash for arcana-division-neoforge-edition-1.0.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for arcana-division-neoforge-edition-beta-1.0.0.pack.json does not match catalog.",
-        "echo-release.json hash for arcana-division-neoforge-edition-1.0.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack arcana-division-neoforge-edition-1.0.0.zip SHA-256 mismatch: 1be9004099013dafd8ad1c685113e4758174f985769c453870d98ffd0a35dd5e != 0b93df35140263d5631657052b6c03a2a82cd584d5abc891b607a4a63dd45ec8.",
-        "pack arcana-division-neoforge-edition-1.0.0.zip size mismatch: 117099154 != 116853498."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [
         "NeoForge manifest loader.versionJson is a launcher stub; ECHO Launcher must replace it with official installer metadata before handoff."
       ],
@@ -12641,29 +12431,29 @@
           "role": "pack",
           "file": "arcana-division-neoforge-edition-1.0.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-1.0.0.zip",
-          "sha256": "0b93df35140263d5631657052b6c03a2a82cd584d5abc891b607a4a63dd45ec8",
-          "size": 116853498
+          "sha256": "1be9004099013dafd8ad1c685113e4758174f985769c453870d98ffd0a35dd5e",
+          "size": 117099154
         },
         "manifest": {
           "role": "manifest",
           "file": "arcana-division-neoforge-edition-beta-1.0.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
-          "sha256": "629dfcc24dfdcdec6e305f3d7e98dea82cdb997391b0623a5f59711c9ee6eee5",
-          "size": 53211
+          "sha256": "5eb9ca4eac6383f54b4a78f1ed2c72544ea0254158f4f73f130c806d2e6d2eb1",
+          "size": 54861
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/checksums.txt",
-          "sha256": "36def64ff6fd1205350bc1ddeaeafd326bef6d1dff45f32135ab78027f179ba2",
+          "sha256": "a482e3be171a712ee74b99b3d48787e953e4a7efbaf5a3f3805a048b3128e983",
           "size": 313
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.0-beta/echo-release.json",
-          "sha256": "460276742d5c0879ecfe96fe233af1c3eaa57ca1d0701c6f9578133400939104",
-          "size": 11646
+          "sha256": "cefd4a21a9d1a224ab7e919566a5af318d9c303cecc8c19801522e3d9c351ca4",
+          "size": 11651
         }
       },
       "downloads": {
@@ -13515,23 +13305,8 @@
       "profileId": "arcana-division-standalone-edition",
       "name": "Arcana Division Standalone Edition",
       "lane": "standalone",
-      "ok": false,
-      "issues": [
-        "manifest arcana-division-standalone-edition-beta-1.0.0.pack.json SHA-256 mismatch: dfb90c1ff8ca567c42f5867275fd84e131d480743460e61d17611ba53fe7fb37 != 63936ec153abb2e97269255b51a9f5cedf257e4e8a5cbadb8ce3968c6dbb22f0.",
-        "manifest arcana-division-standalone-edition-beta-1.0.0.pack.json size mismatch: 55307 != 53579.",
-        "checksums checksums.txt SHA-256 mismatch: 74f42c6d9d17ff553493a176e03e720c40ab8ee5e774bb0b0de26b78f2b512e2 != 5ddc7f9b5ffea38785fcd20466065b19abe44de02ebc3cfa0a68997df3fcc6b0.",
-        "releaseManifest echo-release.json SHA-256 mismatch: 0efb1b3cf1266394ea0dabee317563ff884ea4255bb3695a15e98e827552af39 != d02408c87255ea0a69ae8cba15ac1f0da18638d4968ec71baab885ddb9ba48dc.",
-        "releaseManifest echo-release.json size mismatch: 11779 != 11774.",
-        "checksums.txt hash for arcana-division-standalone-edition-beta-1.0.0.pack.json does not match catalog.",
-        "checksums.txt hash for arcana-division-standalone-edition-1.0.0.zip does not match catalog.",
-        "checksums.txt hash for echo-release.json does not match catalog.",
-        "echo-release.json hash for arcana-division-standalone-edition-beta-1.0.0.pack.json does not match catalog.",
-        "echo-release.json hash for arcana-division-standalone-edition-1.0.0.zip does not match catalog.",
-        "Install manifest artifactSha256 does not match catalog pack hash.",
-        "Install manifest artifactSize does not match catalog pack size.",
-        "pack arcana-division-standalone-edition-1.0.0.zip SHA-256 mismatch: 3b6bd5479e9fc72dc6fade85bb19a560a7b531b4d9c721f31f097757915c4792 != 7501d8031394f325f1bdb89444937dd884c181ff352f53300d07302adb43caf5.",
-        "pack arcana-division-standalone-edition-1.0.0.zip size mismatch: 117099134 != 116852594."
-      ],
+      "ok": true,
+      "issues": [],
       "warnings": [],
       "catalog": {
         "modpackValidation": "approved",
@@ -13547,29 +13322,29 @@
           "role": "pack",
           "file": "arcana-division-standalone-edition-1.0.0.zip",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-1.0.0.zip",
-          "sha256": "7501d8031394f325f1bdb89444937dd884c181ff352f53300d07302adb43caf5",
-          "size": 116852594
+          "sha256": "3b6bd5479e9fc72dc6fade85bb19a560a7b531b4d9c721f31f097757915c4792",
+          "size": 117099134
         },
         "manifest": {
           "role": "manifest",
           "file": "arcana-division-standalone-edition-beta-1.0.0.pack.json",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
-          "sha256": "63936ec153abb2e97269255b51a9f5cedf257e4e8a5cbadb8ce3968c6dbb22f0",
-          "size": 53579
+          "sha256": "dfb90c1ff8ca567c42f5867275fd84e131d480743460e61d17611ba53fe7fb37",
+          "size": 55307
         },
         "checksums": {
           "role": "checksums",
           "file": "checksums.txt",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/checksums.txt",
-          "sha256": "5ddc7f9b5ffea38785fcd20466065b19abe44de02ebc3cfa0a68997df3fcc6b0",
+          "sha256": "74f42c6d9d17ff553493a176e03e720c40ab8ee5e774bb0b0de26b78f2b512e2",
           "size": 317
         },
         "releaseManifest": {
           "role": "releaseManifest",
           "file": "echo-release.json",
           "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.0-beta/echo-release.json",
-          "sha256": "d02408c87255ea0a69ae8cba15ac1f0da18638d4968ec71baab885ddb9ba48dc",
-          "size": 11774
+          "sha256": "0efb1b3cf1266394ea0dabee317563ff884ea4255bb3695a15e98e827552af39",
+          "size": 11779
         }
       },
       "downloads": {
@@ -14404,9 +14179,9 @@
   ],
   "summary": {
     "total": 15,
-    "passed": 0,
-    "failed": 15,
+    "passed": 15,
+    "failed": 0,
     "warnings": 5
   },
-  "completedAt": "2026-06-15T01:23:28.222Z"
+  "completedAt": "2026-06-15T02:04:24.056Z"
 }
