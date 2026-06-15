@@ -112,7 +112,7 @@ Every `module` and `addon` entry must index a `content-graph` artifact that poin
 }
 ```
 
-`scripts/validate-index.mjs --strict` rejects approved entries that lack this role. Non-approved entries receive a warning so cataloging can proceed before the sidecar URL is published.
+`scripts/validate-index.mjs --strict` rejects approved entries that lack this role. Non-approved entries receive a warning so cataloging can proceed before the sidecar URL is published. Historical addon rows superseded by current module rows may set `contentGraphEvidencePolicy: "legacy-fallback-only"` to make the sidecar-only fallback explicit without implying release-level aggregate evidence exists for the preserved legacy row.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 

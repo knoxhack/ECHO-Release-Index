@@ -331,6 +331,9 @@ function validateRequiredArtifactRoles(errors, warnings, filePath, entry) {
 
 function validateContentGraphEvidenceRole(errors, warnings, filePath, entry) {
   if (!['module', 'addon'].includes(entry.kind)) return
+  if (entry.contentGraphEvidencePolicy !== undefined && entry.contentGraphEvidencePolicy !== 'legacy-fallback-only') {
+    errors.push(`${rel(filePath)} contentGraphEvidencePolicy must be legacy-fallback-only when present`)
+  }
   const records = artifactRoleRecords(entry.artifacts)
   const evidenceRecords = records.filter((artifact) =>
     artifact.role === 'content-graph-evidence' ||
@@ -339,8 +342,12 @@ function validateContentGraphEvidenceRole(errors, warnings, filePath, entry) {
     artifact.name === 'content-graph-evidence.json'
   )
   if (!evidenceRecords.length) {
+    if (entry.contentGraphEvidencePolicy === 'legacy-fallback-only') return
     warnings.push(`${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no release-level content-graph-evidence artifact; consumers must fall back to per-module content-graph sidecars`)
     return
+  }
+  if (entry.contentGraphEvidencePolicy === 'legacy-fallback-only') {
+    errors.push(`${rel(filePath)} contentGraphEvidencePolicy legacy-fallback-only cannot be used with a content-graph-evidence artifact`)
   }
   for (const artifact of evidenceRecords) {
     const name = String(artifact.file ?? artifact.name ?? '')

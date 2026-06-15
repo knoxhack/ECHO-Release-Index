@@ -96,6 +96,10 @@
         "blocked"
       ]
     },
-    "validation": { "enum": ["approved", "warning", "rejected", "blocked"] }
+    "validation": { "enum": ["approved", "warning", "rejected", "blocked"] },
+    "contentGraphEvidencePolicy": {
+      "enum": ["legacy-fallback-only"],
+      "description": "Marks a historical module/addon catalog row that intentionally has only per-entry content-graph sidecar evidence; current release-level aggregate evidence must come from a replacement release row."
+    }
   }
 }

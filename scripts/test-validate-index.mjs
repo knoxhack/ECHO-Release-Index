@@ -219,6 +219,22 @@ await runFixture('warning', async (root) => {
   }))
 }, 0, 'has no indexed artifacts')
 
+await runFixture('legacy-content-graph-evidence-fallback-policy', async (root) => {
+  const { 'content-graph-evidence': _evidence, ...artifacts } = approvedEntry().artifacts
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    artifacts,
+    contentGraphEvidencePolicy: 'legacy-fallback-only',
+  }))
+}, 0, 'validation passed')
+
+await runFixture('invalid-content-graph-evidence-fallback-policy', async (root) => {
+  const { 'content-graph-evidence': _evidence, ...artifacts } = approvedEntry().artifacts
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    artifacts,
+    contentGraphEvidencePolicy: 'sidecars-ok',
+  }))
+}, 1, 'contentGraphEvidencePolicy must be legacy-fallback-only')
+
 await runFixture('approved-windows-product-missing-updater-role', async (root) => {
   await writeJson(root, 'products/fixture-product.json', approvedEntry({
     id: 'fixture-product',
