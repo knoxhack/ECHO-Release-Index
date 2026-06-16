@@ -1,18 +1,18 @@
 {
   "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
-  "generatedAt": "2026-06-16T00:29:51Z",
+  "generatedAt": "2026-06-16T01:55:57.972Z",
   "status": "PASS",
   "summary": "Canonical .ECHO Content Graph release evidence is published, imported, indexed, runtime-gated, and visible to public/consumer surfaces.",
-  "releaseIndexCatalogCommit": "5a23adbe044b",
+  "releaseIndexCatalogCommit": "31cf83695a13",
   "moduleRelease": {
     "repository": "knoxhack/ECHO-Modules",
-    "tag": "modules-content-graph-evidence-proof-20260615",
-    "url": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-content-graph-evidence-proof-20260615",
+    "tag": "modules-content-graph-evidence-v1-20260616",
+    "url": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-content-graph-evidence-v1-20260616",
     "assetCount": 670,
     "evidenceArtifact": {
       "file": "content-graph-evidence.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
-      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-v1-20260616/content-graph-evidence.json",
+      "sha256": "a081fa19639024cdd8f416c694f82e6fedcd01417abad92a82ad13783cf7f1b9",
       "size": 63462,
       "schemaVersion": "echo.content_graph.evidence.v1"
     },
@@ -28,19 +28,9 @@
   },
   "catalogComposition": {
     "moduleRows": 133,
-    "primaryReleaseTag": "modules-content-graph-evidence-proof-20260615",
-    "primaryReleaseModuleRows": 131,
-    "alternateEvidenceReleases": [
-      {
-        "tag": "adaptercore-receipt-spine-20260616",
-        "moduleRows": 2,
-        "modules": [
-          "echoadaptercore",
-          "echoashfallprotocol"
-        ],
-        "schemaVersion": "echo.content_graph.evidence.v1"
-      }
-    ]
+    "primaryReleaseTag": "modules-content-graph-evidence-v1-20260616",
+    "primaryReleaseModuleRows": 133,
+    "alternateEvidenceReleases": []
   },
   "releaseIndexChecks": [
     {
@@ -63,7 +53,7 @@
     {
       "command": "node scripts/verify-content-graph-release-proof.mjs",
       "status": "PASS",
-      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 131 match the primary proof release manifest and 2 point at adaptercore-receipt-spine-20260616"
+      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 133 match modules-content-graph-evidence-v1-20260616"
     },
     {
       "command": "node scripts/test-verify-content-graph-release-proof.mjs",
