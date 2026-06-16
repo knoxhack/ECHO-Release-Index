@@ -25,6 +25,7 @@ await fs.writeFile(path.join(root, 'modules', 'echofixture.json'), JSON.stringif
       url: 'https://github.com/knoxhack/ECHO-Modules/releases/download/test/echofixture-1.0.0.echo-addon',
     },
   },
+  compatibility: ['fixture-native-edition'],
 }, null, 2))
 
 const modpack = {
@@ -81,6 +82,62 @@ const ok = spawnSync(process.execPath, [path.resolve('scripts/verify-modpack-mod
   encoding: 'utf8',
 })
 assert.equal(ok.status, 0, ok.stderr)
+
+const otherRepo = path.resolve(root, '..', 'ECHO-Other-Native-Edition')
+const otherReleaseDir = path.join(otherRepo, 'release-assets', 'other-tag')
+await fs.mkdir(otherReleaseDir, { recursive: true })
+await fs.writeFile(path.join(root, 'modpacks', 'other-native.json'), JSON.stringify({
+  id: 'other-native-edition',
+  kind: 'modpack',
+  sourceRepo: 'knoxhack/ECHO-Other-Native-Edition',
+  releaseTag: 'other-tag',
+  artifacts: {
+    pack: { file: 'other.zip', sha256: 'b'.repeat(64), size: 1 },
+    manifest: { file: 'other.pack.json', url: 'https://example.invalid/other.pack.json', sha256: 'c'.repeat(64), size: 1 },
+  },
+}, null, 2))
+await fs.writeFile(path.join(otherReleaseDir, 'other.pack.json'), JSON.stringify({
+  id: 'other-native-edition',
+  loader: 'echo-native-loader',
+  moduleArtifactFamily: 'echo-addon',
+  artifactName: 'other.zip',
+  artifactSha256: 'b'.repeat(64),
+  artifactSize: 1,
+  moduleRequirements: [
+    {
+      id: 'echofixture',
+      moduleId: 'echofixture',
+      version: '1.0.0',
+      artifactFamily: 'echo-addon',
+      assetName: 'echofixture-1.0.0.echo-addon',
+      artifactName: 'echofixture-1.0.0.echo-addon',
+      path: 'addons/echofixture-1.0.0.echo-addon',
+      sha256: 'd'.repeat(64),
+      size: 12,
+      url: 'https://github.com/knoxhack/ECHO-Modules/releases/download/old/echofixture-1.0.0.echo-addon',
+    },
+  ],
+  files: [
+    {
+      id: 'echofixture',
+      moduleId: 'echofixture',
+      version: '1.0.0',
+      artifactFamily: 'echo-addon',
+      assetName: 'echofixture-1.0.0.echo-addon',
+      artifactName: 'echofixture-1.0.0.echo-addon',
+      path: 'addons/echofixture-1.0.0.echo-addon',
+      sha256: 'd'.repeat(64),
+      size: 12,
+      url: 'https://github.com/knoxhack/ECHO-Modules/releases/download/old/echofixture-1.0.0.echo-addon',
+    },
+  ],
+}, null, 2))
+const compatibilityScoped = spawnSync(process.execPath, [path.resolve('scripts/verify-modpack-module-artifact-drift.mjs'), '--root', root, '--strict'], {
+  cwd: path.resolve('C:/Development/Github/ECHO-Release-Index'),
+  encoding: 'utf8',
+})
+assert.equal(compatibilityScoped.status, 0, compatibilityScoped.stderr)
+assert.match(compatibilityScoped.stdout, /2 official pack manifest/u)
 
 const manifestPath = path.join(releaseDir, 'fixture.pack.json')
 const payload = JSON.parse(await fs.readFile(manifestPath, 'utf8'))

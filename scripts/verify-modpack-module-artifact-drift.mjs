@@ -130,9 +130,17 @@ function expectedRecord(moduleEntry, artifactKey, current = {}) {
   }
 }
 
+function moduleCompatibilityExcludesPack(moduleEntry, packId) {
+  const compatibility = Array.isArray(moduleEntry.compatibility)
+    ? moduleEntry.compatibility.map(String).filter(Boolean)
+    : []
+  return compatibility.length > 0 && !compatibility.includes(packId)
+}
+
 async function auditRow(args, row, modules) {
   const blockers = []
   const warnings = []
+  const skipped = []
   const manifest = await loadManifest(args, row)
   const requirements = manifest.moduleRequirements ?? []
   const files = manifest.files ?? []
@@ -148,6 +156,11 @@ async function auditRow(args, row, modules) {
     const moduleEntry = modules.get(moduleId)
     if (!moduleEntry) {
       blockers.push(`${row.modpack.id} requires unknown module ${moduleId}.`)
+      continue
+    }
+    if (moduleCompatibilityExcludesPack(moduleEntry, row.modpack.id)) {
+      skipped.push(moduleId)
+      warnings.push(`${moduleId} current module catalog row is scoped to ${moduleEntry.compatibility.join(', ')}; ${row.modpack.id} remains pinned to its pack release artifact.`)
       continue
     }
     const expected = expectedRecord(moduleEntry, artifactKey, requirement)
@@ -186,6 +199,7 @@ async function auditRow(args, row, modules) {
     manifestSource: args.live ? 'live-github' : 'local-release-assets',
     moduleArtifactFamily: manifest.moduleArtifactFamily,
     moduleCount: checked.length,
+    skippedModuleCount: skipped.length,
     status: blockers.length ? 'fail' : warnings.length ? 'warning' : 'pass',
     blockers,
     warnings,
@@ -219,6 +233,8 @@ async function main() {
     moduleCatalogCount: modules.size,
     modpackCount: reports.length,
     failingModpackCount: reports.filter((entry) => entry.status === 'fail').length,
+    warningModpackCount: reports.filter((entry) => entry.status === 'warning').length,
+    skippedModuleComparisonCount: reports.reduce((total, entry) => total + (entry.skippedModuleCount ?? 0), 0),
     blockers,
     modpacks: reports,
   }
