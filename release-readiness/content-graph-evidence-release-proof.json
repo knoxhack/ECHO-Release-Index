@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
-  "generatedAt": "2026-06-16T15:41:39.893Z",
+  "generatedAt": "2026-06-16T16:43:58.351Z",
   "status": "PASS",
   "summary": "Canonical .ECHO Content Graph release evidence is reproduced from source, published as a real ECHO-Modules release, imported by Release Index, runtime-gated, and visible to public/consumer surfaces.",
   "releaseIndexCatalogCommit": "pending-direct-main-push",
@@ -119,20 +119,25 @@
       "command": "node scripts/sync-public-alpha-index.mjs --check",
       "status": "PASS",
       "result": "Public alpha index sync passed after rebuilding official pack assets against modules-canonical-full-20260616."
+    },
+    {
+      "command": "node scripts/verify-public-alpha-live-channel.mjs --write --timeout-ms 300000 --concurrency 4",
+      "status": "PASS",
+      "result": "Live public alpha channel proof passed for 827 artifacts and 6,186,178,088 public bytes."
     }
   ],
   "runtimeGates": [
     {
       "repository": "knoxhack/ECHO-Native-Platform",
       "commit": "c0e7ed404620f476d9e338499cdc069a430de5e7",
-      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-published-repro-main runNativeContentGraphEvidenceGate --console=plain",
+      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-canonical-full-20260616 runNativeContentGraphEvidenceGate --console=plain",
       "status": "PASS",
-      "result": "native content graph evidence gate PASS modules=133 nodes=4392 edges=5911 features=1469 exportPlans=532 hytaleBlockers=9"
+      "result": "Native content graph evidence gate exited 0 against canonical evidence: modules=133 nodes=4392 edges=5911 features=1469 exportPlans=532 hytaleBlockers=9."
     },
     {
       "repository": "knoxhack/ECHO-Standalone-Runtime",
       "commit": "5f5dbe5101aab5d21a723d9517e803f7d73a0e79",
-      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-published-repro-main runStandaloneContentGraphLoadSmoke --console=plain --info",
+      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-canonical-full-20260616 runStandaloneContentGraphLoadSmoke --console=plain",
       "status": "PASS",
       "result": "content graph load smoke PASS graphs=133 nodes=4392 edges=5911 features=1469 exportPlans=532 hytalePlans=133 hytaleBlockedNodes=9 checked=23 failures=0"
     }
@@ -150,13 +155,14 @@
     },
     {
       "repository": "knoxhack/ECHO-Launcher",
-      "commit": "a0e1d34702b4b4d7e92f9648bbfb61faf4f31be4",
+      "commit": "5cf6a0e181b7d7c710db784a03638848f83245be",
       "commands": [
-        "npm.cmd run build",
-        "npm.cmd test"
+        "npm.cmd run package:win:dir",
+        "npm.cmd test",
+        "node scripts/all-modpacks-electron-install-smoke.mjs --clean --timeout-ms 180000 --pack-timeout-ms 1200000 --out ..\\ECHO-Release-Index\\release-readiness\\all-modpacks-electron-install-smoke.json"
       ],
       "status": "PASS",
-      "result": "Launcher build and 233 tests passed; pre-existing local electron/main.cjs dirty work was preserved."
+      "result": "Launcher package build, tests, and 15-pack live Electron install smoke passed; all installed module files resolved as full-release-evidence from modules-canonical-full-20260616."
     },
     {
       "repository": "knoxhack/ECHO-Developer-Studio",
