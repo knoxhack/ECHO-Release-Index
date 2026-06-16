@@ -170,6 +170,11 @@ async function findModuleArtifact(args, moduleId, artifact) {
   const downloadDir = path.join(args.root, 'tmp', 'official-modpack-module-downloads')
   await fs.mkdir(downloadDir, { recursive: true })
   const downloadPath = path.join(downloadDir, artifact.file)
+  if (await exists(downloadPath)) {
+    const cached = await assetStats(downloadPath)
+    if (cached.sha256 === artifact.sha256 && cached.size === artifact.size) return downloadPath
+    await fs.rm(downloadPath, { force: true })
+  }
   if (!await exists(downloadPath)) {
     const response = await fetch(artifact.url, { headers: { 'user-agent': 'echo-release-index-modpack-refresh' } })
     if (!response.ok) throw new Error(`Failed to download ${artifact.url}: ${response.status} ${await response.text()}`)
