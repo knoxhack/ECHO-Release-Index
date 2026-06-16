@@ -418,7 +418,8 @@ async function main() {
     schemaVersion: 'echo.release_index.public_alpha_runtime_acceptance.v1',
     generatedAt: new Date().toISOString(),
     status,
-    releaseIndexCatalogCommit: releaseIndexHead,
+    releaseIndexHeadAtGeneration: releaseIndexHead,
+    reportCommitNote: 'This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.',
     summary: {
       hardGateCount: gates.length,
       hardGatePassCount: gates.filter((gate) => gate.status === 'pass').length,
