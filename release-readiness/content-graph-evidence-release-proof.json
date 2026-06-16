@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
-  "generatedAt": "2026-06-16T07:55:40.150Z",
+  "generatedAt": "2026-06-16T08:00:16.322Z",
   "status": "PASS",
   "summary": "Canonical .ECHO Content Graph release evidence is reproduced from source, published as a real ECHO-Modules release, imported by Release Index, runtime-gated, and visible to public/consumer surfaces.",
   "releaseIndexCatalogCommit": "8b9a2eafdd0f5aa37c3174e27b16b81f127979dc",
@@ -116,7 +116,7 @@
     {
       "command": "node scripts/sync-public-alpha-index.mjs --check",
       "status": "WARN",
-      "result": "Existing Ashfall/modpack artifact drift remains outside the content graph evidence import and was not committed in this proof pass."
+      "result": "Final check reports 9 non-content-graph modpack drift items for Galactic Survey, Openlands, and Sky Relay catalog artifacts; the drift is outside the canonical content graph evidence import."
     }
   ],
   "runtimeGates": [
@@ -191,7 +191,7 @@
     "Hytale statuses remain export planning evidence only; this proof does not claim Hytale runtime or playable support.",
     "Openlands Hytale blocker count is preserved at 9 until the module source intentionally changes.",
     "The previous expected local counts of 4375 nodes and 1463 features were replaced by the reproducible Windows/Linux-correct counts of 4392 nodes and 1469 features after path normalization fixed omitted Armory gear and station recipe content.",
-    "Release Index local workspace still contains unrelated Ashfall/modpack dirty work and untracked release-readiness files; content graph commits deliberately preserved those changes without staging them.",
+    "Release Index local workspace still contains unrelated pack/catalog dirty work and untracked release-readiness files; content graph commits deliberately preserved those changes without staging them.",
     "Per-module content-graph sidecars remain supported fallback artifacts; content-graph-evidence.json is the canonical aggregate release evidence layer."
   ]
 }
