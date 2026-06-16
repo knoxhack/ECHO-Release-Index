@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "echo.adaptercore.receipt_spine.release_evidence.v1",
+  "evidenceId": "adaptercore-receipt-spine-20260616",
+  "generatedAt": "2026-06-16T00:33:19.674Z",
+  "status": "source-and-local-artifacts-validated",
+  "scope": {
+    "primaryModule": "echoadaptercore",
+    "canonicalProofConsumer": "echoashfallprotocol",
+    "publishMode": "direct-main-local-evidence",
+    "publicCatalogCoordinatesUpdated": false,
+    "releaseIndexInstallMetadataPolicy": "Do not move releaseTag, artifact URLs, or installable checksums until GitHub release assets are published and download-smoked."
+  },
+  "sourceCommits": {
+    "modules": "2b42cbe60e18d797d32ae3aa896f44f44ea357b3",
+    "nativePlatform": "c0e7ed404620f476d9e338499cdc069a430de5e7",
+    "sdk": "15d6f390d2c3f6241c2997d82c6dd7e7a826c7ea",
+    "standaloneRuntime": "5f5dbe5101aab5d21a723d9517e803f7d73a0e79",
+    "releaseIndexBase": "089d721946255603a68dcee42dead0e6a194b21c"
+  },
+  "proofPolicy": {
+    "mutatedRequiresReceipt": true,
+    "acceptedReleaseProofKinds": [
+      "HOST_STATE",
+      "SAVE_WRITE",
+      "HUD_EVENT",
+      "PACKET_EVENT"
+    ],
+    "rejectedReleaseProofKinds": [
+      "DIAGNOSTIC_ONLY",
+      "QUEUED_ONLY"
+    ],
+    "metadataOnlyEvidenceSatisfiesReleaseProof": false,
+    "typedNativeBackendContract": "EchoAdapterCoreGameplayMutationService"
+  },
+  "moduleArtifacts": {
+    "releaseId": "adaptercore-receipt-spine-20260616",
+    "releaseManifest": {
+      "path": "dist/adaptercore-receipt-spine-release/echo-release.json",
+      "sha256": "0417bff9614a4368211fc90279c0eb3e1093ee13b327c06db02e400ce748aa93",
+      "size": 9841
+    },
+    "checksumFiles": [
+      {
+        "path": "dist/adaptercore-receipt-spine-release/checksums.sha256",
+        "sha256": "66e7c9ecc2a73dc43ff1e23fec737feb94ce8b27e2d15e91c614f1a251ea4de7",
+        "size": 160522
+      },
+      {
+        "path": "dist/adaptercore-receipt-spine-release/checksums.txt",
+        "sha256": "66e7c9ecc2a73dc43ff1e23fec737feb94ce8b27e2d15e91c614f1a251ea4de7",
+        "size": 160522
+      }
+    ],
+    "contentGraphEvidence": {
+      "path": "dist/adaptercore-receipt-spine-release/content-graph-evidence.json",
+      "sha256": "24e7b9ed7a94b19c87930d4221fa45a648314a8125ad33bacb655f175949edc9",
+      "size": 63475
+    },
+    "modules": [
+      {
+        "moduleId": "echoadaptercore",
+        "version": "1.0.0",
+        "descriptor": {
+          "path": "META-INF/echo.mod.json",
+          "sha256": "fe1e0797a8904b26e0e5f3c575c89808d61cba46cc8088dc7109490c0eda964c"
+        },
+        "requires": [
+          "echocore",
+          "echoplatformcore"
+        ],
+        "optional": [],
+        "artifacts": [
+          {
+            "kind": "neoforge",
+            "runtimeTarget": "neoforge",
+            "buildMode": "compiled-runtime",
+            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-neoforge.jar",
+            "filename": "echoadaptercore-1.0.0-neoforge.jar",
+            "sha256": "89c9e7c68d6ed283e13bb274b6039a20dc3d1e39d98413de8d97a613e04a94ce",
+            "size": 970532
+          },
+          {
+            "kind": "standalone",
+            "runtimeTarget": "standalone",
+            "buildMode": "compiled-runtime",
+            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-standalone.jar",
+            "filename": "echoadaptercore-1.0.0-standalone.jar",
+            "sha256": "89c9e7c68d6ed283e13bb274b6039a20dc3d1e39d98413de8d97a613e04a94ce",
+            "size": 970532
+          },
+          {
+            "kind": "echo-addon",
+            "runtimeTarget": "echo-native",
+            "buildMode": "compiled-runtime",
+            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0.echo-addon",
+            "filename": "echoadaptercore-1.0.0.echo-addon",
+            "sha256": "a4e33070e484ce85752eca239b9b1c877780f81c05f25712391de1391bbd4fec",
+            "size": 841133
+          },
+          {
+            "kind": "sources",
+            "runtimeTarget": "sources",
+            "buildMode": null,
+            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-sources.jar",
+            "filename": "echoadaptercore-1.0.0-sources.jar",
+            "sha256": "e376d5f68077b06b022b4ba9fad73163c22ec4c08d217afb5312624e999f5869",
+            "size": 384893
+          },
+          {
+            "kind": "content-graph",
+            "runtimeTarget": "content-graph",
+            "buildMode": "generated",
+            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-content-graph.json",
+            "filename": "echoadaptercore-1.0.0-content-graph.json",
+            "sha256": "d21205c40b8649723ba63f19a0d9bb9faa1b3b7bd49c64924eabb5bfb4a6b3fb",
+            "size": 31761
+          }
+        ]
+      },
+      {
+        "moduleId": "echoashfallprotocol",
+        "version": "1.0.0",
+        "descriptor": {
+          "path": "META-INF/echo.mod.json",
+          "sha256": "91fc828ceb1cdb10627735e9581a6bef5401171553efa22a8cca3397b494c5fe"
+        },
+        "requires": [
+          "echoadaptercore",
+          "echoblockworks",
+          "echocore",
+          "echofoundationcore",
+          "echomaterialcore",
+          "echonetcore",
+          "echotoolcore",
+          "echostationcore",
+          "echoworldstarter",
+          "echocommonloot",
+          "echocreatureroles"
+        ],
+        "optional": [
+          "echodatacore",
+          "echoholomap",
+          "echoindex",
+          "echolens",
+          "echomissioncore",
+          "echonpcore",
+          "echopresencelink",
+          "echorendercore",
+          "echoruntimeguard",
+          "echosoundcore",
+          "echoterminal",
+          "echothemecore",
+          "echowiki",
+          "echoworldcore"
+        ],
+        "artifacts": [
+          {
+            "kind": "neoforge",
+            "runtimeTarget": "neoforge",
+            "buildMode": "compiled-runtime",
+            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-neoforge.jar",
+            "filename": "echoashfallprotocol-1.0.0-neoforge.jar",
+            "sha256": "79d004d8c23435b62b5fac86390ff4b95a7ee8d4744358582c6e8eb9aba7d0e1",
+            "size": 59412089
+          },
+          {
+            "kind": "standalone",
+            "runtimeTarget": "standalone",
+            "buildMode": "compiled-runtime",
+            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-standalone.jar",
+            "filename": "echoashfallprotocol-1.0.0-standalone.jar",
+            "sha256": "da805f85f54acffd2fe91910cfc4cf1ce85f08e7de1391831c3d29594ecc4401",
+            "size": 59412089
+          },
+          {
+            "kind": "echo-addon",
+            "runtimeTarget": "echo-native",
+            "buildMode": "compiled-runtime",
+            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0.echo-addon",
+            "filename": "echoashfallprotocol-1.0.0.echo-addon",
+            "sha256": "c6e6f2d7e87a11ebce1d447fc9ae5f24135373af19e7f70864627f3eb3de24a2",
+            "size": 58675421
+          },
+          {
+            "kind": "sources",
+            "runtimeTarget": "sources",
+            "buildMode": null,
+            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-sources.jar",
+            "filename": "echoashfallprotocol-1.0.0-sources.jar",
+            "sha256": "900ffd19bf4db9715f64ccc13713a2e6d4017ce9a3ca930d294c7dbd6691db72",
+            "size": 57639124
+          },
+          {
+            "kind": "content-graph",
+            "runtimeTarget": "content-graph",
+            "buildMode": "generated",
+            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-content-graph.json",
+            "filename": "echoashfallprotocol-1.0.0-content-graph.json",
+            "sha256": "f41f82ff326382f27f4b30e7f448656516480bae1ff528ebff02f9a0cabae469",
+            "size": 623365
+          }
+        ]
+      }
+    ],
+    "verifier": {
+      "status": "not-release-blocking-tooling-scope-mismatch",
+      "commands": [
+        "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoadaptercore",
+        "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoashfallprotocol"
+      ],
+      "observedFailure": "content graph evidence graphCount must match release modules: 133 !== 2",
+      "reason": "generate-module-release writes repository-wide content-graph evidence even for a narrowed --module release packet, while verify-module-release assumes graphCount equals release.modules.length.",
+      "artifactChecksumsUsable": true,
+      "nextAction": "Either publish a full-module release packet or adjust the release verifier to accept repository-wide evidence as a superset for targeted module packets."
+    }
+  },
+  "nativePlatformArtifacts": {
+    "publicAlphaDirectory": "build/public-alpha",
+    "publicAlphaArtifacts": [
+      {
+        "path": "build/public-alpha/checksums.txt",
+        "sha256": "18bc6b16f982dc7a72cd91bddaec5abcbafcc17ec70153b45a07a8a61d471309",
+        "size": 953
+      },
+      {
+        "path": "build/public-alpha/echo-native-loader-1.0.5.jar",
+        "sha256": "3486d968252618eb47eece04ca31ed0871299b787e3fbc43157766044e277196",
+        "size": 1844580
+      },
+      {
+        "path": "build/public-alpha/echo-native-platform-1.0.5.zip",
+        "sha256": "b448ee29b74c5ace13235926bd9d9134bf94017f7284988c4d374bb2206123f8",
+        "size": 1211
+      },
+      {
+        "path": "build/public-alpha/echo-release.json",
+        "sha256": "721ece9e153ac12dc3cc2ccdb5a4e62c8d4e16b3e7f8ac28fda0c7ae6b2e7ba0",
+        "size": 5730
+      },
+      {
+        "path": "build/public-alpha/native-addon-source-truth.md",
+        "sha256": "c8913934116bc36f396cf7ed59c8209bdf0fa8006f3b0f9cf14082983bc7c0ee",
+        "size": 1484
+      },
+      {
+        "path": "build/public-alpha/native-live-proof-gate.json",
+        "sha256": "627663a4c1296a9306da6f46924f6f2694ada21e9ee34cb2305c0053e321f802",
+        "size": 421
+      },
+      {
+        "path": "build/public-alpha/native-loader-direct-install.json",
+        "sha256": "6c441c4977d968c04dac8fa92085bf6eeb029b7274e81f2a5ba313bc2d39b296",
+        "size": 1359
+      },
+      {
+        "path": "build/public-alpha/native-module-inventory.json",
+        "sha256": "ddeb1a5ed842f674aa9d560da5a3682873a0576c94e1a3f9a561347b5474e07b",
+        "size": 424
+      },
+      {
+        "path": "build/public-alpha/plan3-dependency-vulnerability-scan.json",
+        "sha256": "dcd04d2b280c6f1c101f6d9cebde6c96ac6d25414bcead0c435bcc2877938272",
+        "size": 341
+      },
+      {
+        "path": "build/public-alpha/plan3-final-qa.json",
+        "sha256": "84e98acf41e52b930c598d04c84419abe394c16dc1b43945276ea050ef184a9d",
+        "size": 289
+      },
+      {
+        "path": "build/public-alpha/plan3-release-prep.json",
+        "sha256": "c741a651e18ec51d7d1724931b9bf163b2948a4af027d80262b045ba524b29ca",
+        "size": 341
+      }
+    ],
+    "typedBackendContractArtifacts": [
+      {
+        "path": "echo-native-contracts/build/libs/echo-native-contracts-1.0.5.jar",
+        "sha256": "d89e1b72ffc843c3225a313f5b4c8a8ea5544d0a007c99a87d87e98d63191de6",
+        "size": 359495
+      },
+      {
+        "path": "echo-native-contracts/build/libs/echo-native-contracts.jar",
+        "sha256": "d89e1b72ffc843c3225a313f5b4c8a8ea5544d0a007c99a87d87e98d63191de6",
+        "size": 359495
+      },
+      {
+        "path": "echo-native-loader/build/libs/echo-native-loader-1.0.5.jar",
+        "sha256": "27485602ea7c9f9b7b7b0d044ef12c85e6e34cf54100cbde9ecbb4b323aee137",
+        "size": 1154148
+      }
+    ]
+  },
+  "sdkValidation": {
+    "command": "python tools\\validate_echo_sdk_templates.py",
+    "status": "PASS",
+    "templateCount": 28,
+    "compileProofStatus": "static_only",
+    "compileProofResidual": "Generated fixtures are intentionally not registered into the real workspace; isolated NeoForge compile proof remains a future SDK harness task."
+  },
+  "standaloneValidation": {
+    "commands": [
+      {
+        "command": "node scripts\\docs-audit.mjs",
+        "status": "PASS"
+      },
+      {
+        "command": "node scripts\\test-generate-standalone-strict-play-evidence.mjs",
+        "status": "PASS"
+      }
+    ],
+    "reports": [
+      {
+        "path": "reports/echo/standalone/adaptercore-gameplay-bridge-parity-smoke.json",
+        "sha256": "8f23e6ba0c7ba0d55de320b548c6d401da95e2a3a1f0054a49ba8995e456bbb1",
+        "size": 9350
+      },
+      {
+        "path": "reports/echo/standalone/runtime-adaptercore-module-coverage.json",
+        "sha256": "f5da7390ed0ee894a21b259ad871aa2cba9a8547199f4122ab4af6da8bdf6971",
+        "size": 89755
+      },
+      {
+        "path": "reports/echo/standalone/runtime-adaptercore-module-blockers.json",
+        "sha256": "c7d255bac8c0daab11db28457eb84ada49f3044c5c0d5b2f342e8d349d9ca4c4",
+        "size": 442
+      }
+    ]
+  },
+  "validationCommands": [
+    {
+      "repo": "ECHO-Modules",
+      "command": ".\\gradlew.bat :echoadaptercore:runAdapterCoreTruthLayerSmoke :echoadaptercore:runAdapterCoreNativeLoaderRuntimeHostSmoke :echoadaptercore:runAdapterCoreRegistryParitySmoke :echoadaptercore:runAdapterCoreSpinePublisherSmoke :echoadaptercore:runModuleTruthLayerBootstrapSmoke :echoashfallprotocol:compileJava testGenerateAdapterCoreStrictPortAudit --console=plain",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": ".\\gradlew.bat :echoadaptercore:jar :echoashfallprotocol:jar --console=plain",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "node scripts\\generate-module-release.mjs --release-id adaptercore-receipt-spine-20260616 --out dist\\adaptercore-receipt-spine-release --module echoadaptercore --module echoashfallprotocol",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoadaptercore",
+      "status": "FAIL_EXPECTED_TOOLING_SCOPE_MISMATCH"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoashfallprotocol",
+      "status": "FAIL_EXPECTED_TOOLING_SCOPE_MISMATCH"
+    },
+    {
+      "repo": "ECHO-Native-Platform",
+      "command": ".\\gradlew.bat :echo-native-contracts:compileJava :echo-native-loader:compileJava :echo-native-contracts:jar :echo-native-loader:jar packagePublicAlphaRelease --console=plain",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-SDK",
+      "command": "python tools\\validate_echo_sdk_templates.py",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Standalone-Runtime",
+      "command": "node scripts\\docs-audit.mjs",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Standalone-Runtime",
+      "command": "node scripts\\test-generate-standalone-strict-play-evidence.mjs",
+      "status": "PASS"
+    }
+  ],
+  "residualRisks": [
+    "No ECHO-Release-Index installable artifact URL or checksum was moved because receipt-spine artifacts have not been published as GitHub release assets.",
+    "Targeted module-release verification currently reports a content-graph evidence count mismatch because the generator writes repository-wide evidence for a two-module packet.",
+    "SDK template compile proof remains static_only by design until the fixture harness registers isolated generated modules into a real workspace."
+  ]
+}

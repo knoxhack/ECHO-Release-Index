@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-15T19:47:14-04:00",
+  "generatedAt": "2026-06-15T20:33:10-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,16 +16,22 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "f15e1012cafb",
-        "commitDate": "2026-06-15T19:47:14-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "561a53afe419",
+        "commitDate": "2026-06-15T20:33:10-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-readiness/adaptercore-receipt-spine-release-evidence.json",
+          "?? release-readiness/modpack-module-artifact-drift.json",
+          "?? scripts/refresh-modpack-module-artifacts.mjs",
+          "?? scripts/test-verify-modpack-module-artifact-drift.mjs",
+          "?? scripts/verify-modpack-module-artifact-drift.mjs"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 24334,
+          "bytes": 24675,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -71,7 +77,7 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 314715,
+          "bytes": 315070,
           "summary": "release manifest v0.1.0-native-public-alpha; repositories: 24"
         },
         {
@@ -99,8 +105,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e440db910fb5",
-        "commitDate": "2026-06-15T19:42:21-04:00",
+        "commit": "2b42cbe60e18",
+        "commitDate": "2026-06-15T20:22:33-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -638,8 +644,14 @@
         "branch": "main",
         "commit": "76a4b5bbfcca",
         "commitDate": "2026-06-14T21:07:09-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
+          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-native-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-native-edition/echo-release.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -701,8 +713,14 @@
         "branch": "main",
         "commit": "4fdf4cfeb1f5",
         "commitDate": "2026-06-15T03:44:43-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-neoforge-edition/echo-release.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -750,8 +768,14 @@
         "branch": "main",
         "commit": "99eda57745fe",
         "commitDate": "2026-06-14T21:08:14-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/checksums.txt",
+          " M release-assets/v0.1.0-ashfall-standalone-edition/echo-release.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -799,8 +823,14 @@
         "branch": "main",
         "commit": "024c90fceecc",
         "commitDate": "2026-06-14T21:08:40-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-native-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-native-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-0.1.0.zip",
+          " M release-assets/v0.1.0-openlands-native-edition/openlands-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -855,8 +885,14 @@
         "branch": "main",
         "commit": "fc86dfbd2478",
         "commitDate": "2026-06-15T03:45:35-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.1-openlands-neoforge-edition/checksums.txt",
+          " M release-assets/v0.1.1-openlands-neoforge-edition/echo-release.json",
+          " M release-assets/v0.1.1-openlands-neoforge-edition/openlands-neoforge-edition-0.1.1.zip",
+          " M release-assets/v0.1.1-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.1.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -911,8 +947,14 @@
         "branch": "main",
         "commit": "0cb4b6651b8a",
         "commitDate": "2026-06-14T21:09:12-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/v0.1.0-openlands-standalone-edition/checksums.txt",
+          " M release-assets/v0.1.0-openlands-standalone-edition/echo-release.json",
+          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-0.1.0.zip",
+          " M release-assets/v0.1.0-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -967,8 +1009,14 @@
         "branch": "main",
         "commit": "524b00ea314a",
         "commitDate": "2026-06-14T21:09:31-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/arcana-division-native-1.0.0-beta/arcana-division-native-edition-1.0.0.zip",
+          " M release-assets/arcana-division-native-1.0.0-beta/arcana-division-native-edition-beta-1.0.0.pack.json",
+          " M release-assets/arcana-division-native-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-native-1.0.0-beta/echo-release.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1002,8 +1050,14 @@
         "branch": "main",
         "commit": "77ec9e4e1a4c",
         "commitDate": "2026-06-15T03:45:56-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-1.0.0.zip",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/arcana-division-neoforge-edition-beta-1.0.0.pack.json",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-neoforge-1.0.0-beta/echo-release.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1037,8 +1091,14 @@
         "branch": "main",
         "commit": "493ec107c813",
         "commitDate": "2026-06-14T21:10:01-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-1.0.0.zip",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/arcana-division-standalone-edition-beta-1.0.0.pack.json",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/checksums.txt",
+          " M release-assets/arcana-division-standalone-1.0.0-beta/echo-release.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1072,8 +1132,14 @@
         "branch": "main",
         "commit": "9c3b71012f80",
         "commitDate": "2026-06-14T21:10:25-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/sky-relay-native-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-native-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-0.1.0.zip",
+          " M release-assets/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1134,8 +1200,14 @@
         "branch": "main",
         "commit": "8d5e6ab13c9e",
         "commitDate": "2026-06-15T03:46:19-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-0.1.0.zip",
+          " M release-assets/sky-relay-neoforge-0.1.0-alpha/sky-relay-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1196,8 +1268,14 @@
         "branch": "main",
         "commit": "a7db63fe1563",
         "commitDate": "2026-06-14T21:11:07-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/checksums.txt",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/echo-release.json",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-0.1.0.zip",
+          " M release-assets/sky-relay-standalone-0.1.0-alpha/sky-relay-standalone-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1258,8 +1336,14 @@
         "branch": "main",
         "commit": "66ef85ffa145",
         "commitDate": "2026-06-14T21:11:27-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/galactic-survey-native-0.1.0-alpha/checksums.txt",
+          " M release-assets/galactic-survey-native-0.1.0-alpha/echo-release.json",
+          " M release-assets/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip",
+          " M release-assets/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1321,8 +1405,14 @@
         "branch": "main",
         "commit": "3600adbc9bc2",
         "commitDate": "2026-06-15T03:46:46-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/checksums.txt",
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/echo-release.json",
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/galactic-survey-neoforge-edition-0.1.0.zip",
+          " M release-assets/galactic-survey-neoforge-0.1.0-alpha/galactic-survey-neoforge-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1384,8 +1474,14 @@
         "branch": "main",
         "commit": "ad17d0607090",
         "commitDate": "2026-06-14T21:12:11-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/checksums.txt",
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/echo-release.json",
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-0.1.0.zip",
+          " M release-assets/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
+          " M release-manifest.template.json"
+        ]
       },
       "canonicalDocs": [
         {

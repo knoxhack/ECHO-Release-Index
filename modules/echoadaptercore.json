@@ -132,6 +132,17 @@
       "subjectChecksums": "echo-module-release.tar.gz.sha256"
     }
   },
+  "receiptSpineEvidence": {
+    "schemaVersion": "echo.adaptercore.receipt_spine.release_evidence.v1",
+    "status": "source-and-local-artifacts-validated",
+    "evidence": "release-readiness/adaptercore-receipt-spine-release-evidence.json",
+    "modulesCommitSha": "2b42cbe60e18d797d32ae3aa896f44f44ea357b3",
+    "nativePlatformCommitSha": "c0e7ed404620f476d9e338499cdc069a430de5e7",
+    "sdkCommitSha": "15d6f390d2c3f6241c2997d82c6dd7e7a826c7ea",
+    "standaloneRuntimeCommitSha": "5f5dbe5101aab5d21a723d9517e803f7d73a0e79",
+    "proofPolicy": "MUTATED requires NativeMutationReceipt; DIAGNOSTIC_ONLY, QUEUED_ONLY, and metadata-only evidence do not satisfy release proof.",
+    "publicArtifactPolicy": "Installable artifact coordinates stay pinned to releaseTag modules-content-graph-evidence-proof-20260615 until receipt-spine assets are published and download-smoked."
+  },
   "trust": "provenance-attested",
   "validation": "approved"
 }
