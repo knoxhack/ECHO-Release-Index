@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "echo.official_pack.launcher_lifecycle_smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-16T07:41:25.058Z",
+  "source": "live-github-release-assets",
+  "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
+  "downloadRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-downloads",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke",
+  "officialPackCount": 15,
+  "coveredPackCount": 3,
+  "editions": [
+    {
+      "status": "pass",
+      "repoName": "ECHO-Ashfall-Native-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
+      "packId": "ashfall-native-edition",
+      "pack": "ashfall-native-edition",
+      "releaseTag": "v0.1.0-ashfall-native-edition",
+      "validation": "warning",
+      "moduleArtifactFamily": "echo-addon",
+      "manifestAsset": "ashfall-native-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "ashfall-native-edition-0.1.0.zip",
+      "moduleCount": 46,
+      "fileCount": 46,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-native-edition-0.1.0.zip",
+          "sha256": "1d13b2622d79db2d544a15faad56cd1ab62eadd5461fce9eda3bbde5b46abd7f",
+          "size": 268234831,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-native-edition-alpha-0.1.0.pack.json",
+          "sha256": "2c4a409645b183d2aab6c9c11b7093652fc67ce2b116fb862eabde313dd1bc29",
+          "size": 60451,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "c82a718691b99df74746effb470ff0530f9952f7905ae972d117ebbab5a1b017",
+          "size": 379,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "f073e31df313d70ec76bd5a48d077c491d62543cd8d1a0abac159a5d5cd44213",
+          "size": 13237,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "18c88bbf6f2aa0ca6462f762dea8fb229f75b99494da60c3c227129435ca2ac1",
+          "size": 924,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-native-edition-0.1.0.zip",
+          "ashfall-native-edition-alpha-0.1.0.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 46
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-native-edition",
+          "resolved": true,
+          "artifact": "ashfall-native-edition-alpha-0.1.0.pack.json",
+          "dependencyCount": 46
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-native-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0.echo-addon",
+          "dependencyCount": 45
+        }
+      },
+      "install": {
+        "installed": 46,
+        "verifiedAfterInstall": 46
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 45,
+        "removed": 1,
+        "verifiedAfterUpdate": 46,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "addons/echoashfallprotocol-1.0.0.echo-addon",
+        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.0-previous-smoke",
+        "verifiedAfterRollback": 47
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 46
+      },
+      "repair": {
+        "repaired": "addons/echoashfallprotocol-1.0.0.echo-addon",
+        "verifiedAfterRepair": 46
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Native-Edition\\ashfall-native-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Ashfall-NeoForge-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
+      "packId": "ashfall-neoforge-edition",
+      "pack": "ashfall-neoforge-edition",
+      "releaseTag": "v0.1.0-ashfall-neoforge-edition",
+      "validation": "warning",
+      "moduleArtifactFamily": "neoforge",
+      "manifestAsset": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+      "artifactAsset": "ashfall-neoforge-edition-0.1.0.zip",
+      "moduleCount": 46,
+      "fileCount": 46,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-neoforge-edition-0.1.0.zip",
+          "sha256": "ec12fc20af0ea7e6d4b7fa16d4dcd09ebf59c07684840aadea879afe740755bc",
+          "size": 267976228,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+          "sha256": "3c6f801d4bc9ac2ee6dd957a8048fe5a1d770f1da24eecca13401c8a1ce395c9",
+          "size": 107129,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "a908b093af8a864faabc0fadb0083ac4f6ce3ffa2a5c3cab53edfad9809df4b5",
+          "size": 383,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "5afbeffd35d548effd1dd11e9fee2d8067aa8500b0f2adaa26a424b1eb8067b9",
+          "size": 13354,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "8b0bd3582faefd31b2beb6cbd43fba3df37ab633d61df624e09f60ef231f37b2",
+          "size": 937,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-neoforge-edition-0.1.0.zip",
+          "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 46
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-neoforge-edition",
+          "resolved": true,
+          "artifact": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
+          "dependencyCount": 46
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-neoforge-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0-neoforge.jar",
+          "dependencyCount": 45
+        }
+      },
+      "install": {
+        "installed": 46,
+        "verifiedAfterInstall": 46
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 45,
+        "removed": 1,
+        "verifiedAfterUpdate": 46,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-neoforge.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke",
+        "verifiedAfterRollback": 47
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 46
+      },
+      "repair": {
+        "repaired": "mods/echoashfallprotocol-1.0.0-neoforge.jar",
+        "verifiedAfterRepair": 46
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-NeoForge-Edition\\ashfall-neoforge-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Ashfall-Standalone-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
+      "packId": "ashfall-standalone-edition",
+      "pack": "ashfall-standalone-edition",
+      "releaseTag": "v0.1.0-ashfall-standalone-edition",
+      "validation": "warning",
+      "moduleArtifactFamily": "standalone",
+      "manifestAsset": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+      "artifactAsset": "ashfall-standalone-edition-0.1.0.zip",
+      "moduleCount": 46,
+      "fileCount": 46,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-standalone-edition-0.1.0.zip",
+          "sha256": "19a5f1f2e25a2882be8b89ed935c6f62178801898bc304120f651de4e91eb9a3",
+          "size": 267971658,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+          "sha256": "d86268c5887a98434565c5e83fc7a3b6738ac814ee435d1380944279a5ea5e78",
+          "size": 61370,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "4e14c6eba48a830554125ef1294661c601149540fc5d5271e7f65ea66b57e580",
+          "size": 394,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "6883fb9777f9e48b28ec72ab12577298849656a244ae06f8faba9bed88a2e4ab",
+          "size": 13593,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "28bc6062b5ff5bf96bc81d01074fe8e5793b62efa00bd4a5538bff10f6421ad6",
+          "size": 962,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-standalone-edition-0.1.0.zip",
+          "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 46
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-standalone-edition",
+          "resolved": true,
+          "artifact": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+          "dependencyCount": 46
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-standalone-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0-standalone.jar",
+          "dependencyCount": 45
+        }
+      },
+      "install": {
+        "installed": 46,
+        "verifiedAfterInstall": 46
+      },
+      "update": {
+        "fromVersion": "0.1.0-previous-smoke",
+        "toVersion": "0.1.0",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 45,
+        "removed": 1,
+        "verifiedAfterUpdate": 46,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.0-previous-smoke",
+        "verifiedAfterRollback": 47
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 46
+      },
+      "repair": {
+        "repaired": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "verifiedAfterRepair": 46
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Standalone-Edition\\ashfall-standalone-edition\\install"
+    }
+  ],
+  "gates": {
+    "liveReleaseAssetsDownloaded": "passed",
+    "releaseIndexCatalogMetadata": "passed",
+    "topLevelChecksums": "passed",
+    "packZipPayloadIntegrity": "passed",
+    "launcherReleaseIndexDeepLinks": "passed",
+    "launcherInstallFromPackZip": "passed",
+    "launcherUpdateReconciliation": "passed",
+    "launcherVersionTransitionUpdate": "passed_with_previous_version_fixture",
+    "launcherRollbackSimulatedUpdate": "passed_with_previous_version_fixture",
+    "launcherPostRollbackUpdate": "passed",
+    "launcherRepairCorruptFile": "passed",
+    "packagedElectronClickThrough": "covered_separately"
+  },
+  "blockers": [],
+  "residualRisks": [
+    "The previous version used for update and rollback is a fixture-local manifest derived from the current public pack plus one older-file placeholder; it proves launcher lifecycle mechanics without claiming a second public release exists for every lane.",
+    "This smoke exercises Launcher resolver and lifecycle contracts in Node. Packaged Electron click-through remains covered by the existing per-pack Electron UI and all-modpack install smokes."
+  ]
+}

@@ -19,6 +19,9 @@ function parseArgs(argv) {
     write: false,
     rebuildAssets: false,
     moduleDist: null,
+    only: null,
+    moduleRelease: DEFAULT_MODULE_RELEASE,
+    moduleSourceRevision: DEFAULT_MODULE_SOURCE_REVISION,
   }
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index]
@@ -31,6 +34,12 @@ function parseArgs(argv) {
     else if (arg === '--workspace-root') args.workspaceRoot = path.resolve(next())
     else if (arg === '--owner') args.owner = next()
     else if (arg === '--module-dist') args.moduleDist = path.resolve(next())
+    else if (arg === '--module-release') args.moduleRelease = next()
+    else if (arg === '--module-source-revision') args.moduleSourceRevision = next()
+    else if (arg === '--only') {
+      args.only ??= new Set()
+      next().split(',').map((item) => item.trim()).filter(Boolean).forEach((item) => args.only.add(item))
+    }
     else if (arg === '--write') args.write = true
     else if (arg === '--rebuild-assets') args.rebuildAssets = true
     else if (arg === '--help' || arg === '-h') args.help = true
@@ -47,6 +56,12 @@ Refreshes official modpack catalog metadata from each owning pack repo's
 release-assets/<tag> directory. With --rebuild-assets it first rewrites pack
 manifests, pack zips, echo-release.json, checksums.txt, and release-audit.json
 from the current Release Index module catalog.
+
+Options:
+  --only <id[,id]>         Limit refresh to modpack IDs or source repo names.
+  --module-release <id>    Module release label embedded when rebuilding assets.
+  --module-source-revision <text>
+                           Module source revision label embedded when rebuilding assets.
 `
 }
 
@@ -308,8 +323,8 @@ async function rebuildPackAssets(args, row, modules) {
     generatedBy: 'scripts/rebuild-official-modpack-assets',
     validation: row.modpack.validation,
     manifestAsset: template.manifestAsset,
-    moduleRelease: DEFAULT_MODULE_RELEASE,
-    moduleSourceRevision: DEFAULT_MODULE_SOURCE_REVISION,
+    moduleRelease: args.moduleRelease,
+    moduleSourceRevision: args.moduleSourceRevision,
     moduleRequirements: requirements,
     files: requirements.map((requirement) => ({ ...requirement })),
     modules: requirements.map((requirement) => requirement.id),
@@ -468,7 +483,14 @@ async function main() {
   }
   if (!args.write) throw new Error('This script edits release metadata; rerun with --write.')
 
-  const rows = await loadOfficialModpacks(args.root)
+  const rows = (await loadOfficialModpacks(args.root)).filter((row) => {
+    if (!args.only) return true
+    const repoName = row.modpack.sourceRepo.split('/').at(-1)
+    return args.only.has(row.modpack.id) || args.only.has(repoName)
+  })
+  if (args.only && rows.length === 0) {
+    throw new Error(`No official modpacks matched --only ${[...args.only].join(', ')}.`)
+  }
   const modules = await loadModules(args.root)
   const results = []
   for (const row of rows) {

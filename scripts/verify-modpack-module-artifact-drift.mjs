@@ -6,7 +6,7 @@ import process from 'node:process'
 const DEFAULT_OWNER = 'knoxhack'
 
 function parseArgs(argv) {
-  const args = { root: process.cwd(), owner: DEFAULT_OWNER, strict: false, live: false, write: false }
+  const args = { root: process.cwd(), owner: DEFAULT_OWNER, strict: false, live: false, write: false, out: null, only: null }
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index]
     const next = () => {
@@ -19,6 +19,11 @@ function parseArgs(argv) {
     else if (arg === '--strict') args.strict = true
     else if (arg === '--live') args.live = true
     else if (arg === '--write') args.write = true
+    else if (arg === '--out') args.out = next()
+    else if (arg === '--only') {
+      args.only ??= new Set()
+      next().split(',').map((item) => item.trim()).filter(Boolean).forEach((item) => args.only.add(item))
+    }
     else if (arg === '--help' || arg === '-h') args.help = true
     else throw new Error(`Unknown argument: ${arg}`)
   }
@@ -26,7 +31,7 @@ function parseArgs(argv) {
 }
 
 function usage() {
-  return `Usage: node scripts/verify-modpack-module-artifact-drift.mjs [--strict] [--live] [--write]
+  return `Usage: node scripts/verify-modpack-module-artifact-drift.mjs [--strict] [--live] [--write] [--only <id[,id]>] [--out <path>]
 
 Verifies official pack manifests are pinned to the current Release Index module
 artifact URLs, sizes, and SHA-256 hashes.
@@ -195,7 +200,14 @@ async function main() {
   }
 
   const modules = await loadModules(args.root)
-  const rows = await loadModpackRows(args.root, args.owner)
+  const rows = (await loadModpackRows(args.root, args.owner)).filter((row) => {
+    if (!args.only) return true
+    const repoName = row.modpack.sourceRepo.split('/').at(-1)
+    return args.only.has(row.modpack.id) || args.only.has(repoName)
+  })
+  if (args.only && rows.length === 0) {
+    throw new Error(`No official modpacks matched --only ${[...args.only].join(', ')}.`)
+  }
   const reports = []
   for (const row of rows) reports.push(await auditRow(args, row, modules))
   const blockers = reports.flatMap((report) => report.blockers.map((blocker) => `${report.id}: ${blocker}`))
@@ -211,7 +223,12 @@ async function main() {
     modpacks: reports,
   }
 
-  if (args.write) await writeJson(path.join(args.root, 'release-readiness', 'modpack-module-artifact-drift.json'), report)
+  if (args.write || args.out) {
+    const output = args.out
+      ? (path.isAbsolute(args.out) ? args.out : path.join(args.root, args.out))
+      : path.join(args.root, 'release-readiness', 'modpack-module-artifact-drift.json')
+    await writeJson(output, report)
+  }
   if (blockers.length) {
     console.error(`Modpack module artifact drift failed with ${blockers.length} blocker(s):`)
     for (const blocker of blockers) console.error(`- ${blocker}`)
