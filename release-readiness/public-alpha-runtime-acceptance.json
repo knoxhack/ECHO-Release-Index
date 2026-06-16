@@ -1,0 +1,406 @@
+{
+  "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
+  "generatedAt": "2026-06-16T19:36:41.923Z",
+  "status": "warn",
+  "releaseIndexCatalogCommit": "4a27fb0864d4eaafcd0d84be60803bbd92a9d6b3",
+  "summary": {
+    "hardGateCount": 10,
+    "hardGatePassCount": 10,
+    "hardGateFailureCount": 0,
+    "gameplayWarningCount": 5,
+    "conclusion": "Catalog convergence, install, handoff, lifecycle, and content graph runtime gates are green; real gameplay proof remains warning-gated."
+  },
+  "moduleEvidence": {
+    "canonicalReleaseTag": "modules-canonical-full-20260616",
+    "expectedModuleRows": 133,
+    "distribution": [
+      {
+        "releaseTag": "modules-canonical-full-20260616",
+        "moduleCount": 133,
+        "artifactCount": 666,
+        "contentGraphArtifactCount": 134,
+        "contentGraphEvidenceArtifactCount": 1
+      }
+    ],
+    "hytale": {
+      "runtimeSupported": false,
+      "evidenceOnly": true,
+      "expectedBlockerCount": 9,
+      "observedBlockerCount": 9,
+      "note": "Hytale evidence remains export planning only; no UI should present playable/runtime Hytale support."
+    }
+  },
+  "hardGates": [
+    {
+      "name": "public-alpha-live-channel",
+      "status": "pass",
+      "sourceReport": "release-readiness/public-alpha-live-channel-proof.json",
+      "generatedAt": "2026-06-16T18:45:20.084Z",
+      "artifactCount": 827,
+      "failedArtifactCount": 0,
+      "totalVerifiedBytes": 6186178088,
+      "moduleEvidenceDistribution": [
+        {
+          "releaseTag": "modules-canonical-full-20260616",
+          "moduleCount": 133,
+          "artifactCount": 666,
+          "contentGraphArtifactCount": 134,
+          "contentGraphEvidenceArtifactCount": 1
+        }
+      ]
+    },
+    {
+      "name": "content-graph-release-proof",
+      "status": "pass",
+      "sourceReport": "release-readiness/content-graph-evidence-release-proof.json",
+      "generatedAt": "2026-06-16T16:47:19.167Z",
+      "moduleRelease": "modules-canonical-full-20260616",
+      "counts": {
+        "graphCount": 133,
+        "moduleCount": 133,
+        "nodeCount": 4392,
+        "edgeCount": 5911,
+        "featureCount": 1469,
+        "exportPlanCount": 532,
+        "hytaleBlockerCount": 9
+      },
+      "catalogComposition": {
+        "moduleRows": 133,
+        "primaryReleaseTag": "modules-canonical-full-20260616",
+        "primaryReleaseModuleRows": 133,
+        "alternateEvidenceReleases": []
+      }
+    },
+    {
+      "name": "modpack-module-artifact-drift",
+      "status": "pass",
+      "sourceReport": "release-readiness/modpack-module-artifact-drift.json",
+      "generatedAt": "2026-06-16T18:37:50.162Z",
+      "checkedManifestCount": null
+    },
+    {
+      "name": "all-modpacks-pipeline-audit",
+      "status": "pass",
+      "sourceReport": "release-readiness/all-modpacks-pipeline-audit.json",
+      "generatedAt": "2026-06-16T18:46:04.591Z",
+      "summary": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "name": "official-pack-launcher-lifecycle",
+      "status": "pass",
+      "sourceReport": "release-readiness/official-pack-launcher-lifecycle-smoke.json",
+      "generatedAt": "2026-06-16T18:53:28.019Z",
+      "officialPackCount": 15,
+      "coveredPackCount": 15,
+      "passCount": 15,
+      "updateCount": 15,
+      "rollbackCount": 15,
+      "repairCount": 15
+    },
+    {
+      "name": "all-modpacks-electron-install-handoff",
+      "status": "pass",
+      "sourceReport": "release-readiness/all-modpacks-electron-install-smoke.json",
+      "generatedAt": "2026-06-16T18:53:47.747Z",
+      "expectedPackCount": 15,
+      "observedPackCount": 15,
+      "families": [
+        {
+          "family": "Arcana Division",
+          "packCount": 3
+        },
+        {
+          "family": "Ashfall",
+          "packCount": 3
+        },
+        {
+          "family": "Galactic Survey",
+          "packCount": 3
+        },
+        {
+          "family": "Openlands",
+          "packCount": 3
+        },
+        {
+          "family": "Sky Relay",
+          "packCount": 3
+        }
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packCount": 5
+        },
+        {
+          "lane": "neoforge",
+          "packCount": 5
+        },
+        {
+          "lane": "standalone",
+          "packCount": 5
+        }
+      ],
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-canonical-full-20260616",
+          "packCount": 15,
+          "moduleCount": 633,
+          "fileCount": 633
+        }
+      ]
+    },
+    {
+      "name": "all-native-modpacks-runtime-load",
+      "status": "pass",
+      "sourceReport": "release-readiness/all-native-modpacks-runtime-load-smoke.json",
+      "generatedAt": "2026-06-16T19:07:55.014Z",
+      "expectedPackCount": 5,
+      "observedPackCount": 5,
+      "families": [
+        {
+          "family": "Arcana Division",
+          "packCount": 1
+        },
+        {
+          "family": "Ashfall",
+          "packCount": 1
+        },
+        {
+          "family": "Galactic Survey",
+          "packCount": 1
+        },
+        {
+          "family": "Openlands",
+          "packCount": 1
+        },
+        {
+          "family": "Sky Relay",
+          "packCount": 1
+        }
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packCount": 5
+        }
+      ],
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-canonical-full-20260616",
+          "packCount": 5,
+          "moduleCount": 211,
+          "fileCount": 211
+        }
+      ]
+    },
+    {
+      "name": "ashfall-electron-install-handoff-repair",
+      "status": "pass",
+      "sourceReport": "release-readiness/ashfall-electron-install-handoff-smoke.json",
+      "generatedAt": "2026-06-16T19:24:24.932Z",
+      "expectedPackCount": 2,
+      "observedPackCount": 2,
+      "families": [
+        {
+          "family": "Ashfall",
+          "packCount": 2
+        }
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packCount": 1
+        },
+        {
+          "lane": "neoforge",
+          "packCount": 1
+        }
+      ],
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-canonical-full-20260616",
+          "packCount": 2,
+          "moduleCount": 92,
+          "fileCount": 92
+        }
+      ]
+    },
+    {
+      "name": "native-content-graph-evidence-gate",
+      "status": "pass",
+      "sourceReport": "release-readiness/content-graph-evidence-release-proof.json",
+      "generatedAt": "2026-06-16T16:47:19.167Z",
+      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-canonical-full-20260616 runNativeContentGraphEvidenceGate --console=plain",
+      "result": "Native content graph evidence gate exited 0 against canonical evidence: modules=133 nodes=4392 edges=5911 features=1469 exportPlans=532 hytaleBlockers=9."
+    },
+    {
+      "name": "standalone-content-graph-load-smoke",
+      "status": "pass",
+      "sourceReport": "../ECHO-Standalone-Runtime/reports/echo/standalone/content-graph-load.json",
+      "generatedAt": null,
+      "schemaVersion": "echo.standalone.content_graph_load_smoke.v1",
+      "evidenceSchemaVersion": "echo.content_graph.evidence.v1",
+      "graphs": 133,
+      "moduleCount": 133,
+      "nodes": 4392,
+      "edges": 5911,
+      "features": 1469,
+      "exportPlans": 532,
+      "hytaleBlockedNodes": 9,
+      "checked": 23,
+      "failures": 0
+    }
+  ],
+  "gameplayMatrix": [
+    {
+      "family": "Ashfall",
+      "status": "warn",
+      "sourceReport": "release-readiness/ashfall-lane-game-smoke.json",
+      "generatedAt": "2026-06-16T19:07:44.938Z",
+      "laneCount": 3,
+      "blockerCount": 41,
+      "lanes": [
+        {
+          "packId": "ashfall-native-edition",
+          "lane": "native",
+          "status": "warn",
+          "blockerCount": 14,
+          "blockers": [
+            "46 module file(s) listed in the installed manifest are missing on disk.",
+            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+            "Missing gameplay proof: mainMenuNativeReplacement",
+            "Missing gameplay proof: worldCreatedOrLoaded",
+            "Missing gameplay proof: hudVisible",
+            "Missing gameplay proof: inventoryIndexVisible",
+            "Missing gameplay proof: terminalVisible",
+            "Missing gameplay proof: holomapVisible",
+            "Missing gameplay proof: lensVisible",
+            "Missing gameplay proof: creativeTabVisible",
+            "Missing gameplay proof: creativeTabSearchVisible",
+            "Missing gameplay proof: creativeItemSelectable",
+            "Missing gameplay proof: creativeItemPlayable",
+            "Missing gameplay proof: saveReloadVerified"
+          ],
+          "crashReport": null,
+          "evidencePresent": false
+        },
+        {
+          "packId": "ashfall-neoforge-edition",
+          "lane": "neoforge",
+          "status": "warn",
+          "blockerCount": 12,
+          "blockers": [
+            "Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+            "Missing gameplay proof: hudVisible",
+            "Missing gameplay proof: inventoryIndexVisible",
+            "Missing gameplay proof: terminalVisible",
+            "Missing gameplay proof: holomapVisible",
+            "Missing gameplay proof: lensVisible",
+            "Missing gameplay proof: creativeTabVisible",
+            "Missing gameplay proof: creativeTabSearchVisible",
+            "Missing gameplay proof: creativeItemSelectable",
+            "Missing gameplay proof: creativeItemPlayable",
+            "Missing gameplay proof: saveReloadVerified"
+          ],
+          "crashReport": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+          "evidencePresent": false
+        },
+        {
+          "packId": "ashfall-standalone-edition",
+          "lane": "standalone",
+          "status": "warn",
+          "blockerCount": 15,
+          "blockers": [
+            "Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
+            "No runtime log file found under the instance logs directory.",
+            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+            "Missing gameplay proof: clientStarted",
+            "Missing gameplay proof: worldCreatedOrLoaded",
+            "Missing gameplay proof: hudVisible",
+            "Missing gameplay proof: inventoryIndexVisible",
+            "Missing gameplay proof: terminalVisible",
+            "Missing gameplay proof: holomapVisible",
+            "Missing gameplay proof: lensVisible",
+            "Missing gameplay proof: creativeTabVisible",
+            "Missing gameplay proof: creativeTabSearchVisible",
+            "Missing gameplay proof: creativeItemSelectable",
+            "Missing gameplay proof: creativeItemPlayable",
+            "Missing gameplay proof: saveReloadVerified"
+          ],
+          "crashReport": null,
+          "evidencePresent": false
+        }
+      ],
+      "conclusion": "Ashfall install/handoff is proven, but real launch/world/UI/creative gameplay proof is not accepted yet."
+    },
+    {
+      "family": "Sky Relay",
+      "status": "warn",
+      "sourceReport": "release-readiness/sky-relay-electron-ui-smoke.json",
+      "current": false,
+      "blockerCount": 1,
+      "blockers": [
+        "Current UI smoke rerun timed out waiting for a scoped Update action after catalog convergence; install/handoff proof is current, gameplay route proof needs an updated current-state smoke."
+      ],
+      "conclusion": "Current UI smoke rerun timed out waiting for a scoped Update action after catalog convergence; install/handoff proof is current, gameplay route proof needs an updated current-state smoke."
+    },
+    {
+      "family": "Galactic Survey",
+      "status": "warn",
+      "sourceReport": "release-readiness/galactic-survey-electron-ui-smoke.json",
+      "current": false,
+      "blockerCount": 1,
+      "blockers": [
+        "Only older UI/gameplay evidence reports exist; rerun or update the gameplay smoke against the converged catalog."
+      ],
+      "conclusion": "Only older UI/gameplay evidence reports exist; rerun or update the gameplay smoke against the converged catalog."
+    },
+    {
+      "family": "Openlands",
+      "status": "warn",
+      "sourceReport": null,
+      "current": false,
+      "blockerCount": 1,
+      "blockers": [
+        "No current Openlands gameplay smoke report exists; install/handoff and content graph load are proven, but in-game proof is still required."
+      ],
+      "conclusion": "No current Openlands gameplay smoke report exists; install/handoff and content graph load are proven, but in-game proof is still required."
+    },
+    {
+      "family": "Arcana Division",
+      "status": "warn",
+      "sourceReport": null,
+      "current": false,
+      "blockerCount": 1,
+      "blockers": [
+        "No current Arcana Division gameplay smoke report exists; install/handoff is proven, but in-game proof is still required."
+      ],
+      "conclusion": "No current Arcana Division gameplay smoke report exists; install/handoff is proven, but in-game proof is still required."
+    }
+  ],
+  "recoveryAndLifecycle": {
+    "sourceReport": "release-readiness/official-pack-launcher-lifecycle-smoke.json",
+    "installUpdateRollbackRepairCovered": true,
+    "officialPackCount": 15,
+    "coveredPackCount": 15,
+    "passCount": 15,
+    "updateCount": 15,
+    "rollbackCount": 15,
+    "repairCount": 15
+  },
+  "nextRequiredProof": [
+    "Update Sky Relay and Galactic Survey UI/gameplay smokes so current/no-update catalog state is accepted explicitly instead of timing out on an obsolete Update button expectation.",
+    "Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.",
+    "Resolve Ashfall NeoForge client renderer crash before treating gameplay as release-green.",
+    "Keep Native and Standalone content graph gates required, with any canonical evidence mismatch failing release readiness."
+  ]
+}
