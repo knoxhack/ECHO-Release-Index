@@ -1,7 +1,7 @@
 {
   "ok": true,
   "phase": "completed",
-  "generatedAt": "2026-06-16T08:15:55.812Z",
+  "generatedAt": "2026-06-16T08:28:08.471Z",
   "channelUrl": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
   "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
@@ -9,6 +9,21 @@
   "userDataDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data",
   "playerContentRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content",
   "minecraftRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root",
+  "moduleEvidenceSources": {
+    "primaryReleaseTag": "modules-content-graph-evidence-repro-20260616",
+    "releaseTagDistribution": [
+      {
+        "releaseTag": "modules-content-graph-evidence-repro-20260616",
+        "moduleRows": 87,
+        "releaseSourceState": "full-release-evidence"
+      },
+      {
+        "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+        "moduleRows": 46,
+        "releaseSourceState": "partial-hotfix-evidence"
+      }
+    ]
+  },
   "expectedPackCount": 2,
   "expectedPacks": [
     "ashfall-native-edition",
@@ -18,7 +33,7 @@
     {
       "profileId": "ashfall-native-edition",
       "name": "Ashfall Native Edition",
-      "startedAt": "2026-06-16T08:15:57.135Z",
+      "startedAt": "2026-06-16T08:28:11.634Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
@@ -27,7 +42,7 @@
           "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-16T08:15:57.197Z",
+          "fetchedAt": "2026-06-16T08:28:11.716Z",
           "status": "approved",
           "diagnostic": null,
           "release": {
@@ -39,7 +54,7 @@
             "name": "ashfall-native-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-16T08:15:57.022Z",
+            "publishedAt": "2026-06-16T08:28:11.549Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition",
             "releaseNotes": [
               "Resolved through the warning-gated Catalog entry ashfall-native-edition."
@@ -129,14 +144,22 @@
         "clicked": true,
         "label": "Install Ashfall Native Edition"
       },
-      "completedAt": "2026-06-16T08:17:04.389Z",
-      "durationMs": 67254,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-15-57-668Z.json",
+      "completedAt": "2026-06-16T08:29:09.440Z",
+      "durationMs": 57806,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-28-12-923Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-native-edition",
       "manifestVersion": "0.1.0",
       "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 46,
+          "moduleCount": 46
+        }
+      ],
       "repairFixture": {
         "skipped": false,
         "path": "addons/echoadaptercore-1.0.0.echo-addon",
@@ -160,7 +183,7 @@
           "ok": true,
           "repaired": 1,
           "verifiedAfterRepair": 46,
-          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-16-19-860Z.json"
+          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-28-34-437Z.json"
         },
         "nativeRuntime": {
           "ok": true,
@@ -185,7 +208,7 @@
     {
       "profileId": "ashfall-neoforge-edition",
       "name": "Ashfall NeoForge Edition",
-      "startedAt": "2026-06-16T08:17:04.392Z",
+      "startedAt": "2026-06-16T08:29:09.442Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
@@ -194,7 +217,7 @@
           "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-16T08:17:04.493Z",
+          "fetchedAt": "2026-06-16T08:29:32.817Z",
           "status": "approved",
           "diagnostic": null,
           "release": {
@@ -206,7 +229,7 @@
             "name": "ashfall-neoforge-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-16T08:15:57.381Z",
+            "publishedAt": "2026-06-16T08:28:11.925Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition",
             "releaseNotes": [
               "Resolved through the warning-gated Catalog entry ashfall-neoforge-edition."
@@ -296,14 +319,22 @@
         "clicked": true,
         "label": "Install Ashfall NeoForge Edition"
       },
-      "completedAt": "2026-06-16T08:17:37.795Z",
-      "durationMs": 33403,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-17-04-987Z.json",
+      "completedAt": "2026-06-16T08:30:05.341Z",
+      "durationMs": 55899,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-29-33-269Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-neoforge-edition",
       "manifestVersion": "0.1.0",
       "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 46,
+          "moduleCount": 46
+        }
+      ],
       "repairFixture": {
         "skipped": false,
         "path": "mods/echoadaptercore-1.0.0-neoforge.jar",
@@ -327,7 +358,7 @@
           "ok": true,
           "repaired": 1,
           "verifiedAfterRepair": 46,
-          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-17-27-634Z.json"
+          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T08-29-54-761Z.json"
         },
         "nativeRuntime": null,
         "staleNeoForgeMetadata": null,
@@ -341,11 +372,11 @@
   "stdout": [
     "\r\n",
     "Checking for update\n",
-    "Generated new staging user ID: e114fc95-e906-526d-b525-a094c9fd4691\n",
+    "Generated new staging user ID: 4313980c-1e10-5e18-8fe6-cf7d9564afa2\n",
     "Update for version 1.1.14 is not available (latest version: 1.1.14, downgrade is disallowed).\n"
   ],
   "stderr": [
-    "\r\nDevTools listening on ws://127.0.0.1:64355/devtools/browser/077046fc-d294-4700-b6b9-425037213fe0\r\n"
+    "\r\nDevTools listening on ws://127.0.0.1:65215/devtools/browser/e518a75b-4002-4f13-a564-5db5435e81d2\r\n"
   ],
-  "completedAt": "2026-06-16T08:17:37.796Z"
+  "completedAt": "2026-06-16T08:30:05.344Z"
 }
