@@ -162,41 +162,38 @@ function summarizeLifecycle(report) {
   }
 }
 
-function gameplayEntryFromAshfall(report) {
-  const lanes = (report?.lanes ?? []).map((lane) => ({
-    packId: lane.packId,
-    lane: lane.lane,
-    status: lane.ok ? 'pass' : 'warn',
-    blockerCount: lane.blockers?.length ?? 0,
-    blockers: lane.blockers ?? [],
-    crashReport: lane.crashReport?.path ?? null,
-    evidencePresent: lane.evidence?.present === true,
+function gameplayMatrixFromAcceptance(report) {
+  if (!report) {
+    return [{
+      family: 'Public Alpha',
+      status: 'blocked',
+      sourceReport: 'release-readiness/gameplay-acceptance-matrix.json',
+      current: false,
+      blockerCount: 1,
+      blockers: ['Gameplay acceptance matrix is missing. Run node scripts/verify-gameplay-acceptance.mjs before generating public-alpha runtime acceptance.'],
+      conclusion: 'Gameplay acceptance has not been generated.',
+    }]
+  }
+  return (report.families ?? []).map((family) => ({
+    family: family.family,
+    status: family.status === 'pass' ? 'pass' : 'blocked',
+    sourceReports: family.sourceReports ?? [],
+    current: family.status === 'pass',
+    laneCount: family.laneCount ?? 0,
+    passedLaneCount: family.passedLaneCount ?? 0,
+    blockerCount: family.blockerCount ?? 0,
+    blockerSample: (family.blockers ?? []).slice(0, 20),
+    lanes: (family.lanes ?? []).map((lane) => ({
+      lane: lane.lane,
+      packId: lane.packId,
+      status: lane.status,
+      blockerCount: lane.blockerCount ?? 0,
+      evidencePresent: lane.evidencePresent ?? null,
+      openTaskCount: lane.openTaskCount ?? null,
+      crashReport: lane.crashReport ?? null,
+    })),
+    conclusion: family.conclusion ?? null,
   }))
-  const blockerCount = report?.blockers?.length ?? lanes.reduce((sum, lane) => sum + lane.blockerCount, 0)
-  return {
-    family: 'Ashfall',
-    status: blockerCount === 0 && report?.ok === true ? 'pass' : 'warn',
-    sourceReport: 'release-readiness/ashfall-lane-game-smoke.json',
-    generatedAt: report?.generatedAt ?? null,
-    laneCount: lanes.length,
-    blockerCount,
-    lanes,
-    conclusion: blockerCount === 0
-      ? 'Ashfall gameplay proof is current.'
-      : 'Ashfall install/handoff is proven, but real launch/world/UI/creative gameplay proof is not accepted yet.',
-  }
-}
-
-function staleGameplayEntry(family, sourceReport, reason) {
-  return {
-    family,
-    status: 'warn',
-    sourceReport,
-    current: false,
-    blockerCount: 1,
-    blockers: [reason],
-    conclusion: reason,
-  }
 }
 
 async function gitHead(repoRoot) {
@@ -228,7 +225,7 @@ async function main() {
   const allModpacks = await readJson(reportPath('all-modpacks-electron-install-smoke.json'))
   const allNative = await readJson(reportPath('all-native-modpacks-runtime-load-smoke.json'))
   const ashfallHandoff = await readJson(reportPath('ashfall-electron-install-handoff-smoke.json'))
-  const ashfallGameplay = await readJson(reportPath('ashfall-lane-game-smoke.json'), { optional: true })
+  const gameplayAcceptance = await readJson(reportPath('gameplay-acceptance-matrix.json'), { optional: true })
   const standaloneReportPath = path.resolve(args.root, '..', 'ECHO-Standalone-Runtime', 'reports', 'echo', 'standalone', 'content-graph-load.json')
   const standalone = await readJson(standaloneReportPath, { optional: true })
   const releaseIndexHead = await gitHead(args.root)
@@ -387,29 +384,7 @@ async function main() {
     },
   ))
 
-  const gameplayMatrix = [
-    gameplayEntryFromAshfall(ashfallGameplay),
-    staleGameplayEntry(
-      'Sky Relay',
-      'release-readiness/sky-relay-electron-ui-smoke.json',
-      'Current UI smoke rerun timed out waiting for a scoped Update action after catalog convergence; install/handoff proof is current, gameplay route proof needs an updated current-state smoke.',
-    ),
-    staleGameplayEntry(
-      'Galactic Survey',
-      'release-readiness/galactic-survey-electron-ui-smoke.json',
-      'Only older UI/gameplay evidence reports exist; rerun or update the gameplay smoke against the converged catalog.',
-    ),
-    staleGameplayEntry(
-      'Openlands',
-      null,
-      'No current Openlands gameplay smoke report exists; install/handoff and content graph load are proven, but in-game proof is still required.',
-    ),
-    staleGameplayEntry(
-      'Arcana Division',
-      null,
-      'No current Arcana Division gameplay smoke report exists; install/handoff is proven, but in-game proof is still required.',
-    ),
-  ]
+  const gameplayMatrix = gameplayMatrixFromAcceptance(gameplayAcceptance)
 
   const hardFailures = gates.filter((gate) => gate.status === 'fail')
   const gameplayWarnings = gameplayMatrix.filter((entry) => entry.status !== 'pass')
@@ -444,6 +419,16 @@ async function main() {
       },
     },
     hardGates: gates,
+    gameplayAcceptance: {
+      sourceReport: 'release-readiness/gameplay-acceptance-matrix.json',
+      present: Boolean(gameplayAcceptance),
+      schemaVersion: gameplayAcceptance?.schemaVersion ?? null,
+      status: gameplayAcceptance?.status ?? null,
+      generatedAt: gameplayAcceptance?.generatedAt ?? null,
+      strictReady: gameplayAcceptance?.strictReady === true,
+      summary: gameplayAcceptance?.summary ?? null,
+      transportEvidence: gameplayAcceptance?.transportEvidence ?? [],
+    },
     gameplayMatrix,
     recoveryAndLifecycle: {
       sourceReport: 'release-readiness/official-pack-launcher-lifecycle-smoke.json',
@@ -451,7 +436,7 @@ async function main() {
       ...summarizeLifecycle(lifecycle),
     },
     nextRequiredProof: [
-      'Update Sky Relay and Galactic Survey UI/gameplay smokes so current/no-update catalog state is accepted explicitly instead of timing out on an obsolete Update button expectation.',
+      'Regenerate gameplay acceptance after current Sky Relay and Galactic Survey UI smokes are rerun with current/no-update catalog-state support.',
       'Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.',
       'Resolve Ashfall NeoForge client renderer crash before treating gameplay as release-green.',
       'Keep Native and Standalone content graph gates required, with any canonical evidence mismatch failing release readiness.',

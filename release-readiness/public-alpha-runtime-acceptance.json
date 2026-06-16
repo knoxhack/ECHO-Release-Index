@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-16T19:40:20.563Z",
+  "generatedAt": "2026-06-16T20:25:40.288Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "015c2d6b841b1b82faffddbcf0a603d06140babd",
+  "releaseIndexHeadAtGeneration": "d57facb66e41a5cc68262abbe170032fbe6d0c13",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -83,7 +83,7 @@
       "name": "all-modpacks-pipeline-audit",
       "status": "pass",
       "sourceReport": "release-readiness/all-modpacks-pipeline-audit.json",
-      "generatedAt": "2026-06-16T18:46:04.591Z",
+      "generatedAt": "2026-06-16T20:07:39.035Z",
       "summary": {
         "total": 15,
         "passed": 15,
@@ -95,7 +95,7 @@
       "name": "official-pack-launcher-lifecycle",
       "status": "pass",
       "sourceReport": "release-readiness/official-pack-launcher-lifecycle-smoke.json",
-      "generatedAt": "2026-06-16T18:53:28.019Z",
+      "generatedAt": "2026-06-16T20:13:25.121Z",
       "officialPackCount": 15,
       "coveredPackCount": 15,
       "passCount": 15,
@@ -260,132 +260,386 @@
       "failures": 0
     }
   ],
+  "gameplayAcceptance": {
+    "sourceReport": "release-readiness/gameplay-acceptance-matrix.json",
+    "present": true,
+    "schemaVersion": "echo.gameplay.acceptance.v1",
+    "status": "BLOCKED",
+    "generatedAt": "2026-06-16T20:25:37.285Z",
+    "strictReady": false,
+    "summary": {
+      "familyCount": 5,
+      "laneCount": 15,
+      "passedFamilyCount": 0,
+      "blockedFamilyCount": 5,
+      "passedLaneCount": 0,
+      "blockerCount": 376,
+      "transportProofCount": 2,
+      "acceptedTransportProofCount": 2,
+      "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
+    },
+    "transportEvidence": [
+      {
+        "family": "Sky Relay",
+        "sourceReport": "release-readiness/sky-relay-electron-ui-smoke.json",
+        "status": "pass",
+        "ok": true,
+        "generatedAt": "2026-06-14T13:16:35.170Z",
+        "update": {
+          "operation": "update",
+          "observedAction": null,
+          "acceptedAction": null,
+          "currentCatalogState": null,
+          "reconciliationMode": null,
+          "verifiedModule": true
+        },
+        "blocker": null
+      },
+      {
+        "family": "Galactic Survey",
+        "sourceReport": "release-readiness/galactic-survey-electron-ui-smoke.json",
+        "status": "pass",
+        "ok": true,
+        "generatedAt": "2026-06-14T02:46:09.787Z",
+        "update": {
+          "operation": "update",
+          "observedAction": null,
+          "acceptedAction": null,
+          "currentCatalogState": null,
+          "reconciliationMode": null,
+          "verifiedModule": true
+        },
+        "blocker": null
+      }
+    ]
+  },
   "gameplayMatrix": [
     {
       "family": "Ashfall",
-      "status": "warn",
-      "sourceReport": "release-readiness/ashfall-lane-game-smoke.json",
-      "generatedAt": "2026-06-16T19:07:44.938Z",
-      "laneCount": 3,
-      "blockerCount": 41,
-      "lanes": [
+      "status": "blocked",
+      "sourceReports": [
         {
-          "packId": "ashfall-native-edition",
-          "lane": "native",
-          "status": "warn",
-          "blockerCount": 14,
-          "blockers": [
-            "46 module file(s) listed in the installed manifest are missing on disk.",
-            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-            "Missing gameplay proof: mainMenuNativeReplacement",
-            "Missing gameplay proof: worldCreatedOrLoaded",
-            "Missing gameplay proof: hudVisible",
-            "Missing gameplay proof: inventoryIndexVisible",
-            "Missing gameplay proof: terminalVisible",
-            "Missing gameplay proof: holomapVisible",
-            "Missing gameplay proof: lensVisible",
-            "Missing gameplay proof: creativeTabVisible",
-            "Missing gameplay proof: creativeTabSearchVisible",
-            "Missing gameplay proof: creativeItemSelectable",
-            "Missing gameplay proof: creativeItemPlayable",
-            "Missing gameplay proof: saveReloadVerified"
-          ],
-          "crashReport": null,
-          "evidencePresent": false
-        },
-        {
-          "packId": "ashfall-neoforge-edition",
-          "lane": "neoforge",
-          "status": "warn",
-          "blockerCount": 12,
-          "blockers": [
-            "Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
-            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-            "Missing gameplay proof: hudVisible",
-            "Missing gameplay proof: inventoryIndexVisible",
-            "Missing gameplay proof: terminalVisible",
-            "Missing gameplay proof: holomapVisible",
-            "Missing gameplay proof: lensVisible",
-            "Missing gameplay proof: creativeTabVisible",
-            "Missing gameplay proof: creativeTabSearchVisible",
-            "Missing gameplay proof: creativeItemSelectable",
-            "Missing gameplay proof: creativeItemPlayable",
-            "Missing gameplay proof: saveReloadVerified"
-          ],
-          "crashReport": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
-          "evidencePresent": false
-        },
-        {
-          "packId": "ashfall-standalone-edition",
-          "lane": "standalone",
-          "status": "warn",
-          "blockerCount": 15,
-          "blockers": [
-            "Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
-            "No runtime log file found under the instance logs directory.",
-            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-            "Missing gameplay proof: clientStarted",
-            "Missing gameplay proof: worldCreatedOrLoaded",
-            "Missing gameplay proof: hudVisible",
-            "Missing gameplay proof: inventoryIndexVisible",
-            "Missing gameplay proof: terminalVisible",
-            "Missing gameplay proof: holomapVisible",
-            "Missing gameplay proof: lensVisible",
-            "Missing gameplay proof: creativeTabVisible",
-            "Missing gameplay proof: creativeTabSearchVisible",
-            "Missing gameplay proof: creativeItemSelectable",
-            "Missing gameplay proof: creativeItemPlayable",
-            "Missing gameplay proof: saveReloadVerified"
-          ],
-          "crashReport": null,
-          "evidencePresent": false
+          "path": "release-readiness/ashfall-lane-game-smoke.json",
+          "present": true,
+          "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
+          "status": "BLOCKED",
+          "generatedAt": "2026-06-16T19:07:44.938Z"
         }
       ],
-      "conclusion": "Ashfall install/handoff is proven, but real launch/world/UI/creative gameplay proof is not accepted yet."
+      "current": false,
+      "laneCount": 3,
+      "passedLaneCount": 0,
+      "blockerCount": 41,
+      "blockerSample": [
+        "ashfall-native-edition: 46 module file(s) listed in the installed manifest are missing on disk.",
+        "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
+        "ashfall-native-edition: Missing gameplay proof: worldCreatedOrLoaded",
+        "ashfall-native-edition: Missing gameplay proof: hudVisible",
+        "ashfall-native-edition: Missing gameplay proof: inventoryIndexVisible",
+        "ashfall-native-edition: Missing gameplay proof: terminalVisible",
+        "ashfall-native-edition: Missing gameplay proof: holomapVisible",
+        "ashfall-native-edition: Missing gameplay proof: lensVisible",
+        "ashfall-native-edition: Missing gameplay proof: creativeTabVisible",
+        "ashfall-native-edition: Missing gameplay proof: creativeTabSearchVisible",
+        "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable",
+        "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable",
+        "ashfall-native-edition: Missing gameplay proof: saveReloadVerified",
+        "ashfall-neoforge-edition: Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+        "ashfall-neoforge-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "ashfall-neoforge-edition: Missing gameplay proof: hudVisible",
+        "ashfall-neoforge-edition: Missing gameplay proof: inventoryIndexVisible",
+        "ashfall-neoforge-edition: Missing gameplay proof: terminalVisible",
+        "ashfall-neoforge-edition: Missing gameplay proof: holomapVisible"
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packId": "ashfall-native-edition",
+          "status": "blocked",
+          "blockerCount": 14,
+          "evidencePresent": false,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "neoforge",
+          "packId": "ashfall-neoforge-edition",
+          "status": "blocked",
+          "blockerCount": 12,
+          "evidencePresent": false,
+          "openTaskCount": null,
+          "crashReport": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt"
+        },
+        {
+          "lane": "standalone",
+          "packId": "ashfall-standalone-edition",
+          "status": "blocked",
+          "blockerCount": 15,
+          "evidencePresent": false,
+          "openTaskCount": null,
+          "crashReport": null
+        }
+      ],
+      "conclusion": "Ashfall install/handoff evidence exists, but gameplay acceptance remains blocked by lane-level proof gaps."
     },
     {
       "family": "Sky Relay",
-      "status": "warn",
-      "sourceReport": "release-readiness/sky-relay-electron-ui-smoke.json",
-      "current": false,
-      "blockerCount": 1,
-      "blockers": [
-        "Current UI smoke rerun timed out waiting for a scoped Update action after catalog convergence; install/handoff proof is current, gameplay route proof needs an updated current-state smoke."
+      "status": "blocked",
+      "sourceReports": [
+        {
+          "path": "release-readiness/sky-relay-gameplay-evidence.json",
+          "present": true,
+          "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
+          "status": "BLOCKED",
+          "generatedAt": "2026-06-11T20:48:21.346Z"
+        },
+        {
+          "path": "release-readiness/sky-relay-manual-gameplay-work-order.json",
+          "present": true,
+          "schemaVersion": "echo.skyrelay.manual-gameplay-work-order.v1",
+          "status": "OPEN",
+          "generatedAt": "2026-06-11T21:57:54.434Z"
+        }
       ],
-      "conclusion": "Current UI smoke rerun timed out waiting for a scoped Update action after catalog convergence; install/handoff proof is current, gameplay route proof needs an updated current-state smoke."
+      "current": false,
+      "laneCount": 3,
+      "passedLaneCount": 0,
+      "blockerCount": 90,
+      "blockerSample": [
+        "native manual evidence run.startedAt must not use the template timestamp.",
+        "native manual evidence run.tester must be filled with real capture information.",
+        "native manual evidence run.worldOrProfile must be filled with real capture information.",
+        "native manual evidence sessions.fresh_world_creation must not use template timestamps.",
+        "native manual evidence sessions.first_30_minutes must not use template timestamps.",
+        "native manual evidence sessions.first_2_hours must not use template timestamps.",
+        "native manual evidence sessions.signal_crown_completion must not use template timestamps.",
+        "native manual evidence sessions.save_reload_verification must not use template timestamps.",
+        "native manual evidence sessions.no_crash_review must not use template timestamps.",
+        "native manual evidence claim realFirst30Playthrough must be true.",
+        "native manual evidence claim realFirst2HourPlaythrough must be true.",
+        "native manual evidence claim realSignalCrownPlaythrough must be true.",
+        "native manual evidence claim freshWorldCreated must be true.",
+        "native manual evidence claim saveReloadVerified must be true.",
+        "native manual evidence claim noCrashEvidence must be true.",
+        "native.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
+        "native.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
+        "native.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
+        "native.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
+        "native.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md"
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packId": "sky-relay-native-edition",
+          "status": "blocked",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "neoforge",
+          "packId": "sky-relay-neoforge-edition",
+          "status": "blocked",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "standalone",
+          "packId": "sky-relay-standalone-edition",
+          "status": "blocked",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        }
+      ],
+      "conclusion": "Sky Relay gameplay acceptance remains blocked by manual evidence work-order gaps."
     },
     {
       "family": "Galactic Survey",
-      "status": "warn",
-      "sourceReport": "release-readiness/galactic-survey-electron-ui-smoke.json",
-      "current": false,
-      "blockerCount": 1,
-      "blockers": [
-        "Only older UI/gameplay evidence reports exist; rerun or update the gameplay smoke against the converged catalog."
+      "status": "blocked",
+      "sourceReports": [
+        {
+          "path": "release-readiness/galactic-survey-public-alpha-readiness.json",
+          "present": true,
+          "schemaVersion": "echo.galactic_survey.public-alpha-readiness.v1",
+          "status": "BLOCKED",
+          "generatedAt": "2026-06-13T18:23:04.738Z"
+        },
+        {
+          "path": "release-readiness/galactic-survey-manual-gameplay-work-order.json",
+          "present": true,
+          "schemaVersion": "echo.galactic_survey.manual-gameplay-work-order.v1",
+          "status": "OPEN",
+          "generatedAt": "2026-06-13T18:23:57.846Z"
+        }
       ],
-      "conclusion": "Only older UI/gameplay evidence reports exist; rerun or update the gameplay smoke against the converged catalog."
+      "current": false,
+      "laneCount": 3,
+      "passedLaneCount": 0,
+      "blockerCount": 237,
+      "blockerSample": [
+        "phase 10 Full Progression And Release: packaged Electron first launch/open-play proof must pass through a real Native runtime path or official Minecraft Launcher handoff",
+        "phase 10 Full Progression And Release: first-launch/open-play evidence report must be imported from a real capture",
+        "phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing",
+        "phase 10 Full Progression And Release: galactic-survey-neoforge-edition release-ready gameplay evidence is still missing",
+        "phase 10 Full Progression And Release: galactic-survey-standalone-edition release-ready gameplay evidence is still missing",
+        "phase 10 Full Progression And Release: real first-30-minute, first-2-hour, Survey Array, save/reload, and no-crash evidence is not present",
+        "Galactic Survey native: Manual gameplay work order status is open.",
+        "phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true.",
+        "manualEvidence claim saveReloadVerified must be true.",
+        "manualEvidence claim noCrashEvidence must be true."
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packId": "galactic-survey-native-edition",
+          "status": "blocked",
+          "blockerCount": 77,
+          "evidencePresent": null,
+          "openTaskCount": 9,
+          "crashReport": null
+        },
+        {
+          "lane": "neoforge",
+          "packId": "galactic-survey-neoforge-edition",
+          "status": "blocked",
+          "blockerCount": 77,
+          "evidencePresent": null,
+          "openTaskCount": 9,
+          "crashReport": null
+        },
+        {
+          "lane": "standalone",
+          "packId": "galactic-survey-standalone-edition",
+          "status": "blocked",
+          "blockerCount": 77,
+          "evidencePresent": null,
+          "openTaskCount": 9,
+          "crashReport": null
+        }
+      ],
+      "conclusion": "Galactic Survey gameplay acceptance remains blocked by manual evidence work-order gaps."
     },
     {
       "family": "Openlands",
-      "status": "warn",
-      "sourceReport": null,
-      "current": false,
-      "blockerCount": 1,
-      "blockers": [
-        "No current Openlands gameplay smoke report exists; install/handoff and content graph load are proven, but in-game proof is still required."
+      "status": "blocked",
+      "sourceReports": [
+        {
+          "path": "release-readiness/openlands-gameplay-evidence.json",
+          "present": false,
+          "schemaVersion": null,
+          "status": null,
+          "generatedAt": null
+        }
       ],
-      "conclusion": "No current Openlands gameplay smoke report exists; install/handoff and content graph load are proven, but in-game proof is still required."
+      "current": false,
+      "laneCount": 3,
+      "passedLaneCount": 0,
+      "blockerCount": 4,
+      "blockerSample": [
+        "Openlands gameplay evidence report is missing.",
+        "Openlands native: Missing gameplay evidence lane.",
+        "Openlands neoforge: Missing gameplay evidence lane.",
+        "Openlands standalone: Missing gameplay evidence lane."
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packId": "openlands-native-edition",
+          "status": "missing",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "neoforge",
+          "packId": "openlands-neoforge-edition",
+          "status": "missing",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "standalone",
+          "packId": "openlands-standalone-edition",
+          "status": "missing",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        }
+      ],
+      "conclusion": "Openlands gameplay acceptance has no release-ready real gameplay evidence yet."
     },
     {
       "family": "Arcana Division",
-      "status": "warn",
-      "sourceReport": null,
-      "current": false,
-      "blockerCount": 1,
-      "blockers": [
-        "No current Arcana Division gameplay smoke report exists; install/handoff is proven, but in-game proof is still required."
+      "status": "blocked",
+      "sourceReports": [
+        {
+          "path": "release-readiness/arcana-division-gameplay-evidence.json",
+          "present": false,
+          "schemaVersion": null,
+          "status": null,
+          "generatedAt": null
+        }
       ],
-      "conclusion": "No current Arcana Division gameplay smoke report exists; install/handoff is proven, but in-game proof is still required."
+      "current": false,
+      "laneCount": 3,
+      "passedLaneCount": 0,
+      "blockerCount": 4,
+      "blockerSample": [
+        "Arcana Division gameplay evidence report is missing.",
+        "Arcana Division native: Missing gameplay evidence lane.",
+        "Arcana Division neoforge: Missing gameplay evidence lane.",
+        "Arcana Division standalone: Missing gameplay evidence lane."
+      ],
+      "lanes": [
+        {
+          "lane": "native",
+          "packId": "arcana-division-native-edition",
+          "status": "missing",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "neoforge",
+          "packId": "arcana-division-neoforge-edition",
+          "status": "missing",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        },
+        {
+          "lane": "standalone",
+          "packId": "arcana-division-standalone-edition",
+          "status": "missing",
+          "blockerCount": 1,
+          "evidencePresent": null,
+          "openTaskCount": null,
+          "crashReport": null
+        }
+      ],
+      "conclusion": "Arcana Division gameplay acceptance has no release-ready real gameplay evidence yet."
     }
   ],
   "recoveryAndLifecycle": {
@@ -399,7 +653,7 @@
     "repairCount": 15
   },
   "nextRequiredProof": [
-    "Update Sky Relay and Galactic Survey UI/gameplay smokes so current/no-update catalog state is accepted explicitly instead of timing out on an obsolete Update button expectation.",
+    "Regenerate gameplay acceptance after current Sky Relay and Galactic Survey UI smokes are rerun with current/no-update catalog-state support.",
     "Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.",
     "Resolve Ashfall NeoForge client renderer crash before treating gameplay as release-green.",
     "Keep Native and Standalone content graph gates required, with any canonical evidence mismatch failing release readiness."

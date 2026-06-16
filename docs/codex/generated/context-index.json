@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-16T14:42:36-04:00",
+  "generatedAt": "2026-06-16T16:31:06-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,27 +16,22 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "5e8105b8edc4",
-        "commitDate": "2026-06-16T12:47:42-04:00",
+        "commit": "bf3b831a40c0",
+        "commitDate": "2026-06-16T16:31:06-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M release-readiness/all-modpacks-electron-install-smoke.json",
-          " M release-readiness/all-modpacks-pipeline-audit.json",
-          " M release-readiness/all-native-modpacks-runtime-load-smoke.json",
-          " M release-readiness/ashfall-electron-install-handoff-smoke.json",
-          " M release-readiness/modpack-module-artifact-drift.json",
-          " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
-          " M release-readiness/public-alpha-live-channel-proof.json",
-          "?? release-readiness/ashfall-lane-game-smoke.json",
-          "?? release-readiness/public-alpha-runtime-acceptance.json",
-          "?? scripts/generate-public-alpha-runtime-acceptance.mjs"
+          " M release-readiness/public-alpha-runtime-acceptance.json",
+          " M scripts/generate-public-alpha-runtime-acceptance.mjs",
+          "?? release-readiness/gameplay-acceptance-matrix.json",
+          "?? scripts/test-verify-gameplay-acceptance.mjs",
+          "?? scripts/verify-gameplay-acceptance.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 25655,
+          "bytes": 26309,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -268,8 +263,11 @@
         "branch": "main",
         "commit": "5cf6a0e181b7",
         "commitDate": "2026-06-16T12:43:19-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M scripts/galactic-survey-electron-ui-smoke.mjs",
+          " M scripts/sky-relay-electron-ui-smoke.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -378,13 +376,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "4b7aafa63fb5",
-        "commitDate": "2026-06-16T12:47:00-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M data/module-source-manifest.json",
-          " M data/sdk-docs-manifest.json"
-        ]
+        "commit": "3cd98f00652d",
+        "commitDate": "2026-06-16T15:39:39-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -806,8 +801,10 @@
         "branch": "main",
         "commit": "7038f3c40e93",
         "commitDate": "2026-06-16T11:43:26-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -862,8 +859,10 @@
         "branch": "main",
         "commit": "6cc77cc07f73",
         "commitDate": "2026-06-16T11:43:27-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -918,8 +917,10 @@
         "branch": "main",
         "commit": "c4b7f5b1a012",
         "commitDate": "2026-06-16T11:43:28-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -974,8 +975,10 @@
         "branch": "main",
         "commit": "65146514fc16",
         "commitDate": "2026-06-16T11:43:15-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1009,8 +1012,10 @@
         "branch": "main",
         "commit": "5892c0f67069",
         "commitDate": "2026-06-16T11:43:16-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1044,8 +1049,10 @@
         "branch": "main",
         "commit": "4e2e163f11ca",
         "commitDate": "2026-06-16T11:43:17-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1079,8 +1086,10 @@
         "branch": "main",
         "commit": "fb1a810c5755",
         "commitDate": "2026-06-16T11:43:29-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1113,7 +1122,10 @@
         },
         {
           "path": "docs/gameplay-evidence.md",
-          "exists": false
+          "exists": true,
+          "bytes": 1017,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Sky Relay Native Edition cannot be promoted as gameplay-ready from Launcher install evidence, content graph evidence, or runtime load evidence alone."
         },
         {
           "path": "docs/module-requirements.md",
@@ -1125,9 +1137,7 @@
       ],
       "agentDocs": [],
       "metadata": [],
-      "warnings": [
-        "ECHO-Sky-Relay-Native-Edition missing canonical doc docs/gameplay-evidence.md"
-      ]
+      "warnings": []
     },
     {
       "id": "sky-relay-neoforge",
@@ -1141,8 +1151,10 @@
         "branch": "main",
         "commit": "0209a1ebb8c4",
         "commitDate": "2026-06-16T11:43:31-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1175,7 +1187,10 @@
         },
         {
           "path": "docs/gameplay-evidence.md",
-          "exists": false
+          "exists": true,
+          "bytes": 1021,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Sky Relay NeoForge Edition cannot be promoted as gameplay-ready from Launcher install evidence, content graph evidence, or runtime load evidence alone."
         },
         {
           "path": "docs/module-requirements.md",
@@ -1187,9 +1202,7 @@
       ],
       "agentDocs": [],
       "metadata": [],
-      "warnings": [
-        "ECHO-Sky-Relay-NeoForge-Edition missing canonical doc docs/gameplay-evidence.md"
-      ]
+      "warnings": []
     },
     {
       "id": "sky-relay-standalone",
@@ -1203,8 +1216,10 @@
         "branch": "main",
         "commit": "46426d75fde4",
         "commitDate": "2026-06-16T11:43:32-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          "?? docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1237,7 +1252,10 @@
         },
         {
           "path": "docs/gameplay-evidence.md",
-          "exists": false
+          "exists": true,
+          "bytes": 1025,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Sky Relay Standalone Edition cannot be promoted as gameplay-ready from Launcher install evidence, content graph evidence, or runtime load evidence alone."
         },
         {
           "path": "docs/module-requirements.md",
@@ -1249,9 +1267,7 @@
       ],
       "agentDocs": [],
       "metadata": [],
-      "warnings": [
-        "ECHO-Sky-Relay-Standalone-Edition missing canonical doc docs/gameplay-evidence.md"
-      ]
+      "warnings": []
     },
     {
       "id": "galactic-survey-native",
@@ -1265,8 +1281,10 @@
         "branch": "main",
         "commit": "a6f97c9fbe11",
         "commitDate": "2026-06-16T11:43:23-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1300,7 +1318,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 4633,
+          "bytes": 4796,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey Native Edition cannot be promoted from preview metadata until"
         },
@@ -1328,8 +1346,10 @@
         "branch": "main",
         "commit": "936d276149bf",
         "commitDate": "2026-06-16T11:43:24-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1363,7 +1383,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 4637,
+          "bytes": 4800,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey NeoForge Edition cannot be promoted from preview metadata until"
         },
@@ -1391,8 +1411,10 @@
         "branch": "main",
         "commit": "09fcaf2ee7ef",
         "commitDate": "2026-06-16T11:43:25-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/gameplay-evidence.md"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1426,7 +1448,7 @@
         {
           "path": "docs/gameplay-evidence.md",
           "exists": true,
-          "bytes": 4641,
+          "bytes": 4804,
           "heading": "Gameplay Evidence",
           "excerpt": "Galactic Survey Standalone Edition cannot be promoted from preview metadata until"
         },
@@ -1447,9 +1469,6 @@
     "ECHO-Native-Platform-RC1-3d6e810"
   ],
   "warnings": [
-    "ECHO-Sky-Relay-Native-Edition missing canonical doc docs/gameplay-evidence.md",
-    "ECHO-Sky-Relay-NeoForge-Edition missing canonical doc docs/gameplay-evidence.md",
-    "ECHO-Sky-Relay-Standalone-Edition missing canonical doc docs/gameplay-evidence.md",
     "Unconfigured local ECHO repository ECHO-Native-Platform-RC1-3d6e810"
   ]
 }
