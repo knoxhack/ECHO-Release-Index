@@ -14,6 +14,7 @@ jobs:
           node-version: 22
       - run: node scripts/docs-audit.mjs
       - run: node scripts/validate-index.mjs --strict
+      - run: node scripts/verify-content-graph-release-proof.mjs
       - name: Check Codex context when sibling ECHO repos are present
         shell: bash
         run: |
@@ -24,6 +25,7 @@ jobs:
           fi
       - run: node scripts/sync-public-alpha-index.mjs --check
       - run: node scripts/test-validate-index.mjs
+      - run: node scripts/test-verify-content-graph-release-proof.mjs
       - run: node scripts/test-sync-public-alpha-index.mjs
       - run: node scripts/test-verify-artifact-urls.mjs
       - run: node scripts/test-build-public-alpha-assets.mjs
@@ -37,6 +39,7 @@ jobs:
       - run: node --check scripts/import-module-release.mjs
       - run: node --check scripts/public-alpha-common.mjs
       - run: node --check scripts/sync-public-alpha-index.mjs
+      - run: node --check scripts/verify-content-graph-release-proof.mjs
       - run: node --check scripts/verify-artifact-urls.mjs
       - run: node --check scripts/test-verify-artifact-urls.mjs
       - run: node --check scripts/build-public-alpha-assets.mjs
