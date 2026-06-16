@@ -185,11 +185,18 @@ async function auditRow(args, row, modules) {
   if (manifest.artifactName && row.modpack.artifacts?.pack?.file && manifest.artifactName !== row.modpack.artifacts.pack.file) {
     blockers.push(`${row.modpack.id} manifest artifactName ${manifest.artifactName} does not match catalog pack file ${row.modpack.artifacts.pack.file}.`)
   }
+  const recordPackArtifactMismatch = (message) => {
+    if (skipped.length > 0) {
+      warnings.push(`${message} Pack artifact metadata is deferred until this lane is republished or re-indexed with the current module catalog rows.`)
+    } else {
+      blockers.push(message)
+    }
+  }
   if (manifest.artifactSha256 && row.modpack.artifacts?.pack?.sha256 && manifest.artifactSha256 !== row.modpack.artifacts.pack.sha256) {
-    blockers.push(`${row.modpack.id} manifest artifactSha256 does not match catalog pack sha256.`)
+    recordPackArtifactMismatch(`${row.modpack.id} manifest artifactSha256 does not match catalog pack sha256.`)
   }
   if (manifest.artifactSize && row.modpack.artifacts?.pack?.size && manifest.artifactSize !== row.modpack.artifacts.pack.size) {
-    blockers.push(`${row.modpack.id} manifest artifactSize does not match catalog pack size.`)
+    recordPackArtifactMismatch(`${row.modpack.id} manifest artifactSize does not match catalog pack size.`)
   }
 
   return {
@@ -200,6 +207,7 @@ async function auditRow(args, row, modules) {
     moduleArtifactFamily: manifest.moduleArtifactFamily,
     moduleCount: checked.length,
     skippedModuleCount: skipped.length,
+    deferredPackArtifactMetadata: skipped.length > 0,
     status: blockers.length ? 'fail' : warnings.length ? 'warning' : 'pass',
     blockers,
     warnings,
@@ -235,6 +243,7 @@ async function main() {
     failingModpackCount: reports.filter((entry) => entry.status === 'fail').length,
     warningModpackCount: reports.filter((entry) => entry.status === 'warning').length,
     skippedModuleComparisonCount: reports.reduce((total, entry) => total + (entry.skippedModuleCount ?? 0), 0),
+    deferredPackArtifactMetadataCount: reports.filter((entry) => entry.deferredPackArtifactMetadata).length,
     blockers,
     modpacks: reports,
   }

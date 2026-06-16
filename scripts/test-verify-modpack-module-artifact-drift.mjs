@@ -101,8 +101,8 @@ await fs.writeFile(path.join(otherReleaseDir, 'other.pack.json'), JSON.stringify
   loader: 'echo-native-loader',
   moduleArtifactFamily: 'echo-addon',
   artifactName: 'other.zip',
-  artifactSha256: 'b'.repeat(64),
-  artifactSize: 1,
+  artifactSha256: 'e'.repeat(64),
+  artifactSize: 2,
   moduleRequirements: [
     {
       id: 'echofixture',
@@ -132,12 +132,29 @@ await fs.writeFile(path.join(otherReleaseDir, 'other.pack.json'), JSON.stringify
     },
   ],
 }, null, 2))
-const compatibilityScoped = spawnSync(process.execPath, [path.resolve('scripts/verify-modpack-module-artifact-drift.mjs'), '--root', root, '--strict'], {
+const compatibilityReportPath = path.join(root, 'compatibility-report.json')
+const compatibilityScoped = spawnSync(process.execPath, [
+  path.resolve('scripts/verify-modpack-module-artifact-drift.mjs'),
+  '--root',
+  root,
+  '--strict',
+  '--out',
+  compatibilityReportPath,
+], {
   cwd: path.resolve('C:/Development/Github/ECHO-Release-Index'),
   encoding: 'utf8',
 })
 assert.equal(compatibilityScoped.status, 0, compatibilityScoped.stderr)
 assert.match(compatibilityScoped.stdout, /2 official pack manifest/u)
+const compatibilityReport = JSON.parse(await fs.readFile(compatibilityReportPath, 'utf8'))
+assert.equal(compatibilityReport.status, 'pass')
+assert.equal(compatibilityReport.warningModpackCount, 1)
+assert.equal(compatibilityReport.skippedModuleComparisonCount, 1)
+assert.equal(compatibilityReport.deferredPackArtifactMetadataCount, 1)
+const otherReport = compatibilityReport.modpacks.find((entry) => entry.id === 'other-native-edition')
+assert.equal(otherReport.status, 'warning')
+assert.match(otherReport.warnings.join('\n'), /artifactSha256/u)
+assert.match(otherReport.warnings.join('\n'), /artifactSize/u)
 
 const manifestPath = path.join(releaseDir, 'fixture.pack.json')
 const payload = JSON.parse(await fs.readFile(manifestPath, 'utf8'))
