@@ -1,21 +1,21 @@
 {
   "schemaVersion": "echo.adaptercore.receipt_spine.release_evidence.v1",
   "evidenceId": "adaptercore-receipt-spine-20260616",
-  "generatedAt": "2026-06-16T00:33:19.674Z",
-  "status": "source-and-local-artifacts-validated",
+  "generatedAt": "2026-06-16T01:10:18.663Z",
+  "status": "published-and-download-smoked",
   "scope": {
     "primaryModule": "echoadaptercore",
     "canonicalProofConsumer": "echoashfallprotocol",
-    "publishMode": "direct-main-local-evidence",
-    "publicCatalogCoordinatesUpdated": false,
-    "releaseIndexInstallMetadataPolicy": "Do not move releaseTag, artifact URLs, or installable checksums until GitHub release assets are published and download-smoked."
+    "publishMode": "direct-main-published-release-assets",
+    "publicCatalogCoordinatesUpdated": true,
+    "releaseIndexInstallMetadataPolicy": "Catalog coordinates moved after GitHub release assets were published and download-smoked."
   },
   "sourceCommits": {
-    "modules": "2b42cbe60e18d797d32ae3aa896f44f44ea357b3",
+    "modules": "a62694cc0d6dab2d5b219efb148e376599452275",
     "nativePlatform": "c0e7ed404620f476d9e338499cdc069a430de5e7",
     "sdk": "15d6f390d2c3f6241c2997d82c6dd7e7a826c7ea",
     "standaloneRuntime": "5f5dbe5101aab5d21a723d9517e803f7d73a0e79",
-    "releaseIndexBase": "089d721946255603a68dcee42dead0e6a194b21c"
+    "releaseIndexBase": "bc6bf1bce26dfce1d1f181e3df417f559ff7432a"
   },
   "proofPolicy": {
     "mutatedRequiresReceipt": true,
@@ -36,24 +36,24 @@
     "releaseId": "adaptercore-receipt-spine-20260616",
     "releaseManifest": {
       "path": "dist/adaptercore-receipt-spine-release/echo-release.json",
-      "sha256": "0417bff9614a4368211fc90279c0eb3e1093ee13b327c06db02e400ce748aa93",
-      "size": 9841
+      "sha256": "259b8d6213d65692ddd6c6448346fe3727bc371d36d64fee7cf4792b4d911ec8",
+      "size": 11470
     },
     "checksumFiles": [
       {
         "path": "dist/adaptercore-receipt-spine-release/checksums.sha256",
-        "sha256": "66e7c9ecc2a73dc43ff1e23fec737feb94ce8b27e2d15e91c614f1a251ea4de7",
+        "sha256": "d757c1d0d84c663f3644ede8c4e1b6172f67e8fb1a8a3bfab44823e963ff8e77",
         "size": 160522
       },
       {
         "path": "dist/adaptercore-receipt-spine-release/checksums.txt",
-        "sha256": "66e7c9ecc2a73dc43ff1e23fec737feb94ce8b27e2d15e91c614f1a251ea4de7",
+        "sha256": "d757c1d0d84c663f3644ede8c4e1b6172f67e8fb1a8a3bfab44823e963ff8e77",
         "size": 160522
       }
     ],
     "contentGraphEvidence": {
       "path": "dist/adaptercore-receipt-spine-release/content-graph-evidence.json",
-      "sha256": "24e7b9ed7a94b19c87930d4221fa45a648314a8125ad33bacb655f175949edc9",
+      "sha256": "7b24ed9a64fffd614a797c43120da12f2718cda525fc6812834ed6aa6be8fe62",
       "size": 63475
     },
     "modules": [
@@ -74,45 +74,45 @@
             "kind": "neoforge",
             "runtimeTarget": "neoforge",
             "buildMode": "compiled-runtime",
-            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-neoforge.jar",
             "filename": "echoadaptercore-1.0.0-neoforge.jar",
-            "sha256": "89c9e7c68d6ed283e13bb274b6039a20dc3d1e39d98413de8d97a613e04a94ce",
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-neoforge.jar",
+            "sha256": "06e762775bab4ae85178d8ce8af4ad0065fb95aa033841c8290d9b756b84fb21",
             "size": 970532
           },
           {
             "kind": "standalone",
             "runtimeTarget": "standalone",
             "buildMode": "compiled-runtime",
-            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-standalone.jar",
             "filename": "echoadaptercore-1.0.0-standalone.jar",
-            "sha256": "89c9e7c68d6ed283e13bb274b6039a20dc3d1e39d98413de8d97a613e04a94ce",
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-standalone.jar",
+            "sha256": "06e762775bab4ae85178d8ce8af4ad0065fb95aa033841c8290d9b756b84fb21",
             "size": 970532
           },
           {
             "kind": "echo-addon",
             "runtimeTarget": "echo-native",
             "buildMode": "compiled-runtime",
-            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0.echo-addon",
             "filename": "echoadaptercore-1.0.0.echo-addon",
-            "sha256": "a4e33070e484ce85752eca239b9b1c877780f81c05f25712391de1391bbd4fec",
-            "size": 841133
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0.echo-addon",
+            "sha256": "909cc422566f138e65ad927e33775cff20f3caef963181ebd7c3716f711cfbf9",
+            "size": 841135
           },
           {
             "kind": "sources",
             "runtimeTarget": "sources",
             "buildMode": null,
-            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-sources.jar",
             "filename": "echoadaptercore-1.0.0-sources.jar",
-            "sha256": "e376d5f68077b06b022b4ba9fad73163c22ec4c08d217afb5312624e999f5869",
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-sources.jar",
+            "sha256": "0f898819d3c357f2af8c55d36934efbba3150e9c5fe6c91b046fc1ff8aa6e0aa",
             "size": 384893
           },
           {
             "kind": "content-graph",
             "runtimeTarget": "content-graph",
             "buildMode": "generated",
-            "path": "dist/adaptercore-receipt-spine-release/echoadaptercore/echoadaptercore-1.0.0-content-graph.json",
             "filename": "echoadaptercore-1.0.0-content-graph.json",
-            "sha256": "d21205c40b8649723ba63f19a0d9bb9faa1b3b7bd49c64924eabb5bfb4a6b3fb",
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-content-graph.json",
+            "sha256": "549f51beb6aece8c6f2a0c388105eea11378d55ff187aa28d1c95fd46f777fdb",
             "size": 31761
           }
         ]
@@ -158,60 +158,57 @@
             "kind": "neoforge",
             "runtimeTarget": "neoforge",
             "buildMode": "compiled-runtime",
-            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-neoforge.jar",
             "filename": "echoashfallprotocol-1.0.0-neoforge.jar",
-            "sha256": "79d004d8c23435b62b5fac86390ff4b95a7ee8d4744358582c6e8eb9aba7d0e1",
-            "size": 59412089
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-neoforge.jar",
+            "sha256": "5f781e41f0414fd9ffd2ee71f2c1b78f132b03baa7c9a15ee9c52ce73cc8acdf",
+            "size": 59411986
           },
           {
             "kind": "standalone",
             "runtimeTarget": "standalone",
             "buildMode": "compiled-runtime",
-            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-standalone.jar",
             "filename": "echoashfallprotocol-1.0.0-standalone.jar",
-            "sha256": "da805f85f54acffd2fe91910cfc4cf1ce85f08e7de1391831c3d29594ecc4401",
-            "size": 59412089
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-standalone.jar",
+            "sha256": "984c74837dee0154b00c2c0ebc144c177b2e2c5913dccadf7de25390d26bb0e5",
+            "size": 59411986
           },
           {
             "kind": "echo-addon",
             "runtimeTarget": "echo-native",
             "buildMode": "compiled-runtime",
-            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0.echo-addon",
             "filename": "echoashfallprotocol-1.0.0.echo-addon",
-            "sha256": "c6e6f2d7e87a11ebce1d447fc9ae5f24135373af19e7f70864627f3eb3de24a2",
-            "size": 58675421
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0.echo-addon",
+            "sha256": "6dd8d325cd54744c993104288f59ff6f80e33644487e53da73397cd4252175b8",
+            "size": 58675321
           },
           {
             "kind": "sources",
             "runtimeTarget": "sources",
             "buildMode": null,
-            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-sources.jar",
             "filename": "echoashfallprotocol-1.0.0-sources.jar",
-            "sha256": "900ffd19bf4db9715f64ccc13713a2e6d4017ce9a3ca930d294c7dbd6691db72",
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-sources.jar",
+            "sha256": "7e149c5b80d916ba4860e726ec32fe9c8dd2574662ee5df6f4eb429c14bfa078",
             "size": 57639124
           },
           {
             "kind": "content-graph",
             "runtimeTarget": "content-graph",
             "buildMode": "generated",
-            "path": "dist/adaptercore-receipt-spine-release/echoashfallprotocol/echoashfallprotocol-1.0.0-content-graph.json",
             "filename": "echoashfallprotocol-1.0.0-content-graph.json",
-            "sha256": "f41f82ff326382f27f4b30e7f448656516480bae1ff528ebff02f9a0cabae469",
+            "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-content-graph.json",
+            "sha256": "ff76b8273edbed0c52a291a71d796c4dcea8445a593f1b15b758241a81cf8592",
             "size": 623365
           }
         ]
       }
     ],
     "verifier": {
-      "status": "not-release-blocking-tooling-scope-mismatch",
+      "status": "PASS",
       "commands": [
         "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoadaptercore",
         "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoashfallprotocol"
       ],
-      "observedFailure": "content graph evidence graphCount must match release modules: 133 !== 2",
-      "reason": "generate-module-release writes repository-wide content-graph evidence even for a narrowed --module release packet, while verify-module-release assumes graphCount equals release.modules.length.",
-      "artifactChecksumsUsable": true,
-      "nextAction": "Either publish a full-module release packet or adjust the release verifier to accept repository-wide evidence as a superset for targeted module packets."
+      "evidencePolicy": "Repository-wide content-graph evidence is accepted only as a superset when every targeted release module is present and graph/module counts match the evidence document."
     }
   },
   "nativePlatformArtifacts": {
@@ -344,16 +341,6 @@
       "status": "PASS"
     },
     {
-      "repo": "ECHO-Modules",
-      "command": "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoadaptercore",
-      "status": "FAIL_EXPECTED_TOOLING_SCOPE_MISMATCH"
-    },
-    {
-      "repo": "ECHO-Modules",
-      "command": "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoashfallprotocol",
-      "status": "FAIL_EXPECTED_TOOLING_SCOPE_MISMATCH"
-    },
-    {
       "repo": "ECHO-Native-Platform",
       "command": ".\\gradlew.bat :echo-native-contracts:compileJava :echo-native-loader:compileJava :echo-native-contracts:jar :echo-native-loader:jar packagePublicAlphaRelease --console=plain",
       "status": "PASS"
@@ -372,11 +359,206 @@
       "repo": "ECHO-Standalone-Runtime",
       "command": "node scripts\\test-generate-standalone-strict-play-evidence.mjs",
       "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "node --test scripts\\verify-module-release.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoadaptercore",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "node scripts\\verify-module-release.mjs --release-dir dist\\adaptercore-receipt-spine-release --module echoashfallprotocol",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "gh release create adaptercore-receipt-spine-20260616 ... --latest=false",
+      "status": "PASS"
+    },
+    {
+      "repo": "ECHO-Modules",
+      "command": "gh release download adaptercore-receipt-spine-20260616 --repo knoxhack/ECHO-Modules --dir tmp\\adaptercore-receipt-spine-download",
+      "status": "PASS"
     }
   ],
   "residualRisks": [
-    "No ECHO-Release-Index installable artifact URL or checksum was moved because receipt-spine artifacts have not been published as GitHub release assets.",
-    "Targeted module-release verification currently reports a content-graph evidence count mismatch because the generator writes repository-wide evidence for a two-module packet.",
-    "SDK template compile proof remains static_only by design until the fixture harness registers isolated generated modules into a real workspace."
-  ]
+    "The published module release was uploaded locally by direct gh release create, so catalog trust is source-linked rather than provenance-attested until a workflow-built artifact attestation exists.",
+    "SDK template compile proof remains static_only by design until the fixture harness registers isolated generated modules into a real workspace.",
+    "Ashfall full lane gameplay smoke remains a separate promotion gate; this packet proves AdapterCore/Ashfall module receipt-spine artifacts and catalog byte integrity."
+  ],
+  "publishedRelease": {
+    "repository": "knoxhack/ECHO-Modules",
+    "tagName": "adaptercore-receipt-spine-20260616",
+    "url": "https://github.com/knoxhack/ECHO-Modules/releases/tag/adaptercore-receipt-spine-20260616",
+    "targetCommitish": "a62694cc0d6dab2d5b219efb148e376599452275",
+    "isDraft": false,
+    "isPrerelease": false,
+    "assetCount": 16
+  },
+  "downloadSmoke": {
+    "status": "PASS",
+    "command": "gh release download adaptercore-receipt-spine-20260616 --repo knoxhack/ECHO-Modules --dir tmp\\adaptercore-receipt-spine-download",
+    "downloadedAt": "2026-06-16T01:10:18.795Z",
+    "assets": [
+      {
+        "name": "checksums.sha256",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/checksums.sha256",
+        "size": 160522,
+        "sha256": "d757c1d0d84c663f3644ede8c4e1b6172f67e8fb1a8a3bfab44823e963ff8e77",
+        "localSize": 160522,
+        "localSha256": "d757c1d0d84c663f3644ede8c4e1b6172f67e8fb1a8a3bfab44823e963ff8e77",
+        "ok": true
+      },
+      {
+        "name": "checksums.txt",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/checksums.txt",
+        "size": 160522,
+        "sha256": "d757c1d0d84c663f3644ede8c4e1b6172f67e8fb1a8a3bfab44823e963ff8e77",
+        "localSize": 160522,
+        "localSha256": "d757c1d0d84c663f3644ede8c4e1b6172f67e8fb1a8a3bfab44823e963ff8e77",
+        "ok": true
+      },
+      {
+        "name": "content-graph-evidence.json",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/content-graph-evidence.json",
+        "size": 63475,
+        "sha256": "7b24ed9a64fffd614a797c43120da12f2718cda525fc6812834ed6aa6be8fe62",
+        "localSize": 63475,
+        "localSha256": "7b24ed9a64fffd614a797c43120da12f2718cda525fc6812834ed6aa6be8fe62",
+        "ok": true
+      },
+      {
+        "name": "echo-module-release.tar.gz",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echo-module-release.tar.gz",
+        "size": 236697193,
+        "sha256": "c109ca9b43b937aa099dfee688f74b47852b5b537eae115a54f8e8110ee3abf9",
+        "localSize": 236697193,
+        "localSha256": "c109ca9b43b937aa099dfee688f74b47852b5b537eae115a54f8e8110ee3abf9",
+        "ok": true
+      },
+      {
+        "name": "echo-module-release.tar.gz.sha256",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echo-module-release.tar.gz.sha256",
+        "size": 92,
+        "sha256": "9caef72740d9d85813252666a2c21dce7ef6c16226385bec1129d5cbcc2eebfe",
+        "localSize": 92,
+        "localSha256": "9caef72740d9d85813252666a2c21dce7ef6c16226385bec1129d5cbcc2eebfe",
+        "ok": true
+      },
+      {
+        "name": "echo-release.json",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echo-release.json",
+        "size": 11470,
+        "sha256": "259b8d6213d65692ddd6c6448346fe3727bc371d36d64fee7cf4792b4d911ec8",
+        "localSize": 11470,
+        "localSha256": "259b8d6213d65692ddd6c6448346fe3727bc371d36d64fee7cf4792b4d911ec8",
+        "ok": true
+      },
+      {
+        "name": "echoadaptercore-1.0.0-content-graph.json",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-content-graph.json",
+        "size": 31761,
+        "sha256": "549f51beb6aece8c6f2a0c388105eea11378d55ff187aa28d1c95fd46f777fdb",
+        "localSize": 31761,
+        "localSha256": "549f51beb6aece8c6f2a0c388105eea11378d55ff187aa28d1c95fd46f777fdb",
+        "ok": true
+      },
+      {
+        "name": "echoadaptercore-1.0.0-neoforge.jar",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-neoforge.jar",
+        "size": 970532,
+        "sha256": "06e762775bab4ae85178d8ce8af4ad0065fb95aa033841c8290d9b756b84fb21",
+        "localSize": 970532,
+        "localSha256": "06e762775bab4ae85178d8ce8af4ad0065fb95aa033841c8290d9b756b84fb21",
+        "ok": true
+      },
+      {
+        "name": "echoadaptercore-1.0.0-sources.jar",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-sources.jar",
+        "size": 384893,
+        "sha256": "0f898819d3c357f2af8c55d36934efbba3150e9c5fe6c91b046fc1ff8aa6e0aa",
+        "localSize": 384893,
+        "localSha256": "0f898819d3c357f2af8c55d36934efbba3150e9c5fe6c91b046fc1ff8aa6e0aa",
+        "ok": true
+      },
+      {
+        "name": "echoadaptercore-1.0.0-standalone.jar",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0-standalone.jar",
+        "size": 970532,
+        "sha256": "06e762775bab4ae85178d8ce8af4ad0065fb95aa033841c8290d9b756b84fb21",
+        "localSize": 970532,
+        "localSha256": "06e762775bab4ae85178d8ce8af4ad0065fb95aa033841c8290d9b756b84fb21",
+        "ok": true
+      },
+      {
+        "name": "echoadaptercore-1.0.0.echo-addon",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0.echo-addon",
+        "size": 841135,
+        "sha256": "909cc422566f138e65ad927e33775cff20f3caef963181ebd7c3716f711cfbf9",
+        "localSize": 841135,
+        "localSha256": "909cc422566f138e65ad927e33775cff20f3caef963181ebd7c3716f711cfbf9",
+        "ok": true
+      },
+      {
+        "name": "echoashfallprotocol-1.0.0-content-graph.json",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-content-graph.json",
+        "size": 623365,
+        "sha256": "ff76b8273edbed0c52a291a71d796c4dcea8445a593f1b15b758241a81cf8592",
+        "localSize": 623365,
+        "localSha256": "ff76b8273edbed0c52a291a71d796c4dcea8445a593f1b15b758241a81cf8592",
+        "ok": true
+      },
+      {
+        "name": "echoashfallprotocol-1.0.0-neoforge.jar",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-neoforge.jar",
+        "size": 59411986,
+        "sha256": "5f781e41f0414fd9ffd2ee71f2c1b78f132b03baa7c9a15ee9c52ce73cc8acdf",
+        "localSize": 59411986,
+        "localSha256": "5f781e41f0414fd9ffd2ee71f2c1b78f132b03baa7c9a15ee9c52ce73cc8acdf",
+        "ok": true
+      },
+      {
+        "name": "echoashfallprotocol-1.0.0-sources.jar",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-sources.jar",
+        "size": 57639124,
+        "sha256": "7e149c5b80d916ba4860e726ec32fe9c8dd2574662ee5df6f4eb429c14bfa078",
+        "localSize": 57639124,
+        "localSha256": "7e149c5b80d916ba4860e726ec32fe9c8dd2574662ee5df6f4eb429c14bfa078",
+        "ok": true
+      },
+      {
+        "name": "echoashfallprotocol-1.0.0-standalone.jar",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0-standalone.jar",
+        "size": 59411986,
+        "sha256": "984c74837dee0154b00c2c0ebc144c177b2e2c5913dccadf7de25390d26bb0e5",
+        "localSize": 59411986,
+        "localSha256": "984c74837dee0154b00c2c0ebc144c177b2e2c5913dccadf7de25390d26bb0e5",
+        "ok": true
+      },
+      {
+        "name": "echoashfallprotocol-1.0.0.echo-addon",
+        "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoashfallprotocol-1.0.0.echo-addon",
+        "size": 58675321,
+        "sha256": "6dd8d325cd54744c993104288f59ff6f80e33644487e53da73397cd4252175b8",
+        "localSize": 58675321,
+        "localSha256": "6dd8d325cd54744c993104288f59ff6f80e33644487e53da73397cd4252175b8",
+        "ok": true
+      }
+    ]
+  },
+  "catalogUpdates": {
+    "status": "prepared",
+    "entries": [
+      "modules/echoadaptercore.json",
+      "modules/echoashfallprotocol.json"
+    ],
+    "trust": "source-linked",
+    "validation": "approved",
+    "note": "Release assets are published and download-smoked; trust is source-linked because the release was uploaded locally without GitHub artifact attestation."
+  }
 }

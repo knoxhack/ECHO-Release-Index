@@ -50,7 +50,10 @@ function parseArgs(argv) {
 function printHelp() {
   console.log(`Usage:
   node scripts/verify-content-graph-release-proof.mjs [--root <path>] [--manifest channels/alpha/release-manifest.json]
-  node scripts/verify-content-graph-release-proof.mjs --release-tag modules-content-graph-evidence-proof-20260615 --expected-module-count 133`)
+  node scripts/verify-content-graph-release-proof.mjs --release-tag modules-content-graph-evidence-proof-20260615 --expected-module-count 133
+
+Verifies every current ECHO-Modules catalog row has content graph evidence metadata.
+Rows on the manifest release tag are also matched against the release manifest assets.`)
 }
 
 async function readJson(filePath) {
@@ -93,6 +96,38 @@ function verifyEqual(errors, label, actual, expected) {
   if (actual !== expected) errors.push(`${label} expected ${expected}, found ${actual}`)
 }
 
+function releaseDownloadPrefix(releaseTag) {
+  return `https://github.com/knoxhack/ECHO-Modules/releases/download/${encodeURIComponent(releaseTag).replace(/%2F/giu, '/')}/`
+}
+
+function verifyReleaseUrl(errors, label, row, artifact) {
+  const expectedPrefix = releaseDownloadPrefix(row.releaseTag)
+  if (!String(artifact?.url ?? '').startsWith(expectedPrefix)) {
+    errors.push(`${label} url must start with ${expectedPrefix}`)
+  }
+}
+
+function verifyEvidenceShape(errors, prefix, row, graph, evidence) {
+  if (!graph) {
+    errors.push(`${prefix} missing artifacts["content-graph"]`)
+  } else {
+    if (!graph.file) errors.push(`${prefix} content-graph missing file`)
+    if (!graph.url) errors.push(`${prefix} content-graph missing url`)
+    if (!graph.sha256) errors.push(`${prefix} content-graph missing sha256`)
+    if (row.releaseTag) verifyReleaseUrl(errors, `${prefix} content-graph`, row, graph)
+  }
+  if (!evidence) {
+    errors.push(`${prefix} missing artifacts["content-graph-evidence"]`)
+  } else {
+    verifyEqual(errors, `${prefix} content-graph-evidence file`, evidence.file, 'content-graph-evidence.json')
+    verifyEqual(errors, `${prefix} content-graph-evidence artifactRole`, evidence.artifactRole, 'content-graph-evidence')
+    verifyEqual(errors, `${prefix} content-graph-evidence schemaVersion`, evidence.schemaVersion, REQUIRED_EVIDENCE_SCHEMA)
+    if (!evidence.url) errors.push(`${prefix} content-graph-evidence missing url`)
+    if (!evidence.sha256) errors.push(`${prefix} content-graph-evidence missing sha256`)
+    if (row.releaseTag) verifyReleaseUrl(errors, `${prefix} content-graph-evidence`, row, evidence)
+  }
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2))
   const errors = []
@@ -120,7 +155,7 @@ async function main() {
   for (const filePath of await jsonFiles(modulesDir)) {
     const payload = await readJson(filePath)
     for (const row of Array.isArray(payload) ? payload : [payload]) {
-      if (row?.sourceRepo === 'knoxhack/ECHO-Modules' && row?.releaseTag === releaseTag) {
+      if (row?.sourceRepo === 'knoxhack/ECHO-Modules') {
         moduleRows.push({ row, filePath })
       }
     }
@@ -133,9 +168,8 @@ async function main() {
     const prefix = `${rel(args.root, filePath)} ${row.id ?? '(unknown)'}`
     const graph = row.artifacts?.['content-graph']
     const evidence = row.artifacts?.['content-graph-evidence']
-    if (!graph) {
-      errors.push(`${prefix} missing artifacts["content-graph"]`)
-    } else {
+    verifyEvidenceShape(errors, prefix, row, graph, evidence)
+    if (row.releaseTag === releaseTag && graph) {
       const graphAsset = assetsByName.get(graph.file)
       if (!graphAsset) errors.push(`${prefix} content-graph artifact ${graph.file ?? '(missing file)'} is absent from release manifest assets`)
       else {
@@ -144,12 +178,7 @@ async function main() {
         if (!sameOptionalNumber(graph.size, graphAsset.size)) errors.push(`${prefix} content-graph size expected ${graphAsset.size}, found ${graph.size}`)
       }
     }
-    if (!evidence) {
-      errors.push(`${prefix} missing artifacts["content-graph-evidence"]`)
-    } else if (evidenceAsset) {
-      verifyEqual(errors, `${prefix} content-graph-evidence file`, evidence.file, 'content-graph-evidence.json')
-      verifyEqual(errors, `${prefix} content-graph-evidence artifactRole`, evidence.artifactRole, 'content-graph-evidence')
-      verifyEqual(errors, `${prefix} content-graph-evidence schemaVersion`, evidence.schemaVersion, REQUIRED_EVIDENCE_SCHEMA)
+    if (row.releaseTag === releaseTag && evidence && evidenceAsset) {
       verifyEqual(errors, `${prefix} content-graph-evidence url`, evidence.url, evidenceAsset.browserDownloadUrl)
       verifyEqual(errors, `${prefix} content-graph-evidence sha256`, evidence.sha256, evidenceAsset.sha256)
       if (!sameOptionalNumber(evidence.size, evidenceAsset.size)) errors.push(`${prefix} content-graph-evidence size expected ${evidenceAsset.size}, found ${evidence.size}`)
@@ -161,6 +190,7 @@ async function main() {
     status: 'PASS',
     releaseTag,
     moduleRows: moduleRows.length,
+    primaryReleaseModuleRows: moduleRows.filter(({ row }) => row.releaseTag === releaseTag).length,
     releaseAssetCount: assets.length,
     requiredReleaseAssets: REQUIRED_RELEASE_ASSETS,
     evidenceArtifact: evidenceAsset ? {
@@ -189,7 +219,7 @@ function finish(args, errors, summary = null) {
     return
   }
   if (args.json) console.log(JSON.stringify(summary, null, 2))
-  else console.log(`Content graph release proof passed for ${summary.moduleRows} module row(s) from ${summary.releaseTag}.`)
+  else console.log(`Content graph release proof passed for ${summary.moduleRows} module row(s); ${summary.primaryReleaseModuleRows} match ${summary.releaseTag}.`)
 }
 
 await main()

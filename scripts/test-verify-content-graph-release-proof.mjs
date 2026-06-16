@@ -104,6 +104,16 @@ async function runFixture(name, mutate, expectedStatus, expectedText) {
 
 await runFixture('pass', null, 0, 'Content graph release proof passed for 2 module row')
 
+await runFixture('alternate-module-release-pass', async (root) => {
+  const row = moduleRow('echoarmory')
+  const alternateTag = 'modules-hotfix'
+  const alternateBase = `https://github.com/knoxhack/ECHO-Modules/releases/download/${alternateTag}`
+  row.releaseTag = alternateTag
+  row.artifacts['content-graph'].url = `${alternateBase}/echoarmory-1.0.0-content-graph.json`
+  row.artifacts['content-graph-evidence'].url = `${alternateBase}/content-graph-evidence.json`
+  await writeJson(root, 'modules/echoarmory.json', row)
+}, 0, '1 match modules-fixture')
+
 await runFixture('missing-evidence-role', async (root) => {
   const row = moduleRow('echoarmory')
   delete row.artifacts['content-graph-evidence'].artifactRole

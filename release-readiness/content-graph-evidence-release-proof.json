@@ -26,6 +26,22 @@
       "hytaleBlockerCount": 9
     }
   },
+  "catalogComposition": {
+    "moduleRows": 133,
+    "primaryReleaseTag": "modules-content-graph-evidence-proof-20260615",
+    "primaryReleaseModuleRows": 131,
+    "alternateEvidenceReleases": [
+      {
+        "tag": "adaptercore-receipt-spine-20260616",
+        "moduleRows": 2,
+        "modules": [
+          "echoadaptercore",
+          "echoashfallprotocol"
+        ],
+        "schemaVersion": "echo.content_graph.evidence.v1"
+      }
+    ]
+  },
   "releaseIndexChecks": [
     {
       "command": "node scripts/validate-index.mjs --strict",
@@ -47,7 +63,7 @@
     {
       "command": "node scripts/verify-content-graph-release-proof.mjs",
       "status": "PASS",
-      "result": "133 module rows carry matching content-graph and content-graph-evidence artifacts"
+      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 131 match the primary proof release manifest and 2 point at adaptercore-receipt-spine-20260616"
     },
     {
       "command": "node scripts/test-verify-content-graph-release-proof.mjs",
