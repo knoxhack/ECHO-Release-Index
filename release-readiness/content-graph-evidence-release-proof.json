@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
-  "generatedAt": "2026-06-16T16:43:58.351Z",
+  "generatedAt": "2026-06-16T16:47:19.167Z",
   "status": "PASS",
   "summary": "Canonical .ECHO Content Graph release evidence is reproduced from source, published as a real ECHO-Modules release, imported by Release Index, runtime-gated, and visible to public/consumer surfaces.",
   "releaseIndexCatalogCommit": "pending-direct-main-push",
@@ -145,13 +145,13 @@
   "consumerChecks": [
     {
       "repository": "knoxhack/ECHO-Platform-Website",
-      "commit": "2600ab7a399b92a3a2aa679366d95bb44271b839",
+      "commit": "4b7aafa63fb5a9792ad2d0aeb3cffa54d9dd0e1d",
       "commands": [
         "npm.cmd run sync:ecosystem",
         "npm.cmd run build"
       ],
       "status": "PASS",
-      "result": "Website data points at the canonical content-graph-evidence artifact and builds 234 static pages; committed release snapshot is scoped to the pushed Release Index main to exclude unrelated local pack drift."
+      "result": "Website ecosystem data synced from the converged Release Index and production build passed with 234 static pages."
     },
     {
       "repository": "knoxhack/ECHO-Launcher",
