@@ -235,6 +235,36 @@ await runFixture('invalid-content-graph-evidence-fallback-policy', async (root) 
   }))
 }, 1, 'contentGraphEvidencePolicy must be legacy-fallback-only')
 
+await runFixture('legacy-content-graph-artifact-metadata-policy', async (root) => {
+  const { 'content-graph-evidence': _evidence, ...artifacts } = approvedEntry().artifacts
+  delete artifacts['content-graph'].url
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    artifacts,
+    validation: 'warning',
+    contentGraphArtifactPolicy: 'legacy-metadata-only',
+    contentGraphEvidencePolicy: 'legacy-fallback-only',
+  }))
+}, 0, 'validation passed')
+
+await runFixture('invalid-content-graph-artifact-metadata-policy', async (root) => {
+  const { 'content-graph-evidence': _evidence, ...artifacts } = approvedEntry().artifacts
+  delete artifacts['content-graph'].url
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    artifacts,
+    validation: 'warning',
+    contentGraphArtifactPolicy: 'metadata-only',
+  }))
+}, 1, 'contentGraphArtifactPolicy must be legacy-metadata-only')
+
+await runFixture('approved-content-graph-artifact-metadata-policy', async (root) => {
+  const { 'content-graph-evidence': _evidence, ...artifacts } = approvedEntry().artifacts
+  delete artifacts['content-graph'].url
+  await writeJson(root, 'addons/fixture-addon.json', approvedEntry({
+    artifacts,
+    contentGraphArtifactPolicy: 'legacy-metadata-only',
+  }))
+}, 1, 'contentGraphArtifactPolicy legacy-metadata-only cannot be used on approved entries')
+
 await runFixture('approved-windows-product-missing-updater-role', async (root) => {
   await writeJson(root, 'products/fixture-product.json', approvedEntry({
     id: 'fixture-product',

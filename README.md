@@ -37,10 +37,12 @@ Run commands from the repository root.
 - `node scripts/docs-audit.mjs`
 - `node scripts/generate-codex-context.mjs --check`
 - `node scripts/validate-index.mjs --strict`
+- `node scripts/verify-content-graph-release-proof.mjs`
 - `node scripts/verify-artifact-urls.mjs`
 - `node scripts/sync-launcher-channel-catalog.mjs --check`
 - `node scripts/sync-public-alpha-index.mjs --check`
 - `node scripts/test-validate-index.mjs`
+- `node scripts/test-verify-content-graph-release-proof.mjs`
 - `node scripts/test-sync-public-alpha-index.mjs`
 - `node scripts/test-verify-artifact-urls.mjs`
 - `node scripts/test-build-public-alpha-assets.mjs`
@@ -112,7 +114,7 @@ Every `module` and `addon` entry must index a `content-graph` artifact that poin
 }
 ```
 
-`scripts/validate-index.mjs --strict` rejects approved entries that lack this role. Non-approved entries receive a warning so cataloging can proceed before the sidecar URL is published. Historical addon rows superseded by current module rows may set `contentGraphEvidencePolicy: "legacy-fallback-only"` to make the sidecar-only fallback explicit without implying release-level aggregate evidence exists for the preserved legacy row.
+`scripts/validate-index.mjs --strict` rejects approved entries that lack this role. Non-approved entries receive a warning so cataloging can proceed before the sidecar URL is published. Historical addon rows superseded by current module rows may set `contentGraphEvidencePolicy: "legacy-fallback-only"` to make the sidecar-only fallback explicit without implying release-level aggregate evidence exists for the preserved legacy row. Historical non-approved rows whose sidecar is retained only as metadata may also set `contentGraphArtifactPolicy: "legacy-metadata-only"`; current installable module rows must still carry live content graph artifact URLs.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 

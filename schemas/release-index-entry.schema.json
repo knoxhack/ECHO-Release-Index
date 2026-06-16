@@ -100,6 +100,10 @@
     "contentGraphEvidencePolicy": {
       "enum": ["legacy-fallback-only"],
       "description": "Marks a historical module/addon catalog row that intentionally has only per-entry content-graph sidecar evidence; current release-level aggregate evidence must come from a replacement release row."
+    },
+    "contentGraphArtifactPolicy": {
+      "enum": ["legacy-metadata-only"],
+      "description": "Marks a historical non-approved module/addon catalog row whose content-graph artifact record is retained as metadata only and intentionally has no live downloadable artifact URL."
     }
   }
 }

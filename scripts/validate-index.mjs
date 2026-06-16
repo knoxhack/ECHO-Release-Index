@@ -323,9 +323,26 @@ function requiredArtifactRolesForEntry(entry) {
 function validateRequiredArtifactRoles(errors, warnings, filePath, entry) {
   for (const role of requiredArtifactRolesForEntry(entry)) {
     if (hasExactArtifactRole(entry, role)) continue
+    if (role === 'content-graph' && entry.contentGraphArtifactPolicy === 'legacy-metadata-only') continue
     const message = `${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no exact indexed artifact for role ${role}`
     if (entry.validation === 'approved') errors.push(message)
     else warnings.push(message)
+  }
+}
+
+function validateContentGraphArtifactPolicy(errors, filePath, entry) {
+  if (entry.contentGraphArtifactPolicy === undefined) return
+  if (!['module', 'addon'].includes(entry.kind)) {
+    errors.push(`${rel(filePath)} contentGraphArtifactPolicy can only be used on module or addon entries`)
+  }
+  if (entry.contentGraphArtifactPolicy !== 'legacy-metadata-only') {
+    errors.push(`${rel(filePath)} contentGraphArtifactPolicy must be legacy-metadata-only when present`)
+  }
+  if (entry.validation === 'approved') {
+    errors.push(`${rel(filePath)} contentGraphArtifactPolicy legacy-metadata-only cannot be used on approved entries`)
+  }
+  if (hasExactArtifactRole(entry, 'content-graph')) {
+    errors.push(`${rel(filePath)} contentGraphArtifactPolicy legacy-metadata-only cannot be used when a live content-graph artifact URL is indexed`)
   }
 }
 
@@ -518,6 +535,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   if (!Array.isArray(entry.compatibility)) errors.push(`${rel(filePath)} compatibility must be an array`)
   validateArtifacts(errors, warnings, filePath, entry)
   validateNativeLoaderDirectArtifactBoundaries(errors, filePath, entry)
+  validateContentGraphArtifactPolicy(errors, filePath, entry)
   validateRequiredArtifactRoles(errors, warnings, filePath, entry)
   validateContentGraphEvidenceRole(errors, warnings, filePath, entry)
   validateAttestedProvenance(errors, filePath, entry)
