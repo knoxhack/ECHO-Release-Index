@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-16T23:08:16.520Z",
+  "generatedAt": "2026-06-16T23:32:06.463Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "74bf35c8d5c3084c4beddf29d0f8e3321b59a580",
+  "releaseIndexHeadAtGeneration": "5ecf621a4a4d4983626f10f8b4497a61a836ffdb",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -265,7 +265,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-16T21:27:28.562Z",
+    "generatedAt": "2026-06-16T23:32:06.439Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -273,7 +273,7 @@
       "passedFamilyCount": 0,
       "blockedFamilyCount": 5,
       "passedLaneCount": 0,
-      "blockerCount": 452,
+      "blockerCount": 450,
       "transportProofCount": 2,
       "acceptedTransportProofCount": 2,
       "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -323,15 +323,14 @@
           "present": true,
           "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
           "status": "BLOCKED",
-          "generatedAt": "2026-06-16T19:07:44.938Z"
+          "generatedAt": "2026-06-16T23:31:58.789Z"
         }
       ],
       "current": false,
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 41,
+      "blockerCount": 39,
       "blockerSample": [
-        "ashfall-native-edition: 46 module file(s) listed in the installed manifest are missing on disk.",
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
         "ashfall-native-edition: Missing gameplay proof: worldCreatedOrLoaded",
@@ -350,7 +349,8 @@
         "ashfall-neoforge-edition: Missing gameplay proof: hudVisible",
         "ashfall-neoforge-edition: Missing gameplay proof: inventoryIndexVisible",
         "ashfall-neoforge-edition: Missing gameplay proof: terminalVisible",
-        "ashfall-neoforge-edition: Missing gameplay proof: holomapVisible"
+        "ashfall-neoforge-edition: Missing gameplay proof: holomapVisible",
+        "ashfall-neoforge-edition: Missing gameplay proof: lensVisible"
       ],
       "lanes": [
         {
@@ -360,9 +360,8 @@
           "workspaceDir": "ECHO-Ashfall-Native-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 14,
+          "blockerCount": 13,
           "blockers": [
-            "46 module file(s) listed in the installed manifest are missing on disk.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
             "Missing gameplay proof: mainMenuNativeReplacement",
             "Missing gameplay proof: worldCreatedOrLoaded",
@@ -466,9 +465,8 @@
           "workspaceDir": "ECHO-Ashfall-Standalone-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 15,
+          "blockerCount": 14,
           "blockers": [
-            "Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
             "No runtime log file found under the instance logs directory.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
             "Missing gameplay proof: clientStarted",
