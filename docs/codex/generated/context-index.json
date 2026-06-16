@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-16T03:04:00-04:00",
+  "generatedAt": "2026-06-16T03:57:45-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,13 +16,24 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a100e1491faa",
-        "commitDate": "2026-06-16T03:04:00-04:00",
+        "commit": "af48e88a8b17",
+        "commitDate": "2026-06-16T03:56:55-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M channels/alpha/release-manifest.json",
+          " M modpacks/ashfall-native.json",
+          " M modpacks/ashfall-neoforge.json",
+          " M modpacks/ashfall-standalone.json",
+          " M packs/ashfall-native-edition.json",
+          " M packs/ashfall-neoforge-edition.json",
+          " M packs/ashfall-standalone-edition.json",
           " M release-readiness/modpack-module-artifact-drift.json",
+          " M scripts/refresh-modpack-module-artifacts.mjs",
           "?? release-readiness/ashfall-electron-install-handoff-smoke.json",
-          "?? release-readiness/ashfall-lane-game-smoke.json"
+          "?? release-readiness/ashfall-lane-game-smoke.json",
+          "?? release-readiness/ashfall-native-neoforge-electron-install-handoff-smoke.json",
+          "?? release-readiness/ashfall-official-pack-launcher-lifecycle-smoke.json",
+          "?? release-readiness/ashfall-pack-hotfix-publish.json"
         ]
       },
       "canonicalDocs": [
@@ -75,7 +86,7 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 313739,
+          "bytes": 310537,
           "summary": "release manifest v0.1.0-native-public-alpha; repositories: 24"
         },
         {
@@ -263,7 +274,14 @@
         "commitDate": "2026-06-16T03:03:54-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M electron/main.cjs"
+          " M electron/main.cjs",
+          " M package.json",
+          " M scripts/all-modpacks-electron-install-smoke.mjs",
+          " M src/services/LaunchService.ts",
+          " M src/services/nativeBridge.ts",
+          " M src/types/launch.ts",
+          " M src/types/native.ts",
+          " M src/types/standaloneRuntime.ts"
         ]
       },
       "canonicalDocs": [
@@ -287,7 +305,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 6517,
+          "bytes": 6797,
           "summary": "package echo-launcher 1.1.13; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
@@ -373,8 +391,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "92a33dfaac28",
-        "commitDate": "2026-06-15T22:08:29-04:00",
+        "commit": "2600ab7a399b",
+        "commitDate": "2026-06-16T03:53:29-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -642,8 +660,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b315406d662c",
-        "commitDate": "2026-06-15T22:27:30-04:00",
+        "commit": "55e9e1642cb3",
+        "commitDate": "2026-06-16T03:57:45-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -705,8 +723,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "0bbc958775d7",
-        "commitDate": "2026-06-15T22:27:32-04:00",
+        "commit": "ef4649ba5b86",
+        "commitDate": "2026-06-16T03:57:45-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -754,8 +772,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c53fd0ea2f72",
-        "commitDate": "2026-06-15T22:27:33-04:00",
+        "commit": "f996770d2bf5",
+        "commitDate": "2026-06-16T03:57:45-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
