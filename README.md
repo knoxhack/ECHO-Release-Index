@@ -39,12 +39,14 @@ Run commands from the repository root.
 - `node scripts/validate-index.mjs --strict`
 - `node scripts/verify-content-graph-release-proof.mjs`
 - `node scripts/verify-artifact-urls.mjs`
+- `node scripts/verify-public-alpha-live-channel.mjs --write`
 - `node scripts/sync-launcher-channel-catalog.mjs --check`
 - `node scripts/sync-public-alpha-index.mjs --check`
 - `node scripts/test-validate-index.mjs`
 - `node scripts/test-verify-content-graph-release-proof.mjs`
 - `node scripts/test-sync-public-alpha-index.mjs`
 - `node scripts/test-verify-artifact-urls.mjs`
+- `node scripts/test-verify-public-alpha-live-channel.mjs`
 - `node scripts/test-build-public-alpha-assets.mjs`
 - `node scripts/test-verify-ashfall-artifact-truth.mjs`
 - `node scripts/test-verify-ashfall-release-readiness.mjs`

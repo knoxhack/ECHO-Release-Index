@@ -6,37 +6,37 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
   "releaseTag": "v0.1.1-openlands-standalone-edition",
-  "commitSha": "d942a36",
+  "commitSha": "c4b7f5b",
   "artifacts": {
+    "pack": {
+      "file": "openlands-standalone-edition-0.1.1.zip",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-0.1.1.zip",
+      "sha256": "dd0fb7ea70454b3106d40ca64e0e8adb5e3ac475624e6c3ea8009667b8b371a0",
+      "size": 112634016
+    },
+    "manifest": {
+      "file": "openlands-standalone-edition-experimental-0.1.1.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.1.pack.json",
+      "sha256": "191b375ced80bbe1a776bcb62cae38f7aa066205985fbd0cb52c151531dc8fc6",
+      "size": 55744
+    },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/checksums.txt",
-      "sha256": "3a12a9da80f95e0b61ee2c7105c648d6f66d5ce4203210e40f761df0b222de44",
+      "sha256": "96a01c2171e2a0c824264fe7fbe3f773cbe48704bf0ac9dbd434163fa1f42c22",
       "size": 398
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/echo-release.json",
-      "sha256": "787166d0f0b64fac38d823324fb2b8246f7ff493d4f84880111b3de86885ddb5",
-      "size": 12506
-    },
-    "pack": {
-      "file": "openlands-standalone-edition-0.1.1.zip",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-0.1.1.zip",
-      "sha256": "e273624589d35815c0acd16cd68dcff85f2e42578f7f0d628209acdd83a2067c",
-      "size": 112636670
-    },
-    "manifest": {
-      "file": "openlands-standalone-edition-experimental-0.1.1.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.1.pack.json",
-      "sha256": "13e4f0e75bf4f803c92952eb0737828c1c5bc8c098b6cf42de8c203857487fc0",
-      "size": 57106
+      "sha256": "362c8895771f82e330d7c57615064f93927c501c614bb97872f588a27abbf9a9",
+      "size": 12494
     },
     "releaseAudit": {
       "file": "release-audit.json",
       "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/release-audit.json",
-      "sha256": "1cb4d373a0cf383392d1412fc83e2321af79eed2fa990afe71359d028dad2a5f",
-      "size": 969
+      "sha256": "ac7f6294cc4e87bbbde50d9cca658f836d4e72792d5e87396b326b5508d4262b",
+      "size": 957
     }
   },
   "dependencies": [
@@ -54,7 +54,7 @@
   "validation": "approved",
   "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
   "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
-  "moduleRelease": "release-index-current-module-artifacts-20260616",
-  "moduleSourceRevision": "ECHO-Release-Index modules/*.json current artifacts, 2026-06-16",
+  "moduleRelease": "modules-canonical-full-20260616",
+  "moduleSourceRevision": "ECHO-Modules modules-canonical-full-20260616 (9f25b667), 2026-06-16",
   "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition"
 }

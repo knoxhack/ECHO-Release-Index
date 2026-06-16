@@ -1,38 +1,40 @@
 {
   "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
-  "generatedAt": "2026-06-16T08:00:16.322Z",
+  "generatedAt": "2026-06-16T15:41:39.893Z",
   "status": "PASS",
   "summary": "Canonical .ECHO Content Graph release evidence is reproduced from source, published as a real ECHO-Modules release, imported by Release Index, runtime-gated, and visible to public/consumer surfaces.",
-  "releaseIndexCatalogCommit": "8b9a2eafdd0f5aa37c3174e27b16b81f127979dc",
+  "releaseIndexCatalogCommit": "pending-direct-main-push",
   "moduleRelease": {
     "repository": "knoxhack/ECHO-Modules",
-    "tag": "modules-content-graph-evidence-repro-20260616",
-    "url": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-content-graph-evidence-repro-20260616",
-    "workflowRun": "https://github.com/knoxhack/ECHO-Modules/actions/runs/27599454145",
-    "sourceCommit": "aff012aaa427f6f8b5eaf10e145207739b1602b7",
+    "tag": "modules-canonical-full-20260616",
+    "url": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-canonical-full-20260616",
+    "workflowRun": "https://github.com/knoxhack/ECHO-Modules/actions/runs/27625820257",
+    "sourceCommit": "9f25b667812f5d214b9a5148868864384dbc7930",
     "assetCount": 670,
     "evidenceArtifact": {
       "file": "content-graph-evidence.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-repro-20260616/content-graph-evidence.json",
-      "sha256": "e366172d6fb5d09e6d9cb749698ac51bd536ba6fcd2f84c1cf0ab5169665aa20",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/content-graph-evidence.json",
+      "sha256": "13629e31db9849b0a944b9e2ce986b91b3f8dbd898b2270ad8b3f3d7a574769c",
       "size": 63462,
       "schemaVersion": "echo.content_graph.evidence.v1"
     },
     "releaseManifest": {
       "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-repro-20260616/echo-release.json",
-      "sha256": "94b2d0aa9561eb49a7ab4a6976084502adb6b9afa31898864cc240b72d34ee0d",
-      "size": 569402
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/echo-release.json",
+      "sha256": "0b8bd865ac478fbd3983da7f76c59e492872b9a5132ac088c0dd08e02059d662",
+      "size": 569388
     },
     "checksums": {
       "file": "checksums.sha256",
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-repro-20260616/checksums.sha256",
-      "sha256": "7c2962188711d6de47c5de99892c0a2e69f57bfc1a5980b54701ee14f9d85264"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/checksums.sha256",
+      "sha256": "9cbd633b7d7854eae6aa1d677450a90271b65e261df962486c6a092768ee8a9b",
+      "size": 280188
     },
     "archive": {
       "file": "echo-module-release.tar.gz",
-      "sha256": "e153a978e92f389cd3ac427c2abed2f86a7af9cdba99a8e9bb4173415ab46213",
-      "size": 1162454700
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/echo-module-release.tar.gz",
+      "sha256": "43150df0749a10bcfdb4af186dddb7d832e5fee40f3fda33ba79c612cb08a4e4",
+      "size": 1162488242
     },
     "counts": {
       "graphCount": 133,
@@ -46,41 +48,41 @@
   },
   "catalogComposition": {
     "moduleRows": 133,
-    "primaryReleaseTag": "modules-content-graph-evidence-repro-20260616",
+    "primaryReleaseTag": "modules-canonical-full-20260616",
     "primaryReleaseModuleRows": 133,
     "alternateEvidenceReleases": []
   },
   "sourceReproductionChecks": [
     {
       "repository": "knoxhack/ECHO-Modules",
-      "commit": "aff012aaa427f6f8b5eaf10e145207739b1602b7",
+      "commit": "9f25b667812f5d214b9a5148868864384dbc7930",
       "command": "node --test scripts/generate-module-release.test.mjs",
       "status": "PASS",
       "result": "Windows path regression fixture covers gear and station_recipes content graph inputs."
     },
     {
       "repository": "knoxhack/ECHO-Modules",
-      "commit": "aff012aaa427f6f8b5eaf10e145207739b1602b7",
+      "commit": "9f25b667812f5d214b9a5148868864384dbc7930",
       "command": "node scripts/validate-content-graph.mjs --strict --sdk-root ..\\ECHO-SDK",
       "status": "PASS",
       "result": "Strict validation accepted 133 modules and the release-level evidence schema."
     },
     {
       "repository": "knoxhack/ECHO-Modules",
-      "commit": "aff012aaa427f6f8b5eaf10e145207739b1602b7",
+      "commit": "9f25b667812f5d214b9a5148868864384dbc7930",
       "command": "node scripts/verify-module-release.mjs --release-dir dist/echo-module-release",
       "status": "PASS",
       "result": "Local generated release verified before the GitHub workflow release."
     },
     {
       "repository": "knoxhack/ECHO-Modules",
-      "commit": "aff012aaa427f6f8b5eaf10e145207739b1602b7",
+      "commit": "9f25b667812f5d214b9a5148868864384dbc7930",
       "command": "node scripts/validate-module-graph.mjs",
       "status": "PASS"
     },
     {
       "repository": "knoxhack/ECHO-Modules",
-      "commit": "aff012aaa427f6f8b5eaf10e145207739b1602b7",
+      "commit": "9f25b667812f5d214b9a5148868864384dbc7930",
       "command": "node scripts/release-workflow-audit.mjs",
       "status": "PASS"
     }
@@ -94,7 +96,7 @@
     {
       "command": "node scripts/verify-content-graph-release-proof.mjs",
       "status": "PASS",
-      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 133 match modules-content-graph-evidence-repro-20260616."
+      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 133 match modules-canonical-full-20260616."
     },
     {
       "command": "node --test scripts/test-validate-index.mjs",
@@ -115,8 +117,8 @@
     },
     {
       "command": "node scripts/sync-public-alpha-index.mjs --check",
-      "status": "WARN",
-      "result": "Final check reports 9 non-content-graph modpack drift items for Galactic Survey, Openlands, and Sky Relay catalog artifacts; the drift is outside the canonical content graph evidence import."
+      "status": "PASS",
+      "result": "Public alpha index sync passed after rebuilding official pack assets against modules-canonical-full-20260616."
     }
   ],
   "runtimeGates": [
@@ -190,8 +192,8 @@
   "notes": [
     "Hytale statuses remain export planning evidence only; this proof does not claim Hytale runtime or playable support.",
     "Openlands Hytale blocker count is preserved at 9 until the module source intentionally changes.",
-    "The previous expected local counts of 4375 nodes and 1463 features were replaced by the reproducible Windows/Linux-correct counts of 4392 nodes and 1469 features after path normalization fixed omitted Armory gear and station recipe content.",
-    "Release Index local workspace still contains unrelated pack/catalog dirty work and untracked release-readiness files; content graph commits deliberately preserved those changes without staging them.",
+    "modules-canonical-full-20260616 is now the single full 133-module evidence release in Release Index; the previous Ashfall partial hotfix is no longer the active module-row source.",
+    "Official pack release assets were rebuilt so public-alpha pack manifests pin module artifacts from modules-canonical-full-20260616.",
     "Per-module content-graph sidecars remain supported fallback artifacts; content-graph-evidence.json is the canonical aggregate release evidence layer."
   ]
 }
