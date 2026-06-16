@@ -7,6 +7,8 @@ const DEFAULT_OUT = path.join('release-readiness', 'gameplay-acceptance-matrix.j
 const REQUIRED_LANES = ['native', 'neoforge', 'standalone']
 const PASS_STATUSES = new Set(['pass', 'passed', 'ready', 'complete', 'completed', 'closed'])
 const BLOCKED_STATUSES = new Set(['blocked', 'failed', 'fail', 'open', 'missing'])
+const TEMPLATE_VALUES = new Set(['template', 'tbd', 'todo', 'placeholder'])
+const REQUIRED_PROOF_GROUPS = ['supportingFiles', 'screenshots', 'logs', 'saveSnapshots']
 const FAMILY_REPOS = {
   Ashfall: {
     native: 'knoxhack/ECHO-Ashfall-Native-Edition',
@@ -133,6 +135,172 @@ function sourceReport(pathName, report) {
     status: report?.status ?? (typeof report?.ok === 'boolean' ? (report.ok ? 'PASS' : 'BLOCKED') : null),
     generatedAt: report?.generatedAt ?? null,
   }
+}
+
+function objectValue(value) {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value : null
+}
+
+function isUrl(value) {
+  return /^[a-z][a-z0-9+.-]*:/iu.test(String(value ?? ''))
+}
+
+function isTemplateString(value) {
+  return TEMPLATE_VALUES.has(String(value ?? '').trim().toLowerCase())
+}
+
+function isMeaningfulFileReference(value) {
+  if (typeof value !== 'string') return false
+  const trimmed = value.trim()
+  if (!trimmed || isUrl(trimmed)) return false
+  if (/^[a-z]+:[^/\\]+$/iu.test(trimmed)) return false
+  if (isTemplateString(trimmed)) return false
+  return /[\\/]/u.test(trimmed) || /\.[a-z0-9]{1,8}$/iu.test(trimmed)
+}
+
+function collectFileReferences(value, found = []) {
+  if (!value) return found
+  if (typeof value === 'string') {
+    if (isMeaningfulFileReference(value)) found.push(value.trim())
+    return found
+  }
+  if (Array.isArray(value)) {
+    for (const item of value) collectFileReferences(item, found)
+    return found
+  }
+  if (typeof value !== 'object') return found
+
+  for (const key of [
+    'path',
+    'file',
+    'notes',
+    'screenshot',
+    'log',
+    'launcherLog',
+    'clientLog',
+    'saveSnapshot',
+    'supportBundle',
+    'artifactPath',
+    'manualEvidence',
+    'evidencePath',
+  ]) {
+    collectFileReferences(value[key], found)
+  }
+  for (const key of [
+    'paths',
+    'files',
+    'requiredPaths',
+    'checkedPaths',
+    'supportingFiles',
+    'screenshots',
+    'logs',
+    'saveSnapshots',
+    'artifacts',
+    'evidenceFiles',
+  ]) {
+    collectFileReferences(value[key], found)
+  }
+  return found
+}
+
+function trueClaimNames(claims) {
+  if (!claims || typeof claims !== 'object') return []
+  return Object.entries(claims)
+    .filter(([, value]) => value === true)
+    .map(([key]) => key)
+}
+
+function workspaceRoot(root) {
+  return path.dirname(root)
+}
+
+function candidateProofPaths(root, workspaceDir, reference, baseDir = null) {
+  if (!reference || isUrl(reference)) return []
+  if (path.isAbsolute(reference)) return [path.normalize(reference)]
+  const candidates = []
+  if (baseDir) candidates.push(path.resolve(baseDir, reference))
+  if (workspaceDir) candidates.push(path.resolve(workspaceRoot(root), workspaceDir, reference))
+  candidates.push(path.resolve(root, reference))
+  return [...new Set(candidates)]
+}
+
+async function firstExistingFile(root, workspaceDir, reference, baseDir = null) {
+  for (const candidate of candidateProofPaths(root, workspaceDir, reference, baseDir)) {
+    const stat = await fs.stat(candidate).catch(() => null)
+    if (stat?.isFile() && stat.size > 0) {
+      return {
+        path: candidate,
+        size: stat.size,
+        mtime: stat.mtime.toISOString(),
+      }
+    }
+  }
+  return null
+}
+
+async function readSourceEvidence(root, workspaceDir, evidencePath) {
+  if (!evidencePath) return { path: null, evidence: null, missing: true }
+  const existing = await firstExistingFile(root, workspaceDir, evidencePath)
+  if (!existing) return { path: null, evidence: null, missing: true }
+  const evidence = JSON.parse(await fs.readFile(existing.path, 'utf8'))
+  return { path: existing.path, evidence, missing: false }
+}
+
+async function validateSourceEvidenceFiles(root, workspaceDir, source, laneStatus) {
+  const evidencePath = source?.evidencePath ?? source?.manualEvidence ?? source?.evidence?.path ?? null
+  const claims = claimsFrom(source)
+  const passingOrClaimed = laneStatus === 'pass' || trueClaimNames(claims).length > 0
+  if (!passingOrClaimed && !evidencePath) return { blockers: [], proof: null }
+
+  const blockers = []
+  const evidenceRecord = await readSourceEvidence(root, workspaceDir, evidencePath)
+  if (passingOrClaimed && evidenceRecord.missing) {
+    blockers.push(`Missing local gameplay evidence file: ${evidencePath ?? 'not declared'}.`)
+  }
+
+  const proof = {
+    evidencePath,
+    evidenceFile: evidenceRecord.path,
+    requiredGroups: {},
+    claimProofs: {},
+  }
+  const evidence = evidenceRecord.evidence
+  const evidenceDir = evidenceRecord.path ? path.dirname(evidenceRecord.path) : null
+  const effectiveClaims = claims ?? evidence?.claims ?? null
+  for (const claim of trueClaimNames(effectiveClaims)) {
+    const claimRefs = [
+      ...collectFileReferences(objectValue(evidence?.proofs)?.[claim]),
+      ...collectFileReferences(objectValue(evidence?.claimEvidence)?.[claim]),
+      ...collectFileReferences(objectValue(evidence?.evidence)?.[claim]),
+    ]
+    const files = []
+    for (const reference of [...new Set(claimRefs)]) {
+      const existing = await firstExistingFile(root, workspaceDir, reference, evidenceDir)
+      if (existing) files.push({ reference, ...existing })
+    }
+    proof.claimProofs[claim] = { references: claimRefs, files }
+    if (claimRefs.length === 0 || files.length === 0) {
+      blockers.push(`Gameplay claim ${claim} is true but has no non-empty local proof file.`)
+    }
+  }
+
+  if (laneStatus === 'pass') {
+    const evidenceSources = [source, evidence].filter(Boolean)
+    for (const group of REQUIRED_PROOF_GROUPS) {
+      const references = [...new Set(evidenceSources.flatMap((entry) => collectFileReferences(entry?.[group])))]
+      const files = []
+      for (const reference of references) {
+        const existing = await firstExistingFile(root, workspaceDir, reference, evidenceDir)
+        if (existing) files.push({ reference, ...existing })
+      }
+      proof.requiredGroups[group] = { references, files }
+      if (references.length === 0 || files.length === 0) {
+        blockers.push(`Release-ready lane is missing non-empty local ${group} proof files.`)
+      }
+    }
+  }
+
+  return { blockers, proof }
 }
 
 function currentUiEvidence(family, sourcePath, report) {
@@ -273,7 +441,8 @@ function findEditionForLane(editions, lane) {
   return editions.find((edition) => laneFromRecord(edition) === lane) ?? null
 }
 
-function buildManualFamily({
+async function buildManualFamily({
+  root,
   family,
   gameplayPath,
   gameplayReport,
@@ -291,19 +460,21 @@ function buildManualFamily({
     ...(gameplayReport?.blockers ?? []),
     ...(workOrder?.blockers ?? []),
   ]
-  const lanes = REQUIRED_LANES.map((lane) => {
+  const lanes = []
+  for (const lane of REQUIRED_LANES) {
     const edition = findEditionForLane(editions, lane)
     if (!edition) {
-      return normalizedLaneDetails({
+      lanes.push(normalizedLaneDetails({
         family,
         lane,
         packId: `${expectedPackPrefix}-${lane}-edition`,
         status: 'missing',
         blockers: [laneBlockerMessage(family, lane, 'Missing manual gameplay evidence lane.')],
-      })
+      }))
+      continue
     }
     const editionBlockers = edition.blockers ?? []
-    const laneStatus = statusIsPass(edition.status) && editionBlockers.length === 0 && statusIsPass(reportStatus)
+    const sourceLaneStatus = statusIsPass(edition.status) && editionBlockers.length === 0 && statusIsPass(reportStatus)
       ? 'pass'
       : 'blocked'
     const blockers = [
@@ -312,19 +483,32 @@ function buildManualFamily({
       : []),
       ...editionBlockers,
     ]
-    return {
+    const sourceWithReportEvidence = {
+      ...edition,
+      evidencePath: edition.evidencePath ?? edition.manualEvidence,
+    }
+    const proofValidation = await validateSourceEvidenceFiles(
+      root,
+      edition.workspaceDir ?? workspaceDirFor(sourceRepoFor(family, lane, edition)),
+      sourceWithReportEvidence,
+      sourceLaneStatus,
+    )
+    blockers.push(...proofValidation.blockers)
+    const laneStatus = sourceLaneStatus === 'pass' && blockers.length === 0 ? 'pass' : 'blocked'
+    lanes.push({
       ...normalizedLaneDetails({
         family,
         lane,
         packId: edition.packId ?? `${expectedPackPrefix}-${lane}-edition`,
         status: laneStatus,
         blockers,
-        source: edition,
+        source: sourceWithReportEvidence,
       }),
       openTaskCount: edition.openTaskCount ?? null,
       artifact: edition.artifact ?? null,
-    }
-  })
+      proofValidation: proofValidation.proof,
+    })
+  }
   const blockers = [
     ...reportBlockers,
     ...lanes.flatMap((lane) => lane.blockers),
@@ -347,29 +531,42 @@ function buildManualFamily({
   }
 }
 
-function buildGenericFamily({ family, gameplayPath, report, expectedPackPrefix }) {
-  const lanes = REQUIRED_LANES.map((lane) => {
+async function buildGenericFamily({ root, family, gameplayPath, report, expectedPackPrefix }) {
+  const lanes = []
+  for (const lane of REQUIRED_LANES) {
     const source = findEditionForLane(report?.lanes ?? report?.editions ?? [], lane)
     if (!source) {
-      return normalizedLaneDetails({
+      lanes.push(normalizedLaneDetails({
         family,
         lane,
         packId: `${expectedPackPrefix}-${lane}-edition`,
         status: 'missing',
         blockers: [laneBlockerMessage(family, lane, 'Missing gameplay evidence lane.')],
-      })
+      }))
+      continue
     }
     const blockers = source.blockers ?? []
-    const laneStatus = (source.ok === true || statusIsPass(source.status)) && blockers.length === 0 ? 'pass' : 'blocked'
-    return normalizedLaneDetails({
-      family,
-      lane,
-      packId: source.packId ?? `${expectedPackPrefix}-${lane}-edition`,
-      status: laneStatus,
-      blockers,
+    const sourceLaneStatus = (source.ok === true || statusIsPass(source.status)) && blockers.length === 0 ? 'pass' : 'blocked'
+    const proofValidation = await validateSourceEvidenceFiles(
+      root,
+      source.workspaceDir ?? workspaceDirFor(sourceRepoFor(family, lane, source)),
       source,
+      sourceLaneStatus,
+    )
+    const allBlockers = [...blockers, ...proofValidation.blockers]
+    const laneStatus = sourceLaneStatus === 'pass' && allBlockers.length === 0 ? 'pass' : 'blocked'
+    lanes.push({
+      ...normalizedLaneDetails({
+        family,
+        lane,
+        packId: source.packId ?? `${expectedPackPrefix}-${lane}-edition`,
+        status: laneStatus,
+        blockers: allBlockers,
+        source,
+      }),
+      proofValidation: proofValidation.proof,
     })
-  })
+  }
   const reportBlockers = report
     ? [...(report.blockers ?? [])]
     : [`${family} gameplay evidence report is missing.`]
@@ -428,7 +625,8 @@ async function main() {
 
   const families = [
     buildAshfallFamily(ashfallGameplay),
-    buildManualFamily({
+    await buildManualFamily({
+      root: args.root,
       family: 'Sky Relay',
       gameplayPath: 'release-readiness/sky-relay-gameplay-evidence.json',
       gameplayReport: skyRelayGameplay,
@@ -436,7 +634,8 @@ async function main() {
       workOrder: skyRelayWorkOrder,
       expectedPackPrefix: 'sky-relay',
     }),
-    buildManualFamily({
+    await buildManualFamily({
+      root: args.root,
       family: 'Galactic Survey',
       gameplayPath: 'release-readiness/galactic-survey-public-alpha-readiness.json',
       gameplayReport: galacticGameplay,
@@ -444,13 +643,15 @@ async function main() {
       workOrder: galacticWorkOrder,
       expectedPackPrefix: 'galactic-survey',
     }),
-    buildGenericFamily({
+    await buildGenericFamily({
+      root: args.root,
       family: 'Openlands',
       gameplayPath: 'release-readiness/openlands-gameplay-evidence.json',
       report: openlandsGameplay,
       expectedPackPrefix: 'openlands',
     }),
-    buildGenericFamily({
+    await buildGenericFamily({
+      root: args.root,
       family: 'Arcana Division',
       gameplayPath: 'release-readiness/arcana-division-gameplay-evidence.json',
       report: arcanaGameplay,

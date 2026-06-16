@@ -10,6 +10,14 @@ const repoRoot = process.cwd()
 const verifier = path.join(repoRoot, 'scripts', 'verify-gameplay-acceptance.mjs')
 const familyGenerator = path.join(repoRoot, 'scripts', 'generate-family-gameplay-evidence.mjs')
 const lanes = ['native', 'neoforge', 'standalone']
+const standardClaims = {
+  freshWorldCreated: true,
+  realFirst30Playthrough: true,
+  realFirst2HourPlaythrough: true,
+  primaryObjectiveCompleted: true,
+  saveReloadVerified: true,
+  noCrashEvidence: true,
+}
 
 async function writeJson(root, relPath, value) {
   const filePath = path.join(root, relPath)
@@ -83,7 +91,8 @@ function manualGameplay(prefix) {
       packId: `${prefix}-${lane}-edition`,
       status: 'passed',
       blockers: [],
-      manualEvidence: `fixtures/${prefix}/gameplay-qa/manual-evidence.json`,
+      workspaceDir: '.',
+      manualEvidence: `fixtures/${prefix}/${lane}/manual-evidence.json`,
     })),
   }
 }
@@ -100,17 +109,60 @@ function genericGameplay(prefix) {
       status: 'passed',
       blockers: [],
       sourceRepo: `knoxhack/ECHO-${prefix}-${lane}`,
+      workspaceDir: '.',
       evidencePath: `fixtures/${prefix}/${lane}/gameplay-evidence.json`,
-      claims: {
-        freshWorldCreated: true,
-        realFirst30Playthrough: true,
-        realFirst2HourPlaythrough: true,
-        primaryObjectiveCompleted: true,
-        saveReloadVerified: true,
-        noCrashEvidence: true,
-      },
+      claims: { ...standardClaims },
     })),
   }
+}
+
+function proofPaths(prefix, lane) {
+  const base = `fixtures/${prefix}/${lane}/evidence`
+  return {
+    supportingFiles: [
+      `${base}/notes/fresh-world.md`,
+      `${base}/notes/first-30.md`,
+      `${base}/notes/first-2-hours.md`,
+      `${base}/notes/objective.md`,
+      `${base}/notes/no-crash.md`,
+    ],
+    screenshots: [
+      `${base}/screenshots/fresh-world.png`,
+      `${base}/screenshots/first-30.png`,
+      `${base}/screenshots/first-2-hours.png`,
+      `${base}/screenshots/objective.png`,
+    ],
+    logs: [
+      `${base}/logs/client-playthrough.log`,
+      `${base}/logs/launcher-install.log`,
+    ],
+    saveSnapshots: [
+      `${base}/saves/first-30.zip`,
+      `${base}/saves/first-2-hours.zip`,
+      `${base}/saves/objective.zip`,
+    ],
+  }
+}
+
+async function writeFile(root, relPath, content = 'captured evidence\n') {
+  const filePath = path.join(root, relPath)
+  await fs.mkdir(path.dirname(filePath), { recursive: true })
+  await fs.writeFile(filePath, content, 'utf8')
+}
+
+async function writeGameplayEvidenceBundle(root, prefix, lane, evidenceRelPath, claims = standardClaims) {
+  const groups = proofPaths(prefix, lane)
+  for (const paths of Object.values(groups)) {
+    for (const relPath of paths) await writeFile(root, relPath)
+  }
+  const firstProof = groups.supportingFiles[0]
+  await writeJson(root, evidenceRelPath, {
+    schemaVersion: 'echo.fixture.real-gameplay-evidence.v1',
+    packId: `${prefix}-${lane}-edition`,
+    claims,
+    proofs: Object.fromEntries(Object.keys(claims).map((claim) => [claim, [firstProof]])),
+    ...groups,
+  })
 }
 
 test('strict mode fails when required gameplay evidence is missing', async () => {
@@ -140,6 +192,23 @@ test('fail-closed Openlands and Arcana reports are concrete source reports', asy
   assert.equal(openlands.lanes[0].sourceRepo, 'knoxhack/ECHO-Openlands-Native-Edition')
   assert.equal(openlands.lanes[0].releaseReady, false)
   assert.equal(openlands.lanes[0].claims.freshWorldCreated, false)
+
+  await fs.rm(root, { recursive: true, force: true })
+})
+
+test('pass-shaped family claims require local evidence files', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-gameplay-acceptance-proof-files-'))
+  await writeJson(root, 'release-readiness/openlands-gameplay-evidence.json', genericGameplay('openlands'))
+
+  const result = spawnVerifier(root, ['--no-write', '--json'])
+  assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`)
+  const report = JSON.parse(result.stdout)
+  const openlands = report.families.find((family) => family.family === 'Openlands')
+  const native = openlands.lanes.find((lane) => lane.lane === 'native')
+  assert.equal(openlands.status, 'blocked')
+  assert.equal(native.status, 'blocked')
+  assert.match(native.blockers.join('\n'), /Missing local gameplay evidence file/u)
+  assert.match(native.blockers.join('\n'), /Gameplay claim freshWorldCreated is true but has no non-empty local proof file/u)
 
   await fs.rm(root, { recursive: true, force: true })
 })
@@ -176,6 +245,16 @@ test('all required family and lane evidence can pass strict mode', async () => {
   await writeJson(root, 'release-readiness/galactic-survey-electron-ui-smoke.json', uiSmoke())
   await writeJson(root, 'release-readiness/openlands-gameplay-evidence.json', genericGameplay('openlands'))
   await writeJson(root, 'release-readiness/arcana-division-gameplay-evidence.json', genericGameplay('arcana-division'))
+  for (const prefix of ['sky-relay', 'galactic-survey']) {
+    for (const lane of lanes) {
+      await writeGameplayEvidenceBundle(root, prefix, lane, `fixtures/${prefix}/${lane}/manual-evidence.json`)
+    }
+  }
+  for (const prefix of ['openlands', 'arcana-division']) {
+    for (const lane of lanes) {
+      await writeGameplayEvidenceBundle(root, prefix, lane, `fixtures/${prefix}/${lane}/gameplay-evidence.json`)
+    }
+  }
 
   const result = spawnVerifier(root, ['--strict', '--out', out])
   assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`)
