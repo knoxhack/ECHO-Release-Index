@@ -102,7 +102,7 @@ async function runFixture(name, mutate, expectedStatus, expectedText) {
   await fs.rm(root, { recursive: true, force: true })
 }
 
-await runFixture('pass', null, 0, 'Content graph release proof passed for 2 module row')
+await runFixture('pass', null, 0, '2 use full release modules-fixture; no alternate partial evidence sources.')
 
 await runFixture('alternate-module-release-pass', async (root) => {
   const row = moduleRow('echoarmory')
@@ -112,7 +112,7 @@ await runFixture('alternate-module-release-pass', async (root) => {
   row.artifacts['content-graph'].url = `${alternateBase}/echoarmory-1.0.0-content-graph.json`
   row.artifacts['content-graph-evidence'].url = `${alternateBase}/content-graph-evidence.json`
   await writeJson(root, 'modules/echoarmory.json', row)
-}, 0, '1 match modules-fixture')
+}, 0, '1 use full release modules-fixture; 1 use 1 partial hotfix evidence source')
 
 await runFixture('missing-evidence-role', async (root) => {
   const row = moduleRow('echoarmory')

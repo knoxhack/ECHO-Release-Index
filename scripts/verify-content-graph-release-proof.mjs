@@ -53,7 +53,8 @@ function printHelp() {
   node scripts/verify-content-graph-release-proof.mjs --release-tag modules-content-graph-evidence-proof-20260615 --expected-module-count 133
 
 Verifies every current ECHO-Modules catalog row has content graph evidence metadata.
-Rows on the manifest release tag are also matched against the release manifest assets.`)
+Rows on the manifest release tag are also matched against the release manifest assets.
+Rows on other release tags are reported as partial hotfix evidence sources.`)
 }
 
 async function readJson(filePath) {
@@ -128,6 +129,73 @@ function verifyEvidenceShape(errors, prefix, row, graph, evidence) {
   }
 }
 
+function evidenceKey(evidence) {
+  return JSON.stringify({
+    file: evidence?.file ?? '',
+    url: evidence?.url ?? '',
+    sha256: evidence?.sha256 ?? '',
+    size: evidence?.size ?? null,
+    schemaVersion: evidence?.schemaVersion ?? '',
+  })
+}
+
+function summarizeEvidence(evidence) {
+  if (!evidence) return null
+  return {
+    file: evidence.file,
+    url: evidence.url,
+    sha256: evidence.sha256,
+    size: evidence.size,
+    schemaVersion: evidence.schemaVersion,
+  }
+}
+
+function summarizeReleaseSources(errors, moduleRows, primaryReleaseTag) {
+  const byReleaseTag = new Map()
+  for (const { row, filePath } of moduleRows) {
+    const releaseTag = row.releaseTag || '(missing)'
+    const bucket = byReleaseTag.get(releaseTag) ?? {
+      releaseTag,
+      moduleRows: 0,
+      files: [],
+      evidenceByKey: new Map(),
+    }
+    bucket.moduleRows += 1
+    bucket.files.push(filePath)
+    const evidence = row.artifacts?.['content-graph-evidence']
+    const key = evidenceKey(evidence)
+    if (!bucket.evidenceByKey.has(key)) bucket.evidenceByKey.set(key, summarizeEvidence(evidence))
+    byReleaseTag.set(releaseTag, bucket)
+  }
+
+  const releaseTagDistribution = [...byReleaseTag.values()]
+    .sort((left, right) => {
+      if (left.releaseTag === primaryReleaseTag) return -1
+      if (right.releaseTag === primaryReleaseTag) return 1
+      return left.releaseTag.localeCompare(right.releaseTag)
+    })
+    .map((bucket) => {
+      const evidenceArtifacts = [...bucket.evidenceByKey.values()].filter(Boolean)
+      if (bucket.evidenceByKey.size > 1) {
+        errors.push(`${bucket.releaseTag} has ${bucket.evidenceByKey.size} distinct content-graph-evidence artifact records; one release source must expose one aggregate artifact`)
+      }
+      const releaseSourceState = bucket.releaseTag === primaryReleaseTag ? 'full-release-evidence' : 'partial-hotfix-evidence'
+      return {
+        releaseTag: bucket.releaseTag,
+        moduleRows: bucket.moduleRows,
+        releaseSourceState,
+        primaryFullRelease: bucket.releaseTag === primaryReleaseTag,
+        evidenceArtifact: evidenceArtifacts[0] ?? null,
+      }
+    })
+
+  return {
+    releaseTagDistribution,
+    primaryRelease: releaseTagDistribution.find((entry) => entry.releaseTag === primaryReleaseTag) ?? null,
+    alternateEvidenceReleases: releaseTagDistribution.filter((entry) => entry.releaseTag !== primaryReleaseTag),
+  }
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2))
   const errors = []
@@ -185,12 +253,17 @@ async function main() {
     }
   }
 
+  const releaseSources = summarizeReleaseSources(errors, moduleRows, releaseTag)
+
   return finish(args, errors, {
     schemaVersion: 'echo.release_index.content_graph_release_proof.v1',
     status: 'PASS',
     releaseTag,
     moduleRows: moduleRows.length,
-    primaryReleaseModuleRows: moduleRows.filter(({ row }) => row.releaseTag === releaseTag).length,
+    primaryReleaseModuleRows: releaseSources.primaryRelease?.moduleRows ?? 0,
+    primaryRelease: releaseSources.primaryRelease,
+    releaseTagDistribution: releaseSources.releaseTagDistribution,
+    alternateEvidenceReleases: releaseSources.alternateEvidenceReleases,
     releaseAssetCount: assets.length,
     requiredReleaseAssets: REQUIRED_RELEASE_ASSETS,
     evidenceArtifact: evidenceAsset ? {
@@ -219,7 +292,14 @@ function finish(args, errors, summary = null) {
     return
   }
   if (args.json) console.log(JSON.stringify(summary, null, 2))
-  else console.log(`Content graph release proof passed for ${summary.moduleRows} module row(s); ${summary.primaryReleaseModuleRows} match ${summary.releaseTag}.`)
+  else {
+    const alternateRows = summary.moduleRows - summary.primaryReleaseModuleRows
+    const alternateSources = summary.alternateEvidenceReleases?.length ?? 0
+    const alternateText = alternateSources
+      ? `${alternateRows} use ${alternateSources} partial hotfix evidence source(s).`
+      : 'no alternate partial evidence sources.'
+    console.log(`Content graph release proof passed for ${summary.moduleRows} module row(s); ${summary.primaryReleaseModuleRows} use full release ${summary.releaseTag}; ${alternateText}`)
+  }
 }
 
 await main()
