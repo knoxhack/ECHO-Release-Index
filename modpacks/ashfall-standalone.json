@@ -6,37 +6,37 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
   "releaseTag": "v0.1.0-ashfall-standalone-edition",
-  "commitSha": "99eda57",
+  "commitSha": "0305802",
   "artifacts": {
     "pack": {
       "file": "ashfall-standalone-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
-      "sha256": "1547511a5f5e52d72967e14bf63d45d9ded46572802fe26a3bf8fb6474137e76",
-      "size": 267765793
+      "sha256": "aa62824dbbbcf58dc9256161253f2701ea843d406d576d3145bb12f369aee843",
+      "size": 267956230
     },
     "manifest": {
       "file": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-      "sha256": "c24298087214421345d6c5c3e6f5ecf9ce79b5b9d12e86583f888afe9af1fd7c",
-      "size": 59256
+      "sha256": "6510b7fed27e6e346481ad60a896d333fefb93a2ba69f02581558f03792708c0",
+      "size": 61046
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
-      "sha256": "f062b4623191aad531f2af6e76ef428023c52938d891b636876020c8bae74523",
-      "size": 309
+      "sha256": "2c9ee99d980d480f29b6bb1cca706adb40e474a99d1e2757a4e451baa7464e64",
+      "size": 394
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
-      "sha256": "e7a7092e8071ee7203dd6b8855bd3c3625f74bce8799053e75d8d7512c41894f",
-      "size": 13598
+      "sha256": "3db9a7c7a41a58f07848614fb39b577cdd13663e213d9b86851c37bd9336f9f0",
+      "size": 13588
     },
     "releaseAudit": {
       "file": "release-audit.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/release-audit.json",
-      "sha256": "f984d13d7dca9600d1491429e4dff0b6cbb31981ca05b4df8fa6fa7b9e06bc98",
-      "size": 20640
+      "sha256": "7fee2f6aab0c7521946ea4477a961e362420360fb0e6b4aba4556c6ac875c925",
+      "size": 957
     }
   },
   "dependencies": [
@@ -50,7 +50,9 @@
     "standalone"
   ],
   "trust": "source-linked",
-  "validation": "approved",
-  "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+  "validation": "warning",
+  "validationReason": "Warning-gated for gameplay release-readiness while remaining launcher-installable from checksum-backed GitHub pack and manifest artifacts.",
+  "notes": "Installable warning-gated catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
+  "moduleRelease": "release-index-current-module-artifacts-20260616",
+  "moduleSourceRevision": "ECHO-Release-Index modules/*.json current artifacts, 2026-06-16"
 }

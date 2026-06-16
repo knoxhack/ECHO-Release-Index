@@ -48,7 +48,6 @@
       "file": "echoarcanadivisionprotocol-1.0.0-content-graph.json",
       "sha256": "9979a576a0add00ab8efe87ee058a71b794ea486c9bee73104cf96dd61b474fe",
       "size": 43720,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-arcana-division-1.0.0-beta/echoarcanadivisionprotocol-1.0.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
@@ -63,7 +62,8 @@
     "arcana-division-standalone-edition"
   ],
   "trust": "source-linked",
-  "validation": "approved",
+  "validation": "warning",
+  "contentGraphArtifactPolicy": "legacy-metadata-only",
   "contentGraphEvidencePolicy": "legacy-fallback-only",
-  "validationReason": "Legacy addon catalog record preserved for release history. Current official pack installs use modules/echoarcanadivisionprotocol.json."
+  "validationReason": "Legacy addon catalog record preserved for release history. Current official pack installs use modules/echoarcanadivisionprotocol.json; the historical content graph sidecar is retained as metadata only because no live GitHub asset exists for this legacy row."
 }

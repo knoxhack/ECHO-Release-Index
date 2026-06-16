@@ -6,19 +6,19 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
   "releaseTag": "sky-relay-native-0.1.0-alpha",
-  "commitSha": "9c3b710",
+  "commitSha": "a951df7",
   "artifacts": {
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/checksums.txt",
-      "sha256": "672b0d46979929165047e3d2efb237387a9abbf3fc7d7f688b16118ffd9f02ee",
-      "size": 298
+      "sha256": "4b66e11d7449e4e5002e4aa2f147fbe2b68eeafacfc947741c23f32c7196c383",
+      "size": 383
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/echo-release.json",
-      "sha256": "5064a970863a6de879e969a585faa34e5307c1b6c692f7e76acffadfc2a91daf",
-      "size": 12516
+      "sha256": "8807eeec82f5ddea22a6b8329955e53614ffe663934dd62ba5fe04547dd42afe",
+      "size": 12506
     },
     "nativeHarnessDriverManifestTemplate": {
       "file": "native-harness-driver-manifest.template.json",
@@ -29,8 +29,8 @@
     "releaseAudit": {
       "file": "release-audit.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/release-audit.json",
-      "sha256": "4f5da65b385479d4780833a7e93181e5c259a19af79997f3ea5acfa76b9e6bbb",
-      "size": 19807
+      "sha256": "86d5907c9d3bbad77dfa17c9bc1d9dc0a5462b03eff7099c6dfdae87d646a5cf",
+      "size": 928
     },
     "releaseManifestTemplate": {
       "file": "release-manifest.template.json",
@@ -41,14 +41,14 @@
     "pack": {
       "file": "sky-relay-native-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-0.1.0.zip",
-      "sha256": "1f66d178f71c8a458295399000f40cad00290c347fc2024d93ab239f58e6eafe",
-      "size": 155247484
+      "sha256": "49af828eff8c8d2c30a87f9d518ad45c8d0ea856326096b2fe478840ccfda679",
+      "size": 155402113
     },
     "manifest": {
       "file": "sky-relay-native-edition-alpha-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.0-alpha/sky-relay-native-edition-alpha-0.1.0.pack.json",
-      "sha256": "a09379b62bfb3912455080e958de8073fef1d9027f578499d5d7bea28662fc2c",
-      "size": 55003
+      "sha256": "113cd68ffb7f3237f73fc7f998dcf818a2a76d4de7d08d8fd0b24293ee824305",
+      "size": 56721
     },
     "skyRelayPackBuildReport": {
       "file": "sky-relay-pack-build-report.json",
@@ -76,5 +76,7 @@
   "trust": "source-linked",
   "validation": "approved",
   "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
+  "moduleRelease": "release-index-current-module-artifacts-20260616",
+  "moduleSourceRevision": "ECHO-Release-Index modules/*.json current artifacts, 2026-06-16"
 }

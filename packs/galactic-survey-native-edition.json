@@ -6,7 +6,7 @@
   "loader": "echo-native-loader",
   "publicDownloadHub": "official-echo-website",
   "sourceRevision": "5f2330caf585fa0428022329e30ec211301f5ca2",
-  "moduleSourceRevision": "9decbb1c5ef07e3ed749301fca1eaa383fa1cef2",
+  "moduleSourceRevision": "ECHO-Release-Index modules/*.json current artifacts, 2026-06-16",
   "sourceRepos": {
     "pack": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
     "nativePlatform": "https://github.com/knoxhack/ECHO-Native-Platform",
@@ -19,167 +19,577 @@
   "moduleRequirements": [
     {
       "id": "echoadaptercore",
-      "version": "1.0.0"
+      "moduleId": "echoadaptercore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoadaptercore-1.0.0.echo-addon",
+      "artifactName": "echoadaptercore-1.0.0.echo-addon",
+      "path": "addons/echoadaptercore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "909cc422566f138e65ad927e33775cff20f3caef963181ebd7c3716f711cfbf9",
+      "size": 841135,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/adaptercore-receipt-spine-20260616/echoadaptercore-1.0.0.echo-addon"
     },
     {
       "id": "echoassetcore",
-      "version": "1.0.0"
+      "moduleId": "echoassetcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoassetcore-1.0.0.echo-addon",
+      "artifactName": "echoassetcore-1.0.0.echo-addon",
+      "path": "addons/echoassetcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "cb57ab72fef2de50fb9b749dfa5a2b66fb162e7ab3f130da7e9053caec4bc4aa",
+      "size": 51072,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoassetcore-1.0.0.echo-addon"
     },
     {
       "id": "echoatmospherecore",
-      "version": "1.0.0"
+      "moduleId": "echoatmospherecore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoatmospherecore-1.0.0.echo-addon",
+      "artifactName": "echoatmospherecore-1.0.0.echo-addon",
+      "path": "addons/echoatmospherecore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "41a77b845e4c39a0d8442fd9bbb52fd32038fb7015f4f7b0756bcb78ea40ac1a",
+      "size": 35435,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoatmospherecore-1.0.0.echo-addon"
     },
     {
       "id": "echoblockworks",
-      "version": "1.0.0"
+      "moduleId": "echoblockworks",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoblockworks-1.0.0.echo-addon",
+      "artifactName": "echoblockworks-1.0.0.echo-addon",
+      "path": "addons/echoblockworks-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "e78114c1c924cec81acdecee6dc6c1a732cb6df07a3fdd7f488d12d62793e317",
+      "size": 839329,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoblockworks-1.0.0.echo-addon"
     },
     {
       "id": "echocameracore",
-      "version": "1.0.0"
+      "moduleId": "echocameracore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echocameracore-1.0.0.echo-addon",
+      "artifactName": "echocameracore-1.0.0.echo-addon",
+      "path": "addons/echocameracore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "fc3f888a902451477263047e449f7a60fc68fa4fda551d826755d15fa08be57b",
+      "size": 25340,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocameracore-1.0.0.echo-addon"
     },
     {
       "id": "echocommonloot",
-      "version": "0.1.0"
+      "moduleId": "echocommonloot",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echocommonloot-0.1.0.echo-addon",
+      "artifactName": "echocommonloot-0.1.0.echo-addon",
+      "path": "addons/echocommonloot-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "a9033420753114ce8deb5da806e1dd6f1fcca6245cfc3221d236a983a63a9b44",
+      "size": 15366,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocommonloot-0.1.0.echo-addon"
     },
     {
       "id": "echocontentcore",
-      "version": "1.0.0"
+      "moduleId": "echocontentcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echocontentcore-1.0.0.echo-addon",
+      "artifactName": "echocontentcore-1.0.0.echo-addon",
+      "path": "addons/echocontentcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "00c4e85764a30cdb12448881e67a94b59766abc28eb1d1a7e33214786d428780",
+      "size": 39409,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocontentcore-1.0.0.echo-addon"
     },
     {
       "id": "echocore",
-      "version": "1.0.0"
+      "moduleId": "echocore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echocore-1.0.0.echo-addon",
+      "artifactName": "echocore-1.0.0.echo-addon",
+      "path": "addons/echocore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "2ab4d76bbb40e0110e70cf71b190ec6ae719ee8d7f3f8756cb32791db69061b2",
+      "size": 339976,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocore-1.0.0.echo-addon"
     },
     {
       "id": "echocreatureroles",
-      "version": "0.1.0"
+      "moduleId": "echocreatureroles",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echocreatureroles-0.1.0.echo-addon",
+      "artifactName": "echocreatureroles-0.1.0.echo-addon",
+      "path": "addons/echocreatureroles-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "c54fd527fa709d84f4db7be3fadfcc705266a26a1e2ee991f71dbd4da41c0109",
+      "size": 14955,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echocreatureroles-0.1.0.echo-addon"
     },
     {
       "id": "echofoundationcore",
-      "version": "0.1.0"
+      "moduleId": "echofoundationcore",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echofoundationcore-0.1.0.echo-addon",
+      "artifactName": "echofoundationcore-0.1.0.echo-addon",
+      "path": "addons/echofoundationcore-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "790cba682e16ed8b9dd5c28214f2dfb9b0d96e1596b0a491ed68c6621976f0c3",
+      "size": 18407,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echofoundationcore-0.1.0.echo-addon"
     },
     {
       "id": "echogalacticcore",
-      "version": "0.1.0-native-alpha"
+      "moduleId": "echogalacticcore",
+      "version": "0.1.0-native-alpha",
+      "artifactFamily": "echo-addon",
+      "assetName": "echogalacticcore-0.1.0-native-alpha.echo-addon",
+      "artifactName": "echogalacticcore-0.1.0-native-alpha.echo-addon",
+      "path": "addons/echogalacticcore-0.1.0-native-alpha.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "ebb9584a21244d42da33b527aef3b881b1c23d19b17049f039b39917bbf4cdfb",
+      "size": 10870125,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticcore-0.1.0-native-alpha.echo-addon"
     },
     {
       "id": "echogalacticsurveyprotocol",
-      "version": "0.1.0"
+      "moduleId": "echogalacticsurveyprotocol",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "artifactName": "echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "path": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "23394e0d5751610607804e9c13f984434c9fe79c600ac9a6593520ded76b064f",
+      "size": 125747,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echogalacticsurveyprotocol-0.1.0.echo-addon"
     },
     {
       "id": "echoholomap",
-      "version": "1.0.0"
+      "moduleId": "echoholomap",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoholomap-1.0.0.echo-addon",
+      "artifactName": "echoholomap-1.0.0.echo-addon",
+      "path": "addons/echoholomap-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "04355f87cea3268dc36e7dbf29ac802db0f36070d0411bf1a01dd675d9280a96",
+      "size": 1477056,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoholomap-1.0.0.echo-addon"
     },
     {
       "id": "echohudcore",
-      "version": "1.0.0"
+      "moduleId": "echohudcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echohudcore-1.0.0.echo-addon",
+      "artifactName": "echohudcore-1.0.0.echo-addon",
+      "path": "addons/echohudcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "8ca7d14c7c5fee5835bf01652a23a9116eef5f89636ab64e446ebdf2cc236704",
+      "size": 53197,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echohudcore-1.0.0.echo-addon"
     },
     {
       "id": "echoindex",
-      "version": "1.0.0"
+      "moduleId": "echoindex",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoindex-1.0.0.echo-addon",
+      "artifactName": "echoindex-1.0.0.echo-addon",
+      "path": "addons/echoindex-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "9fa1a16d74e3887e84bb063d715605612f36ca6642e82ac551749fcce4ec553e",
+      "size": 569728,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoindex-1.0.0.echo-addon"
     },
     {
       "id": "echoinputcore",
-      "version": "1.0.0"
+      "moduleId": "echoinputcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoinputcore-1.0.0.echo-addon",
+      "artifactName": "echoinputcore-1.0.0.echo-addon",
+      "path": "addons/echoinputcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "864fa32f190041e506b5c2b6ab5e489ca4258d0c14b6b116791868fe8a65e359",
+      "size": 28311,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoinputcore-1.0.0.echo-addon"
     },
     {
       "id": "echolens",
-      "version": "1.0.0"
+      "moduleId": "echolens",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echolens-1.0.0.echo-addon",
+      "artifactName": "echolens-1.0.0.echo-addon",
+      "path": "addons/echolens-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "743d44eb45c3db4bedda5d821c9c7ac98d62f09f9e3ebad4d02ce41566d64a56",
+      "size": 213064,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echolens-1.0.0.echo-addon"
     },
     {
       "id": "echologisticsnetwork",
-      "version": "1.0.0"
+      "moduleId": "echologisticsnetwork",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echologisticsnetwork-1.0.0.echo-addon",
+      "artifactName": "echologisticsnetwork-1.0.0.echo-addon",
+      "path": "addons/echologisticsnetwork-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "a94612273739696ecf8a1bc766df115b3e5687ecc317f316341155c8c2b56db7",
+      "size": 3652688,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echologisticsnetwork-1.0.0.echo-addon"
     },
     {
       "id": "echomachinecore",
-      "version": "1.0.0"
+      "moduleId": "echomachinecore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echomachinecore-1.0.0.echo-addon",
+      "artifactName": "echomachinecore-1.0.0.echo-addon",
+      "path": "addons/echomachinecore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "a27b87b30cc6fa411c12e3118d2d85a9cc5792a48933ae7b0c740103fe82ebab",
+      "size": 72658,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomachinecore-1.0.0.echo-addon"
     },
     {
       "id": "echomaterialcore",
-      "version": "0.1.0"
+      "moduleId": "echomaterialcore",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echomaterialcore-0.1.0.echo-addon",
+      "artifactName": "echomaterialcore-0.1.0.echo-addon",
+      "path": "addons/echomaterialcore-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "bbfa3e46853b3ad9856d9f57c94088412d369a32d609bbc699db1d3f23d01764",
+      "size": 29562,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomaterialcore-0.1.0.echo-addon"
     },
     {
       "id": "echomissioncore",
-      "version": "1.0.0"
+      "moduleId": "echomissioncore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echomissioncore-1.0.0.echo-addon",
+      "artifactName": "echomissioncore-1.0.0.echo-addon",
+      "path": "addons/echomissioncore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "c05ae4915ef8c698df6676fdf8095556d31767554b80ed9ca63af0bd56c6731c",
+      "size": 109209,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echomissioncore-1.0.0.echo-addon"
     },
     {
       "id": "echonetcore",
-      "version": "1.0.0"
+      "moduleId": "echonetcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echonetcore-1.0.0.echo-addon",
+      "artifactName": "echonetcore-1.0.0.echo-addon",
+      "path": "addons/echonetcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "3d412f52b6535f06f6daad8f0f6f4de320b9832c2cd970048610bb3aac7adea3",
+      "size": 70376,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echonetcore-1.0.0.echo-addon"
     },
     {
       "id": "echoorbitalremnants",
-      "version": "1.0.0"
+      "moduleId": "echoorbitalremnants",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoorbitalremnants-1.0.0.echo-addon",
+      "artifactName": "echoorbitalremnants-1.0.0.echo-addon",
+      "path": "addons/echoorbitalremnants-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "fd228b8f827f9499d4bcfb728be88d8c5224b6a8865223539f4350f1e6022cca",
+      "size": 14334949,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoorbitalremnants-1.0.0.echo-addon"
     },
     {
       "id": "echoplatformcore",
-      "version": "1.0.0"
+      "moduleId": "echoplatformcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoplatformcore-1.0.0.echo-addon",
+      "artifactName": "echoplatformcore-1.0.0.echo-addon",
+      "path": "addons/echoplatformcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "84665d65f829e48077751e8e168a13e476302e8aa41d2fa6ce1e1209e62dba0c",
+      "size": 50619,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoplatformcore-1.0.0.echo-addon"
     },
     {
       "id": "echopowercore",
-      "version": "1.0.0"
+      "moduleId": "echopowercore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echopowercore-1.0.0.echo-addon",
+      "artifactName": "echopowercore-1.0.0.echo-addon",
+      "path": "addons/echopowercore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "2ed34bebd7a71bf4446b799503a2759b84f8c966657ef88f10ce4b5aed6ef974",
+      "size": 29691,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowercore-1.0.0.echo-addon"
     },
     {
       "id": "echopowergrid",
-      "version": "1.0.0"
+      "moduleId": "echopowergrid",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echopowergrid-1.0.0.echo-addon",
+      "artifactName": "echopowergrid-1.0.0.echo-addon",
+      "path": "addons/echopowergrid-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "666fa4bf2e1e81cbd9c6188cb7699d2cc554a441affac4ab6cf38d2a5346afae",
+      "size": 7160311,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echopowergrid-1.0.0.echo-addon"
     },
     {
       "id": "echoprogressioncore",
-      "version": "1.0.0"
+      "moduleId": "echoprogressioncore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoprogressioncore-1.0.0.echo-addon",
+      "artifactName": "echoprogressioncore-1.0.0.echo-addon",
+      "path": "addons/echoprogressioncore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "4a345d4172f909a0e9229feea4d9bf523f8c2b172db39d5edeafa0c607baca0c",
+      "size": 52311,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoprogressioncore-1.0.0.echo-addon"
     },
     {
       "id": "echorecipecore",
-      "version": "1.0.0"
+      "moduleId": "echorecipecore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echorecipecore-1.0.0.echo-addon",
+      "artifactName": "echorecipecore-1.0.0.echo-addon",
+      "path": "addons/echorecipecore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "90c722c136ca4bba6d86c97c26b36cdbc079f1aae44c01878936dd52599bb881",
+      "size": 44190,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echorecipecore-1.0.0.echo-addon"
     },
     {
       "id": "echoruntimeguard",
-      "version": "1.0.0"
+      "moduleId": "echoruntimeguard",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoruntimeguard-1.0.0.echo-addon",
+      "artifactName": "echoruntimeguard-1.0.0.echo-addon",
+      "path": "addons/echoruntimeguard-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "a3c3139c218e6fe1af075ea21320a9e0c0fe1f8d0b6ddc4ab3eddcb39a1b1d75",
+      "size": 128074,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoruntimeguard-1.0.0.echo-addon"
     },
     {
       "id": "echoschemacore",
-      "version": "1.0.0"
+      "moduleId": "echoschemacore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoschemacore-1.0.0.echo-addon",
+      "artifactName": "echoschemacore-1.0.0.echo-addon",
+      "path": "addons/echoschemacore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "3dbcbd428c213a2a3f77d3e286122bbc4ddd8013eabe67375e902cf91442d3ef",
+      "size": 36632,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoschemacore-1.0.0.echo-addon"
     },
     {
       "id": "echoscreencore",
-      "version": "1.0.0"
+      "moduleId": "echoscreencore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoscreencore-1.0.0.echo-addon",
+      "artifactName": "echoscreencore-1.0.0.echo-addon",
+      "path": "addons/echoscreencore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "cf2baff45b3f273eaf5f05fb8589c1adee8d8c9024767e119cba4d2f55df59b0",
+      "size": 368538,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoscreencore-1.0.0.echo-addon"
     },
     {
       "id": "echosoundcore",
-      "version": "1.0.0"
+      "moduleId": "echosoundcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echosoundcore-1.0.0.echo-addon",
+      "artifactName": "echosoundcore-1.0.0.echo-addon",
+      "path": "addons/echosoundcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "bd1aa6e321112e98a3460d4c65c8595fa39a52ba27a23403a507a12eed7ddeed",
+      "size": 11087224,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echosoundcore-1.0.0.echo-addon"
     },
     {
       "id": "echostationcore",
-      "version": "0.1.0"
+      "moduleId": "echostationcore",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echostationcore-0.1.0.echo-addon",
+      "artifactName": "echostationcore-0.1.0.echo-addon",
+      "path": "addons/echostationcore-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "07a6fa99ee4c2bccf217e6929e0f38c84e547dc93b8ae2131d5ed33cee94c0ef",
+      "size": 19030,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echostationcore-0.1.0.echo-addon"
     },
     {
       "id": "echoterminal",
-      "version": "1.0.0"
+      "moduleId": "echoterminal",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoterminal-1.0.0.echo-addon",
+      "artifactName": "echoterminal-1.0.0.echo-addon",
+      "path": "addons/echoterminal-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "d1243a1356c08f937aefba749cdd4a459d6eb6099aee89fcd55e9132a8e9fbe0",
+      "size": 22466256,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoterminal-1.0.0.echo-addon"
     },
     {
       "id": "echothemecore",
-      "version": "1.3.0"
+      "moduleId": "echothemecore",
+      "version": "1.3.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echothemecore-1.3.0.echo-addon",
+      "artifactName": "echothemecore-1.3.0.echo-addon",
+      "path": "addons/echothemecore-1.3.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "dafee6503db9856893a86414ea52bc21b55fdec3c0291ed24310325dfbacded5",
+      "size": 69533713,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echothemecore-1.3.0.echo-addon"
     },
     {
       "id": "echotoolcore",
-      "version": "0.1.0"
+      "moduleId": "echotoolcore",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echotoolcore-0.1.0.echo-addon",
+      "artifactName": "echotoolcore-0.1.0.echo-addon",
+      "path": "addons/echotoolcore-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "26d4b1009c6c250997c39e000ef0fb3f40892bbef6792e6e7f01dac1e8fb3801",
+      "size": 18590,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echotoolcore-0.1.0.echo-addon"
     },
     {
       "id": "echotutorialcore",
-      "version": "1.0.0"
+      "moduleId": "echotutorialcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echotutorialcore-1.0.0.echo-addon",
+      "artifactName": "echotutorialcore-1.0.0.echo-addon",
+      "path": "addons/echotutorialcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "cfdf52b56f8696737ac3c7faed69de3cc731ee970306ad18b4cd8ccc8635c568",
+      "size": 206254,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echotutorialcore-1.0.0.echo-addon"
     },
     {
       "id": "echovalidationcore",
-      "version": "1.0.0"
+      "moduleId": "echovalidationcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echovalidationcore-1.0.0.echo-addon",
+      "artifactName": "echovalidationcore-1.0.0.echo-addon",
+      "path": "addons/echovalidationcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "676dfc6b6b2867ae15b6d21f9bcb0eb99641f485dad99db6e9c9f1472eabe382",
+      "size": 47386,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echovalidationcore-1.0.0.echo-addon"
     },
     {
       "id": "echovehiclecore",
-      "version": "1.0.0"
+      "moduleId": "echovehiclecore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echovehiclecore-1.0.0.echo-addon",
+      "artifactName": "echovehiclecore-1.0.0.echo-addon",
+      "path": "addons/echovehiclecore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "0e4d4fd578782989c3064e1eca78d2be741fe3228c843e4e427ecaa50e731e72",
+      "size": 28569,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echovehiclecore-1.0.0.echo-addon"
     },
     {
       "id": "echoworldcore",
-      "version": "1.0.0"
+      "moduleId": "echoworldcore",
+      "version": "1.0.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoworldcore-1.0.0.echo-addon",
+      "artifactName": "echoworldcore-1.0.0.echo-addon",
+      "path": "addons/echoworldcore-1.0.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "27060c532f1dc790a8209061a9e67f889552835b5769d377ee740ae50e001a1a",
+      "size": 174167,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoworldcore-1.0.0.echo-addon"
     },
     {
       "id": "echoworldstarter",
-      "version": "0.1.0"
+      "moduleId": "echoworldstarter",
+      "version": "0.1.0",
+      "artifactFamily": "echo-addon",
+      "assetName": "echoworldstarter-0.1.0.echo-addon",
+      "artifactName": "echoworldstarter-0.1.0.echo-addon",
+      "path": "addons/echoworldstarter-0.1.0.echo-addon",
+      "required": true,
+      "side": "both",
+      "sha256": "b146cd7e2472761adc64b00a28f913205493f89e4b6e02da4269627a38495d1d",
+      "size": 19701,
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/echoworldstarter-0.1.0.echo-addon"
     }
   ],
   "releaseReadiness": {
@@ -203,31 +613,42 @@
   "assets": [
     {
       "name": "checksums.txt",
-      "size": 310,
-      "sha256": "954af61400a42aef438d4874b3991e38c58f92d70e415b4c6d7ccca1c1f25c2e",
+      "size": 395,
+      "sha256": "27ff56e378052f9a7a279b1af77769a18a72078ba01393a82bd0a16c398eb714",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/checksums.txt"
     },
     {
       "name": "echo-release.json",
-      "size": 12079,
-      "sha256": "4c6a4d0884efb4ee8c2609b370a7741a8e1f6a9947c25f03a3b05bdec923d834",
+      "size": 12069,
+      "sha256": "221a8a0563c18e9ac42fc5e08df4fbef16f6d0970ecfc32b295911f0c10b525a",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/echo-release.json"
     },
     {
       "name": "galactic-survey-native-edition-0.1.0.zip",
-      "size": 145297564,
-      "sha256": "1a631dc5fea8d188de1ea88f113eec7c9d34203cd633c7087a4f18c85b76c2a9",
+      "size": 145435595,
+      "sha256": "91c0935f7eec4b96b786dd6b8a97e10ed83cd9e43cdb72b86ecff14743b04f87",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip"
     },
     {
       "name": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
-      "size": 52578,
-      "sha256": "26debfdc0e3ce902125eea65bab1d7859730b62634e55c6e32093a7392c4a5ed",
+      "size": 54229,
+      "sha256": "2cd59ea4fdb9315409f1b47675633ed3e75b314bf0f002c00f6ad3271c6754b1",
       "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-alpha-0.1.0.pack.json"
+    },
+    {
+      "name": "release-audit.json",
+      "size": 964,
+      "sha256": "803cc4c8282658b95845a58310ec9b657d4bcb44516c1edabc98fa1f4cc12822",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/release-audit.json"
     }
   ],
   "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.0-alpha",
   "validation": "approved",
   "releaseTag": "galactic-survey-native-0.1.0-alpha",
-  "commitSha": "66ef85f"
+  "commitSha": "b1c44b5",
+  "artifactUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.0-alpha/galactic-survey-native-edition-0.1.0.zip",
+  "artifactSha256": "91c0935f7eec4b96b786dd6b8a97e10ed83cd9e43cdb72b86ecff14743b04f87",
+  "artifactSize": 145435595,
+  "manifestAsset": "galactic-survey-native-edition-alpha-0.1.0.pack.json",
+  "moduleRelease": "release-index-current-module-artifacts-20260616"
 }

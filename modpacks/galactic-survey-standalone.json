@@ -6,19 +6,19 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
   "releaseTag": "galactic-survey-standalone-0.1.0-alpha",
-  "commitSha": "ad17d06",
+  "commitSha": "1a54d55",
   "artifacts": {
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/checksums.txt",
-      "sha256": "29081b42c3bfb15e6672df620bf0653778259b5f2c20c81bed44f74c4653769b",
-      "size": 318
+      "sha256": "09ed2effac060ebee7592345382325d4bd766f7affc5f7a1e18c06f671c6617e",
+      "size": 403
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/echo-release.json",
-      "sha256": "2ab689581c594b7e03b0a6e7cef7156e45dd76fee10d9ffd9a96ed9b1ad5ab01",
-      "size": 12370
+      "sha256": "77fb2b0c5d947603e48a471d6db8f7cae3d0c6e29cd3e705bb472ee1bc19e52a",
+      "size": 12360
     },
     "galacticSurveyPackBuildReport": {
       "file": "galactic-survey-pack-build-report.json",
@@ -29,14 +29,20 @@
     "pack": {
       "file": "galactic-survey-standalone-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-0.1.0.zip",
-      "sha256": "9fc434878f027381c915f435f8a9993ad5038fb380cf88db14125a2298d15cd4",
-      "size": 145132555
+      "sha256": "be15ec7151bcba8e476e933276f57fac71dcc870a70070692aabd4bcaf971b12",
+      "size": 145240750
     },
     "manifest": {
       "file": "galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/galactic-survey-standalone-edition-alpha-0.1.0.pack.json",
-      "sha256": "7294bfcabecf422611b42fb1a56df5716cbe205125c22128f2443078a7b6bb94",
-      "size": 52957
+      "sha256": "f0e01a248e14dedb7ecdf2fe66df198d888b647adb19a40a0558410975f5bcd8",
+      "size": 54608
+    },
+    "releaseAudit": {
+      "file": "release-audit.json",
+      "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.0-alpha/release-audit.json",
+      "sha256": "2eba0c978c42735d7115b37aa1e8051b626fb4bb6243ff1a2f6a485bed626566",
+      "size": 988
     }
   },
   "dependencies": [
@@ -53,5 +59,7 @@
   "trust": "source-linked",
   "validation": "approved",
   "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
-  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata."
+  "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
+  "moduleRelease": "release-index-current-module-artifacts-20260616",
+  "moduleSourceRevision": "ECHO-Release-Index modules/*.json current artifacts, 2026-06-16"
 }

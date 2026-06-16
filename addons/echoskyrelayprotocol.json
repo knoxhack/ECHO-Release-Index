@@ -48,7 +48,6 @@
       "file": "echoskyrelayprotocol-0.1.0-content-graph.json",
       "sha256": "48e401eefc737aa46cda9c8c6a6e65bf8c0414ef412ba34ab4a853470a397d86",
       "size": 71805,
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/sky-relay-0.1.0-alpha/echoskyrelayprotocol-0.1.0-content-graph.json",
       "runtimeTarget": "content-graph",
       "buildMode": "generated",
       "contains": [
@@ -63,8 +62,9 @@
     "sky-relay-standalone-edition"
   ],
   "trust": "source-linked",
-  "validation": "approved",
+  "validation": "warning",
+  "contentGraphArtifactPolicy": "legacy-metadata-only",
   "contentGraphEvidencePolicy": "legacy-fallback-only",
-  "validationReason": "Legacy addon catalog record preserved for release history. Current official pack installs use modules/echoskyrelayprotocol.json.",
+  "validationReason": "Legacy addon catalog record preserved for release history. Current official pack installs use modules/echoskyrelayprotocol.json; the historical content graph sidecar is retained as metadata only because no live GitHub asset exists for this legacy row.",
   "notes": "Superseded by the approved module catalog entry for Sky Relay official pack installation."
 }
