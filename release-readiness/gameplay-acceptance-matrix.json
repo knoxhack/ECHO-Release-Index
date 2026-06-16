@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.gameplay.acceptance.v1",
-  "generatedAt": "2026-06-16T21:27:28.562Z",
+  "generatedAt": "2026-06-16T23:08:16.504Z",
   "status": "BLOCKED",
   "strictReady": false,
   "scope": "public-alpha-real-gameplay-acceptance",
@@ -15,7 +15,7 @@
     "passedFamilyCount": 0,
     "blockedFamilyCount": 5,
     "passedLaneCount": 0,
-    "blockerCount": 452,
+    "blockerCount": 450,
     "transportProofCount": 2,
     "acceptedTransportProofCount": 2,
     "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -64,14 +64,13 @@
           "present": true,
           "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
           "status": "BLOCKED",
-          "generatedAt": "2026-06-16T19:07:44.938Z"
+          "generatedAt": "2026-06-16T23:08:05.461Z"
         }
       ],
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 41,
+      "blockerCount": 39,
       "blockers": [
-        "ashfall-native-edition: 46 module file(s) listed in the installed manifest are missing on disk.",
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
         "ashfall-native-edition: Missing gameplay proof: worldCreatedOrLoaded",
@@ -97,7 +96,6 @@
         "ashfall-neoforge-edition: Missing gameplay proof: creativeItemSelectable",
         "ashfall-neoforge-edition: Missing gameplay proof: creativeItemPlayable",
         "ashfall-neoforge-edition: Missing gameplay proof: saveReloadVerified",
-        "ashfall-standalone-edition: Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
         "ashfall-standalone-edition: No runtime log file found under the instance logs directory.",
         "ashfall-standalone-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-standalone-edition: Missing gameplay proof: clientStarted",
@@ -121,9 +119,8 @@
           "workspaceDir": "ECHO-Ashfall-Native-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 14,
+          "blockerCount": 13,
           "blockers": [
-            "46 module file(s) listed in the installed manifest are missing on disk.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
             "Missing gameplay proof: mainMenuNativeReplacement",
             "Missing gameplay proof: worldCreatedOrLoaded",
@@ -164,7 +161,7 @@
           },
           "installedManifest": {
             "present": true,
-            "missingModuleFileCount": 46
+            "missingModuleFileCount": 0
           }
         },
         {
@@ -233,9 +230,8 @@
           "workspaceDir": "ECHO-Ashfall-Standalone-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 15,
+          "blockerCount": 14,
           "blockers": [
-            "Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
             "No runtime log file found under the instance logs directory.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
             "Missing gameplay proof: clientStarted",
@@ -271,7 +267,7 @@
           "crashReport": null,
           "logSummary": null,
           "installedManifest": {
-            "present": false,
+            "present": true,
             "missingModuleFileCount": 0
           }
         }
@@ -1364,9 +1360,8 @@
   "blockers": [
     {
       "family": "Ashfall",
-      "blockerCount": 41,
+      "blockerCount": 39,
       "sample": [
-        "ashfall-native-edition: 46 module file(s) listed in the installed manifest are missing on disk.",
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
         "ashfall-native-edition: Missing gameplay proof: worldCreatedOrLoaded",
@@ -1377,7 +1372,8 @@
         "ashfall-native-edition: Missing gameplay proof: lensVisible",
         "ashfall-native-edition: Missing gameplay proof: creativeTabVisible",
         "ashfall-native-edition: Missing gameplay proof: creativeTabSearchVisible",
-        "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable"
+        "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable",
+        "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable"
       ]
     },
     {

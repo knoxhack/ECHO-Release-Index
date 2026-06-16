@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
-  "generatedAt": "2026-06-16T19:07:44.938Z",
+  "generatedAt": "2026-06-16T23:08:05.461Z",
   "strict": false,
   "ok": false,
   "scope": "real-local-ashfall-launch-play-ui-creative-evidence",
@@ -19,34 +19,8 @@
         "version": "0.1.0",
         "fileCount": 46,
         "expectedModuleFileCount": 46,
-        "missingModuleFileCount": 46,
-        "missingModuleFiles": [
-          "addons/echoadaptercore-1.0.0.echo-addon",
-          "addons/echoagriculturereclamation-1.0.0.echo-addon",
-          "addons/echoarmory-1.0.0.echo-addon",
-          "addons/echoashfallprotocol-1.0.0.echo-addon",
-          "addons/echoblackboxprotocol-1.0.0.echo-addon",
-          "addons/echoblockworks-1.0.0.echo-addon",
-          "addons/echocommonloot-0.1.0.echo-addon",
-          "addons/echocontentcore-1.0.0.echo-addon",
-          "addons/echoconvoyprotocol-1.0.0.echo-addon",
-          "addons/echocore-1.0.0.echo-addon",
-          "addons/echocreatureroles-0.1.0.echo-addon",
-          "addons/echodatacore-1.0.0.echo-addon",
-          "addons/echofoundationcore-0.1.0.echo-addon",
-          "addons/echoholomap-1.0.0.echo-addon",
-          "addons/echohudcore-1.0.0.echo-addon",
-          "addons/echoindex-1.0.0.echo-addon",
-          "addons/echoindustrialnexus-1.0.0.echo-addon",
-          "addons/echolens-1.0.0.echo-addon",
-          "addons/echologisticsnetwork-1.0.0.echo-addon",
-          "addons/echomaterialcore-0.1.0.echo-addon",
-          "addons/echomissioncore-1.0.0.echo-addon",
-          "addons/echomultiblockcore-1.0.0.echo-addon",
-          "addons/echonetcore-1.0.0.echo-addon",
-          "addons/echonexusprotocol-1.0.0.echo-addon",
-          "addons/echoorbitalremnants-1.0.0.echo-addon"
-        ]
+        "missingModuleFileCount": 0,
+        "missingModuleFiles": []
       },
       "runtimeLog": {
         "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\latest.log",
@@ -80,7 +54,6 @@
         "saveReloadVerified": false
       },
       "blockers": [
-        "46 module file(s) listed in the installed manifest are missing on disk.",
         "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "Missing gameplay proof: mainMenuNativeReplacement",
         "Missing gameplay proof: worldCreatedOrLoaded",
@@ -181,10 +154,10 @@
       "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition",
       "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
       "installedManifest": {
-        "present": false,
-        "version": null,
-        "fileCount": 0,
-        "expectedModuleFileCount": 0,
+        "present": true,
+        "version": "0.1.0",
+        "fileCount": 46,
+        "expectedModuleFileCount": 46,
         "missingModuleFileCount": 0,
         "missingModuleFiles": []
       },
@@ -215,7 +188,6 @@
         "saveReloadVerified": false
       },
       "blockers": [
-        "Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
         "No runtime log file found under the instance logs directory.",
         "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "Missing gameplay proof: clientStarted",
@@ -235,7 +207,6 @@
     }
   ],
   "blockers": [
-    "ashfall-native-edition: 46 module file(s) listed in the installed manifest are missing on disk.",
     "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
     "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
     "ashfall-native-edition: Missing gameplay proof: worldCreatedOrLoaded",
@@ -261,7 +232,6 @@
     "ashfall-neoforge-edition: Missing gameplay proof: creativeItemSelectable",
     "ashfall-neoforge-edition: Missing gameplay proof: creativeItemPlayable",
     "ashfall-neoforge-edition: Missing gameplay proof: saveReloadVerified",
-    "ashfall-standalone-edition: Missing installed manifest: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
     "ashfall-standalone-edition: No runtime log file found under the instance logs directory.",
     "ashfall-standalone-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
     "ashfall-standalone-edition: Missing gameplay proof: clientStarted",
