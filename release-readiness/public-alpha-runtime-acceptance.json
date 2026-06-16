@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-16T20:25:40.288Z",
+  "generatedAt": "2026-06-16T20:37:06.169Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "d57facb66e41a5cc68262abbe170032fbe6d0c13",
+  "releaseIndexHeadAtGeneration": "82ec4097ebd1ad30a76a7fa116f95e8eccb2e320",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -95,7 +95,7 @@
       "name": "official-pack-launcher-lifecycle",
       "status": "pass",
       "sourceReport": "release-readiness/official-pack-launcher-lifecycle-smoke.json",
-      "generatedAt": "2026-06-16T20:13:25.121Z",
+      "generatedAt": "2026-06-16T20:30:21.967Z",
       "officialPackCount": 15,
       "coveredPackCount": 15,
       "passCount": 15,
@@ -265,7 +265,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-16T20:25:37.285Z",
+    "generatedAt": "2026-06-16T20:37:06.078Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -284,13 +284,13 @@
         "sourceReport": "release-readiness/sky-relay-electron-ui-smoke.json",
         "status": "pass",
         "ok": true,
-        "generatedAt": "2026-06-14T13:16:35.170Z",
+        "generatedAt": "2026-06-16T20:35:44.247Z",
         "update": {
           "operation": "update",
-          "observedAction": null,
-          "acceptedAction": null,
-          "currentCatalogState": null,
-          "reconciliationMode": null,
+          "observedAction": "Play Sky Relay Native Edition",
+          "acceptedAction": "current",
+          "currentCatalogState": "current",
+          "reconciliationMode": "current-state-backend-install-reconciliation",
           "verifiedModule": true
         },
         "blocker": null
@@ -300,13 +300,13 @@
         "sourceReport": "release-readiness/galactic-survey-electron-ui-smoke.json",
         "status": "pass",
         "ok": true,
-        "generatedAt": "2026-06-14T02:46:09.787Z",
+        "generatedAt": "2026-06-16T20:36:49.251Z",
         "update": {
           "operation": "update",
-          "observedAction": null,
-          "acceptedAction": null,
-          "currentCatalogState": null,
-          "reconciliationMode": null,
+          "observedAction": "Repair Galactic Survey Native Edition",
+          "acceptedAction": "repair",
+          "currentCatalogState": "repair_available",
+          "reconciliationMode": "current-state-backend-install-reconciliation",
           "verifiedModule": true
         },
         "blocker": null

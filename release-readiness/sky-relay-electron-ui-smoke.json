@@ -1,21 +1,21 @@
 {
   "schemaVersion": "echo.skyrelay.electron-ui-smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-14T13:16:35.170Z",
+  "generatedAt": "2026-06-16T20:35:44.247Z",
   "scope": "packaged-electron-ui-and-lifecycle-smoke",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke",
   "userDataDir": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data",
   "playerContentRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content",
-  "debugPort": 64445,
-  "catalogPort": 64446,
+  "debugPort": 62994,
+  "catalogPort": 62996,
   "platform": {
     "os": "win32",
     "release": "10.0.19045",
     "arch": "x64"
   },
   "catalog": {
-    "channelUrl": "http://127.0.0.1:64446/channel.json",
+    "channelUrl": "http://127.0.0.1:62996/channel.json",
     "servedPack": "sky-relay-native-edition",
     "releaseVersion": "0.1.0",
     "manifestName": "sky-relay-native-edition-alpha-0.1.0.pack.json",
@@ -195,7 +195,7 @@
         "clicked": true,
         "text": "Install Sky Relay Native Edition"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T13-16-30-208Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T20-35-16-617Z.json",
       "installed": 12,
       "updated": 0,
       "verified": 0,
@@ -212,10 +212,18 @@
       "ok": true,
       "operation": "update",
       "click": {
-        "clicked": true,
-        "text": "Update Sky Relay Native Edition"
+        "clicked": false,
+        "text": "Play Sky Relay Native Edition",
+        "reason": "No scoped Update click was required for the current catalog state."
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T13-16-33-155Z.json",
+      "observedAction": "Play Sky Relay Native Edition",
+      "acceptedAction": "current",
+      "currentCatalogState": "current",
+      "reconciliation": {
+        "mode": "current-state-backend-install-reconciliation",
+        "rationale": "The scoped pack card was already current after catalog refresh, so the smoke verified the same installed files through install:run."
+      },
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T20-35-26-183Z.json",
       "installed": 0,
       "updated": 1,
       "verified": 11,
@@ -233,13 +241,13 @@
         "clicked": true,
         "text": "Repair Now"
       },
-      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-14T13-16-34-668Z.json",
+      "reportPath": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\user-data\\ECHO\\launcher-logs\\repair-2026-06-16T20-35-36-119Z.json",
       "repaired": [
         "addons/echoskyrelayprotocol-0.1.0.echo-addon"
       ],
       "skipped": [],
       "warnings": [],
-      "corruptSha256": "a7c1328811d1c95140e90d4402c4bc9684a5552239a26c3001c626e8296a4c64",
+      "corruptSha256": "a45a0f99906081b19359abf545722ec523f2519e0abcbadb3c653b3e009d24a9",
       "verifiedModule": {
         "relativePath": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
         "path": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\sky-relay-electron-ui-smoke\\player-content\\Instances\\Sky Relay Native Edition\\addons\\echoskyrelayprotocol-0.1.0.echo-addon",
@@ -265,14 +273,14 @@
     "realVersionToVersionUpdate": "covered_by_release-readiness/sky-relay-launcher-lifecycle-smoke.json"
   },
   "process": {
-    "pid": 4156,
+    "pid": 21684,
     "stdout": [
       "Checking for update",
-      "Generated new staging user ID: c6f68c63-3e33-5fd9-874e-80bd882da915",
-      "Update for version 1.1.5 is not available (latest version: 1.1.5, downgrade is disallowed)."
+      "Generated new staging user ID: af7e8150-3c7a-5a28-aa77-38ad1c425e17",
+      "Update for version 1.1.15 is not available (latest version: 1.1.15, downgrade is disallowed)."
     ],
     "stderr": [
-      "DevTools listening on ws://127.0.0.1:64445/devtools/browser/01aab9ef-5508-4bef-bfd0-7f6462734370"
+      "DevTools listening on ws://127.0.0.1:62994/devtools/browser/a78e985b-0ccc-4b2c-8082-4b72f6b1a8b1"
     ]
   }
 }
