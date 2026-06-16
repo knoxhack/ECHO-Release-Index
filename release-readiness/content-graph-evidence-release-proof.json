@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
+  "generatedAt": "2026-06-16T00:29:51Z",
+  "status": "PASS",
+  "summary": "Canonical .ECHO Content Graph release evidence is published, imported, indexed, runtime-gated, and visible to public/consumer surfaces.",
+  "releaseIndexCatalogCommit": "5a23adbe044b",
+  "moduleRelease": {
+    "repository": "knoxhack/ECHO-Modules",
+    "tag": "modules-content-graph-evidence-proof-20260615",
+    "url": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-content-graph-evidence-proof-20260615",
+    "assetCount": 670,
+    "evidenceArtifact": {
+      "file": "content-graph-evidence.json",
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-content-graph-evidence-proof-20260615/content-graph-evidence.json",
+      "sha256": "3d39a1bc5cbe7f8fb41752e74b5e45713f04ff130b3344570dbd9d7d68b9d23c",
+      "size": 63462,
+      "schemaVersion": "echo.content_graph.evidence.v1"
+    },
+    "counts": {
+      "graphCount": 133,
+      "moduleCount": 133,
+      "nodeCount": 4392,
+      "edgeCount": 5911,
+      "featureCount": 1469,
+      "exportPlanCount": 532,
+      "hytaleBlockerCount": 9
+    }
+  },
+  "releaseIndexChecks": [
+    {
+      "command": "node scripts/validate-index.mjs --strict",
+      "status": "PASS",
+      "result": "158 indexed entries, zero warnings"
+    },
+    {
+      "command": "node --test scripts/test-validate-index.mjs",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/sync-public-alpha-index.mjs --check",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/sync-launcher-channel-catalog.mjs --check",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/verify-content-graph-release-proof.mjs",
+      "status": "PASS",
+      "result": "133 module rows carry matching content-graph and content-graph-evidence artifacts"
+    },
+    {
+      "command": "node scripts/test-verify-content-graph-release-proof.mjs",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/docs-audit.mjs",
+      "status": "PASS"
+    }
+  ],
+  "runtimeGates": [
+    {
+      "repository": "knoxhack/ECHO-Native-Platform",
+      "commit": "c0e7ed404620",
+      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-published-proof-main runNativeContentGraphEvidenceGate --console=plain",
+      "status": "PASS",
+      "result": "modules=133 nodes=4392 edges=5911 features=1469 exportPlans=532 hytaleBlockers=9"
+    },
+    {
+      "repository": "knoxhack/ECHO-Standalone-Runtime",
+      "commit": "5f5dbe5101aa",
+      "command": ".\\gradlew.bat -PechoModulesRepoRoot=C:\\Development\\Temp\\ECHO-Modules-published-proof-main runStandaloneContentGraphLoadSmoke --console=plain",
+      "status": "PASS",
+      "result": "graphs=133 nodes=4392 edges=5911 features=1469 exportPlans=532 hytalePlans=133 hytaleBlockedNodes=9 checked=23 failures=0"
+    }
+  ],
+  "consumerChecks": [
+    {
+      "repository": "knoxhack/ECHO-Platform-Website",
+      "commit": "b414b016a438",
+      "commands": [
+        "npm run sync:ecosystem",
+        "npm run build"
+      ],
+      "status": "PASS",
+      "result": "Website snapshot exposes the canonical evidence artifact and refreshed alpha catalog metadata"
+    },
+    {
+      "repository": "knoxhack/ECHO-Launcher",
+      "commit": "ad4917c31546",
+      "commands": [
+        "npm run build",
+        "npm test"
+      ],
+      "status": "PASS",
+      "result": "Launcher labels release evidence versus installed scan evidence"
+    },
+    {
+      "repository": "knoxhack/ECHO-Developer-Studio",
+      "commit": "5c30130c1b93",
+      "commands": [
+        "npm run build",
+        "npm test"
+      ],
+      "status": "PASS",
+      "result": "Developer Studio labels local workspace scans and canonical release evidence"
+    },
+    {
+      "repository": "knoxhack/ECHO-COMMAND-CENTER",
+      "commit": "67e68f252619",
+      "commands": [
+        "npm run build",
+        "npm run test:unit"
+      ],
+      "status": "PASS",
+      "result": "Command Center labels local scan evidence and canonical release evidence"
+    },
+    {
+      "repository": "knoxhack/ECHO-Studio-Mobile",
+      "commit": "0ea1070fc7de",
+      "commands": [
+        "npm run typecheck"
+      ],
+      "status": "PASS",
+      "result": "Mobile Studio prefers canonical release evidence and falls back to sidecars"
+    }
+  ],
+  "notes": [
+    "Hytale statuses remain export planning evidence only; this proof does not claim Hytale runtime or playable support.",
+    "Openlands Hytale blocker count is preserved at 9 until the module source intentionally changes.",
+    "npm ci reported existing dependency audit findings in Website, Launcher, Developer Studio, and Mobile Studio; no dependency changes were made in this proof pass."
+  ]
+}
