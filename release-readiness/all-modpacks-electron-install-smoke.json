@@ -1,13 +1,30 @@
 {
-  "ok": false,
-  "phase": "pack:sky-relay-native-edition",
-  "generatedAt": "2026-06-14T22:07:27.032Z",
-  "channelUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/launcher-channel.json",
-  "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts-v1.1.10\\win-unpacked\\ECHOLauncher.exe",
+  "ok": true,
+  "phase": "completed",
+  "generatedAt": "2026-06-16T10:43:03.492Z",
+  "channelUrl": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+  "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
+  "standaloneRuntimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+  "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
   "workRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke",
   "userDataDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data",
   "playerContentRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content",
   "minecraftRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root",
+  "moduleEvidenceSources": {
+    "primaryReleaseTag": "modules-content-graph-evidence-repro-20260616",
+    "releaseTagDistribution": [
+      {
+        "releaseTag": "modules-content-graph-evidence-repro-20260616",
+        "moduleRows": 87,
+        "releaseSourceState": "full-release-evidence"
+      },
+      {
+        "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+        "moduleRows": 46,
+        "releaseSourceState": "partial-hotfix-evidence"
+      }
+    ]
+  },
   "expectedPackCount": 15,
   "expectedPacks": [
     "ashfall-native-edition",
@@ -30,18 +47,18 @@
     {
       "profileId": "ashfall-native-edition",
       "name": "Ashfall Native Edition",
-      "startedAt": "2026-06-14T22:07:40.648Z",
+      "startedAt": "2026-06-16T10:43:04.728Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
           "configured": true,
           "ok": true,
-          "source": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/launcher-channel.json",
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-14T22:07:43.922Z",
+          "fetchedAt": "2026-06-16T10:43:04.786Z",
           "status": "approved",
-          "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
+          "diagnostic": null,
           "release": {
             "id": "release-index:ashfall-native-edition:0.1.0",
             "pack": "ashfall-native-edition",
@@ -51,22 +68,22 @@
             "name": "ashfall-native-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-14T22:07:43.918Z",
+            "publishedAt": "2026-06-16T10:43:04.639Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition",
             "releaseNotes": [
-              "Resolved through the approved Catalog entry ashfall-native-edition."
+              "Resolved through the warning-gated Catalog entry ashfall-native-edition."
             ],
             "manifestAssetName": "ashfall-native-edition-alpha-0.1.0.pack.json",
             "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-            "manifestSha256": "60a5e5eef5d9b0f62382ac219c4f1625c43f3e997b36d8a0a34f2f632ae90709",
+            "manifestSha256": "2c4a409645b183d2aab6c9c11b7093652fc67ce2b116fb862eabde313dd1bc29",
             "trust": "verified-metadata",
             "assets": [
               {
                 "name": "ashfall-native-edition-0.1.0.zip",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
-                "size": 267527272,
-                "sha256": "3e64b2e0b92fdea044107055faf6ea819cf39d178b97de8f9e6e16ce0b18f77c",
+                "size": 268234831,
+                "sha256": "1d13b2622d79db2d544a15faad56cd1ab62eadd5461fce9eda3bbde5b46abd7f",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -74,8 +91,8 @@
                 "name": "ashfall-native-edition-alpha-0.1.0.pack.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-                "size": 55741,
-                "sha256": "60a5e5eef5d9b0f62382ac219c4f1625c43f3e997b36d8a0a34f2f632ae90709",
+                "size": 60451,
+                "sha256": "2c4a409645b183d2aab6c9c11b7093652fc67ce2b116fb862eabde313dd1bc29",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -83,8 +100,8 @@
                 "name": "checksums.txt",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
-                "size": 294,
-                "sha256": "436426cf9b52011e1a39d817d67683826c826d03fa26c521dcbd92925898a925",
+                "size": 379,
+                "sha256": "c82a718691b99df74746effb470ff0530f9952f7905ae972d117ebbab5a1b017",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -92,8 +109,8 @@
                 "name": "echo-release.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
-                "size": 13240,
-                "sha256": "dfac68b835633719536147c7ad29144400f43a952c295bec74798ad5fcf7ae3d",
+                "size": 13237,
+                "sha256": "f073e31df313d70ec76bd5a48d077c491d62543cd8d1a0abac159a5d5cd44213",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -101,8 +118,8 @@
                 "name": "release-audit.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/release-audit.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/release-audit.json",
-                "size": 20280,
-                "sha256": "9e2b78ebe9cbe40fbae127e98f53916a3f82419c42ab4489b7a74372c8db3eed",
+                "size": 924,
+                "sha256": "18c88bbf6f2aa0ca6462f762dea8fb229f75b99494da60c3c227129435ca2ac1",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               }
@@ -141,14 +158,23 @@
         "clicked": true,
         "label": "Install Ashfall Native Edition"
       },
-      "completedAt": "2026-06-14T22:10:51.951Z",
-      "durationMs": 191303,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T22-08-02-155Z.json",
+      "completedAt": "2026-06-16T10:45:17.784Z",
+      "durationMs": 133056,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-43-05-747Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-native-edition",
       "manifestVersion": "0.1.0",
       "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 46,
+          "moduleCount": 46
+        }
+      ],
+      "repairFixture": null,
       "launchRoute": {
         "kind": "minecraft-launcher-handoff",
         "ok": true,
@@ -161,6 +187,7 @@
         "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
         "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition",
         "validatedModsCount": 46,
+        "repair": null,
         "nativeRuntime": {
           "ok": true,
           "moduleCount": 46,
@@ -173,29 +200,24 @@
           "markerPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\.echo\\native-loader\\module-activation.json"
         },
         "staleNeoForgeMetadata": null,
-        "warnings": [
-          "Minecraft Launcher base version '26.1.2' metadata was missing. ECHO wrote it from Mojang metadata so assets can download.",
-          "Minecraft 26.1.2 client jar was missing or corrupt. ECHO downloaded it so NeoForge can generate its patched client.",
-          "Native Loader client library was missing. ECHO downloaded com/echo/native-loader/1.0.4/native-loader-1.0.4.jar from the ECHO Native Platform GitHub release.",
-          "Minecraft Launcher Native Loader + Minecraft version metadata 'echo-ashfall-native-edition-native-loader-1.0.4' was missing. ECHO wrote it from the verified Ashfall Native Edition manifest."
-        ]
+        "warnings": []
       }
     },
     {
       "profileId": "ashfall-neoforge-edition",
       "name": "Ashfall NeoForge Edition",
-      "startedAt": "2026-06-14T22:10:51.954Z",
+      "startedAt": "2026-06-16T10:45:17.787Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
           "configured": true,
           "ok": true,
-          "source": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/launcher-channel.json",
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-14T22:10:53.393Z",
+          "fetchedAt": "2026-06-16T10:45:30.117Z",
           "status": "approved",
-          "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
+          "diagnostic": null,
           "release": {
             "id": "release-index:ashfall-neoforge-edition:0.1.0",
             "pack": "ashfall-neoforge-edition",
@@ -205,22 +227,22 @@
             "name": "ashfall-neoforge-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-14T22:07:54.385Z",
+            "publishedAt": "2026-06-16T10:43:05.668Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition",
             "releaseNotes": [
-              "Resolved through the approved Catalog entry ashfall-neoforge-edition."
+              "Resolved through the warning-gated Catalog entry ashfall-neoforge-edition."
             ],
             "manifestAssetName": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
             "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-            "manifestSha256": "04ab6056be8383c10d8d8bf9c2abbb15cb1ca1f70763c0c3c09fb313108e6740",
+            "manifestSha256": "3c6f801d4bc9ac2ee6dd957a8048fe5a1d770f1da24eecca13401c8a1ce395c9",
             "trust": "verified-metadata",
             "assets": [
               {
                 "name": "ashfall-neoforge-edition-0.1.0.zip",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
-                "size": 267329317,
-                "sha256": "1ff18293ac04c3e8e6c7da64cb70b9147dde029c9bb130474f6acfae1cd54c28",
+                "size": 267976228,
+                "sha256": "ec12fc20af0ea7e6d4b7fa16d4dcd09ebf59c07684840aadea879afe740755bc",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -228,8 +250,8 @@
                 "name": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-                "size": 89158,
-                "sha256": "04ab6056be8383c10d8d8bf9c2abbb15cb1ca1f70763c0c3c09fb313108e6740",
+                "size": 107129,
+                "sha256": "3c6f801d4bc9ac2ee6dd957a8048fe5a1d770f1da24eecca13401c8a1ce395c9",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -237,8 +259,8 @@
                 "name": "checksums.txt",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-                "size": 298,
-                "sha256": "fb336386934c8c4921a6256d3f4b42baa6d9e89b8501cfce12e442ee76518743",
+                "size": 383,
+                "sha256": "a908b093af8a864faabc0fadb0083ac4f6ce3ffa2a5c3cab53edfad9809df4b5",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -246,8 +268,8 @@
                 "name": "echo-release.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-                "size": 13353,
-                "sha256": "776506e9a9864e0e9ead46983d105bf42832c54e7a7b39fc650e607fbe950718",
+                "size": 13354,
+                "sha256": "5afbeffd35d548effd1dd11e9fee2d8067aa8500b0f2adaa26a424b1eb8067b9",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -255,8 +277,8 @@
                 "name": "release-audit.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/release-audit.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/release-audit.json",
-                "size": 20399,
-                "sha256": "84474bb64906789975d4c21f75f86f654ba57831a3439d08f44d9a5edd58a083",
+                "size": 937,
+                "sha256": "8b0bd3582faefd31b2beb6cbd43fba3df37ab633d61df624e09f60ef231f37b2",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               }
@@ -295,30 +317,40 @@
         "clicked": true,
         "label": "Install Ashfall NeoForge Edition"
       },
-      "completedAt": "2026-06-14T22:13:36.522Z",
-      "durationMs": 164568,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T22-11-32-194Z.json",
+      "completedAt": "2026-06-16T10:46:06.904Z",
+      "durationMs": 49117,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-45-30-769Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-neoforge-edition",
       "manifestVersion": "0.1.0",
       "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 46,
+          "moduleCount": 46
+        }
+      ],
+      "repairFixture": null,
       "launchRoute": {
         "kind": "minecraft-launcher-handoff",
         "ok": true,
         "runtimeMode": "neoforge-minecraft",
         "profileId": "echo-ashfall-neoforge-edition",
         "profileName": "Ashfall NeoForge Edition",
-        "versionId": "neoforge-26.1.2.29-beta",
+        "versionId": "neoforge-26.1.2.43-beta",
         "versionSource": "installed",
-        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.29-beta\\neoforge-26.1.2.29-beta.json",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
         "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
         "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
         "validatedModsCount": 46,
+        "repair": null,
         "nativeRuntime": null,
         "staleNeoForgeMetadata": {
-          "versionId": "neoforge-26.1.2.29-beta",
-          "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.29-beta\\neoforge-26.1.2.29-beta.json",
+          "versionId": "neoforge-26.1.2.43-beta",
+          "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
           "primaryAction": {
             "kind": "play",
             "label": "Play Ashfall NeoForge Edition",
@@ -327,13 +359,13 @@
             "reason": ""
           },
           "warnings": [
-            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.29-beta' is invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath).",
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath).",
             "Minecraft Launcher profile has not been created yet.",
-            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.29-beta' is ECHO-managed but stale; ECHO will rewrite it during handoff."
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is ECHO-managed but stale; ECHO will rewrite it during handoff."
           ]
         },
         "warnings": [
-          "Minecraft Launcher NeoForge version metadata 'neoforge-26.1.2.29-beta' was invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath). ECHO refreshed it from the official NeoForge installer.",
+          "Minecraft Launcher NeoForge version metadata 'neoforge-26.1.2.43-beta' was invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath). ECHO refreshed it from the official NeoForge installer.",
           "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Ashfall NeoForge Edition with the ECHO-managed instance folder."
         ]
       }
@@ -341,18 +373,18 @@
     {
       "profileId": "ashfall-standalone-edition",
       "name": "Ashfall Standalone Edition",
-      "startedAt": "2026-06-14T22:13:36.527Z",
+      "startedAt": "2026-06-16T10:46:06.908Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
           "configured": true,
           "ok": true,
-          "source": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/alpha/launcher-channel.json",
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-14T22:13:36.787Z",
+          "fetchedAt": "2026-06-16T10:46:07.037Z",
           "status": "approved",
-          "diagnostic": "Checksum-backed Catalog release is approved for launcher install.",
+          "diagnostic": null,
           "release": {
             "id": "release-index:ashfall-standalone-edition:0.1.0",
             "pack": "ashfall-standalone-edition",
@@ -362,22 +394,22 @@
             "name": "ashfall-standalone-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-14T22:13:18.252Z",
+            "publishedAt": "2026-06-16T10:45:30.273Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition",
             "releaseNotes": [
-              "Resolved through the approved Catalog entry ashfall-standalone-edition."
+              "Resolved through the warning-gated Catalog entry ashfall-standalone-edition."
             ],
             "manifestAssetName": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
             "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-            "manifestSha256": "5feff16a755ed76f095e2695b1f49f97fe3aea444cd92ece0268101da27c91e4",
+            "manifestSha256": "d86268c5887a98434565c5e83fc7a3b6738ac814ee435d1380944279a5ea5e78",
             "trust": "verified-metadata",
             "assets": [
               {
                 "name": "ashfall-standalone-edition-0.1.0.zip",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
-                "size": 267325007,
-                "sha256": "a278199b7556d0cd319eb8cb497d996c7f9bbc160d607e17c6df7732392fa04e",
+                "size": 267971658,
+                "sha256": "19a5f1f2e25a2882be8b89ed935c6f62178801898bc304120f651de4e91eb9a3",
                 "releaseTag": "v0.1.0-ashfall-standalone-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
               },
@@ -385,8 +417,8 @@
                 "name": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-                "size": 56642,
-                "sha256": "5feff16a755ed76f095e2695b1f49f97fe3aea444cd92ece0268101da27c91e4",
+                "size": 61370,
+                "sha256": "d86268c5887a98434565c5e83fc7a3b6738ac814ee435d1380944279a5ea5e78",
                 "releaseTag": "v0.1.0-ashfall-standalone-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
               },
@@ -394,8 +426,8 @@
                 "name": "checksums.txt",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
-                "size": 309,
-                "sha256": "733ea4cfe53beb70e7aff5c9e3b9c4e4f9bf002e3b6d57f8ae49b8fbc56f69f3",
+                "size": 394,
+                "sha256": "4e14c6eba48a830554125ef1294661c601149540fc5d5271e7f65ea66b57e580",
                 "releaseTag": "v0.1.0-ashfall-standalone-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
               },
@@ -403,8 +435,8 @@
                 "name": "echo-release.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
-                "size": 13594,
-                "sha256": "e717ad914237386f834f435d5521538e58c777687d51786daa27a8491504a2d0",
+                "size": 13593,
+                "sha256": "6883fb9777f9e48b28ec72ab12577298849656a244ae06f8faba9bed88a2e4ab",
                 "releaseTag": "v0.1.0-ashfall-standalone-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
               },
@@ -412,8 +444,8 @@
                 "name": "release-audit.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/release-audit.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/release-audit.json",
-                "size": 20639,
-                "sha256": "33fa1ac73c85249e62f16eb38df09da9acca06442792c10c55d73a519cc61406",
+                "size": 962,
+                "sha256": "28bc6062b5ff5bf96bc81d01074fe8e5793b62efa00bd4a5538bff10f6421ad6",
                 "releaseTag": "v0.1.0-ashfall-standalone-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
               }
@@ -452,19 +484,1994 @@
         "clicked": true,
         "label": "Install Ashfall Standalone Edition"
       },
-      "completedAt": "2026-06-14T22:15:42.183Z",
-      "durationMs": 125656,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-14T22-13-51-173Z.json",
+      "completedAt": "2026-06-16T10:46:32.217Z",
+      "durationMs": 25309,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-46-07-525Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-standalone-edition",
       "manifestVersion": "0.1.0",
       "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 46,
+          "moduleCount": 46
+        }
+      ],
+      "repairFixture": null,
       "launchRoute": {
         "kind": "standalone-runtime",
         "ok": true,
-        "runtimeRoot": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts-v1.1.10\\win-unpacked\\resources\\Echo\\echo-standalone-runtime",
-        "executablePath": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts-v1.1.10\\win-unpacked\\resources\\Echo\\echo-standalone-runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
+        "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "executablePath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
+        "version": "0.1.0-phase14.20-alpha-readiness",
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "sky-relay-native-edition",
+      "name": "Sky Relay Native Edition",
+      "startedAt": "2026-06-16T10:46:32.220Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:46:32.344Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:sky-relay-native-edition:0.1.1",
+            "pack": "sky-relay-native-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "sky-relay-native-0.1.1-alpha",
+            "name": "sky-relay-native-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:46:07.211Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.1-alpha",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry sky-relay-native-edition."
+            ],
+            "manifestAssetName": "sky-relay-native-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/sky-relay-native-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "c1315d10279da3f3a511ae229d4f06496f43d1c46adc62c956406e871d3a99f4",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/checksums.txt",
+                "size": 383,
+                "sha256": "fb2d200915299c8c15cd6e06fe7eb9b5e0edded9ce443f2743989f5cb3397906",
+                "releaseTag": "sky-relay-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.1-alpha"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/echo-release.json",
+                "size": 12506,
+                "sha256": "b987bb265ce39739765bf3b8472efda2f317bdd0070439bd4811e7901a592f73",
+                "releaseTag": "sky-relay-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.1-alpha"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/release-audit.json",
+                "size": 928,
+                "sha256": "4a4edc3b94ce3bd787e7ec6375090e98d2c74ddaab9e3ffe3bbeb01c9cdd27a1",
+                "releaseTag": "sky-relay-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.1-alpha"
+              },
+              {
+                "name": "sky-relay-native-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/sky-relay-native-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/sky-relay-native-edition-0.1.1.zip",
+                "size": 155398300,
+                "sha256": "b529b9b6cdcc2d54dd37ae4c19b262315f1bcc80dbeedc2c1da8b31ba6a8901d",
+                "releaseTag": "sky-relay-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.1-alpha"
+              },
+              {
+                "name": "sky-relay-native-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/sky-relay-native-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/download/sky-relay-native-0.1.1-alpha/sky-relay-native-edition-alpha-0.1.1.pack.json",
+                "size": 57120,
+                "sha256": "c1315d10279da3f3a511ae229d4f06496f43d1c46adc62c956406e871d3a99f4",
+                "releaseTag": "sky-relay-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.1-alpha"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-loader-minecraft",
+          "label": "Minecraft + Native Loader",
+          "shortLabel": "Native Loader",
+          "detail": "Uses the official Minecraft Launcher with ECHO Native Loader metadata."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Sky Relay Native Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Sky Relay Native Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Sky Relay Native Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Sky Relay Native Edition"
+      },
+      "completedAt": "2026-06-16T10:47:06.301Z",
+      "durationMs": 34081,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-46-32-817Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Native Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Native Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "sky-relay-native-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 43,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 35,
+          "moduleCount": 35
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 8,
+          "moduleCount": 8
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "native-loader-minecraft",
+        "profileId": "echo-sky-relay-native-edition-native-loader",
+        "profileName": "Sky Relay Native Edition - Native Loader",
+        "versionId": "echo-sky-relay-native-edition-native-loader-1.0.4",
+        "versionSource": "echo-managed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\echo-sky-relay-native-edition-native-loader-1.0.4\\echo-sky-relay-native-edition-native-loader-1.0.4.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Native Edition",
+        "validatedModsCount": 43,
+        "repair": null,
+        "nativeRuntime": {
+          "ok": true,
+          "moduleCount": 43,
+          "classpathEntryCount": 86,
+          "launcherLibraryCount": 1,
+          "nativeLoaderLibraryPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\libraries\\com\\echo\\native-loader\\1.0.4\\native-loader-1.0.4.jar",
+          "handoffFile": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Native Edition\\.echo\\native-loader\\module-activation-handoff.json",
+          "jvmArgCharCount": 618,
+          "gameArgCharCount": 478,
+          "markerPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Native Edition\\.echo\\native-loader\\module-activation.json"
+        },
+        "staleNeoForgeMetadata": null,
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "sky-relay-neoforge-edition",
+      "name": "Sky Relay NeoForge Edition",
+      "startedAt": "2026-06-16T10:47:06.304Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:47:09.220Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:sky-relay-neoforge-edition:0.1.1",
+            "pack": "sky-relay-neoforge-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "sky-relay-neoforge-0.1.1-alpha",
+            "name": "sky-relay-neoforge-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:46:32.531Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.1-alpha",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry sky-relay-neoforge-edition."
+            ],
+            "manifestAssetName": "sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "3ee2b6afc67cc049040b4edafd9a49254d24d0aad20a078414b208dc37114c42",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/checksums.txt",
+                "size": 387,
+                "sha256": "0cba254bf547e354a4f10d11cec3ccc294d8b82c2c63ed68b01fbe2a10c4e619",
+                "releaseTag": "sky-relay-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/echo-release.json",
+                "size": 12615,
+                "sha256": "d97343ff676ca9ed71901bd195a57565e013ea6a664cec52cef980e31d48f90f",
+                "releaseTag": "sky-relay-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/release-audit.json",
+                "size": 940,
+                "sha256": "670a419c97cf70a2db8aef12d1901fc69bfda2f5b1ba7593c3fe4e10bcec1bee",
+                "releaseTag": "sky-relay-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "sky-relay-neoforge-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/sky-relay-neoforge-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/sky-relay-neoforge-edition-0.1.1.zip",
+                "size": 155216352,
+                "sha256": "561b8f693c28b3c35606b65b2558ba966592ce9f27f9fa61704c1e600c60c844",
+                "releaseTag": "sky-relay-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/download/sky-relay-neoforge-0.1.1-alpha/sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
+                "size": 87292,
+                "sha256": "3ee2b6afc67cc049040b4edafd9a49254d24d0aad20a078414b208dc37114c42",
+                "releaseTag": "sky-relay-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.1-alpha"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "neoforge-minecraft",
+          "label": "Minecraft + NeoForge",
+          "shortLabel": "NeoForge",
+          "detail": "Uses the official Minecraft Launcher with the selected NeoForge profile."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Sky Relay NeoForge Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Sky Relay NeoForge Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Sky Relay NeoForge Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Sky Relay NeoForge Edition"
+      },
+      "completedAt": "2026-06-16T10:47:19.985Z",
+      "durationMs": 13681,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-47-09-676Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay NeoForge Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "sky-relay-neoforge-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 43,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 35,
+          "moduleCount": 35
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 8,
+          "moduleCount": 8
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "neoforge-minecraft",
+        "profileId": "echo-sky-relay-neoforge-edition",
+        "profileName": "Sky Relay NeoForge Edition",
+        "versionId": "neoforge-26.1.2.43-beta",
+        "versionSource": "installed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay NeoForge Edition",
+        "validatedModsCount": 43,
+        "repair": null,
+        "nativeRuntime": null,
+        "staleNeoForgeMetadata": {
+          "versionId": "neoforge-26.1.2.43-beta",
+          "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+          "primaryAction": {
+            "kind": "play",
+            "label": "Play Sky Relay NeoForge Edition",
+            "enabled": true,
+            "variant": "primary",
+            "reason": ""
+          },
+          "warnings": [
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath).",
+            "Minecraft Launcher profile has not been created yet.",
+            "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is ECHO-managed but stale; ECHO will rewrite it during handoff."
+          ]
+        },
+        "warnings": [
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Minecraft Launcher NeoForge version metadata 'neoforge-26.1.2.43-beta' was invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath). ECHO refreshed it from the official NeoForge installer.",
+          "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Sky Relay NeoForge Edition with the ECHO-managed instance folder.",
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory."
+        ]
+      }
+    },
+    {
+      "profileId": "sky-relay-standalone-edition",
+      "name": "Sky Relay Standalone Edition",
+      "startedAt": "2026-06-16T10:47:19.990Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:47:20.216Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:sky-relay-standalone-edition:0.1.1",
+            "pack": "sky-relay-standalone-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "sky-relay-standalone-0.1.1-alpha",
+            "name": "sky-relay-standalone-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:47:09.380Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.1-alpha",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry sky-relay-standalone-edition."
+            ],
+            "manifestAssetName": "sky-relay-standalone-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/sky-relay-standalone-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "a61183dd71a7806a0cd228cdbac57931a0c46082f137c21836aa6a35c49d83aa",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/checksums.txt",
+                "size": 391,
+                "sha256": "145d759ffed160ce799cd3dbed671d5785d0901354e5c49b013e6125bb088b7c",
+                "releaseTag": "sky-relay-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/echo-release.json",
+                "size": 12809,
+                "sha256": "d7eda4c168db719ca868db1c978733d17b19f4be049ca7d2b5101cda2209a1aa",
+                "releaseTag": "sky-relay-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/release-audit.json",
+                "size": 952,
+                "sha256": "28c6f6b6f51ca8f5a5cfcff0543b43ff49576e4819bcec51e3e444fee4f79ec7",
+                "releaseTag": "sky-relay-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "sky-relay-standalone-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/sky-relay-standalone-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/sky-relay-standalone-edition-0.1.1.zip",
+                "size": 155212396,
+                "sha256": "d53eaf222f1cbc1365a69a878b529746be7f977ef741ca56c27c98cf7020b40b",
+                "releaseTag": "sky-relay-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "sky-relay-standalone-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/sky-relay-standalone-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/download/sky-relay-standalone-0.1.1-alpha/sky-relay-standalone-edition-alpha-0.1.1.pack.json",
+                "size": 57555,
+                "sha256": "a61183dd71a7806a0cd228cdbac57931a0c46082f137c21836aa6a35c49d83aa",
+                "releaseTag": "sky-relay-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.1-alpha"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-runtime",
+          "label": "ECHO Standalone Engine",
+          "shortLabel": "Standalone",
+          "detail": "Runs through the standalone ECHO runtime."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Sky Relay Standalone Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Sky Relay Standalone Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Sky Relay Standalone Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Sky Relay Standalone Edition"
+      },
+      "completedAt": "2026-06-16T10:47:24.517Z",
+      "durationMs": 4527,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-47-20-704Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Sky Relay Standalone Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "sky-relay-standalone-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 43,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 35,
+          "moduleCount": 35
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 8,
+          "moduleCount": 8
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "standalone-runtime",
+        "ok": true,
+        "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "executablePath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
+        "version": "0.1.0-phase14.20-alpha-readiness",
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "galactic-survey-native-edition",
+      "name": "Galactic Survey Native Edition",
+      "startedAt": "2026-06-16T10:47:24.520Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:47:24.643Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:galactic-survey-native-edition:0.1.1",
+            "pack": "galactic-survey-native-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "galactic-survey-native-0.1.1-alpha",
+            "name": "galactic-survey-native-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:47:20.393Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.1-alpha",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry galactic-survey-native-edition."
+            ],
+            "manifestAssetName": "galactic-survey-native-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/galactic-survey-native-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "c800df1a351d0291049e1015fdba18a6290c5ff386a21d42bc975d170535b414",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/checksums.txt",
+                "size": 395,
+                "sha256": "9038ef65f85e14548ed48cfff3d133c86c986ae182f606eeab2754eaaac50ad3",
+                "releaseTag": "galactic-survey-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.1-alpha"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/echo-release.json",
+                "size": 12069,
+                "sha256": "d995d59f9c619d8132545f38d2ed409ef4f647076cfe9ee5f2f371b12c5d259c",
+                "releaseTag": "galactic-survey-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.1-alpha"
+              },
+              {
+                "name": "galactic-survey-native-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/galactic-survey-native-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/galactic-survey-native-edition-0.1.1.zip",
+                "size": 145433496,
+                "sha256": "fdacae5ed6a54ca010246fcbdfd197d4e7c982e4a2f48c4fda97f65083b7189b",
+                "releaseTag": "galactic-survey-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.1-alpha"
+              },
+              {
+                "name": "galactic-survey-native-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/galactic-survey-native-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/galactic-survey-native-edition-alpha-0.1.1.pack.json",
+                "size": 54616,
+                "sha256": "c800df1a351d0291049e1015fdba18a6290c5ff386a21d42bc975d170535b414",
+                "releaseTag": "galactic-survey-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.1-alpha"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/download/galactic-survey-native-0.1.1-alpha/release-audit.json",
+                "size": 964,
+                "sha256": "4de1ff666fd634637a9eb02e6777d60baac47d8655b78852df12a765f582ec0f",
+                "releaseTag": "galactic-survey-native-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.1-alpha"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-loader-minecraft",
+          "label": "Minecraft + Native Loader",
+          "shortLabel": "Native Loader",
+          "detail": "Uses the official Minecraft Launcher with ECHO Native Loader metadata."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Galactic Survey Native Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Galactic Survey Native Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Galactic Survey Native Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Galactic Survey Native Edition"
+      },
+      "completedAt": "2026-06-16T10:48:41.791Z",
+      "durationMs": 77271,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-47-25-253Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Native Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "galactic-survey-native-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 41,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 30,
+          "moduleCount": 30
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 11,
+          "moduleCount": 11
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "native-loader-minecraft",
+        "profileId": "echo-galactic-survey-native-edition-native-loader",
+        "profileName": "Galactic Survey Native Edition - Native Loader",
+        "versionId": "echo-galactic-survey-native-edition-native-loader-1.0.4",
+        "versionSource": "echo-managed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\echo-galactic-survey-native-edition-native-loader-1.0.4\\echo-galactic-survey-native-edition-native-loader-1.0.4.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Native Edition",
+        "validatedModsCount": 41,
+        "repair": null,
+        "nativeRuntime": {
+          "ok": true,
+          "moduleCount": 41,
+          "classpathEntryCount": 82,
+          "launcherLibraryCount": 1,
+          "nativeLoaderLibraryPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\libraries\\com\\echo\\native-loader\\1.0.4\\native-loader-1.0.4.jar",
+          "handoffFile": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\.echo\\native-loader\\module-activation-handoff.json",
+          "jvmArgCharCount": 636,
+          "gameArgCharCount": 496,
+          "markerPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Native Edition\\.echo\\native-loader\\module-activation.json"
+        },
+        "staleNeoForgeMetadata": null,
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "galactic-survey-neoforge-edition",
+      "name": "Galactic Survey NeoForge Edition",
+      "startedAt": "2026-06-16T10:48:41.794Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:48:41.975Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:galactic-survey-neoforge-edition:0.1.1",
+            "pack": "galactic-survey-neoforge-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "galactic-survey-neoforge-0.1.1-alpha",
+            "name": "galactic-survey-neoforge-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:47:24.815Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.1-alpha",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry galactic-survey-neoforge-edition."
+            ],
+            "manifestAssetName": "galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "05849589a82a316740f87791705a3ab1847d67c653f6bcf6040411f8f2bd25ba",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/checksums.txt",
+                "size": 399,
+                "sha256": "9d01716357c1e08906b1092065be9a96597ef3c2cd7ab6069484eabf2bc41f7d",
+                "releaseTag": "galactic-survey-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/echo-release.json",
+                "size": 12174,
+                "sha256": "251884438d8060733cdccff9323988281ad3d28c85982a723ff98256e5a96e0e",
+                "releaseTag": "galactic-survey-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "galactic-survey-neoforge-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/galactic-survey-neoforge-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/galactic-survey-neoforge-edition-0.1.1.zip",
+                "size": 145248591,
+                "sha256": "c7e52a29e8fe8ece485652ca6586a462408e83e1da593798d28931daa6e7c124",
+                "releaseTag": "galactic-survey-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
+                "size": 84772,
+                "sha256": "05849589a82a316740f87791705a3ab1847d67c653f6bcf6040411f8f2bd25ba",
+                "releaseTag": "galactic-survey-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.1-alpha"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/download/galactic-survey-neoforge-0.1.1-alpha/release-audit.json",
+                "size": 976,
+                "sha256": "d76d0fdab62024d8f94cf5c8ad7010f0b1aed23558ae4b76c255ddab5c687e0b",
+                "releaseTag": "galactic-survey-neoforge-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.1-alpha"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "neoforge-minecraft",
+          "label": "Minecraft + NeoForge",
+          "shortLabel": "NeoForge",
+          "detail": "Uses the official Minecraft Launcher with the selected NeoForge profile."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Galactic Survey NeoForge Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Galactic Survey NeoForge Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Galactic Survey NeoForge Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Galactic Survey NeoForge Edition"
+      },
+      "completedAt": "2026-06-16T10:49:16.544Z",
+      "durationMs": 34750,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-48-42-583Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey NeoForge Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "galactic-survey-neoforge-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 41,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 30,
+          "moduleCount": 30
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 11,
+          "moduleCount": 11
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "neoforge-minecraft",
+        "profileId": "echo-galactic-survey-neoforge-edition",
+        "profileName": "Galactic Survey NeoForge Edition",
+        "versionId": "neoforge-26.1.2.43-beta",
+        "versionSource": "installed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey NeoForge Edition",
+        "validatedModsCount": 41,
+        "repair": null,
+        "nativeRuntime": null,
+        "staleNeoForgeMetadata": {
+          "versionId": "neoforge-26.1.2.43-beta",
+          "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+          "primaryAction": {
+            "kind": "play",
+            "label": "Play Galactic Survey NeoForge Edition",
+            "enabled": true,
+            "variant": "primary",
+            "reason": ""
+          },
+          "warnings": [
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath).",
+            "Minecraft Launcher profile has not been created yet.",
+            "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is ECHO-managed but stale; ECHO will rewrite it during handoff."
+          ]
+        },
+        "warnings": [
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Minecraft Launcher NeoForge version metadata 'neoforge-26.1.2.43-beta' was invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath). ECHO refreshed it from the official NeoForge installer.",
+          "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Galactic Survey NeoForge Edition with the ECHO-managed instance folder.",
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory."
+        ]
+      }
+    },
+    {
+      "profileId": "galactic-survey-standalone-edition",
+      "name": "Galactic Survey Standalone Edition",
+      "startedAt": "2026-06-16T10:49:16.547Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:49:16.978Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:galactic-survey-standalone-edition:0.1.1",
+            "pack": "galactic-survey-standalone-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "galactic-survey-standalone-0.1.1-alpha",
+            "name": "galactic-survey-standalone-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:48:42.251Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.1-alpha",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry galactic-survey-standalone-edition."
+            ],
+            "manifestAssetName": "galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "8ac50f1c3a7740211eb9a615d297622a1036e5ab184c54812af28c35df8d6f34",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/checksums.txt",
+                "size": 403,
+                "sha256": "309de7d39a8883e736cee3f1d3cf2e3b7ecff10f99dfa0d3dc70565e5513d247",
+                "releaseTag": "galactic-survey-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/echo-release.json",
+                "size": 12360,
+                "sha256": "9db17c75e7831d510c378dad68c6b6a4bb85896c30d906d88328e85f8b217720",
+                "releaseTag": "galactic-survey-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "galactic-survey-standalone-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/galactic-survey-standalone-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/galactic-survey-standalone-edition-0.1.1.zip",
+                "size": 145244636,
+                "sha256": "008cc9a77e696f166bb50db19af2a1047bdd06bb1453632f392e5d8f097f0e93",
+                "releaseTag": "galactic-survey-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
+                "size": 55007,
+                "sha256": "8ac50f1c3a7740211eb9a615d297622a1036e5ab184c54812af28c35df8d6f34",
+                "releaseTag": "galactic-survey-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.1-alpha"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/download/galactic-survey-standalone-0.1.1-alpha/release-audit.json",
+                "size": 988,
+                "sha256": "6f9c996dd8ea71a9f1ce72dae11763a90fd4a448bea6b0feb744ce4d1d36b0b7",
+                "releaseTag": "galactic-survey-standalone-0.1.1-alpha",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.1-alpha"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-runtime",
+          "label": "ECHO Standalone Engine",
+          "shortLabel": "Standalone",
+          "detail": "Runs through the standalone ECHO runtime."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Galactic Survey Standalone Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Galactic Survey Standalone Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Galactic Survey Standalone Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Galactic Survey Standalone Edition"
+      },
+      "completedAt": "2026-06-16T10:49:22.263Z",
+      "durationMs": 5716,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-49-17-631Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Galactic Survey Standalone Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "galactic-survey-standalone-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 41,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 30,
+          "moduleCount": 30
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 11,
+          "moduleCount": 11
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "standalone-runtime",
+        "ok": true,
+        "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "executablePath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
+        "version": "0.1.0-phase14.20-alpha-readiness",
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "openlands-native-edition",
+      "name": "Openlands Native Edition",
+      "startedAt": "2026-06-16T10:49:22.271Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:49:22.424Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:openlands-native-edition:0.1.1",
+            "pack": "openlands-native-edition",
+            "version": "0.1.1",
+            "channel": "alpha",
+            "tagName": "v0.1.1-openlands-native-edition",
+            "name": "openlands-native-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:49:17.156Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry openlands-native-edition."
+            ],
+            "manifestAssetName": "openlands-native-edition-alpha-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-alpha-0.1.1.pack.json",
+            "manifestSha256": "5bd4c6794c4606306860ef69654e2cc777f9ad406657472b0250eebc6e9ef71e",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/checksums.txt",
+                "size": 383,
+                "sha256": "2b3ecd85ab6e00b15e995d1c8500ee2baad5c6a7baee8dc866950d6304d8e40b",
+                "releaseTag": "v0.1.1-openlands-native-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/echo-release.json",
+                "size": 12174,
+                "sha256": "9a6b5b9edffcd0bd5545d97783bb14d2587868b0f1844eeb1b900d5ed069d397",
+                "releaseTag": "v0.1.1-openlands-native-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition"
+              },
+              {
+                "name": "openlands-native-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-0.1.1.zip",
+                "size": 112806398,
+                "sha256": "5c592f03423f850b012578832639f21942358d7f3c8d891145501d1dd09d3fee",
+                "releaseTag": "v0.1.1-openlands-native-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition"
+              },
+              {
+                "name": "openlands-native-edition-alpha-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-alpha-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-alpha-0.1.1.pack.json",
+                "size": 56704,
+                "sha256": "5bd4c6794c4606306860ef69654e2cc777f9ad406657472b0250eebc6e9ef71e",
+                "releaseTag": "v0.1.1-openlands-native-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/release-audit.json",
+                "size": 931,
+                "sha256": "17af686a00bdc70a82023b771fe8c2690830c5c08254e59da2235a04ea6c4b38",
+                "releaseTag": "v0.1.1-openlands-native-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-loader-minecraft",
+          "label": "Minecraft + Native Loader",
+          "shortLabel": "Native Loader",
+          "detail": "Uses the official Minecraft Launcher with ECHO Native Loader metadata."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Openlands Native Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Openlands Native Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Openlands Native Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Openlands Native Edition"
+      },
+      "completedAt": "2026-06-16T10:50:51.492Z",
+      "durationMs": 89220,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-49-22-997Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "openlands-native-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 42,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 29,
+          "moduleCount": 29
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 13,
+          "moduleCount": 13
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "native-loader-minecraft",
+        "profileId": "echo-openlands-native-edition-native-loader",
+        "profileName": "Openlands Native Edition - Native Loader",
+        "versionId": "echo-openlands-native-edition-native-loader-1.0.4",
+        "versionSource": "echo-managed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\echo-openlands-native-edition-native-loader-1.0.4\\echo-openlands-native-edition-native-loader-1.0.4.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition",
+        "validatedModsCount": 42,
+        "repair": null,
+        "nativeRuntime": {
+          "ok": true,
+          "moduleCount": 42,
+          "classpathEntryCount": 84,
+          "launcherLibraryCount": 1,
+          "nativeLoaderLibraryPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\libraries\\com\\echo\\native-loader\\1.0.4\\native-loader-1.0.4.jar",
+          "handoffFile": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition\\.echo\\native-loader\\module-activation-handoff.json",
+          "jvmArgCharCount": 618,
+          "gameArgCharCount": 478,
+          "markerPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Native Edition\\.echo\\native-loader\\module-activation.json"
+        },
+        "staleNeoForgeMetadata": null,
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "openlands-neoforge-edition",
+      "name": "Openlands NeoForge Edition",
+      "startedAt": "2026-06-16T10:50:51.496Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.2",
+          "fetchedAt": "2026-06-16T10:50:51.671Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:openlands-neoforge-edition:0.1.2",
+            "pack": "openlands-neoforge-edition",
+            "version": "0.1.2",
+            "channel": "alpha",
+            "tagName": "v0.1.2-openlands-neoforge-edition",
+            "name": "openlands-neoforge-edition 0.1.2",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:49:22.609Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.2-openlands-neoforge-edition",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry openlands-neoforge-edition."
+            ],
+            "manifestAssetName": "openlands-neoforge-edition-alpha-0.1.2.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.2.pack.json",
+            "manifestSha256": "cb7b25b034724f7200239eb31928be0253bc09923dccf3c380547710bb3d169b",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/checksums.txt",
+                "size": 387,
+                "sha256": "665d0b78ab15b02afee5c1916cabb6ea89f2615c968c89aab854252d100eae60",
+                "releaseTag": "v0.1.2-openlands-neoforge-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.2-openlands-neoforge-edition"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/echo-release.json",
+                "size": 12281,
+                "sha256": "f68966a7252aee3c6d866f280535b5139c253ff8a18e3fbd82726766b0e4e23e",
+                "releaseTag": "v0.1.2-openlands-neoforge-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.2-openlands-neoforge-edition"
+              },
+              {
+                "name": "openlands-neoforge-edition-0.1.2.zip",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/openlands-neoforge-edition-0.1.2.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/openlands-neoforge-edition-0.1.2.zip",
+                "size": 112640613,
+                "sha256": "7d65b495ca13f196ab04c481bfa850dfe8523846452dc4b07ce07dc99ebc92fc",
+                "releaseTag": "v0.1.2-openlands-neoforge-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.2-openlands-neoforge-edition"
+              },
+              {
+                "name": "openlands-neoforge-edition-alpha-0.1.2.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.2.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/openlands-neoforge-edition-alpha-0.1.2.pack.json",
+                "size": 86871,
+                "sha256": "cb7b25b034724f7200239eb31928be0253bc09923dccf3c380547710bb3d169b",
+                "releaseTag": "v0.1.2-openlands-neoforge-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.2-openlands-neoforge-edition"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/download/v0.1.2-openlands-neoforge-edition/release-audit.json",
+                "size": 943,
+                "sha256": "0ccc6d42c9a7978a4a88cbe26a3d241566c1b5e37358bf05665b3b10c67fd889",
+                "releaseTag": "v0.1.2-openlands-neoforge-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.2-openlands-neoforge-edition"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "neoforge-minecraft",
+          "label": "Minecraft + NeoForge",
+          "shortLabel": "NeoForge",
+          "detail": "Uses the official Minecraft Launcher with the selected NeoForge profile."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Openlands NeoForge Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Openlands NeoForge Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Openlands NeoForge Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Openlands NeoForge Edition"
+      },
+      "completedAt": "2026-06-16T10:51:03.526Z",
+      "durationMs": 12030,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-50-52-183Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands NeoForge Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "openlands-neoforge-edition",
+      "manifestVersion": "0.1.2",
+      "fileCount": 42,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 29,
+          "moduleCount": 29
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 13,
+          "moduleCount": 13
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "neoforge-minecraft",
+        "profileId": "echo-openlands-neoforge-edition",
+        "profileName": "Openlands NeoForge Edition",
+        "versionId": "neoforge-26.1.2.43-beta",
+        "versionSource": "installed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands NeoForge Edition",
+        "validatedModsCount": 42,
+        "repair": null,
+        "nativeRuntime": null,
+        "staleNeoForgeMetadata": {
+          "versionId": "neoforge-26.1.2.43-beta",
+          "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+          "primaryAction": {
+            "kind": "play",
+            "label": "Play Openlands NeoForge Edition",
+            "enabled": true,
+            "variant": "primary",
+            "reason": ""
+          },
+          "warnings": [
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath).",
+            "Minecraft Launcher profile has not been created yet.",
+            "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Another ECHO-managed Minecraft Launcher profile 'Galactic Survey NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is ECHO-managed but stale; ECHO will rewrite it during handoff."
+          ]
+        },
+        "warnings": [
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Galactic Survey NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Minecraft Launcher NeoForge version metadata 'neoforge-26.1.2.43-beta' was invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath). ECHO refreshed it from the official NeoForge installer.",
+          "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Openlands NeoForge Edition with the ECHO-managed instance folder.",
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Galactic Survey NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory."
+        ]
+      }
+    },
+    {
+      "profileId": "openlands-standalone-edition",
+      "name": "Openlands Standalone Edition",
+      "startedAt": "2026-06-16T10:51:03.529Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-16T10:51:03.958Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:openlands-standalone-edition:0.1.1",
+            "pack": "openlands-standalone-edition",
+            "version": "0.1.1",
+            "channel": "experimental",
+            "tagName": "v0.1.1-openlands-standalone-edition",
+            "name": "openlands-standalone-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:50:51.855Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry openlands-standalone-edition."
+            ],
+            "manifestAssetName": "openlands-standalone-edition-experimental-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.1.pack.json",
+            "manifestSha256": "13e4f0e75bf4f803c92952eb0737828c1c5bc8c098b6cf42de8c203857487fc0",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/checksums.txt",
+                "size": 398,
+                "sha256": "3a12a9da80f95e0b61ee2c7105c648d6f66d5ce4203210e40f761df0b222de44",
+                "releaseTag": "v0.1.1-openlands-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/echo-release.json",
+                "size": 12506,
+                "sha256": "787166d0f0b64fac38d823324fb2b8246f7ff493d4f84880111b3de86885ddb5",
+                "releaseTag": "v0.1.1-openlands-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition"
+              },
+              {
+                "name": "openlands-standalone-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-0.1.1.zip",
+                "size": 112636670,
+                "sha256": "e273624589d35815c0acd16cd68dcff85f2e42578f7f0d628209acdd83a2067c",
+                "releaseTag": "v0.1.1-openlands-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition"
+              },
+              {
+                "name": "openlands-standalone-edition-experimental-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/openlands-standalone-edition-experimental-0.1.1.pack.json",
+                "size": 57106,
+                "sha256": "13e4f0e75bf4f803c92952eb0737828c1c5bc8c098b6cf42de8c203857487fc0",
+                "releaseTag": "v0.1.1-openlands-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/download/v0.1.1-openlands-standalone-edition/release-audit.json",
+                "size": 969,
+                "sha256": "1cb4d373a0cf383392d1412fc83e2321af79eed2fa990afe71359d028dad2a5f",
+                "releaseTag": "v0.1.1-openlands-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.1-openlands-standalone-edition"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-runtime",
+          "label": "ECHO Standalone Engine",
+          "shortLabel": "Standalone",
+          "detail": "Runs through the standalone ECHO runtime."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Openlands Standalone Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Openlands Standalone Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Openlands Standalone Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Openlands Standalone Edition"
+      },
+      "completedAt": "2026-06-16T10:51:07.688Z",
+      "durationMs": 4159,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-51-04-441Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Openlands Standalone Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "openlands-standalone-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 42,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 29,
+          "moduleCount": 29
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 13,
+          "moduleCount": 13
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "standalone-runtime",
+        "ok": true,
+        "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "executablePath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
+        "version": "0.1.0-phase14.20-alpha-readiness",
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "arcana-division-native-edition",
+      "name": "Arcana Division Native Edition",
+      "startedAt": "2026-06-16T10:51:07.691Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "1.0.1",
+          "fetchedAt": "2026-06-16T10:51:07.841Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:arcana-division-native-edition:1.0.1",
+            "pack": "arcana-division-native-edition",
+            "version": "1.0.1",
+            "channel": "beta",
+            "tagName": "arcana-division-native-1.0.1-beta",
+            "name": "arcana-division-native-edition 1.0.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:51:04.142Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.1-beta",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry arcana-division-native-edition."
+            ],
+            "manifestAssetName": "arcana-division-native-edition-beta-1.0.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/arcana-division-native-edition-beta-1.0.1.pack.json",
+            "manifestSha256": "569c1608ed39ce1199a2b4e9fb04c10a417b986d7c54e23d4063082415f80c98",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "arcana-division-native-edition-1.0.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/arcana-division-native-edition-1.0.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/arcana-division-native-edition-1.0.1.zip",
+                "size": 117348781,
+                "sha256": "0d0b7ed719146ea75fe44c6ddae0ed5f791ce26b0d854fbf10272de387f90b37",
+                "releaseTag": "arcana-division-native-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.1-beta"
+              },
+              {
+                "name": "arcana-division-native-edition-beta-1.0.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/arcana-division-native-edition-beta-1.0.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/arcana-division-native-edition-beta-1.0.1.pack.json",
+                "size": 57036,
+                "sha256": "569c1608ed39ce1199a2b4e9fb04c10a417b986d7c54e23d4063082415f80c98",
+                "releaseTag": "arcana-division-native-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.1-beta"
+              },
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/checksums.txt",
+                "size": 394,
+                "sha256": "f4fb34bd8ca27898717c563ce1f7cb5fe5cfb1cd9ca8f5c36d045c4a20f71b30",
+                "releaseTag": "arcana-division-native-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.1-beta"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/echo-release.json",
+                "size": 11490,
+                "sha256": "e8876dfa49bad26c3f2ea4405152ca980baed52ae8c98a0af6afaca851bd7818",
+                "releaseTag": "arcana-division-native-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.1-beta"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/download/arcana-division-native-1.0.1-beta/release-audit.json",
+                "size": 961,
+                "sha256": "6324c106f5f3e2020fa8a7e46d0dddf5c1d4facad30ff7f02aeb0872a5eaf9da",
+                "releaseTag": "arcana-division-native-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.1-beta"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-loader-minecraft",
+          "label": "Minecraft + Native Loader",
+          "shortLabel": "Native Loader",
+          "detail": "Uses the official Minecraft Launcher with ECHO Native Loader metadata."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Arcana Division Native Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Arcana Division Native Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Arcana Division Native Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Arcana Division Native Edition"
+      },
+      "completedAt": "2026-06-16T10:52:24.966Z",
+      "durationMs": 77275,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-51-08-521Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Native Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Native Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "arcana-division-native-edition",
+      "manifestVersion": "1.0.1",
+      "fileCount": 39,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 28,
+          "moduleCount": 28
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 11,
+          "moduleCount": 11
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "native-loader-minecraft",
+        "profileId": "echo-arcana-division-native-edition-native-loader",
+        "profileName": "Arcana Division Native Edition - Native Loader",
+        "versionId": "echo-arcana-division-native-edition-native-loader-1.0.4",
+        "versionSource": "echo-managed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\echo-arcana-division-native-edition-native-loader-1.0.4\\echo-arcana-division-native-edition-native-loader-1.0.4.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Native Edition",
+        "validatedModsCount": 39,
+        "repair": null,
+        "nativeRuntime": {
+          "ok": true,
+          "moduleCount": 39,
+          "classpathEntryCount": 78,
+          "launcherLibraryCount": 1,
+          "nativeLoaderLibraryPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\libraries\\com\\echo\\native-loader\\1.0.4\\native-loader-1.0.4.jar",
+          "handoffFile": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Native Edition\\.echo\\native-loader\\module-activation-handoff.json",
+          "jvmArgCharCount": 636,
+          "gameArgCharCount": 542,
+          "markerPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Native Edition\\.echo\\native-loader\\module-activation.json"
+        },
+        "staleNeoForgeMetadata": null,
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "arcana-division-neoforge-edition",
+      "name": "Arcana Division NeoForge Edition",
+      "startedAt": "2026-06-16T10:52:24.969Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "1.0.1",
+          "fetchedAt": "2026-06-16T10:52:25.154Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:arcana-division-neoforge-edition:1.0.1",
+            "pack": "arcana-division-neoforge-edition",
+            "version": "1.0.1",
+            "channel": "beta",
+            "tagName": "arcana-division-neoforge-1.0.1-beta",
+            "name": "arcana-division-neoforge-edition 1.0.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:51:08.005Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.1-beta",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry arcana-division-neoforge-edition."
+            ],
+            "manifestAssetName": "arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+            "manifestSha256": "e537657348928db03c49916f171adef3d54915dd8dcb41ddda5f4b190b1a1632",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "arcana-division-neoforge-edition-1.0.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/arcana-division-neoforge-edition-1.0.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/arcana-division-neoforge-edition-1.0.1.zip",
+                "size": 117203529,
+                "sha256": "7cc4fd7252ec6ab9a89048b872cdfb2cdeac93c827718db2be6af093677ffea2",
+                "releaseTag": "arcana-division-neoforge-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.1-beta"
+              },
+              {
+                "name": "arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+                "size": 86825,
+                "sha256": "e537657348928db03c49916f171adef3d54915dd8dcb41ddda5f4b190b1a1632",
+                "releaseTag": "arcana-division-neoforge-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.1-beta"
+              },
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/checksums.txt",
+                "size": 398,
+                "sha256": "f41bf6680906edbf0eb1d1d517b576a73c7899946f05762c48472576d65ce413",
+                "releaseTag": "arcana-division-neoforge-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.1-beta"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/echo-release.json",
+                "size": 11591,
+                "sha256": "e66af1ef09d9a2fd7ff02282500536e172d1572c4a2714959560ac53d81100ca",
+                "releaseTag": "arcana-division-neoforge-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.1-beta"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/download/arcana-division-neoforge-1.0.1-beta/release-audit.json",
+                "size": 973,
+                "sha256": "74b24de829efb2a7d0cf8418e2836a04ee153a4cf031dd9fd6264a4e9f351dfe",
+                "releaseTag": "arcana-division-neoforge-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.1-beta"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "neoforge-minecraft",
+          "label": "Minecraft + NeoForge",
+          "shortLabel": "NeoForge",
+          "detail": "Uses the official Minecraft Launcher with the selected NeoForge profile."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Arcana Division NeoForge Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Arcana Division NeoForge Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Arcana Division NeoForge Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Arcana Division NeoForge Edition"
+      },
+      "completedAt": "2026-06-16T10:52:39.351Z",
+      "durationMs": 14382,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-52-25-682Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division NeoForge Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "arcana-division-neoforge-edition",
+      "manifestVersion": "1.0.1",
+      "fileCount": 39,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 28,
+          "moduleCount": 28
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 11,
+          "moduleCount": 11
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "neoforge-minecraft",
+        "profileId": "echo-arcana-division-neoforge-edition",
+        "profileName": "Arcana Division NeoForge Edition",
+        "versionId": "neoforge-26.1.2.43-beta",
+        "versionSource": "installed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division NeoForge Edition",
+        "validatedModsCount": 39,
+        "repair": null,
+        "nativeRuntime": null,
+        "staleNeoForgeMetadata": {
+          "versionId": "neoforge-26.1.2.43-beta",
+          "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+          "primaryAction": {
+            "kind": "play",
+            "label": "Play Arcana Division NeoForge Edition",
+            "enabled": true,
+            "variant": "primary",
+            "reason": ""
+          },
+          "warnings": [
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath).",
+            "Minecraft Launcher profile has not been created yet.",
+            "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Another ECHO-managed Minecraft Launcher profile 'Galactic Survey NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Another ECHO-managed Minecraft Launcher profile 'Openlands NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+            "Minecraft Launcher NeoForge + Minecraft version metadata 'neoforge-26.1.2.43-beta' is ECHO-managed but stale; ECHO will rewrite it during handoff."
+          ]
+        },
+        "warnings": [
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Galactic Survey NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Openlands NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Minecraft Launcher NeoForge version metadata 'neoforge-26.1.2.43-beta' was invalid (metadata is ECHO bootstrap-only and has no real NeoForge classpath). ECHO refreshed it from the official NeoForge installer.",
+          "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Arcana Division NeoForge Edition with the ECHO-managed instance folder.",
+          "Another ECHO-managed Minecraft Launcher profile 'Ashfall NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Sky Relay NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Galactic Survey NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory.",
+          "Another ECHO-managed Minecraft Launcher profile 'Openlands NeoForge Edition' uses neoforge-26.1.2.43-beta with a different game directory."
+        ]
+      }
+    },
+    {
+      "profileId": "arcana-division-standalone-edition",
+      "name": "Arcana Division Standalone Edition",
+      "startedAt": "2026-06-16T10:52:39.354Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "1.0.1",
+          "fetchedAt": "2026-06-16T10:52:39.792Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:arcana-division-standalone-edition:1.0.1",
+            "pack": "arcana-division-standalone-edition",
+            "version": "1.0.1",
+            "channel": "beta",
+            "tagName": "arcana-division-standalone-1.0.1-beta",
+            "name": "arcana-division-standalone-edition 1.0.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-16T10:52:25.337Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.1-beta",
+            "releaseNotes": [
+              "Resolved through the approved Catalog entry arcana-division-standalone-edition."
+            ],
+            "manifestAssetName": "arcana-division-standalone-edition-beta-1.0.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/arcana-division-standalone-edition-beta-1.0.1.pack.json",
+            "manifestSha256": "870724357dcd91214468cf459ec94361ddb241007dc9cc075a7da7efb998e29c",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "arcana-division-standalone-edition-1.0.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/arcana-division-standalone-edition-1.0.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/arcana-division-standalone-edition-1.0.1.zip",
+                "size": 117199656,
+                "sha256": "a57eba946b87d798684a04412a679d26b416339b4e6295d9ef8fcb58cc1e8c95",
+                "releaseTag": "arcana-division-standalone-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.1-beta"
+              },
+              {
+                "name": "arcana-division-standalone-edition-beta-1.0.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/arcana-division-standalone-edition-beta-1.0.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/arcana-division-standalone-edition-beta-1.0.1.pack.json",
+                "size": 57250,
+                "sha256": "870724357dcd91214468cf459ec94361ddb241007dc9cc075a7da7efb998e29c",
+                "releaseTag": "arcana-division-standalone-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.1-beta"
+              },
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/checksums.txt",
+                "size": 402,
+                "sha256": "c669ca11fbc4d1b696b307b26084ab521ce646b8501aedd9ddf94c0c6a616e68",
+                "releaseTag": "arcana-division-standalone-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.1-beta"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/echo-release.json",
+                "size": 11769,
+                "sha256": "d87b10ad1395f90d28e40ce3e5cefcd5ce6034eb8aee165c2ba1a7dc831661b9",
+                "releaseTag": "arcana-division-standalone-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.1-beta"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/download/arcana-division-standalone-1.0.1-beta/release-audit.json",
+                "size": 985,
+                "sha256": "6d4f946b9ce34e3f9d9b89698b93cbc2fddc23e7506a896cfcbec8579e6d2e13",
+                "releaseTag": "arcana-division-standalone-1.0.1-beta",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.1-beta"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-runtime",
+          "label": "ECHO Standalone Engine",
+          "shortLabel": "Standalone",
+          "detail": "Runs through the standalone ECHO runtime."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Arcana Division Standalone Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Arcana Division Standalone Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Arcana Division Standalone Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Arcana Division Standalone Edition"
+      },
+      "completedAt": "2026-06-16T10:52:44.050Z",
+      "durationMs": 4696,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-16T10-52-40-268Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Arcana Division Standalone Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "arcana-division-standalone-edition",
+      "manifestVersion": "1.0.1",
+      "fileCount": 39,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-runtime-parity-user-fix-20260616",
+          "fileCount": 28,
+          "moduleCount": 28
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-content-graph-evidence-repro-20260616",
+          "fileCount": 11,
+          "moduleCount": 11
+        }
+      ],
+      "repairFixture": null,
+      "launchRoute": {
+        "kind": "standalone-runtime",
+        "ok": true,
+        "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "executablePath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
         "version": "0.1.0-phase14.20-alpha-readiness",
         "warnings": []
       }
@@ -474,10 +2481,11 @@
   "stdout": [
     "\r\n",
     "Checking for update\n",
-    "Generated new staging user ID: 9ad468da-6b30-5fc8-ac68-52c929e9cd81\n",
-    "Update for version 1.1.10 is not available (latest version: 1.1.9, downgrade is disallowed).\n"
+    "Generated new staging user ID: 4ce7b1ee-e4af-52c8-87a3-9ea419879fce\n",
+    "Update for version 1.1.15 is not available (latest version: 1.1.15, downgrade is disallowed).\n"
   ],
   "stderr": [
-    "\r\nDevTools listening on ws://127.0.0.1:57184/devtools/browser/0e5a17e7-056e-41de-8396-8c71ec307d7f\r\n"
-  ]
+    "\r\nDevTools listening on ws://127.0.0.1:55735/devtools/browser/de3db7dc-eaed-401d-b4e2-2d78ef246eb6\r\n"
+  ],
+  "completedAt": "2026-06-16T10:52:44.052Z"
 }
