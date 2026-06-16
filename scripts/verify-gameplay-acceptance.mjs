@@ -7,6 +7,33 @@ const DEFAULT_OUT = path.join('release-readiness', 'gameplay-acceptance-matrix.j
 const REQUIRED_LANES = ['native', 'neoforge', 'standalone']
 const PASS_STATUSES = new Set(['pass', 'passed', 'ready', 'complete', 'completed', 'closed'])
 const BLOCKED_STATUSES = new Set(['blocked', 'failed', 'fail', 'open', 'missing'])
+const FAMILY_REPOS = {
+  Ashfall: {
+    native: 'knoxhack/ECHO-Ashfall-Native-Edition',
+    neoforge: 'knoxhack/ECHO-Ashfall-NeoForge-Edition',
+    standalone: 'knoxhack/ECHO-Ashfall-Standalone-Edition',
+  },
+  'Sky Relay': {
+    native: 'knoxhack/ECHO-Sky-Relay-Native-Edition',
+    neoforge: 'knoxhack/ECHO-Sky-Relay-NeoForge-Edition',
+    standalone: 'knoxhack/ECHO-Sky-Relay-Standalone-Edition',
+  },
+  'Galactic Survey': {
+    native: 'knoxhack/ECHO-Galactic-Survey-Native-Edition',
+    neoforge: 'knoxhack/ECHO-Galactic-Survey-NeoForge-Edition',
+    standalone: 'knoxhack/ECHO-Galactic-Survey-Standalone-Edition',
+  },
+  Openlands: {
+    native: 'knoxhack/ECHO-Openlands-Native-Edition',
+    neoforge: 'knoxhack/ECHO-Openlands-NeoForge-Edition',
+    standalone: 'knoxhack/ECHO-Openlands-Standalone-Edition',
+  },
+  'Arcana Division': {
+    native: 'knoxhack/ECHO-Arcana-Division-Native-Edition',
+    neoforge: 'knoxhack/ECHO-Arcana-Division-NeoForge-Edition',
+    standalone: 'knoxhack/ECHO-Arcana-Division-Standalone-Edition',
+  },
+}
 
 function usage() {
   return `Usage:
@@ -147,6 +174,45 @@ function laneBlockerMessage(family, lane, message) {
   return `${family} ${lane}: ${message}`
 }
 
+function sourceRepoFor(family, lane, source) {
+  return source?.sourceRepo ?? source?.repository ?? FAMILY_REPOS[family]?.[lane] ?? null
+}
+
+function workspaceDirFor(sourceRepo) {
+  const name = String(sourceRepo ?? '').split('/').pop()
+  return name || null
+}
+
+function claimsFrom(source) {
+  if (source?.claims && typeof source.claims === 'object') return source.claims
+  if (source?.evidence?.claims && typeof source.evidence.claims === 'object') return source.evidence.claims
+  return null
+}
+
+function releaseReadyFrom(status, blockers) {
+  return status === 'pass' && blockers.length === 0
+}
+
+function normalizedLaneDetails({ family, lane, packId, status, blockers, source = {}, evidencePath = null }) {
+  const sourceRepo = sourceRepoFor(family, lane, source)
+  return {
+    lane,
+    packId,
+    sourceRepo,
+    workspaceDir: source?.workspaceDir ?? workspaceDirFor(sourceRepo),
+    status,
+    releaseReady: releaseReadyFrom(status, blockers),
+    blockerCount: blockers.length,
+    blockers,
+    evidencePath: evidencePath ?? source.evidencePath ?? source.manualEvidence ?? source.evidence?.path ?? null,
+    evidencePresent: source.evidencePresent ?? source.evidence?.present ?? Boolean(source.evidencePath || source.manualEvidence),
+    claims: claimsFrom(source),
+    crashSummary: source.crashSummary ?? source.crashReport?.summary ?? null,
+    crashReport: source.crashReport?.path ?? source.crashReport ?? null,
+    logSummary: source.logSummary ?? source.runtimeLog ?? null,
+  }
+}
+
 function familyStatusFromLanes(lanes, familyBlockers = []) {
   return lanes.every((lane) => lane.status === 'pass') && familyBlockers.length === 0 ? 'pass' : 'blocked'
 }
@@ -157,25 +223,27 @@ function buildAshfallFamily(report) {
   const lanes = REQUIRED_LANES.map((lane) => {
     const source = reportLanes.get(lane)
     if (!source) {
-      return {
+      return normalizedLaneDetails({
+        family: 'Ashfall',
         lane,
         packId: `ashfall-${lane}-edition`,
         status: 'missing',
-        blockerCount: 1,
         blockers: [laneBlockerMessage('Ashfall', lane, 'Missing lane gameplay smoke entry.')],
-        evidencePresent: false,
-        crashReport: null,
-      }
+        source: { evidencePresent: false },
+      })
     }
     const blockers = source.blockers ?? []
     return {
+      ...normalizedLaneDetails({
+        family: 'Ashfall',
+        lane,
+        packId: source.packId ?? `ashfall-${lane}-edition`,
+        status: source.ok === true && blockers.length === 0 ? 'pass' : 'blocked',
+        blockers,
+        source,
+      }),
       lane,
       packId: source.packId ?? `ashfall-${lane}-edition`,
-      status: source.ok === true && blockers.length === 0 ? 'pass' : 'blocked',
-      blockerCount: blockers.length,
-      blockers,
-      evidencePresent: source.evidence?.present === true,
-      crashReport: source.crashReport?.path ?? null,
       installedManifest: {
         present: source.installedManifest?.present === true,
         missingModuleFileCount: source.installedManifest?.missingModuleFileCount ?? null,
@@ -226,14 +294,13 @@ function buildManualFamily({
   const lanes = REQUIRED_LANES.map((lane) => {
     const edition = findEditionForLane(editions, lane)
     if (!edition) {
-      return {
+      return normalizedLaneDetails({
+        family,
         lane,
         packId: `${expectedPackPrefix}-${lane}-edition`,
         status: 'missing',
-        blockerCount: 1,
         blockers: [laneBlockerMessage(family, lane, 'Missing manual gameplay evidence lane.')],
-        openTaskCount: null,
-      }
+      })
     }
     const editionBlockers = edition.blockers ?? []
     const laneStatus = statusIsPass(edition.status) && editionBlockers.length === 0 && statusIsPass(reportStatus)
@@ -242,16 +309,18 @@ function buildManualFamily({
     const blockers = [
       ...(statusIsBlocked(edition.status) || !statusIsPass(edition.status)
         ? [laneBlockerMessage(family, lane, `Manual gameplay work order status is ${edition.status ?? 'unknown'}.`)]
-        : []),
+      : []),
       ...editionBlockers,
     ]
     return {
-      lane,
-      packId: edition.packId ?? `${expectedPackPrefix}-${lane}-edition`,
-      status: laneStatus,
-      blockerCount: blockers.length,
-      blockers,
-      manualEvidence: edition.manualEvidence ?? null,
+      ...normalizedLaneDetails({
+        family,
+        lane,
+        packId: edition.packId ?? `${expectedPackPrefix}-${lane}-edition`,
+        status: laneStatus,
+        blockers,
+        source: edition,
+      }),
       openTaskCount: edition.openTaskCount ?? null,
       artifact: edition.artifact ?? null,
     }
@@ -282,24 +351,24 @@ function buildGenericFamily({ family, gameplayPath, report, expectedPackPrefix }
   const lanes = REQUIRED_LANES.map((lane) => {
     const source = findEditionForLane(report?.lanes ?? report?.editions ?? [], lane)
     if (!source) {
-      return {
+      return normalizedLaneDetails({
+        family,
         lane,
         packId: `${expectedPackPrefix}-${lane}-edition`,
         status: 'missing',
-        blockerCount: 1,
         blockers: [laneBlockerMessage(family, lane, 'Missing gameplay evidence lane.')],
-      }
+      })
     }
     const blockers = source.blockers ?? []
     const laneStatus = (source.ok === true || statusIsPass(source.status)) && blockers.length === 0 ? 'pass' : 'blocked'
-    return {
+    return normalizedLaneDetails({
+      family,
       lane,
       packId: source.packId ?? `${expectedPackPrefix}-${lane}-edition`,
       status: laneStatus,
-      blockerCount: blockers.length,
       blockers,
-      evidencePath: source.evidencePath ?? source.evidence?.path ?? null,
-    }
+      source,
+    })
   })
   const reportBlockers = report
     ? [...(report.blockers ?? [])]

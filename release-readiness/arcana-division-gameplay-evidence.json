@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "echo.release_index.family_gameplay_evidence.v1",
+  "generatedAt": "2026-06-16T21:27:24.053Z",
+  "status": "BLOCKED",
+  "family": "Arcana Division",
+  "moduleId": "echoarcanadivisionprotocol",
+  "scope": "fail-closed-real-gameplay-evidence-source",
+  "requiredLanes": [
+    "native",
+    "neoforge",
+    "standalone"
+  ],
+  "requiredClaims": [
+    "freshWorldCreated",
+    "realFirst30Playthrough",
+    "realFirst2HourPlaythrough",
+    "primaryObjectiveCompleted",
+    "saveReloadVerified",
+    "noCrashEvidence"
+  ],
+  "lanes": [
+    {
+      "lane": "native",
+      "packId": "arcana-division-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Arcana-Division-Native-Edition",
+      "workspaceDir": "ECHO-Arcana-Division-Native-Edition",
+      "status": "blocked",
+      "releaseReady": false,
+      "evidencePath": "fixtures/arcana-division/gameplay-qa/native/manual-evidence.json",
+      "evidencePresent": false,
+      "claims": {
+        "freshWorldCreated": false,
+        "realFirst30Playthrough": false,
+        "realFirst2HourPlaythrough": false,
+        "primaryObjectiveCompleted": false,
+        "saveReloadVerified": false,
+        "noCrashEvidence": false
+      },
+      "logSummary": null,
+      "crashSummary": null,
+      "crashReport": null,
+      "blockerCount": 7,
+      "blockers": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Arcana Division route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ]
+    },
+    {
+      "lane": "neoforge",
+      "packId": "arcana-division-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
+      "workspaceDir": "ECHO-Arcana-Division-NeoForge-Edition",
+      "status": "blocked",
+      "releaseReady": false,
+      "evidencePath": "fixtures/arcana-division/gameplay-qa/neoforge/manual-evidence.json",
+      "evidencePresent": false,
+      "claims": {
+        "freshWorldCreated": false,
+        "realFirst30Playthrough": false,
+        "realFirst2HourPlaythrough": false,
+        "primaryObjectiveCompleted": false,
+        "saveReloadVerified": false,
+        "noCrashEvidence": false
+      },
+      "logSummary": null,
+      "crashSummary": null,
+      "crashReport": null,
+      "blockerCount": 7,
+      "blockers": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Arcana Division route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ]
+    },
+    {
+      "lane": "standalone",
+      "packId": "arcana-division-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
+      "workspaceDir": "ECHO-Arcana-Division-Standalone-Edition",
+      "status": "blocked",
+      "releaseReady": false,
+      "evidencePath": "fixtures/arcana-division/gameplay-qa/standalone/manual-evidence.json",
+      "evidencePresent": false,
+      "claims": {
+        "freshWorldCreated": false,
+        "realFirst30Playthrough": false,
+        "realFirst2HourPlaythrough": false,
+        "primaryObjectiveCompleted": false,
+        "saveReloadVerified": false,
+        "noCrashEvidence": false
+      },
+      "logSummary": null,
+      "crashSummary": null,
+      "crashReport": null,
+      "blockerCount": 7,
+      "blockers": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Arcana Division route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ]
+    }
+  ],
+  "blockers": [
+    "arcana-division-native-edition: Missing real gameplay evidence JSON.",
+    "arcana-division-native-edition: Missing fresh install and fresh world/profile proof.",
+    "arcana-division-native-edition: Missing first 30-minute playthrough proof.",
+    "arcana-division-native-edition: Missing first 2-hour playthrough proof.",
+    "arcana-division-native-edition: Missing primary Arcana Division route or systems objective reached and recorded.",
+    "arcana-division-native-edition: Missing save/reload verification proof.",
+    "arcana-division-native-edition: Missing no-crash review proof.",
+    "arcana-division-neoforge-edition: Missing real gameplay evidence JSON.",
+    "arcana-division-neoforge-edition: Missing fresh install and fresh world/profile proof.",
+    "arcana-division-neoforge-edition: Missing first 30-minute playthrough proof.",
+    "arcana-division-neoforge-edition: Missing first 2-hour playthrough proof.",
+    "arcana-division-neoforge-edition: Missing primary Arcana Division route or systems objective reached and recorded.",
+    "arcana-division-neoforge-edition: Missing save/reload verification proof.",
+    "arcana-division-neoforge-edition: Missing no-crash review proof.",
+    "arcana-division-standalone-edition: Missing real gameplay evidence JSON.",
+    "arcana-division-standalone-edition: Missing fresh install and fresh world/profile proof.",
+    "arcana-division-standalone-edition: Missing first 30-minute playthrough proof.",
+    "arcana-division-standalone-edition: Missing first 2-hour playthrough proof.",
+    "arcana-division-standalone-edition: Missing primary Arcana Division route or systems objective reached and recorded.",
+    "arcana-division-standalone-edition: Missing save/reload verification proof.",
+    "arcana-division-standalone-edition: Missing no-crash review proof."
+  ],
+  "summary": {
+    "laneCount": 3,
+    "passedLaneCount": 0,
+    "blockedLaneCount": 3,
+    "blockerCount": 21,
+    "conclusion": "Arcana Division remains blocked until real lane gameplay captures are imported."
+  },
+  "notes": [
+    "This report is an explicit fail-closed source report, not gameplay proof.",
+    "Launcher install, handoff, content graph load, and Hytale export-planning evidence must not be used as substitutes for real gameplay captures."
+  ]
+}

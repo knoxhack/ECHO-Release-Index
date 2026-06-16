@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-16T16:33:41-04:00",
+  "generatedAt": "2026-06-16T16:37:35-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,21 +16,26 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "82ec4097ebd1",
-        "commitDate": "2026-06-16T16:33:20-04:00",
+        "commit": "299583ed51fa",
+        "commitDate": "2026-06-16T16:37:35-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M release-readiness/galactic-survey-electron-ui-smoke.json",
+          " M release-readiness/ashfall-electron-install-handoff-smoke.json",
           " M release-readiness/gameplay-acceptance-matrix.json",
           " M release-readiness/public-alpha-runtime-acceptance.json",
-          " M release-readiness/sky-relay-electron-ui-smoke.json"
+          " M scripts/generate-public-alpha-runtime-acceptance.mjs",
+          " M scripts/test-verify-gameplay-acceptance.mjs",
+          " M scripts/verify-gameplay-acceptance.mjs",
+          "?? release-readiness/arcana-division-gameplay-evidence.json",
+          "?? release-readiness/openlands-gameplay-evidence.json",
+          "?? scripts/generate-family-gameplay-evidence.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 26309,
+          "bytes": 26690,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -262,8 +267,11 @@
         "branch": "main",
         "commit": "fb0e133940a8",
         "commitDate": "2026-06-16T16:33:25-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/native-loader-handoff.cjs",
+          " M electron/native-loader-handoff.test.mjs"
+        ]
       },
       "canonicalDocs": [
         {

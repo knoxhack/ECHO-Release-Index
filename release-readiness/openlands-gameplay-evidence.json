@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "echo.release_index.family_gameplay_evidence.v1",
+  "generatedAt": "2026-06-16T21:27:24.050Z",
+  "status": "BLOCKED",
+  "family": "Openlands",
+  "moduleId": "echoopenlandsprotocol",
+  "scope": "fail-closed-real-gameplay-evidence-source",
+  "requiredLanes": [
+    "native",
+    "neoforge",
+    "standalone"
+  ],
+  "requiredClaims": [
+    "freshWorldCreated",
+    "realFirst30Playthrough",
+    "realFirst2HourPlaythrough",
+    "primaryObjectiveCompleted",
+    "saveReloadVerified",
+    "noCrashEvidence"
+  ],
+  "lanes": [
+    {
+      "lane": "native",
+      "packId": "openlands-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
+      "workspaceDir": "ECHO-Openlands-Native-Edition",
+      "status": "blocked",
+      "releaseReady": false,
+      "evidencePath": "fixtures/openlands/gameplay-qa/native/manual-evidence.json",
+      "evidencePresent": false,
+      "claims": {
+        "freshWorldCreated": false,
+        "realFirst30Playthrough": false,
+        "realFirst2HourPlaythrough": false,
+        "primaryObjectiveCompleted": false,
+        "saveReloadVerified": false,
+        "noCrashEvidence": false
+      },
+      "logSummary": null,
+      "crashSummary": null,
+      "crashReport": null,
+      "blockerCount": 7,
+      "blockers": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Openlands route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ]
+    },
+    {
+      "lane": "neoforge",
+      "packId": "openlands-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-NeoForge-Edition",
+      "workspaceDir": "ECHO-Openlands-NeoForge-Edition",
+      "status": "blocked",
+      "releaseReady": false,
+      "evidencePath": "fixtures/openlands/gameplay-qa/neoforge/manual-evidence.json",
+      "evidencePresent": false,
+      "claims": {
+        "freshWorldCreated": false,
+        "realFirst30Playthrough": false,
+        "realFirst2HourPlaythrough": false,
+        "primaryObjectiveCompleted": false,
+        "saveReloadVerified": false,
+        "noCrashEvidence": false
+      },
+      "logSummary": null,
+      "crashSummary": null,
+      "crashReport": null,
+      "blockerCount": 7,
+      "blockers": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Openlands route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ]
+    },
+    {
+      "lane": "standalone",
+      "packId": "openlands-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
+      "workspaceDir": "ECHO-Openlands-Standalone-Edition",
+      "status": "blocked",
+      "releaseReady": false,
+      "evidencePath": "fixtures/openlands/gameplay-qa/standalone/manual-evidence.json",
+      "evidencePresent": false,
+      "claims": {
+        "freshWorldCreated": false,
+        "realFirst30Playthrough": false,
+        "realFirst2HourPlaythrough": false,
+        "primaryObjectiveCompleted": false,
+        "saveReloadVerified": false,
+        "noCrashEvidence": false
+      },
+      "logSummary": null,
+      "crashSummary": null,
+      "crashReport": null,
+      "blockerCount": 7,
+      "blockers": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Openlands route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ]
+    }
+  ],
+  "blockers": [
+    "openlands-native-edition: Missing real gameplay evidence JSON.",
+    "openlands-native-edition: Missing fresh install and fresh world/profile proof.",
+    "openlands-native-edition: Missing first 30-minute playthrough proof.",
+    "openlands-native-edition: Missing first 2-hour playthrough proof.",
+    "openlands-native-edition: Missing primary Openlands route or systems objective reached and recorded.",
+    "openlands-native-edition: Missing save/reload verification proof.",
+    "openlands-native-edition: Missing no-crash review proof.",
+    "openlands-neoforge-edition: Missing real gameplay evidence JSON.",
+    "openlands-neoforge-edition: Missing fresh install and fresh world/profile proof.",
+    "openlands-neoforge-edition: Missing first 30-minute playthrough proof.",
+    "openlands-neoforge-edition: Missing first 2-hour playthrough proof.",
+    "openlands-neoforge-edition: Missing primary Openlands route or systems objective reached and recorded.",
+    "openlands-neoforge-edition: Missing save/reload verification proof.",
+    "openlands-neoforge-edition: Missing no-crash review proof.",
+    "openlands-standalone-edition: Missing real gameplay evidence JSON.",
+    "openlands-standalone-edition: Missing fresh install and fresh world/profile proof.",
+    "openlands-standalone-edition: Missing first 30-minute playthrough proof.",
+    "openlands-standalone-edition: Missing first 2-hour playthrough proof.",
+    "openlands-standalone-edition: Missing primary Openlands route or systems objective reached and recorded.",
+    "openlands-standalone-edition: Missing save/reload verification proof.",
+    "openlands-standalone-edition: Missing no-crash review proof."
+  ],
+  "summary": {
+    "laneCount": 3,
+    "passedLaneCount": 0,
+    "blockedLaneCount": 3,
+    "blockerCount": 21,
+    "conclusion": "Openlands remains blocked until real lane gameplay captures are imported."
+  },
+  "notes": [
+    "This report is an explicit fail-closed source report, not gameplay proof.",
+    "Launcher install, handoff, content graph load, and Hytale export-planning evidence must not be used as substitutes for real gameplay captures."
+  ]
+}
