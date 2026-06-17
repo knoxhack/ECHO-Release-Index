@@ -39,6 +39,14 @@ test('records failed Computer Use screenshot capture as blocker evidence only', 
     '--launcher-selected-pack', 'Ashfall NeoForge Edition',
     '--launcher-status', 'Ready',
     '--launcher-play-button', 'Play Ashfall NeoForge Edition',
+    '--minecraft-launcher-observed',
+    '--minecraft-launcher-profile', 'Ashfall NeoForge Edition neoforge-26.1.2.43-beta',
+    '--minecraft-launcher-play-button', 'PLAY JAVA',
+    '--minecraft-launcher-play-activation-status', 'blocked',
+    '--minecraft-launcher-play-activation-method', 'keyboard Return; keyboard Space; UIA Invoke',
+    '--minecraft-launcher-play-activation-error', 'PLAY JAVA could not be activated through keyboard focus, UIA Invoke, or screenshot-backed coordinates.',
+    '--minecraft-launcher-key-attempt', 'Return|No Java client window appeared.',
+    '--minecraft-launcher-key-attempt', 'space|No Java client window appeared.',
     '--screenshot-status', 'failed',
     '--screenshot-error', 'SetIsBorderRequired failed: No such interface supported (0x80004002)',
     '--input-stopped',
@@ -59,6 +67,22 @@ test('records failed Computer Use screenshot capture as blocker evidence only', 
   assert.equal(report.target.family, 'Ashfall')
   assert.equal(report.target.lane, 'neoforge')
   assert.equal(report.screenshotCapture.status, 'failed')
+  assert.equal(report.minecraftLauncher.observed, true)
+  assert.equal(report.minecraftLauncher.selectedProfile, 'Ashfall NeoForge Edition neoforge-26.1.2.43-beta')
+  assert.equal(report.minecraftLauncher.playButtonText, 'PLAY JAVA')
+  assert.equal(report.minecraftLauncher.playActivation.status, 'blocked')
+  assert.match(report.minecraftLauncher.playActivation.method, /keyboard Return/u)
+  assert.match(report.minecraftLauncher.playActivation.error, /could not be activated/u)
+  assert.deepEqual(report.minecraftLauncher.playActivation.keyAttempts, [
+    {
+      key: 'Return',
+      result: 'No Java client window appeared.',
+    },
+    {
+      key: 'space',
+      result: 'No Java client window appeared.',
+    },
+  ])
   assert.equal(report.inputStoppedAfterCaptureFailure, true)
   assert.equal(report.acceptedAsGameplayProof, false)
   assert.equal(report.claimsPromoted, false)
@@ -71,6 +95,8 @@ test('records failed Computer Use screenshot capture as blocker evidence only', 
   assert.equal(report.verificationChecks[0].status, 'blocked')
   assert.match(report.blockers.join('\n'), /window screenshot capture failed/u)
   assert.match(report.blockers.join('\n'), /not accepted as gameplay proof/u)
+  assert.match(report.blockers.join('\n'), /official-launcher handoff\/profile selection only/u)
+  assert.match(report.blockers.join('\n'), /play activation was blocked/u)
   assert.match(report.blockers.join('\n'), /No screenshots, gameplay logs, or save snapshots/u)
   assert.match(report.blockers.join('\n'), /verification check hudVisible/u)
 
@@ -109,6 +135,22 @@ test('records failed Computer Use screenshot capture as blocker evidence only', 
   const dedupedHistory = await readJson(historyPath)
   assert.equal(dedupedHistory.attemptCount, 2)
 
+  await fs.rm(root, { recursive: true, force: true })
+})
+
+test('rejects blocked Minecraft Launcher play activation without exact error text', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-computer-use-capture-attempt-minecraft-invalid-'))
+  const result = run([
+    '--root', root,
+    '--family', 'Ashfall',
+    '--lane', 'neoforge',
+    '--pack-id', 'ashfall-neoforge-edition',
+    '--screenshot-status', 'not-attempted',
+    '--minecraft-launcher-observed',
+    '--minecraft-launcher-play-activation-status', 'blocked',
+  ])
+  assert.notEqual(result.status, 0)
+  assert.match(result.stderr, /--minecraft-launcher-play-activation-error is required/u)
   await fs.rm(root, { recursive: true, force: true })
 })
 

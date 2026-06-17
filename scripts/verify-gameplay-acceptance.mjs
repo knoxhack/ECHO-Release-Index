@@ -423,6 +423,7 @@ function normalizeCaptureAttempt(report, sourceReport = 'release-readiness/compu
     target: captureAttemptTarget(report),
     launcherWindowObserved: report.launcherWindow?.observed === true,
     launcherAccessibilityObserved: report.launcherWindow?.accessibility?.observed === true,
+    minecraftLauncher: report.minecraftLauncher ?? null,
     screenshotCapture: report.screenshotCapture ?? null,
     inputStoppedAfterCaptureFailure: report.inputStoppedAfterCaptureFailure === true,
     acceptedAsGameplayProof: report.acceptedAsGameplayProof === true,

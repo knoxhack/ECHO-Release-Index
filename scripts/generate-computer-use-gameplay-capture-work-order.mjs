@@ -443,6 +443,12 @@ function buildTarget(family, lane, attempts) {
       generatedAt: latestAttempt.generatedAt ?? null,
       status: latestAttempt.status ?? null,
       screenshotStatus: latestAttempt.screenshotCapture?.status ?? null,
+      minecraftLauncher: latestAttempt.minecraftLauncher ? {
+        observed: latestAttempt.minecraftLauncher.observed === true,
+        selectedProfile: latestAttempt.minecraftLauncher.selectedProfile ?? null,
+        playButtonText: latestAttempt.minecraftLauncher.playButtonText ?? null,
+        playActivationStatus: latestAttempt.minecraftLauncher.playActivation?.status ?? null,
+      } : null,
       acceptedAsGameplayProof: latestAttempt.acceptedAsGameplayProof === true,
       claimsPromoted: latestAttempt.claimsPromoted === true,
       verificationSummary: latestAttempt.verificationSummary ?? null,

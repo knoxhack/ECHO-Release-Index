@@ -114,6 +114,22 @@ function attemptFixture() {
       status: 'failed',
       error: 'SetIsBorderRequired failed: No such interface supported (0x80004002)',
     },
+    minecraftLauncher: {
+      observed: true,
+      selectedProfile: 'Ashfall NeoForge Edition neoforge-26.1.2.43-beta',
+      playButtonText: 'PLAY JAVA',
+      playActivation: {
+        status: 'blocked',
+        method: 'keyboard Return',
+        error: 'No Java client window appeared.',
+        keyAttempts: [
+          {
+            key: 'Return',
+            result: 'No Java client window appeared.',
+          },
+        ],
+      },
+    },
     acceptedAsGameplayProof: false,
     claimsPromoted: false,
     verificationChecks: [
@@ -170,6 +186,8 @@ test('generates platform Computer Use capture queue without promoting gameplay p
 
   const ashfallNeoForge = workOrder.targets.find((target) => target.packId === 'ashfall-neoforge-edition')
   assert.equal(ashfallNeoForge.latestComputerUseAttempt.attemptId, 'ashfall-neoforge-visible-attempt')
+  assert.equal(ashfallNeoForge.latestComputerUseAttempt.minecraftLauncher.observed, true)
+  assert.equal(ashfallNeoForge.latestComputerUseAttempt.minecraftLauncher.playActivationStatus, 'blocked')
   assert.equal(ashfallNeoForge.latestComputerUseAttempt.acceptedAsGameplayProof, false)
   assert.equal(ashfallNeoForge.latestComputerUseAttempt.claimsPromoted, false)
   assert.equal(

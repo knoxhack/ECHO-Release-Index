@@ -9,6 +9,7 @@ const SCHEMA_VERSION = 'echo.release_index.computer_use_gameplay_capture_attempt
 const HISTORY_SCHEMA_VERSION = 'echo.release_index.computer_use_gameplay_capture_attempts.v1'
 const SCREENSHOT_STATUSES = new Set(['captured', 'failed', 'not-attempted'])
 const VERIFICATION_CHECK_STATUSES = new Set(['captured', 'blocked', 'not-attempted'])
+const PLAY_ACTIVATION_STATUSES = new Set(['activated', 'blocked', 'not-attempted'])
 const LANES = new Set(['native', 'neoforge', 'standalone'])
 
 function usage() {
@@ -38,6 +39,19 @@ Options:
   --launcher-play-button <v>    Launcher play button text.
   --launcher-preparing <v>      Launcher preparing/status text.
   --launcher-ready <v>          Launcher ready text.
+  --minecraft-launcher-observed Minecraft Launcher window was observed.
+  --minecraft-launcher-profile <v>
+                                Selected Minecraft Launcher profile/version text.
+  --minecraft-launcher-play-button <v>
+                                Minecraft Launcher play button text.
+  --minecraft-launcher-play-activation-status <status>
+                                activated, blocked, or not-attempted. Defaults to not-attempted.
+  --minecraft-launcher-play-activation-method <v>
+                                Method attempted, for example keyboard Return, UIA Invoke.
+  --minecraft-launcher-play-activation-error <v>
+                                Exact play activation failure or blocker.
+  --minecraft-launcher-key-attempt <v>
+                                Key attempt as key|result. Repeatable.
   --screenshot-status <status>  captured, failed, or not-attempted. Defaults to failed.
   --screenshot-error <message>  Exact capture failure.
   --screenshot-api <name>       Capture API. Defaults to Windows.Graphics.Capture.
@@ -73,6 +87,13 @@ function parseArgs(argv) {
     launcherPlayButton: null,
     launcherPreparing: null,
     launcherReady: null,
+    minecraftLauncherObserved: false,
+    minecraftLauncherProfile: null,
+    minecraftLauncherPlayButton: null,
+    minecraftLauncherPlayActivationStatus: 'not-attempted',
+    minecraftLauncherPlayActivationMethod: null,
+    minecraftLauncherPlayActivationError: null,
+    minecraftLauncherKeyAttempts: [],
     screenshotStatus: 'failed',
     screenshotError: null,
     screenshotApi: 'Windows.Graphics.Capture',
@@ -104,6 +125,13 @@ function parseArgs(argv) {
     else if (arg === '--launcher-play-button') args.launcherPlayButton = next()
     else if (arg === '--launcher-preparing') args.launcherPreparing = next()
     else if (arg === '--launcher-ready') args.launcherReady = next()
+    else if (arg === '--minecraft-launcher-observed') args.minecraftLauncherObserved = true
+    else if (arg === '--minecraft-launcher-profile') args.minecraftLauncherProfile = next()
+    else if (arg === '--minecraft-launcher-play-button') args.minecraftLauncherPlayButton = next()
+    else if (arg === '--minecraft-launcher-play-activation-status') args.minecraftLauncherPlayActivationStatus = next().toLowerCase()
+    else if (arg === '--minecraft-launcher-play-activation-method') args.minecraftLauncherPlayActivationMethod = next()
+    else if (arg === '--minecraft-launcher-play-activation-error') args.minecraftLauncherPlayActivationError = next()
+    else if (arg === '--minecraft-launcher-key-attempt') args.minecraftLauncherKeyAttempts.push(parseKeyAttempt(next()))
     else if (arg === '--screenshot-status') args.screenshotStatus = next().toLowerCase()
     else if (arg === '--screenshot-error') args.screenshotError = next()
     else if (arg === '--screenshot-api') args.screenshotApi = next()
@@ -120,6 +148,15 @@ function parseArgs(argv) {
   if (!args.out) args.out = path.join(args.root, DEFAULT_OUT)
   if (!args.historyOut) args.historyOut = path.join(args.root, DEFAULT_HISTORY_OUT)
   return args
+}
+
+function parseKeyAttempt(value) {
+  const [key, result = ''] = value.split('|')
+  if (!key) throw new Error('--minecraft-launcher-key-attempt must use key|result.')
+  return {
+    key: key.trim(),
+    result: result.trim() || null,
+  }
 }
 
 function parseObservedApp(value) {
@@ -159,6 +196,15 @@ function validateArgs(args) {
   if (!nonEmpty(args.packId)) errors.push('--pack-id is required.')
   if (!SCREENSHOT_STATUSES.has(args.screenshotStatus)) {
     errors.push(`--screenshot-status must be one of ${[...SCREENSHOT_STATUSES].join(', ')}.`)
+  }
+  if (!PLAY_ACTIVATION_STATUSES.has(args.minecraftLauncherPlayActivationStatus)) {
+    errors.push(`--minecraft-launcher-play-activation-status must be one of ${[...PLAY_ACTIVATION_STATUSES].join(', ')}.`)
+  }
+  if (args.minecraftLauncherPlayActivationStatus === 'blocked' && !nonEmpty(args.minecraftLauncherPlayActivationError)) {
+    errors.push('--minecraft-launcher-play-activation-error is required when --minecraft-launcher-play-activation-status blocked.')
+  }
+  for (const attempt of args.minecraftLauncherKeyAttempts) {
+    if (!nonEmpty(attempt.key)) errors.push('--minecraft-launcher-key-attempt key is required.')
   }
   if (args.screenshotStatus === 'failed' && !nonEmpty(args.screenshotError)) {
     errors.push('--screenshot-error is required when --screenshot-status failed.')
@@ -211,6 +257,16 @@ function buildReport(args) {
   if (args.launcherObserved || args.launcherSelectedPack || args.launcherStatus) {
     inferredBlockers.push('Launcher accessibility text is useful context but is not accepted as gameplay proof.')
   }
+  if (args.minecraftLauncherObserved || args.minecraftLauncherProfile || args.minecraftLauncherPlayButton) {
+    inferredBlockers.push('Minecraft Launcher accessibility text proves official-launcher handoff/profile selection only; it is not accepted as gameplay proof.')
+  }
+  if (args.minecraftLauncherPlayActivationStatus === 'blocked') {
+    inferredBlockers.push('Minecraft Launcher play activation was blocked before the Java client could start.')
+  } else if (args.minecraftLauncherPlayActivationStatus === 'not-attempted' && (args.minecraftLauncherObserved || args.minecraftLauncherProfile || args.minecraftLauncherPlayButton)) {
+    inferredBlockers.push('Minecraft Launcher play activation was not attempted or not recorded, so no Java client start was proven.')
+  } else if (args.minecraftLauncherPlayActivationStatus === 'activated' && importedEvidenceFiles.length === 0) {
+    inferredBlockers.push('Minecraft Launcher play activation was recorded, but no imported gameplay screenshots, logs, or save snapshots prove in-game state.')
+  }
   if (importedEvidenceFiles.length === 0) {
     inferredBlockers.push(`No screenshots, gameplay logs, or save snapshots were imported for ${args.family} ${displayLane(args.lane)}.`)
   }
@@ -249,6 +305,17 @@ function buildReport(args) {
         playButtonText: args.launcherPlayButton ?? null,
         preparingText: args.launcherPreparing ?? null,
         readyText: args.launcherReady ?? null,
+      },
+    },
+    minecraftLauncher: {
+      observed: args.minecraftLauncherObserved,
+      selectedProfile: args.minecraftLauncherProfile ?? null,
+      playButtonText: args.minecraftLauncherPlayButton ?? null,
+      playActivation: {
+        status: args.minecraftLauncherPlayActivationStatus,
+        method: args.minecraftLauncherPlayActivationMethod ?? null,
+        error: args.minecraftLauncherPlayActivationError ?? null,
+        keyAttempts: args.minecraftLauncherKeyAttempts,
       },
     },
     screenshotCapture: {

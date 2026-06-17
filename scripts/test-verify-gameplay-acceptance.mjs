@@ -252,6 +252,22 @@ test('Computer Use capture attempts attach to matching gameplay lane without pro
       api: 'Windows.Graphics.Capture',
       error: 'SetIsBorderRequired failed: No such interface supported (0x80004002)',
     },
+    minecraftLauncher: {
+      observed: true,
+      selectedProfile: 'Ashfall NeoForge Edition neoforge-26.1.2.43-beta',
+      playButtonText: 'PLAY JAVA',
+      playActivation: {
+        status: 'blocked',
+        method: 'keyboard Return',
+        error: 'No Java client window appeared.',
+        keyAttempts: [
+          {
+            key: 'Return',
+            result: 'No Java client window appeared.',
+          },
+        ],
+      },
+    },
     inputStoppedAfterCaptureFailure: true,
     acceptedAsGameplayProof: false,
     claimsPromoted: false,
@@ -296,6 +312,8 @@ test('Computer Use capture attempts attach to matching gameplay lane without pro
   assert.equal(neoforge.computerUseCaptureAttempt.acceptedAsGameplayProof, false)
   assert.equal(neoforge.computerUseCaptureAttempt.claimsPromoted, false)
   assert.equal(neoforge.computerUseCaptureAttempt.screenshotCapture.status, 'failed')
+  assert.equal(neoforge.computerUseCaptureAttempt.minecraftLauncher.observed, true)
+  assert.equal(neoforge.computerUseCaptureAttempt.minecraftLauncher.playActivation.status, 'blocked')
   assert.equal(neoforge.computerUseCaptureAttempt.verificationSummary.checkCount, 2)
   assert.equal(neoforge.computerUseCaptureAttempt.verificationChecks[0].id, 'hudVisible')
   assert.equal(neoforge.computerUseCaptureAttempt.verificationChecks[0].status, 'blocked')

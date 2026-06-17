@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-  "attemptId": "2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition",
-  "generatedAt": "2026-06-17T21:05:35.950Z",
+  "attemptId": "2026-06-17t21-13-37-696z__ashfall__neoforge__ashfall-neoforge-edition",
+  "generatedAt": "2026-06-17T21:13:37.696Z",
   "status": "blocked",
   "scope": "public-alpha-real-gameplay-capture",
   "target": {
@@ -33,6 +33,26 @@
       "readyText": null
     }
   },
+  "minecraftLauncher": {
+    "observed": true,
+    "selectedProfile": "Ashfall NeoForge Edition neoforge-26.1.2.43-beta",
+    "playButtonText": "PLAY JAVA",
+    "playActivation": {
+      "status": "blocked",
+      "method": "keyboard Return; keyboard Space; UIA Invoke; element click; Windows.Graphics.Capture coordinate click",
+      "error": "Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, element click, or screenshot-backed coordinates; no Java client window appeared.",
+      "keyAttempts": [
+        {
+          "key": "Return",
+          "result": "No Java client window appeared."
+        },
+        {
+          "key": "space",
+          "result": "No Java client window appeared."
+        }
+      ]
+    }
+  },
   "screenshotCapture": {
     "attempted": true,
     "status": "failed",
@@ -49,14 +69,14 @@
       "label": "Client/game window started",
       "status": "blocked",
       "evidenceRef": null,
-      "note": "Minecraft Launcher opened, but the game client did not start."
+      "note": "Minecraft Launcher opened, but the Java game client did not start."
     },
     {
       "id": "worldCreatedOrLoaded",
       "label": "World or profile loaded",
       "status": "blocked",
       "evidenceRef": null,
-      "note": "No game client/world window was launched."
+      "note": "No game client or world window was launched."
     },
     {
       "id": "hudVisible",
@@ -136,10 +156,12 @@
     "notAttemptedCount": 0
   },
   "blockers": [
-    "ECHO Launcher repo build accepted Ctrl+Enter and opened Minecraft Launcher with Ashfall NeoForge Edition selected, but Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, or screenshot-backed coordinates.",
-    "No game client window, in-game HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, logs, or save snapshot were captured.",
+    "ECHO Launcher repo build accepted Ctrl+Enter and opened Minecraft Launcher with Ashfall NeoForge Edition selected, but Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, element click, or screenshot-backed coordinates.",
+    "No Java game client window, in-game HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, logs, or save snapshot were captured.",
     "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
     "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+    "Minecraft Launcher accessibility text proves official-launcher handoff/profile selection only; it is not accepted as gameplay proof.",
+    "Minecraft Launcher play activation was blocked before the Java client could start.",
     "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
     "Computer Use verification check clientStarted (Client/game window started) was blocked.",
     "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
@@ -157,6 +179,7 @@
   "notes": [
     "Verified repo build process path C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe.",
     "Minecraft Launcher accessibility text showed PLAY JAVA and selected profile Ashfall NeoForge Edition neoforge-26.1.2.43-beta.",
+    "This structured attempt records official Minecraft Launcher handoff/profile selection and blocked play activation only; it does not prove gameplay.",
     "This report records an attempted visible Computer Use verification session only.",
     "It must not be used to mark gameplay evidence claims true."
   ]
