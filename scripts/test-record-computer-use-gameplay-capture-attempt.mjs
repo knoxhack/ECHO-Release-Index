@@ -50,8 +50,10 @@ test('records failed Computer Use screenshot capture as blocker evidence only', 
   assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`)
 
   const reportPath = path.join(root, 'release-readiness', 'computer-use-gameplay-capture-attempt.json')
+  const historyPath = path.join(root, 'release-readiness', 'computer-use-gameplay-capture-attempts.json')
   const report = await readJson(reportPath)
   assert.equal(report.schemaVersion, 'echo.release_index.computer_use_gameplay_capture_attempt.v1')
+  assert.match(report.attemptId, /2026-06-17t19-11-40-000z__ashfall__neoforge__ashfall-neoforge-edition/u)
   assert.equal(report.generatedAt, generatedAt)
   assert.equal(report.status, 'blocked')
   assert.equal(report.target.family, 'Ashfall')
@@ -71,6 +73,41 @@ test('records failed Computer Use screenshot capture as blocker evidence only', 
   assert.match(report.blockers.join('\n'), /not accepted as gameplay proof/u)
   assert.match(report.blockers.join('\n'), /No screenshots, gameplay logs, or save snapshots/u)
   assert.match(report.blockers.join('\n'), /verification check hudVisible/u)
+
+  const history = await readJson(historyPath)
+  assert.equal(history.schemaVersion, 'echo.release_index.computer_use_gameplay_capture_attempts.v1')
+  assert.equal(history.attemptCount, 1)
+  assert.equal(history.latestAttemptId, report.attemptId)
+  assert.equal(history.attempts[0].attemptId, report.attemptId)
+  assert.equal(history.attempts[0].acceptedAsGameplayProof, false)
+
+  const secondResult = run([
+    '--root', root,
+    '--generated-at', '2026-06-17T20:00:00.000Z',
+    '--family', 'Sky Relay',
+    '--lane', 'native',
+    '--pack-id', 'sky-relay-native-edition',
+    '--screenshot-status', 'not-attempted',
+    '--verification-check', 'hudVisible|HUD visible|not-attempted||Computer Use capture not started.',
+  ])
+  assert.equal(secondResult.status, 0, `${secondResult.stdout}\n${secondResult.stderr}`)
+  const secondHistory = await readJson(historyPath)
+  assert.equal(secondHistory.attemptCount, 2)
+  assert.equal(secondHistory.attempts[0].target.family, 'Ashfall')
+  assert.equal(secondHistory.attempts[1].target.family, 'Sky Relay')
+
+  const duplicateResult = run([
+    '--root', root,
+    '--generated-at', '2026-06-17T20:00:00.000Z',
+    '--family', 'Sky Relay',
+    '--lane', 'native',
+    '--pack-id', 'sky-relay-native-edition',
+    '--screenshot-status', 'not-attempted',
+    '--verification-check', 'hudVisible|HUD visible|not-attempted||Computer Use capture not started.',
+  ])
+  assert.equal(duplicateResult.status, 0, `${duplicateResult.stdout}\n${duplicateResult.stderr}`)
+  const dedupedHistory = await readJson(historyPath)
+  assert.equal(dedupedHistory.attemptCount, 2)
 
   await fs.rm(root, { recursive: true, force: true })
 })

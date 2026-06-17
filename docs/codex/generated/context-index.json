@@ -18,14 +18,24 @@
         "branch": "main",
         "commit": "2c3741f768b6",
         "commitDate": "2026-06-17T15:46:00-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M release-readiness/computer-use-gameplay-capture-attempt.json",
+          " M release-readiness/gameplay-acceptance-matrix.json",
+          " M release-readiness/public-alpha-runtime-acceptance.json",
+          " M scripts/generate-public-alpha-runtime-acceptance.mjs",
+          " M scripts/record-computer-use-gameplay-capture-attempt.mjs",
+          " M scripts/test-record-computer-use-gameplay-capture-attempt.mjs",
+          " M scripts/test-verify-gameplay-acceptance.mjs",
+          " M scripts/verify-gameplay-acceptance.mjs",
+          "?? release-readiness/computer-use-gameplay-capture-attempts.json"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 29971,
+          "bytes": 30085,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },

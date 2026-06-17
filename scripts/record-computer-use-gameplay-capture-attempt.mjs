@@ -4,7 +4,9 @@ import path from 'node:path'
 import process from 'node:process'
 
 const DEFAULT_OUT = path.join('release-readiness', 'computer-use-gameplay-capture-attempt.json')
+const DEFAULT_HISTORY_OUT = path.join('release-readiness', 'computer-use-gameplay-capture-attempts.json')
 const SCHEMA_VERSION = 'echo.release_index.computer_use_gameplay_capture_attempt.v1'
+const HISTORY_SCHEMA_VERSION = 'echo.release_index.computer_use_gameplay_capture_attempts.v1'
 const SCREENSHOT_STATUSES = new Set(['captured', 'failed', 'not-attempted'])
 const VERIFICATION_CHECK_STATUSES = new Set(['captured', 'blocked', 'not-attempted'])
 const LANES = new Set(['native', 'neoforge', 'standalone'])
@@ -14,6 +16,8 @@ function usage() {
   node scripts/record-computer-use-gameplay-capture-attempt.mjs --family Ashfall --lane neoforge --pack-id ashfall-neoforge-edition [options]
 
 Records the latest platform-level visible Computer Use gameplay capture attempt.
+Also appends it to release-readiness/computer-use-gameplay-capture-attempts.json
+so multi-lane verification attempts are preserved instead of overwritten.
 This report is blocker/provenance evidence only. It never marks gameplay claims
 true; screenshots, logs, notes, and save snapshots still have to be imported
 through the lane/family gameplay evidence tooling.
@@ -21,6 +25,7 @@ through the lane/family gameplay evidence tooling.
 Options:
   --root <path>                 Release Index root. Defaults to cwd.
   --out <path>                  Output JSON path. Defaults to release-readiness/computer-use-gameplay-capture-attempt.json.
+  --history-out <path>          History JSON path. Defaults to release-readiness/computer-use-gameplay-capture-attempts.json.
   --generated-at <iso>          Timestamp. Defaults to current time.
   --family <name>               Target family, for example Ashfall.
   --lane <lane>                 native, neoforge, or standalone.
@@ -52,6 +57,7 @@ function parseArgs(argv) {
   const args = {
     root: process.cwd(),
     out: null,
+    historyOut: null,
     write: true,
     json: false,
     help: false,
@@ -85,6 +91,7 @@ function parseArgs(argv) {
     }
     if (arg === '--root') args.root = path.resolve(next())
     else if (arg === '--out') args.out = path.resolve(next())
+    else if (arg === '--history-out') args.historyOut = path.resolve(next())
     else if (arg === '--generated-at') args.generatedAt = next()
     else if (arg === '--family') args.family = next()
     else if (arg === '--lane') args.lane = next().toLowerCase()
@@ -111,6 +118,7 @@ function parseArgs(argv) {
     else throw new Error(`Unknown argument: ${arg}`)
   }
   if (!args.out) args.out = path.join(args.root, DEFAULT_OUT)
+  if (!args.historyOut) args.historyOut = path.join(args.root, DEFAULT_HISTORY_OUT)
   return args
 }
 
@@ -195,8 +203,10 @@ function buildReport(args) {
     note: check.note,
   }))
   const inferredBlockers = []
-  if (args.screenshotStatus !== 'captured') {
+  if (args.screenshotStatus === 'failed') {
     inferredBlockers.push('Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.')
+  } else if (args.screenshotStatus === 'not-attempted') {
+    inferredBlockers.push('Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.')
   }
   if (args.launcherObserved || args.launcherSelectedPack || args.launcherStatus) {
     inferredBlockers.push('Launcher accessibility text is useful context but is not accepted as gameplay proof.')
@@ -214,6 +224,12 @@ function buildReport(args) {
     : 'blocked'
   return {
     schemaVersion: SCHEMA_VERSION,
+    attemptId: attemptId({
+      generatedAt,
+      family: args.family,
+      lane: args.lane,
+      packId: args.packId,
+    }),
     generatedAt,
     status,
     scope: 'public-alpha-real-gameplay-capture',
@@ -261,6 +277,62 @@ function buildReport(args) {
   }
 }
 
+function attemptId({ generatedAt, family, lane, packId }) {
+  const parts = [generatedAt, family, lane, packId]
+    .map((value) => String(value ?? '')
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/gu, '-')
+      .replace(/^-|-$/gu, ''))
+    .filter(Boolean)
+  return parts.join('__')
+}
+
+function attemptKey(report) {
+  return report?.attemptId
+    ?? attemptId({
+      generatedAt: report?.generatedAt,
+      family: report?.target?.family,
+      lane: report?.target?.lane,
+      packId: report?.target?.packId,
+    })
+}
+
+async function readJson(filePath, { optional = false } = {}) {
+  try {
+    return JSON.parse(await fs.readFile(filePath, 'utf8'))
+  } catch (error) {
+    if (optional && error?.code === 'ENOENT') return null
+    throw error
+  }
+}
+
+async function buildHistory(args, report) {
+  const existing = await readJson(args.historyOut, { optional: true })
+  if (existing && existing.schemaVersion !== HISTORY_SCHEMA_VERSION) {
+    throw new Error(`${path.relative(args.root, args.historyOut).replace(/\\/gu, '/')} schemaVersion is ${existing.schemaVersion ?? 'missing'}, expected ${HISTORY_SCHEMA_VERSION}.`)
+  }
+  const attemptsByKey = new Map()
+  for (const attempt of Array.isArray(existing?.attempts) ? existing.attempts : []) {
+    attemptsByKey.set(attemptKey(attempt), attempt)
+  }
+  attemptsByKey.set(attemptKey(report), report)
+  const attempts = [...attemptsByKey.values()]
+    .sort((left, right) => String(left.generatedAt ?? '').localeCompare(String(right.generatedAt ?? '')))
+  return {
+    schemaVersion: HISTORY_SCHEMA_VERSION,
+    generatedAt: new Date().toISOString(),
+    scope: 'public-alpha-real-gameplay-capture-history',
+    latestAttemptId: report.attemptId,
+    attemptCount: attempts.length,
+    attempts,
+    notes: [
+      'This history preserves Computer Use gameplay verification attempts across families and lanes.',
+      'Entries are non-promotional blocker/provenance evidence until required screenshots, logs, notes, and save snapshots are imported through gameplay evidence tooling.',
+    ],
+  }
+}
+
 async function writeJson(filePath, value) {
   await fs.mkdir(path.dirname(filePath), { recursive: true })
   await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, 'utf8')
@@ -273,12 +345,18 @@ async function main() {
     return
   }
   const report = buildReport(args)
-  if (args.write) await writeJson(args.out, report)
+  let history = null
+  if (args.write) {
+    await writeJson(args.out, report)
+    history = await buildHistory(args, report)
+    await writeJson(args.historyOut, history)
+  }
   if (args.json) {
     console.log(JSON.stringify(report, null, 2))
   } else {
     console.log(`Computer Use gameplay capture attempt ${report.status}: ${report.target.family} ${displayLane(report.target.lane)}; ${report.blockers.length} blocker(s).`)
     if (args.write) console.log(`Wrote ${path.relative(args.root, args.out).replace(/\\/gu, '/')}`)
+    if (args.write) console.log(`Wrote ${path.relative(args.root, args.historyOut).replace(/\\/gu, '/')}`)
   }
 }
 

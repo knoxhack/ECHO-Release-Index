@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-17T19:45:27.860Z",
+  "generatedAt": "2026-06-17T19:56:11.541Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "826fae342073c72825d6a98c09712ee3209dc9f3",
+  "releaseIndexHeadAtGeneration": "9f85e3788d460ba7673b40375b2a795c066a9a64",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -345,7 +345,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-17T19:45:27.582Z",
+    "generatedAt": "2026-06-17T19:56:11.511Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -396,6 +396,7 @@
       {
         "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
         "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+        "attemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
         "generatedAt": "2026-06-17T19:33:21.705Z",
         "status": "blocked",
         "target": {
@@ -661,6 +662,39 @@
       "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
     ]
   },
+  "computerUseGameplayCaptureHistory": {
+    "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
+    "present": true,
+    "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempts.v1",
+    "generatedAt": "2026-06-17T19:54:03.781Z",
+    "latestAttemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
+    "attemptCount": 1,
+    "targetCounts": {
+      "Ashfall neoforge": 1
+    },
+    "acceptedAttemptCount": 0,
+    "blockedAttemptCount": 1,
+    "attempts": [
+      {
+        "attemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
+        "generatedAt": "2026-06-17T19:33:21.705Z",
+        "status": "blocked",
+        "targetFamily": "Ashfall",
+        "targetLane": "neoforge",
+        "targetPackId": "ashfall-neoforge-edition",
+        "screenshotStatus": "failed",
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 12,
+          "capturedCount": 0,
+          "blockedCount": 1,
+          "notAttemptedCount": 11
+        },
+        "blockerCount": 16
+      }
+    ]
+  },
   "gameplayMatrix": [
     {
       "family": "Ashfall",
@@ -749,7 +783,8 @@
           },
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "neoforge",
@@ -814,6 +849,7 @@
           "computerUseCaptureAttempt": {
             "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
             "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+            "attemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
             "generatedAt": "2026-06-17T19:33:21.705Z",
             "status": "blocked",
             "target": {
@@ -944,7 +980,144 @@
               "Computer Use verification check creativeItemPlayable (Creative item playable) was not-attempted.",
               "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
             ]
-          }
+          },
+          "computerUseCaptureAttempts": [
+            {
+              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+              "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+              "attemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
+              "generatedAt": "2026-06-17T19:33:21.705Z",
+              "status": "blocked",
+              "target": {
+                "family": "Ashfall",
+                "lane": "neoforge",
+                "packId": "ashfall-neoforge-edition"
+              },
+              "launcherWindowObserved": true,
+              "launcherAccessibilityObserved": true,
+              "screenshotCapture": {
+                "attempted": true,
+                "status": "failed",
+                "api": "Windows.Graphics.Capture",
+                "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+              },
+              "inputStoppedAfterCaptureFailure": true,
+              "acceptedAsGameplayProof": false,
+              "claimsPromoted": false,
+              "importedEvidenceFileCount": 0,
+              "verificationChecks": [
+                {
+                  "id": "clientStarted",
+                  "label": "Client/game window started",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Minecraft Launcher was visible, but in-game client start could not be visually captured."
+                },
+                {
+                  "id": "worldCreatedOrLoaded",
+                  "label": "World or profile loaded",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "hudVisible",
+                  "label": "HUD visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "inventoryIndexVisible",
+                  "label": "Inventory Index visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "terminalVisible",
+                  "label": "Terminal visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "holomapVisible",
+                  "label": "HoloMap visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "lensVisible",
+                  "label": "Lens visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "creativeTabVisible",
+                  "label": "Creative tab visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "creativeTabSearchVisible",
+                  "label": "Creative tab search visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "creativeItemSelectable",
+                  "label": "Creative item selectable",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "creativeItemPlayable",
+                  "label": "Creative item playable",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                },
+                {
+                  "id": "saveReloadVerified",
+                  "label": "Save and reload verified",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Stopped input after screenshot capture failure."
+                }
+              ],
+              "verificationSummary": {
+                "checkCount": 12,
+                "capturedCount": 0,
+                "blockedCount": 1,
+                "notAttemptedCount": 11
+              },
+              "blockerCount": 16,
+              "blockers": [
+                "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+                "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+                "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+                "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+                "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+                "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+                "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+                "Computer Use verification check inventoryIndexVisible (Inventory Index visible) was not-attempted.",
+                "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+                "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+                "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+                "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+                "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+                "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+                "Computer Use verification check creativeItemPlayable (Creative item playable) was not-attempted.",
+                "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
+              ]
+            }
+          ]
         },
         {
           "lane": "standalone",
@@ -990,7 +1163,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         }
       ],
       "conclusion": "Ashfall install/handoff evidence exists, but gameplay acceptance remains blocked by lane-level proof gaps."
@@ -1066,7 +1240,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "neoforge",
@@ -1093,7 +1268,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "standalone",
@@ -1120,7 +1296,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         }
       ],
       "conclusion": "Sky Relay gameplay acceptance remains blocked by manual evidence work-order gaps."
@@ -1265,7 +1442,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "neoforge",
@@ -1361,7 +1539,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "standalone",
@@ -1457,7 +1636,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         }
       ],
       "conclusion": "Galactic Survey gameplay acceptance remains blocked by manual evidence work-order gaps."
@@ -1532,7 +1712,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "neoforge",
@@ -1565,7 +1746,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "standalone",
@@ -1598,7 +1780,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         }
       ],
       "conclusion": "Openlands gameplay acceptance has no release-ready real gameplay evidence yet."
@@ -1673,7 +1856,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "neoforge",
@@ -1706,7 +1890,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         },
         {
           "lane": "standalone",
@@ -1739,7 +1924,8 @@
           "logSummary": null,
           "crashSummary": null,
           "crashReport": null,
-          "computerUseCaptureAttempt": null
+          "computerUseCaptureAttempt": null,
+          "computerUseCaptureAttempts": []
         }
       ],
       "conclusion": "Arcana Division gameplay acceptance has no release-ready real gameplay evidence yet."

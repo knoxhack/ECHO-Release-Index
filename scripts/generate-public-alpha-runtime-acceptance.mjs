@@ -265,6 +265,7 @@ function gameplayMatrixFromAcceptance(report) {
       crashSummary: lane.crashSummary ?? null,
       crashReport: lane.crashReport ?? null,
       computerUseCaptureAttempt: lane.computerUseCaptureAttempt ?? null,
+      computerUseCaptureAttempts: lane.computerUseCaptureAttempts ?? [],
     })),
     conclusion: family.conclusion ?? null,
   }))
@@ -303,6 +304,41 @@ function computerUseCaptureAttemptFromReport(report) {
   }
 }
 
+function computerUseCaptureHistoryFromReport(report) {
+  const attempts = Array.isArray(report?.attempts) ? report.attempts : []
+  return {
+    sourceReport: 'release-readiness/computer-use-gameplay-capture-attempts.json',
+    present: Boolean(report),
+    schemaVersion: report?.schemaVersion ?? null,
+    generatedAt: report?.generatedAt ?? null,
+    latestAttemptId: report?.latestAttemptId ?? null,
+    attemptCount: attempts.length,
+    targetCounts: attempts.reduce((counts, attempt) => {
+      const key = [
+        attempt?.target?.family ?? 'unknown-family',
+        attempt?.target?.lane ?? 'unknown-lane',
+      ].join(' ')
+      counts[key] = (counts[key] ?? 0) + 1
+      return counts
+    }, {}),
+    acceptedAttemptCount: attempts.filter((attempt) => attempt?.acceptedAsGameplayProof === true).length,
+    blockedAttemptCount: attempts.filter((attempt) => attempt?.acceptedAsGameplayProof !== true).length,
+    attempts: attempts.map((attempt) => ({
+      attemptId: attempt.attemptId ?? null,
+      generatedAt: attempt.generatedAt ?? null,
+      status: attempt.status ?? null,
+      targetFamily: attempt.target?.family ?? null,
+      targetLane: attempt.target?.lane ?? null,
+      targetPackId: attempt.target?.packId ?? null,
+      screenshotStatus: attempt.screenshotCapture?.status ?? null,
+      acceptedAsGameplayProof: attempt.acceptedAsGameplayProof === true,
+      claimsPromoted: attempt.claimsPromoted === true,
+      verificationSummary: attempt.verificationSummary ?? null,
+      blockerCount: Array.isArray(attempt.blockers) ? attempt.blockers.length : 0,
+    })),
+  }
+}
+
 async function gitHead(repoRoot) {
   try {
     const gitDir = path.join(repoRoot, '.git')
@@ -334,6 +370,7 @@ async function main() {
   const ashfallHandoff = await readJson(reportPath('ashfall-electron-install-handoff-smoke.json'))
   const gameplayAcceptance = await readJson(reportPath('gameplay-acceptance-matrix.json'), { optional: true })
   const computerUseCaptureAttempt = await readJson(reportPath('computer-use-gameplay-capture-attempt.json'), { optional: true })
+  const computerUseCaptureAttemptHistory = await readJson(reportPath('computer-use-gameplay-capture-attempts.json'), { optional: true })
   const standaloneReportPath = path.resolve(args.root, '..', 'ECHO-Standalone-Runtime', 'reports', 'echo', 'standalone', 'content-graph-load.json')
   const standalone = await readJson(standaloneReportPath, { optional: true })
   const releaseIndexHead = await gitHead(args.root)
@@ -499,8 +536,12 @@ async function main() {
 
   const gameplayMatrix = gameplayMatrixFromAcceptance(gameplayAcceptance)
   const computerUseGameplayCapture = computerUseCaptureAttemptFromReport(computerUseCaptureAttempt)
+  const computerUseGameplayCaptureHistory = computerUseCaptureHistoryFromReport(computerUseCaptureAttemptHistory)
+  const unresolvedComputerUseCapture = computerUseGameplayCapture.present
+    ? computerUseGameplayCapture.acceptedAsGameplayProof !== true
+    : computerUseGameplayCaptureHistory.present && computerUseGameplayCaptureHistory.blockedAttemptCount > 0
   const nextRequiredProof = [
-    ...(computerUseGameplayCapture.present && computerUseGameplayCapture.acceptedAsGameplayProof !== true
+    ...(unresolvedComputerUseCapture
       ? ['Resolve the Computer Use screenshot capture failure or rerun capture on a machine where visible window screenshots can be recorded, then import screenshots/logs/save snapshots before marking gameplay claims true.']
       : []),
     'Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.',
@@ -557,6 +598,7 @@ async function main() {
       computerUseCaptureAttempts: gameplayAcceptance?.computerUseCaptureAttempts ?? [],
     },
     computerUseGameplayCapture,
+    computerUseGameplayCaptureHistory,
     gameplayMatrix,
     recoveryAndLifecycle: {
       sourceReport: 'release-readiness/official-pack-launcher-lifecycle-smoke.json',

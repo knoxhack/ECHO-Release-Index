@@ -306,6 +306,91 @@ test('Computer Use capture attempts attach to matching gameplay lane without pro
   await fs.rm(root, { recursive: true, force: true })
 })
 
+test('Computer Use capture attempt history attaches multiple lane attempts', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-gameplay-acceptance-computer-use-history-'))
+  const ashfallAttempt = {
+    schemaVersion: 'echo.release_index.computer_use_gameplay_capture_attempt.v1',
+    attemptId: 'ashfall-neoforge-attempt',
+    generatedAt: '2026-06-17T19:11:40.000Z',
+    status: 'blocked',
+    target: {
+      family: 'Ashfall',
+      lane: 'neoforge',
+      packId: 'ashfall-neoforge-edition',
+    },
+    launcherWindow: { observed: true, accessibility: { observed: true } },
+    screenshotCapture: {
+      attempted: true,
+      status: 'failed',
+      api: 'Windows.Graphics.Capture',
+      error: 'SetIsBorderRequired failed: No such interface supported (0x80004002)',
+    },
+    inputStoppedAfterCaptureFailure: true,
+    acceptedAsGameplayProof: false,
+    claimsPromoted: false,
+    importedEvidenceFiles: [],
+    verificationChecks: [],
+    verificationSummary: {
+      checkCount: 0,
+      capturedCount: 0,
+      blockedCount: 0,
+      notAttemptedCount: 0,
+    },
+    blockers: ['Ashfall NeoForge visible gameplay capture is blocked by screenshot capture failure.'],
+  }
+  const skyRelayAttempt = {
+    ...ashfallAttempt,
+    attemptId: 'sky-relay-native-attempt',
+    generatedAt: '2026-06-17T20:00:00.000Z',
+    target: {
+      family: 'Sky Relay',
+      lane: 'native',
+      packId: 'sky-relay-native-edition',
+    },
+    blockers: ['Sky Relay Native gameplay capture has not started on this machine.'],
+  }
+  await writeJson(root, 'release-readiness/ashfall-lane-game-smoke.json', {
+    schemaVersion: 'echo.ashfall.lane-game-smoke.v1',
+    ok: false,
+    generatedAt: '2026-06-17T19:00:00.000Z',
+    blockers: [],
+    lanes: lanes.map((lane) => ({
+      lane,
+      packId: `ashfall-${lane}-edition`,
+      ok: false,
+      blockers: [`Missing ${lane} gameplay proof.`],
+    })),
+  })
+  await writeJson(root, 'release-readiness/sky-relay-gameplay-evidence.json', manualGameplay('sky-relay'))
+  await writeJson(root, 'release-readiness/sky-relay-manual-gameplay-work-order.json', manualGameplay('sky-relay'))
+  await writeJson(root, 'release-readiness/computer-use-gameplay-capture-attempts.json', {
+    schemaVersion: 'echo.release_index.computer_use_gameplay_capture_attempts.v1',
+    generatedAt: '2026-06-17T20:01:00.000Z',
+    attemptCount: 2,
+    latestAttemptId: skyRelayAttempt.attemptId,
+    attempts: [ashfallAttempt, skyRelayAttempt],
+  })
+
+  const result = spawnVerifier(root, ['--no-write', '--json'])
+  assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`)
+  const report = JSON.parse(result.stdout)
+  assert.equal(report.computerUseCaptureAttempts.length, 2)
+
+  const ashfall = report.families.find((family) => family.family === 'Ashfall')
+  const ashfallNeoForge = ashfall.lanes.find((lane) => lane.lane === 'neoforge')
+  assert.equal(ashfallNeoForge.computerUseCaptureAttempts.length, 1)
+  assert.equal(ashfallNeoForge.computerUseCaptureAttempt.attemptId, 'ashfall-neoforge-attempt')
+  assert.match(ashfallNeoForge.blockers.join('\n'), /Ashfall NeoForge visible gameplay capture/u)
+
+  const skyRelay = report.families.find((family) => family.family === 'Sky Relay')
+  const skyRelayNative = skyRelay.lanes.find((lane) => lane.lane === 'native')
+  assert.equal(skyRelayNative.computerUseCaptureAttempts.length, 1)
+  assert.equal(skyRelayNative.computerUseCaptureAttempt.attemptId, 'sky-relay-native-attempt')
+  assert.match(skyRelayNative.blockers.join('\n'), /Sky Relay Native gameplay capture has not started/u)
+
+  await fs.rm(root, { recursive: true, force: true })
+})
+
 test('all required family and lane evidence can pass strict mode', async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-gameplay-acceptance-pass-'))
   const out = path.join(root, 'release-readiness', 'gameplay-acceptance-matrix.json')

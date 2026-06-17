@@ -375,6 +375,7 @@ function normalizedLaneDetails({ family, lane, packId, status, blockers, source 
     evidencePath: evidencePath ?? source.evidencePath ?? source.manualEvidence ?? source.evidence?.path ?? null,
     evidencePresent: source.evidencePresent ?? source.evidence?.present ?? Boolean(source.evidencePath || source.manualEvidence),
     claims: claimsFrom(source),
+    ...(source.capture ? { capture: source.capture } : {}),
     crashSummary: source.crashSummary ?? source.crashReport?.summary ?? null,
     crashReport: source.crashReport?.path ?? source.crashReport ?? null,
     logSummary: source.logSummary ?? source.runtimeLog ?? null,
@@ -401,7 +402,7 @@ function captureAttemptMatches(report, family, lane, packId) {
     && (!target.packId || normalizedKey(target.packId) === normalizedKey(packId))
 }
 
-function normalizeCaptureAttempt(report) {
+function normalizeCaptureAttempt(report, sourceReport = 'release-readiness/computer-use-gameplay-capture-attempt.json') {
   if (!report) return null
   const blockers = Array.isArray(report.blockers) ? report.blockers : []
   const verificationChecks = Array.isArray(report.verificationChecks)
@@ -414,8 +415,9 @@ function normalizeCaptureAttempt(report) {
     }))
     : []
   return {
-    sourceReport: 'release-readiness/computer-use-gameplay-capture-attempt.json',
+    sourceReport,
     schemaVersion: report.schemaVersion ?? null,
+    attemptId: report.attemptId ?? null,
     generatedAt: report.generatedAt ?? null,
     status: report.status ?? null,
     target: captureAttemptTarget(report),
@@ -438,34 +440,65 @@ function normalizeCaptureAttempt(report) {
   }
 }
 
-function applyComputerUseCaptureAttempt(families, report) {
-  const attempt = normalizeCaptureAttempt(report)
-  if (!attempt) return { families, captureAttempts: [] }
+function captureAttemptKey(report) {
+  return [
+    report?.attemptId,
+    report?.generatedAt,
+    report?.target?.family,
+    report?.target?.lane,
+    report?.target?.packId,
+  ].map((value) => String(value ?? '').trim().toLowerCase()).join('|')
+}
 
-  let attached = false
+function captureAttemptsFromReports(latestReport, historyReport) {
+  const reports = []
+  if (historyReport?.schemaVersion === 'echo.release_index.computer_use_gameplay_capture_attempts.v1') {
+    for (const report of Array.isArray(historyReport.attempts) ? historyReport.attempts : []) {
+      reports.push({ report, sourceReport: 'release-readiness/computer-use-gameplay-capture-attempts.json' })
+    }
+  }
+  if (latestReport) {
+    reports.push({ report: latestReport, sourceReport: 'release-readiness/computer-use-gameplay-capture-attempt.json' })
+  }
+  const byKey = new Map()
+  for (const entry of reports) byKey.set(captureAttemptKey(entry.report), entry)
+  return [...byKey.values()]
+    .sort((left, right) => String(left.report?.generatedAt ?? '').localeCompare(String(right.report?.generatedAt ?? '')))
+}
+
+function applyComputerUseCaptureAttempts(families, reportEntries) {
+  const attempts = reportEntries
+    .map((entry) => normalizeCaptureAttempt(entry.report, entry.sourceReport))
+    .filter(Boolean)
+  if (attempts.length === 0) return { families, captureAttempts: [] }
+
   const nextFamilies = families.map((family) => {
-    let familyAttached = false
     const familyAttemptBlockers = []
     const lanes = family.lanes.map((lane) => {
-      if (!captureAttemptMatches(report, family.family, lane.lane, lane.packId)) return lane
-      attached = true
-      familyAttached = true
-      const attemptBlockers = attempt.acceptedAsGameplayProof
-        ? []
-        : attempt.blockers.map((blocker) => `Computer Use capture attempt: ${blocker}`)
+      const matchingAttempts = attempts.filter((attempt) =>
+        normalizedKey(attempt.target?.family) === normalizedKey(family.family)
+          && attempt.target?.lane === lane.lane
+          && (!attempt.target?.packId || normalizedKey(attempt.target.packId) === normalizedKey(lane.packId)))
+      if (matchingAttempts.length === 0) return lane
+      const attemptBlockers = matchingAttempts.flatMap((attempt) =>
+        attempt.acceptedAsGameplayProof
+          ? []
+          : attempt.blockers.map((blocker) => `Computer Use capture attempt: ${blocker}`))
       familyAttemptBlockers.push(...attemptBlockers)
       const blockers = [...lane.blockers, ...attemptBlockers]
       const status = lane.status === 'pass' && blockers.length === 0 ? 'pass' : 'blocked'
+      const latestAttempt = matchingAttempts[matchingAttempts.length - 1]
       return {
         ...lane,
         status,
         releaseReady: releaseReadyFrom(status, blockers),
         blockerCount: blockers.length,
         blockers,
-        computerUseCaptureAttempt: attempt,
+        computerUseCaptureAttempt: latestAttempt,
+        computerUseCaptureAttempts: matchingAttempts,
       }
     })
-    if (!familyAttached) return family
+    if (familyAttemptBlockers.length === 0) return family
     const blockers = [...(family.blockers ?? []), ...familyAttemptBlockers]
     return {
       ...family,
@@ -478,10 +511,13 @@ function applyComputerUseCaptureAttempt(families, report) {
   })
   return {
     families: nextFamilies,
-    captureAttempts: [{
+    captureAttempts: attempts.map((attempt) => ({
       ...attempt,
-      attached,
-    }],
+      attached: nextFamilies.some((family) =>
+        family.lanes.some((lane) =>
+          (lane.computerUseCaptureAttempts ?? []).some((laneAttempt) =>
+            captureAttemptKey(laneAttempt) === captureAttemptKey(attempt)))),
+    })),
   }
 }
 
@@ -727,6 +763,7 @@ async function main() {
   const openlandsGameplay = await optionalReport('openlands-gameplay-evidence.json')
   const arcanaGameplay = await optionalReport('arcana-division-gameplay-evidence.json')
   const computerUseCaptureAttempt = await optionalReport('computer-use-gameplay-capture-attempt.json')
+  const computerUseCaptureAttemptHistory = await optionalReport('computer-use-gameplay-capture-attempts.json')
 
   const baseFamilies = [
     buildAshfallFamily(ashfallGameplay),
@@ -763,7 +800,10 @@ async function main() {
       expectedPackPrefix: 'arcana-division',
     }),
   ]
-  const captureIntegration = applyComputerUseCaptureAttempt(baseFamilies, computerUseCaptureAttempt)
+  const captureIntegration = applyComputerUseCaptureAttempts(
+    baseFamilies,
+    captureAttemptsFromReports(computerUseCaptureAttempt, computerUseCaptureAttemptHistory),
+  )
   const families = captureIntegration.families
 
   const transportEvidence = [
