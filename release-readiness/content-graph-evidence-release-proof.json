@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_readiness.content_graph_evidence_proof.v1",
-  "generatedAt": "2026-06-16T16:47:19.167Z",
+  "generatedAt": "2026-06-17T12:49:00.102Z",
   "status": "PASS",
   "summary": "Canonical .ECHO Content Graph release evidence is reproduced from source, published as a real ECHO-Modules release, imported by Release Index, runtime-gated, and visible to public/consumer surfaces.",
   "releaseIndexCatalogCommit": "pending-direct-main-push",
@@ -49,8 +49,50 @@
   "catalogComposition": {
     "moduleRows": 133,
     "primaryReleaseTag": "modules-canonical-full-20260616",
-    "primaryReleaseModuleRows": 133,
-    "alternateEvidenceReleases": []
+    "primaryReleaseModuleRows": 131,
+    "releaseTagDistribution": [
+      {
+        "releaseTag": "modules-canonical-full-20260616",
+        "moduleRows": 131,
+        "releaseSourceState": "full-release-evidence",
+        "primaryFullRelease": true,
+        "evidenceArtifact": {
+          "file": "content-graph-evidence.json",
+          "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/content-graph-evidence.json",
+          "sha256": "13629e31db9849b0a944b9e2ce986b91b3f8dbd898b2270ad8b3f3d7a574769c",
+          "size": 63462,
+          "schemaVersion": "echo.content_graph.evidence.v1"
+        }
+      },
+      {
+        "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
+        "moduleRows": 2,
+        "releaseSourceState": "partial-hotfix-evidence",
+        "primaryFullRelease": false,
+        "evidenceArtifact": {
+          "file": "content-graph-evidence.json",
+          "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-renderer-hotfix-20260617/content-graph-evidence.json",
+          "sha256": "4185b66a8a8820aaf1efb49b9b8cf260abef2ee8f82facd6bec56386b7518807",
+          "size": 63495,
+          "schemaVersion": "echo.content_graph.evidence.v1"
+        }
+      }
+    ],
+    "alternateEvidenceReleases": [
+      {
+        "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
+        "moduleRows": 2,
+        "releaseSourceState": "partial-hotfix-evidence",
+        "primaryFullRelease": false,
+        "evidenceArtifact": {
+          "file": "content-graph-evidence.json",
+          "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-renderer-hotfix-20260617/content-graph-evidence.json",
+          "sha256": "4185b66a8a8820aaf1efb49b9b8cf260abef2ee8f82facd6bec56386b7518807",
+          "size": 63495,
+          "schemaVersion": "echo.content_graph.evidence.v1"
+        }
+      }
+    ]
   },
   "sourceReproductionChecks": [
     {
@@ -96,7 +138,7 @@
     {
       "command": "node scripts/verify-content-graph-release-proof.mjs",
       "status": "PASS",
-      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 133 match modules-canonical-full-20260616."
+      "result": "133 module rows carry content-graph and content-graph-evidence artifacts; 131 use full release modules-canonical-full-20260616 and 2 use partial hotfix modules-ashfall-renderer-hotfix-20260617."
     },
     {
       "command": "node --test scripts/test-validate-index.mjs",
@@ -123,7 +165,7 @@
     {
       "command": "node scripts/verify-public-alpha-live-channel.mjs --write --timeout-ms 300000 --concurrency 4",
       "status": "PASS",
-      "result": "Live public alpha channel proof passed for 827 artifacts and 6,186,178,088 public bytes."
+      "result": "Live public alpha channel proof passed for 838 artifacts and 6,425,233,386 public bytes."
     }
   ],
   "runtimeGates": [
@@ -162,7 +204,7 @@
         "node scripts/all-modpacks-electron-install-smoke.mjs --clean --timeout-ms 180000 --pack-timeout-ms 1200000 --out ..\\ECHO-Release-Index\\release-readiness\\all-modpacks-electron-install-smoke.json"
       ],
       "status": "PASS",
-      "result": "Launcher package build, tests, and 15-pack live Electron install smoke passed; all installed module files resolved as full-release-evidence from modules-canonical-full-20260616."
+      "result": "Launcher package build, tests, and 15-pack Electron install smoke prove module files resolve from modules-canonical-full-20260616 plus partial-hotfix evidence from modules-ashfall-renderer-hotfix-20260617."
     },
     {
       "repository": "knoxhack/ECHO-Developer-Studio",
@@ -198,8 +240,8 @@
   "notes": [
     "Hytale statuses remain export planning evidence only; this proof does not claim Hytale runtime or playable support.",
     "Openlands Hytale blocker count is preserved at 9 until the module source intentionally changes.",
-    "modules-canonical-full-20260616 is now the single full 133-module evidence release in Release Index; the previous Ashfall partial hotfix is no longer the active module-row source.",
-    "Official pack release assets were rebuilt so public-alpha pack manifests pin module artifacts from modules-canonical-full-20260616.",
+    "modules-canonical-full-20260616 remains the full aggregate evidence release; modules-ashfall-renderer-hotfix-20260617 is a partial Ashfall renderer hotfix source for echoadaptercore and echoashfallprotocol only.",
+    "Official Ashfall pack release assets were refreshed so public-alpha pack manifests pin the two renderer hotfix module artifacts while unaffected modules continue resolving from modules-canonical-full-20260616.",
     "Per-module content-graph sidecars remain supported fallback artifacts; content-graph-evidence.json is the canonical aggregate release evidence layer."
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.gameplay.acceptance.v1",
-  "generatedAt": "2026-06-17T01:04:33.655Z",
+  "generatedAt": "2026-06-17T13:32:27.116Z",
   "status": "BLOCKED",
   "strictReady": false,
   "scope": "public-alpha-real-gameplay-acceptance",
@@ -15,7 +15,7 @@
     "passedFamilyCount": 0,
     "blockedFamilyCount": 5,
     "passedLaneCount": 0,
-    "blockerCount": 450,
+    "blockerCount": 452,
     "transportProofCount": 2,
     "acceptedTransportProofCount": 2,
     "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -64,12 +64,12 @@
           "present": true,
           "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
           "status": "BLOCKED",
-          "generatedAt": "2026-06-16T23:31:58.789Z"
+          "generatedAt": "2026-06-17T13:27:44.711Z"
         }
       ],
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 39,
+      "blockerCount": 41,
       "blockers": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
@@ -84,8 +84,10 @@
         "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable",
         "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable",
         "ashfall-native-edition: Missing gameplay proof: saveReloadVerified",
-        "ashfall-neoforge-edition: Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+        "ashfall-neoforge-edition: No runtime log file found under the instance logs directory.",
         "ashfall-neoforge-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "ashfall-neoforge-edition: Missing gameplay proof: clientStarted",
+        "ashfall-neoforge-edition: Missing gameplay proof: worldCreatedOrLoaded",
         "ashfall-neoforge-edition: Missing gameplay proof: hudVisible",
         "ashfall-neoforge-edition: Missing gameplay proof: inventoryIndexVisible",
         "ashfall-neoforge-edition: Missing gameplay proof: terminalVisible",
@@ -155,9 +157,9 @@
           "crashSummary": null,
           "crashReport": null,
           "logSummary": {
-            "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\latest.log",
-            "mtimeMs": 1781510095585.3909,
-            "mtime": "2026-06-15T07:54:55.585Z"
+            "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\logs\\latest.log",
+            "mtimeMs": 1781702683102.6138,
+            "mtime": "2026-06-17T13:24:43.103Z"
           },
           "installedManifest": {
             "present": true,
@@ -171,10 +173,12 @@
           "workspaceDir": "ECHO-Ashfall-NeoForge-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 12,
+          "blockerCount": 14,
           "blockers": [
-            "Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+            "No runtime log file found under the instance logs directory.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+            "Missing gameplay proof: clientStarted",
+            "Missing gameplay proof: worldCreatedOrLoaded",
             "Missing gameplay proof: hudVisible",
             "Missing gameplay proof: inventoryIndexVisible",
             "Missing gameplay proof: terminalVisible",
@@ -189,8 +193,8 @@
           "evidencePath": "",
           "evidencePresent": false,
           "claims": {
-            "clientStarted": true,
-            "worldCreatedOrLoaded": true,
+            "clientStarted": false,
+            "worldCreatedOrLoaded": false,
             "hudVisible": false,
             "inventoryIndexVisible": false,
             "terminalVisible": false,
@@ -202,22 +206,9 @@
             "creativeItemPlayable": false,
             "saveReloadVerified": false
           },
-          "crashSummary": [
-            "Time: 2026-06-16 04:25:50",
-            "Description: Unexpected error",
-            "java.lang.NullPointerException: Cannot invoke \"net.minecraft.client.renderer.entity.EntityRenderer.shouldRender(net.minecraft.world.entity.Entity, net.minecraft.client.renderer.culling.Frustum, double, double, double)\" because \"renderer\" is null",
-            "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.entity.EntityRenderDispatcher.shouldRender(EntityRenderDispatcher.java:129) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {}",
-            "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.LevelRenderer.extractVisibleEntities(LevelRenderer.java:873) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {neoforge:access_transformer}",
-            "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.LevelRenderer.extractLevel(LevelRenderer.java:586) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {neoforge:access_transformer}",
-            "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.GameRenderer.extract(GameRenderer.java:421) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {neoforge:access_transformer}",
-            "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.Minecraft.renderFrame(Minecraft.java:1377) [minecraft-client-patched-26.1.2.43-beta.jar:?] {}"
-          ],
-          "crashReport": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
-          "logSummary": {
-            "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\latest.log",
-            "mtimeMs": 1781598352081.4111,
-            "mtime": "2026-06-16T08:25:52.081Z"
-          },
+          "crashSummary": null,
+          "crashReport": null,
+          "logSummary": null,
           "installedManifest": {
             "present": true,
             "missingModuleFileCount": 0
@@ -1432,7 +1423,7 @@
   "blockers": [
     {
       "family": "Ashfall",
-      "blockerCount": 39,
+      "blockerCount": 41,
       "sample": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",

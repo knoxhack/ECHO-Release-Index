@@ -5,7 +5,11 @@ import process from 'node:process'
 
 const DEFAULT_OUT = path.join('release-readiness', 'public-alpha-runtime-acceptance.json')
 const CANONICAL_MODULE_RELEASE = 'modules-canonical-full-20260616'
+const ASHFALL_RENDERER_HOTFIX_RELEASE = 'modules-ashfall-renderer-hotfix-20260617'
 const EXPECTED_MODULE_ROWS = 133
+const EXPECTED_FULL_RELEASE_MODULE_ROWS = 131
+const EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS = 2
+const EXPECTED_PUBLIC_ALPHA_ARTIFACTS = 838
 const EXPECTED_OFFICIAL_PACKS = 15
 const EXPECTED_NATIVE_PACKS = 5
 const EXPECTED_ASHFALL_HANDOFF_PACKS = 2
@@ -162,6 +166,67 @@ function summarizeLifecycle(report) {
   }
 }
 
+function findSource(sources, releaseTag, releaseSourceState) {
+  return (sources ?? []).find((source) =>
+    source.releaseTag === releaseTag
+      && source.releaseSourceState === releaseSourceState)
+}
+
+function hasOnlyKnownModuleSources(sources) {
+  return (sources ?? []).every((source) =>
+    (source.releaseTag === CANONICAL_MODULE_RELEASE && source.releaseSourceState === 'full-release-evidence')
+      || (source.releaseTag === ASHFALL_RENDERER_HOTFIX_RELEASE && source.releaseSourceState === 'partial-hotfix-evidence'))
+}
+
+function hasExpectedCatalogDistribution(distribution) {
+  const fullRelease = findSource(distribution, CANONICAL_MODULE_RELEASE, undefined)
+    ?? (distribution ?? []).find((entry) => entry.releaseTag === CANONICAL_MODULE_RELEASE)
+  const hotfixRelease = findSource(distribution, ASHFALL_RENDERER_HOTFIX_RELEASE, undefined)
+    ?? (distribution ?? []).find((entry) => entry.releaseTag === ASHFALL_RENDERER_HOTFIX_RELEASE)
+  const totalRows = (distribution ?? []).reduce((total, entry) => total + Number(entry.moduleCount ?? entry.moduleRows ?? 0), 0)
+  return totalRows === EXPECTED_MODULE_ROWS
+    && Number(fullRelease?.moduleCount ?? fullRelease?.moduleRows ?? 0) === EXPECTED_FULL_RELEASE_MODULE_ROWS
+    && Number(hotfixRelease?.moduleCount ?? hotfixRelease?.moduleRows ?? 0) === EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS
+}
+
+function hasExpectedInstalledSourceMix(sources, { requireHotfix }) {
+  const fullRelease = findSource(sources, CANONICAL_MODULE_RELEASE, 'full-release-evidence')
+  const hotfixRelease = findSource(sources, ASHFALL_RENDERER_HOTFIX_RELEASE, 'partial-hotfix-evidence')
+  return Boolean(fullRelease)
+    && (!requireHotfix || Boolean(hotfixRelease))
+    && hasOnlyKnownModuleSources(sources)
+}
+
+function contentGraphCatalog(report) {
+  return report?.catalogComposition
+    ? {
+      moduleRows: report.catalogComposition.moduleRows,
+      primaryReleaseTag: report.catalogComposition.primaryReleaseTag,
+      primaryReleaseModuleRows: report.catalogComposition.primaryReleaseModuleRows,
+      alternateEvidenceReleases: report.catalogComposition.alternateEvidenceReleases ?? [],
+      releaseTagDistribution: report.catalogComposition.releaseTagDistribution ?? null,
+    }
+    : {
+      moduleRows: report?.moduleRows ?? null,
+      primaryReleaseTag: report?.releaseTag ?? null,
+      primaryReleaseModuleRows: report?.primaryReleaseModuleRows ?? null,
+      alternateEvidenceReleases: report?.alternateEvidenceReleases ?? [],
+      releaseTagDistribution: report?.releaseTagDistribution ?? null,
+    }
+}
+
+function contentGraphCounts(report, standalone) {
+  return report?.moduleRelease?.counts ?? {
+    graphCount: standalone?.graphs ?? null,
+    moduleCount: standalone?.moduleCount ?? null,
+    nodeCount: standalone?.nodes ?? null,
+    edgeCount: standalone?.edges ?? null,
+    featureCount: standalone?.features ?? null,
+    exportPlanCount: standalone?.exportPlans ?? null,
+    hytaleBlockerCount: standalone?.hytaleBlockedNodes ?? null,
+  }
+}
+
 function gameplayMatrixFromAcceptance(report) {
   if (!report) {
     return [{
@@ -240,17 +305,18 @@ async function main() {
 
   const gates = []
   const moduleDistribution = publicAlpha.moduleEvidenceDistribution ?? []
-  const canonicalDistribution = moduleDistribution.find((entry) => entry.releaseTag === CANONICAL_MODULE_RELEASE)
+  const catalogComposition = contentGraphCatalog(contentGraph)
+  const graphCounts = contentGraphCounts(contentGraph, standalone)
   gates.push(makeGate(
     'public-alpha-live-channel',
     'release-readiness/public-alpha-live-channel-proof.json',
     publicAlpha,
     publicAlpha.status === 'pass'
       && publicAlpha.failedArtifactCount === 0
-      && publicAlpha.artifactCount === 827
-      && canonicalDistribution?.moduleCount === EXPECTED_MODULE_ROWS,
+      && publicAlpha.artifactCount === EXPECTED_PUBLIC_ALPHA_ARTIFACTS
+      && hasExpectedCatalogDistribution(moduleDistribution),
     [
-      `Expected public alpha live proof status pass, 0 failed artifacts, 827 artifacts, and ${EXPECTED_MODULE_ROWS} modules from ${CANONICAL_MODULE_RELEASE}.`,
+      `Expected public alpha live proof status pass, 0 failed artifacts, ${EXPECTED_PUBLIC_ALPHA_ARTIFACTS} artifacts, ${EXPECTED_FULL_RELEASE_MODULE_ROWS} modules from ${CANONICAL_MODULE_RELEASE}, and ${EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS} modules from ${ASHFALL_RENDERER_HOTFIX_RELEASE}.`,
     ],
     {
       artifactCount: publicAlpha.artifactCount,
@@ -265,16 +331,21 @@ async function main() {
     'release-readiness/content-graph-evidence-release-proof.json',
     contentGraph,
     contentGraph.status === 'PASS'
-      && contentGraph.moduleRelease?.tag === CANONICAL_MODULE_RELEASE
-      && contentGraph.catalogComposition?.moduleRows === EXPECTED_MODULE_ROWS
-      && contentGraph.moduleRelease?.counts?.hytaleBlockerCount === EXPECTED_HYTALE_BLOCKERS,
+      && catalogComposition.primaryReleaseTag === CANONICAL_MODULE_RELEASE
+      && catalogComposition.moduleRows === EXPECTED_MODULE_ROWS
+      && catalogComposition.primaryReleaseModuleRows === EXPECTED_FULL_RELEASE_MODULE_ROWS
+      && (catalogComposition.alternateEvidenceReleases ?? []).some((entry) =>
+        entry.releaseTag === ASHFALL_RENDERER_HOTFIX_RELEASE
+          && Number(entry.moduleRows ?? entry.moduleCount ?? 0) === EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS
+          && entry.releaseSourceState === 'partial-hotfix-evidence')
+      && graphCounts.hytaleBlockerCount === EXPECTED_HYTALE_BLOCKERS,
     [
-      `Expected ${CANONICAL_MODULE_RELEASE}, ${EXPECTED_MODULE_ROWS} module rows, status PASS, and Hytale blocker count ${EXPECTED_HYTALE_BLOCKERS}.`,
+      `Expected ${CANONICAL_MODULE_RELEASE} as the full evidence release with ${EXPECTED_FULL_RELEASE_MODULE_ROWS} active rows, ${ASHFALL_RENDERER_HOTFIX_RELEASE} as a ${EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS}-row partial hotfix, status PASS, and Hytale blocker count ${EXPECTED_HYTALE_BLOCKERS}.`,
     ],
     {
-      moduleRelease: contentGraph.moduleRelease?.tag,
-      counts: contentGraph.moduleRelease?.counts ?? null,
-      catalogComposition: contentGraph.catalogComposition ?? null,
+      moduleRelease: contentGraph.moduleRelease?.tag ?? contentGraph.releaseTag,
+      counts: graphCounts,
+      catalogComposition,
     },
   ))
 
@@ -324,10 +395,8 @@ async function main() {
       && allModpacks.expectedPackCount === EXPECTED_OFFICIAL_PACKS
       && (allModpacks.packs?.length ?? 0) === EXPECTED_OFFICIAL_PACKS
       && (allModpacks.failures?.length ?? 0) === 0
-      && allModpacksCoverage.moduleReleaseSources.length === 1
-      && allModpacksCoverage.moduleReleaseSources[0]?.releaseTag === CANONICAL_MODULE_RELEASE
-      && allModpacksCoverage.moduleReleaseSources[0]?.releaseSourceState === 'full-release-evidence',
-    allModpacks.failures ?? ['Expected 15-pack Electron install/handoff smoke to pass from the canonical full evidence release.'],
+      && hasExpectedInstalledSourceMix(allModpacksCoverage.moduleReleaseSources, { requireHotfix: true }),
+    allModpacks.failures ?? [`Expected 15-pack Electron install/handoff smoke to pass from ${CANONICAL_MODULE_RELEASE} plus ${ASHFALL_RENDERER_HOTFIX_RELEASE} partial hotfix evidence.`],
     allModpacksCoverage,
   ))
 
@@ -351,8 +420,9 @@ async function main() {
       && ashfallHandoff.expectedPackCount === EXPECTED_ASHFALL_HANDOFF_PACKS
       && (ashfallHandoff.packs?.length ?? 0) === EXPECTED_ASHFALL_HANDOFF_PACKS
       && (ashfallHandoff.failures?.length ?? 0) === 0
-      && (ashfallHandoff.packs ?? []).every((pack) => pack.repairFixture?.skipped === false && pack.launchRoute?.repair?.ok === true),
-    ashfallHandoff.failures ?? ['Expected Ashfall Native and NeoForge install/handoff repair smoke to pass.'],
+      && (ashfallHandoff.packs ?? []).every((pack) => pack.repairFixture?.skipped === false && pack.launchRoute?.repair?.ok === true)
+      && hasExpectedInstalledSourceMix(summarizePackCoverage(ashfallHandoff).moduleReleaseSources, { requireHotfix: true }),
+    ashfallHandoff.failures ?? [`Expected Ashfall Native and NeoForge install/handoff repair smoke to pass with ${ASHFALL_RENDERER_HOTFIX_RELEASE} partial hotfix evidence.`],
     summarizePackCoverage(ashfallHandoff),
   ))
 
@@ -418,11 +488,14 @@ async function main() {
       canonicalReleaseTag: CANONICAL_MODULE_RELEASE,
       expectedModuleRows: EXPECTED_MODULE_ROWS,
       distribution: moduleDistribution,
+      fullReleaseRows: EXPECTED_FULL_RELEASE_MODULE_ROWS,
+      partialHotfixReleaseTag: ASHFALL_RENDERER_HOTFIX_RELEASE,
+      partialHotfixRows: EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS,
       hytale: {
         runtimeSupported: false,
         evidenceOnly: true,
         expectedBlockerCount: EXPECTED_HYTALE_BLOCKERS,
-        observedBlockerCount: contentGraph.moduleRelease?.counts?.hytaleBlockerCount ?? standalone?.hytaleBlockedNodes ?? null,
+        observedBlockerCount: graphCounts.hytaleBlockerCount ?? standalone?.hytaleBlockedNodes ?? null,
         note: 'Hytale evidence remains export planning only; no UI should present playable/runtime Hytale support.',
       },
     },
@@ -445,7 +518,7 @@ async function main() {
     },
     nextRequiredProof: [
       'Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.',
-      'Resolve Ashfall NeoForge client renderer crash before treating gameplay as release-green.',
+      'Capture Ashfall NeoForge runtime logs and real gameplay proof before treating gameplay as release-green.',
       'Keep Openlands and Arcana Division fail-closed until their family gameplay evidence reports contain real lane captures.',
       'Keep Native and Standalone content graph gates required, with any canonical evidence mismatch failing release readiness.',
     ],

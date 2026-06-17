@@ -1,10 +1,10 @@
 {
   "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
-  "generatedAt": "2026-06-16T23:31:58.789Z",
+  "generatedAt": "2026-06-17T13:27:44.711Z",
   "strict": false,
   "ok": false,
   "scope": "real-local-ashfall-launch-play-ui-creative-evidence",
-  "instanceRoot": "C:\\Users\\knox\\ECHOLauncher\\Instances",
+  "instanceRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances",
   "evidenceRoot": null,
   "lanes": [
     {
@@ -12,8 +12,8 @@
       "lane": "native",
       "name": "Ashfall Native Edition",
       "ok": false,
-      "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition",
-      "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
+      "instancePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
       "installedManifest": {
         "present": true,
         "version": "0.1.0",
@@ -23,9 +23,9 @@
         "missingModuleFiles": []
       },
       "runtimeLog": {
-        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\latest.log",
-        "mtimeMs": 1781510095585.3909,
-        "mtime": "2026-06-15T07:54:55.585Z"
+        "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\logs\\latest.log",
+        "mtimeMs": 1781702683102.6138,
+        "mtime": "2026-06-17T13:24:43.103Z"
       },
       "crashReport": null,
       "screenshots": {
@@ -76,8 +76,8 @@
       "lane": "neoforge",
       "name": "Ashfall NeoForge Edition",
       "ok": false,
-      "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition",
-      "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
+      "instancePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
       "installedManifest": {
         "present": true,
         "version": "0.1.0",
@@ -86,27 +86,8 @@
         "missingModuleFileCount": 0,
         "missingModuleFiles": []
       },
-      "runtimeLog": {
-        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\latest.log",
-        "mtimeMs": 1781598352081.4111,
-        "mtime": "2026-06-16T08:25:52.081Z"
-      },
-      "crashReport": {
-        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
-        "mtimeMs": 1781598353149.3474,
-        "mtime": "2026-06-16T08:25:53.149Z",
-        "afterInstall": true,
-        "summary": [
-          "Time: 2026-06-16 04:25:50",
-          "Description: Unexpected error",
-          "java.lang.NullPointerException: Cannot invoke \"net.minecraft.client.renderer.entity.EntityRenderer.shouldRender(net.minecraft.world.entity.Entity, net.minecraft.client.renderer.culling.Frustum, double, double, double)\" because \"renderer\" is null",
-          "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.entity.EntityRenderDispatcher.shouldRender(EntityRenderDispatcher.java:129) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {}",
-          "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.LevelRenderer.extractVisibleEntities(LevelRenderer.java:873) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {neoforge:access_transformer}",
-          "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.LevelRenderer.extractLevel(LevelRenderer.java:586) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {neoforge:access_transformer}",
-          "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.renderer.GameRenderer.extract(GameRenderer.java:421) ~[minecraft-client-patched-26.1.2.43-beta.jar:?] {neoforge:access_transformer}",
-          "at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.Minecraft.renderFrame(Minecraft.java:1377) [minecraft-client-patched-26.1.2.43-beta.jar:?] {}"
-        ]
-      },
+      "runtimeLog": null,
+      "crashReport": null,
       "screenshots": {
         "count": 0,
         "newest": null
@@ -119,8 +100,8 @@
       },
       "claimProofs": {},
       "claims": {
-        "clientStarted": true,
-        "worldCreatedOrLoaded": true,
+        "clientStarted": false,
+        "worldCreatedOrLoaded": false,
         "hudVisible": false,
         "inventoryIndexVisible": false,
         "terminalVisible": false,
@@ -133,8 +114,10 @@
         "saveReloadVerified": false
       },
       "blockers": [
-        "Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+        "No runtime log file found under the instance logs directory.",
         "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "Missing gameplay proof: clientStarted",
+        "Missing gameplay proof: worldCreatedOrLoaded",
         "Missing gameplay proof: hudVisible",
         "Missing gameplay proof: inventoryIndexVisible",
         "Missing gameplay proof: terminalVisible",
@@ -153,8 +136,8 @@
       "lane": "standalone",
       "name": "Ashfall Standalone Edition",
       "ok": false,
-      "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition",
-      "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
+      "instancePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
       "installedManifest": {
         "present": true,
         "version": "0.1.0",
@@ -223,8 +206,10 @@
     "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable",
     "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable",
     "ashfall-native-edition: Missing gameplay proof: saveReloadVerified",
-    "ashfall-neoforge-edition: Crash report exists after install: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-16_04.25.50-client.txt",
+    "ashfall-neoforge-edition: No runtime log file found under the instance logs directory.",
     "ashfall-neoforge-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+    "ashfall-neoforge-edition: Missing gameplay proof: clientStarted",
+    "ashfall-neoforge-edition: Missing gameplay proof: worldCreatedOrLoaded",
     "ashfall-neoforge-edition: Missing gameplay proof: hudVisible",
     "ashfall-neoforge-edition: Missing gameplay proof: inventoryIndexVisible",
     "ashfall-neoforge-edition: Missing gameplay proof: terminalVisible",
