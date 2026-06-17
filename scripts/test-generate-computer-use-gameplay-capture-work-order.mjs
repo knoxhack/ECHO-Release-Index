@@ -163,6 +163,9 @@ test('generates platform Computer Use capture queue without promoting gameplay p
   assert.ok(ashfallNative.verificationChecks.some((entry) => entry.id === 'inventoryIndexVisible'))
   assert.match(ashfallNative.computerUseRecorderCommand, /record-computer-use-gameplay-capture-attempt\.mjs/u)
   assert.match(ashfallNative.computerUseRecorderCommand, /mainMenuNativeReplacement/u)
+  assert.match(ashfallNative.captureCommands.importOrRefresh.join('\n'), /assist:ashfall-computer-use-proof/u)
+  assert.match(ashfallNative.captureCommands.importOrRefresh.join('\n'), /--claim "<claim>=<captured-screenshot\.png>"/u)
+  assert.match(ashfallNative.captureCommands.importOrRefresh.join('\n'), /--action "<visible UI action>"/u)
   assert.equal(ashfallNative.latestComputerUseAttempt, null)
 
   const ashfallNeoForge = workOrder.targets.find((target) => target.packId === 'ashfall-neoforge-edition')

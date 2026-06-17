@@ -339,7 +339,7 @@ function captureCommands(family, lane, packId, workspaceDir) {
       ],
       importOrRefresh: [
         'Set-Location ..\\ECHO-Launcher',
-        `node scripts\\ashfall-lane-game-capture-assist.mjs --lane ${lane} --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict`,
+        `npm run assist:ashfall-computer-use-proof -- --lane ${lane} --claim "<claim>=<captured-screenshot.png>" --action "<visible UI action>" --verification-check "<claim>|<label>|captured|<claim>|<note>" --json --strict`,
         'npm run test:e2e:ashfall-lane-game-smoke',
       ],
       centralRefresh: [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_work_order.v1",
-  "generatedAt": "2026-06-17T20:05:48.552Z",
+  "generatedAt": "2026-06-17T20:13:38.866Z",
   "status": "OPEN",
   "scope": "public-alpha-visible-gameplay-computer-use-work-order",
   "sourceReports": {
@@ -243,7 +243,7 @@
         ],
         "importOrRefresh": [
           "Set-Location ..\\ECHO-Launcher",
-          "node scripts\\ashfall-lane-game-capture-assist.mjs --lane native --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict",
+          "npm run assist:ashfall-computer-use-proof -- --lane native --claim \"<claim>=<captured-screenshot.png>\" --action \"<visible UI action>\" --verification-check \"<claim>|<label>|captured|<claim>|<note>\" --json --strict",
           "npm run test:e2e:ashfall-lane-game-smoke"
         ],
         "centralRefresh": [
@@ -470,7 +470,7 @@
         ],
         "importOrRefresh": [
           "Set-Location ..\\ECHO-Launcher",
-          "node scripts\\ashfall-lane-game-capture-assist.mjs --lane neoforge --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict",
+          "npm run assist:ashfall-computer-use-proof -- --lane neoforge --claim \"<claim>=<captured-screenshot.png>\" --action \"<visible UI action>\" --verification-check \"<claim>|<label>|captured|<claim>|<note>\" --json --strict",
           "npm run test:e2e:ashfall-lane-game-smoke"
         ],
         "centralRefresh": [
@@ -683,7 +683,7 @@
         ],
         "importOrRefresh": [
           "Set-Location ..\\ECHO-Launcher",
-          "node scripts\\ashfall-lane-game-capture-assist.mjs --lane standalone --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict",
+          "npm run assist:ashfall-computer-use-proof -- --lane standalone --claim \"<claim>=<captured-screenshot.png>\" --action \"<visible UI action>\" --verification-check \"<claim>|<label>|captured|<claim>|<note>\" --json --strict",
           "npm run test:e2e:ashfall-lane-game-smoke"
         ],
         "centralRefresh": [

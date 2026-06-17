@@ -70,7 +70,7 @@ npm run assist:ashfall-lane-game-capture -- --lane native --json
 
 ```powershell
 Set-Location ..\ECHO-Launcher
-node scripts\ashfall-lane-game-capture-assist.mjs --lane native --claim <claim>=proofs\screenshots\<proof>.png --json --strict
+npm run assist:ashfall-computer-use-proof -- --lane native --claim "<claim>=<captured-screenshot.png>" --action "<visible UI action>" --verification-check "<claim>|<label>|captured|<claim>|<note>" --json --strict
 npm run test:e2e:ashfall-lane-game-smoke
 ```
 
@@ -141,7 +141,7 @@ npm run assist:ashfall-lane-game-capture -- --lane neoforge --json
 
 ```powershell
 Set-Location ..\ECHO-Launcher
-node scripts\ashfall-lane-game-capture-assist.mjs --lane neoforge --claim <claim>=proofs\screenshots\<proof>.png --json --strict
+npm run assist:ashfall-computer-use-proof -- --lane neoforge --claim "<claim>=<captured-screenshot.png>" --action "<visible UI action>" --verification-check "<claim>|<label>|captured|<claim>|<note>" --json --strict
 npm run test:e2e:ashfall-lane-game-smoke
 ```
 
@@ -212,7 +212,7 @@ npm run assist:ashfall-lane-game-capture -- --lane standalone --json
 
 ```powershell
 Set-Location ..\ECHO-Launcher
-node scripts\ashfall-lane-game-capture-assist.mjs --lane standalone --claim <claim>=proofs\screenshots\<proof>.png --json --strict
+npm run assist:ashfall-computer-use-proof -- --lane standalone --claim "<claim>=<captured-screenshot.png>" --action "<visible UI action>" --verification-check "<claim>|<label>|captured|<claim>|<note>" --json --strict
 npm run test:e2e:ashfall-lane-game-smoke
 ```
 
