@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-17T15:46:00-04:00",
+  "generatedAt": "2026-06-17T15:56:42-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,26 +16,25 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2c3741f768b6",
-        "commitDate": "2026-06-17T15:46:00-04:00",
+        "commit": "198d9d1e638a",
+        "commitDate": "2026-06-17T15:56:42-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M release-readiness/computer-use-gameplay-capture-attempt.json",
+          " M release-readiness/computer-use-gameplay-capture-attempts.json",
           " M release-readiness/gameplay-acceptance-matrix.json",
           " M release-readiness/public-alpha-runtime-acceptance.json",
-          " M scripts/generate-public-alpha-runtime-acceptance.mjs",
-          " M scripts/record-computer-use-gameplay-capture-attempt.mjs",
-          " M scripts/test-record-computer-use-gameplay-capture-attempt.mjs",
-          " M scripts/test-verify-gameplay-acceptance.mjs",
-          " M scripts/verify-gameplay-acceptance.mjs",
-          "?? release-readiness/computer-use-gameplay-capture-attempts.json"
+          "?? docs/computer-use-gameplay-capture-work-order.md",
+          "?? release-readiness/computer-use-gameplay-capture-work-order.json",
+          "?? scripts/generate-computer-use-gameplay-capture-work-order.mjs",
+          "?? scripts/test-generate-computer-use-gameplay-capture-work-order.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 30085,
+          "bytes": 31070,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },

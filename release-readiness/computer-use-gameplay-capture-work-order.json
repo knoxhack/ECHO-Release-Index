@@ -1,0 +1,3031 @@
+{
+  "schemaVersion": "echo.release_index.computer_use_gameplay_capture_work_order.v1",
+  "generatedAt": "2026-06-17T20:05:48.552Z",
+  "status": "OPEN",
+  "scope": "public-alpha-visible-gameplay-computer-use-work-order",
+  "sourceReports": {
+    "gameplayAcceptanceMatrix": "release-readiness/gameplay-acceptance-matrix.json",
+    "latestComputerUseAttempt": "release-readiness/computer-use-gameplay-capture-attempt.json",
+    "computerUseAttemptHistory": "release-readiness/computer-use-gameplay-capture-attempts.json"
+  },
+  "acceptanceStatus": "BLOCKED",
+  "summary": {
+    "familyCount": 5,
+    "laneCount": 15,
+    "openLaneCount": 15,
+    "releaseReadyLaneCount": 0,
+    "attemptCount": 2,
+    "targetsWithAttempts": 1,
+    "conclusion": "Visible Computer Use verification still requires real screenshots, logs, notes, and save snapshots before gameplay can pass."
+  },
+  "captureProtocol": [
+    "Use ECHO Launcher or the owning edition capture kit to start from a fresh install and fresh world/profile.",
+    "Use visible UI automation to open inventory and verify Index, HUD, Terminal, HoloMap, Lens, family objective surfaces, save/reload, and no-crash evidence where applicable.",
+    "Record Computer Use attempts with the generated command, but treat that platform report as provenance only.",
+    "Import the actual screenshots, logs, notes, and save snapshots through the owning family/edition evidence importer before setting gameplay claims true.",
+    "Do not treat install, handoff, content graph load, or Hytale export planning as gameplay proof."
+  ],
+  "targets": [
+    {
+      "family": "Ashfall",
+      "familyKey": "ashfall",
+      "lane": "native",
+      "packId": "ashfall-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
+      "workspaceDir": "ECHO-Ashfall-Native-Edition",
+      "launcherInstance": "Ashfall Native Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 13,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "Missing gameplay proof: mainMenuNativeReplacement",
+        "Missing gameplay proof: worldCreatedOrLoaded",
+        "Missing gameplay proof: hudVisible",
+        "Missing gameplay proof: inventoryIndexVisible",
+        "Missing gameplay proof: terminalVisible",
+        "Missing gameplay proof: holomapVisible",
+        "Missing gameplay proof: lensVisible",
+        "Missing gameplay proof: creativeTabVisible",
+        "Missing gameplay proof: creativeTabSearchVisible",
+        "Missing gameplay proof: creativeItemSelectable",
+        "Missing gameplay proof: creativeItemPlayable"
+      ],
+      "evidencePath": "",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "requiredEvidence": [
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Launch the lane from ECHO Launcher and capture the game/client start log.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "mainMenuNativeReplacement",
+          "label": "Native main menu replacement visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Native lane only: capture the ECHO/Ashfall native main menu replacement.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Create or load a fresh Ashfall world/profile and capture it after load.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after world entry.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal and capture it.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap and capture it.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open or equip Lens and capture the visible Lens UI/effect.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open creative inventory and capture the ECHO/Ashfall creative tab.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Use creative search and capture the result.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Select an ECHO/Ashfall creative item and capture the selection.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "requiredEvidence": [
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Use the selected item in the world and capture the visible effect/log.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, reload, and capture the restored world/profile state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Ashfall\" --lane native --pack-id ashfall-native-edition --launcher-instance \"Ashfall Native Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"clientStarted|Client/game window started|not-attempted||Pending real visible capture.\" --verification-check \"mainMenuNativeReplacement|Native main menu replacement visible|not-attempted||Pending real visible capture.\" --verification-check \"worldCreatedOrLoaded|World or profile loaded|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"lensVisible|Lens visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeTabVisible|Creative tab visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeTabSearchVisible|Creative tab search visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeItemSelectable|Creative item selectable|not-attempted||Pending real visible capture.\" --verification-check \"creativeItemPlayable|Creative item usable in world|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Launcher",
+          "npm run assist:ashfall-lane-game-capture -- --lane native --json"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Launcher",
+          "node scripts\\ashfall-lane-game-capture-assist.mjs --lane native --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict",
+          "npm run test:e2e:ashfall-lane-game-smoke"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Ashfall",
+      "familyKey": "ashfall",
+      "lane": "neoforge",
+      "packId": "ashfall-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
+      "workspaceDir": "ECHO-Ashfall-NeoForge-Edition",
+      "launcherInstance": "Ashfall NeoForge Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 46,
+      "blockerSample": [
+        "No runtime log file found under the instance logs directory.",
+        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "Missing gameplay proof: clientStarted",
+        "Missing gameplay proof: worldCreatedOrLoaded",
+        "Missing gameplay proof: hudVisible",
+        "Missing gameplay proof: inventoryIndexVisible",
+        "Missing gameplay proof: terminalVisible",
+        "Missing gameplay proof: holomapVisible",
+        "Missing gameplay proof: lensVisible",
+        "Missing gameplay proof: creativeTabVisible",
+        "Missing gameplay proof: creativeTabSearchVisible",
+        "Missing gameplay proof: creativeItemSelectable"
+      ],
+      "evidencePath": "",
+      "latestComputerUseAttempt": {
+        "attemptId": "2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition",
+        "generatedAt": "2026-06-17T20:05:39.304Z",
+        "status": "blocked",
+        "screenshotStatus": "failed",
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 12,
+          "capturedCount": 0,
+          "blockedCount": 0,
+          "notAttemptedCount": 12
+        },
+        "blockerCount": 16
+      },
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "requiredEvidence": [
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Launch the lane from ECHO Launcher and capture the game/client start log.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Create or load a fresh Ashfall world/profile and capture it after load.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after world entry.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal and capture it.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap and capture it.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open or equip Lens and capture the visible Lens UI/effect.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open creative inventory and capture the ECHO/Ashfall creative tab.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Use creative search and capture the result.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Select an ECHO/Ashfall creative item and capture the selection.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "requiredEvidence": [
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Use the selected item in the world and capture the visible effect/log.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, reload, and capture the restored world/profile state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Stopped input after Launcher screenshot capture failure."
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Ashfall\" --lane neoforge --pack-id ashfall-neoforge-edition --launcher-instance \"Ashfall NeoForge Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"clientStarted|Client/game window started|not-attempted||Pending real visible capture.\" --verification-check \"worldCreatedOrLoaded|World or profile loaded|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"lensVisible|Lens visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeTabVisible|Creative tab visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeTabSearchVisible|Creative tab search visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeItemSelectable|Creative item selectable|not-attempted||Pending real visible capture.\" --verification-check \"creativeItemPlayable|Creative item usable in world|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Launcher",
+          "npm run assist:ashfall-lane-game-capture -- --lane neoforge --json"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Launcher",
+          "node scripts\\ashfall-lane-game-capture-assist.mjs --lane neoforge --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict",
+          "npm run test:e2e:ashfall-lane-game-smoke"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Ashfall",
+      "familyKey": "ashfall",
+      "lane": "standalone",
+      "packId": "ashfall-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
+      "workspaceDir": "ECHO-Ashfall-Standalone-Edition",
+      "launcherInstance": "Ashfall Standalone Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 14,
+      "blockerSample": [
+        "No runtime log file found under the instance logs directory.",
+        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
+        "Missing gameplay proof: clientStarted",
+        "Missing gameplay proof: worldCreatedOrLoaded",
+        "Missing gameplay proof: hudVisible",
+        "Missing gameplay proof: inventoryIndexVisible",
+        "Missing gameplay proof: terminalVisible",
+        "Missing gameplay proof: holomapVisible",
+        "Missing gameplay proof: lensVisible",
+        "Missing gameplay proof: creativeTabVisible",
+        "Missing gameplay proof: creativeTabSearchVisible",
+        "Missing gameplay proof: creativeItemSelectable"
+      ],
+      "evidencePath": "",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "requiredEvidence": [
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Launch the lane from ECHO Launcher and capture the game/client start log.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Create or load a fresh Ashfall world/profile and capture it after load.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after world entry.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal and capture it.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap and capture it.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open or equip Lens and capture the visible Lens UI/effect.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open creative inventory and capture the ECHO/Ashfall creative tab.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Use creative search and capture the result.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Select an ECHO/Ashfall creative item and capture the selection.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "requiredEvidence": [
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Use the selected item in the world and capture the visible effect/log.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, reload, and capture the restored world/profile state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Ashfall\" --lane standalone --pack-id ashfall-standalone-edition --launcher-instance \"Ashfall Standalone Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"clientStarted|Client/game window started|not-attempted||Pending real visible capture.\" --verification-check \"worldCreatedOrLoaded|World or profile loaded|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"lensVisible|Lens visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeTabVisible|Creative tab visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeTabSearchVisible|Creative tab search visible|not-attempted||Pending real visible capture.\" --verification-check \"creativeItemSelectable|Creative item selectable|not-attempted||Pending real visible capture.\" --verification-check \"creativeItemPlayable|Creative item usable in world|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Launcher",
+          "npm run assist:ashfall-lane-game-capture -- --lane standalone --json"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Launcher",
+          "node scripts\\ashfall-lane-game-capture-assist.mjs --lane standalone --claim <claim>=proofs\\screenshots\\<proof>.png --json --strict",
+          "npm run test:e2e:ashfall-lane-game-smoke"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Sky Relay",
+      "familyKey": "sky-relay",
+      "lane": "native",
+      "packId": "sky-relay-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "workspaceDir": "ECHO-Sky-Relay-Native-Edition",
+      "launcherInstance": "Sky Relay Native Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 1,
+      "blockerSample": [
+        "Sky Relay native: Manual gameplay work order status is unknown."
+      ],
+      "evidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realSignalCrownPlaythrough",
+          "label": "Signal Crown objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Complete the Signal Crown objective and capture the completion state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Sky Relay\" --lane native --pack-id sky-relay-native-edition --launcher-instance \"Sky Relay Native Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"realSignalCrownPlaythrough|Signal Crown objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Sky-Relay-Native-Edition",
+          "node scripts\\init-manual-gameplay-evidence.mjs",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --template-only"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Sky-Relay-Native-Edition",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-sky-relay-gameplay-evidence.mjs --write",
+          "node scripts\\generate-sky-relay-manual-gameplay-work-order.mjs --write",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Sky Relay",
+      "familyKey": "sky-relay",
+      "lane": "neoforge",
+      "packId": "sky-relay-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition",
+      "launcherInstance": "Sky Relay NeoForge Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 1,
+      "blockerSample": [
+        "Sky Relay neoforge: Manual gameplay work order status is unknown."
+      ],
+      "evidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realSignalCrownPlaythrough",
+          "label": "Signal Crown objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Complete the Signal Crown objective and capture the completion state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Sky Relay\" --lane neoforge --pack-id sky-relay-neoforge-edition --launcher-instance \"Sky Relay NeoForge Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"realSignalCrownPlaythrough|Signal Crown objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Sky-Relay-NeoForge-Edition",
+          "node scripts\\init-manual-gameplay-evidence.mjs",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --template-only"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Sky-Relay-NeoForge-Edition",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-sky-relay-gameplay-evidence.mjs --write",
+          "node scripts\\generate-sky-relay-manual-gameplay-work-order.mjs --write",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Sky Relay",
+      "familyKey": "sky-relay",
+      "lane": "standalone",
+      "packId": "sky-relay-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition",
+      "launcherInstance": "Sky Relay Standalone Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 1,
+      "blockerSample": [
+        "Sky Relay standalone: Manual gameplay work order status is unknown."
+      ],
+      "evidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realSignalCrownPlaythrough",
+          "label": "Signal Crown objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Complete the Signal Crown objective and capture the completion state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Sky Relay\" --lane standalone --pack-id sky-relay-standalone-edition --launcher-instance \"Sky Relay Standalone Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"realSignalCrownPlaythrough|Signal Crown objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Sky-Relay-Standalone-Edition",
+          "node scripts\\init-manual-gameplay-evidence.mjs",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --template-only"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Sky-Relay-Standalone-Edition",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-sky-relay-gameplay-evidence.mjs --write",
+          "node scripts\\generate-sky-relay-manual-gameplay-work-order.mjs --write",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Galactic Survey",
+      "familyKey": "galactic-survey",
+      "lane": "native",
+      "packId": "galactic-survey-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
+      "workspaceDir": "ECHO-Galactic-Survey-Native-Edition",
+      "launcherInstance": "Galactic Survey Native Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 77,
+      "blockerSample": [
+        "Galactic Survey native: Manual gameplay work order status is open.",
+        "phase 10 Full Progression And Release: galactic-survey-native-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true."
+      ],
+      "evidencePath": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realSurveyArrayPlaythrough",
+          "label": "Survey Array objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Complete the Survey Array objective and capture the completion state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Galactic Survey\" --lane native --pack-id galactic-survey-native-edition --launcher-instance \"Galactic Survey Native Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"realSurveyArrayPlaythrough|Survey Array objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
+          "node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Native-Edition",
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-galactic-survey-public-alpha-readiness.mjs --write",
+          "node scripts\\generate-galactic-survey-manual-gameplay-work-order.mjs --write",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Galactic Survey",
+      "familyKey": "galactic-survey",
+      "lane": "neoforge",
+      "packId": "galactic-survey-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+      "workspaceDir": "ECHO-Galactic-Survey-NeoForge-Edition",
+      "launcherInstance": "Galactic Survey NeoForge Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 77,
+      "blockerSample": [
+        "Galactic Survey neoforge: Manual gameplay work order status is open.",
+        "phase 10 Full Progression And Release: galactic-survey-neoforge-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true."
+      ],
+      "evidencePath": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realSurveyArrayPlaythrough",
+          "label": "Survey Array objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Complete the Survey Array objective and capture the completion state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Galactic Survey\" --lane neoforge --pack-id galactic-survey-neoforge-edition --launcher-instance \"Galactic Survey NeoForge Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"realSurveyArrayPlaythrough|Survey Array objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
+          "node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Galactic-Survey-NeoForge-Edition",
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-galactic-survey-public-alpha-readiness.mjs --write",
+          "node scripts\\generate-galactic-survey-manual-gameplay-work-order.mjs --write",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Galactic Survey",
+      "familyKey": "galactic-survey",
+      "lane": "standalone",
+      "packId": "galactic-survey-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+      "workspaceDir": "ECHO-Galactic-Survey-Standalone-Edition",
+      "launcherInstance": "Galactic Survey Standalone Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 77,
+      "blockerSample": [
+        "Galactic Survey standalone: Manual gameplay work order status is open.",
+        "phase 10 Full Progression And Release: galactic-survey-standalone-edition release-ready gameplay evidence is still missing",
+        "manualEvidence.sessions missing fresh_world_creation.",
+        "manualEvidence.sessions missing first_30_minutes.",
+        "manualEvidence.sessions missing first_2_hours.",
+        "manualEvidence.sessions missing survey_array_completion.",
+        "manualEvidence.sessions missing save_reload_verification.",
+        "manualEvidence.sessions missing no_crash_review.",
+        "manualEvidence claim realFirst30Playthrough must be true.",
+        "manualEvidence claim realFirst2HourPlaythrough must be true.",
+        "manualEvidence claim realSurveyArrayPlaythrough must be true.",
+        "manualEvidence claim freshWorldCreated must be true."
+      ],
+      "evidencePath": "fixtures/galactic-survey/gameplay-qa/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realSurveyArrayPlaythrough",
+          "label": "Survey Array objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Complete the Survey Array objective and capture the completion state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Galactic Survey\" --lane standalone --pack-id galactic-survey-standalone-edition --launcher-instance \"Galactic Survey Standalone Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"realSurveyArrayPlaythrough|Survey Array objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
+          "node scripts\\prepare-manual-gameplay-capture.mjs --release-index-root ..\\ECHO-Release-Index --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Galactic-Survey-Standalone-Edition",
+          "node scripts\\import-manual-gameplay-capture.mjs --capture-root <capture-root> --artifact <prepared-artifact-path> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-galactic-survey-public-alpha-readiness.mjs --write",
+          "node scripts\\generate-galactic-survey-manual-gameplay-work-order.mjs --write",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Openlands",
+      "familyKey": "openlands",
+      "lane": "native",
+      "packId": "openlands-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
+      "workspaceDir": "ECHO-Openlands-Native-Edition",
+      "launcherInstance": "Openlands Native Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 7,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Openlands route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ],
+      "evidencePath": "fixtures/openlands/gameplay-qa/native/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "primaryObjectiveCompleted",
+          "label": "Primary objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Openlands primary route or systems objective must be completed and recorded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Openlands\" --lane native --pack-id openlands-native-edition --launcher-instance \"Openlands Native Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"primaryObjectiveCompleted|Primary objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\prepare-family-gameplay-capture.mjs --family openlands --lane native --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\import-family-gameplay-capture.mjs --family openlands --lane native --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\generate-family-gameplay-evidence.mjs --family openlands"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Openlands",
+      "familyKey": "openlands",
+      "lane": "neoforge",
+      "packId": "openlands-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-NeoForge-Edition",
+      "workspaceDir": "ECHO-Openlands-NeoForge-Edition",
+      "launcherInstance": "Openlands NeoForge Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 7,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Openlands route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ],
+      "evidencePath": "fixtures/openlands/gameplay-qa/neoforge/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "primaryObjectiveCompleted",
+          "label": "Primary objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Openlands primary route or systems objective must be completed and recorded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Openlands\" --lane neoforge --pack-id openlands-neoforge-edition --launcher-instance \"Openlands NeoForge Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"primaryObjectiveCompleted|Primary objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\prepare-family-gameplay-capture.mjs --family openlands --lane neoforge --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\import-family-gameplay-capture.mjs --family openlands --lane neoforge --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\generate-family-gameplay-evidence.mjs --family openlands"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Openlands",
+      "familyKey": "openlands",
+      "lane": "standalone",
+      "packId": "openlands-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
+      "workspaceDir": "ECHO-Openlands-Standalone-Edition",
+      "launcherInstance": "Openlands Standalone Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 7,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Openlands route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ],
+      "evidencePath": "fixtures/openlands/gameplay-qa/standalone/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "primaryObjectiveCompleted",
+          "label": "Primary objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Openlands primary route or systems objective must be completed and recorded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Openlands\" --lane standalone --pack-id openlands-standalone-edition --launcher-instance \"Openlands Standalone Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"primaryObjectiveCompleted|Primary objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\prepare-family-gameplay-capture.mjs --family openlands --lane standalone --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\import-family-gameplay-capture.mjs --family openlands --lane standalone --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\generate-family-gameplay-evidence.mjs --family openlands"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Arcana Division",
+      "familyKey": "arcana-division",
+      "lane": "native",
+      "packId": "arcana-division-native-edition",
+      "sourceRepo": "knoxhack/ECHO-Arcana-Division-Native-Edition",
+      "workspaceDir": "ECHO-Arcana-Division-Native-Edition",
+      "launcherInstance": "Arcana Division Native Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 7,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Arcana Division route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ],
+      "evidencePath": "fixtures/arcana-division/gameplay-qa/native/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "primaryObjectiveCompleted",
+          "label": "Primary objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Arcana Division primary route or systems objective must be completed and recorded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Arcana Division\" --lane native --pack-id arcana-division-native-edition --launcher-instance \"Arcana Division Native Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"primaryObjectiveCompleted|Primary objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\prepare-family-gameplay-capture.mjs --family arcana-division --lane native --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\import-family-gameplay-capture.mjs --family arcana-division --lane native --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\generate-family-gameplay-evidence.mjs --family arcana-division"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Arcana Division",
+      "familyKey": "arcana-division",
+      "lane": "neoforge",
+      "packId": "arcana-division-neoforge-edition",
+      "sourceRepo": "knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
+      "workspaceDir": "ECHO-Arcana-Division-NeoForge-Edition",
+      "launcherInstance": "Arcana Division NeoForge Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 7,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Arcana Division route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ],
+      "evidencePath": "fixtures/arcana-division/gameplay-qa/neoforge/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "primaryObjectiveCompleted",
+          "label": "Primary objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Arcana Division primary route or systems objective must be completed and recorded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Arcana Division\" --lane neoforge --pack-id arcana-division-neoforge-edition --launcher-instance \"Arcana Division NeoForge Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"primaryObjectiveCompleted|Primary objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\prepare-family-gameplay-capture.mjs --family arcana-division --lane neoforge --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\import-family-gameplay-capture.mjs --family arcana-division --lane neoforge --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\generate-family-gameplay-evidence.mjs --family arcana-division"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    },
+    {
+      "family": "Arcana Division",
+      "familyKey": "arcana-division",
+      "lane": "standalone",
+      "packId": "arcana-division-standalone-edition",
+      "sourceRepo": "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
+      "workspaceDir": "ECHO-Arcana-Division-Standalone-Edition",
+      "launcherInstance": "Arcana Division Standalone Edition",
+      "status": "open",
+      "acceptanceStatus": "blocked",
+      "releaseReady": false,
+      "blockerCount": 7,
+      "blockerSample": [
+        "Missing real gameplay evidence JSON.",
+        "Missing fresh install and fresh world/profile proof.",
+        "Missing first 30-minute playthrough proof.",
+        "Missing first 2-hour playthrough proof.",
+        "Missing primary Arcana Division route or systems objective reached and recorded.",
+        "Missing save/reload verification proof.",
+        "Missing no-crash review proof."
+      ],
+      "evidencePath": "fixtures/arcana-division/gameplay-qa/standalone/manual-evidence.json",
+      "latestComputerUseAttempt": null,
+      "verificationChecks": [
+        {
+          "id": "freshWorldCreated",
+          "label": "Fresh world/profile created",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Start from a fresh install plus fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Capture the in-game HUD after the world/profile is loaded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open inventory and capture the Index or equivalent catalog surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open Terminal from the in-game UI or assigned key path.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "requiredEvidence": [
+            "screenshot"
+          ],
+          "captureHint": "Open HoloMap or the family equivalent map/navigation surface.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst30Playthrough",
+          "label": "First 30 minutes captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 30-minute run from the fresh world/profile.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "realFirst2HourPlaythrough",
+          "label": "First 2 hours captured",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Capture a real first 2-hour run from the same release lane.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "primaryObjectiveCompleted",
+          "label": "Primary objective completed",
+          "requiredEvidence": [
+            "notes",
+            "screenshot",
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Arcana Division primary route or systems objective must be completed and recorded.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "requiredEvidence": [
+            "client-log",
+            "save-snapshot"
+          ],
+          "captureHint": "Save, exit or return to launcher/menu, reload, then capture the restored state.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        },
+        {
+          "id": "noCrashEvidence",
+          "label": "No-crash review completed",
+          "requiredEvidence": [
+            "notes",
+            "launcher-log",
+            "client-log"
+          ],
+          "captureHint": "Review logs/crash reports after the run and record a no-crash note.",
+          "currentAttempt": {
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": null
+          }
+        }
+      ],
+      "evidenceRequirements": {
+        "screenshots": "Required for visible UI checks such as HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, and objective completion.",
+        "logs": "Required for launcher/client start, runtime no-crash review, and timed playthrough evidence.",
+        "saveSnapshots": "Required for timed playthroughs, primary objective completion, and save/reload verification.",
+        "notes": "Required to describe tester, profile/world, exact route, start/end times, and no-crash review."
+      },
+      "computerUseRecorderCommand": "node scripts\\record-computer-use-gameplay-capture-attempt.mjs --family \"Arcana Division\" --lane standalone --pack-id arcana-division-standalone-edition --launcher-instance \"Arcana Division Standalone Edition\" --screenshot-status not-attempted --note \"Work-order generated placeholder. Replace statuses and evidence refs after a real visible Computer Use capture.\" --verification-check \"freshWorldCreated|Fresh world/profile created|not-attempted||Pending real visible capture.\" --verification-check \"hudVisible|HUD visible|not-attempted||Pending real visible capture.\" --verification-check \"inventoryIndexVisible|Inventory Index visible after opening inventory|not-attempted||Pending real visible capture.\" --verification-check \"terminalVisible|Terminal visible|not-attempted||Pending real visible capture.\" --verification-check \"holomapVisible|HoloMap visible|not-attempted||Pending real visible capture.\" --verification-check \"realFirst30Playthrough|First 30 minutes captured|not-attempted||Pending real visible capture.\" --verification-check \"realFirst2HourPlaythrough|First 2 hours captured|not-attempted||Pending real visible capture.\" --verification-check \"primaryObjectiveCompleted|Primary objective completed|not-attempted||Pending real visible capture.\" --verification-check \"saveReloadVerified|Save/reload verified|not-attempted||Pending real visible capture.\" --verification-check \"noCrashEvidence|No-crash review completed|not-attempted||Pending real visible capture.\"",
+      "captureCommands": {
+        "prepare": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\prepare-family-gameplay-capture.mjs --family arcana-division --lane standalone --tester <name> --world-or-profile <name> --started-at <iso>"
+        ],
+        "importOrRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\import-family-gameplay-capture.mjs --family arcana-division --lane standalone --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <name> --started-at <iso> --force",
+          "node scripts\\generate-family-gameplay-evidence.mjs --family arcana-division"
+        ],
+        "centralRefresh": [
+          "Set-Location ..\\ECHO-Release-Index",
+          "node scripts\\verify-gameplay-acceptance.mjs"
+        ]
+      }
+    }
+  ],
+  "promotionCommands": [
+    "node scripts\\verify-gameplay-acceptance.mjs",
+    "node scripts\\generate-computer-use-gameplay-capture-work-order.mjs --write",
+    "node scripts\\generate-public-alpha-runtime-acceptance.mjs",
+    "node scripts\\verify-gameplay-acceptance.mjs --strict"
+  ],
+  "notes": [
+    "This work order is generated evidence for the capture queue only.",
+    "Captured verification checks require imported local proof paths before they can affect family gameplay acceptance."
+  ]
+}

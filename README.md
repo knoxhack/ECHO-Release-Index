@@ -70,6 +70,8 @@ Run commands from the repository root.
 - `node scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs`
 - `node scripts/record-computer-use-gameplay-capture-attempt.mjs --family Ashfall --lane neoforge --pack-id ashfall-neoforge-edition --screenshot-status failed --screenshot-error <exact-error> --verification-check "hudVisible|HUD visible|blocked||<reason>"`
 - `node scripts/test-record-computer-use-gameplay-capture-attempt.mjs`
+- `node scripts/generate-computer-use-gameplay-capture-work-order.mjs --write`
+- `node scripts/test-generate-computer-use-gameplay-capture-work-order.mjs`
 - `node scripts/download-native-sdk-rc1-artifacts.mjs --write --clean`
 - `node scripts/test-download-native-sdk-rc1-artifacts.mjs`
 - `node scripts/verify-native-sdk-rc1-artifacts.mjs --write`
@@ -140,6 +142,8 @@ When a lane is driven through Computer Use, include `computer-use-session.json` 
 
 `scripts/record-computer-use-gameplay-capture-attempt.mjs` writes `release-readiness/computer-use-gameplay-capture-attempt.json` for the latest platform-level Computer Use capture attempt and appends an idempotent entry to `release-readiness/computer-use-gameplay-capture-attempts.json` so multi-lane attempts are preserved. Use repeated `--verification-check "id|label|status|evidenceRef|note"` arguments to record concrete UI/gameplay checks such as `hudVisible`, `inventoryIndexVisible`, `terminalVisible`, `holomapVisible`, `lensVisible`, creative-tab checks, and save/reload. Status must be `captured`, `blocked`, or `not-attempted`; captured checks require a non-empty evidence reference. `scripts/verify-gameplay-acceptance.mjs` attaches all matching attempts to the matching family/lane as non-promotional blocker evidence, and `scripts/generate-public-alpha-runtime-acceptance.mjs` surfaces the latest attempt under `computerUseGameplayCapture` plus the attempt history under `computerUseGameplayCaptureHistory`. These artifacts are blocker/provenance evidence only; they must not be used to flip gameplay claims true.
 
+`scripts/generate-computer-use-gameplay-capture-work-order.mjs --write` generates `release-readiness/computer-use-gameplay-capture-work-order.json` and `docs/computer-use-gameplay-capture-work-order.md` from the current gameplay acceptance matrix plus Computer Use attempt history. The work order enumerates every public-alpha family/lane, the visible UI checks to drive with Computer Use, including inventory Index, HUD, Terminal, HoloMap, Lens, family objective checks, save/reload, and no-crash review, and the exact recorder command shape for each lane. It is a capture queue only; real gameplay proof still requires imported screenshots, logs, notes, and save snapshots through the owning family or edition evidence tooling.
+
 `scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` verifies that each launcher channel references every catalog entry in `products/`, `modpacks/`, `modules/`, and `addons/`. Run it without `--check` after adding or removing catalog files so `channels/<channel>/launcher-channel.json` stays aligned with strict validation.
@@ -209,6 +213,7 @@ For deterministic local tests, `GITHUB_API_BASE_URL` can point ingestion at a Gi
 - [docs/codex/repo-routing.md](docs/codex/repo-routing.md)
 - [docs/codex/maintenance.md](docs/codex/maintenance.md)
 - [docs/native-platform-rc1-handoff.md](docs/native-platform-rc1-handoff.md)
+- [docs/computer-use-gameplay-capture-work-order.md](docs/computer-use-gameplay-capture-work-order.md)
 - [docs/galactic-survey-manual-gameplay-work-order.md](docs/galactic-survey-manual-gameplay-work-order.md)
 - [PUBLIC_ALPHA_RELEASE_STATUS.md](PUBLIC_ALPHA_RELEASE_STATUS.md)
 
