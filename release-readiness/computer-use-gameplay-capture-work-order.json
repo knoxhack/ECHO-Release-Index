@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_work_order.v1",
-  "generatedAt": "2026-06-17T20:54:21.072Z",
+  "generatedAt": "2026-06-17T21:05:47.174Z",
   "status": "OPEN",
   "scope": "public-alpha-visible-gameplay-computer-use-work-order",
   "sourceReports": {
@@ -14,7 +14,7 @@
     "laneCount": 15,
     "openLaneCount": 15,
     "releaseReadyLaneCount": 0,
-    "attemptCount": 3,
+    "attemptCount": 4,
     "targetsWithAttempts": 1,
     "conclusion": "Visible Computer Use verification still requires real screenshots, logs, notes, and save snapshots before gameplay can pass."
   },
@@ -263,7 +263,7 @@
       "status": "open",
       "acceptanceStatus": "blocked",
       "releaseReady": false,
-      "blockerCount": 62,
+      "blockerCount": 79,
       "blockerSample": [
         "No runtime log file found under the instance logs directory.",
         "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
@@ -280,10 +280,10 @@
       ],
       "evidencePath": "",
       "latestComputerUseAttempt": {
-        "attemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
-        "generatedAt": "2026-06-17T20:54:10.779Z",
+        "attemptId": "2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition",
+        "generatedAt": "2026-06-17T21:05:35.950Z",
         "status": "blocked",
-        "screenshotStatus": "not-attempted",
+        "screenshotStatus": "failed",
         "acceptedAsGameplayProof": false,
         "claimsPromoted": false,
         "verificationSummary": {
@@ -292,7 +292,7 @@
           "blockedCount": 12,
           "notAttemptedCount": 0
         },
-        "blockerCount": 16
+        "blockerCount": 17
       },
       "verificationChecks": [
         {
@@ -306,7 +306,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Play action could not be invoked through Computer Use accessibility controls."
+            "note": "Minecraft Launcher opened, but the game client did not start."
           }
         },
         {
@@ -319,7 +319,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "No game window was launched."
+            "note": "No game client/world window was launched."
           }
         },
         {
@@ -332,7 +332,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "No in-game visual capture available."
+            "note": "Could not reach in-game HUD."
           }
         },
         {
@@ -345,7 +345,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach game/inventory."
+            "note": "Could not launch game or open inventory."
           }
         },
         {
@@ -358,7 +358,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach game/Terminal."
+            "note": "Could not launch game or open Terminal."
           }
         },
         {
@@ -371,7 +371,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach game/HoloMap."
+            "note": "Could not launch game or open HoloMap."
           }
         },
         {
@@ -384,7 +384,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach game/Lens."
+            "note": "Could not launch game or verify Lens."
           }
         },
         {
@@ -397,7 +397,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach creative inventory."
+            "note": "Could not launch game or open creative inventory."
           }
         },
         {
@@ -410,7 +410,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach creative search."
+            "note": "Could not launch game or verify creative search."
           }
         },
         {
@@ -423,7 +423,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach creative item selection."
+            "note": "Could not launch game or select creative item."
           }
         },
         {
@@ -438,7 +438,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach in-world item use."
+            "note": "Could not launch game or use item in world."
           }
         },
         {
@@ -452,7 +452,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "No save/reload gameplay session captured."
+            "note": "No game session was captured for save/reload."
           }
         }
       ],

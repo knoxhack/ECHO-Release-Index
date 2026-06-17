@@ -1,9 +1,9 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempts.v1",
-  "generatedAt": "2026-06-17T20:54:10.795Z",
+  "generatedAt": "2026-06-17T21:05:35.968Z",
   "scope": "public-alpha-real-gameplay-capture-history",
-  "latestAttemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
-  "attemptCount": 3,
+  "latestAttemptId": "2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition",
+  "attemptCount": 4,
   "attempts": [
     {
       "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
@@ -479,6 +479,169 @@
       ],
       "notes": [
         "Observed ECHO Launcher accessibility tree for Ashfall NeoForge: selected pack installed, launch route Minecraft + NeoForge, Play button present.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-17T21:05:35.950Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition",
+        "launcherInstance": "Ashfall NeoForge Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "ECHO Launcher",
+          "windowTitle": "ECHO Launcher",
+          "running": true
+        },
+        {
+          "displayName": "Minecraft",
+          "windowTitle": "Minecraft Launcher",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": true,
+        "accessibility": {
+          "observed": true,
+          "selectedPack": "Ashfall NeoForge Edition",
+          "statusText": "Minecraft Launcher ready; profile opened with 46 mod jars available.",
+          "playButtonText": "Play Ashfall NeoForge Edition via Ctrl+Enter",
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Windows.Graphics.Capture",
+        "error": "Minecraft Launcher screenshot capture failed: SetIsBorderRequired failed: No such interface supported (0x80004002)."
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Minecraft Launcher opened, but the game client did not start."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No game client/world window was launched."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach in-game HUD."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or open inventory."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or open Terminal."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or open HoloMap."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or verify Lens."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or open creative inventory."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or verify creative search."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or select creative item."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not launch game or use item in world."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No game session was captured for save/reload."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 12,
+        "notAttemptedCount": 0
+      },
+      "blockers": [
+        "ECHO Launcher repo build accepted Ctrl+Enter and opened Minecraft Launcher with Ashfall NeoForge Edition selected, but Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, or screenshot-backed coordinates.",
+        "No game client window, in-game HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, logs, or save snapshot were captured.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+        "Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+        "Computer Use verification check lensVisible (Lens visible) was blocked.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+        "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+      ],
+      "notes": [
+        "Verified repo build process path C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe.",
+        "Minecraft Launcher accessibility text showed PLAY JAVA and selected profile Ashfall NeoForge Edition neoforge-26.1.2.43-beta.",
         "This report records an attempted visible Computer Use verification session only.",
         "It must not be used to mark gameplay evidence claims true."
       ]

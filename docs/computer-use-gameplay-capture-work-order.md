@@ -104,8 +104,8 @@ node scripts\verify-gameplay-acceptance.mjs
 | Repository | `knoxhack/ECHO-Ashfall-NeoForge-Edition` |
 | Status | `open` |
 | Acceptance lane status | `blocked` |
-| Blockers | 62 |
-| Latest Computer Use attempt | `2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition` |
+| Blockers | 79 |
+| Latest Computer Use attempt | `2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition` |
 
 ### Computer Use Checks
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-17T20:54:21.083Z",
+  "generatedAt": "2026-06-17T21:05:47.070Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "2b2e4a19b51cdb867c64f3d412acbb06ade576a0",
+  "releaseIndexHeadAtGeneration": "1d9bb27b1348d5b38aa95ea50be7ca93914ef7a4",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -345,7 +345,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-17T20:54:15.695Z",
+    "generatedAt": "2026-06-17T20:56:30.650Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -807,7 +807,7 @@
     "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
     "present": true,
     "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-    "generatedAt": "2026-06-17T20:54:10.779Z",
+    "generatedAt": "2026-06-17T21:05:35.950Z",
     "status": "blocked",
     "targetFamily": "Ashfall",
     "targetLane": "neoforge",
@@ -815,12 +815,12 @@
     "launcherWindowObserved": true,
     "launcherAccessibilityObserved": true,
     "screenshotCapture": {
-      "attempted": false,
-      "status": "not-attempted",
+      "attempted": true,
+      "status": "failed",
       "api": "Windows.Graphics.Capture",
-      "error": null
+      "error": "Minecraft Launcher screenshot capture failed: SetIsBorderRequired failed: No such interface supported (0x80004002)."
     },
-    "inputStoppedAfterCaptureFailure": false,
+    "inputStoppedAfterCaptureFailure": true,
     "acceptedAsGameplayProof": false,
     "claimsPromoted": false,
     "verificationChecks": [
@@ -829,84 +829,84 @@
         "label": "Client/game window started",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Play action could not be invoked through Computer Use accessibility controls."
+        "note": "Minecraft Launcher opened, but the game client did not start."
       },
       {
         "id": "worldCreatedOrLoaded",
         "label": "World or profile loaded",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "No game window was launched."
+        "note": "No game client/world window was launched."
       },
       {
         "id": "hudVisible",
         "label": "HUD visible",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "No in-game visual capture available."
+        "note": "Could not reach in-game HUD."
       },
       {
         "id": "inventoryIndexVisible",
         "label": "Inventory Index visible after opening inventory",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach game/inventory."
+        "note": "Could not launch game or open inventory."
       },
       {
         "id": "terminalVisible",
         "label": "Terminal visible",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach game/Terminal."
+        "note": "Could not launch game or open Terminal."
       },
       {
         "id": "holomapVisible",
         "label": "HoloMap visible",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach game/HoloMap."
+        "note": "Could not launch game or open HoloMap."
       },
       {
         "id": "lensVisible",
         "label": "Lens visible",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach game/Lens."
+        "note": "Could not launch game or verify Lens."
       },
       {
         "id": "creativeTabVisible",
         "label": "Creative tab visible",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach creative inventory."
+        "note": "Could not launch game or open creative inventory."
       },
       {
         "id": "creativeTabSearchVisible",
         "label": "Creative tab search visible",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach creative search."
+        "note": "Could not launch game or verify creative search."
       },
       {
         "id": "creativeItemSelectable",
         "label": "Creative item selectable",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach creative item selection."
+        "note": "Could not launch game or select creative item."
       },
       {
         "id": "creativeItemPlayable",
         "label": "Creative item usable in world",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "Could not reach in-world item use."
+        "note": "Could not launch game or use item in world."
       },
       {
         "id": "saveReloadVerified",
         "label": "Save/reload verified",
         "status": "blocked",
         "evidenceRef": null,
-        "note": "No save/reload gameplay session captured."
+        "note": "No game session was captured for save/reload."
       }
     ],
     "verificationSummary": {
@@ -916,8 +916,9 @@
       "notAttemptedCount": 0
     },
     "blockers": [
-      "Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
-      "Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
+      "ECHO Launcher repo build accepted Ctrl+Enter and opened Minecraft Launcher with Ashfall NeoForge Edition selected, but Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, or screenshot-backed coordinates.",
+      "No game client window, in-game HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, logs, or save snapshot were captured.",
+      "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
       "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
       "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
       "Computer Use verification check clientStarted (Client/game window started) was blocked.",
@@ -938,14 +939,14 @@
     "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
     "present": true,
     "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempts.v1",
-    "generatedAt": "2026-06-17T20:54:10.795Z",
-    "latestAttemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
-    "attemptCount": 3,
+    "generatedAt": "2026-06-17T21:05:35.968Z",
+    "latestAttemptId": "2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition",
+    "attemptCount": 4,
     "targetCounts": {
-      "Ashfall neoforge": 3
+      "Ashfall neoforge": 4
     },
     "acceptedAttemptCount": 0,
-    "blockedAttemptCount": 3,
+    "blockedAttemptCount": 4,
     "attempts": [
       {
         "attemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
@@ -1000,6 +1001,24 @@
           "notAttemptedCount": 0
         },
         "blockerCount": 16
+      },
+      {
+        "attemptId": "2026-06-17t21-05-35-950z__ashfall__neoforge__ashfall-neoforge-edition",
+        "generatedAt": "2026-06-17T21:05:35.950Z",
+        "status": "blocked",
+        "targetFamily": "Ashfall",
+        "targetLane": "neoforge",
+        "targetPackId": "ashfall-neoforge-edition",
+        "screenshotStatus": "failed",
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 12,
+          "capturedCount": 0,
+          "blockedCount": 12,
+          "notAttemptedCount": 0
+        },
+        "blockerCount": 17
       }
     ]
   },
