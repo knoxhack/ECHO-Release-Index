@@ -31,6 +31,7 @@ node scripts\verify-sky-relay-public-alpha-readiness.mjs
 | Repository | `knoxhack/ECHO-Sky-Relay-Native-Edition` |
 | Workspace | `ECHO-Sky-Relay-Native-Edition` |
 | Manual evidence | `fixtures/sky-relay/gameplay-qa/manual-evidence.json` |
+| Computer Use session | `fixtures/sky-relay/gameplay-qa/computer-use-session.json` |
 | Status | `open` |
 | Open tasks | 8 |
 
@@ -58,6 +59,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Run identity and artifact match are filled | `open` |
 | Manual gameplay claims are true | `open` |
 | Required session records are complete | `open` |
+| Optional Computer Use provenance is valid when supplied | `passed` |
 | Gameplay notes | `open` |
 | Screenshots | `open` |
 | Launcher and client logs | `open` |
@@ -92,23 +94,33 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 - `open` fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip
 - `open` fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip
 
+### Optional Computer Use Provenance
+
+Place visible automation metadata at `fixtures/sky-relay/gameplay-qa/computer-use-session.json` and set `capture.computerUseSession` in `fixtures/sky-relay/gameplay-qa/manual-evidence.json` to that path.
+
+- The session must use schema `echo.release_index.family_gameplay_computer_use_session.v1`.
+- The session must identify lane `native`, pack ID `sky-relay-native-edition`, and family key `sky-relay`.
+- It must list visible actions, such as opening inventory to verify Index and checking HUD, Terminal, HoloMap, and Lens surfaces.
+- Captured checks must cite a required claim or one of the local proof files listed above.
+- This metadata is provenance only and does not replace the required notes, screenshots, logs, or save snapshots.
+
+Suggested check IDs:
+
+- `hudVisible`
+- `inventoryIndexVisible`
+- `terminalVisible`
+- `holomapVisible`
+- `lensVisible`
+- `freshWorldCreated`
+- `realFirst30Playthrough`
+- `realFirst2HourPlaythrough`
+- `realSignalCrownPlaythrough`
+- `saveReloadVerified`
+- `noCrashEvidence`
+
 ### Current Blockers
 
-- native manual evidence run.startedAt must not use the template timestamp.
-- native manual evidence run.tester must be filled with real capture information.
-- native manual evidence run.worldOrProfile must be filled with real capture information.
-- native manual evidence sessions.fresh_world_creation must not use template timestamps.
-- native manual evidence sessions.first_30_minutes must not use template timestamps.
-- native manual evidence sessions.first_2_hours must not use template timestamps.
-- native manual evidence sessions.signal_crown_completion must not use template timestamps.
-- native manual evidence sessions.save_reload_verification must not use template timestamps.
-- native manual evidence sessions.no_crash_review must not use template timestamps.
-- native manual evidence claim realFirst30Playthrough must be true.
-- native manual evidence claim realFirst2HourPlaythrough must be true.
-- native manual evidence claim realSignalCrownPlaythrough must be true.
-- native manual evidence claim freshWorldCreated must be true.
-- native manual evidence claim saveReloadVerified must be true.
-- native manual evidence claim noCrashEvidence must be true.
+- native manual evidence is missing: ECHO-Sky-Relay-Native-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json
 
 ## neoforge
 
@@ -117,6 +129,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Repository | `knoxhack/ECHO-Sky-Relay-NeoForge-Edition` |
 | Workspace | `ECHO-Sky-Relay-NeoForge-Edition` |
 | Manual evidence | `fixtures/sky-relay/gameplay-qa/manual-evidence.json` |
+| Computer Use session | `fixtures/sky-relay/gameplay-qa/computer-use-session.json` |
 | Status | `open` |
 | Open tasks | 8 |
 
@@ -144,6 +157,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Run identity and artifact match are filled | `open` |
 | Manual gameplay claims are true | `open` |
 | Required session records are complete | `open` |
+| Optional Computer Use provenance is valid when supplied | `passed` |
 | Gameplay notes | `open` |
 | Screenshots | `open` |
 | Launcher and client logs | `open` |
@@ -178,23 +192,33 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 - `open` fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip
 - `open` fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip
 
+### Optional Computer Use Provenance
+
+Place visible automation metadata at `fixtures/sky-relay/gameplay-qa/computer-use-session.json` and set `capture.computerUseSession` in `fixtures/sky-relay/gameplay-qa/manual-evidence.json` to that path.
+
+- The session must use schema `echo.release_index.family_gameplay_computer_use_session.v1`.
+- The session must identify lane `neoforge`, pack ID `sky-relay-neoforge-edition`, and family key `sky-relay`.
+- It must list visible actions, such as opening inventory to verify Index and checking HUD, Terminal, HoloMap, and Lens surfaces.
+- Captured checks must cite a required claim or one of the local proof files listed above.
+- This metadata is provenance only and does not replace the required notes, screenshots, logs, or save snapshots.
+
+Suggested check IDs:
+
+- `hudVisible`
+- `inventoryIndexVisible`
+- `terminalVisible`
+- `holomapVisible`
+- `lensVisible`
+- `freshWorldCreated`
+- `realFirst30Playthrough`
+- `realFirst2HourPlaythrough`
+- `realSignalCrownPlaythrough`
+- `saveReloadVerified`
+- `noCrashEvidence`
+
 ### Current Blockers
 
-- neoforge manual evidence run.startedAt must not use the template timestamp.
-- neoforge manual evidence run.tester must be filled with real capture information.
-- neoforge manual evidence run.worldOrProfile must be filled with real capture information.
-- neoforge manual evidence sessions.fresh_world_creation must not use template timestamps.
-- neoforge manual evidence sessions.first_30_minutes must not use template timestamps.
-- neoforge manual evidence sessions.first_2_hours must not use template timestamps.
-- neoforge manual evidence sessions.signal_crown_completion must not use template timestamps.
-- neoforge manual evidence sessions.save_reload_verification must not use template timestamps.
-- neoforge manual evidence sessions.no_crash_review must not use template timestamps.
-- neoforge manual evidence claim realFirst30Playthrough must be true.
-- neoforge manual evidence claim realFirst2HourPlaythrough must be true.
-- neoforge manual evidence claim realSignalCrownPlaythrough must be true.
-- neoforge manual evidence claim freshWorldCreated must be true.
-- neoforge manual evidence claim saveReloadVerified must be true.
-- neoforge manual evidence claim noCrashEvidence must be true.
+- neoforge manual evidence is missing: ECHO-Sky-Relay-NeoForge-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json
 
 ## standalone
 
@@ -203,6 +227,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Repository | `knoxhack/ECHO-Sky-Relay-Standalone-Edition` |
 | Workspace | `ECHO-Sky-Relay-Standalone-Edition` |
 | Manual evidence | `fixtures/sky-relay/gameplay-qa/manual-evidence.json` |
+| Computer Use session | `fixtures/sky-relay/gameplay-qa/computer-use-session.json` |
 | Status | `open` |
 | Open tasks | 8 |
 
@@ -230,6 +255,7 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 | Run identity and artifact match are filled | `open` |
 | Manual gameplay claims are true | `open` |
 | Required session records are complete | `open` |
+| Optional Computer Use provenance is valid when supplied | `passed` |
 | Gameplay notes | `open` |
 | Screenshots | `open` |
 | Launcher and client logs | `open` |
@@ -264,23 +290,33 @@ node scripts\verify-manual-gameplay-evidence.mjs --require-release-ready
 - `open` fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip
 - `open` fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip
 
+### Optional Computer Use Provenance
+
+Place visible automation metadata at `fixtures/sky-relay/gameplay-qa/computer-use-session.json` and set `capture.computerUseSession` in `fixtures/sky-relay/gameplay-qa/manual-evidence.json` to that path.
+
+- The session must use schema `echo.release_index.family_gameplay_computer_use_session.v1`.
+- The session must identify lane `standalone`, pack ID `sky-relay-standalone-edition`, and family key `sky-relay`.
+- It must list visible actions, such as opening inventory to verify Index and checking HUD, Terminal, HoloMap, and Lens surfaces.
+- Captured checks must cite a required claim or one of the local proof files listed above.
+- This metadata is provenance only and does not replace the required notes, screenshots, logs, or save snapshots.
+
+Suggested check IDs:
+
+- `hudVisible`
+- `inventoryIndexVisible`
+- `terminalVisible`
+- `holomapVisible`
+- `lensVisible`
+- `freshWorldCreated`
+- `realFirst30Playthrough`
+- `realFirst2HourPlaythrough`
+- `realSignalCrownPlaythrough`
+- `saveReloadVerified`
+- `noCrashEvidence`
+
 ### Current Blockers
 
-- standalone manual evidence run.startedAt must not use the template timestamp.
-- standalone manual evidence run.tester must be filled with real capture information.
-- standalone manual evidence run.worldOrProfile must be filled with real capture information.
-- standalone manual evidence sessions.fresh_world_creation must not use template timestamps.
-- standalone manual evidence sessions.first_30_minutes must not use template timestamps.
-- standalone manual evidence sessions.first_2_hours must not use template timestamps.
-- standalone manual evidence sessions.signal_crown_completion must not use template timestamps.
-- standalone manual evidence sessions.save_reload_verification must not use template timestamps.
-- standalone manual evidence sessions.no_crash_review must not use template timestamps.
-- standalone manual evidence claim realFirst30Playthrough must be true.
-- standalone manual evidence claim realFirst2HourPlaythrough must be true.
-- standalone manual evidence claim realSignalCrownPlaythrough must be true.
-- standalone manual evidence claim freshWorldCreated must be true.
-- standalone manual evidence claim saveReloadVerified must be true.
-- standalone manual evidence claim noCrashEvidence must be true.
+- standalone manual evidence is missing: ECHO-Sky-Relay-Standalone-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json
 
 ## Promotion Boundary
 

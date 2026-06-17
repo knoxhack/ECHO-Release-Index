@@ -1,9 +1,9 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempts.v1",
-  "generatedAt": "2026-06-17T20:05:39.320Z",
+  "generatedAt": "2026-06-17T20:54:10.795Z",
   "scope": "public-alpha-real-gameplay-capture-history",
-  "latestAttemptId": "2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition",
-  "attemptCount": 2,
+  "latestAttemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
+  "attemptCount": 3,
   "attempts": [
     {
       "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
@@ -323,6 +323,162 @@
       ],
       "notes": [
         "Fresh Computer Use attempt launched ECHO Launcher and observed Ashfall NeoForge accessibility state before screenshot capture failed.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-17T20:54:10.779Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition",
+        "launcherInstance": "Ashfall NeoForge Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "ECHO Launcher",
+          "windowTitle": "ECHO Launcher",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": true,
+        "accessibility": {
+          "observed": true,
+          "selectedPack": "Ashfall NeoForge Edition",
+          "statusText": "installed; Files, manifest, route, and launch policy are ready.",
+          "playButtonText": "Play Ashfall NeoForge Edition",
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "screenshotCapture": {
+        "attempted": false,
+        "status": "not-attempted",
+        "api": "Windows.Graphics.Capture",
+        "error": null
+      },
+      "inputStoppedAfterCaptureFailure": false,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Play action could not be invoked through Computer Use accessibility controls."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No game window was launched."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No in-game visual capture available."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/inventory."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/Terminal."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/HoloMap."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/Lens."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach creative inventory."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach creative search."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach creative item selection."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach in-world item use."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No save/reload gameplay session captured."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 12,
+        "notAttemptedCount": 0
+      },
+      "blockers": [
+        "Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
+        "Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+        "Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+        "Computer Use verification check lensVisible (Lens visible) was blocked.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+        "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+      ],
+      "notes": [
+        "Observed ECHO Launcher accessibility tree for Ashfall NeoForge: selected pack installed, launch route Minecraft + NeoForge, Play button present.",
         "This report records an attempted visible Computer Use verification session only.",
         "It must not be used to mark gameplay evidence claims true."
       ]

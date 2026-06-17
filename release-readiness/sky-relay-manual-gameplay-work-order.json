@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.skyrelay.manual-gameplay-work-order.v1",
   "status": "OPEN",
-  "generatedAt": "2026-06-11T21:57:54.434Z",
+  "generatedAt": "2026-06-17T20:49:29.674Z",
   "sourceReport": "release-readiness/sky-relay-gameplay-evidence.json",
   "moduleId": "echoskyrelayprotocol",
   "gameplayEvidenceStatus": "BLOCKED",
@@ -18,7 +18,7 @@
   "totals": {
     "editions": 3,
     "openEditions": 3,
-    "tasks": 27,
+    "tasks": 30,
     "openTasks": 24
   },
   "promotionCommands": [
@@ -40,6 +40,33 @@
       "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
       "workspaceDir": "ECHO-Sky-Relay-Native-Edition",
       "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "computerUseSession": {
+        "id": "computer_use_provenance",
+        "title": "Optional Computer Use provenance is valid when supplied",
+        "status": "passed",
+        "optional": true,
+        "expectedPath": "fixtures/sky-relay/gameplay-qa/computer-use-session.json",
+        "session": {
+          "path": null,
+          "found": false,
+          "status": "not-provided",
+          "verificationChecks": [],
+          "verificationSummary": null
+        },
+        "visibleChecks": [
+          "hudVisible",
+          "inventoryIndexVisible",
+          "terminalVisible",
+          "holomapVisible",
+          "lensVisible",
+          "freshWorldCreated",
+          "realFirst30Playthrough",
+          "realFirst2HourPlaythrough",
+          "realSignalCrownPlaythrough",
+          "saveReloadVerified",
+          "noCrashEvidence"
+        ]
+      },
       "status": "open",
       "artifact": {
         "artifactAsset": "sky-relay-native-edition-0.1.0.zip",
@@ -50,8 +77,8 @@
         "source": "sky-relay-native",
         "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
         "workspaceDir": "ECHO-Sky-Relay-Native-Edition",
-        "commit": "d2b0e38d3a9ac4a49601d3bd735f7cbf92dc1d0e",
-        "branch": "feature/sky-relay-gameplay-evidence",
+        "commit": "7b280406f988ba2933c0a885e85dfb2b3ff9b660",
+        "branch": "main",
         "dirty": false,
         "cleanForEvidence": true,
         "statusLines": [],
@@ -71,28 +98,44 @@
         ]
       },
       "blockers": [
-        "native manual evidence run.startedAt must not use the template timestamp.",
-        "native manual evidence run.tester must be filled with real capture information.",
-        "native manual evidence run.worldOrProfile must be filled with real capture information.",
-        "native manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "native manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "native manual evidence sessions.first_2_hours must not use template timestamps.",
-        "native manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "native manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "native manual evidence sessions.no_crash_review must not use template timestamps.",
-        "native manual evidence claim realFirst30Playthrough must be true.",
-        "native manual evidence claim realFirst2HourPlaythrough must be true.",
-        "native manual evidence claim realSignalCrownPlaythrough must be true.",
-        "native manual evidence claim freshWorldCreated must be true.",
-        "native manual evidence claim saveReloadVerified must be true.",
-        "native manual evidence claim noCrashEvidence must be true."
+        "native manual evidence is missing: ECHO-Sky-Relay-Native-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json"
       ],
       "tasks": [
         {
           "id": "capture_kit",
           "title": "Capture kit is present",
           "status": "passed",
-          "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json"
+          "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+          "captureKit": {
+            "edition": "native",
+            "source": "sky-relay-native",
+            "repository": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+            "workspaceDir": "ECHO-Sky-Relay-Native-Edition",
+            "status": "passed",
+            "requiredFiles": [
+              "scripts/init-manual-gameplay-evidence.mjs",
+              "scripts/verify-manual-gameplay-evidence.mjs",
+              "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+              "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md"
+            ],
+            "presentFiles": [
+              "scripts/init-manual-gameplay-evidence.mjs",
+              "scripts/verify-manual-gameplay-evidence.mjs",
+              "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+              "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md"
+            ],
+            "missingFiles": []
+          }
         },
         {
           "id": "run_identity",
@@ -100,7 +143,13 @@
           "status": "open",
           "missingRunFields": [
             "tester",
+            "releaseTag",
+            "artifactAsset",
+            "artifactSha256",
+            "artifactSize",
+            "launcherChannel",
             "worldOrProfile",
+            "installedFrom",
             "startedAt"
           ],
           "artifact": {
@@ -108,7 +157,7 @@
             "artifactSha256": "8cf781726f5cfbd1e9d87c0c8eb3c1fc502c1e6459d66a697941f814b0fa71fa",
             "artifactSize": 39163330
           },
-          "artifactMatches": true
+          "artifactMatches": false
         },
         {
           "id": "claims",
@@ -151,72 +200,70 @@
               "claim": "freshWorldCreated",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-                "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "first_30_minutes",
               "claim": "realFirst30Playthrough",
               "minDurationMinutes": 30,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "first_2_hours",
               "claim": "realFirst2HourPlaythrough",
               "minDurationMinutes": 120,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "signal_crown_completion",
               "claim": "realSignalCrownPlaythrough",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "save_reload_verification",
               "claim": "saveReloadVerified",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "first30SaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-                "first2HourSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-                "signalCrownSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "no_crash_review",
               "claim": "noCrashEvidence",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-                "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
-              }
+              "expectedEvidence": {}
             }
+          ]
+        },
+        {
+          "id": "computer_use_provenance",
+          "title": "Optional Computer Use provenance is valid when supplied",
+          "status": "passed",
+          "optional": true,
+          "expectedPath": "fixtures/sky-relay/gameplay-qa/computer-use-session.json",
+          "session": {
+            "path": null,
+            "found": false,
+            "status": "not-provided",
+            "verificationChecks": [],
+            "verificationSummary": null
+          },
+          "visibleChecks": [
+            "hudVisible",
+            "inventoryIndexVisible",
+            "terminalVisible",
+            "holomapVisible",
+            "lensVisible",
+            "freshWorldCreated",
+            "realFirst30Playthrough",
+            "realFirst2HourPlaythrough",
+            "realSignalCrownPlaythrough",
+            "saveReloadVerified",
+            "noCrashEvidence"
           ]
         },
         {
@@ -306,6 +353,33 @@
       "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
       "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition",
       "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "computerUseSession": {
+        "id": "computer_use_provenance",
+        "title": "Optional Computer Use provenance is valid when supplied",
+        "status": "passed",
+        "optional": true,
+        "expectedPath": "fixtures/sky-relay/gameplay-qa/computer-use-session.json",
+        "session": {
+          "path": null,
+          "found": false,
+          "status": "not-provided",
+          "verificationChecks": [],
+          "verificationSummary": null
+        },
+        "visibleChecks": [
+          "hudVisible",
+          "inventoryIndexVisible",
+          "terminalVisible",
+          "holomapVisible",
+          "lensVisible",
+          "freshWorldCreated",
+          "realFirst30Playthrough",
+          "realFirst2HourPlaythrough",
+          "realSignalCrownPlaythrough",
+          "saveReloadVerified",
+          "noCrashEvidence"
+        ]
+      },
       "status": "open",
       "artifact": {
         "artifactAsset": "sky-relay-neoforge-edition-0.1.0.zip",
@@ -316,8 +390,8 @@
         "source": "sky-relay-neoforge",
         "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
         "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition",
-        "commit": "f9d7e1a2d1953e901953887c642478f56bdd728c",
-        "branch": "feature/sky-relay-gameplay-evidence",
+        "commit": "f78b1c7acf9c2ff674f82cc5287bb5a0ab075ac2",
+        "branch": "main",
         "dirty": false,
         "cleanForEvidence": true,
         "statusLines": [],
@@ -337,28 +411,44 @@
         ]
       },
       "blockers": [
-        "neoforge manual evidence run.startedAt must not use the template timestamp.",
-        "neoforge manual evidence run.tester must be filled with real capture information.",
-        "neoforge manual evidence run.worldOrProfile must be filled with real capture information.",
-        "neoforge manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "neoforge manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "neoforge manual evidence sessions.first_2_hours must not use template timestamps.",
-        "neoforge manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "neoforge manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "neoforge manual evidence sessions.no_crash_review must not use template timestamps.",
-        "neoforge manual evidence claim realFirst30Playthrough must be true.",
-        "neoforge manual evidence claim realFirst2HourPlaythrough must be true.",
-        "neoforge manual evidence claim realSignalCrownPlaythrough must be true.",
-        "neoforge manual evidence claim freshWorldCreated must be true.",
-        "neoforge manual evidence claim saveReloadVerified must be true.",
-        "neoforge manual evidence claim noCrashEvidence must be true."
+        "neoforge manual evidence is missing: ECHO-Sky-Relay-NeoForge-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json"
       ],
       "tasks": [
         {
           "id": "capture_kit",
           "title": "Capture kit is present",
           "status": "passed",
-          "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json"
+          "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+          "captureKit": {
+            "edition": "neoforge",
+            "source": "sky-relay-neoforge",
+            "repository": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+            "workspaceDir": "ECHO-Sky-Relay-NeoForge-Edition",
+            "status": "passed",
+            "requiredFiles": [
+              "scripts/init-manual-gameplay-evidence.mjs",
+              "scripts/verify-manual-gameplay-evidence.mjs",
+              "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+              "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md"
+            ],
+            "presentFiles": [
+              "scripts/init-manual-gameplay-evidence.mjs",
+              "scripts/verify-manual-gameplay-evidence.mjs",
+              "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+              "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md"
+            ],
+            "missingFiles": []
+          }
         },
         {
           "id": "run_identity",
@@ -366,7 +456,13 @@
           "status": "open",
           "missingRunFields": [
             "tester",
+            "releaseTag",
+            "artifactAsset",
+            "artifactSha256",
+            "artifactSize",
+            "launcherChannel",
             "worldOrProfile",
+            "installedFrom",
             "startedAt"
           ],
           "artifact": {
@@ -374,7 +470,7 @@
             "artifactSha256": "04fde5ab03cd89ee3717a90491d818de2659cf77cfc5ea9b0e1ad43e64a9ca7b",
             "artifactSize": 40132235
           },
-          "artifactMatches": true
+          "artifactMatches": false
         },
         {
           "id": "claims",
@@ -417,72 +513,70 @@
               "claim": "freshWorldCreated",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-                "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "first_30_minutes",
               "claim": "realFirst30Playthrough",
               "minDurationMinutes": 30,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "first_2_hours",
               "claim": "realFirst2HourPlaythrough",
               "minDurationMinutes": 120,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "signal_crown_completion",
               "claim": "realSignalCrownPlaythrough",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "save_reload_verification",
               "claim": "saveReloadVerified",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "first30SaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-                "first2HourSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-                "signalCrownSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "no_crash_review",
               "claim": "noCrashEvidence",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-                "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
-              }
+              "expectedEvidence": {}
             }
+          ]
+        },
+        {
+          "id": "computer_use_provenance",
+          "title": "Optional Computer Use provenance is valid when supplied",
+          "status": "passed",
+          "optional": true,
+          "expectedPath": "fixtures/sky-relay/gameplay-qa/computer-use-session.json",
+          "session": {
+            "path": null,
+            "found": false,
+            "status": "not-provided",
+            "verificationChecks": [],
+            "verificationSummary": null
+          },
+          "visibleChecks": [
+            "hudVisible",
+            "inventoryIndexVisible",
+            "terminalVisible",
+            "holomapVisible",
+            "lensVisible",
+            "freshWorldCreated",
+            "realFirst30Playthrough",
+            "realFirst2HourPlaythrough",
+            "realSignalCrownPlaythrough",
+            "saveReloadVerified",
+            "noCrashEvidence"
           ]
         },
         {
@@ -572,6 +666,33 @@
       "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
       "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition",
       "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+      "computerUseSession": {
+        "id": "computer_use_provenance",
+        "title": "Optional Computer Use provenance is valid when supplied",
+        "status": "passed",
+        "optional": true,
+        "expectedPath": "fixtures/sky-relay/gameplay-qa/computer-use-session.json",
+        "session": {
+          "path": null,
+          "found": false,
+          "status": "not-provided",
+          "verificationChecks": [],
+          "verificationSummary": null
+        },
+        "visibleChecks": [
+          "hudVisible",
+          "inventoryIndexVisible",
+          "terminalVisible",
+          "holomapVisible",
+          "lensVisible",
+          "freshWorldCreated",
+          "realFirst30Playthrough",
+          "realFirst2HourPlaythrough",
+          "realSignalCrownPlaythrough",
+          "saveReloadVerified",
+          "noCrashEvidence"
+        ]
+      },
       "status": "open",
       "artifact": {
         "artifactAsset": "sky-relay-standalone-edition-0.1.0.zip",
@@ -582,8 +703,8 @@
         "source": "sky-relay-standalone",
         "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
         "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition",
-        "commit": "f1051cf95dd1a3207ca78177236ae1b6f9ff26dc",
-        "branch": "feature/sky-relay-gameplay-evidence",
+        "commit": "9c7f2e64f0bcf58149b57ffaa4cc9d2a71538c05",
+        "branch": "main",
         "dirty": false,
         "cleanForEvidence": true,
         "statusLines": [],
@@ -603,28 +724,44 @@
         ]
       },
       "blockers": [
-        "standalone manual evidence run.startedAt must not use the template timestamp.",
-        "standalone manual evidence run.tester must be filled with real capture information.",
-        "standalone manual evidence run.worldOrProfile must be filled with real capture information.",
-        "standalone manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "standalone manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "standalone manual evidence sessions.first_2_hours must not use template timestamps.",
-        "standalone manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "standalone manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "standalone manual evidence sessions.no_crash_review must not use template timestamps.",
-        "standalone manual evidence claim realFirst30Playthrough must be true.",
-        "standalone manual evidence claim realFirst2HourPlaythrough must be true.",
-        "standalone manual evidence claim realSignalCrownPlaythrough must be true.",
-        "standalone manual evidence claim freshWorldCreated must be true.",
-        "standalone manual evidence claim saveReloadVerified must be true.",
-        "standalone manual evidence claim noCrashEvidence must be true."
+        "standalone manual evidence is missing: ECHO-Sky-Relay-Standalone-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json"
       ],
       "tasks": [
         {
           "id": "capture_kit",
           "title": "Capture kit is present",
           "status": "passed",
-          "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json"
+          "manualEvidence": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+          "captureKit": {
+            "edition": "standalone",
+            "source": "sky-relay-standalone",
+            "repository": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+            "workspaceDir": "ECHO-Sky-Relay-Standalone-Edition",
+            "status": "passed",
+            "requiredFiles": [
+              "scripts/init-manual-gameplay-evidence.mjs",
+              "scripts/verify-manual-gameplay-evidence.mjs",
+              "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+              "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md"
+            ],
+            "presentFiles": [
+              "scripts/init-manual-gameplay-evidence.mjs",
+              "scripts/verify-manual-gameplay-evidence.mjs",
+              "fixtures/sky-relay/gameplay-qa/manual-evidence.template.json",
+              "fixtures/sky-relay/gameplay-qa/evidence/CAPTURE_CHECKLIST.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/fresh-world-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-30-minutes-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/first-2-hours-notes.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/signal-crown-verification.template.md",
+              "fixtures/sky-relay/gameplay-qa/evidence/templates/no-crash-review.template.md"
+            ],
+            "missingFiles": []
+          }
         },
         {
           "id": "run_identity",
@@ -632,7 +769,13 @@
           "status": "open",
           "missingRunFields": [
             "tester",
+            "releaseTag",
+            "artifactAsset",
+            "artifactSha256",
+            "artifactSize",
+            "launcherChannel",
             "worldOrProfile",
+            "installedFrom",
             "startedAt"
           ],
           "artifact": {
@@ -640,7 +783,7 @@
             "artifactSha256": "93c7ae635467138c2b0e594d18de535ee7a25075e361e64c111b2505d84f8cf2",
             "artifactSize": 40131817
           },
-          "artifactMatches": true
+          "artifactMatches": false
         },
         {
           "id": "claims",
@@ -683,72 +826,70 @@
               "claim": "freshWorldCreated",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-                "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "first_30_minutes",
               "claim": "realFirst30Playthrough",
               "minDurationMinutes": 30,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "first_2_hours",
               "claim": "realFirst2HourPlaythrough",
               "minDurationMinutes": 120,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "signal_crown_completion",
               "claim": "realSignalCrownPlaythrough",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-                "screenshot": "fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
-                "saveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "save_reload_verification",
               "claim": "saveReloadVerified",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "first30SaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-                "first2HourSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-                "signalCrownSaveSnapshot": "fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log"
-              }
+              "expectedEvidence": {}
             },
             {
               "id": "no_crash_review",
               "claim": "noCrashEvidence",
               "minDurationMinutes": 1,
               "status": "open",
-              "expectedEvidence": {
-                "notes": "fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-                "clientLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-                "launcherLog": "fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log"
-              }
+              "expectedEvidence": {}
             }
+          ]
+        },
+        {
+          "id": "computer_use_provenance",
+          "title": "Optional Computer Use provenance is valid when supplied",
+          "status": "passed",
+          "optional": true,
+          "expectedPath": "fixtures/sky-relay/gameplay-qa/computer-use-session.json",
+          "session": {
+            "path": null,
+            "found": false,
+            "status": "not-provided",
+            "verificationChecks": [],
+            "verificationSummary": null
+          },
+          "visibleChecks": [
+            "hudVisible",
+            "inventoryIndexVisible",
+            "terminalVisible",
+            "holomapVisible",
+            "lensVisible",
+            "freshWorldCreated",
+            "realFirst30Playthrough",
+            "realFirst2HourPlaythrough",
+            "realSignalCrownPlaythrough",
+            "saveReloadVerified",
+            "noCrashEvidence"
           ]
         },
         {
@@ -835,6 +976,7 @@
   ],
   "notes": [
     "This work order is generated from the gameplay evidence report and does not itself prove gameplay happened.",
-    "Keep claims false until the referenced notes, screenshots, logs, and save snapshots are captured from a real manual run."
+    "Keep claims false until the referenced notes, screenshots, logs, and save snapshots are captured from a real manual run.",
+    "Computer Use session metadata is optional supporting provenance only; it never promotes gameplay claims without local proof files."
   ]
 }

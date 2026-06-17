@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_work_order.v1",
-  "generatedAt": "2026-06-17T20:13:38.866Z",
+  "generatedAt": "2026-06-17T20:54:21.072Z",
   "status": "OPEN",
   "scope": "public-alpha-visible-gameplay-computer-use-work-order",
   "sourceReports": {
@@ -14,7 +14,7 @@
     "laneCount": 15,
     "openLaneCount": 15,
     "releaseReadyLaneCount": 0,
-    "attemptCount": 2,
+    "attemptCount": 3,
     "targetsWithAttempts": 1,
     "conclusion": "Visible Computer Use verification still requires real screenshots, logs, notes, and save snapshots before gameplay can pass."
   },
@@ -263,7 +263,7 @@
       "status": "open",
       "acceptanceStatus": "blocked",
       "releaseReady": false,
-      "blockerCount": 46,
+      "blockerCount": 62,
       "blockerSample": [
         "No runtime log file found under the instance logs directory.",
         "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
@@ -280,17 +280,17 @@
       ],
       "evidencePath": "",
       "latestComputerUseAttempt": {
-        "attemptId": "2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition",
-        "generatedAt": "2026-06-17T20:05:39.304Z",
+        "attemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
+        "generatedAt": "2026-06-17T20:54:10.779Z",
         "status": "blocked",
-        "screenshotStatus": "failed",
+        "screenshotStatus": "not-attempted",
         "acceptedAsGameplayProof": false,
         "claimsPromoted": false,
         "verificationSummary": {
           "checkCount": 12,
           "capturedCount": 0,
-          "blockedCount": 0,
-          "notAttemptedCount": 12
+          "blockedCount": 12,
+          "notAttemptedCount": 0
         },
         "blockerCount": 16
       },
@@ -304,9 +304,9 @@
           ],
           "captureHint": "Launch the lane from ECHO Launcher and capture the game/client start log.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Play action could not be invoked through Computer Use accessibility controls."
           }
         },
         {
@@ -317,9 +317,9 @@
           ],
           "captureHint": "Create or load a fresh Ashfall world/profile and capture it after load.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "No game window was launched."
           }
         },
         {
@@ -330,9 +330,9 @@
           ],
           "captureHint": "Capture the in-game HUD after world entry.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "No in-game visual capture available."
           }
         },
         {
@@ -343,9 +343,9 @@
           ],
           "captureHint": "Open inventory and capture the Index surface.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach game/inventory."
           }
         },
         {
@@ -356,9 +356,9 @@
           ],
           "captureHint": "Open Terminal and capture it.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach game/Terminal."
           }
         },
         {
@@ -369,9 +369,9 @@
           ],
           "captureHint": "Open HoloMap and capture it.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach game/HoloMap."
           }
         },
         {
@@ -382,9 +382,9 @@
           ],
           "captureHint": "Open or equip Lens and capture the visible Lens UI/effect.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach game/Lens."
           }
         },
         {
@@ -395,9 +395,9 @@
           ],
           "captureHint": "Open creative inventory and capture the ECHO/Ashfall creative tab.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach creative inventory."
           }
         },
         {
@@ -408,9 +408,9 @@
           ],
           "captureHint": "Use creative search and capture the result.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach creative search."
           }
         },
         {
@@ -421,9 +421,9 @@
           ],
           "captureHint": "Select an ECHO/Ashfall creative item and capture the selection.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach creative item selection."
           }
         },
         {
@@ -436,9 +436,9 @@
           ],
           "captureHint": "Use the selected item in the world and capture the visible effect/log.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "Could not reach in-world item use."
           }
         },
         {
@@ -450,9 +450,9 @@
           ],
           "captureHint": "Save, reload, and capture the restored world/profile state.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": "Stopped input after Launcher screenshot capture failure."
+            "note": "No save/reload gameplay session captured."
           }
         }
       ],

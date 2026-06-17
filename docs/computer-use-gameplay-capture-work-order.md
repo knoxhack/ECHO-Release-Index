@@ -104,25 +104,25 @@ node scripts\verify-gameplay-acceptance.mjs
 | Repository | `knoxhack/ECHO-Ashfall-NeoForge-Edition` |
 | Status | `open` |
 | Acceptance lane status | `blocked` |
-| Blockers | 46 |
-| Latest Computer Use attempt | `2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition` |
+| Blockers | 62 |
+| Latest Computer Use attempt | `2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition` |
 
 ### Computer Use Checks
 
 | Check | Current Attempt | Required Evidence |
 | --- | --- | --- |
-| Client/game window started | `not-attempted` | `launcher-log`, `client-log` |
-| World or profile loaded | `not-attempted` | `screenshot` |
-| HUD visible | `not-attempted` | `screenshot` |
-| Inventory Index visible after opening inventory | `not-attempted` | `screenshot` |
-| Terminal visible | `not-attempted` | `screenshot` |
-| HoloMap visible | `not-attempted` | `screenshot` |
-| Lens visible | `not-attempted` | `screenshot` |
-| Creative tab visible | `not-attempted` | `screenshot` |
-| Creative tab search visible | `not-attempted` | `screenshot` |
-| Creative item selectable | `not-attempted` | `screenshot` |
-| Creative item usable in world | `not-attempted` | `screenshot`, `client-log`, `save-snapshot` |
-| Save/reload verified | `not-attempted` | `client-log`, `save-snapshot` |
+| Client/game window started | `blocked` | `launcher-log`, `client-log` |
+| World or profile loaded | `blocked` | `screenshot` |
+| HUD visible | `blocked` | `screenshot` |
+| Inventory Index visible after opening inventory | `blocked` | `screenshot` |
+| Terminal visible | `blocked` | `screenshot` |
+| HoloMap visible | `blocked` | `screenshot` |
+| Lens visible | `blocked` | `screenshot` |
+| Creative tab visible | `blocked` | `screenshot` |
+| Creative tab search visible | `blocked` | `screenshot` |
+| Creative item selectable | `blocked` | `screenshot` |
+| Creative item usable in world | `blocked` | `screenshot`, `client-log`, `save-snapshot` |
+| Save/reload verified | `blocked` | `client-log`, `save-snapshot` |
 
 ### Record Attempt
 

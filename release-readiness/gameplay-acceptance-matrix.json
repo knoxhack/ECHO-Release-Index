@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.gameplay.acceptance.v1",
-  "generatedAt": "2026-06-17T20:28:12.882Z",
+  "generatedAt": "2026-06-17T20:56:30.650Z",
   "status": "BLOCKED",
   "strictReady": false,
   "scope": "public-alpha-real-gameplay-acceptance",
@@ -15,7 +15,7 @@
     "passedFamilyCount": 0,
     "blockedFamilyCount": 5,
     "passedLaneCount": 0,
-    "blockerCount": 484,
+    "blockerCount": 416,
     "transportProofCount": 2,
     "acceptedTransportProofCount": 2,
     "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -192,7 +192,7 @@
       "attached": true
     },
     {
-      "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+      "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
       "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
       "attemptId": "2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition",
       "generatedAt": "2026-06-17T20:05:39.304Z",
@@ -326,6 +326,142 @@
         "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
       ],
       "attached": true
+    },
+    {
+      "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-17T20:54:10.779Z",
+      "status": "blocked",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition"
+      },
+      "launcherWindowObserved": true,
+      "launcherAccessibilityObserved": true,
+      "screenshotCapture": {
+        "attempted": false,
+        "status": "not-attempted",
+        "api": "Windows.Graphics.Capture",
+        "error": null
+      },
+      "inputStoppedAfterCaptureFailure": false,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFileCount": 0,
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Play action could not be invoked through Computer Use accessibility controls."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No game window was launched."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No in-game visual capture available."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/inventory."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/Terminal."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/HoloMap."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach game/Lens."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach creative inventory."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach creative search."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach creative item selection."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Could not reach in-world item use."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No save/reload gameplay session captured."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 12,
+        "notAttemptedCount": 0
+      },
+      "blockerCount": 16,
+      "blockers": [
+        "Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
+        "Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+        "Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+        "Computer Use verification check lensVisible (Lens visible) was blocked.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+        "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+      ],
+      "attached": true
     }
   ],
   "families": [
@@ -343,7 +479,7 @@
       ],
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 73,
+      "blockerCount": 89,
       "blockers": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
@@ -417,7 +553,23 @@
         "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
         "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
         "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
-        "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+        "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted.",
+        "Computer Use capture attempt: Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
+        "Computer Use capture attempt: Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
+        "Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
       ],
       "lanes": [
         {
@@ -479,7 +631,7 @@
           "workspaceDir": "ECHO-Ashfall-NeoForge-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 46,
+          "blockerCount": 62,
           "blockers": [
             "No runtime log file found under the instance logs directory.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
@@ -526,7 +678,23 @@
             "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
             "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
             "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
-            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted.",
+            "Computer Use capture attempt: Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
+            "Computer Use capture attempt: Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
+            "Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+            "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+            "Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
           ],
           "evidencePath": "",
           "evidencePresent": false,
@@ -554,8 +722,8 @@
           "computerUseCaptureAttempt": {
             "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
             "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-            "attemptId": "2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition",
-            "generatedAt": "2026-06-17T20:05:39.304Z",
+            "attemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
+            "generatedAt": "2026-06-17T20:54:10.779Z",
             "status": "blocked",
             "target": {
               "family": "Ashfall",
@@ -565,12 +733,12 @@
             "launcherWindowObserved": true,
             "launcherAccessibilityObserved": true,
             "screenshotCapture": {
-              "attempted": true,
-              "status": "failed",
+              "attempted": false,
+              "status": "not-attempted",
               "api": "Windows.Graphics.Capture",
-              "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+              "error": null
             },
-            "inputStoppedAfterCaptureFailure": true,
+            "inputStoppedAfterCaptureFailure": false,
             "acceptedAsGameplayProof": false,
             "claimsPromoted": false,
             "importedEvidenceFileCount": 0,
@@ -578,112 +746,112 @@
               {
                 "id": "clientStarted",
                 "label": "Client/game window started",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Play action could not be invoked through Computer Use accessibility controls."
               },
               {
                 "id": "worldCreatedOrLoaded",
                 "label": "World or profile loaded",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "No game window was launched."
               },
               {
                 "id": "hudVisible",
                 "label": "HUD visible",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "No in-game visual capture available."
               },
               {
                 "id": "inventoryIndexVisible",
                 "label": "Inventory Index visible after opening inventory",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach game/inventory."
               },
               {
                 "id": "terminalVisible",
                 "label": "Terminal visible",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach game/Terminal."
               },
               {
                 "id": "holomapVisible",
                 "label": "HoloMap visible",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach game/HoloMap."
               },
               {
                 "id": "lensVisible",
                 "label": "Lens visible",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach game/Lens."
               },
               {
                 "id": "creativeTabVisible",
                 "label": "Creative tab visible",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach creative inventory."
               },
               {
                 "id": "creativeTabSearchVisible",
                 "label": "Creative tab search visible",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach creative search."
               },
               {
                 "id": "creativeItemSelectable",
                 "label": "Creative item selectable",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach creative item selection."
               },
               {
                 "id": "creativeItemPlayable",
                 "label": "Creative item usable in world",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "Could not reach in-world item use."
               },
               {
                 "id": "saveReloadVerified",
                 "label": "Save/reload verified",
-                "status": "not-attempted",
+                "status": "blocked",
                 "evidenceRef": null,
-                "note": "Stopped input after Launcher screenshot capture failure."
+                "note": "No save/reload gameplay session captured."
               }
             ],
             "verificationSummary": {
               "checkCount": 12,
               "capturedCount": 0,
-              "blockedCount": 0,
-              "notAttemptedCount": 12
+              "blockedCount": 12,
+              "notAttemptedCount": 0
             },
             "blockerCount": 16,
             "blockers": [
-              "Computer Use could read Launcher accessibility text for Ashfall NeoForge but Windows.Graphics.Capture failed before visible screenshots or gameplay input could be recorded.",
-              "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+              "Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
+              "Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
               "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
               "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
-              "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
-              "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
-              "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
-              "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
-              "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
-              "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
-              "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
-              "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
-              "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
-              "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
-              "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
-              "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+              "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+              "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+              "Computer Use verification check hudVisible (HUD visible) was blocked.",
+              "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+              "Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+              "Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+              "Computer Use verification check lensVisible (Lens visible) was blocked.",
+              "Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+              "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+              "Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+              "Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+              "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
             ]
           },
           "computerUseCaptureAttempts": [
@@ -823,7 +991,7 @@
               ]
             },
             {
-              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
               "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
               "attemptId": "2026-06-17t20-05-39-304z__ashfall__neoforge__ashfall-neoforge-edition",
               "generatedAt": "2026-06-17T20:05:39.304Z",
@@ -956,6 +1124,141 @@
                 "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
                 "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
               ]
+            },
+            {
+              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+              "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+              "attemptId": "2026-06-17t20-54-10-779z__ashfall__neoforge__ashfall-neoforge-edition",
+              "generatedAt": "2026-06-17T20:54:10.779Z",
+              "status": "blocked",
+              "target": {
+                "family": "Ashfall",
+                "lane": "neoforge",
+                "packId": "ashfall-neoforge-edition"
+              },
+              "launcherWindowObserved": true,
+              "launcherAccessibilityObserved": true,
+              "screenshotCapture": {
+                "attempted": false,
+                "status": "not-attempted",
+                "api": "Windows.Graphics.Capture",
+                "error": null
+              },
+              "inputStoppedAfterCaptureFailure": false,
+              "acceptedAsGameplayProof": false,
+              "claimsPromoted": false,
+              "importedEvidenceFileCount": 0,
+              "verificationChecks": [
+                {
+                  "id": "clientStarted",
+                  "label": "Client/game window started",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Play action could not be invoked through Computer Use accessibility controls."
+                },
+                {
+                  "id": "worldCreatedOrLoaded",
+                  "label": "World or profile loaded",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "No game window was launched."
+                },
+                {
+                  "id": "hudVisible",
+                  "label": "HUD visible",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "No in-game visual capture available."
+                },
+                {
+                  "id": "inventoryIndexVisible",
+                  "label": "Inventory Index visible after opening inventory",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach game/inventory."
+                },
+                {
+                  "id": "terminalVisible",
+                  "label": "Terminal visible",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach game/Terminal."
+                },
+                {
+                  "id": "holomapVisible",
+                  "label": "HoloMap visible",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach game/HoloMap."
+                },
+                {
+                  "id": "lensVisible",
+                  "label": "Lens visible",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach game/Lens."
+                },
+                {
+                  "id": "creativeTabVisible",
+                  "label": "Creative tab visible",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach creative inventory."
+                },
+                {
+                  "id": "creativeTabSearchVisible",
+                  "label": "Creative tab search visible",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach creative search."
+                },
+                {
+                  "id": "creativeItemSelectable",
+                  "label": "Creative item selectable",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach creative item selection."
+                },
+                {
+                  "id": "creativeItemPlayable",
+                  "label": "Creative item usable in world",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "Could not reach in-world item use."
+                },
+                {
+                  "id": "saveReloadVerified",
+                  "label": "Save/reload verified",
+                  "status": "blocked",
+                  "evidenceRef": null,
+                  "note": "No save/reload gameplay session captured."
+                }
+              ],
+              "verificationSummary": {
+                "checkCount": 12,
+                "capturedCount": 0,
+                "blockedCount": 12,
+                "notAttemptedCount": 0
+              },
+              "blockerCount": 16,
+              "blockers": [
+                "Computer Use could inspect Launcher accessibility text but could not invoke the Play button through accessible action or keyboard focus; screenshot-backed coordinate input was not retried because the current environment previously failed Windows.Graphics.Capture with SetIsBorderRequired 0x80004002.",
+                "Computer Use window screenshot capture was not attempted, so visible gameplay screenshots were not recorded.",
+                "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+                "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+                "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+                "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+                "Computer Use verification check hudVisible (HUD visible) was blocked.",
+                "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
+                "Computer Use verification check terminalVisible (Terminal visible) was blocked.",
+                "Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
+                "Computer Use verification check lensVisible (Lens visible) was blocked.",
+                "Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
+                "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
+                "Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
+                "Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
+                "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+              ]
             }
           ]
         },
@@ -1019,107 +1322,23 @@
           "present": true,
           "schemaVersion": "echo.skyrelay.gameplay-evidence.v1",
           "status": "BLOCKED",
-          "generatedAt": "2026-06-11T20:48:21.346Z"
+          "generatedAt": "2026-06-17T20:49:25.787Z"
         },
         {
           "path": "release-readiness/sky-relay-manual-gameplay-work-order.json",
           "present": true,
           "schemaVersion": "echo.skyrelay.manual-gameplay-work-order.v1",
           "status": "OPEN",
-          "generatedAt": "2026-06-11T21:57:54.434Z"
+          "generatedAt": "2026-06-17T20:49:29.674Z"
         }
       ],
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 90,
+      "blockerCount": 6,
       "blockers": [
-        "native manual evidence run.startedAt must not use the template timestamp.",
-        "native manual evidence run.tester must be filled with real capture information.",
-        "native manual evidence run.worldOrProfile must be filled with real capture information.",
-        "native manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "native manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "native manual evidence sessions.first_2_hours must not use template timestamps.",
-        "native manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "native manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "native manual evidence sessions.no_crash_review must not use template timestamps.",
-        "native manual evidence claim realFirst30Playthrough must be true.",
-        "native manual evidence claim realFirst2HourPlaythrough must be true.",
-        "native manual evidence claim realSignalCrownPlaythrough must be true.",
-        "native manual evidence claim freshWorldCreated must be true.",
-        "native manual evidence claim saveReloadVerified must be true.",
-        "native manual evidence claim noCrashEvidence must be true.",
-        "native.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
-        "native.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-        "native.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-        "native.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-        "native.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-        "native.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
-        "native.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-        "native.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-        "native.screenshots[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
-        "native.logs[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-        "native.logs[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log",
-        "native.saveSnapshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-        "native.saveSnapshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-        "native.saveSnapshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-        "neoforge manual evidence run.startedAt must not use the template timestamp.",
-        "neoforge manual evidence run.tester must be filled with real capture information.",
-        "neoforge manual evidence run.worldOrProfile must be filled with real capture information.",
-        "neoforge manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "neoforge manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "neoforge manual evidence sessions.first_2_hours must not use template timestamps.",
-        "neoforge manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "neoforge manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "neoforge manual evidence sessions.no_crash_review must not use template timestamps.",
-        "neoforge manual evidence claim realFirst30Playthrough must be true.",
-        "neoforge manual evidence claim realFirst2HourPlaythrough must be true.",
-        "neoforge manual evidence claim realSignalCrownPlaythrough must be true.",
-        "neoforge manual evidence claim freshWorldCreated must be true.",
-        "neoforge manual evidence claim saveReloadVerified must be true.",
-        "neoforge manual evidence claim noCrashEvidence must be true.",
-        "neoforge.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
-        "neoforge.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-        "neoforge.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-        "neoforge.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-        "neoforge.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-        "neoforge.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
-        "neoforge.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-        "neoforge.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-        "neoforge.screenshots[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
-        "neoforge.logs[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-        "neoforge.logs[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log",
-        "neoforge.saveSnapshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-        "neoforge.saveSnapshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-        "neoforge.saveSnapshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
-        "standalone manual evidence run.startedAt must not use the template timestamp.",
-        "standalone manual evidence run.tester must be filled with real capture information.",
-        "standalone manual evidence run.worldOrProfile must be filled with real capture information.",
-        "standalone manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "standalone manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "standalone manual evidence sessions.first_2_hours must not use template timestamps.",
-        "standalone manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "standalone manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "standalone manual evidence sessions.no_crash_review must not use template timestamps.",
-        "standalone manual evidence claim realFirst30Playthrough must be true.",
-        "standalone manual evidence claim realFirst2HourPlaythrough must be true.",
-        "standalone manual evidence claim realSignalCrownPlaythrough must be true.",
-        "standalone manual evidence claim freshWorldCreated must be true.",
-        "standalone manual evidence claim saveReloadVerified must be true.",
-        "standalone manual evidence claim noCrashEvidence must be true.",
-        "standalone.supportingFiles[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/fresh-world-notes.md",
-        "standalone.supportingFiles[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-30-minutes-notes.md",
-        "standalone.supportingFiles[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/first-2-hours-notes.md",
-        "standalone.supportingFiles[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/signal-crown-verification.md",
-        "standalone.supportingFiles[4] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/no-crash-review.md",
-        "standalone.screenshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/fresh-world-created.png",
-        "standalone.screenshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png",
-        "standalone.screenshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-2-hours.png",
-        "standalone.screenshots[3] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/screenshots/signal-crown-complete.png",
-        "standalone.logs[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/client-playthrough.log",
-        "standalone.logs[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/logs/launcher-install.log",
-        "standalone.saveSnapshots[0] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-30-minutes-save.zip",
-        "standalone.saveSnapshots[1] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/first-2-hours-save.zip",
-        "standalone.saveSnapshots[2] target does not exist: fixtures/sky-relay/gameplay-qa/evidence/saves/signal-crown-save.zip",
+        "native manual evidence is missing: ECHO-Sky-Relay-Native-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+        "neoforge manual evidence is missing: ECHO-Sky-Relay-NeoForge-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+        "standalone manual evidence is missing: ECHO-Sky-Relay-Standalone-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
         "Sky Relay native: Manual gameplay work order status is unknown.",
         "Sky Relay neoforge: Manual gameplay work order status is unknown.",
         "Sky Relay standalone: Manual gameplay work order status is unknown."
@@ -1138,13 +1357,15 @@
           ],
           "evidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
           "evidencePresent": true,
-          "claims": {
-            "realFirst30Playthrough": false,
-            "realFirst2HourPlaythrough": false,
-            "realSignalCrownPlaythrough": false,
-            "freshWorldCreated": false,
-            "saveReloadVerified": false,
-            "noCrashEvidence": false
+          "claims": {},
+          "capture": {
+            "computerUseSession": {
+              "path": null,
+              "found": false,
+              "status": "not-provided",
+              "verificationChecks": [],
+              "verificationSummary": null
+            }
           },
           "crashSummary": null,
           "crashReport": null,
@@ -1171,13 +1392,15 @@
           ],
           "evidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
           "evidencePresent": true,
-          "claims": {
-            "realFirst30Playthrough": false,
-            "realFirst2HourPlaythrough": false,
-            "realSignalCrownPlaythrough": false,
-            "freshWorldCreated": false,
-            "saveReloadVerified": false,
-            "noCrashEvidence": false
+          "claims": {},
+          "capture": {
+            "computerUseSession": {
+              "path": null,
+              "found": false,
+              "status": "not-provided",
+              "verificationChecks": [],
+              "verificationSummary": null
+            }
           },
           "crashSummary": null,
           "crashReport": null,
@@ -1204,13 +1427,15 @@
           ],
           "evidencePath": "fixtures/sky-relay/gameplay-qa/manual-evidence.json",
           "evidencePresent": true,
-          "claims": {
-            "realFirst30Playthrough": false,
-            "realFirst2HourPlaythrough": false,
-            "realSignalCrownPlaythrough": false,
-            "freshWorldCreated": false,
-            "saveReloadVerified": false,
-            "noCrashEvidence": false
+          "claims": {},
+          "capture": {
+            "computerUseSession": {
+              "path": null,
+              "found": false,
+              "status": "not-provided",
+              "verificationChecks": [],
+              "verificationSummary": null
+            }
           },
           "crashSummary": null,
           "crashReport": null,
@@ -2168,7 +2393,7 @@
   "blockers": [
     {
       "family": "Ashfall",
-      "blockerCount": 73,
+      "blockerCount": 89,
       "sample": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
@@ -2186,20 +2411,14 @@
     },
     {
       "family": "Sky Relay",
-      "blockerCount": 90,
+      "blockerCount": 6,
       "sample": [
-        "native manual evidence run.startedAt must not use the template timestamp.",
-        "native manual evidence run.tester must be filled with real capture information.",
-        "native manual evidence run.worldOrProfile must be filled with real capture information.",
-        "native manual evidence sessions.fresh_world_creation must not use template timestamps.",
-        "native manual evidence sessions.first_30_minutes must not use template timestamps.",
-        "native manual evidence sessions.first_2_hours must not use template timestamps.",
-        "native manual evidence sessions.signal_crown_completion must not use template timestamps.",
-        "native manual evidence sessions.save_reload_verification must not use template timestamps.",
-        "native manual evidence sessions.no_crash_review must not use template timestamps.",
-        "native manual evidence claim realFirst30Playthrough must be true.",
-        "native manual evidence claim realFirst2HourPlaythrough must be true.",
-        "native manual evidence claim realSignalCrownPlaythrough must be true."
+        "native manual evidence is missing: ECHO-Sky-Relay-Native-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+        "neoforge manual evidence is missing: ECHO-Sky-Relay-NeoForge-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+        "standalone manual evidence is missing: ECHO-Sky-Relay-Standalone-Edition/fixtures/sky-relay/gameplay-qa/manual-evidence.json",
+        "Sky Relay native: Manual gameplay work order status is unknown.",
+        "Sky Relay neoforge: Manual gameplay work order status is unknown.",
+        "Sky Relay standalone: Manual gameplay work order status is unknown."
       ]
     },
     {
