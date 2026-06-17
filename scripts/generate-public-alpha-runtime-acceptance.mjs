@@ -264,6 +264,7 @@ function gameplayMatrixFromAcceptance(report) {
       logSummary: lane.logSummary ?? null,
       crashSummary: lane.crashSummary ?? null,
       crashReport: lane.crashReport ?? null,
+      computerUseCaptureAttempt: lane.computerUseCaptureAttempt ?? null,
     })),
     conclusion: family.conclusion ?? null,
   }))
@@ -551,6 +552,7 @@ async function main() {
       strictReady: gameplayAcceptance?.strictReady === true,
       summary: gameplayAcceptance?.summary ?? null,
       transportEvidence: gameplayAcceptance?.transportEvidence ?? [],
+      computerUseCaptureAttempts: gameplayAcceptance?.computerUseCaptureAttempts ?? [],
     },
     computerUseGameplayCapture,
     gameplayMatrix,

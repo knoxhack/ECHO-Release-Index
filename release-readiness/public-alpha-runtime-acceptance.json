@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-17T19:22:05.942Z",
+  "generatedAt": "2026-06-17T19:26:28.390Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "73b1f24cb4b037ea1d624bcd5fb4894fdeedc93a",
+  "releaseIndexHeadAtGeneration": "6f2caa150b163acf1c4fa3eb935efd5ca4391bb2",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -345,7 +345,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-17T19:12:23.691Z",
+    "generatedAt": "2026-06-17T19:26:23.925Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -353,7 +353,7 @@
       "passedFamilyCount": 0,
       "blockedFamilyCount": 5,
       "passedLaneCount": 0,
-      "blockerCount": 452,
+      "blockerCount": 456,
       "transportProofCount": 2,
       "acceptedTransportProofCount": 2,
       "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -390,6 +390,39 @@
           "verifiedModule": true
         },
         "blocker": null
+      }
+    ],
+    "computerUseCaptureAttempts": [
+      {
+        "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+        "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+        "generatedAt": "2026-06-17T19:11:40.000Z",
+        "status": "blocked",
+        "target": {
+          "family": "Ashfall",
+          "lane": "neoforge",
+          "packId": "ashfall-neoforge-edition"
+        },
+        "launcherWindowObserved": true,
+        "launcherAccessibilityObserved": true,
+        "screenshotCapture": {
+          "attempted": true,
+          "status": "failed",
+          "api": "Windows.Graphics.Capture",
+          "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+        },
+        "inputStoppedAfterCaptureFailure": true,
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "importedEvidenceFileCount": 0,
+        "blockerCount": 4,
+        "blockers": [
+          "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+          "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+          "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+          "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
+        ],
+        "attached": true
       }
     ]
   },
@@ -436,7 +469,7 @@
       "current": false,
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 41,
+      "blockerCount": 45,
       "blockerSample": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
@@ -507,7 +540,8 @@
             "mtime": "2026-06-17T13:24:43.103Z"
           },
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "neoforge",
@@ -516,7 +550,7 @@
           "workspaceDir": "ECHO-Ashfall-NeoForge-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 14,
+          "blockerCount": 18,
           "blockers": [
             "No runtime log file found under the instance logs directory.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
@@ -531,7 +565,11 @@
             "Missing gameplay proof: creativeTabSearchVisible",
             "Missing gameplay proof: creativeItemSelectable",
             "Missing gameplay proof: creativeItemPlayable",
-            "Missing gameplay proof: saveReloadVerified"
+            "Missing gameplay proof: saveReloadVerified",
+            "Computer Use capture attempt: The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+            "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+            "Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+            "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
           ],
           "evidencePath": "",
           "evidencePresent": false,
@@ -552,7 +590,37 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": {
+            "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+            "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+            "generatedAt": "2026-06-17T19:11:40.000Z",
+            "status": "blocked",
+            "target": {
+              "family": "Ashfall",
+              "lane": "neoforge",
+              "packId": "ashfall-neoforge-edition"
+            },
+            "launcherWindowObserved": true,
+            "launcherAccessibilityObserved": true,
+            "screenshotCapture": {
+              "attempted": true,
+              "status": "failed",
+              "api": "Windows.Graphics.Capture",
+              "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+            },
+            "inputStoppedAfterCaptureFailure": true,
+            "acceptedAsGameplayProof": false,
+            "claimsPromoted": false,
+            "importedEvidenceFileCount": 0,
+            "blockerCount": 4,
+            "blockers": [
+              "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+              "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+              "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+              "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
+            ]
+          }
         },
         {
           "lane": "standalone",
@@ -597,7 +665,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         }
       ],
       "conclusion": "Ashfall install/handoff evidence exists, but gameplay acceptance remains blocked by lane-level proof gaps."
@@ -672,7 +741,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "neoforge",
@@ -698,7 +768,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "standalone",
@@ -724,7 +795,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         }
       ],
       "conclusion": "Sky Relay gameplay acceptance remains blocked by manual evidence work-order gaps."
@@ -868,7 +940,8 @@
           "openTaskCount": 9,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "neoforge",
@@ -963,7 +1036,8 @@
           "openTaskCount": 9,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "standalone",
@@ -1058,7 +1132,8 @@
           "openTaskCount": 9,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         }
       ],
       "conclusion": "Galactic Survey gameplay acceptance remains blocked by manual evidence work-order gaps."
@@ -1132,7 +1207,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "neoforge",
@@ -1164,7 +1240,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "standalone",
@@ -1196,7 +1273,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         }
       ],
       "conclusion": "Openlands gameplay acceptance has no release-ready real gameplay evidence yet."
@@ -1270,7 +1348,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "neoforge",
@@ -1302,7 +1381,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         },
         {
           "lane": "standalone",
@@ -1334,7 +1414,8 @@
           "openTaskCount": null,
           "logSummary": null,
           "crashSummary": null,
-          "crashReport": null
+          "crashReport": null,
+          "computerUseCaptureAttempt": null
         }
       ],
       "conclusion": "Arcana Division gameplay acceptance has no release-ready real gameplay evidence yet."

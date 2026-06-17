@@ -381,6 +381,94 @@ function normalizedLaneDetails({ family, lane, packId, status, blockers, source 
   }
 }
 
+function normalizedKey(value) {
+  return String(value ?? '').trim().toLowerCase()
+}
+
+function captureAttemptTarget(report) {
+  return {
+    family: report?.target?.family ?? null,
+    lane: laneFrom(report?.target?.lane),
+    packId: report?.target?.packId ?? null,
+  }
+}
+
+function captureAttemptMatches(report, family, lane, packId) {
+  const target = captureAttemptTarget(report)
+  if (!target.family || !target.lane) return false
+  return normalizedKey(target.family) === normalizedKey(family)
+    && target.lane === lane
+    && (!target.packId || normalizedKey(target.packId) === normalizedKey(packId))
+}
+
+function normalizeCaptureAttempt(report) {
+  if (!report) return null
+  const blockers = Array.isArray(report.blockers) ? report.blockers : []
+  return {
+    sourceReport: 'release-readiness/computer-use-gameplay-capture-attempt.json',
+    schemaVersion: report.schemaVersion ?? null,
+    generatedAt: report.generatedAt ?? null,
+    status: report.status ?? null,
+    target: captureAttemptTarget(report),
+    launcherWindowObserved: report.launcherWindow?.observed === true,
+    launcherAccessibilityObserved: report.launcherWindow?.accessibility?.observed === true,
+    screenshotCapture: report.screenshotCapture ?? null,
+    inputStoppedAfterCaptureFailure: report.inputStoppedAfterCaptureFailure === true,
+    acceptedAsGameplayProof: report.acceptedAsGameplayProof === true,
+    claimsPromoted: report.claimsPromoted === true,
+    importedEvidenceFileCount: Array.isArray(report.importedEvidenceFiles) ? report.importedEvidenceFiles.length : 0,
+    blockerCount: blockers.length,
+    blockers,
+  }
+}
+
+function applyComputerUseCaptureAttempt(families, report) {
+  const attempt = normalizeCaptureAttempt(report)
+  if (!attempt) return { families, captureAttempts: [] }
+
+  let attached = false
+  const nextFamilies = families.map((family) => {
+    let familyAttached = false
+    const familyAttemptBlockers = []
+    const lanes = family.lanes.map((lane) => {
+      if (!captureAttemptMatches(report, family.family, lane.lane, lane.packId)) return lane
+      attached = true
+      familyAttached = true
+      const attemptBlockers = attempt.acceptedAsGameplayProof
+        ? []
+        : attempt.blockers.map((blocker) => `Computer Use capture attempt: ${blocker}`)
+      familyAttemptBlockers.push(...attemptBlockers)
+      const blockers = [...lane.blockers, ...attemptBlockers]
+      const status = lane.status === 'pass' && blockers.length === 0 ? 'pass' : 'blocked'
+      return {
+        ...lane,
+        status,
+        releaseReady: releaseReadyFrom(status, blockers),
+        blockerCount: blockers.length,
+        blockers,
+        computerUseCaptureAttempt: attempt,
+      }
+    })
+    if (!familyAttached) return family
+    const blockers = [...(family.blockers ?? []), ...familyAttemptBlockers]
+    return {
+      ...family,
+      status: familyStatusFromLanes(lanes, blockers),
+      passedLaneCount: lanes.filter((lane) => lane.status === 'pass').length,
+      blockerCount: blockers.length,
+      blockers,
+      lanes,
+    }
+  })
+  return {
+    families: nextFamilies,
+    captureAttempts: [{
+      ...attempt,
+      attached,
+    }],
+  }
+}
+
 function familyStatusFromLanes(lanes, familyBlockers = []) {
   return lanes.every((lane) => lane.status === 'pass') && familyBlockers.length === 0 ? 'pass' : 'blocked'
 }
@@ -622,8 +710,9 @@ async function main() {
   const galacticUi = await optionalReport('galactic-survey-electron-ui-smoke.json')
   const openlandsGameplay = await optionalReport('openlands-gameplay-evidence.json')
   const arcanaGameplay = await optionalReport('arcana-division-gameplay-evidence.json')
+  const computerUseCaptureAttempt = await optionalReport('computer-use-gameplay-capture-attempt.json')
 
-  const families = [
+  const baseFamilies = [
     buildAshfallFamily(ashfallGameplay),
     await buildManualFamily({
       root: args.root,
@@ -658,6 +747,8 @@ async function main() {
       expectedPackPrefix: 'arcana-division',
     }),
   ]
+  const captureIntegration = applyComputerUseCaptureAttempt(baseFamilies, computerUseCaptureAttempt)
+  const families = captureIntegration.families
 
   const transportEvidence = [
     currentUiEvidence('Sky Relay', 'release-readiness/sky-relay-electron-ui-smoke.json', skyRelayUi),
@@ -689,6 +780,7 @@ async function main() {
         : 'Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence.',
     },
     transportEvidence,
+    computerUseCaptureAttempts: captureIntegration.captureAttempts,
     families,
     blockers: reportBlockers(families),
     notes: [

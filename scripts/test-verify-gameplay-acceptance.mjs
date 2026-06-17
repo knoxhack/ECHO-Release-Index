@@ -213,6 +213,74 @@ test('pass-shaped family claims require local evidence files', async () => {
   await fs.rm(root, { recursive: true, force: true })
 })
 
+test('Computer Use capture attempts attach to matching gameplay lane without promoting claims', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-gameplay-acceptance-computer-use-'))
+  await writeJson(root, 'release-readiness/ashfall-lane-game-smoke.json', {
+    schemaVersion: 'echo.ashfall.lane-game-smoke.v1',
+    ok: false,
+    generatedAt: '2026-06-17T19:00:00.000Z',
+    blockers: [],
+    lanes: lanes.map((lane) => ({
+      lane,
+      packId: `ashfall-${lane}-edition`,
+      ok: false,
+      blockers: [`Missing ${lane} gameplay proof.`],
+      installedManifest: {
+        present: true,
+        missingModuleFileCount: 0,
+      },
+    })),
+  })
+  await writeJson(root, 'release-readiness/computer-use-gameplay-capture-attempt.json', {
+    schemaVersion: 'echo.release_index.computer_use_gameplay_capture_attempt.v1',
+    generatedAt: '2026-06-17T19:11:40.000Z',
+    status: 'blocked',
+    target: {
+      family: 'Ashfall',
+      lane: 'neoforge',
+      packId: 'ashfall-neoforge-edition',
+    },
+    launcherWindow: {
+      observed: true,
+      accessibility: {
+        observed: true,
+      },
+    },
+    screenshotCapture: {
+      attempted: true,
+      status: 'failed',
+      api: 'Windows.Graphics.Capture',
+      error: 'SetIsBorderRequired failed: No such interface supported (0x80004002)',
+    },
+    inputStoppedAfterCaptureFailure: true,
+    acceptedAsGameplayProof: false,
+    claimsPromoted: false,
+    importedEvidenceFiles: [],
+    blockers: [
+      'Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.',
+      'No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.',
+    ],
+  })
+
+  const result = spawnVerifier(root, ['--no-write', '--json'])
+  assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`)
+  const report = JSON.parse(result.stdout)
+  const ashfall = report.families.find((family) => family.family === 'Ashfall')
+  const neoforge = ashfall.lanes.find((lane) => lane.lane === 'neoforge')
+  const native = ashfall.lanes.find((lane) => lane.lane === 'native')
+
+  assert.equal(report.computerUseCaptureAttempts.length, 1)
+  assert.equal(report.computerUseCaptureAttempts[0].attached, true)
+  assert.equal(neoforge.computerUseCaptureAttempt.acceptedAsGameplayProof, false)
+  assert.equal(neoforge.computerUseCaptureAttempt.claimsPromoted, false)
+  assert.equal(neoforge.computerUseCaptureAttempt.screenshotCapture.status, 'failed')
+  assert.match(neoforge.blockers.join('\n'), /Computer Use capture attempt: Computer Use window screenshot capture failed/u)
+  assert.equal(neoforge.releaseReady, false)
+  assert.equal(native.computerUseCaptureAttempt, undefined)
+
+  await fs.rm(root, { recursive: true, force: true })
+})
+
 test('all required family and lane evidence can pass strict mode', async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-gameplay-acceptance-pass-'))
   const out = path.join(root, 'release-readiness', 'gameplay-acceptance-matrix.json')

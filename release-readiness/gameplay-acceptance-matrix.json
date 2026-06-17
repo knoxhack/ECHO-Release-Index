@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.gameplay.acceptance.v1",
-  "generatedAt": "2026-06-17T19:12:23.691Z",
+  "generatedAt": "2026-06-17T19:26:23.925Z",
   "status": "BLOCKED",
   "strictReady": false,
   "scope": "public-alpha-real-gameplay-acceptance",
@@ -15,7 +15,7 @@
     "passedFamilyCount": 0,
     "blockedFamilyCount": 5,
     "passedLaneCount": 0,
-    "blockerCount": 452,
+    "blockerCount": 456,
     "transportProofCount": 2,
     "acceptedTransportProofCount": 2,
     "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -54,6 +54,39 @@
       "blocker": null
     }
   ],
+  "computerUseCaptureAttempts": [
+    {
+      "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "generatedAt": "2026-06-17T19:11:40.000Z",
+      "status": "blocked",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition"
+      },
+      "launcherWindowObserved": true,
+      "launcherAccessibilityObserved": true,
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Windows.Graphics.Capture",
+        "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFileCount": 0,
+      "blockerCount": 4,
+      "blockers": [
+        "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
+      ],
+      "attached": true
+    }
+  ],
   "families": [
     {
       "family": "Ashfall",
@@ -69,7 +102,7 @@
       ],
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 41,
+      "blockerCount": 45,
       "blockers": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
@@ -111,7 +144,11 @@
         "ashfall-standalone-edition: Missing gameplay proof: creativeTabSearchVisible",
         "ashfall-standalone-edition: Missing gameplay proof: creativeItemSelectable",
         "ashfall-standalone-edition: Missing gameplay proof: creativeItemPlayable",
-        "ashfall-standalone-edition: Missing gameplay proof: saveReloadVerified"
+        "ashfall-standalone-edition: Missing gameplay proof: saveReloadVerified",
+        "Computer Use capture attempt: The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+        "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
       ],
       "lanes": [
         {
@@ -173,7 +210,7 @@
           "workspaceDir": "ECHO-Ashfall-NeoForge-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 14,
+          "blockerCount": 18,
           "blockers": [
             "No runtime log file found under the instance logs directory.",
             "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
@@ -188,7 +225,11 @@
             "Missing gameplay proof: creativeTabSearchVisible",
             "Missing gameplay proof: creativeItemSelectable",
             "Missing gameplay proof: creativeItemPlayable",
-            "Missing gameplay proof: saveReloadVerified"
+            "Missing gameplay proof: saveReloadVerified",
+            "Computer Use capture attempt: The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+            "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+            "Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+            "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
           ],
           "evidencePath": "",
           "evidencePresent": false,
@@ -212,6 +253,36 @@
           "installedManifest": {
             "present": true,
             "missingModuleFileCount": 0
+          },
+          "computerUseCaptureAttempt": {
+            "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+            "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+            "generatedAt": "2026-06-17T19:11:40.000Z",
+            "status": "blocked",
+            "target": {
+              "family": "Ashfall",
+              "lane": "neoforge",
+              "packId": "ashfall-neoforge-edition"
+            },
+            "launcherWindowObserved": true,
+            "launcherAccessibilityObserved": true,
+            "screenshotCapture": {
+              "attempted": true,
+              "status": "failed",
+              "api": "Windows.Graphics.Capture",
+              "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+            },
+            "inputStoppedAfterCaptureFailure": true,
+            "acceptedAsGameplayProof": false,
+            "claimsPromoted": false,
+            "importedEvidenceFileCount": 0,
+            "blockerCount": 4,
+            "blockers": [
+              "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+              "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+              "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+              "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
+            ]
           }
         },
         {
@@ -1423,7 +1494,7 @@
   "blockers": [
     {
       "family": "Ashfall",
-      "blockerCount": 41,
+      "blockerCount": 45,
       "sample": [
         "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
         "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
