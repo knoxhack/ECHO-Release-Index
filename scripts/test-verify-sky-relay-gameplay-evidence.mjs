@@ -1046,6 +1046,95 @@ try {
   const lowResolution = run(lowResolutionRoot, lowResolutionWorkspace, ['--require-release-ready'])
   assert.equal(lowResolution.status, 1)
   assert.match(`${lowResolution.stdout}\n${lowResolution.stderr}`, /PNG dimensions must be at least 640x360/u)
+
+  const computerUseRoot = path.join(tmp, 'computer-use-release-index')
+  const computerUseWorkspace = path.join(tmp, 'computer-use-workspace')
+  await writeRouteReport(computerUseRoot)
+  await writeGameplayEvidence(computerUseWorkspace)
+  const computerUseEditionRoot = path.join(computerUseWorkspace, 'ECHO-Sky-Relay-Native-Edition')
+  const computerUseEvidencePath = path.join(computerUseEditionRoot, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json')
+  const computerUseEvidence = JSON.parse(await fs.readFile(computerUseEvidencePath, 'utf8'))
+  computerUseEvidence.capture = {
+    computerUseSession: 'fixtures/sky-relay/gameplay-qa/computer-use-session.json',
+  }
+  await fs.writeFile(computerUseEvidencePath, `${JSON.stringify(computerUseEvidence, null, 2)}\n`, 'utf8')
+  await writeJson(computerUseEditionRoot, 'fixtures/sky-relay/gameplay-qa/computer-use-session.json', {
+    schemaVersion: 'echo.release_index.family_gameplay_computer_use_session.v1',
+    familyKey: 'sky-relay',
+    family: 'Sky Relay',
+    lane: 'native',
+    packId: 'sky-relay-native-edition',
+    appId: 'SkyRelayNativeTest.exe',
+    windowTitle: 'Sky Relay Native Test Window',
+    actions: [
+      'Opened inventory and verified Index UI from the visible game window.',
+      'Opened Terminal, HoloMap, and Lens surfaces during the captured route.',
+    ],
+    verificationChecks: [
+      {
+        id: 'inventoryIndexVisible',
+        label: 'Inventory Index visible after opening inventory',
+        status: 'captured',
+        evidenceRef: 'fixtures/sky-relay/gameplay-qa/evidence/screenshots/first-30-minutes.png',
+        note: 'Visible UI action is tied to the imported first-30-minute screenshot.',
+      },
+      {
+        id: 'freshWorldCreated',
+        label: 'Fresh world/profile created',
+        status: 'captured',
+        evidenceRef: 'freshWorldCreated',
+        note: 'Claim is backed by required notes, screenshot, and logs.',
+      },
+    ],
+    verificationSummary: {
+      checkCount: 2,
+      capturedCount: 2,
+      blockedCount: 0,
+      notAttemptedCount: 0,
+    },
+  })
+  const computerUse = run(computerUseRoot, computerUseWorkspace, ['--require-release-ready'])
+  assert.equal(computerUse.status, 0, `${computerUse.stdout}\n${computerUse.stderr}`)
+  const computerUseReport = JSON.parse(computerUse.stdout)
+  assert.equal(computerUseReport.editions[0].capture.computerUseSession.status, 'provided')
+  assert.equal(computerUseReport.editions[0].capture.computerUseSession.verificationSummary.capturedCount, 2)
+
+  const badComputerUseRoot = path.join(tmp, 'bad-computer-use-release-index')
+  const badComputerUseWorkspace = path.join(tmp, 'bad-computer-use-workspace')
+  await writeRouteReport(badComputerUseRoot)
+  await writeGameplayEvidence(badComputerUseWorkspace)
+  const badComputerUseEditionRoot = path.join(badComputerUseWorkspace, 'ECHO-Sky-Relay-Native-Edition')
+  const badComputerUseEvidencePath = path.join(badComputerUseEditionRoot, 'fixtures/sky-relay/gameplay-qa/manual-evidence.json')
+  const badComputerUseEvidence = JSON.parse(await fs.readFile(badComputerUseEvidencePath, 'utf8'))
+  badComputerUseEvidence.capture = {
+    computerUseSession: 'fixtures/sky-relay/gameplay-qa/computer-use-session.json',
+  }
+  await fs.writeFile(badComputerUseEvidencePath, `${JSON.stringify(badComputerUseEvidence, null, 2)}\n`, 'utf8')
+  await writeJson(badComputerUseEditionRoot, 'fixtures/sky-relay/gameplay-qa/computer-use-session.json', {
+    schemaVersion: 'echo.release_index.family_gameplay_computer_use_session.v1',
+    familyKey: 'sky-relay',
+    lane: 'native',
+    packId: 'sky-relay-native-edition',
+    actions: ['Opened inventory and claimed a captured check without local proof.'],
+    verificationChecks: [
+      {
+        id: 'terminalVisible',
+        label: 'Terminal visible',
+        status: 'captured',
+        evidenceRef: 'missing-terminal-proof.png',
+        note: 'This is not a required claim or local proof path.',
+      },
+    ],
+    verificationSummary: {
+      checkCount: 1,
+      capturedCount: 1,
+      blockedCount: 0,
+      notAttemptedCount: 0,
+    },
+  })
+  const badComputerUse = run(badComputerUseRoot, badComputerUseWorkspace, ['--require-release-ready'])
+  assert.equal(badComputerUse.status, 1)
+  assert.match(`${badComputerUse.stdout}\n${badComputerUse.stderr}`, /must reference a required claim or local proof path/u)
 } finally {
   await fs.rm(tmp, { recursive: true, force: true })
 }

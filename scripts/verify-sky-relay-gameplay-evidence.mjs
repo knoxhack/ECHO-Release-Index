@@ -11,6 +11,8 @@ const DEFAULT_ROUTE_REPORT = 'release-readiness/sky-relay-gameplay-route-smoke.j
 const DEFAULT_EDITION_PACK_ASSETS = 'release-readiness/sky-relay-edition-pack-assets.json'
 const DEFAULT_MANUAL_EVIDENCE = 'fixtures/sky-relay/gameplay-qa/manual-evidence.json'
 const DEFAULT_OUT = 'release-readiness/sky-relay-gameplay-evidence.json'
+const COMPUTER_USE_SESSION_SCHEMA = 'echo.release_index.family_gameplay_computer_use_session.v1'
+const COMPUTER_USE_CHECK_STATUSES = new Set(['captured', 'blocked', 'not-attempted'])
 const RELEASE_INDEX_PROVENANCE_IGNORES = [
   DEFAULT_OUT,
   'release-readiness/sky-relay-public-alpha-readiness.json',
@@ -67,6 +69,8 @@ const REQUIRED_CLAIMS = [
   'saveReloadVerified',
   'noCrashEvidence',
 ]
+
+const REQUIRED_PROOF_GROUPS = ['supportingFiles', 'screenshots', 'logs', 'saveSnapshots']
 
 const REQUIRED_SUPPORTING_PATTERNS = [
   /(^|\/)fresh[-_]?world[^/]*\.md$/iu,
@@ -1077,6 +1081,137 @@ function validateUniqueCheckedHashes({ label, records, blockers }) {
   }
 }
 
+function normalizedReference(value) {
+  return String(value ?? '').trim().replace(/\\/gu, '/')
+}
+
+function computerUseVerificationSummary(checks) {
+  const statuses = checks.map((check) => String(check?.status ?? '').trim().toLowerCase())
+  return {
+    checkCount: checks.length,
+    capturedCount: statuses.filter((status) => status === 'captured').length,
+    blockedCount: statuses.filter((status) => status === 'blocked').length,
+    notAttemptedCount: statuses.filter((status) => status === 'not-attempted').length,
+  }
+}
+
+function acceptedComputerUseEvidenceRefs(evidence) {
+  const refs = new Set(REQUIRED_CLAIMS)
+  for (const group of REQUIRED_PROOF_GROUPS) {
+    for (const relPath of Array.isArray(evidence?.[group]) ? evidence[group] : []) refs.add(normalizedReference(relPath))
+  }
+  for (const session of Array.isArray(evidence?.sessions) ? evidence.sessions : []) {
+    for (const relPath of Object.values(session?.evidence ?? {})) refs.add(normalizedReference(relPath))
+  }
+  return refs
+}
+
+async function validateComputerUseSession({ root, evidence, edition, blockers }) {
+  const result = {
+    path: evidence.capture?.computerUseSession ?? null,
+    found: false,
+    status: 'not-provided',
+    schemaVersion: null,
+    familyKey: null,
+    lane: null,
+    packId: null,
+    appId: null,
+    windowTitle: null,
+    actionCount: 0,
+    verificationChecks: [],
+    verificationSummary: null,
+  }
+  const relPath = normalizedReference(evidence.capture?.computerUseSession)
+  if (!relPath) return result
+
+  result.path = relPath
+  const resolved = resolveInside(root, relPath)
+  if (resolved.error === 'relative-path-required') {
+    blockers.push(`${edition} capture.computerUseSession must be a relative file path.`)
+    result.status = 'blocked'
+    return result
+  }
+  if (resolved.error === 'outside-root') {
+    blockers.push(`${edition} capture.computerUseSession points outside the evidence root: ${relPath}`)
+    result.status = 'blocked'
+    return result
+  }
+  if (!(await fileExists(resolved.target))) {
+    blockers.push(`${edition} capture.computerUseSession is missing: ${relPath}`)
+    result.status = 'blocked'
+    return result
+  }
+
+  let session
+  try {
+    session = await readJson(resolved.target)
+  } catch (error) {
+    blockers.push(`${edition} capture.computerUseSession is not valid JSON: ${error.message}`)
+    result.status = 'blocked'
+    return result
+  }
+
+  result.found = true
+  result.schemaVersion = session.schemaVersion ?? null
+  result.familyKey = session.familyKey ?? null
+  result.lane = session.lane ?? null
+  result.packId = session.packId ?? null
+  result.appId = session.appId ?? null
+  result.windowTitle = session.windowTitle ?? null
+  result.actionCount = Array.isArray(session.actions) ? session.actions.length : 0
+  result.verificationChecks = Array.isArray(session.verificationChecks)
+    ? session.verificationChecks.map((check) => ({
+      id: String(check?.id ?? '').trim(),
+      label: String(check?.label ?? '').trim(),
+      status: String(check?.status ?? '').trim().toLowerCase(),
+      evidenceRef: check?.evidenceRef ? normalizedReference(check.evidenceRef) : null,
+      note: check?.note ? String(check.note).trim() : null,
+    }))
+    : []
+  result.verificationSummary = computerUseVerificationSummary(result.verificationChecks)
+
+  const expectedPackId = `sky-relay-${edition}-edition`
+  if (session.schemaVersion !== COMPUTER_USE_SESSION_SCHEMA) {
+    blockers.push(`${edition} capture.computerUseSession schemaVersion must be ${COMPUTER_USE_SESSION_SCHEMA}.`)
+  }
+  if (session.familyKey !== 'sky-relay') blockers.push(`${edition} capture.computerUseSession familyKey must be sky-relay.`)
+  if (session.lane !== edition) blockers.push(`${edition} capture.computerUseSession lane must be ${edition}.`)
+  if (session.packId !== expectedPackId) blockers.push(`${edition} capture.computerUseSession packId must be ${expectedPackId}.`)
+  if (!Array.isArray(session.actions) || session.actions.length === 0) {
+    blockers.push(`${edition} capture.computerUseSession must list visible Computer Use actions.`)
+  }
+  if (Object.hasOwn(session, 'verificationChecks') && !Array.isArray(session.verificationChecks)) {
+    blockers.push(`${edition} capture.computerUseSession verificationChecks must be an array when present.`)
+  }
+
+  const acceptedRefs = acceptedComputerUseEvidenceRefs(evidence)
+  for (const [index, check] of result.verificationChecks.entries()) {
+    const prefix = `${edition} capture.computerUseSession verificationChecks[${index}]`
+    if (!check.id) blockers.push(`${prefix}.id is required.`)
+    if (!check.label) blockers.push(`${prefix}.label is required.`)
+    if (!COMPUTER_USE_CHECK_STATUSES.has(check.status)) {
+      blockers.push(`${prefix}.status must be captured, blocked, or not-attempted.`)
+    }
+    if (check.status === 'captured') {
+      if (!check.evidenceRef) blockers.push(`${prefix}.evidenceRef is required when status is captured.`)
+      else if (!acceptedRefs.has(check.evidenceRef)) {
+        blockers.push(`${prefix}.evidenceRef ${check.evidenceRef} must reference a required claim or local proof path.`)
+      }
+    }
+  }
+
+  if (session.verificationSummary && typeof session.verificationSummary === 'object') {
+    for (const [key, value] of Object.entries(result.verificationSummary)) {
+      if (session.verificationSummary[key] !== value) {
+        blockers.push(`${edition} capture.computerUseSession verificationSummary.${key} is ${session.verificationSummary[key] ?? 'missing'}, expected ${value}.`)
+      }
+    }
+  }
+
+  result.status = blockers.some((blocker) => blocker.includes(`${edition} capture.computerUseSession`)) ? 'blocked' : 'provided'
+  return result
+}
+
 async function validateManualEvidence(args, edition, expectedArtifact, blockers) {
   const source = EVIDENCE_SOURCE_REPOS[edition]
   const root = evidenceRoot(args, edition)
@@ -1095,6 +1230,15 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
       screenshots: [],
       logs: [],
       saveSnapshots: [],
+    },
+    capture: {
+      computerUseSession: {
+        path: null,
+        found: false,
+        status: 'not-provided',
+        verificationChecks: [],
+        verificationSummary: null,
+      },
     },
   }
 
@@ -1232,6 +1376,8 @@ async function validateManualEvidence(args, edition, expectedArtifact, blockers)
   })
   validateUniqueCheckedHashes({ label: `${edition}.saveSnapshots`, records: result.checked.saveSnapshots, blockers })
 
+  result.capture.computerUseSession = await validateComputerUseSession({ root, evidence, edition, blockers })
+
   return result
 }
 
@@ -1343,13 +1489,17 @@ async function buildReport(args) {
       logs: REQUIRED_LOG_PATTERNS.map(String),
       saveSnapshots: REQUIRED_SAVE_PATTERNS.map(String),
       captureKitFiles: REQUIRED_CAPTURE_KIT_FILES,
+      computerUseSession: {
+        schemaVersion: COMPUTER_USE_SESSION_SCHEMA,
+        note: 'Optional provenance only; claims still require local notes, screenshots, logs, and save snapshots.',
+      },
       packArtifacts: expectedArtifacts,
     },
     gates,
     captureKits,
     editions,
     blockers,
-    note: 'This verifier requires real manual playthrough evidence files in each Sky Relay edition repo before Release Index promotion can remove warning validation.',
+    note: 'This verifier requires real manual playthrough evidence files in each Sky Relay edition repo before Release Index promotion can remove warning validation. Optional Computer Use session metadata is supporting provenance only.',
   }
 }
 

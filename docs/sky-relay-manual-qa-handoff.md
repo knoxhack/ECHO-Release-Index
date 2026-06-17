@@ -74,6 +74,20 @@ The initializer creates:
 All claims in `manual-evidence.json` must remain `false` until the referenced
 evidence files are produced by the real manual run.
 
+If the run is driven through Computer Use, also create
+`fixtures/sky-relay/gameplay-qa/computer-use-session.json` and set
+`capture.computerUseSession` in `manual-evidence.json` to that relative path.
+The session must use schema
+`echo.release_index.family_gameplay_computer_use_session.v1`, identify
+`familyKey: "sky-relay"`, the current lane, and the lane pack ID, and list the
+visible UI actions performed. Use `verificationChecks` for concrete checks such
+as `hudVisible`, `inventoryIndexVisible`, `terminalVisible`, `holomapVisible`,
+`lensVisible`, route milestones, save/reload, and no-crash review. A captured
+check must cite a required claim or one of the local proof files listed below.
+Computer Use metadata is supporting provenance only; it never replaces the
+required notes, screenshots, logs, or save snapshots and never flips gameplay
+claims true by itself.
+
 Fill the `run` object with real capture identity before release-ready
 verification:
 

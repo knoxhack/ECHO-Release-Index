@@ -62,6 +62,21 @@ const REQUIRED_PATHS = {
   ],
 }
 
+const COMPUTER_USE_SESSION_PATH = 'fixtures/sky-relay/gameplay-qa/computer-use-session.json'
+const COMPUTER_USE_VISIBLE_CHECKS = [
+  'hudVisible',
+  'inventoryIndexVisible',
+  'terminalVisible',
+  'holomapVisible',
+  'lensVisible',
+  'freshWorldCreated',
+  'realFirst30Playthrough',
+  'realFirst2HourPlaythrough',
+  'realSignalCrownPlaythrough',
+  'saveReloadVerified',
+  'noCrashEvidence',
+]
+
 const FILE_GROUPS = [
   { id: 'supporting_files', checkedKey: 'supportingFiles', title: 'Gameplay notes' },
   { id: 'screenshots', checkedKey: 'screenshots', title: 'Screenshots' },
@@ -218,6 +233,24 @@ function buildEditionWorkOrder(report, edition) {
       requiredCount: paths.length,
     })
   })
+  const computerUseSession = edition.capture?.computerUseSession ?? {
+    path: null,
+    found: false,
+    status: 'not-provided',
+    verificationChecks: [],
+    verificationSummary: null,
+  }
+  const computerUseTask = task(
+    'computer_use_provenance',
+    'Optional Computer Use provenance is valid when supplied',
+    computerUseSession.status !== 'blocked',
+    {
+      optional: true,
+      expectedPath: COMPUTER_USE_SESSION_PATH,
+      session: computerUseSession,
+      visibleChecks: COMPUTER_USE_VISIBLE_CHECKS,
+    },
+  )
 
   const tasks = [
     task('capture_kit', 'Capture kit is present', edition.found === true, {
@@ -234,6 +267,7 @@ function buildEditionWorkOrder(report, edition) {
     task('sessions', 'Required session records are complete', sessionTasks.every((item) => item.status === 'passed'), {
       sessions: sessionTasks,
     }),
+    computerUseTask,
     ...fileGroupTasks,
     task('local_verification', 'Edition local evidence verifier passes', edition.found === true && workOrderBlockers(report, editionKey).length === 0, {
       command: 'node scripts\\verify-manual-gameplay-evidence.mjs --require-release-ready',
@@ -248,6 +282,7 @@ function buildEditionWorkOrder(report, edition) {
     repository: edition.repository,
     workspaceDir,
     manualEvidence: edition.manualEvidence,
+    computerUseSession: computerUseTask,
     status: openTasks.length === 0 ? 'complete' : 'open',
     artifact,
     sourceRevision,
@@ -304,6 +339,7 @@ function buildWorkOrder(report, args) {
     notes: [
       'This work order is generated from the gameplay evidence report and does not itself prove gameplay happened.',
       'Keep claims false until the referenced notes, screenshots, logs, and save snapshots are captured from a real manual run.',
+      'Computer Use session metadata is optional supporting provenance only; it never promotes gameplay claims without local proof files.',
     ],
   }
 }
@@ -364,6 +400,7 @@ function renderMarkdown(workOrder, args) {
         ['Repository', `\`${edition.repository}\``],
         ['Workspace', `\`${edition.workspaceDir ?? 'unknown'}\``],
         ['Manual evidence', `\`${edition.manualEvidence}\``],
+        ['Computer Use session', `\`${edition.computerUseSession.expectedPath}\``],
         ['Status', `\`${edition.status}\``],
         ['Open tasks', String(edition.openTaskCount)],
       ]),
@@ -395,6 +432,23 @@ function renderMarkdown(workOrder, args) {
       }
       lines.push('')
     }
+
+    lines.push(
+      '### Optional Computer Use Provenance',
+      '',
+      `Place visible automation metadata at \`${edition.computerUseSession.expectedPath}\` and set \`capture.computerUseSession\` in \`${edition.manualEvidence}\` to that path.`,
+      '',
+      '- The session must use schema `echo.release_index.family_gameplay_computer_use_session.v1`.',
+      `- The session must identify lane \`${edition.edition}\`, pack ID \`sky-relay-${edition.edition}-edition\`, and family key \`sky-relay\`.`,
+      '- It must list visible actions, such as opening inventory to verify Index and checking HUD, Terminal, HoloMap, and Lens surfaces.',
+      '- Captured checks must cite a required claim or one of the local proof files listed above.',
+      '- This metadata is provenance only and does not replace the required notes, screenshots, logs, or save snapshots.',
+      '',
+      'Suggested check IDs:',
+      '',
+      ...COMPUTER_USE_VISIBLE_CHECKS.map((check) => `- \`${check}\``),
+      '',
+    )
 
     lines.push('### Current Blockers', '')
     if (edition.blockers.length) {
