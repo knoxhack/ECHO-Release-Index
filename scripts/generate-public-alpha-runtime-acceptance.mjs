@@ -269,6 +269,37 @@ function gameplayMatrixFromAcceptance(report) {
   }))
 }
 
+function computerUseCaptureAttemptFromReport(report) {
+  if (!report) {
+    return {
+      sourceReport: 'release-readiness/computer-use-gameplay-capture-attempt.json',
+      present: false,
+      status: 'missing',
+      acceptedAsGameplayProof: false,
+      blockers: ['No Computer Use gameplay capture attempt report has been recorded.'],
+    }
+  }
+  const blockers = Array.isArray(report.blockers) ? report.blockers : []
+  const status = String(report.status ?? '').toLowerCase()
+  return {
+    sourceReport: 'release-readiness/computer-use-gameplay-capture-attempt.json',
+    present: true,
+    schemaVersion: report.schemaVersion ?? null,
+    generatedAt: report.generatedAt ?? null,
+    status: status || null,
+    targetFamily: report.target?.family ?? null,
+    targetLane: report.target?.lane ?? null,
+    targetPackId: report.target?.packId ?? null,
+    launcherWindowObserved: report.launcherWindow?.observed === true,
+    launcherAccessibilityObserved: report.launcherWindow?.accessibility?.observed === true,
+    screenshotCapture: report.screenshotCapture ?? null,
+    inputStoppedAfterCaptureFailure: report.inputStoppedAfterCaptureFailure === true,
+    acceptedAsGameplayProof: report.acceptedAsGameplayProof === true,
+    claimsPromoted: report.claimsPromoted === true,
+    blockers,
+  }
+}
+
 async function gitHead(repoRoot) {
   try {
     const gitDir = path.join(repoRoot, '.git')
@@ -299,6 +330,7 @@ async function main() {
   const allNative = await readJson(reportPath('all-native-modpacks-runtime-load-smoke.json'))
   const ashfallHandoff = await readJson(reportPath('ashfall-electron-install-handoff-smoke.json'))
   const gameplayAcceptance = await readJson(reportPath('gameplay-acceptance-matrix.json'), { optional: true })
+  const computerUseCaptureAttempt = await readJson(reportPath('computer-use-gameplay-capture-attempt.json'), { optional: true })
   const standaloneReportPath = path.resolve(args.root, '..', 'ECHO-Standalone-Runtime', 'reports', 'echo', 'standalone', 'content-graph-load.json')
   const standalone = await readJson(standaloneReportPath, { optional: true })
   const releaseIndexHead = await gitHead(args.root)
@@ -463,6 +495,16 @@ async function main() {
   ))
 
   const gameplayMatrix = gameplayMatrixFromAcceptance(gameplayAcceptance)
+  const computerUseGameplayCapture = computerUseCaptureAttemptFromReport(computerUseCaptureAttempt)
+  const nextRequiredProof = [
+    ...(computerUseGameplayCapture.present && computerUseGameplayCapture.acceptedAsGameplayProof !== true
+      ? ['Resolve the Computer Use screenshot capture failure or rerun capture on a machine where visible window screenshots can be recorded, then import screenshots/logs/save snapshots before marking gameplay claims true.']
+      : []),
+    'Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.',
+    'Capture Ashfall NeoForge runtime logs and real gameplay proof before treating gameplay as release-green.',
+    'Keep Openlands and Arcana Division fail-closed until their family gameplay evidence reports contain real lane captures.',
+    'Keep Native and Standalone content graph gates required, with any canonical evidence mismatch failing release readiness.',
+  ]
 
   const hardFailures = gates.filter((gate) => gate.status === 'fail')
   const gameplayWarnings = gameplayMatrix.filter((entry) => entry.status !== 'pass')
@@ -510,18 +552,14 @@ async function main() {
       summary: gameplayAcceptance?.summary ?? null,
       transportEvidence: gameplayAcceptance?.transportEvidence ?? [],
     },
+    computerUseGameplayCapture,
     gameplayMatrix,
     recoveryAndLifecycle: {
       sourceReport: 'release-readiness/official-pack-launcher-lifecycle-smoke.json',
       installUpdateRollbackRepairCovered: lifecycle.ok === true && (lifecycle.blockers?.length ?? 0) === 0,
       ...summarizeLifecycle(lifecycle),
     },
-    nextRequiredProof: [
-      'Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.',
-      'Capture Ashfall NeoForge runtime logs and real gameplay proof before treating gameplay as release-green.',
-      'Keep Openlands and Arcana Division fail-closed until their family gameplay evidence reports contain real lane captures.',
-      'Keep Native and Standalone content graph gates required, with any canonical evidence mismatch failing release readiness.',
-    ],
+    nextRequiredProof,
   }
 
   if (args.write) {

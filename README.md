@@ -136,6 +136,8 @@ Use `arcana-division` and the target lane for Arcana Division. Import rejects em
 
 When a lane is driven through Computer Use, include `computer-use-session.json` in the capture root. The importer copies valid session metadata into the edition repo and records it under `capture.computerUseSession`; this is supporting provenance only, while the required screenshots, logs, notes, and save ZIPs remain the gameplay proof.
 
+`release-readiness/computer-use-gameplay-capture-attempt.json` records the latest platform-level Computer Use capture attempt when the environment blocks visible screenshots or game control. `scripts/generate-public-alpha-runtime-acceptance.mjs` surfaces that attempt under `computerUseGameplayCapture` and adds it to `nextRequiredProof` when it is not accepted as gameplay proof. This artifact is blocker evidence only; it must not be used to flip gameplay claims true.
+
 `scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` verifies that each launcher channel references every catalog entry in `products/`, `modpacks/`, `modules/`, and `addons/`. Run it without `--check` after adding or removing catalog files so `channels/<channel>/launcher-channel.json` stays aligned with strict validation.

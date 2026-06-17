@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-17T13:32:43.309Z",
+  "generatedAt": "2026-06-17T19:13:00.656Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "3442604798324fb07b96bf044dcc72376cc6accf",
+  "releaseIndexHeadAtGeneration": "ce8457d0cc44ccdd0fcf5832e01f196046d39de9",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -345,7 +345,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-17T13:32:27.116Z",
+    "generatedAt": "2026-06-17T19:12:23.691Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -391,6 +391,33 @@
         },
         "blocker": null
       }
+    ]
+  },
+  "computerUseGameplayCapture": {
+    "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+    "present": true,
+    "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+    "generatedAt": "2026-06-17T19:11:40.000Z",
+    "status": "blocked",
+    "targetFamily": "Ashfall",
+    "targetLane": "neoforge",
+    "targetPackId": "ashfall-neoforge-edition",
+    "launcherWindowObserved": true,
+    "launcherAccessibilityObserved": true,
+    "screenshotCapture": {
+      "attempted": true,
+      "status": "failed",
+      "api": "Windows.Graphics.Capture",
+      "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+    },
+    "inputStoppedAfterCaptureFailure": true,
+    "acceptedAsGameplayProof": false,
+    "claimsPromoted": false,
+    "blockers": [
+      "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+      "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+      "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+      "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed."
     ]
   },
   "gameplayMatrix": [
@@ -1324,6 +1351,7 @@
     "repairCount": 15
   },
   "nextRequiredProof": [
+    "Resolve the Computer Use screenshot capture failure or rerun capture on a machine where visible window screenshots can be recorded, then import screenshots/logs/save snapshots before marking gameplay claims true.",
     "Capture real gameplay evidence JSON for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes.",
     "Capture Ashfall NeoForge runtime logs and real gameplay proof before treating gameplay as release-green.",
     "Keep Openlands and Arcana Division fail-closed until their family gameplay evidence reports contain real lane captures.",

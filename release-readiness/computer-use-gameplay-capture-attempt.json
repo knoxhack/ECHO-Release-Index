@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+  "generatedAt": "2026-06-17T19:11:40.000Z",
+  "status": "blocked",
+  "scope": "public-alpha-real-gameplay-capture",
+  "target": {
+    "family": "Ashfall",
+    "lane": "neoforge",
+    "packId": "ashfall-neoforge-edition",
+    "launcherInstance": "Ashfall NeoForge Edition"
+  },
+  "observedApps": [
+    {
+      "displayName": "ECHO Launcher",
+      "windowTitle": "ECHO Launcher",
+      "running": true
+    },
+    {
+      "displayName": "Minecraft",
+      "windowTitle": "Minecraft Launcher",
+      "running": true
+    },
+    {
+      "displayName": "Notepad++",
+      "windowTitle": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-17_05.11.08-client.txt - Notepad++",
+      "running": true
+    }
+  ],
+  "launcherWindow": {
+    "observed": true,
+    "accessibility": {
+      "observed": true,
+      "selectedPack": "Ashfall NeoForge Edition",
+      "statusText": "Ready",
+      "playButtonText": "Play Ashfall NeoForge Edition",
+      "preparingText": "PREPARING ASHFALL NEOFORGE EDITION",
+      "readyText": "Ready to play"
+    }
+  },
+  "screenshotCapture": {
+    "attempted": true,
+    "status": "failed",
+    "api": "Windows.Graphics.Capture",
+    "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+  },
+  "inputStoppedAfterCaptureFailure": true,
+  "acceptedAsGameplayProof": false,
+  "claimsPromoted": false,
+  "importedEvidenceFiles": [],
+  "blockers": [
+    "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+    "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+    "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+    "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed."
+  ],
+  "notes": [
+    "This report records an attempted visible Computer Use verification session only.",
+    "It must not be used to mark any echo.ashfall.lane-game-smoke.evidence.v1 gameplay claim true."
+  ]
+}
