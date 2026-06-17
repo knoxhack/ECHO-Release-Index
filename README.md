@@ -126,6 +126,14 @@ The aggregate gameplay reducer independently verifies source-repo-local evidence
 
 `scripts/generate-family-gameplay-evidence.mjs` writes fail-closed source reports for families that do not yet have dedicated gameplay importers. Today it owns `release-readiness/openlands-gameplay-evidence.json` and `release-readiness/arcana-division-gameplay-evidence.json`; both are blocker reports until real lane captures replace the false claims and missing evidence paths.
 
+Openlands and Arcana Division lane captures use the generic family tooling:
+
+- `node scripts/prepare-family-gameplay-capture.mjs --family openlands --lane native --tester <name> --world-or-profile <profile> --started-at <iso>`
+- `node scripts/import-family-gameplay-capture.mjs --family openlands --lane native --capture-root <capture-root> --artifact <pack.zip> --tester <name> --world-or-profile <profile> --started-at <iso> --force`
+- `node scripts/generate-family-gameplay-evidence.mjs --family openlands`
+
+Use `arcana-division` and the target lane for Arcana Division. Import rejects empty files, template notes, missing screenshots, missing logs, missing save ZIPs, and missing artifact identity. Regenerate `gameplay-acceptance-matrix.json` after family evidence reports are refreshed.
+
 `scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` verifies that each launcher channel references every catalog entry in `products/`, `modpacks/`, `modules/`, and `addons/`. Run it without `--check` after adding or removing catalog files so `channels/<channel>/launcher-channel.json` stays aligned with strict validation.

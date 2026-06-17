@@ -1,55 +1,28 @@
 #!/usr/bin/env node
-import fs from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 
+import {
+  FAMILIES,
+  REQUIRED_CLAIMS,
+  REQUIRED_LANES,
+  falseClaims,
+  familyConfig,
+  laneConfig,
+  validateManualEvidence,
+  writeJson,
+} from './family-gameplay-capture-lib.mjs'
+
 const DEFAULT_OUT_DIR = path.join('release-readiness')
-const REQUIRED_LANES = ['native', 'neoforge', 'standalone']
-const REQUIRED_CLAIMS = [
-  'freshWorldCreated',
-  'realFirst30Playthrough',
-  'realFirst2HourPlaythrough',
-  'primaryObjectiveCompleted',
-  'saveReloadVerified',
-  'noCrashEvidence',
-]
-const FAMILIES = {
-  openlands: {
-    family: 'Openlands',
-    moduleId: 'echoopenlandsprotocol',
-    output: 'openlands-gameplay-evidence.json',
-    evidenceRoot: 'fixtures/openlands/gameplay-qa',
-    packPrefix: 'openlands',
-    primaryObjective: 'primary Openlands route or systems objective reached and recorded',
-    repos: {
-      native: 'knoxhack/ECHO-Openlands-Native-Edition',
-      neoforge: 'knoxhack/ECHO-Openlands-NeoForge-Edition',
-      standalone: 'knoxhack/ECHO-Openlands-Standalone-Edition',
-    },
-  },
-  'arcana-division': {
-    family: 'Arcana Division',
-    moduleId: 'echoarcanadivisionprotocol',
-    output: 'arcana-division-gameplay-evidence.json',
-    evidenceRoot: 'fixtures/arcana-division/gameplay-qa',
-    packPrefix: 'arcana-division',
-    primaryObjective: 'primary Arcana Division route or systems objective reached and recorded',
-    repos: {
-      native: 'knoxhack/ECHO-Arcana-Division-Native-Edition',
-      neoforge: 'knoxhack/ECHO-Arcana-Division-NeoForge-Edition',
-      standalone: 'knoxhack/ECHO-Arcana-Division-Standalone-Edition',
-    },
-  },
-}
 
 function usage() {
   return `Usage:
   node scripts/generate-family-gameplay-evidence.mjs [--family all|openlands|arcana-division]
   node scripts/generate-family-gameplay-evidence.mjs --no-write --json
 
-Writes fail-closed family gameplay source reports for families that do not yet
-have dedicated real gameplay evidence importers. These reports are blockers,
-not proof.`
+Writes family gameplay source reports for Openlands and Arcana Division.
+Reports remain fail-closed until a real lane capture has been imported into the
+owning edition repository with non-empty local proof files.`
 }
 
 function parseArgs(argv) {
@@ -77,74 +50,77 @@ function parseArgs(argv) {
     else throw new Error(`Unknown argument: ${arg}`)
   }
   if (!args.outDir) args.outDir = path.join(args.root, DEFAULT_OUT_DIR)
-  if (args.family !== 'all' && !FAMILIES[args.family]) {
-    throw new Error(`Unknown family: ${args.family}`)
-  }
+  if (args.family !== 'all') familyConfig(args.family)
   return args
 }
 
-async function writeJson(filePath, value) {
-  await fs.mkdir(path.dirname(filePath), { recursive: true })
-  await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, 'utf8')
-}
-
-function falseClaims() {
-  return Object.fromEntries(REQUIRED_CLAIMS.map((claim) => [claim, false]))
-}
-
-function laneReport(config, lane) {
-  const packId = `${config.packPrefix}-${lane}-edition`
-  const evidencePath = `${config.evidenceRoot}/${lane}/manual-evidence.json`
-  const blockers = [
-    'Missing real gameplay evidence JSON.',
-    'Missing fresh install and fresh world/profile proof.',
-    'Missing first 30-minute playthrough proof.',
-    'Missing first 2-hour playthrough proof.',
-    `Missing ${config.primaryObjective}.`,
-    'Missing save/reload verification proof.',
-    'Missing no-crash review proof.',
-  ]
+function laneReportFromValidation(config, lane, validation) {
+  const laneInfo = laneConfig(config, lane)
+  const evidence = validation.evidence
+  const blockers = validation.blockers
+  const releaseReady = validation.ok
   return {
     lane,
-    packId,
-    sourceRepo: config.repos[lane],
-    workspaceDir: config.repos[lane].split('/').pop(),
-    status: 'blocked',
-    releaseReady: false,
-    evidencePath,
-    evidencePresent: false,
-    claims: falseClaims(),
-    logSummary: null,
-    crashSummary: null,
-    crashReport: null,
+    packId: laneInfo.packId,
+    sourceRepo: laneInfo.sourceRepo,
+    workspaceDir: laneInfo.workspaceDir,
+    status: releaseReady ? 'pass' : 'blocked',
+    releaseReady,
+    evidencePath: laneInfo.evidencePath,
+    evidencePresent: Boolean(evidence),
+    evidenceFile: validation.evidenceFile,
+    claims: releaseReady ? evidence.claims : (evidence?.claims ?? falseClaims()),
+    artifact: evidence?.artifact ?? null,
+    run: evidence?.run ?? null,
+    logSummary: evidence?.logSummary ?? null,
+    crashSummary: evidence?.crashSummary ?? null,
+    crashReport: evidence?.crashReport ?? null,
+    proofSummary: releaseReady
+      ? {
+          supportingFiles: evidence.supportingFiles?.length ?? 0,
+          screenshots: evidence.screenshots?.length ?? 0,
+          logs: evidence.logs?.length ?? 0,
+          saveSnapshots: evidence.saveSnapshots?.length ?? 0,
+        }
+      : null,
     blockerCount: blockers.length,
     blockers,
   }
 }
 
-function familyReport(config) {
-  const lanes = REQUIRED_LANES.map((lane) => laneReport(config, lane))
+async function laneReport(root, config, lane) {
+  const validation = await validateManualEvidence(root, config, lane)
+  return laneReportFromValidation(config, lane, validation)
+}
+
+async function familyReport(root, config) {
+  const lanes = []
+  for (const lane of REQUIRED_LANES) lanes.push(await laneReport(root, config, lane))
   const blockers = lanes.flatMap((lane) => lane.blockers.map((blocker) => `${lane.packId}: ${blocker}`))
+  const passedLaneCount = lanes.filter((lane) => lane.releaseReady).length
+  const status = passedLaneCount === lanes.length && blockers.length === 0 ? 'PASS' : 'BLOCKED'
   return {
     schemaVersion: 'echo.release_index.family_gameplay_evidence.v1',
     generatedAt: new Date().toISOString(),
-    status: 'BLOCKED',
+    status,
     family: config.family,
     moduleId: config.moduleId,
-    scope: 'fail-closed-real-gameplay-evidence-source',
+    scope: 'real-gameplay-evidence-source',
     requiredLanes: REQUIRED_LANES,
     requiredClaims: REQUIRED_CLAIMS,
     lanes,
     blockers,
     summary: {
       laneCount: lanes.length,
-      passedLaneCount: 0,
-      blockedLaneCount: lanes.length,
+      passedLaneCount,
+      blockedLaneCount: lanes.length - passedLaneCount,
       blockerCount: blockers.length,
-      conclusion: `${config.family} remains blocked until real lane gameplay captures are imported.`,
+      conclusion: status === 'PASS'
+        ? `${config.family} has real release-ready lane gameplay captures.`
+        : `${config.family} remains blocked until real lane gameplay captures are imported.`,
     },
     notes: [
-      'This report is an explicit fail-closed source report, not gameplay proof.',
+      'This report only accepts imported local gameplay capture evidence with non-empty proof files.',
       'Launcher install, handoff, content graph load, and Hytale export-planning evidence must not be used as substitutes for real gameplay captures.',
     ],
   }
@@ -160,8 +136,8 @@ async function main() {
   const keys = args.family === 'all' ? Object.keys(FAMILIES) : [args.family]
   const reports = []
   for (const key of keys) {
-    const config = FAMILIES[key]
-    const report = familyReport(config)
+    const config = familyConfig(key)
+    const report = await familyReport(args.root, config)
     const outputPath = path.join(args.outDir, config.output)
     reports.push({ path: outputPath, report })
     if (args.write) await writeJson(outputPath, report)

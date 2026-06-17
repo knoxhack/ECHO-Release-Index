@@ -1,10 +1,10 @@
 {
   "schemaVersion": "echo.release_index.family_gameplay_evidence.v1",
-  "generatedAt": "2026-06-16T21:27:24.053Z",
+  "generatedAt": "2026-06-17T01:04:27.794Z",
   "status": "BLOCKED",
   "family": "Arcana Division",
   "moduleId": "echoarcanadivisionprotocol",
-  "scope": "fail-closed-real-gameplay-evidence-source",
+  "scope": "real-gameplay-evidence-source",
   "requiredLanes": [
     "native",
     "neoforge",
@@ -28,6 +28,7 @@
       "releaseReady": false,
       "evidencePath": "fixtures/arcana-division/gameplay-qa/native/manual-evidence.json",
       "evidencePresent": false,
+      "evidenceFile": "C:\\Development\\Github\\ECHO-Arcana-Division-Native-Edition\\fixtures\\arcana-division\\gameplay-qa\\native\\manual-evidence.json",
       "claims": {
         "freshWorldCreated": false,
         "realFirst30Playthrough": false,
@@ -36,9 +37,12 @@
         "saveReloadVerified": false,
         "noCrashEvidence": false
       },
+      "artifact": null,
+      "run": null,
       "logSummary": null,
       "crashSummary": null,
       "crashReport": null,
+      "proofSummary": null,
       "blockerCount": 7,
       "blockers": [
         "Missing real gameplay evidence JSON.",
@@ -59,6 +63,7 @@
       "releaseReady": false,
       "evidencePath": "fixtures/arcana-division/gameplay-qa/neoforge/manual-evidence.json",
       "evidencePresent": false,
+      "evidenceFile": "C:\\Development\\Github\\ECHO-Arcana-Division-NeoForge-Edition\\fixtures\\arcana-division\\gameplay-qa\\neoforge\\manual-evidence.json",
       "claims": {
         "freshWorldCreated": false,
         "realFirst30Playthrough": false,
@@ -67,9 +72,12 @@
         "saveReloadVerified": false,
         "noCrashEvidence": false
       },
+      "artifact": null,
+      "run": null,
       "logSummary": null,
       "crashSummary": null,
       "crashReport": null,
+      "proofSummary": null,
       "blockerCount": 7,
       "blockers": [
         "Missing real gameplay evidence JSON.",
@@ -90,6 +98,7 @@
       "releaseReady": false,
       "evidencePath": "fixtures/arcana-division/gameplay-qa/standalone/manual-evidence.json",
       "evidencePresent": false,
+      "evidenceFile": "C:\\Development\\Github\\ECHO-Arcana-Division-Standalone-Edition\\fixtures\\arcana-division\\gameplay-qa\\standalone\\manual-evidence.json",
       "claims": {
         "freshWorldCreated": false,
         "realFirst30Playthrough": false,
@@ -98,9 +107,12 @@
         "saveReloadVerified": false,
         "noCrashEvidence": false
       },
+      "artifact": null,
+      "run": null,
       "logSummary": null,
       "crashSummary": null,
       "crashReport": null,
+      "proofSummary": null,
       "blockerCount": 7,
       "blockers": [
         "Missing real gameplay evidence JSON.",
@@ -144,7 +156,7 @@
     "conclusion": "Arcana Division remains blocked until real lane gameplay captures are imported."
   },
   "notes": [
-    "This report is an explicit fail-closed source report, not gameplay proof.",
+    "This report only accepts imported local gameplay capture evidence with non-empty proof files.",
     "Launcher install, handoff, content graph load, and Hytale export-planning evidence must not be used as substitutes for real gameplay captures."
   ]
 }
