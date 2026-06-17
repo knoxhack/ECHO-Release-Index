@@ -146,6 +146,10 @@ function unique(values) {
 }
 
 function displayLane(lane) {
+  const value = String(lane ?? '').toLowerCase()
+  if (value === 'neoforge') return 'NeoForge'
+  if (value === 'native') return 'Native'
+  if (value === 'standalone') return 'Standalone'
   return String(lane ?? '').replace(/^\w/u, (match) => match.toUpperCase())
 }
 
@@ -225,7 +229,7 @@ async function main() {
   if (args.json) {
     console.log(JSON.stringify(report, null, 2))
   } else {
-    console.log(`Computer Use gameplay capture attempt ${report.status}: ${report.target.family} ${report.target.lane}; ${report.blockers.length} blocker(s).`)
+    console.log(`Computer Use gameplay capture attempt ${report.status}: ${report.target.family} ${displayLane(report.target.lane)}; ${report.blockers.length} blocker(s).`)
     if (args.write) console.log(`Wrote ${path.relative(args.root, args.out).replace(/\\/gu, '/')}`)
   }
 }
