@@ -68,7 +68,7 @@ Run commands from the repository root.
 - `node scripts/test-import-galactic-survey-first-launch-evidence.mjs`
 - `node scripts/generate-galactic-survey-manual-gameplay-work-order.mjs --write`
 - `node scripts/test-generate-galactic-survey-manual-gameplay-work-order.mjs`
-- `node scripts/record-computer-use-gameplay-capture-attempt.mjs --family Ashfall --lane neoforge --pack-id ashfall-neoforge-edition --screenshot-status failed --screenshot-error <exact-error>`
+- `node scripts/record-computer-use-gameplay-capture-attempt.mjs --family Ashfall --lane neoforge --pack-id ashfall-neoforge-edition --screenshot-status failed --screenshot-error <exact-error> --verification-check "hudVisible|HUD visible|blocked||<reason>"`
 - `node scripts/test-record-computer-use-gameplay-capture-attempt.mjs`
 - `node scripts/download-native-sdk-rc1-artifacts.mjs --write --clean`
 - `node scripts/test-download-native-sdk-rc1-artifacts.mjs`
@@ -138,7 +138,7 @@ Use `arcana-division` and the target lane for Arcana Division. Import rejects em
 
 When a lane is driven through Computer Use, include `computer-use-session.json` in the capture root. The importer copies valid session metadata into the edition repo and records it under `capture.computerUseSession`; this is supporting provenance only, while the required screenshots, logs, notes, and save ZIPs remain the gameplay proof.
 
-`scripts/record-computer-use-gameplay-capture-attempt.mjs` writes `release-readiness/computer-use-gameplay-capture-attempt.json` for the latest platform-level Computer Use capture attempt when the environment blocks visible screenshots or game control. `scripts/verify-gameplay-acceptance.mjs` attaches the attempt to the matching family/lane as non-promotional blocker evidence, and `scripts/generate-public-alpha-runtime-acceptance.mjs` surfaces it under `computerUseGameplayCapture` plus `nextRequiredProof` when it is not accepted as gameplay proof. This artifact is blocker evidence only; it must not be used to flip gameplay claims true.
+`scripts/record-computer-use-gameplay-capture-attempt.mjs` writes `release-readiness/computer-use-gameplay-capture-attempt.json` for the latest platform-level Computer Use capture attempt when the environment blocks visible screenshots or game control. Use repeated `--verification-check "id|label|status|evidenceRef|note"` arguments to record concrete UI/gameplay checks such as `hudVisible`, `inventoryIndexVisible`, `terminalVisible`, `holomapVisible`, `lensVisible`, creative-tab checks, and save/reload. Status must be `captured`, `blocked`, or `not-attempted`; captured checks require a non-empty evidence reference. `scripts/verify-gameplay-acceptance.mjs` attaches the attempt to the matching family/lane as non-promotional blocker evidence, and `scripts/generate-public-alpha-runtime-acceptance.mjs` surfaces it under `computerUseGameplayCapture` plus `nextRequiredProof` when it is not accepted as gameplay proof. This artifact is blocker evidence only; it must not be used to flip gameplay claims true.
 
 `scripts/sync-launcher-channel-catalog.mjs --check` compares `alpha`, `experimental`, and legacy unchannelled product/modpack catalog artifacts with `channels/alpha/release-manifest.json`; `beta` and later lane entries are owned by their own release evidence and are not rewritten from the historical alpha manifest. Use `--write` after publishing public alpha assets to refresh exact URLs, sizes, and SHA-256 records without changing any entry's `validation` or `trust` state.
 

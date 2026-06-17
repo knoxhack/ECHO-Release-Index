@@ -256,6 +256,28 @@ test('Computer Use capture attempts attach to matching gameplay lane without pro
     acceptedAsGameplayProof: false,
     claimsPromoted: false,
     importedEvidenceFiles: [],
+    verificationChecks: [
+      {
+        id: 'hudVisible',
+        label: 'HUD visible',
+        status: 'blocked',
+        evidenceRef: null,
+        note: 'Screenshot capture failed before HUD could be visually verified.',
+      },
+      {
+        id: 'inventoryIndexVisible',
+        label: 'Inventory Index visible',
+        status: 'not-attempted',
+        evidenceRef: null,
+        note: 'Stopped input after screenshot capture failure.',
+      },
+    ],
+    verificationSummary: {
+      checkCount: 2,
+      capturedCount: 0,
+      blockedCount: 1,
+      notAttemptedCount: 1,
+    },
     blockers: [
       'Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.',
       'No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.',
@@ -274,6 +296,9 @@ test('Computer Use capture attempts attach to matching gameplay lane without pro
   assert.equal(neoforge.computerUseCaptureAttempt.acceptedAsGameplayProof, false)
   assert.equal(neoforge.computerUseCaptureAttempt.claimsPromoted, false)
   assert.equal(neoforge.computerUseCaptureAttempt.screenshotCapture.status, 'failed')
+  assert.equal(neoforge.computerUseCaptureAttempt.verificationSummary.checkCount, 2)
+  assert.equal(neoforge.computerUseCaptureAttempt.verificationChecks[0].id, 'hudVisible')
+  assert.equal(neoforge.computerUseCaptureAttempt.verificationChecks[0].status, 'blocked')
   assert.match(neoforge.blockers.join('\n'), /Computer Use capture attempt: Computer Use window screenshot capture failed/u)
   assert.equal(neoforge.releaseReady, false)
   assert.equal(native.computerUseCaptureAttempt, undefined)

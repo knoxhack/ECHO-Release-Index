@@ -404,6 +404,15 @@ function captureAttemptMatches(report, family, lane, packId) {
 function normalizeCaptureAttempt(report) {
   if (!report) return null
   const blockers = Array.isArray(report.blockers) ? report.blockers : []
+  const verificationChecks = Array.isArray(report.verificationChecks)
+    ? report.verificationChecks.map((check) => ({
+      id: check.id ?? null,
+      label: check.label ?? null,
+      status: check.status ?? null,
+      evidenceRef: check.evidenceRef ?? null,
+      note: check.note ?? null,
+    }))
+    : []
   return {
     sourceReport: 'release-readiness/computer-use-gameplay-capture-attempt.json',
     schemaVersion: report.schemaVersion ?? null,
@@ -417,6 +426,13 @@ function normalizeCaptureAttempt(report) {
     acceptedAsGameplayProof: report.acceptedAsGameplayProof === true,
     claimsPromoted: report.claimsPromoted === true,
     importedEvidenceFileCount: Array.isArray(report.importedEvidenceFiles) ? report.importedEvidenceFiles.length : 0,
+    verificationChecks,
+    verificationSummary: report.verificationSummary ?? {
+      checkCount: verificationChecks.length,
+      capturedCount: verificationChecks.filter((check) => check.status === 'captured').length,
+      blockedCount: verificationChecks.filter((check) => check.status === 'blocked').length,
+      notAttemptedCount: verificationChecks.filter((check) => check.status === 'not-attempted').length,
+    },
     blockerCount: blockers.length,
     blockers,
   }

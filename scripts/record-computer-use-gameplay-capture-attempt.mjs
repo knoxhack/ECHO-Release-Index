@@ -6,6 +6,7 @@ import process from 'node:process'
 const DEFAULT_OUT = path.join('release-readiness', 'computer-use-gameplay-capture-attempt.json')
 const SCHEMA_VERSION = 'echo.release_index.computer_use_gameplay_capture_attempt.v1'
 const SCREENSHOT_STATUSES = new Set(['captured', 'failed', 'not-attempted'])
+const VERIFICATION_CHECK_STATUSES = new Set(['captured', 'blocked', 'not-attempted'])
 const LANES = new Set(['native', 'neoforge', 'standalone'])
 
 function usage() {
@@ -37,6 +38,9 @@ Options:
   --screenshot-api <name>       Capture API. Defaults to Windows.Graphics.Capture.
   --input-stopped               App input was stopped after capture failure.
   --imported-evidence-file <p>  Real imported evidence file path/reference. Repeatable.
+  --verification-check <v>      Gameplay/UI check as id|label|status|evidenceRef|note. Repeatable.
+                                Status must be captured, blocked, or not-attempted.
+                                Captured checks require a non-empty evidenceRef.
   --blocker <text>              Blocker. Repeatable.
   --note <text>                 Note. Repeatable.
   --no-write                    Print without writing.
@@ -68,6 +72,7 @@ function parseArgs(argv) {
     screenshotApi: 'Windows.Graphics.Capture',
     inputStopped: false,
     importedEvidenceFiles: [],
+    verificationChecks: [],
     blockers: [],
     notes: [],
   }
@@ -97,6 +102,7 @@ function parseArgs(argv) {
     else if (arg === '--screenshot-api') args.screenshotApi = next()
     else if (arg === '--input-stopped') args.inputStopped = true
     else if (arg === '--imported-evidence-file') args.importedEvidenceFiles.push(next())
+    else if (arg === '--verification-check') args.verificationChecks.push(parseVerificationCheck(next()))
     else if (arg === '--blocker') args.blockers.push(next())
     else if (arg === '--note') args.notes.push(next())
     else if (arg === '--no-write') args.write = false
@@ -120,6 +126,20 @@ function parseObservedApp(value) {
   }
 }
 
+function parseVerificationCheck(value) {
+  const [id, label, status, evidenceRef = '', note = ''] = value.split('|')
+  if (!id || !label || !status) {
+    throw new Error('--verification-check must use id|label|status|evidenceRef|note.')
+  }
+  return {
+    id: id.trim(),
+    label: label.trim(),
+    status: status.trim().toLowerCase(),
+    evidenceRef: evidenceRef.trim() || null,
+    note: note.trim() || null,
+  }
+}
+
 function nonEmpty(value) {
   return typeof value === 'string' && value.trim().length > 0
 }
@@ -137,6 +157,16 @@ function validateArgs(args) {
   }
   if (args.generatedAt && Number.isNaN(Date.parse(args.generatedAt))) {
     errors.push('--generated-at must be an ISO-compatible timestamp.')
+  }
+  for (const check of args.verificationChecks) {
+    if (!nonEmpty(check.id)) errors.push('--verification-check id is required.')
+    if (!nonEmpty(check.label)) errors.push('--verification-check label is required.')
+    if (!VERIFICATION_CHECK_STATUSES.has(check.status)) {
+      errors.push(`--verification-check status for ${check.id || 'unknown'} must be one of ${[...VERIFICATION_CHECK_STATUSES].join(', ')}.`)
+    }
+    if (check.status === 'captured' && !nonEmpty(check.evidenceRef)) {
+      errors.push(`--verification-check ${check.id || 'unknown'} captured status requires an evidenceRef.`)
+    }
   }
   if (errors.length) throw new Error(errors.join('\n'))
 }
@@ -157,6 +187,13 @@ function buildReport(args) {
   validateArgs(args)
   const generatedAt = args.generatedAt ?? new Date().toISOString()
   const importedEvidenceFiles = unique(args.importedEvidenceFiles)
+  const verificationChecks = args.verificationChecks.map((check) => ({
+    id: check.id,
+    label: check.label,
+    status: check.status,
+    evidenceRef: check.evidenceRef,
+    note: check.note,
+  }))
   const inferredBlockers = []
   if (args.screenshotStatus !== 'captured') {
     inferredBlockers.push('Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.')
@@ -166,6 +203,10 @@ function buildReport(args) {
   }
   if (importedEvidenceFiles.length === 0) {
     inferredBlockers.push(`No screenshots, gameplay logs, or save snapshots were imported for ${args.family} ${displayLane(args.lane)}.`)
+  }
+  for (const check of verificationChecks) {
+    if (check.status === 'captured') continue
+    inferredBlockers.push(`Computer Use verification check ${check.id} (${check.label}) was ${check.status}.`)
   }
   const blockers = unique([...args.blockers, ...inferredBlockers])
   const status = blockers.length === 0 && args.screenshotStatus === 'captured'
@@ -204,6 +245,13 @@ function buildReport(args) {
     acceptedAsGameplayProof: false,
     claimsPromoted: false,
     importedEvidenceFiles,
+    verificationChecks,
+    verificationSummary: {
+      checkCount: verificationChecks.length,
+      capturedCount: verificationChecks.filter((check) => check.status === 'captured').length,
+      blockedCount: verificationChecks.filter((check) => check.status === 'blocked').length,
+      notAttemptedCount: verificationChecks.filter((check) => check.status === 'not-attempted').length,
+    },
     blockers,
     notes: unique([
       ...args.notes,

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-17T19:26:28.390Z",
+  "generatedAt": "2026-06-17T19:33:38.265Z",
   "status": "warn",
-  "releaseIndexHeadAtGeneration": "6f2caa150b163acf1c4fa3eb935efd5ca4391bb2",
+  "releaseIndexHeadAtGeneration": "d00982dd9530a8f22cf9b2c0daf6318494bafa29",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
@@ -430,7 +430,7 @@
     "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
     "present": true,
     "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-    "generatedAt": "2026-06-17T19:11:40.000Z",
+    "generatedAt": "2026-06-17T19:33:21.705Z",
     "status": "blocked",
     "targetFamily": "Ashfall",
     "targetLane": "neoforge",
@@ -446,11 +446,115 @@
     "inputStoppedAfterCaptureFailure": true,
     "acceptedAsGameplayProof": false,
     "claimsPromoted": false,
+    "verificationChecks": [
+      {
+        "id": "clientStarted",
+        "label": "Client/game window started",
+        "status": "blocked",
+        "evidenceRef": null,
+        "note": "Minecraft Launcher was visible, but in-game client start could not be visually captured."
+      },
+      {
+        "id": "worldCreatedOrLoaded",
+        "label": "World or profile loaded",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "hudVisible",
+        "label": "HUD visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "inventoryIndexVisible",
+        "label": "Inventory Index visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "terminalVisible",
+        "label": "Terminal visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "holomapVisible",
+        "label": "HoloMap visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "lensVisible",
+        "label": "Lens visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "creativeTabVisible",
+        "label": "Creative tab visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "creativeTabSearchVisible",
+        "label": "Creative tab search visible",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "creativeItemSelectable",
+        "label": "Creative item selectable",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "creativeItemPlayable",
+        "label": "Creative item playable",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      },
+      {
+        "id": "saveReloadVerified",
+        "label": "Save and reload verified",
+        "status": "not-attempted",
+        "evidenceRef": null,
+        "note": "Stopped input after screenshot capture failure."
+      }
+    ],
+    "verificationSummary": {
+      "checkCount": 12,
+      "capturedCount": 0,
+      "blockedCount": 1,
+      "notAttemptedCount": 11
+    },
     "blockers": [
       "The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
       "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
       "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
-      "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge."
+      "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+      "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+      "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+      "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+      "Computer Use verification check inventoryIndexVisible (Inventory Index visible) was not-attempted.",
+      "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+      "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+      "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+      "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+      "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+      "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+      "Computer Use verification check creativeItemPlayable (Creative item playable) was not-attempted.",
+      "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
     ]
   },
   "gameplayMatrix": [

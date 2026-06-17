@@ -297,6 +297,8 @@ function computerUseCaptureAttemptFromReport(report) {
     inputStoppedAfterCaptureFailure: report.inputStoppedAfterCaptureFailure === true,
     acceptedAsGameplayProof: report.acceptedAsGameplayProof === true,
     claimsPromoted: report.claimsPromoted === true,
+    verificationChecks: Array.isArray(report.verificationChecks) ? report.verificationChecks : [],
+    verificationSummary: report.verificationSummary ?? null,
     blockers,
   }
 }
