@@ -6,13 +6,18 @@ import process from 'node:process'
 const DEFAULT_OUT = path.join('release-readiness', 'public-alpha-runtime-acceptance.json')
 const CANONICAL_MODULE_RELEASE = 'modules-canonical-full-20260616'
 const ASHFALL_RENDERER_HOTFIX_RELEASE = 'modules-ashfall-renderer-hotfix-20260617'
+const ASHFALL_PROTOCOL_HOTFIX_RELEASE = 'modules-ashfall-neoforge-native-route-bridge-20260617'
+const PARTIAL_HOTFIX_RELEASES = new Set([
+  ASHFALL_RENDERER_HOTFIX_RELEASE,
+  ASHFALL_PROTOCOL_HOTFIX_RELEASE,
+])
 const EXPECTED_MODULE_ROWS = 133
 const EXPECTED_FULL_RELEASE_MODULE_ROWS = 131
 const EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS = 2
 const EXPECTED_PUBLIC_ALPHA_ARTIFACTS = 838
 const EXPECTED_OFFICIAL_PACKS = 15
 const EXPECTED_NATIVE_PACKS = 5
-const EXPECTED_ASHFALL_HANDOFF_PACKS = 2
+const EXPECTED_ASHFALL_HANDOFF_PACKS = 3
 const EXPECTED_HYTALE_BLOCKERS = 9
 
 function usage() {
@@ -175,26 +180,41 @@ function findSource(sources, releaseTag, releaseSourceState) {
 function hasOnlyKnownModuleSources(sources) {
   return (sources ?? []).every((source) =>
     (source.releaseTag === CANONICAL_MODULE_RELEASE && source.releaseSourceState === 'full-release-evidence')
-      || (source.releaseTag === ASHFALL_RENDERER_HOTFIX_RELEASE && source.releaseSourceState === 'partial-hotfix-evidence'))
+      || (PARTIAL_HOTFIX_RELEASES.has(source.releaseTag) && source.releaseSourceState === 'partial-hotfix-evidence'))
 }
 
 function hasExpectedCatalogDistribution(distribution) {
   const fullRelease = findSource(distribution, CANONICAL_MODULE_RELEASE, undefined)
     ?? (distribution ?? []).find((entry) => entry.releaseTag === CANONICAL_MODULE_RELEASE)
-  const hotfixRelease = findSource(distribution, ASHFALL_RENDERER_HOTFIX_RELEASE, undefined)
-    ?? (distribution ?? []).find((entry) => entry.releaseTag === ASHFALL_RENDERER_HOTFIX_RELEASE)
+  const hotfixRows = (distribution ?? [])
+    .filter((entry) => PARTIAL_HOTFIX_RELEASES.has(entry.releaseTag))
+    .reduce((total, entry) => total + Number(entry.moduleCount ?? entry.moduleRows ?? 0), 0)
   const totalRows = (distribution ?? []).reduce((total, entry) => total + Number(entry.moduleCount ?? entry.moduleRows ?? 0), 0)
   return totalRows === EXPECTED_MODULE_ROWS
     && Number(fullRelease?.moduleCount ?? fullRelease?.moduleRows ?? 0) === EXPECTED_FULL_RELEASE_MODULE_ROWS
-    && Number(hotfixRelease?.moduleCount ?? hotfixRelease?.moduleRows ?? 0) === EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS
+    && hotfixRows === EXPECTED_PARTIAL_HOTFIX_MODULE_ROWS
 }
 
 function hasExpectedInstalledSourceMix(sources, { requireHotfix }) {
   const fullRelease = findSource(sources, CANONICAL_MODULE_RELEASE, 'full-release-evidence')
-  const hotfixRelease = findSource(sources, ASHFALL_RENDERER_HOTFIX_RELEASE, 'partial-hotfix-evidence')
+  const partialHotfixCount = (sources ?? [])
+    .filter((source) => PARTIAL_HOTFIX_RELEASES.has(source.releaseTag) && source.releaseSourceState === 'partial-hotfix-evidence')
+    .length
   return Boolean(fullRelease)
-    && (!requireHotfix || Boolean(hotfixRelease))
+    && (!requireHotfix || partialHotfixCount > 0)
     && hasOnlyKnownModuleSources(sources)
+}
+
+function ashfallHandoffPackPassed(pack) {
+  const packId = pack.profileId ?? pack.packId ?? ''
+  if (packId.endsWith('-standalone-edition')) {
+    return pack.repairFixture?.skipped === true
+      && pack.launchRoute?.kind === 'standalone-runtime'
+      && pack.launchRoute?.ok === true
+  }
+  return pack.repairFixture?.skipped === false
+    && pack.launchRoute?.kind === 'minecraft-launcher-handoff'
+    && pack.launchRoute?.repair?.ok === true
 }
 
 function contentGraphCatalog(report) {
@@ -494,9 +514,9 @@ async function main() {
       && ashfallHandoff.expectedPackCount === EXPECTED_ASHFALL_HANDOFF_PACKS
       && (ashfallHandoff.packs?.length ?? 0) === EXPECTED_ASHFALL_HANDOFF_PACKS
       && (ashfallHandoff.failures?.length ?? 0) === 0
-      && (ashfallHandoff.packs ?? []).every((pack) => pack.repairFixture?.skipped === false && pack.launchRoute?.repair?.ok === true)
+      && (ashfallHandoff.packs ?? []).every(ashfallHandoffPackPassed)
       && hasExpectedInstalledSourceMix(summarizePackCoverage(ashfallHandoff).moduleReleaseSources, { requireHotfix: true }),
-    ashfallHandoff.failures ?? [`Expected Ashfall Native and NeoForge install/handoff repair smoke to pass with ${ASHFALL_RENDERER_HOTFIX_RELEASE} partial hotfix evidence.`],
+    ashfallHandoff.failures ?? [`Expected Ashfall Native and NeoForge install/handoff repair plus Standalone runtime route smoke to pass with known partial hotfix evidence.`],
     summarizePackCoverage(ashfallHandoff),
   ))
 

@@ -6,37 +6,37 @@
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
   "releaseTag": "v0.1.0-ashfall-native-edition",
-  "commitSha": "63aa79f",
+  "commitSha": "e04827f",
   "artifacts": {
     "pack": {
       "file": "ashfall-native-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
-      "sha256": "9c3a75688d76ad98b2c01d93a47ccbfc62f332ffe8c25191f4d8de35a48a6743",
-      "size": 268244063
+      "sha256": "ed9b191a877cb8c624e98fcc28d11516a3b3f3a0dc80243cc5f2f7c402a8b43f",
+      "size": 268247604
     },
     "manifest": {
       "file": "ashfall-native-edition-alpha-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-      "sha256": "de2e34e83042ee5dac2730b70dec4567f5d38bdcf7a9bad68ec551601614ddc8",
-      "size": 58901
+      "sha256": "cabd929cb7f21f990c47c33c55b266e252859c843b3904060d9cb576d7b549ee",
+      "size": 58979
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
-      "sha256": "a4565e1b6e3cce432117e301476d5715175da617d2b1df8c9db6f5aebf9e9e07",
+      "sha256": "a394f400db6d85d0a8378216517e64d1b3537161d335081ee05e4cab56452ee5",
       "size": 379
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
-      "sha256": "4968216ba7ba6fe4a4fe32f72d71545284bf03c9da9460de72c3400ea5635380",
-      "size": 13215
+      "sha256": "06516eacf26fd7f58b0d5986fc7aa45781caf1398b8f5b65faa6b2117353609f",
+      "size": 13267
     },
     "releaseAudit": {
       "file": "release-audit.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/release-audit.json",
-      "sha256": "9a4bd127f733d421f1321c41e9f3b7fc452bc58968d17b88ada3a6f30d05ba7d",
-      "size": 902
+      "sha256": "0e780fba6e732359ebaefd49adc4f458a3914fcac620454bd0d00512219665bb",
+      "size": 954
     }
   },
   "dependencies": [
@@ -53,6 +53,6 @@
   "validation": "warning",
   "validationReason": "Warning-gated for gameplay release-readiness while remaining launcher-installable from checksum-backed GitHub pack and manifest artifacts.",
   "notes": "Installable warning-gated catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
-  "moduleRelease": "modules-ashfall-renderer-hotfix-20260617",
-  "moduleSourceRevision": "ECHO-Modules@ea649f2ec27d4fd91f5aff08fa08d0231f9f0105"
+  "moduleRelease": "modules-mixed-canonical-and-ashfall-hotfixes-20260617",
+  "moduleSourceRevision": "ECHO-Release-Index modules/*.json with ECHO-Modules@d499d0a554e741d58e74183a23a7e360f22721db"
 }

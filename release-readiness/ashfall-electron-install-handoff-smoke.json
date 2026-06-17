@@ -1,7 +1,7 @@
 {
   "ok": true,
   "phase": "completed",
-  "generatedAt": "2026-06-17T12:52:35.698Z",
+  "generatedAt": "2026-06-17T21:47:49.254Z",
   "channelUrl": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
   "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
   "standaloneRuntimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
@@ -20,21 +20,27 @@
       },
       {
         "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
-        "moduleRows": 2,
+        "moduleRows": 1,
+        "releaseSourceState": "partial-hotfix-evidence"
+      },
+      {
+        "releaseTag": "modules-ashfall-neoforge-native-route-bridge-20260617",
+        "moduleRows": 1,
         "releaseSourceState": "partial-hotfix-evidence"
       }
     ]
   },
-  "expectedPackCount": 2,
+  "expectedPackCount": 3,
   "expectedPacks": [
     "ashfall-native-edition",
-    "ashfall-neoforge-edition"
+    "ashfall-neoforge-edition",
+    "ashfall-standalone-edition"
   ],
   "packs": [
     {
       "profileId": "ashfall-native-edition",
       "name": "Ashfall Native Edition",
-      "startedAt": "2026-06-17T12:52:37.013Z",
+      "startedAt": "2026-06-17T21:47:50.490Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
@@ -43,7 +49,7 @@
           "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-17T12:52:37.076Z",
+          "fetchedAt": "2026-06-17T21:47:50.563Z",
           "status": "approved",
           "diagnostic": null,
           "release": {
@@ -55,22 +61,22 @@
             "name": "ashfall-native-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-17T12:52:36.859Z",
+            "publishedAt": "2026-06-17T21:47:50.406Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition",
             "releaseNotes": [
               "Resolved through the warning-gated Catalog entry ashfall-native-edition."
             ],
             "manifestAssetName": "ashfall-native-edition-alpha-0.1.0.pack.json",
             "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-            "manifestSha256": "de2e34e83042ee5dac2730b70dec4567f5d38bdcf7a9bad68ec551601614ddc8",
+            "manifestSha256": "cabd929cb7f21f990c47c33c55b266e252859c843b3904060d9cb576d7b549ee",
             "trust": "verified-metadata",
             "assets": [
               {
                 "name": "ashfall-native-edition-0.1.0.zip",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-0.1.0.zip",
-                "size": 268244063,
-                "sha256": "9c3a75688d76ad98b2c01d93a47ccbfc62f332ffe8c25191f4d8de35a48a6743",
+                "size": 268247604,
+                "sha256": "ed9b191a877cb8c624e98fcc28d11516a3b3f3a0dc80243cc5f2f7c402a8b43f",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -78,8 +84,8 @@
                 "name": "ashfall-native-edition-alpha-0.1.0.pack.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-                "size": 58901,
-                "sha256": "de2e34e83042ee5dac2730b70dec4567f5d38bdcf7a9bad68ec551601614ddc8",
+                "size": 58979,
+                "sha256": "cabd929cb7f21f990c47c33c55b266e252859c843b3904060d9cb576d7b549ee",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -88,7 +94,7 @@
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/checksums.txt",
                 "size": 379,
-                "sha256": "a4565e1b6e3cce432117e301476d5715175da617d2b1df8c9db6f5aebf9e9e07",
+                "sha256": "a394f400db6d85d0a8378216517e64d1b3537161d335081ee05e4cab56452ee5",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -96,8 +102,8 @@
                 "name": "echo-release.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/echo-release.json",
-                "size": 13215,
-                "sha256": "4968216ba7ba6fe4a4fe32f72d71545284bf03c9da9460de72c3400ea5635380",
+                "size": 13267,
+                "sha256": "06516eacf26fd7f58b0d5986fc7aa45781caf1398b8f5b65faa6b2117353609f",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               },
@@ -105,8 +111,8 @@
                 "name": "release-audit.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/release-audit.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/download/v0.1.0-ashfall-native-edition/release-audit.json",
-                "size": 902,
-                "sha256": "9a4bd127f733d421f1321c41e9f3b7fc452bc58968d17b88ada3a6f30d05ba7d",
+                "size": 954,
+                "sha256": "0e780fba6e732359ebaefd49adc4f458a3914fcac620454bd0d00512219665bb",
                 "releaseTag": "v0.1.0-ashfall-native-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.0-ashfall-native-edition"
               }
@@ -145,9 +151,9 @@
         "clicked": true,
         "label": "Install Ashfall Native Edition"
       },
-      "completedAt": "2026-06-17T12:56:23.846Z",
-      "durationMs": 226833,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T12-52-37-576Z.json",
+      "completedAt": "2026-06-17T21:51:10.563Z",
+      "durationMs": 200073,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T21-47-51-049Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-native-edition",
@@ -157,14 +163,20 @@
         {
           "releaseSourceState": "partial-hotfix-evidence",
           "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
-          "fileCount": 2,
-          "moduleCount": 2
+          "fileCount": 1,
+          "moduleCount": 1
         },
         {
           "releaseSourceState": "full-release-evidence",
           "releaseTag": "modules-canonical-full-20260616",
           "fileCount": 44,
           "moduleCount": 44
+        },
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-neoforge-native-route-bridge-20260617",
+          "fileCount": 1,
+          "moduleCount": 1
         }
       ],
       "repairFixture": {
@@ -190,7 +202,7 @@
           "ok": true,
           "repaired": 1,
           "verifiedAfterRepair": 46,
-          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T12-54-19-869Z.json"
+          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T21-49-33-379Z.json"
         },
         "nativeRuntime": {
           "ok": true,
@@ -210,7 +222,7 @@
     {
       "profileId": "ashfall-neoforge-edition",
       "name": "Ashfall NeoForge Edition",
-      "startedAt": "2026-06-17T12:56:23.849Z",
+      "startedAt": "2026-06-17T21:51:10.565Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
@@ -219,7 +231,7 @@
           "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
           "releases": 15,
           "latestVersion": "0.1.0",
-          "fetchedAt": "2026-06-17T12:56:23.937Z",
+          "fetchedAt": "2026-06-17T21:51:10.714Z",
           "status": "approved",
           "diagnostic": null,
           "release": {
@@ -231,22 +243,22 @@
             "name": "ashfall-neoforge-edition 0.1.0",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-17T12:52:37.525Z",
+            "publishedAt": "2026-06-17T21:47:50.776Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition",
             "releaseNotes": [
               "Resolved through the warning-gated Catalog entry ashfall-neoforge-edition."
             ],
             "manifestAssetName": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
             "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-            "manifestSha256": "919ab91ad4fe3c9e63700c0c9cba7c924ce54a6867dd480837fcf8a1ad88f24f",
+            "manifestSha256": "6624becb2b49c2a8be6ccf7c144cac949a53ad77d29c440b6f32e5d27be2f3b2",
             "trust": "verified-metadata",
             "assets": [
               {
                 "name": "ashfall-neoforge-edition-0.1.0.zip",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
-                "size": 267966443,
-                "sha256": "c23760a9c666234feef47d5b786da6750194d00489863e920728b13923728c2f",
+                "size": 267970199,
+                "sha256": "2eea34ec9e5c7972c41889a48193efdc1445c207c62f71c73c9101c6546ea901",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -254,8 +266,8 @@
                 "name": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-                "size": 105579,
-                "sha256": "919ab91ad4fe3c9e63700c0c9cba7c924ce54a6867dd480837fcf8a1ad88f24f",
+                "size": 105657,
+                "sha256": "6624becb2b49c2a8be6ccf7c144cac949a53ad77d29c440b6f32e5d27be2f3b2",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -264,7 +276,7 @@
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
                 "size": 383,
-                "sha256": "c79f31900de27e48df2d5dcbf42d9e82ecb9592d1c9a5529efc6012d8ba7b99b",
+                "sha256": "061fac72056396a129fc1d894c96508d9f595c5e3d9351644f7bd74988028d03",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -272,8 +284,8 @@
                 "name": "echo-release.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-                "size": 13332,
-                "sha256": "c12a9189c060469357aacf23b6e29c26741c3b6f17a44e6d03d919dffe5661ae",
+                "size": 13384,
+                "sha256": "f2021e4ff7e365cf40a429771b75b8ccacc0e858a72218cce13c463dab98fb65",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               },
@@ -281,8 +293,8 @@
                 "name": "release-audit.json",
                 "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/release-audit.json",
                 "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/release-audit.json",
-                "size": 915,
-                "sha256": "1e78a9d118b719b7729184243d1c67ad4f76f0ecf4eabd6c635744503abca8db",
+                "size": 967,
+                "sha256": "1ca1d94f206481bc165eedfff7f05d467cc2d8d71cb1b4e5c35ce7cda2cebb93",
                 "releaseTag": "v0.1.0-ashfall-neoforge-edition",
                 "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.0-ashfall-neoforge-edition"
               }
@@ -321,9 +333,9 @@
         "clicked": true,
         "label": "Install Ashfall NeoForge Edition"
       },
-      "completedAt": "2026-06-17T12:56:59.859Z",
-      "durationMs": 36010,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T12-56-24-423Z.json",
+      "completedAt": "2026-06-17T21:52:10.838Z",
+      "durationMs": 60273,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T21-51-11-266Z.json",
       "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
       "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-neoforge-edition",
@@ -333,14 +345,20 @@
         {
           "releaseSourceState": "partial-hotfix-evidence",
           "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
-          "fileCount": 2,
-          "moduleCount": 2
+          "fileCount": 1,
+          "moduleCount": 1
         },
         {
           "releaseSourceState": "full-release-evidence",
           "releaseTag": "modules-canonical-full-20260616",
           "fileCount": 44,
           "moduleCount": 44
+        },
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-neoforge-native-route-bridge-20260617",
+          "fileCount": 1,
+          "moduleCount": 1
         }
       ],
       "repairFixture": {
@@ -366,13 +384,166 @@
           "ok": true,
           "repaired": 1,
           "verifiedAfterRepair": 46,
-          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T12-56-50-904Z.json"
+          "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T21-52-01-810Z.json"
         },
         "nativeRuntime": null,
         "staleNeoForgeMetadata": null,
-        "warnings": [
-          "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Ashfall NeoForge Edition with the ECHO-managed instance folder."
+        "warnings": []
+      }
+    },
+    {
+      "profileId": "ashfall-standalone-edition",
+      "name": "Ashfall Standalone Edition",
+      "startedAt": "2026-06-17T21:52:10.844Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index-channel.json",
+          "releases": 15,
+          "latestVersion": "0.1.0",
+          "fetchedAt": "2026-06-17T21:52:11.003Z",
+          "status": "approved",
+          "diagnostic": null,
+          "release": {
+            "id": "release-index:ashfall-standalone-edition:0.1.0",
+            "pack": "ashfall-standalone-edition",
+            "version": "0.1.0",
+            "channel": "experimental",
+            "tagName": "v0.1.0-ashfall-standalone-edition",
+            "name": "ashfall-standalone-edition 0.1.0",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-17T21:52:07.413Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition",
+            "releaseNotes": [
+              "Resolved through the warning-gated Catalog entry ashfall-standalone-edition."
+            ],
+            "manifestAssetName": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+            "manifestSha256": "f0744b8e8464a59eff8f205fca995d57606c3a45fb77dc741cb554f5fe6c3422",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "ashfall-standalone-edition-0.1.0.zip",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
+                "size": 267965586,
+                "sha256": "a8d3e3b07400c7398954bfa304adccf0fa14b986d22c6c78f4555533434d2ea4",
+                "releaseTag": "v0.1.0-ashfall-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
+              },
+              {
+                "name": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
+                "size": 59898,
+                "sha256": "f0744b8e8464a59eff8f205fca995d57606c3a45fb77dc741cb554f5fe6c3422",
+                "releaseTag": "v0.1.0-ashfall-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
+              },
+              {
+                "name": "checksums.txt",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
+                "size": 394,
+                "sha256": "a301144c7bac673ec37e4acec4201d2299aa9824d56c4529535e6d183ac79932",
+                "releaseTag": "v0.1.0-ashfall-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
+              },
+              {
+                "name": "echo-release.json",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
+                "size": 13623,
+                "sha256": "c84410bbb1f2d8a92dc6bf8a982d2a156f820e4686563b96b99d61ce6db9ee53",
+                "releaseTag": "v0.1.0-ashfall-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
+              },
+              {
+                "name": "release-audit.json",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/release-audit.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/release-audit.json",
+                "size": 992,
+                "sha256": "c254dce5cd6060bf6d0a7af6f61bce9d627a0ab946c9fb252a33c7755decceda",
+                "releaseTag": "v0.1.0-ashfall-standalone-edition",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.0-ashfall-standalone-edition"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "native-runtime",
+          "label": "ECHO Standalone Engine",
+          "shortLabel": "Standalone",
+          "detail": "Runs through the standalone ECHO runtime."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Ashfall Standalone Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Ashfall Standalone Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
         ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Ashfall Standalone Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Ashfall Standalone Edition"
+      },
+      "completedAt": "2026-06-17T21:52:34.617Z",
+      "durationMs": 23773,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-17T21-52-11-516Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "ashfall-standalone-edition",
+      "manifestVersion": "0.1.0",
+      "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
+          "fileCount": 1,
+          "moduleCount": 1
+        },
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-canonical-full-20260616",
+          "fileCount": 44,
+          "moduleCount": 44
+        },
+        {
+          "releaseSourceState": "partial-hotfix-evidence",
+          "releaseTag": "modules-ashfall-neoforge-native-route-bridge-20260617",
+          "fileCount": 1,
+          "moduleCount": 1
+        }
+      ],
+      "repairFixture": {
+        "skipped": true,
+        "reason": "Standalone runtime launch repair is not exercised by Minecraft handoff preparation."
+      },
+      "launchRoute": {
+        "kind": "standalone-runtime",
+        "ok": true,
+        "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "executablePath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\build\\jpackage-opengl-client\\EchoStandaloneRuntime\\EchoStandaloneRuntime.exe",
+        "version": "0.1.0-phase14.20-alpha-readiness",
+        "warnings": []
       }
     }
   ],
@@ -380,11 +551,11 @@
   "stdout": [
     "\r\n",
     "Checking for update\n",
-    "Generated new staging user ID: 6d388052-ff38-5697-9a3a-04a4bf4c7037\n",
-    "Found version 1.1.16 (url: ECHO-Launcher-1.1.16-Setup.exe)\n"
+    "Generated new staging user ID: c11a216e-7ca0-54ab-95b8-7660958df39d\n",
+    "Update for version 1.1.16 is not available (latest version: 1.1.16, downgrade is disallowed).\n"
   ],
   "stderr": [
-    "\r\nDevTools listening on ws://127.0.0.1:61685/devtools/browser/4316cce5-0e19-463a-8e6c-206a59170069\r\n"
+    "\r\nDevTools listening on ws://127.0.0.1:63373/devtools/browser/897dcd4f-6330-4f4e-9479-080ec0b0af2d\r\n"
   ],
-  "completedAt": "2026-06-17T12:56:59.861Z"
+  "completedAt": "2026-06-17T21:52:34.618Z"
 }
