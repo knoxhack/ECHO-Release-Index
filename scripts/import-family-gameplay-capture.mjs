@@ -18,6 +18,7 @@ import {
   requiredProofPaths,
   sourcePath,
   validateCaptureRoot,
+  validateComputerUseSessionChecks,
   validateManualEvidence,
   writeJson,
 } from './family-gameplay-capture-lib.mjs'
@@ -118,17 +119,70 @@ async function importComputerUseSession(args, config, laneInfo) {
   if (!session) return null
   if (session.schemaVersion !== COMPUTER_USE_SESSION_SCHEMA) return null
   if (!Array.isArray(session.actions) || session.actions.length === 0) return null
+  const destinationProofs = requiredProofPaths(config, laneInfo.lane)
+  const captureProofs = captureRelativePaths()
+  const proofRefMap = new Map()
+  for (const group of ['supportingFiles', 'screenshots', 'logs', 'saveSnapshots']) {
+    for (let index = 0; index < captureProofs[group].length; index += 1) {
+      proofRefMap.set(captureProofs[group][index].replace(/\\/gu, '/'), destinationProofs[group][index])
+    }
+  }
+  const normalizeEvidenceRef = (value) => {
+    const reference = value ? String(value).trim().replace(/\\/gu, '/') : ''
+    return proofRefMap.get(reference) ?? reference
+  }
   const outputRelative = `${laneInfo.evidenceRoot}/computer-use-session.json`
-  const output = {
+  const normalizedChecks = Array.isArray(session.verificationChecks)
+    ? session.verificationChecks.map((check) => ({
+      id: String(check.id ?? '').trim(),
+      label: String(check.label ?? '').trim(),
+      status: String(check.status ?? '').trim().toLowerCase(),
+      evidenceRef: check.evidenceRef ? normalizeEvidenceRef(check.evidenceRef) : null,
+      note: check.note ? String(check.note).trim() : null,
+    }))
+    : undefined
+  const outputSession = {
     ...session,
+    ...(normalizedChecks ? {
+      verificationChecks: normalizedChecks,
+      verificationSummary: {
+        checkCount: normalizedChecks.length,
+        capturedCount: normalizedChecks.filter((check) => check.status === 'captured').length,
+        blockedCount: normalizedChecks.filter((check) => check.status === 'blocked').length,
+        notAttemptedCount: normalizedChecks.filter((check) => check.status === 'not-attempted').length,
+      },
+    } : {}),
     family: config.family,
     familyKey: config.key,
     lane: laneInfo.lane,
     packId: laneInfo.packId,
     importedAt: new Date().toISOString(),
   }
+  const validationBlockers = validateComputerUseSessionChecks({
+    session: outputSession,
+    evidence: {
+      claims: Object.fromEntries(REQUIRED_CLAIMS.map((claim) => [claim, true])),
+      proofs: claimProofs(config, laneInfo.lane),
+      supportingFiles: [...destinationProofs.supportingFiles, ...captureProofs.supportingFiles],
+      screenshots: [...destinationProofs.screenshots, ...captureProofs.screenshots],
+      logs: [...destinationProofs.logs, ...captureProofs.logs],
+      saveSnapshots: [...destinationProofs.saveSnapshots, ...captureProofs.saveSnapshots],
+    },
+    config,
+    lane: laneInfo.lane,
+  })
+  if (validationBlockers.length) {
+    throw new Error(`Computer Use session is not importable:\n${validationBlockers.join('\n')}`)
+  }
+  const output = {
+    ...outputSession,
+  }
   await writeJson(sourcePath(args.root, laneInfo, outputRelative), output)
-  return outputRelative
+  return {
+    path: outputRelative,
+    verificationChecks: output.verificationChecks ?? [],
+    verificationSummary: output.verificationSummary ?? null,
+  }
 }
 
 function manualEvidence(config, laneInfo, args, artifact, manifest, computerUseSession) {
@@ -164,7 +218,8 @@ function manualEvidence(config, laneInfo, args, artifact, manifest, computerUseS
     capture: {
       manifestGeneratedAt: manifest.generatedAt ?? null,
       captureRoot: args.captureRoot,
-      computerUseSession,
+      computerUseSession: computerUseSession?.path ?? null,
+      computerUseVerificationSummary: computerUseSession?.verificationSummary ?? null,
     },
     notes: [
       'Imported from a real manual gameplay capture bundle.',

@@ -89,8 +89,16 @@ async function writePlaceholderFiles(captureRoot) {
   await fs.writeFile(path.join(captureRoot, paths.computerUseSession), `${JSON.stringify({
     schemaVersion: 'echo.release_index.family_gameplay_computer_use_session.v1',
     actions: [],
+    verificationChecks: [],
+    verificationSummary: {
+      checkCount: 0,
+      capturedCount: 0,
+      blockedCount: 0,
+      notAttemptedCount: 0,
+    },
     notes: [
       'Optional. Replace this file with real Computer Use window/action metadata before import if visible UI automation is used.',
+      'If verificationChecks are added, captured checks must reference a required claim id or an imported proof path.',
     ],
   }, null, 2)}\n`, 'utf8')
 }
@@ -114,6 +122,8 @@ ${Object.entries(paths).filter(([, values]) => Array.isArray(values)).flatMap(([
 ## Visible Computer Use Session
 - Optional metadata file: ${paths.computerUseSession}
 - If used, fill it with the target app/window title and the visible UI actions that produced the screenshots.
+- Use verificationChecks entries shaped as id, label, status, evidenceRef, and note.
+- Captured checks must reference a required claim id such as freshWorldCreated or an imported proof path such as evidence/screenshots/fresh-world.png.
 
 ## Required Claims
 ${REQUIRED_CLAIMS.map((claim) => `- ${claim}`).join('\n')}

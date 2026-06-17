@@ -72,6 +72,7 @@ function laneReportFromValidation(config, lane, validation) {
     claims: releaseReady ? evidence.claims : (evidence?.claims ?? falseClaims()),
     artifact: evidence?.artifact ?? null,
     run: evidence?.run ?? null,
+    capture: evidence?.capture ?? null,
     logSummary: evidence?.logSummary ?? null,
     crashSummary: evidence?.crashSummary ?? null,
     crashReport: evidence?.crashReport ?? null,

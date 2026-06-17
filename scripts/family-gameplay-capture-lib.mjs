@@ -14,6 +14,7 @@ export const REQUIRED_CLAIMS = [
 export const REQUIRED_PROOF_GROUPS = ['supportingFiles', 'screenshots', 'logs', 'saveSnapshots']
 export const MANUAL_EVIDENCE_SCHEMA = 'echo.release_index.family_gameplay_manual_evidence.v1'
 export const COMPUTER_USE_SESSION_SCHEMA = 'echo.release_index.family_gameplay_computer_use_session.v1'
+export const COMPUTER_USE_CHECK_STATUSES = new Set(['captured', 'blocked', 'not-attempted'])
 
 export const FAMILIES = {
   openlands: {
@@ -277,6 +278,73 @@ export async function validateCaptureRoot(captureRoot) {
   return { ok: blockers.length === 0, blockers, required }
 }
 
+function normalizedReference(value) {
+  return String(value ?? '').trim().replace(/\\/gu, '/')
+}
+
+function validVerificationSummary(checks, summary) {
+  if (!summary || typeof summary !== 'object') return []
+  const blockers = []
+  const statuses = checks.map((check) => String(check?.status ?? '').trim().toLowerCase())
+  const expected = {
+    checkCount: checks.length,
+    capturedCount: statuses.filter((status) => status === 'captured').length,
+    blockedCount: statuses.filter((status) => status === 'blocked').length,
+    notAttemptedCount: statuses.filter((status) => status === 'not-attempted').length,
+  }
+  for (const [key, value] of Object.entries(expected)) {
+    if (summary[key] !== value) blockers.push(`capture.computerUseSession verificationSummary.${key} is ${summary[key] ?? 'missing'}, expected ${value}.`)
+  }
+  return blockers
+}
+
+function acceptedComputerUseEvidenceRefs(config, lane, evidence) {
+  const refs = new Set(REQUIRED_CLAIMS)
+  const proofGroups = requiredProofPaths(config, lane)
+  for (const relativePaths of Object.values(proofGroups)) {
+    for (const relativePath of relativePaths) refs.add(normalizedReference(relativePath))
+  }
+  if (evidence?.proofs && typeof evidence.proofs === 'object') {
+    for (const [claim, values] of Object.entries(evidence.proofs)) {
+      refs.add(normalizedReference(claim))
+      for (const value of Array.isArray(values) ? values : []) refs.add(normalizedReference(value))
+    }
+  }
+  for (const group of REQUIRED_PROOF_GROUPS) {
+    for (const value of Array.isArray(evidence?.[group]) ? evidence[group] : []) refs.add(normalizedReference(value))
+  }
+  return refs
+}
+
+export function validateComputerUseSessionChecks({ session, evidence = null, config, lane }) {
+  const blockers = []
+  if (!Object.hasOwn(session, 'verificationChecks')) return blockers
+  if (!Array.isArray(session.verificationChecks)) {
+    return ['capture.computerUseSession verificationChecks must be an array when present.']
+  }
+  const acceptedRefs = acceptedComputerUseEvidenceRefs(config, lane, evidence)
+  for (const [index, check] of session.verificationChecks.entries()) {
+    const prefix = `capture.computerUseSession verificationChecks[${index}]`
+    if (!check || typeof check !== 'object') {
+      blockers.push(`${prefix} must be an object.`)
+      continue
+    }
+    if (!String(check.id ?? '').trim()) blockers.push(`${prefix}.id is required.`)
+    if (!String(check.label ?? '').trim()) blockers.push(`${prefix}.label is required.`)
+    const status = String(check.status ?? '').trim().toLowerCase()
+    if (!COMPUTER_USE_CHECK_STATUSES.has(status)) {
+      blockers.push(`${prefix}.status must be captured, blocked, or not-attempted.`)
+    }
+    if (status === 'captured') {
+      const evidenceRef = normalizedReference(check.evidenceRef)
+      if (!evidenceRef) blockers.push(`${prefix}.evidenceRef is required when status is captured.`)
+      else if (!acceptedRefs.has(evidenceRef)) blockers.push(`${prefix}.evidenceRef ${evidenceRef} must reference a required claim or imported local proof path.`)
+    }
+  }
+  blockers.push(...validVerificationSummary(session.verificationChecks, session.verificationSummary))
+  return blockers
+}
+
 export async function validateManualEvidence(root, config, lane) {
   const laneInfo = laneConfig(config, lane)
   const evidenceFile = sourcePath(root, laneInfo, laneInfo.evidencePath)
@@ -341,6 +409,7 @@ export async function validateManualEvidence(root, config, lane) {
       if (session.lane !== lane) blockers.push(`capture.computerUseSession lane is ${session.lane ?? 'missing'}, expected ${lane}.`)
       if (session.packId !== laneInfo.packId) blockers.push(`capture.computerUseSession packId is ${session.packId ?? 'missing'}, expected ${laneInfo.packId}.`)
       if (!Array.isArray(session.actions) || session.actions.length === 0) blockers.push('capture.computerUseSession must list visible Computer Use actions.')
+      blockers.push(...validateComputerUseSessionChecks({ session, evidence, config, lane }))
     }
   }
 

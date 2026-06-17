@@ -57,6 +57,28 @@ async function writeRealCaptureFiles(captureRoot) {
       'Opened inventory and verified Index UI.',
       'Opened primary objective surface and captured proof screenshot.',
     ],
+    verificationChecks: [
+      {
+        id: 'freshWorldCreated',
+        label: 'Fresh world/profile created',
+        status: 'captured',
+        evidenceRef: 'freshWorldCreated',
+        note: 'Verified from notes, screenshot, and logs.',
+      },
+      {
+        id: 'primaryObjectiveCompleted',
+        label: 'Primary objective completed',
+        status: 'captured',
+        evidenceRef: 'evidence/screenshots/primary-objective.png',
+        note: 'Verified from imported screenshot.',
+      },
+    ],
+    verificationSummary: {
+      checkCount: 2,
+      capturedCount: 2,
+      blockedCount: 0,
+      notAttemptedCount: 0,
+    },
   }, null, 2)}\n`, 'utf8')
 }
 
@@ -139,6 +161,15 @@ test('family gameplay capture tools reject placeholders and import real local pr
   assert.equal(evidence.claims.freshWorldCreated, true)
   assert.equal(evidence.supportingFiles.length, 5)
   assert.equal(evidence.capture.computerUseSession, 'fixtures/openlands/gameplay-qa/native/computer-use-session.json')
+  assert.equal(evidence.capture.computerUseVerificationSummary.capturedCount, 2)
+
+  const session = await readJson(path.join(
+    workspace,
+    'ECHO-Openlands-Native-Edition',
+    'fixtures/openlands/gameplay-qa/native/computer-use-session.json',
+  ))
+  assert.equal(session.verificationChecks[0].id, 'freshWorldCreated')
+  assert.equal(session.verificationChecks[1].evidenceRef, 'fixtures/openlands/gameplay-qa/native/evidence/screenshots/primary-objective.png')
 
   const generated = run(generatorScript, ['--root', root, '--family', 'openlands', '--no-write', '--json'])
   assert.equal(generated.status, 0, `${generated.stdout}\n${generated.stderr}`)
@@ -146,6 +177,61 @@ test('family gameplay capture tools reject placeholders and import real local pr
   assert.equal(entry.report.status, 'PASS')
   assert.equal(entry.report.summary.passedLaneCount, 3)
   assert.equal(entry.report.summary.blockerCount, 0)
+  assert.equal(entry.report.lanes[0].capture.computerUseVerificationSummary.capturedCount, 2)
+
+  await fs.rm(workspace, { recursive: true, force: true })
+})
+
+test('family gameplay import rejects captured Computer Use checks without imported proof references', async () => {
+  const workspace = await fs.mkdtemp(path.join(os.tmpdir(), 'echo-family-gameplay-capture-invalid-computer-use-'))
+  const root = path.join(workspace, 'ECHO-Release-Index')
+  await fs.mkdir(root, { recursive: true })
+  const artifact = path.join(workspace, 'openlands-native-edition.zip')
+  await fs.writeFile(artifact, 'artifact bytes')
+
+  const startedAt = '2026-06-16T20:00:00.000Z'
+  const captureRoot = path.join(workspace, 'capture-native')
+  const prep = run(prepareScript, [
+    '--root', root,
+    '--family', 'openlands',
+    '--lane', 'native',
+    '--tester', 'QA Tester',
+    '--world-or-profile', 'Openlands QA World',
+    '--started-at', startedAt,
+    '--capture-root', captureRoot,
+  ])
+  assert.equal(prep.status, 0, `${prep.stdout}\n${prep.stderr}`)
+  await writeRealCaptureFiles(captureRoot)
+  const sessionPath = path.join(captureRoot, 'computer-use-session.json')
+  const session = await readJson(sessionPath)
+  session.verificationChecks = [{
+    id: 'terminalVisible',
+    label: 'Terminal visible',
+    status: 'captured',
+    evidenceRef: 'missing-terminal-proof.png',
+    note: 'This proof was not imported.',
+  }]
+  session.verificationSummary = {
+    checkCount: 1,
+    capturedCount: 1,
+    blockedCount: 0,
+    notAttemptedCount: 0,
+  }
+  await fs.writeFile(sessionPath, `${JSON.stringify(session, null, 2)}\n`, 'utf8')
+
+  const imported = run(importScript, [
+    '--root', root,
+    '--family', 'openlands',
+    '--lane', 'native',
+    '--capture-root', captureRoot,
+    '--artifact', artifact,
+    '--tester', 'QA Tester',
+    '--world-or-profile', 'Openlands QA World',
+    '--started-at', startedAt,
+    '--force',
+  ])
+  assert.notEqual(imported.status, 0)
+  assert.match(imported.stderr, /must reference a required claim or imported local proof path/u)
 
   await fs.rm(workspace, { recursive: true, force: true })
 })
