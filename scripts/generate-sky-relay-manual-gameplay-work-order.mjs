@@ -197,6 +197,7 @@ function artifactMatches(run, artifact) {
 function buildEditionWorkOrder(report, edition) {
   const editionKey = edition.edition
   const sourceRevision = report.sourceRevisions?.editions?.[editionKey] ?? null
+  const captureKit = (report.captureKits ?? []).find((item) => item.edition === editionKey) ?? null
   const requiredEdition = (report.requiredEvidence?.editions ?? []).find((item) => item.source === edition.source) ?? null
   const workspaceDir = sourceRevision?.workspaceDir ?? requiredEdition?.workspaceDir ?? null
   const artifact = report.requiredEvidence?.packArtifacts?.[editionKey] ?? null
@@ -253,8 +254,9 @@ function buildEditionWorkOrder(report, edition) {
   )
 
   const tasks = [
-    task('capture_kit', 'Capture kit is present', edition.found === true, {
+    task('capture_kit', 'Capture kit is present', captureKit?.status === 'passed', {
       manualEvidence: edition.manualEvidence,
+      captureKit,
     }),
     task('run_identity', 'Run identity and artifact match are filled', missingRunFields.length === 0 && artifactIsCurrent, {
       missingRunFields,

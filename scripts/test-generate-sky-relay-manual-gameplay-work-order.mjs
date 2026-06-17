@@ -87,6 +87,15 @@ function reportFixture(status = 'BLOCKED') {
       captureKitReady: 'passed',
       freshWorldCreated: pass ? 'passed' : 'blocked',
     },
+    captureKits: [
+      {
+        edition: 'native',
+        status: 'passed',
+        requiredFiles: [],
+        presentFiles: [],
+        missingFiles: [],
+      },
+    ],
     requiredEvidence: {
       editions: [
         {
