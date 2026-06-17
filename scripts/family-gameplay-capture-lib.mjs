@@ -13,6 +13,7 @@ export const REQUIRED_CLAIMS = [
 ]
 export const REQUIRED_PROOF_GROUPS = ['supportingFiles', 'screenshots', 'logs', 'saveSnapshots']
 export const MANUAL_EVIDENCE_SCHEMA = 'echo.release_index.family_gameplay_manual_evidence.v1'
+export const COMPUTER_USE_SESSION_SCHEMA = 'echo.release_index.family_gameplay_computer_use_session.v1'
 
 export const FAMILIES = {
   openlands: {
@@ -257,13 +258,14 @@ export function captureRelativePaths() {
       'evidence/saves/first-2-hours-save.zip',
       'evidence/saves/primary-objective-save.zip',
     ],
+    computerUseSession: 'computer-use-session.json',
   }
 }
 
 export async function validateCaptureRoot(captureRoot) {
   const required = captureRelativePaths()
   const blockers = []
-  for (const [group, paths] of Object.entries(required)) {
+  for (const [group, paths] of Object.entries(required).filter(([, value]) => Array.isArray(value))) {
     for (const relativePath of paths) {
       const absolute = path.join(captureRoot, relativePath)
       const result = group === 'supportingFiles' || group === 'logs'
@@ -326,6 +328,19 @@ export async function validateManualEvidence(root, config, lane) {
         ? await validateTextEvidence(absolute)
         : await validateBinaryEvidence(absolute)
       if (!result.ok) blockers.push(`${relativePath}: ${result.reason}`)
+    }
+  }
+
+  if (evidence.capture?.computerUseSession) {
+    const sessionPath = sourcePath(root, laneInfo, evidence.capture.computerUseSession)
+    const session = await readJson(sessionPath, { optional: true })
+    if (!session) blockers.push(`capture.computerUseSession missing file ${evidence.capture.computerUseSession}.`)
+    else if (session.schemaVersion !== COMPUTER_USE_SESSION_SCHEMA) blockers.push(`capture.computerUseSession schemaVersion is ${session.schemaVersion ?? 'missing'}, expected ${COMPUTER_USE_SESSION_SCHEMA}.`)
+    else {
+      if (session.familyKey !== config.key) blockers.push(`capture.computerUseSession familyKey is ${session.familyKey ?? 'missing'}, expected ${config.key}.`)
+      if (session.lane !== lane) blockers.push(`capture.computerUseSession lane is ${session.lane ?? 'missing'}, expected ${lane}.`)
+      if (session.packId !== laneInfo.packId) blockers.push(`capture.computerUseSession packId is ${session.packId ?? 'missing'}, expected ${laneInfo.packId}.`)
+      if (!Array.isArray(session.actions) || session.actions.length === 0) blockers.push('capture.computerUseSession must list visible Computer Use actions.')
     }
   }
 

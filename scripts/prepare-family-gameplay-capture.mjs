@@ -86,6 +86,13 @@ async function writePlaceholderFiles(captureRoot) {
       await fs.mkdir(path.dirname(path.join(captureRoot, relativePath)), { recursive: true })
     }
   }
+  await fs.writeFile(path.join(captureRoot, paths.computerUseSession), `${JSON.stringify({
+    schemaVersion: 'echo.release_index.family_gameplay_computer_use_session.v1',
+    actions: [],
+    notes: [
+      'Optional. Replace this file with real Computer Use window/action metadata before import if visible UI automation is used.',
+    ],
+  }, null, 2)}\n`, 'utf8')
 }
 
 function checklist(config, laneInfo, args) {
@@ -102,7 +109,11 @@ real screenshots, logs, and save ZIPs before import.
 - Pack: ${laneInfo.packId}
 
 ## Required Capture Files
-${Object.entries(paths).flatMap(([group, values]) => values.map((value) => `- ${group}: ${value}`)).join('\n')}
+${Object.entries(paths).filter(([, values]) => Array.isArray(values)).flatMap(([group, values]) => values.map((value) => `- ${group}: ${value}`)).join('\n')}
+
+## Visible Computer Use Session
+- Optional metadata file: ${paths.computerUseSession}
+- If used, fill it with the target app/window title and the visible UI actions that produced the screenshots.
 
 ## Required Claims
 ${REQUIRED_CLAIMS.map((claim) => `- ${claim}`).join('\n')}

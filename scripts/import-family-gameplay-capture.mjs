@@ -4,6 +4,7 @@ import path from 'node:path'
 import process from 'node:process'
 
 import {
+  COMPUTER_USE_SESSION_SCHEMA,
   MANUAL_EVIDENCE_SCHEMA,
   REQUIRED_CLAIMS,
   REQUIRED_LANES,
@@ -102,7 +103,7 @@ async function existingEvidenceGuard(args, laneInfo) {
 async function copyCaptureFiles(args, config, laneInfo) {
   const capturePaths = captureRelativePaths()
   const destinationPaths = requiredProofPaths(config, laneInfo.lane)
-  for (const [group, relativePaths] of Object.entries(capturePaths)) {
+  for (const [group, relativePaths] of Object.entries(capturePaths).filter(([, values]) => Array.isArray(values))) {
     for (let index = 0; index < relativePaths.length; index += 1) {
       const source = path.join(args.captureRoot, relativePaths[index])
       const target = sourcePath(args.root, laneInfo, destinationPaths[group][index])
@@ -111,7 +112,26 @@ async function copyCaptureFiles(args, config, laneInfo) {
   }
 }
 
-function manualEvidence(config, laneInfo, args, artifact, manifest) {
+async function importComputerUseSession(args, config, laneInfo) {
+  const source = path.join(args.captureRoot, 'computer-use-session.json')
+  const session = await readJson(source, { optional: true })
+  if (!session) return null
+  if (session.schemaVersion !== COMPUTER_USE_SESSION_SCHEMA) return null
+  if (!Array.isArray(session.actions) || session.actions.length === 0) return null
+  const outputRelative = `${laneInfo.evidenceRoot}/computer-use-session.json`
+  const output = {
+    ...session,
+    family: config.family,
+    familyKey: config.key,
+    lane: laneInfo.lane,
+    packId: laneInfo.packId,
+    importedAt: new Date().toISOString(),
+  }
+  await writeJson(sourcePath(args.root, laneInfo, outputRelative), output)
+  return outputRelative
+}
+
+function manualEvidence(config, laneInfo, args, artifact, manifest, computerUseSession) {
   const proofGroups = requiredProofPaths(config, laneInfo.lane)
   return {
     schemaVersion: MANUAL_EVIDENCE_SCHEMA,
@@ -144,6 +164,7 @@ function manualEvidence(config, laneInfo, args, artifact, manifest) {
     capture: {
       manifestGeneratedAt: manifest.generatedAt ?? null,
       captureRoot: args.captureRoot,
+      computerUseSession,
     },
     notes: [
       'Imported from a real manual gameplay capture bundle.',
@@ -169,7 +190,8 @@ async function main() {
   await existingEvidenceGuard(args, laneInfo)
   const artifact = await artifactIdentity(args.artifact)
   await copyCaptureFiles(args, config, laneInfo)
-  const output = manualEvidence(config, laneInfo, args, artifact, manifest)
+  const computerUseSession = await importComputerUseSession(args, config, laneInfo)
+  const output = manualEvidence(config, laneInfo, args, artifact, manifest, computerUseSession)
   await writeJson(sourcePath(args.root, laneInfo, laneInfo.evidencePath), output)
   const validation = await validateManualEvidence(args.root, config, laneInfo.lane)
   if (!validation.ok) {

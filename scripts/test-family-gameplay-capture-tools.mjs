@@ -49,6 +49,15 @@ async function writeRealCaptureFiles(captureRoot) {
     await fs.mkdir(path.dirname(filePath), { recursive: true })
     await fs.writeFile(filePath, Buffer.from(`real binary evidence ${relativePath}`))
   }
+  await fs.writeFile(path.join(captureRoot, 'computer-use-session.json'), `${JSON.stringify({
+    schemaVersion: 'echo.release_index.family_gameplay_computer_use_session.v1',
+    appId: 'test-game.exe',
+    windowTitle: 'Openlands Native Test Window',
+    actions: [
+      'Opened inventory and verified Index UI.',
+      'Opened primary objective surface and captured proof screenshot.',
+    ],
+  }, null, 2)}\n`, 'utf8')
 }
 
 async function readJson(filePath) {
@@ -129,6 +138,7 @@ test('family gameplay capture tools reject placeholders and import real local pr
   assert.equal(evidence.schemaVersion, 'echo.release_index.family_gameplay_manual_evidence.v1')
   assert.equal(evidence.claims.freshWorldCreated, true)
   assert.equal(evidence.supportingFiles.length, 5)
+  assert.equal(evidence.capture.computerUseSession, 'fixtures/openlands/gameplay-qa/native/computer-use-session.json')
 
   const generated = run(generatorScript, ['--root', root, '--family', 'openlands', '--no-write', '--json'])
   assert.equal(generated.status, 0, `${generated.stdout}\n${generated.stderr}`)

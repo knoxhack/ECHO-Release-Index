@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-17T09:35:22-04:00",
+  "generatedAt": "2026-06-17T15:05:52-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -18,14 +18,19 @@
         "branch": "main",
         "commit": "f2ac81bc3f08",
         "commitDate": "2026-06-17T09:35:22-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M scripts/family-gameplay-capture-lib.mjs",
+          " M scripts/import-family-gameplay-capture.mjs",
+          " M scripts/prepare-family-gameplay-capture.mjs",
+          " M scripts/test-family-gameplay-capture-tools.mjs"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 27881,
+          "bytes": 28221,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
@@ -255,8 +260,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3def92fed068",
-        "commitDate": "2026-06-17T09:34:50-04:00",
+        "commit": "754642890e03",
+        "commitDate": "2026-06-17T15:05:52-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -264,7 +269,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 6658,
+          "bytes": 7197,
           "heading": "ECHO Launcher",
           "excerpt": "Official desktop launcher, updater, repair tool, profile manager, diagnostics center, and release consumer for Ashfall and the ECHO ecosystem."
         },
@@ -281,7 +286,7 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 6938,
+          "bytes": 7028,
           "summary": "package echo-launcher 1.1.16; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
