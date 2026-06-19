@@ -1,17 +1,17 @@
 {
   "id": "echoindex",
   "kind": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-canonical-full-20260616",
-  "commitSha": "9f25b667812f5d214b9a5148868864384dbc7930",
+  "releaseTag": "modules-ashfall-humanoid-hat-hotfix-20260619",
+  "commitSha": "d499d0a554e741d58e74183a23a7e360f22721db",
   "artifacts": {
     "neoforge": {
-      "file": "echoindex-1.0.0-neoforge.jar",
-      "sha256": "f205dd6a30d6b88ef39f030822375f31554b65ee118715930414f60f2114f623",
-      "size": 594856,
+      "file": "echoindex-1.0.1-neoforge.jar",
+      "sha256": "92e198e396edf354a04d83308bd67c35a26b7fcf405913fd60b67ccee9e4ac34",
+      "size": 606924,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -27,12 +27,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/echoindex-1.0.0-neoforge.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-humanoid-hat-hotfix-20260619/echoindex-1.0.1-neoforge.jar"
     },
     "standalone": {
-      "file": "echoindex-1.0.0-standalone.jar",
-      "sha256": "f205dd6a30d6b88ef39f030822375f31554b65ee118715930414f60f2114f623",
-      "size": 594856,
+      "file": "echoindex-1.0.1-standalone.jar",
+      "sha256": "92e198e396edf354a04d83308bd67c35a26b7fcf405913fd60b67ccee9e4ac34",
+      "size": 606924,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -47,7 +47,7 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/echoindex-1.0.0-standalone.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-humanoid-hat-hotfix-20260619/echoindex-1.0.1-standalone.jar"
     },
     "native": {
       "file": "echoindex-1.0.0.echo-addon",
@@ -122,35 +122,10 @@
     }
   ],
   "compatibility": [
-    "ashfall-native-edition",
     "ashfall-neoforge-edition",
     "ashfall-standalone-edition",
-    "arcana-division-native-edition",
-    "arcana-division-neoforge-edition",
-    "arcana-division-standalone-edition",
-    "galactic-survey-native-edition",
-    "galactic-survey-neoforge-edition",
-    "galactic-survey-standalone-edition",
-    "openlands-native-edition",
-    "openlands-neoforge-edition",
-    "openlands-standalone-edition",
-    "sky-relay-native-edition",
-    "sky-relay-neoforge-edition",
-    "sky-relay-standalone-edition"
+    "ashfall-native-edition"
   ],
-  "provenance": {
-    "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "9f25b667812f5d214b9a5148868864384dbc7930",
-    "workflow": "Release Modules",
-    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
-    "generatedBy": "scripts/generate-module-release.mjs",
-    "runId": "27625820257",
-    "runAttempt": "1",
-    "attestation": {
-      "action": "actions/attest@v4",
-      "subjectChecksums": "echo-module-release.tar.gz.sha256"
-    }
-  },
-  "trust": "provenance-attested",
+  "trust": "source-linked",
   "validation": "approved"
 }

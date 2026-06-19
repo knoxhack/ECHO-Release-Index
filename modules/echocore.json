@@ -5,13 +5,13 @@
   "channel": "alpha",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Modules",
-  "releaseTag": "modules-canonical-full-20260616",
-  "commitSha": "9f25b667812f5d214b9a5148868864384dbc7930",
+  "releaseTag": "modules-ashfall-humanoid-hat-hotfix-20260619",
+  "commitSha": "d499d0a554e741d58e74183a23a7e360f22721db",
   "artifacts": {
     "neoforge": {
       "file": "echocore-1.0.0-neoforge.jar",
-      "sha256": "5a9e7f7d47972384f2b1db9cdef0f6afe85c46ec3946cc8364d4f8a375d1d6c9",
-      "size": 377929,
+      "sha256": "e6fa5afa9e028cd4c751154cc8a89d1c9da8fd29d87220ad87a44884771aaf19",
+      "size": 379697,
       "runtimeTarget": "neoforge",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -27,12 +27,12 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/echocore-1.0.0-neoforge.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-humanoid-hat-hotfix-20260619/echocore-1.0.0-neoforge.jar"
     },
     "standalone": {
       "file": "echocore-1.0.0-standalone.jar",
-      "sha256": "5a9e7f7d47972384f2b1db9cdef0f6afe85c46ec3946cc8364d4f8a375d1d6c9",
-      "size": 377929,
+      "sha256": "e6fa5afa9e028cd4c751154cc8a89d1c9da8fd29d87220ad87a44884771aaf19",
+      "size": 379697,
       "runtimeTarget": "standalone",
       "buildMode": "compiled-runtime",
       "contains": [
@@ -47,7 +47,7 @@
         ".echo/content-graph/provenance.json",
         ".echo/content-graph/unresolved-references.json"
       ],
-      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-canonical-full-20260616/echocore-1.0.0-standalone.jar"
+      "url": "https://github.com/knoxhack/ECHO-Modules/releases/download/modules-ashfall-humanoid-hat-hotfix-20260619/echocore-1.0.0-standalone.jar"
     },
     "native": {
       "file": "echocore-1.0.0.echo-addon",
@@ -106,35 +106,10 @@
   },
   "dependencies": [],
   "compatibility": [
-    "ashfall-native-edition",
     "ashfall-neoforge-edition",
     "ashfall-standalone-edition",
-    "arcana-division-native-edition",
-    "arcana-division-neoforge-edition",
-    "arcana-division-standalone-edition",
-    "galactic-survey-native-edition",
-    "galactic-survey-neoforge-edition",
-    "galactic-survey-standalone-edition",
-    "openlands-native-edition",
-    "openlands-neoforge-edition",
-    "openlands-standalone-edition",
-    "sky-relay-native-edition",
-    "sky-relay-neoforge-edition",
-    "sky-relay-standalone-edition"
+    "ashfall-native-edition"
   ],
-  "provenance": {
-    "sourceRepo": "knoxhack/ECHO-Modules",
-    "commitSha": "9f25b667812f5d214b9a5148868864384dbc7930",
-    "workflow": "Release Modules",
-    "workflowRef": "knoxhack/ECHO-Modules/.github/workflows/release-modules.yml@refs/heads/main",
-    "generatedBy": "scripts/generate-module-release.mjs",
-    "runId": "27625820257",
-    "runAttempt": "1",
-    "attestation": {
-      "action": "actions/attest@v4",
-      "subjectChecksums": "echo-module-release.tar.gz.sha256"
-    }
-  },
-  "trust": "provenance-attested",
+  "trust": "source-linked",
   "validation": "approved"
 }
