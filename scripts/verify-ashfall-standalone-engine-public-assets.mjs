@@ -256,7 +256,8 @@ async function main() {
   assert(manifest.artifactName === packDownload.file, 'Public pack manifest artifactName does not match public ZIP asset.')
   assert(String(manifest.artifactSha256).toLowerCase() === packDownload.sha256, 'Public pack manifest artifactSha256 does not match public ZIP asset.')
   assert(Number(manifest.artifactSize) === packDownload.size, 'Public pack manifest artifactSize does not match public ZIP asset.')
-  assert(Array.isArray(manifest.moduleRequirements) && manifest.moduleRequirements.length === 18, 'Public pack manifest must keep the 18-module engine verification slice.')
+  assert(Array.isArray(manifest.moduleRequirements) && manifest.moduleRequirements.length === 19, 'Public pack manifest must keep the 19-module engine verification slice.')
+  assert(manifest.moduleRequirements.some((module) => module.id === 'echohealthcore'), 'Public pack manifest must include echohealthcore.')
 
   const checksums = parseChecksums(await fs.readFile(checksumsDownload.cachePath, 'utf8'))
   for (const name of [packDownload.file, manifestDownload.file, releaseDownload.file, auditDownload.file]) {
@@ -268,7 +269,8 @@ async function main() {
   const audit = await readJson(auditDownload.cachePath)
   assert(release.validation === 'warning' || release.warningGated === true, 'Public echo-release.json must be warning-gated.')
   assert(release.engine?.artifact?.file === product.artifacts.engineJar.file, 'Public echo-release.json does not identify the engine artifact.')
-  assert(Array.isArray(release.moduleFiles) && release.moduleFiles.length === 18, 'Public echo-release.json must identify 18 module files.')
+  assert(Array.isArray(release.moduleFiles) && release.moduleFiles.length === 19, 'Public echo-release.json must identify 19 module files.')
+  assert(release.moduleFiles.some((module) => module.moduleId === 'echohealthcore'), 'Public echo-release.json must identify echohealthcore.')
   assert((audit.checks ?? []).some((check) => check.id === 'gameplay-parity' && check.status === 'NOT_CLAIMED'), 'Public release-audit.json must not claim gameplay parity.')
 
   const zip = validatePackZip(packDownload.cachePath, manifest)
