@@ -1,48 +1,54 @@
 {
   "id": "echo-standalone-runtime",
   "kind": "runtime",
-  "version": "0.1.0-beta.20260620",
+  "version": "0.1.1-beta.20260620",
   "channel": "beta",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Standalone-Runtime",
-  "releaseTag": "v0.1.0-standalone-runtime-beta-20260620",
-  "commitSha": "8788b046f19bfb92b586a3e49f92e605c9d82168",
+  "releaseTag": "v0.1.1-standalone-runtime-beta-20260620",
+  "commitSha": "2acf6cebeb0fc5e60d7dce9ddbe6761bd3220339",
   "artifacts": {
-    "alphaReadinessGate": {
-      "file": "alpha-readiness-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/alpha-readiness-gate.json",
-      "sha256": "b059c2d426d3ca13ffaeb1fabae85db35badea84c8d02c20879756ee527c03ec",
-      "size": 285
-    },
-    "ashfallParityMatrix": {
-      "file": "ashfall-parity-matrix.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/ashfall-parity-matrix.json",
-      "sha256": "17f909a8a094967f5dcdfb17bd520ec0a94785f63fbc12f9a23ead61d3bb1312",
-      "size": 300
-    },
     "betaReadinessGate": {
       "file": "beta-readiness-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/beta-readiness-gate.json",
-      "sha256": "e382078badae0d093d10b7a05ce2b6d8c9f59e0e0c9921903d89acefd440017d",
-      "size": 280
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/beta-readiness-gate.json",
+      "sha256": "8fd7912141bcc745d85345b55fbbcc939aa55f4fa7a6b0dd02d2aa3827d0a287",
+      "size": 6482
     },
     "checksums": {
       "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/checksums.txt",
-      "sha256": "999c7c6be97093f842d6f073ac86765aff9a17707b4062e46216aaec722f2c02",
-      "size": 391
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/checksums.txt",
+      "sha256": "2bc82a1761948f7093e51c519e35e33282b3f7306be49c98d94ec9d9604f72c8",
+      "size": 594
+    },
+    "distributionVersionMetadata": {
+      "file": "distribution-version-metadata.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/distribution-version-metadata.json",
+      "sha256": "d63ffbad756ecb7dcead9ca0f4e95977a5c8ae81febce88186e5a8f7358738f9",
+      "size": 1749
     },
     "echoReleaseMetadata": {
       "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/echo-release.json",
-      "sha256": "2ca92ee2399872d11f4c7d8e8179a090158f3904fd58bb046f8983970c2ec283",
-      "size": 4540
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/echo-release.json",
+      "sha256": "282f1d49257da85d06111ffb327629ad64b081709232f3a5ff09216e30b92319",
+      "size": 3100
     },
     "archive": {
-      "file": "echo-standalone-runtime-0.1.0-beta-20260620.zip",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/echo-standalone-runtime-0.1.0-beta-20260620.zip",
-      "sha256": "d9fe9abce7227e94229c645a42eea49df014de1da96297298b1a3d5ed662ed89",
-      "size": 52936259
+      "file": "echo-standalone-runtime-0.1.1-beta-20260620.zip",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/echo-standalone-runtime-0.1.1-beta-20260620.zip",
+      "sha256": "c09e1fbd8b8fe61b5c916c69baeca0cadbfddec5c9a8209d0632329456c771be",
+      "size": 52957110
+    },
+    "fullWorkspaceBuildSmoke": {
+      "file": "full-workspace-build-smoke.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/full-workspace-build-smoke.json",
+      "sha256": "8dda19d6bdda496e9965e586e995df55998597c3bcedb21ced1c3a91cc6e49cb",
+      "size": 8308
+    },
+    "packagedOpenGlClientImage": {
+      "file": "packaged-opengl-client-image.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/packaged-opengl-client-image.json",
+      "sha256": "716e8c7207487b6d877051f9dc8ab97dd0022f096a9be36de714531ee6e2c176",
+      "size": 1315
     }
   },
   "dependencies": [],
@@ -52,6 +58,6 @@
   ],
   "trust": "source-linked",
   "validation": "approved",
-  "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.0-standalone-runtime-beta-20260620",
-  "validationReason": "Approved for beta catalog/runtime installation: packaged runtime assets, smoke harnesses, and checksum-pinned GitHub prerelease artifacts are available; manual gameplay acceptance remains tracked separately."
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.1-standalone-runtime-beta-20260620",
+  "validationReason": "Approved for beta catalog/runtime installation: strict installed-pack module bootstrap, packaged OpenGL runtime assets, checksum-pinned GitHub prerelease artifacts, and READY_WITH_WARNINGS beta evidence are available; manual gameplay acceptance remains tracked separately."
 }
