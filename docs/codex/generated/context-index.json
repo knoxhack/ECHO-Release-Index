@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-20T15:33:32-04:00",
+  "generatedAt": "2026-06-20T15:51:15-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ed44cc4e9e5a",
-        "commitDate": "2026-06-20T11:12:19-04:00",
+        "commit": "230ec14071fb",
+        "commitDate": "2026-06-20T15:44:10-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M channels/alpha/launcher-channel.json",
@@ -82,13 +82,9 @@
           " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
           " M release-readiness/public-alpha-runtime-acceptance.json",
           " M scripts/verify-official-pack-launcher-lifecycle-smoke.mjs",
-          "?? modpacks/ashfall-standalone-engine.json",
-          "?? packs/ashfall-standalone-engine-edition.json",
-          "?? products/standalone-engine.json",
+          "?? release-readiness/ashfall-standalone-engine-lifecycle-smoke.json",
           "?? release-readiness/ashfall-standalone-engine-local-e2e.json",
-          "?? release-readiness/ashfall-standalone-engine-packaged-electron-smoke.json",
-          "?? release-readiness/ashfall-standalone-engine-public-assets.json",
-          "?? scripts/verify-ashfall-standalone-engine-public-assets.mjs"
+          "?? release-readiness/ashfall-standalone-engine-packaged-electron-smoke.json"
         ]
       },
       "canonicalDocs": [
@@ -363,41 +359,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "874ed8245fda",
-        "commitDate": "2026-06-20T00:20:37-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M electron/main.cjs",
-          " M electron/release-assets.cjs",
-          " M electron/release-index-resolver.mjs",
-          " M package-lock.json",
-          " M package.json",
-          " M scripts/all-modpacks-electron-install-smoke.mjs",
-          " M scripts/audit-all-modpacks-pipeline.mjs",
-          " M src/components/dashboard/HomePage.tsx",
-          " M src/components/library/LibraryCatalog.tsx",
-          " M src/components/library/libraryUtils.ts",
-          " M src/components/runtime/StandaloneRuntimePage.tsx",
-          " M src/data/bundledProfiles.ts",
-          " M src/data/officialModpacks.test.ts",
-          " M src/data/officialModpacks.ts",
-          " M src/services/StandaloneRuntimeService.ts",
-          " M src/services/nativeBridge.ts",
-          " M src/stores/launcherStore.ts",
-          " M src/stores/standaloneRuntimeStore.ts",
-          " M src/types/manifests.ts",
-          " M src/types/standaloneRuntime.ts",
-          " M src/utils/ashfallHomeActions.test.ts",
-          " M src/utils/ashfallHomeActions.ts",
-          " M src/utils/ashfallProfileMigration.test.ts",
-          " M src/utils/ashfallProfileMigration.ts",
-          " M src/utils/minecraftLauncherHandoff.ts",
-          " M src/utils/releaseValidation.test.ts",
-          " M src/utils/releaseValidation.ts",
-          " M src/utils/standaloneRuntimeShell.test.ts",
-          " M src/utils/standaloneRuntimeShell.ts",
-          "?? scripts/ashfall-standalone-engine-local-e2e.mjs"
-        ]
+        "commit": "d00b352e8107",
+        "commitDate": "2026-06-20T15:51:15-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {

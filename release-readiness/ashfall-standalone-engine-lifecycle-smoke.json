@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "echo.official_pack.launcher_lifecycle_smoke.v1",
+  "ok": true,
+  "generatedAt": "2026-06-20T19:49:56.150Z",
+  "source": "live-github-release-assets",
+  "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
+  "downloadRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-downloads",
+  "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke",
+  "officialPackCount": 16,
+  "coveredPackCount": 1,
+  "editions": [
+    {
+      "status": "pass",
+      "repoName": "ECHO-Ashfall-Standalone-Engine-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Engine-Edition",
+      "packId": "ashfall-standalone-engine-edition",
+      "pack": "ashfall-standalone-engine-edition",
+      "releaseTag": "v2.0.0-ashfall-standalone-engine-edition-beta.4",
+      "validation": "warning",
+      "moduleArtifactFamily": "standalone",
+      "manifestAsset": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+      "artifactAsset": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+      "moduleCount": 18,
+      "fileCount": 24,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          "sha256": "87237a28a26624962889343feefea5edcfc7343b0bd71c44f11c9434a339f3d8",
+          "size": 276403,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "sha256": "a684f89afee740f4e22ba528c8c3d591427ebc2fa20fb6a41b3df009aceb75ba",
+          "size": 22451,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "67b9cb1267fdf83480e427041759f5b3573ef2137e60a77814399421c9b906b6",
+          "size": 414,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "aac86d1c192a252bd72b0a31eb050bdd27e4195ed6dda8ebb457d61cc46d2985",
+          "size": 8984,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "16017114d598ccf91e99030db21dee9b6fec309a67f568510912ba398c24dcca",
+          "size": 1769,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 24
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-standalone-engine-edition",
+          "resolved": true,
+          "artifact": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "dependencyCount": 20
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-standalone-engine-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0-standalone.jar",
+          "dependencyCount": 19
+        }
+      },
+      "install": {
+        "installed": 24,
+        "verifiedAfterInstall": 24
+      },
+      "update": {
+        "fromVersion": "2.0.0-beta.2-previous-smoke",
+        "toVersion": "2.0.0-beta.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 23,
+        "removed": 1,
+        "verifiedAfterUpdate": 24,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "2.0.0-beta.2-previous-smoke",
+        "verifiedAfterRollback": 25
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 24
+      },
+      "repair": {
+        "repaired": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "verifiedAfterRepair": 24
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Standalone-Engine-Edition\\ashfall-standalone-engine-edition\\install"
+    }
+  ],
+  "gates": {
+    "liveReleaseAssetsDownloaded": "passed",
+    "releaseIndexCatalogMetadata": "passed",
+    "topLevelChecksums": "passed",
+    "packZipPayloadIntegrity": "passed",
+    "launcherReleaseIndexDeepLinks": "passed",
+    "launcherInstallFromPackZip": "passed",
+    "launcherUpdateReconciliation": "passed",
+    "launcherVersionTransitionUpdate": "passed_with_previous_version_fixture",
+    "launcherRollbackSimulatedUpdate": "passed_with_previous_version_fixture",
+    "launcherPostRollbackUpdate": "passed",
+    "launcherRepairCorruptFile": "passed",
+    "packagedElectronClickThrough": "covered_separately"
+  },
+  "blockers": [],
+  "residualRisks": [
+    "The previous version used for update and rollback is a fixture-local manifest derived from the current public pack plus one older-file placeholder; it proves launcher lifecycle mechanics without claiming a second public release exists for every lane.",
+    "This smoke exercises Launcher resolver and lifecycle contracts in Node. Packaged Electron click-through remains covered by the existing per-pack Electron UI and all-modpack install smokes."
+  ]
+}
