@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-20T16:32:23-04:00",
+  "generatedAt": "2026-06-20T16:38:33-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "60f73ea0c7ac",
-        "commitDate": "2026-06-20T16:32:23-04:00",
+        "commit": "8f9ab5df000c",
+        "commitDate": "2026-06-20T16:38:33-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M channels/alpha/launcher-channel.json",
@@ -79,10 +79,9 @@
           " M products/standalone-runtime.json",
           " M release-readiness/all-modpacks-electron-install-smoke.json",
           " M release-readiness/all-modpacks-pipeline-audit.json",
+          " M release-readiness/ashfall-standalone-engine-packaged-electron-smoke.json",
           " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
           " M release-readiness/public-alpha-runtime-acceptance.json",
-          " M release-readiness/standalone-engine-runtime-comparison.json",
-          " M scripts/benchmark-standalone-engine-runtime-comparison.mjs",
           " M scripts/verify-official-pack-launcher-lifecycle-smoke.mjs",
           "?? release-readiness/ashfall-native-packaged-electron-smoke.json"
         ]
@@ -364,7 +363,8 @@
         "dirty": true,
         "dirtyFiles": [
           " M electron/main.cjs",
-          " M scripts/all-modpacks-electron-install-smoke.mjs"
+          " M scripts/all-modpacks-electron-install-smoke.mjs",
+          " M src/components/library/usePackActions.ts"
         ]
       },
       "canonicalDocs": [
