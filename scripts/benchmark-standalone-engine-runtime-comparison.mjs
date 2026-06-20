@@ -38,6 +38,9 @@ function parseArgs(argv) {
     java: 'java',
     engineRuns: 3,
     timeoutMs: 900_000,
+    waitRuntimeIdleMs: 0,
+    runtimeIdlePollMs: 15_000,
+    runtimeIdleStableMs: 5_000,
     clean: false,
     skipEngine: false,
     skipRuntime: false,
@@ -61,6 +64,9 @@ function parseArgs(argv) {
     else if (arg === '--java') args.java = next()
     else if (arg === '--engine-runs') args.engineRuns = positiveInteger(next(), arg)
     else if (arg === '--timeout-ms') args.timeoutMs = positiveInteger(next(), arg)
+    else if (arg === '--wait-runtime-idle-ms') args.waitRuntimeIdleMs = nonNegativeInteger(next(), arg)
+    else if (arg === '--runtime-idle-poll-ms') args.runtimeIdlePollMs = positiveInteger(next(), arg)
+    else if (arg === '--runtime-idle-stable-ms') args.runtimeIdleStableMs = nonNegativeInteger(next(), arg)
     else if (arg === '--runtime-task') args.runtimeTasks.push(parseRuntimeTask(next()))
     else if (arg === '--runtime-blocker') args.runtimeBlocker = next()
     else if (arg === '--clean') args.clean = true
@@ -78,6 +84,12 @@ function parseArgs(argv) {
 function positiveInteger(value, label) {
   const parsed = Number(value)
   if (!Number.isInteger(parsed) || parsed < 1) throw new Error(`${label} must be a positive integer.`)
+  return parsed
+}
+
+function nonNegativeInteger(value, label) {
+  const parsed = Number(value)
+  if (!Number.isInteger(parsed) || parsed < 0) throw new Error(`${label} must be a non-negative integer.`)
   return parsed
 }
 
@@ -496,6 +508,63 @@ if ($matches) { $matches | ConvertTo-Json -Compress }
   }
 }
 
+async function waitForRuntimeIdle(args) {
+  const startedAt = new Date().toISOString()
+  const deadline = Date.now() + args.waitRuntimeIdleMs
+  const observations = []
+  let stableSince = null
+  let latestProcesses = []
+
+  while (true) {
+    latestProcesses = await activeRuntimeProcesses(args.runtimeRoot)
+    const now = Date.now()
+    const observation = {
+      checkedAt: new Date(now).toISOString(),
+      activeProcessCount: latestProcesses.length,
+      activeProcesses: latestProcesses,
+    }
+    observations.push(observation)
+    if (observations.length > 12) observations.shift()
+
+    if (latestProcesses.length === 0) {
+      stableSince ??= now
+      if (args.waitRuntimeIdleMs === 0 || now - stableSince >= args.runtimeIdleStableMs) {
+        return {
+          status: args.waitRuntimeIdleMs > 0 ? 'idle-after-wait' : 'idle',
+          startedAt,
+          completedAt: new Date().toISOString(),
+          waitedMs: now - Date.parse(startedAt),
+          requiredStableMs: args.runtimeIdleStableMs,
+          pollMs: args.runtimeIdlePollMs,
+          observations,
+          activeProcesses: [],
+        }
+      }
+    } else {
+      stableSince = null
+    }
+
+    if (args.waitRuntimeIdleMs === 0 || now >= deadline) {
+      return {
+        status: latestProcesses.length > 0 ? 'active-timeout' : 'idle-timeout',
+        startedAt,
+        completedAt: new Date().toISOString(),
+        waitedMs: now - Date.parse(startedAt),
+        requiredStableMs: args.runtimeIdleStableMs,
+        pollMs: args.runtimeIdlePollMs,
+        observations,
+        activeProcesses: latestProcesses,
+      }
+    }
+
+    await sleep(Math.min(args.runtimeIdlePollMs, Math.max(0, deadline - now)))
+  }
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 function tail(text, max = 4000) {
   const value = String(text ?? '')
   return value.length <= max ? value : value.slice(value.length - max)
@@ -907,11 +976,12 @@ async function main() {
 
   const releaseIndexGit = await readGitState(args.root)
   const engine = args.skipEngine ? null : await runEngineLane(args, { product, modpack })
-  const activeRuntimeBuilds = !args.skipRuntime && !args.runtimeBlocker && !args.allowActiveRuntimeBuild
-    ? await activeRuntimeProcesses(args.runtimeRoot)
-    : []
+  const runtimeIdleWait = !args.skipRuntime && !args.runtimeBlocker && !args.allowActiveRuntimeBuild
+    ? await waitForRuntimeIdle(args)
+    : null
+  const activeRuntimeBuilds = runtimeIdleWait?.activeProcesses ?? []
   const autoRuntimeBlocker = activeRuntimeBuilds.length > 0
-    ? `Legacy Standalone Runtime smoke tasks were not run because ${activeRuntimeBuilds.length} active Runtime Gradle/client process(es) were detected in ${args.runtimeRoot}; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional.`
+    ? `Legacy Standalone Runtime smoke tasks were not run because ${activeRuntimeBuilds.length} active Runtime Gradle/client process(es) were still detected in ${args.runtimeRoot} after waiting ${runtimeIdleWait.waitedMs}ms for an idle window; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional.`
     : null
   const runtime = args.skipRuntime
     ? null
@@ -944,6 +1014,10 @@ async function main() {
       engineRuns: args.engineRuns,
       timeoutMs: args.timeoutMs,
       allowActiveRuntimeBuild: args.allowActiveRuntimeBuild,
+      waitRuntimeIdleMs: args.waitRuntimeIdleMs,
+      runtimeIdlePollMs: args.runtimeIdlePollMs,
+      runtimeIdleStableMs: args.runtimeIdleStableMs,
+      runtimeIdleWait,
       activeRuntimeBuilds,
       runtimeTasks: args.runtimeTasks.map(({ task, report, evidenceKind }) => ({ task, report, evidenceKind })),
     },
