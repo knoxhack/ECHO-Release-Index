@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-17T18:09:32-04:00",
+  "generatedAt": "2026-06-20T10:59:46-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,19 +16,11 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "8eb35f550f0c",
-        "commitDate": "2026-06-17T18:09:32-04:00",
+        "commit": "2a378306c640",
+        "commitDate": "2026-06-20T10:59:46-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M channels/alpha/release-manifest.json",
-          " M modpacks/ashfall-native.json",
-          " M modpacks/ashfall-neoforge.json",
-          " M modpacks/ashfall-standalone.json",
-          " M modules/echoindex.json",
-          " M packs/ashfall-native-edition.json",
-          " M packs/ashfall-neoforge-edition.json",
-          " M packs/ashfall-standalone-edition.json",
-          " M release-readiness/ashfall-lane-game-smoke.json",
+          " M release-readiness/beta-live-channel-proof.json",
           " M release-readiness/public-alpha-live-channel-proof.json"
         ]
       },
@@ -82,14 +74,14 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 297771,
+          "bytes": 297682,
           "summary": "release manifest v0.1.0-native-public-alpha; repositories: 24"
         },
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 29980,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-16T10:37:13.163Z"
+          "bytes": 42078,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-20T05:08:27.947Z"
         },
         {
           "path": "trust/tiers.json",
@@ -110,202 +102,40 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "d499d0a554e7",
-        "commitDate": "2026-06-17T17:19:35-04:00",
+        "commit": "afd206900713",
+        "commitDate": "2026-06-20T09:52:42-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoBackendLifecycleBridge.java",
-          " M addons/echoadaptercore/src/main/java/com/knoxhack/echo/adaptercore/EchoNativeLoaderAttachedRuntimeHost.java",
-          " M addons/echoagriculturereclamation/src/main/java/com/knoxhack/echoagriculturereclamation/EchoAgricultureReclamation.java",
-          " M addons/echoagriculturereclamation/src/main/java/com/knoxhack/echoagriculturereclamation/integration/ReclamationMissionContentIntegration.java",
-          " M addons/echoagriculturereclamation/src/main/java/com/knoxhack/echoagriculturereclamation/integration/ReclamationMissionProvider.java",
-          " M addons/echoarmory/src/main/java/com/knoxhack/echoarmory/EchoArmory.java",
-          " M addons/echoarmory/src/main/java/com/knoxhack/echoarmory/EchoArmoryNativeModule.java",
-          " M addons/echoarmory/src/main/java/com/knoxhack/echoarmory/integration/ArmoryMissionCoreIntegration.java",
-          " M addons/echoarmory/src/main/java/com/knoxhack/echoarmory/integration/ArmoryTerminalCommonIntegration.java",
-          " M addons/echoashfallprotocol/build.gradle",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallBootstrapProductProfile.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallNativeModule.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallProtocol.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/EchoAshfallProtocolClient.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/hud/EchoNativeAshfallHudOverlay.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/hud/SurvivalHudOverlay.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/screen/EchoNativeMainMenuScreen.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/screen/EchoNativeTerminalLaunchScreen.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/screen/EchoTerminalBackgrounds.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/screen/EchoVanillaScreenTheme.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/AshfallAdapterCoreEarlyEventRuntime.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/event/NativeLoaderEchoRuntimeHost.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/integration/AshfallPresenceIntegration.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/integration/AshfallTerminalCommonIntegration.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/nativebridge/AshfallNativeClientRouteRegistrar.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/nativebridge/AshfallNativeProductBridgeProvider.java",
-          " M addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/worldgen/ProceduralStructureGenerator.java",
-          " M addons/echoashfallprotocol/src/main/resources/data/echoashfallprotocol/missioncore/missions/secure_crash_outpost.json",
-          " M addons/echoashfallprotocol/src/test/java/com/knoxhack/echoashfallprotocol/test/ModGameTests.java",
-          " M addons/echoblackboxprotocol/src/main/java/com/knoxhack/echoblackboxprotocol/EchoBlackboxProtocol.java",
-          " M addons/echoblackboxprotocol/src/main/java/com/knoxhack/echoblackboxprotocol/EchoBlackboxProtocolNativeModule.java",
-          " M addons/echoblackboxprotocol/src/main/java/com/knoxhack/echoblackboxprotocol/integration/BlackboxMissionProvider.java",
-          " M addons/echoblockworks/src/main/java/com/knoxhack/echoblockworks/integration/BlockworksMissionCoreIntegration.java",
-          " M addons/echoconvoyprotocol/src/main/java/com/knoxhack/echoconvoyprotocol/EchoConvoyProtocol.java",
-          " M addons/echoconvoyprotocol/src/main/java/com/knoxhack/echoconvoyprotocol/integration/ConvoyMissionProvider.java",
-          " M addons/echocore/src/main/java/com/echoplatform/echocore/api/EchoCoreServices.java",
-          " M addons/echocore/src/main/java/com/echoplatform/echocore/api/EchoRuntimeModules.java",
-          " M addons/echocore/src/main/java/com/knoxhack/echocore/client/model/EchoMobModelFactory.java",
-          " M addons/echocore/src/main/java/com/knoxhack/echocore/command/EchoCommandRegistry.java",
-          " M addons/echocreatorcore/src/main/java/com/knoxhack/echo/creatorcore/EchoCreatorCore.java",
-          " M addons/echocursecore/src/main/java/com/knoxhack/echocursecore/integration/missioncore/CurseCoreMissionCoreIntegration.java",
-          " M addons/echodatacore/src/main/java/com/knoxhack/echodatacore/EchoDataCore.java",
-          " M addons/echodatacore/src/main/java/com/knoxhack/echodatacore/EchoDataCoreNativeModule.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/EchoHoloMap.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/EchoHoloMapClient.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/EchoHoloMapNativeModule.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/client/HoloMapFullScreenMapScreen.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/integration/HoloMapMissionCoreIntegration.java",
-          " M addons/echoholomap/src/main/java/com/knoxhack/echoholomap/integration/HoloMapScreenCoreIntegration.java",
-          " M addons/echohudcore/src/main/java/com/knoxhack/echo/hudcore/EchoHudCore.java",
-          " M addons/echohudcore/src/main/java/com/knoxhack/echo/hudcore/EchoHudCoreClient.java",
-          " M addons/echohudcore/src/main/java/com/knoxhack/echo/hudcore/client/EchoHudCoreOverlay.java",
-          " M addons/echohudcore/src/main/resources/META-INF/echo.mod.json",
-          " M addons/echoindex/README.md",
-          " M addons/echoindex/docs/artifacts.md",
-          " M addons/echoindex/gradle.properties",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/EchoIndex.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/EchoIndexClient.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/EchoIndexNativeModule.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/ClientRecipeDisplayAccess.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexAddonPresentation.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexBlockPreviewTooltip.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexCatalogScreen.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexFallbackScreen.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexHotkeys.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexOverlay.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexRecipeScreen.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexRecipeTraceState.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexRecipeUi.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexScreenCoreBridge.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexTooltipUtil.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/client/IndexUiState.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/integration/IndexTerminalClientIntegration.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/service/IndexRecipeQueryClientState.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/service/IndexRecipeSnapshot.java",
-          " M addons/echoindex/src/main/java/com/knoxhack/echoindex/service/IndexService.java",
-          " M addons/echoindex/src/main/resources/META-INF/echo.mod.json",
-          " M addons/echoindex/src/main/resources/assets/echoindex/eui/components/index_shell.eui.xml",
-          " M addons/echoindex/src/main/resources/assets/echoindex/eui/pages/index_dashboard.eui.xml",
-          " M addons/echoindex/src/main/resources/assets/echoindex/eui/pages/index_favorites.eui.xml",
-          " M addons/echoindex/src/main/resources/assets/echoindex/eui/styles/index_components.eui.css",
-          " M addons/echoindex/src/main/resources/assets/echoindex/eui/styles/index_cyberglass.eui.css",
-          " M addons/echoindex/src/test/java/com/knoxhack/echoindex/test/ModGameTests.java",
-          " M addons/echoindustrialnexus/src/main/java/com/knoxhack/echoindustrialnexus/EchoIndustrialNexus.java",
-          " M addons/echoindustrialnexus/src/main/java/com/knoxhack/echoindustrialnexus/EchoIndustrialNexusNativeModule.java",
-          " M addons/echoindustrialnexus/src/main/resources/assets/echoindustrialnexus/models/block/robotic_arm_mount.json",
-          " M addons/echolens/src/main/java/com/knoxhack/echolens/EchoLens.java",
-          " M addons/echolens/src/main/java/com/knoxhack/echolens/EchoLensClient.java",
-          " M addons/echolens/src/main/java/com/knoxhack/echolens/EchoLensNativeModule.java",
-          " M addons/echolens/src/main/java/com/knoxhack/echolens/integration/LensMissionCoreIntegration.java",
-          " M addons/echologisticsnetwork/src/main/java/com/knoxhack/echologisticsnetwork/integration/LogisticsMissionCoreIntegration.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/EchoMissionCore.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/EchoMissionCoreNativeModule.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/content/MissionCoreJsonReloadListener.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/integration/MissionCoreTerminalIntegration.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/integration/MissionCoreTerminalProvider.java",
-          " M addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/service/MissionCoreService.java",
-          " M addons/echomissioncore/src/test/java/com/knoxhack/echomissioncore/test/ModGameTests.java",
-          " M addons/echomultiblockcore/src/main/java/com/knoxhack/echomultiblockcore/EchoMultiblockCore.java",
-          " M addons/echomultiblockcore/src/main/java/com/knoxhack/echomultiblockcore/EchoMultiblockCoreNativeModule.java",
-          " M addons/echomultiblockcore/src/main/java/com/knoxhack/echomultiblockcore/integration/MultiblockMissionCoreIntegration.java",
-          " M addons/echonetcore/src/main/java/com/knoxhack/echonetcore/EchoNetCore.java",
-          " M addons/echonetcore/src/main/java/com/knoxhack/echonetcore/api/EchoNetPayloads.java",
-          " M addons/echonetcore/src/main/java/com/knoxhack/echonetcore/api/EchoPayloadRegistrar.java",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/game_rules.dat",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/data/minecraft/world_clocks.dat",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/data/minecraft/raids.dat",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/entities/r.-10345.-6640.mca",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.-10344.-6640.mca",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/poi/r.-10345.-6640.mca",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-1.-1.mca",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-1.0.mca",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-10344.-6640.mca",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.-10345.-6640.mca",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.0.-1.mca",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/overworld/region/r.0.0.mca",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/the_end/data/minecraft/raids.dat",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/dimensions/minecraft/the_nether/data/minecraft/raids.dat",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/level.dat",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/advancements/9ca15cdd-bde9-4344-9873-3520dd5eaf76.json",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/9ca15cdd-bde9-4344-9873-3520dd5eaf76.dat",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/data/9ca15cdd-bde9-4344-9873-3520dd5eaf76.dat_old",
-          " D addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/players/stats/9ca15cdd-bde9-4344-9873-3520dd5eaf76.json",
-          " M addons/echonexusprotocol/run-gametest/gametestserver/gametestworld/serverconfig/readme.txt",
-          " M addons/echonexusprotocol/src/main/java/com/knoxhack/echonexusprotocol/EchoNexusProtocol.java",
-          " M addons/echonexusprotocol/src/main/java/com/knoxhack/echonexusprotocol/EchoNexusProtocolNativeModule.java",
-          " M addons/echonexusprotocol/src/main/java/com/knoxhack/echonexusprotocol/integration/NexusTerminalMissionProvider.java",
-          " M addons/echoorbitalremnants/src/main/java/com/knoxhack/echoorbitalremnants/EchoOrbitalRemnantsClient.java",
-          " M addons/echoorbitalremnants/src/main/java/com/knoxhack/echoorbitalremnants/integration/OrbitalMissionProvider.java",
-          " M addons/echoplayercore/src/main/java/com/knoxhack/echoplayercore/EchoPlayerCore.java",
-          " M addons/echoprimecore/src/main/java/com/knoxhack/echoprimecore/integration/PrimeMissionBridge.java",
-          " M addons/echorecovery/src/main/java/com/knoxhack/echorecovery/integration/RecoveryTerminalIntegration.java",
-          " M addons/echorelictech/src/main/java/com/knoxhack/echorelictech/integration/missioncore/RelicTechMissionCoreIntegration.java",
-          " M addons/echoritualcore/src/main/java/com/knoxhack/echoritualcore/integration/missioncore/RitualCoreMissionCoreIntegration.java",
-          " M addons/echoscreencore/README.md",
-          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/EchoScreenCoreMod.java",
-          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/EchoScreenCoreNativeModule.java",
-          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/EchoScreenCoreClient.java",
-          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/style/EchoStyleResolver.java",
-          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/style/EchoStyleValues.java",
-          " M addons/echoscreencore/src/main/resources/META-INF/echo.mod.json",
-          " M addons/echoscriptcore/src/main/java/com/knoxhack/echo/scriptcore/EchoScriptCore.java",
-          " M addons/echosignalos/src/main/java/com/knoxhack/signalos/integration/SignalOsMissionCoreIntegration.java",
-          " M addons/echospellcore/src/main/java/com/knoxhack/echospellcore/integration/missioncore/SpellCoreMissionCoreIntegration.java",
-          " M addons/echostationfall/src/main/java/com/knoxhack/echostationfall/EchoStationfall.java",
-          " M addons/echostationfall/src/main/java/com/knoxhack/echostationfall/integration/StationfallTerminalCommonIntegration.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminal.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminalClient.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminalNativeModule.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/api/mission/TerminalMissionDefinition.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/api/mission/TerminalMissionRequirement.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/api/mission/TerminalMissionReward.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/BuiltinTerminalTabs.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/TerminalEventHandler.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screen/EchoTerminalScreen.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreActions.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreBridge.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreDataProviders.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreScreen.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/menu/EchoTerminalMenu.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/mission/MainSurvivalQuestProvider.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/mission/VanillaJourneyData.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/mission/VanillaJourneyProvider.java",
-          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/player/TerminalPlayerData.java",
-          " M addons/echoterminal/src/main/resources/assets/echoterminal/eui/pages/terminal_mission_browser.eui.xml",
-          " M addons/echoterminal/src/main/resources/assets/echoterminal/eui/styles/terminal_cyberglass_v2.eui.css",
-          " M addons/echoterminal/src/test/java/com/knoxhack/echoterminal/test/ModGameTests.java",
-          " M addons/echotextureforge/src/main/java/com/knoxhack/echotextureforge/EchoTextureForgeMod.java",
-          " M addons/echothemecore/src/main/java/com/knoxhack/echothemecore/client/replacement/ThemeCoreLoadingOverlayRenderer.java",
-          " M addons/echothemecore/src/main/java/com/knoxhack/echothemecore/client/replacement/ThemeCoreReplacementRenderer.java",
-          " M addons/echothemecore/src/main/java/com/knoxhack/echothemecore/client/vanilla/VanillaUiSkinLayer.java",
-          " M addons/echoweathercore/src/main/java/com/knoxhack/echoweathercore/EchoWeatherCore.java",
-          " M addons/echowiki/src/main/java/com/knoxhack/echowiki/EchoWiki.java",
-          " M addons/echowiki/src/main/java/com/knoxhack/echowiki/EchoWikiNativeModule.java",
-          " M metadata/modules/index.json",
-          " M reports/echo-native/core-module-integration-audit.json",
-          "?? addons/echoashfallprotocol/echo-native-loader/",
-          "?? addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/screen/EchoAshfallScreenChrome.java",
-          "?? addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/client/screen/EchoAshfallScreenSurface.java",
-          "?? addons/echoashfallprotocol/src/main/java/com/knoxhack/echoashfallprotocol/integration/AshfallTerminalClientBridge.java",
-          "?? addons/echoashfallprotocol/src/main/resources/assets/echoashfallprotocol/items/field_manual.json",
-          "?? addons/echoashfallprotocol/src/test/java/com/knoxhack/echoashfallprotocol/test/AshfallNativeLoaderRuntimeHostGateMain.java",
-          "?? addons/echoindex/src/main/java/com/knoxhack/echoindex/client/NativeIndexCatalogAccess.java",
-          "?? addons/echomissioncore/src/main/java/com/knoxhack/echomissioncore/content/MissionCoreNativeJsonBootstrap.java",
-          "?? addons/echonetcore/src/main/java/com/knoxhack/echonetcore/api/EchoNeoForgePayloadBridge.java",
-          "?? addons/echonetcore/src/main/java/com/knoxhack/echonetcore/service/EchoNeoForgeClientNetworkRuntime.java",
-          "?? addons/echonetcore/src/main/java/com/knoxhack/echonetcore/service/EchoNeoForgeNetworkRuntime.java",
-          "?? addons/echopowergrid/src/main/resources/assets/echopowergrid/items/industrial_battery_bank.json",
-          "?? addons/echopowergrid/src/main/resources/assets/echopowergrid/items/medium_battery_bank.json",
-          "?? addons/echopowergrid/src/main/resources/assets/echopowergrid/items/nexus_stabilizer_coupler.json",
-          "?? addons/echopowergrid/src/main/resources/assets/echopowergrid/items/relay_substation.json",
-          "?? addons/echothemecore/src/main/java/com/knoxhack/echothemecore/client/vanilla/VanillaUiProductOwnership.java"
+          " M addons/echoaetherworks/build.gradle",
+          " M addons/echobiomecore/build.gradle",
+          " M addons/echoblackboxprotocol/build.gradle",
+          " M addons/echocursecore/build.gradle",
+          " M addons/echodatacore/build.gradle",
+          " M addons/echodifficultycore/build.gradle",
+          " M addons/echohealthcore/build.gradle",
+          " M addons/echomissioncore/build.gradle",
+          " M addons/echonetcore/build.gradle",
+          " M addons/echonexusprotocol/build.gradle",
+          " M addons/echoorbitalremnants/build.gradle",
+          " M addons/echopackcore/build.gradle",
+          " M addons/echopresencelink/build.gradle",
+          " M addons/echorecovery/build.gradle",
+          " M addons/echorelictech/build.gradle",
+          " M addons/echorendercore/build.gradle",
+          " M addons/echoriftworlds/build.gradle",
+          " M addons/echoritualcore/build.gradle",
+          " M addons/echoruntimeguard/build.gradle",
+          " M addons/echoscreencore/build.gradle",
+          " M addons/echosignalos/build.gradle",
+          " M addons/echosoundcore/build.gradle",
+          " M addons/echospawncore/build.gradle",
+          " M addons/echospellcore/build.gradle",
+          " M addons/echostationfall/build.gradle",
+          " M addons/echostatuscore/build.gradle",
+          " M addons/echostructurecore/build.gradle",
+          " M addons/echoweathercore/build.gradle",
+          " M addons/echowiki/build.gradle",
+          " M addons/echoworldcore/build.gradle"
         ]
       },
       "canonicalDocs": [
@@ -459,20 +289,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2754af751736",
-        "commitDate": "2026-06-17T17:05:12-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M electron/main.cjs",
-          " M electron/native-loader-handoff.cjs",
-          " M electron/native-loader-handoff.test.mjs",
-          " M src/components/library/usePackActions.ts",
-          " M src/services/LaunchService.ts",
-          " M src/services/nativeBridge.ts",
-          " M src/types/launch.ts",
-          " M src/types/native.ts",
-          "?? src/components/library/usePackActions.test.ts"
-        ]
+        "commit": "874ed8245fda",
+        "commitDate": "2026-06-20T00:20:37-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -495,8 +315,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 7028,
-          "summary": "package echo-launcher 1.1.16; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 7034,
+          "summary": "package echo-launcher 1.1.17; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -511,63 +331,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "09acd4a7838d",
-        "commitDate": "2026-06-16T06:35:19-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M build.gradle",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeActivationMarkerSnapshot.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapOrchestrator.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeBootstrapPlayableRuntimeFlow.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeLiveClientProbeRunner.java",
-          " M echo-native-bootstrap-api/src/main/java/dev/echo/nativeplatform/bootstrap/EchoNativeLiveUiBridge.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent3CreativeTabPlanGateMain.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveMainMenuOverrideAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveModuleSurfaceCatalogAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5LiveVisualFrameAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5MainMenuEndToEndAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ScreenHostModel.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5ThemeApplicationSmoke.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiBridgeContractVerifier.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent5UiHostInteractionStateAcceptance.java",
-          " M echo-native-bootstrap-api/src/qa/java/dev/echo/nativeplatform/bootstrap/EchoNativeAgent74UiFallbackRealUxParityVerifier.java",
-          " M echo-native-contracts/src/main/java/dev/echo/nativeplatform/contracts/EchoNativeBootstrapProductProfile.java",
-          " M echo-native-loader/src/main/java/com/echo/NativeLoaderClient.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeModuleClassLoader.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeModuleLoader.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderAdapterCoreFlow.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderAdapterCoreRuntimeMutations.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderAshfallWorldStartupService.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderClientUiHost.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderDefaultProductBridgeProvider.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderGeneratedUiSources.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLiveClientProbeBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderLiveHudRenderBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderModuleResourcePack.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderModuleSurfaceRenderers.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderProductClientRouteBootstrap.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderProductPlayableRuntimeBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderProductPlayableRuntimeConfig.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderProductPlayableRuntimeEvidence.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderProductResourceDatapackBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRegistryBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRegistryCreativeBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRegistryCreativeVisibilityBridge.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderRegistryRuntimeSupport.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderResourcePackSelection.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderResourceSanitizer.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderScreenHostModel.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderTheme.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderThemeResolver.java",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/NativeLoaderWorldgenDatapackWriter.java",
-          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeAgent2ProductionClientRouteRegistrationGateMain.java",
-          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeAgent4WorldStartupSmokeMain.java",
-          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeAgent5RuntimeTruthGateMain.java",
-          "?? echo-native-loader/src/main/java/com/echo/EchoNativeDevDirectWorldPromptBypass.java",
-          "?? echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeRegistryFreezeGuardGateMain.java",
-          "?? echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeResourcePackSelectionGateMain.java",
-          "?? echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeSharedApiClassLoaderGateMain.java"
-        ]
+        "commit": "eab2172c8d55",
+        "commitDate": "2026-06-20T00:20:32-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -599,25 +366,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "188852c567b5",
-        "commitDate": "2026-06-16T06:35:33-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M build.gradle",
-          " M docs/echo/standalone/ECHO_STANDALONE_WORLD_RUNTIME.md",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientScreenController.java",
-          " M echo-runtime-client/src/main/java/dev/echo/standalone/runtime/client/EchoClientUiRenderer.java",
-          " M echo-runtime-gameplay/src/main/java/dev/echo/standalone/runtime/gameplay/EchoInteractionSystem.java",
-          " M echo-runtime-player/src/main/java/dev/echo/standalone/runtime/player/EchoPlayerController.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimePlayerControllerSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeWorldSmokeHarness.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/ui/EchoAgent5HudOverlaySmoke.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/ui/EchoAgent5HudUpdateSmoke.java",
-          " M echo-runtime-ui/src/main/java/dev/echo/standalone/runtime/ui/EchoAgent5UiDataSources.java",
-          " M echo-runtime-ui/src/main/java/dev/echo/standalone/runtime/ui/EchoAgent5UiModuleSurfaceRenderers.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoWorldDebugProfile.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoWorldQuery.java"
-        ]
+        "commit": "2acf6cebeb0f",
+        "commitDate": "2026-06-20T10:53:07-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -911,23 +663,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "e04827fdede5",
-        "commitDate": "2026-06-17T17:37:20-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M docs/module-requirements.md",
-          " M release-assets/v0.1.0-ashfall-native-edition/ashfall-native-edition-alpha-0.1.0.pack.json",
-          " M release-assets/v0.1.0-ashfall-native-edition/checksums.txt",
-          " M release-assets/v0.1.0-ashfall-native-edition/echo-release.json",
-          " M release-assets/v0.1.0-ashfall-native-edition/release-audit.json",
-          " M release-manifest.template.json"
-        ]
+        "commit": "eac1f1e64d8b",
+        "commitDate": "2026-06-20T00:48:11-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3514,
+          "bytes": 3498,
           "heading": "ECHO Ashfall Native Edition",
           "excerpt": "Ashfall pack/runtime distribution for the ECHO native platform. It consumes `.echo-addon` module artifacts."
         },
@@ -981,24 +726,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "f0629716a0cf",
-        "commitDate": "2026-06-17T17:37:20-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M README.md",
-          " M docs/module-requirements.md",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-          " M release-assets/v0.1.0-ashfall-neoforge-edition/release-audit.json",
-          " M release-manifest.template.json"
-        ]
+        "commit": "9d1edc4c5748",
+        "commitDate": "2026-06-20T00:49:46-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 3418,
+          "bytes": 2620,
           "heading": "ECHO Ashfall NeoForge Edition",
           "excerpt": "Minecraft/NeoForge Ashfall pack distribution. It consumes `-neoforge.jar` module artifacts."
         },
@@ -1019,7 +756,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 2545,
+          "bytes": 2517,
           "heading": "Ashfall NeoForge Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand. The current `release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json` declares 46 requirements for the `neoforge` module artifact family."
         }
@@ -1038,22 +775,16 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ef3d4897b742",
-        "commitDate": "2026-06-17T17:37:20-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M release-assets/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-          " M release-assets/v0.1.0-ashfall-standalone-edition/checksums.txt",
-          " M release-assets/v0.1.0-ashfall-standalone-edition/echo-release.json",
-          " M release-assets/v0.1.0-ashfall-standalone-edition/release-audit.json",
-          " M release-manifest.template.json"
-        ]
+        "commit": "369ac1df88b2",
+        "commitDate": "2026-06-20T02:12:07-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2939,
+          "bytes": 2640,
           "heading": "ECHO Ashfall Standalone Edition",
           "excerpt": "Standalone Ashfall runtime distribution. It consumes `-standalone.jar` module artifacts."
         },
@@ -1093,8 +824,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ca4cc038d295",
-        "commitDate": "2026-06-16T16:33:39-04:00",
+        "commit": "392ba4a32e88",
+        "commitDate": "2026-06-20T00:55:10-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1102,7 +833,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1650,
+          "bytes": 1611,
           "heading": "ECHO Openlands Native Edition",
           "excerpt": "Openlands Native Edition is the ECHO Native Platform packaging lane for the Openlands official pack."
         },
@@ -1149,8 +880,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9b6750668da4",
-        "commitDate": "2026-06-16T16:33:39-04:00",
+        "commit": "4315eefb8c2b",
+        "commitDate": "2026-06-20T00:55:45-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1158,7 +889,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1596,
+          "bytes": 1557,
           "heading": "ECHO Openlands NeoForge Edition",
           "excerpt": "Openlands NeoForge Edition is the Minecraft/NeoForge adapter packaging lane for Openlands."
         },
@@ -1205,8 +936,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "6197d4373f07",
-        "commitDate": "2026-06-16T16:33:40-04:00",
+        "commit": "4834b02ba58c",
+        "commitDate": "2026-06-20T00:56:20-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1214,7 +945,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1408,
+          "bytes": 1362,
           "heading": "ECHO Openlands Standalone Edition",
           "excerpt": "Openlands Standalone Edition is the packaging lane for the ECHO Standalone Runtime."
         },
@@ -1261,8 +992,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a27142475b04",
-        "commitDate": "2026-06-16T16:33:40-04:00",
+        "commit": "5f0a53292f90",
+        "commitDate": "2026-06-20T00:46:10-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1270,7 +1001,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1064,
+          "bytes": 1107,
           "heading": "Arcana Division Native Edition",
           "excerpt": "Launcher-installable beta edition for ECHO: Arcana Division."
         }
@@ -1281,7 +1012,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 259,
-          "summary": "package arcana-division-native-edition 1.0.0; scripts: build, validate"
+          "summary": "package arcana-division-native-edition 1.0.2; scripts: build, validate"
         }
       ],
       "warnings": []
@@ -1296,8 +1027,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "300e9c992368",
-        "commitDate": "2026-06-16T16:33:41-04:00",
+        "commit": "6c922d343cf2",
+        "commitDate": "2026-06-20T00:46:48-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1305,7 +1036,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1084,
+          "bytes": 1129,
           "heading": "Arcana Division NeoForge Edition",
           "excerpt": "Launcher-installable beta edition for ECHO: Arcana Division."
         }
@@ -1316,7 +1047,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 261,
-          "summary": "package arcana-division-neoforge-edition 1.0.0; scripts: build, validate"
+          "summary": "package arcana-division-neoforge-edition 1.0.2; scripts: build, validate"
         }
       ],
       "warnings": []
@@ -1331,8 +1062,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3aff001a9146",
-        "commitDate": "2026-06-16T16:33:41-04:00",
+        "commit": "b145b0306cfc",
+        "commitDate": "2026-06-20T00:47:25-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1340,7 +1071,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1104,
+          "bytes": 1151,
           "heading": "Arcana Division Standalone Edition",
           "excerpt": "Launcher-installable beta edition for ECHO: Arcana Division."
         }
@@ -1351,7 +1082,7 @@
           "path": "package.json",
           "exists": true,
           "bytes": 263,
-          "summary": "package arcana-division-standalone-edition 1.0.0; scripts: build, validate"
+          "summary": "package arcana-division-standalone-edition 1.0.2; scripts: build, validate"
         }
       ],
       "warnings": []
@@ -1366,8 +1097,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7b280406f988",
-        "commitDate": "2026-06-17T16:44:35-04:00",
+        "commit": "300887a671d7",
+        "commitDate": "2026-06-20T00:56:52-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1375,7 +1106,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1569,
+          "bytes": 1445,
           "heading": "ECHO Sky Relay Native Edition",
           "excerpt": "Sky Relay Native Edition is the ECHO Native Platform packaging lane for"
         },
@@ -1429,8 +1160,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "f78b1c7acf9c",
-        "commitDate": "2026-06-17T16:44:55-04:00",
+        "commit": "f324609f5a8a",
+        "commitDate": "2026-06-20T00:57:09-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1438,7 +1169,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1210,
+          "bytes": 1084,
           "heading": "ECHO Sky Relay NeoForge Edition",
           "excerpt": "Sky Relay NeoForge Edition is the Minecraft/NeoForge compatibility lane for"
         },
@@ -1492,8 +1223,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9c7f2e64f0bc",
-        "commitDate": "2026-06-17T16:44:55-04:00",
+        "commit": "baf2c7ba97b2",
+        "commitDate": "2026-06-20T00:57:28-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1501,7 +1232,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1198,
+          "bytes": 1070,
           "heading": "ECHO Sky Relay Standalone Edition",
           "excerpt": "Sky Relay Standalone Edition is the ECHO Standalone Runtime packaging lane for"
         },
@@ -1555,8 +1286,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "86e78041eebc",
-        "commitDate": "2026-06-17T16:26:49-04:00",
+        "commit": "8f67a7eaad7e",
+        "commitDate": "2026-06-20T00:52:52-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1564,7 +1295,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1502,
+          "bytes": 1925,
           "heading": "ECHO Galactic Survey Native Edition",
           "excerpt": "Galactic Survey Native Edition is the ECHO Native Platform packaging lane for"
         },
@@ -1618,8 +1349,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b1d1796c451d",
-        "commitDate": "2026-06-17T16:26:49-04:00",
+        "commit": "d9aa0711857b",
+        "commitDate": "2026-06-20T00:53:35-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1627,7 +1358,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1510,
+          "bytes": 1941,
           "heading": "ECHO Galactic Survey NeoForge Edition",
           "excerpt": "Galactic Survey NeoForge Edition is the Minecraft/NeoForge packaging lane for"
         },
@@ -1681,8 +1412,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a8776d366ed0",
-        "commitDate": "2026-06-17T16:26:49-04:00",
+        "commit": "a4650769e69a",
+        "commitDate": "2026-06-20T00:54:19-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -1690,7 +1421,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 1532,
+          "bytes": 1971,
           "heading": "ECHO Galactic Survey Standalone Edition",
           "excerpt": "Galactic Survey Standalone Edition is the ECHO Standalone Runtime packaging lane for"
         },
