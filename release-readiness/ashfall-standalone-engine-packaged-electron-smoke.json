@@ -1,15 +1,15 @@
 {
   "ok": true,
   "phase": "completed",
-  "generatedAt": "2026-06-20T20:58:47.592Z",
+  "generatedAt": "2026-06-20T21:16:18.256Z",
   "channelUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/beta/launcher-channel.json",
   "releaseIndexRoot": null,
   "standaloneRuntimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
   "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
-  "workRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843",
-  "userDataDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\user-data",
-  "playerContentRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content",
-  "minecraftRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\minecraft-root",
+  "workRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611",
+  "userDataDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\user-data",
+  "playerContentRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content",
+  "minecraftRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\minecraft-root",
   "moduleEvidenceSources": {
     "primaryReleaseTag": "modules-beta-full-20260620",
     "releaseTagDistribution": [
@@ -33,7 +33,7 @@
     {
       "profileId": "ashfall-standalone-engine-edition",
       "name": "Ashfall Standalone Engine Edition",
-      "startedAt": "2026-06-20T20:58:51.788Z",
+      "startedAt": "2026-06-20T21:16:23.159Z",
       "ok": true,
       "packStateBefore": {
         "catalog": {
@@ -42,7 +42,7 @@
           "source": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/beta/launcher-channel.json",
           "releases": 16,
           "latestVersion": "2.0.0-beta.2",
-          "fetchedAt": "2026-06-20T20:58:51.915Z",
+          "fetchedAt": "2026-06-20T21:16:26.262Z",
           "status": "warning",
           "diagnostic": "Catalog release is warning-gated for standalone engine verification; full gameplay parity is not claimed.",
           "release": {
@@ -54,7 +54,7 @@
             "name": "ashfall-standalone-engine-edition 2.0.0-beta.2",
             "draft": false,
             "prerelease": true,
-            "publishedAt": "2026-06-20T20:58:51.715Z",
+            "publishedAt": "2026-06-20T21:16:26.256Z",
             "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/tag/v2.0.0-ashfall-standalone-engine-edition-beta.4",
             "releaseNotes": [
               "Resolved through the warning-gated Catalog entry ashfall-standalone-engine-edition."
@@ -144,11 +144,11 @@
         "clicked": true,
         "label": "Install Ashfall Standalone Engine Edition"
       },
-      "completedAt": "2026-06-20T20:59:02.873Z",
-      "durationMs": 11085,
-      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\user-data\\ECHO\\launcher-logs\\install-2026-06-20T20-58-58-420Z.json",
-      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition",
-      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
+      "completedAt": "2026-06-20T21:16:41.941Z",
+      "durationMs": 18782,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\user-data\\ECHO\\launcher-logs\\install-2026-06-20T21-16-32-310Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
       "manifestPack": "ashfall-standalone-engine-edition",
       "manifestVersion": "2.0.0-beta.2",
       "fileCount": 24,
@@ -169,7 +169,7 @@
       },
       "standaloneRepair": {
         "ok": true,
-        "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\user-data\\ECHO\\launcher-logs\\repair-2026-06-20T20-58-59-556Z.json",
+        "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\user-data\\ECHO\\launcher-logs\\repair-2026-06-20T21-16-32-950Z.json",
         "repaired": [
           "mods/echoadaptercore-1.0.0-standalone.jar"
         ],
@@ -187,17 +187,71 @@
           "valid": 24
         }
       },
+      "standaloneUpdate": {
+        "ok": true,
+        "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\user-data\\ECHO\\launcher-logs\\install-2026-06-20T21-16-38-977Z.json",
+        "operation": "update",
+        "installed": [],
+        "updated": [],
+        "verified": [
+          "echo-standalone-engine-2.0.0-beta.2.jar",
+          "pack.json",
+          "content-graph-evidence.json",
+          "checksums.sha256",
+          "run.ps1",
+          "run.sh",
+          "mods/echoadaptercore-1.0.0-standalone.jar",
+          "mods/echoashfallprotocol-1.0.0-standalone.jar",
+          "mods/echocommonloot-1.0.0-standalone.jar",
+          "mods/echocontentcore-1.0.0-standalone.jar",
+          "mods/echocore-1.0.0-standalone.jar",
+          "mods/echocreatureroles-1.0.0-standalone.jar",
+          "mods/echofoundationcore-1.0.0-standalone.jar",
+          "mods/echohudcore-1.0.0-standalone.jar",
+          "mods/echomaterialcore-1.0.0-standalone.jar",
+          "mods/echoplatformcore-1.0.0-standalone.jar",
+          "mods/echoschemacore-1.0.0-standalone.jar",
+          "mods/echoscreencore-1.0.0-standalone.jar",
+          "mods/echostationcore-1.0.0-standalone.jar",
+          "mods/echoterminal-1.0.0-standalone.jar",
+          "mods/echotoolcore-1.0.0-standalone.jar",
+          "mods/echovalidationcore-1.0.0-standalone.jar",
+          "mods/echoweathercore-1.0.0-standalone.jar",
+          "mods/echoworldstarter-1.0.0-standalone.jar"
+        ],
+        "payload": {
+          "ok": true,
+          "runtimeMode": "standalone-engine",
+          "folderName": "mods",
+          "itemLabel": "standalone module jar",
+          "expectedCount": 18,
+          "presentCount": 18,
+          "missingCount": 0,
+          "missingFiles": [],
+          "warnings": []
+        },
+        "before": {
+          "missing": [],
+          "corrupt": [],
+          "valid": 24
+        },
+        "after": {
+          "missing": [],
+          "corrupt": [],
+          "valid": 24
+        }
+      },
       "launchRoute": {
         "kind": "standalone-engine",
         "ok": true,
-        "runtimeRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition",
-        "executablePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar",
-        "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
-        "contentGraphEvidencePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json",
+        "runtimeRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition",
+        "executablePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar",
+        "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
+        "contentGraphEvidencePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json",
         "contentGraphStatus": "Content graph evidence reports PASS for 18 module(s).",
         "fileVerification": "24 valid, 0 missing, 0 corrupt required file(s).",
         "javaVersion": "25.0.3",
-        "launchLogPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\logs\\echo-standalone-engine-2026-06-20T20-59-01-074Z.log",
+        "launchLogPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\logs\\echo-standalone-engine-2026-06-20T21-16-40-353Z.log",
         "readyCardAction": {
           "kind": "launch-standalone",
           "label": "Play Ashfall Standalone Engine Edition",
@@ -212,16 +266,16 @@
         },
         "preLaunchState": {
           "ok": true,
-          "runtimeRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition",
-          "executablePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar",
-          "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
-          "contentGraphEvidencePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json",
+          "runtimeRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition",
+          "executablePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar",
+          "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
+          "contentGraphEvidencePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json",
           "lastLaunchLogPath": null,
           "javaVersion": "25.0.3",
           "supportBundle": {
             "available": true,
             "entries": 2,
-            "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
+            "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
           },
           "repairPlan": [],
           "checks": [
@@ -229,15 +283,15 @@
               "id": "install-root",
               "label": "Install root",
               "status": "healthy",
-              "detail": "Resolved C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition.",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition"
+              "detail": "Resolved C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition.",
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition"
             },
             {
               "id": "pack-manifest",
               "label": "Pack manifest",
               "status": "healthy",
-              "detail": "Manifest found at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json.",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
+              "detail": "Manifest found at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json.",
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
             },
             {
               "id": "java-21",
@@ -250,37 +304,37 @@
               "id": "engine-jar",
               "label": "Engine JAR",
               "status": "healthy",
-              "detail": "Engine JAR is ready at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar.",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar"
+              "detail": "Engine JAR is ready at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar.",
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar"
             },
             {
               "id": "content-graph-evidence",
               "label": "Content graph evidence",
               "status": "healthy",
               "detail": "Content graph evidence reports PASS for 18 module(s).",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json"
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json"
             },
             {
               "id": "file-verification",
               "label": "File verification",
               "status": "healthy",
               "detail": "24 valid, 0 missing, 0 corrupt required file(s).",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
             }
           ]
         },
         "postLaunchState": {
           "ok": true,
-          "runtimeRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition",
-          "executablePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar",
-          "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
-          "contentGraphEvidencePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json",
-          "lastLaunchLogPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\logs\\echo-standalone-engine-2026-06-20T20-59-01-074Z.log",
+          "runtimeRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition",
+          "executablePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar",
+          "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json",
+          "contentGraphEvidencePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json",
+          "lastLaunchLogPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\logs\\echo-standalone-engine-2026-06-20T21-16-40-353Z.log",
           "javaVersion": "25.0.3",
           "supportBundle": {
             "available": true,
             "entries": 3,
-            "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
+            "reportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
           },
           "repairPlan": [],
           "checks": [
@@ -288,15 +342,15 @@
               "id": "install-root",
               "label": "Install root",
               "status": "healthy",
-              "detail": "Resolved C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition.",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition"
+              "detail": "Resolved C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition.",
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition"
             },
             {
               "id": "pack-manifest",
               "label": "Pack manifest",
               "status": "healthy",
-              "detail": "Manifest found at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json.",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
+              "detail": "Manifest found at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json.",
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
             },
             {
               "id": "java-21",
@@ -309,22 +363,22 @@
               "id": "engine-jar",
               "label": "Engine JAR",
               "status": "healthy",
-              "detail": "Engine JAR is ready at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar.",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar"
+              "detail": "Engine JAR is ready at C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar.",
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\echo-standalone-engine-2.0.0-beta.2.jar"
             },
             {
               "id": "content-graph-evidence",
               "label": "Content graph evidence",
               "status": "healthy",
               "detail": "Content graph evidence reports PASS for 18 module(s).",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json"
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\content-graph-evidence.json"
             },
             {
               "id": "file-verification",
               "label": "File verification",
               "status": "healthy",
               "detail": "24 valid, 0 missing, 0 corrupt required file(s).",
-              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-ux-smoke-20260620165843\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
+              "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-engine-public-update-smoke-20260620171611\\player-content\\Instances\\Ashfall Standalone Engine Edition\\.echo\\installed-manifest.json"
             }
           ]
         },
@@ -336,11 +390,11 @@
   "stdout": [
     "\r\n",
     "Checking for update\n",
-    "Generated new staging user ID: 083e6f33-cf5e-5ffc-90cd-87b735e15324\n",
+    "Generated new staging user ID: a3997247-9aba-5c6a-95db-c0b757953a72\n",
     "Update for version 1.1.18 is not available (latest version: 1.1.16, downgrade is disallowed).\n"
   ],
   "stderr": [
-    "\r\nDevTools listening on ws://127.0.0.1:52086/devtools/browser/9bc926ca-603c-43bb-b6a3-6f9bc7e3172a\r\n"
+    "\r\nDevTools listening on ws://127.0.0.1:52840/devtools/browser/498940af-87ba-4bf0-b3c3-14e60ae9b667\r\n"
   ],
-  "completedAt": "2026-06-20T20:59:02.875Z"
+  "completedAt": "2026-06-20T21:16:41.944Z"
 }
