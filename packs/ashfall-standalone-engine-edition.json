@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "ashfall-standalone-engine-edition",
+  "name": "Ashfall Standalone Engine Edition",
+  "channel": "beta",
+  "loader": "echo-standalone-engine",
+  "publicDownloadHub": "official-echo-website",
+  "sourceRepos": {
+    "pack": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition",
+    "standaloneEngine": "https://github.com/knoxhack/ECHO-Standalone-Engine",
+    "modules": "https://github.com/knoxhack/ECHO-Modules",
+    "sdk": "https://github.com/knoxhack/ECHO-SDK"
+  },
+  "moduleArtifactFamily": "standalone",
+  "moduleArtifactPattern": "<module>-<version>-standalone.jar",
+  "runtime": {
+    "id": "echo-standalone-engine",
+    "target": "echo_runtime_standalone",
+    "requiredJava": "21+",
+    "version": "2.0.0-beta.2"
+  },
+  "updatePolicy": "Use this manifest for Ashfall Standalone Engine Edition updates. Module entries must pin -standalone.jar artifacts and install under mods/.",
+  "releaseReadiness": {
+    "status": "warning",
+    "evidence": [
+      "release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.4/echo-release.json",
+      "release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.4/release-audit.json"
+    ],
+    "notes": [
+      "Installable for engine verification with the expanded 18-module beta.4 slice.",
+      "Full Ashfall gameplay parity is not claimed."
+    ]
+  },
+  "assets": [
+    {
+      "name": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+      "size": 276403,
+      "sha256": "87237a28a26624962889343feefea5edcfc7343b0bd71c44f11c9434a339f3d8",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/ashfall-standalone-engine-edition-2.0.0-beta.2.zip"
+    },
+    {
+      "name": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+      "size": 22451,
+      "sha256": "a684f89afee740f4e22ba528c8c3d591427ebc2fa20fb6a41b3df009aceb75ba",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json"
+    },
+    {
+      "name": "checksums.txt",
+      "size": 414,
+      "sha256": "67b9cb1267fdf83480e427041759f5b3573ef2137e60a77814399421c9b906b6",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/checksums.txt"
+    },
+    {
+      "name": "echo-release.json",
+      "size": 8984,
+      "sha256": "aac86d1c192a252bd72b0a31eb050bdd27e4195ed6dda8ebb457d61cc46d2985",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/echo-release.json"
+    },
+    {
+      "name": "release-audit.json",
+      "size": 1769,
+      "sha256": "16017114d598ccf91e99030db21dee9b6fec309a67f568510912ba398c24dcca",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/release-audit.json"
+    }
+  ],
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/tag/v2.0.0-ashfall-standalone-engine-edition-beta.4",
+  "moduleRequirements": [
+    {
+      "id": "echoadaptercore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoashfallprotocol",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echocommonloot",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echocontentcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echocore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echocreatureroles",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echofoundationcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echohudcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echomaterialcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoplatformcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoschemacore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoscreencore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echostationcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoterminal",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echotoolcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echovalidationcore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoweathercore",
+      "version": "1.0.0"
+    },
+    {
+      "id": "echoworldstarter",
+      "version": "1.0.0"
+    }
+  ],
+  "validation": "warning",
+  "releaseTag": "v2.0.0-ashfall-standalone-engine-edition-beta.4",
+  "commitSha": "9e3c32a6ac103605bf3cc6d4c76a4dea511efd24",
+  "artifactUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+  "artifactSha256": "87237a28a26624962889343feefea5edcfc7343b0bd71c44f11c9434a339f3d8",
+  "artifactSize": 276403,
+  "manifestAsset": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+  "version": "2.0.0-beta.2",
+  "validationReason": "Installable for standalone engine verification, repair, content graph, and headless launch evidence with the expanded 18-module beta.4 slice; not full gameplay-ready and not a replacement for the legacy Standalone Runtime lane.",
+  "packManifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+  "packManifestSha256": "a684f89afee740f4e22ba528c8c3d591427ebc2fa20fb6a41b3df009aceb75ba"
+}

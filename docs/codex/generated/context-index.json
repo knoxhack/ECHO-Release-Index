@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-20T10:59:46-04:00",
+  "generatedAt": "2026-06-20T15:33:32-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,12 +16,79 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2a378306c640",
-        "commitDate": "2026-06-20T10:59:46-04:00",
+        "commit": "ed44cc4e9e5a",
+        "commitDate": "2026-06-20T11:12:19-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M release-readiness/beta-live-channel-proof.json",
-          " M release-readiness/public-alpha-live-channel-proof.json"
+          " M channels/alpha/launcher-channel.json",
+          " M channels/beta/launcher-channel.json",
+          " M channels/beta/release-manifest.json",
+          " M channels/beta/repositories.json",
+          " M modpacks/ashfall-native.json",
+          " M modpacks/ashfall-neoforge.json",
+          " M modpacks/ashfall-standalone.json",
+          " M modules/echoadaptercore.json",
+          " M modules/echoagriculturereclamation.json",
+          " M modules/echoarmory.json",
+          " M modules/echoashfallprotocol.json",
+          " M modules/echoblackboxprotocol.json",
+          " M modules/echoblockworks.json",
+          " M modules/echocommonloot.json",
+          " M modules/echocontentcore.json",
+          " M modules/echoconvoyprotocol.json",
+          " M modules/echocore.json",
+          " M modules/echocreatureroles.json",
+          " M modules/echodatacore.json",
+          " M modules/echofoundationcore.json",
+          " M modules/echoholomap.json",
+          " M modules/echohudcore.json",
+          " M modules/echoindex.json",
+          " M modules/echoindustrialnexus.json",
+          " M modules/echolens.json",
+          " M modules/echologisticsnetwork.json",
+          " M modules/echomaterialcore.json",
+          " M modules/echomissioncore.json",
+          " M modules/echomultiblockcore.json",
+          " M modules/echonetcore.json",
+          " M modules/echonexusprotocol.json",
+          " M modules/echoorbitalremnants.json",
+          " M modules/echoplatformcore.json",
+          " M modules/echopowergrid.json",
+          " M modules/echorecovery.json",
+          " M modules/echorelictech.json",
+          " M modules/echorendercore.json",
+          " M modules/echoruntimeguard.json",
+          " M modules/echoschemacore.json",
+          " M modules/echoscreencore.json",
+          " M modules/echosignalos.json",
+          " M modules/echosoundcore.json",
+          " M modules/echostationcore.json",
+          " M modules/echostationfall.json",
+          " M modules/echoterminal.json",
+          " M modules/echothemecore.json",
+          " M modules/echotoolcore.json",
+          " M modules/echotutorialcore.json",
+          " M modules/echovalidationcore.json",
+          " M modules/echoweathercore.json",
+          " M modules/echowiki.json",
+          " M modules/echoworldcore.json",
+          " M modules/echoworldstarter.json",
+          " M packs/ashfall-native-edition.json",
+          " M packs/ashfall-neoforge-edition.json",
+          " M packs/ashfall-standalone-edition.json",
+          " M products/standalone-runtime.json",
+          " M release-readiness/all-modpacks-electron-install-smoke.json",
+          " M release-readiness/all-modpacks-pipeline-audit.json",
+          " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
+          " M release-readiness/public-alpha-runtime-acceptance.json",
+          " M scripts/verify-official-pack-launcher-lifecycle-smoke.mjs",
+          "?? modpacks/ashfall-standalone-engine.json",
+          "?? packs/ashfall-standalone-engine-edition.json",
+          "?? products/standalone-engine.json",
+          "?? release-readiness/ashfall-standalone-engine-local-e2e.json",
+          "?? release-readiness/ashfall-standalone-engine-packaged-electron-smoke.json",
+          "?? release-readiness/ashfall-standalone-engine-public-assets.json",
+          "?? scripts/verify-ashfall-standalone-engine-public-assets.mjs"
         ]
       },
       "canonicalDocs": [
@@ -80,8 +147,8 @@
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 42078,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-20T05:08:27.947Z"
+          "bytes": 44467,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-20T19:36:44.430Z"
         },
         {
           "path": "trust/tiers.json",
@@ -135,7 +202,10 @@
           " M addons/echostructurecore/build.gradle",
           " M addons/echoweathercore/build.gradle",
           " M addons/echowiki/build.gradle",
-          " M addons/echoworldcore/build.gradle"
+          " M addons/echoworldcore/build.gradle",
+          " M build.gradle",
+          " M scripts/generate-content-graph.mjs",
+          " M scripts/sync-official-pack-module-selections.mjs"
         ]
       },
       "canonicalDocs": [
@@ -220,8 +290,12 @@
         "branch": "main",
         "commit": "68b9d07a633f",
         "commitDate": "2026-06-16T11:23:46-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M docs/schemas/content-graph.md",
+          " M schemas/content-graph-edge.schema.json",
+          " M schemas/content-graph-node.schema.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -255,7 +329,7 @@
         {
           "path": "docs/schemas/content-graph.md",
           "exists": true,
-          "bytes": 16649,
+          "bytes": 16895,
           "heading": "ECHO Content Graph",
           "excerpt": "The `.ECHO Content Graph` is a runtime-neutral, portable semantic model of ECHO modules, addons, and gameplay content."
         },
@@ -291,8 +365,39 @@
         "branch": "main",
         "commit": "874ed8245fda",
         "commitDate": "2026-06-20T00:20:37-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/main.cjs",
+          " M electron/release-assets.cjs",
+          " M electron/release-index-resolver.mjs",
+          " M package-lock.json",
+          " M package.json",
+          " M scripts/all-modpacks-electron-install-smoke.mjs",
+          " M scripts/audit-all-modpacks-pipeline.mjs",
+          " M src/components/dashboard/HomePage.tsx",
+          " M src/components/library/LibraryCatalog.tsx",
+          " M src/components/library/libraryUtils.ts",
+          " M src/components/runtime/StandaloneRuntimePage.tsx",
+          " M src/data/bundledProfiles.ts",
+          " M src/data/officialModpacks.test.ts",
+          " M src/data/officialModpacks.ts",
+          " M src/services/StandaloneRuntimeService.ts",
+          " M src/services/nativeBridge.ts",
+          " M src/stores/launcherStore.ts",
+          " M src/stores/standaloneRuntimeStore.ts",
+          " M src/types/manifests.ts",
+          " M src/types/standaloneRuntime.ts",
+          " M src/utils/ashfallHomeActions.test.ts",
+          " M src/utils/ashfallHomeActions.ts",
+          " M src/utils/ashfallProfileMigration.test.ts",
+          " M src/utils/ashfallProfileMigration.ts",
+          " M src/utils/minecraftLauncherHandoff.ts",
+          " M src/utils/releaseValidation.test.ts",
+          " M src/utils/releaseValidation.ts",
+          " M src/utils/standaloneRuntimeShell.test.ts",
+          " M src/utils/standaloneRuntimeShell.ts",
+          "?? scripts/ashfall-standalone-engine-local-e2e.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -315,8 +420,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 7034,
-          "summary": "package echo-launcher 1.1.17; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 7141,
+          "summary": "package echo-launcher 1.1.18; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -366,8 +471,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "2acf6cebeb0f",
-        "commitDate": "2026-06-20T10:53:07-04:00",
+        "commit": "15f6afd166dd",
+        "commitDate": "2026-06-20T14:16:37-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -389,6 +494,67 @@
       ],
       "agentDocs": [],
       "metadata": [],
+      "warnings": []
+    },
+    {
+      "id": "standalone-engine",
+      "name": "ECHO-Standalone-Engine",
+      "github": "knoxhack/ECHO-Standalone-Engine",
+      "role": "Standalone engine rewrite, Java 21 engine runtime, strict pack boot, content graph evidence, and engine release payloads.",
+      "localPath": "C:\\Development\\Github\\ECHO-Standalone-Engine",
+      "exists": true,
+      "git": {
+        "available": true,
+        "branch": "main",
+        "commit": "50e039a255b6",
+        "commitDate": "2026-06-20T15:31:04-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M build/smoke-saves-a/headless-smoke/headless-smoke-report.json",
+          " M build/smoke-saves-a/headless-smoke/smoke-world/world.json",
+          " M build/smoke-saves-b/headless-smoke/headless-smoke-report.json",
+          " M build/smoke-saves-b/headless-smoke/smoke-world/world.json",
+          " M build/test-classes/dev/echo/engine/runtime/content/CanonicalRuntimeIntegrationTest.class",
+          "?? build/modules/echocontentcore/",
+          "?? build/modules/echocore/",
+          "?? build/modules/echohudcore/",
+          "?? build/modules/echoplatformcore/",
+          "?? build/modules/echoschemacore/",
+          "?? build/modules/echovalidationcore/"
+        ]
+      },
+      "canonicalDocs": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "bytes": 4004,
+          "heading": "ECHO Standalone Engine",
+          "excerpt": "A clean Java 21 standalone engine lane for ECHO packs and modules."
+        },
+        {
+          "path": "reports/BUILD_VERIFICATION.md",
+          "exists": true,
+          "bytes": 537,
+          "heading": "Build Verification",
+          "excerpt": "- Version: `2.0.0-beta.2`"
+        },
+        {
+          "path": "docs/MODULE_AUTHORING.md",
+          "exists": true,
+          "bytes": 3020,
+          "heading": "Module Authoring",
+          "excerpt": "Build against:"
+        }
+      ],
+      "agentDocs": [],
+      "metadata": [
+        {
+          "path": "dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "exists": true,
+          "bytes": 22451,
+          "summary": "JSON keys: schemaVersion, pack, id, name, version, channel, minecraft, loader, runtimeTarget, runtime"
+        }
+      ],
       "warnings": []
     },
     {
@@ -663,8 +829,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "eac1f1e64d8b",
-        "commitDate": "2026-06-20T00:48:11-04:00",
+        "commit": "cbf18e4b2d63",
+        "commitDate": "2026-06-20T14:58:33-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -726,8 +892,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9d1edc4c5748",
-        "commitDate": "2026-06-20T00:49:46-04:00",
+        "commit": "601e5cdb030d",
+        "commitDate": "2026-06-20T15:25:48-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -775,8 +941,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "369ac1df88b2",
-        "commitDate": "2026-06-20T02:12:07-04:00",
+        "commit": "1f756f6a2cc0",
+        "commitDate": "2026-06-20T14:59:02-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -812,6 +978,89 @@
       ],
       "agentDocs": [],
       "metadata": [],
+      "warnings": []
+    },
+    {
+      "id": "ashfall-standalone-engine",
+      "name": "ECHO-Ashfall-Standalone-Engine-Edition",
+      "github": "knoxhack/ECHO-Ashfall-Standalone-Engine-Edition",
+      "role": "Ashfall Standalone Engine Edition pack manifest, release assets, install docs, runtime evidence, and warning-gated standalone engine lane metadata.",
+      "localPath": "C:\\Development\\Github\\ECHO-Ashfall-Standalone-Engine-Edition",
+      "exists": true,
+      "git": {
+        "available": true,
+        "branch": "main",
+        "commit": "9e3c32a6ac10",
+        "commitDate": "2026-06-20T15:33:32-04:00",
+        "dirty": false,
+        "dirtyFiles": []
+      },
+      "canonicalDocs": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "bytes": 1519,
+          "heading": "Ashfall Standalone Engine Edition",
+          "excerpt": "Ashfall Standalone Engine Edition is the beta pack lane for the new `echo-standalone-engine` runtime."
+        },
+        {
+          "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
+          "exists": true,
+          "bytes": 867,
+          "heading": "Public Alpha Release Status",
+          "excerpt": "Ashfall Standalone Engine Edition is warning-gated."
+        },
+        {
+          "path": "docs/install.md",
+          "exists": true,
+          "bytes": 951,
+          "heading": "Install",
+          "excerpt": "Ashfall Standalone Engine Edition installs as a ZIP-backed standalone pack."
+        },
+        {
+          "path": "docs/update-flow.md",
+          "exists": true,
+          "bytes": 782,
+          "heading": "Update Flow",
+          "excerpt": "The Engine Edition follows the standard Launcher ZIP install and repair path."
+        },
+        {
+          "path": "docs/module-requirements.md",
+          "exists": true,
+          "bytes": 1055,
+          "heading": "Module Requirements",
+          "excerpt": "The beta carries the current 18-module standalone verification slice."
+        },
+        {
+          "path": "docs/runtime-evidence.md",
+          "exists": true,
+          "bytes": 886,
+          "heading": "Runtime Evidence",
+          "excerpt": "The current release payload is generated from `ECHO-Standalone-Engine` version `2.0.0-beta.2`."
+        },
+        {
+          "path": "docs/gameplay-evidence.md",
+          "exists": true,
+          "bytes": 804,
+          "heading": "Gameplay Evidence",
+          "excerpt": "Ashfall Standalone Engine Edition currently provides a playable verification slice."
+        }
+      ],
+      "agentDocs": [],
+      "metadata": [
+        {
+          "path": "release-assets/v2.0.0-ashfall-standalone-engine-edition-beta/echo-release.json",
+          "exists": true,
+          "bytes": 6090,
+          "summary": "JSON keys: schemaVersion, id, name, version, channel, validation, warningGated, warningReason, sourceRepo, engine"
+        },
+        {
+          "path": "release-assets/v2.0.0-ashfall-standalone-engine-edition-beta/release-audit.json",
+          "exists": true,
+          "bytes": 1375,
+          "summary": "JSON keys: schemaVersion, id, version, status, validation, checks"
+        }
+      ],
       "warnings": []
     },
     {

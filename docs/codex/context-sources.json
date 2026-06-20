@@ -101,6 +101,21 @@
       "metadata": []
     },
     {
+      "id": "standalone-engine",
+      "name": "ECHO-Standalone-Engine",
+      "github": "knoxhack/ECHO-Standalone-Engine",
+      "role": "Standalone engine rewrite, Java 21 engine runtime, strict pack boot, content graph evidence, and engine release payloads.",
+      "canonicalDocs": [
+        "README.md",
+        "reports/BUILD_VERIFICATION.md",
+        "docs/MODULE_AUTHORING.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json"
+      ]
+    },
+    {
       "id": "platform-website",
       "name": "ECHO-Platform-Website",
       "github": "knoxhack/ECHO-Platform-Website",
@@ -224,6 +239,26 @@
       ],
       "agentDocs": [],
       "metadata": []
+    },
+    {
+      "id": "ashfall-standalone-engine",
+      "name": "ECHO-Ashfall-Standalone-Engine-Edition",
+      "github": "knoxhack/ECHO-Ashfall-Standalone-Engine-Edition",
+      "role": "Ashfall Standalone Engine Edition pack manifest, release assets, install docs, runtime evidence, and warning-gated standalone engine lane metadata.",
+      "canonicalDocs": [
+        "README.md",
+        "PUBLIC_ALPHA_RELEASE_STATUS.md",
+        "docs/install.md",
+        "docs/update-flow.md",
+        "docs/module-requirements.md",
+        "docs/runtime-evidence.md",
+        "docs/gameplay-evidence.md"
+      ],
+      "agentDocs": [],
+      "metadata": [
+        "release-assets/v2.0.0-ashfall-standalone-engine-edition-beta/echo-release.json",
+        "release-assets/v2.0.0-ashfall-standalone-engine-edition-beta/release-audit.json"
+      ]
     },
     {
       "id": "openlands-native",

@@ -21,6 +21,7 @@ Keep AGENTS.md files small; put durable platform knowledge in ECHO-Release-Index
 - `ECHO-Launcher`: Desktop launcher, install/update/repair/rollback flows, launcher updater metadata, and deep-link handling.
 - `ECHO-Native-Platform`: Native runtime, loader, contracts, diagnostics, and PackOS integration assets.
 - `ECHO-Standalone-Runtime`: Standalone runtime shell and standalone runtime modules.
+- `ECHO-Standalone-Engine`: Standalone engine rewrite, Java 21 engine runtime, strict pack boot, content graph evidence, and engine release payloads.
 - `ECHO-Platform-Website`: Public website, directory pages, download pages, and indexed echo:// install/update UI.
 - `ECHO-Developer-Studio`: First-party developer tooling desktop app.
 - `ECHO-Addons-Studio`: Third-party addon authoring, packaging, SDK validation, and release draft tooling.
@@ -29,6 +30,7 @@ Keep AGENTS.md files small; put durable platform knowledge in ECHO-Release-Index
 - `ECHO-Ashfall-Native-Edition`: Ashfall Native Edition pack manifest, assets, install docs, and native release readiness evidence.
 - `ECHO-Ashfall-NeoForge-Edition`: Ashfall NeoForge Edition pack manifest, assets, install docs, and update flow.
 - `ECHO-Ashfall-Standalone-Edition`: Ashfall Standalone Edition pack manifest, assets, install docs, and experimental standalone lane metadata.
+- `ECHO-Ashfall-Standalone-Engine-Edition`: Ashfall Standalone Engine Edition pack manifest, release assets, install docs, runtime evidence, and warning-gated standalone engine lane metadata.
 - `ECHO-Openlands-Native-Edition`: Openlands Native Edition pack manifest, assets, install docs, and runtime evidence.
 - `ECHO-Openlands-NeoForge-Edition`: Openlands NeoForge Edition pack manifest, assets, install docs, and runtime evidence.
 - `ECHO-Openlands-Standalone-Edition`: Openlands Standalone Edition pack manifest, assets, install docs, and runtime evidence.

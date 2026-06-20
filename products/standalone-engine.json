@@ -1,0 +1,76 @@
+{
+  "id": "echo-standalone-engine",
+  "kind": "runtime",
+  "version": "2.0.0-beta.2",
+  "channel": "beta",
+  "publisher": "knoxhack",
+  "sourceRepo": "knoxhack/ECHO-Standalone-Engine",
+  "releaseTag": "v2.0.0-standalone-engine-beta.4",
+  "commitSha": "50e039a255b62d3ce04acd80bb9b90dd5f0d5742",
+  "artifacts": {
+    "archive": {
+      "file": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+      "sha256": "87237a28a26624962889343feefea5edcfc7343b0bd71c44f11c9434a339f3d8",
+      "size": 276403
+    },
+    "packManifest": {
+      "file": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+      "sha256": "a684f89afee740f4e22ba528c8c3d591427ebc2fa20fb6a41b3df009aceb75ba",
+      "size": 22451,
+      "artifactRole": "manifest",
+      "runtimeTarget": "echo_runtime_standalone"
+    },
+    "engineJar": {
+      "file": "echo-standalone-engine-2.0.0-beta.2.jar",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/echo-standalone-engine-2.0.0-beta.2.jar",
+      "sha256": "cbbfa56678165704aaa6c1bff6013bc1c18f299f06b60ed0d2da2ef1a29bea7c",
+      "size": 203765
+    },
+    "apiJar": {
+      "file": "echo-engine-api-2.0.0-beta.2.jar",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/echo-engine-api-2.0.0-beta.2.jar",
+      "sha256": "3c2bf9fa07a8c71b3146c3a3a66197ff0c61e41efa2d640b9193681191b5536a",
+      "size": 31989
+    },
+    "checksums": {
+      "file": "checksums.sha256",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/checksums.sha256",
+      "sha256": "5044e54a4b1f91ce4a1e4fb6400b1450d1b1c71df596e213588603bcff0cc0da",
+      "size": 2463
+    },
+    "contentGraphEvidence": {
+      "file": "content-graph-evidence.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/content-graph-evidence.json",
+      "sha256": "3abe68cc999c9f913a4c91b118f8a5dd49061bb7f8794a17d61d671655a809e9",
+      "size": 8003,
+      "artifactRole": "content-graph-evidence",
+      "runtimeTarget": "content-graph",
+      "buildMode": "generated",
+      "schemaVersion": "echo.content_graph.evidence.v1"
+    },
+    "buildVerification": {
+      "file": "BUILD_VERIFICATION.md",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/BUILD_VERIFICATION.md",
+      "sha256": "6d066d577d25202f247b107adddd42b950735b500cb4c4534c47488310d6a043",
+      "size": 537
+    },
+    "phase5Expansion": {
+      "file": "PHASE5_VERTICAL_SLICE_EXPANSION.md",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/download/v2.0.0-standalone-engine-beta.4/PHASE5_VERTICAL_SLICE_EXPANSION.md",
+      "sha256": "13ddd5aacb5e874dd51bd15a1bb3b96cc6379c7107d2835ea4fdaaf3dda84d8a",
+      "size": 2068
+    }
+  },
+  "dependencies": [],
+  "compatibility": [
+    "standalone",
+    "standalone-engine",
+    "echo_runtime_standalone"
+  ],
+  "trust": "source-linked",
+  "validation": "warning",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Engine/releases/tag/v2.0.0-standalone-engine-beta.4",
+  "validationReason": "Warning-gated as a graph-first standalone engine beta; beta.4 public assets publish the expanded 18-module slice with Java 21 strict build, content graph parity evidence, render smoke, and headless save/reload smoke."
+}
