@@ -1,10 +1,10 @@
 {
   "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
-  "generatedAt": "2026-06-17T13:27:44.711Z",
-  "strict": false,
+  "generatedAt": "2026-06-20T00:05:42.553Z",
+  "strict": true,
   "ok": false,
   "scope": "real-local-ashfall-launch-play-ui-creative-evidence",
-  "instanceRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances",
+  "instanceRoot": "C:\\Users\\knox\\ECHOLauncher\\Instances",
   "evidenceRoot": null,
   "lanes": [
     {
@@ -12,8 +12,179 @@
       "lane": "native",
       "name": "Ashfall Native Edition",
       "ok": false,
-      "instancePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition",
-      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
+      "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition",
+      "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\installed-manifest.json",
+      "installedManifest": {
+        "present": true,
+        "version": "1.0.1",
+        "fileCount": 47,
+        "expectedModuleFileCount": 47,
+        "missingModuleFileCount": 0,
+        "missingModuleFiles": []
+      },
+      "runtimeLog": {
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\echo-dev-direct-native-loader-2026-06-19T23-42-54-279Z.log",
+        "mtimeMs": 1781912740399.0298,
+        "mtime": "2026-06-19T23:45:40.399Z"
+      },
+      "crashReport": {
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\crash-reports\\crash-2026-06-19_19.28.25-client.txt",
+        "mtimeMs": 1781911705088.3223,
+        "mtime": "2026-06-19T23:28:25.088Z",
+        "afterInstall": false,
+        "summary": [
+          "Time: 2026-06-19 19:28:25",
+          "Description: Rendering screen",
+          "java.lang.NoClassDefFoundError: net/neoforged/neoforge/attachment/IAttachmentSerializer",
+          "at com.knoxhack.echonexusprotocol.registry.ModAttachments.<clinit>(ModAttachments.java:10)",
+          "at com.knoxhack.echonexusprotocol.data.NexusPlayerData.get(NexusPlayerData.java:69)",
+          "at com.knoxhack.echonexusprotocol.integration.NexusCoreIntegration.routeRecords(NexusCoreIntegration.java:135)",
+          "at com.echoplatform.echocore.api.EchoCoreServices.routeRecords(EchoCoreServices.java:245)",
+          "at com.knoxhack.echoterminal.client.screencore.TerminalScreenCoreDataProviders.statusSnapshot(TerminalScreenCoreDataProviders.java:1065)"
+        ]
+      },
+      "screenshots": {
+        "count": 52,
+        "newest": {
+          "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\screenshots\\codex-passive-desktop-2026-06-19-1054.png",
+          "mtimeMs": 1781880875649.897,
+          "mtime": "2026-06-19T14:54:35.650Z"
+        }
+      },
+      "evidence": {
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+        "present": true,
+        "schemaVersion": "echo.ashfall.lane-game-smoke.evidence.v1",
+        "capturedAt": "2026-06-19T15:21:00.000Z"
+      },
+      "computerUseSession": {
+        "present": false,
+        "path": null,
+        "reference": null,
+        "session": null,
+        "blockers": []
+      },
+      "claimProofs": {
+        "hudVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/native-hud-holomap-2026-06-19.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\screenshots\\native-hud-holomap-2026-06-19.png",
+              "size": 5602996,
+              "mtime": "2026-06-19T14:54:35.650Z"
+            }
+          ],
+          "missing": []
+        },
+        "inventoryIndexVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/native-index-creative-selectable-2026-06-18.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\screenshots\\native-index-creative-selectable-2026-06-18.png",
+              "size": 436154,
+              "mtime": "2026-06-18T16:54:22.321Z"
+            }
+          ],
+          "missing": []
+        },
+        "terminalVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/native-terminal-2026-06-17.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\screenshots\\native-terminal-2026-06-17.png",
+              "size": 300837,
+              "mtime": "2026-06-18T01:13:42.561Z"
+            }
+          ],
+          "missing": []
+        },
+        "holomapVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/native-hud-holomap-2026-06-19.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\screenshots\\native-hud-holomap-2026-06-19.png",
+              "size": 5602996,
+              "mtime": "2026-06-19T14:54:35.650Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeTabVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/native-index-creative-selectable-2026-06-18.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\screenshots\\native-index-creative-selectable-2026-06-18.png",
+              "size": 436154,
+              "mtime": "2026-06-18T16:54:22.321Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeItemSelectable": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/native-index-creative-selectable-2026-06-18.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\screenshots\\native-index-creative-selectable-2026-06-18.png",
+              "size": 436154,
+              "mtime": "2026-06-18T16:54:22.321Z"
+            }
+          ],
+          "missing": []
+        },
+        "saveReloadVerified": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/notes/native-save-reload-2026-06-19.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\notes\\native-save-reload-2026-06-19.json",
+              "size": 2051,
+              "mtime": "2026-06-19T15:21:19.479Z"
+            },
+            {
+              "reference": "proofs/saves/native-save-reload-echo-native-ashfall-wasteland-2026-06-19.zip",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\proofs\\saves\\native-save-reload-echo-native-ashfall-wasteland-2026-06-19.zip",
+              "size": 5579708,
+              "mtime": "2026-06-19T15:22:05.940Z"
+            }
+          ],
+          "missing": []
+        }
+      },
+      "claims": {
+        "clientStarted": true,
+        "mainMenuNativeReplacement": true,
+        "worldCreatedOrLoaded": true,
+        "hudVisible": true,
+        "inventoryIndexVisible": true,
+        "terminalVisible": true,
+        "holomapVisible": true,
+        "lensVisible": false,
+        "creativeTabVisible": true,
+        "creativeTabSearchVisible": false,
+        "creativeItemSelectable": true,
+        "creativeItemPlayable": false,
+        "saveReloadVerified": true
+      },
+      "blockers": [
+        "Missing gameplay proof: lensVisible",
+        "Missing gameplay proof: creativeTabSearchVisible",
+        "Missing gameplay proof: creativeItemPlayable"
+      ],
+      "warnings": []
+    },
+    {
+      "packId": "ashfall-neoforge-edition",
+      "lane": "neoforge",
+      "name": "Ashfall NeoForge Edition",
+      "ok": true,
+      "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
       "installedManifest": {
         "present": true,
         "version": "0.1.0",
@@ -23,121 +194,226 @@
         "missingModuleFiles": []
       },
       "runtimeLog": {
-        "path": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Native Edition\\logs\\latest.log",
-        "mtimeMs": 1781702683102.6138,
-        "mtime": "2026-06-17T13:24:43.103Z"
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T23-31-54-329Z.log",
+        "mtimeMs": 1781912464258.3992,
+        "mtime": "2026-06-19T23:41:04.258Z"
       },
-      "crashReport": null,
+      "crashReport": {
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\crash-reports\\crash-2026-06-19_06.41.25-client.txt",
+        "mtimeMs": 1781865686513.8716,
+        "mtime": "2026-06-19T10:41:26.514Z",
+        "afterInstall": false,
+        "summary": [
+          "Time: 2026-06-19 06:41:26",
+          "Description: stage",
+          "net.neoforged.fml.ModLoadingException: Loading errors encountered:",
+          "at net.neoforged.fml.ModLoader.waitForFuture(ModLoader.java:253) ~[loader-11.0.13.jar:11.0] {}",
+          "at net.neoforged.fml.ModLoader.waitForTask(ModLoader.java:155) ~[loader-11.0.13.jar:11.0] {}",
+          "at net.neoforged.fml.ModLoader.runInitTask(ModLoader.java:135) ~[loader-11.0.13.jar:11.0] {}",
+          "at net.neoforged.fml.ModLoader.dispatchParallelEvent(ModLoader.java:146) ~[loader-11.0.13.jar:11.0] {}",
+          "at TRANSFORMER/neoforge@26.1.2.43-beta/net.neoforged.neoforge.internal.CommonModLoader.load(CommonModLoader.java:75) ~[neoforge-26.1.2.43-beta-universal.jar:?] {}"
+        ]
+      },
       "screenshots": {
-        "count": 0,
-        "newest": null
+        "count": 75,
+        "newest": {
+          "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-19_07.06.16.png",
+          "mtimeMs": 1781867176513.5273,
+          "mtime": "2026-06-19T11:06:16.514Z"
+        }
       },
       "evidence": {
-        "path": "",
-        "present": false,
-        "schemaVersion": null,
-        "capturedAt": null
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+        "present": true,
+        "schemaVersion": "echo.ashfall.lane-game-smoke.evidence.v1",
+        "capturedAt": "2026-06-19T12:44:00.000Z"
       },
-      "claimProofs": {},
+      "computerUseSession": {
+        "present": true,
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\.echo\\proofs\\computer-use-session.json",
+        "reference": "proofs/computer-use-session.json",
+        "schemaVersion": "echo.ashfall.computer_use_gameplay_session.v1",
+        "capturedAt": "2026-06-19T12:44:00.000Z",
+        "actionCount": 2,
+        "verificationSummary": {
+          "checkCount": 2,
+          "capturedCount": 0,
+          "blockedCount": 2,
+          "notAttemptedCount": 0
+        },
+        "artifactProofs": [],
+        "blockers": []
+      },
+      "claimProofs": {
+        "clientStarted": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../logs/echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log",
+              "size": 41694,
+              "mtime": "2026-06-19T12:30:21.567Z"
+            }
+          ],
+          "missing": []
+        },
+        "worldCreatedOrLoaded": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../logs/echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log",
+              "size": 41694,
+              "mtime": "2026-06-19T12:30:21.567Z"
+            }
+          ],
+          "missing": []
+        },
+        "hudVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_21.52.50.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_21.52.50.png",
+              "size": 1153794,
+              "mtime": "2026-06-19T01:52:50.952Z"
+            }
+          ],
+          "missing": []
+        },
+        "inventoryIndexVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-19_07.03.54.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-19_07.03.54.png",
+              "size": 201637,
+              "mtime": "2026-06-19T11:03:54.912Z"
+            }
+          ],
+          "missing": []
+        },
+        "terminalVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_16.48.56.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_16.48.56.png",
+              "size": 131808,
+              "mtime": "2026-06-18T20:48:56.952Z"
+            }
+          ],
+          "missing": []
+        },
+        "holomapVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_22.18.22.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_22.18.22.png",
+              "size": 68200,
+              "mtime": "2026-06-19T02:18:22.313Z"
+            }
+          ],
+          "missing": []
+        },
+        "lensVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_22.13.43.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_22.13.43.png",
+              "size": 1130681,
+              "mtime": "2026-06-19T02:13:43.969Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeTabVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-19_07.03.54.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-19_07.03.54.png",
+              "size": 201637,
+              "mtime": "2026-06-19T11:03:54.912Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeTabSearchVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_19.27.23.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_19.27.23.png",
+              "size": 568994,
+              "mtime": "2026-06-18T23:27:24.044Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeItemSelectable": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_19.27.23.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_19.27.23.png",
+              "size": 568994,
+              "mtime": "2026-06-18T23:27:24.044Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeItemPlayable": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../screenshots/2026-06-18_21.52.50.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\screenshots\\2026-06-18_21.52.50.png",
+              "size": 1153794,
+              "mtime": "2026-06-19T01:52:50.952Z"
+            }
+          ],
+          "missing": []
+        },
+        "saveReloadVerified": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "../logs/echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log",
+              "size": 41694,
+              "mtime": "2026-06-19T12:30:21.567Z"
+            }
+          ],
+          "missing": []
+        }
+      },
       "claims": {
         "clientStarted": true,
-        "mainMenuNativeReplacement": false,
-        "worldCreatedOrLoaded": false,
-        "hudVisible": false,
-        "inventoryIndexVisible": false,
-        "terminalVisible": false,
-        "holomapVisible": false,
-        "lensVisible": false,
-        "creativeTabVisible": false,
-        "creativeTabSearchVisible": false,
-        "creativeItemSelectable": false,
-        "creativeItemPlayable": false,
-        "saveReloadVerified": false
+        "worldCreatedOrLoaded": true,
+        "hudVisible": true,
+        "inventoryIndexVisible": true,
+        "terminalVisible": true,
+        "holomapVisible": true,
+        "lensVisible": true,
+        "creativeTabVisible": true,
+        "creativeTabSearchVisible": true,
+        "creativeItemSelectable": true,
+        "creativeItemPlayable": true,
+        "saveReloadVerified": true
       },
-      "blockers": [
-        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "Missing gameplay proof: mainMenuNativeReplacement",
-        "Missing gameplay proof: worldCreatedOrLoaded",
-        "Missing gameplay proof: hudVisible",
-        "Missing gameplay proof: inventoryIndexVisible",
-        "Missing gameplay proof: terminalVisible",
-        "Missing gameplay proof: holomapVisible",
-        "Missing gameplay proof: lensVisible",
-        "Missing gameplay proof: creativeTabVisible",
-        "Missing gameplay proof: creativeTabSearchVisible",
-        "Missing gameplay proof: creativeItemSelectable",
-        "Missing gameplay proof: creativeItemPlayable",
-        "Missing gameplay proof: saveReloadVerified"
-      ],
-      "warnings": []
-    },
-    {
-      "packId": "ashfall-neoforge-edition",
-      "lane": "neoforge",
-      "name": "Ashfall NeoForge Edition",
-      "ok": false,
-      "instancePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
-      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
-      "installedManifest": {
-        "present": true,
-        "version": "0.1.0",
-        "fileCount": 46,
-        "expectedModuleFileCount": 46,
-        "missingModuleFileCount": 0,
-        "missingModuleFiles": []
-      },
-      "runtimeLog": null,
-      "crashReport": null,
-      "screenshots": {
-        "count": 0,
-        "newest": null
-      },
-      "evidence": {
-        "path": "",
-        "present": false,
-        "schemaVersion": null,
-        "capturedAt": null
-      },
-      "claimProofs": {},
-      "claims": {
-        "clientStarted": false,
-        "worldCreatedOrLoaded": false,
-        "hudVisible": false,
-        "inventoryIndexVisible": false,
-        "terminalVisible": false,
-        "holomapVisible": false,
-        "lensVisible": false,
-        "creativeTabVisible": false,
-        "creativeTabSearchVisible": false,
-        "creativeItemSelectable": false,
-        "creativeItemPlayable": false,
-        "saveReloadVerified": false
-      },
-      "blockers": [
-        "No runtime log file found under the instance logs directory.",
-        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "Missing gameplay proof: clientStarted",
-        "Missing gameplay proof: worldCreatedOrLoaded",
-        "Missing gameplay proof: hudVisible",
-        "Missing gameplay proof: inventoryIndexVisible",
-        "Missing gameplay proof: terminalVisible",
-        "Missing gameplay proof: holomapVisible",
-        "Missing gameplay proof: lensVisible",
-        "Missing gameplay proof: creativeTabVisible",
-        "Missing gameplay proof: creativeTabSearchVisible",
-        "Missing gameplay proof: creativeItemSelectable",
-        "Missing gameplay proof: creativeItemPlayable",
-        "Missing gameplay proof: saveReloadVerified"
-      ],
+      "blockers": [],
       "warnings": []
     },
     {
       "packId": "ashfall-standalone-edition",
       "lane": "standalone",
       "name": "Ashfall Standalone Edition",
-      "ok": false,
-      "instancePath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition",
-      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-ashfall-hotfix-gameplay-install-smoke\\player-content\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
+      "ok": true,
+      "instancePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition",
+      "manifestPath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\installed-manifest.json",
       "installedManifest": {
         "present": true,
         "version": "0.1.0",
@@ -146,94 +422,206 @@
         "missingModuleFileCount": 0,
         "missingModuleFiles": []
       },
-      "runtimeLog": null,
+      "runtimeLog": {
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\logs\\latest.log",
+        "mtimeMs": 1781873872901.9768,
+        "mtime": "2026-06-19T12:57:52.902Z"
+      },
       "crashReport": null,
       "screenshots": {
         "count": 0,
         "newest": null
       },
       "evidence": {
-        "path": "",
-        "present": false,
-        "schemaVersion": null,
-        "capturedAt": null
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+        "present": true,
+        "schemaVersion": "echo.ashfall.lane-game-smoke.evidence.v1",
+        "capturedAt": "2026-06-19T12:58:00.000Z"
       },
-      "claimProofs": {},
+      "computerUseSession": {
+        "present": true,
+        "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\computer-use-session.json",
+        "reference": "proofs/computer-use-session.json",
+        "schemaVersion": "echo.ashfall.computer_use_gameplay_session.v1",
+        "capturedAt": "2026-06-19T12:58:00.000Z",
+        "actionCount": 3,
+        "verificationSummary": {
+          "checkCount": 4,
+          "capturedCount": 3,
+          "blockedCount": 1,
+          "notAttemptedCount": 0
+        },
+        "artifactProofs": [],
+        "blockers": []
+      },
+      "claimProofs": {
+        "clientStarted": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/clientstarted-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\clientstarted-2026-06-19t12-58-00-000z.json",
+              "size": 5640,
+              "mtime": "2026-06-19T12:58:58.805Z"
+            }
+          ],
+          "missing": []
+        },
+        "worldCreatedOrLoaded": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/worldcreatedorloaded-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\worldcreatedorloaded-2026-06-19t12-58-00-000z.json",
+              "size": 2557,
+              "mtime": "2026-06-19T12:58:58.808Z"
+            }
+          ],
+          "missing": []
+        },
+        "hudVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/hudvisible-2026-06-19t12-58-00-000z.png",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\hudvisible-2026-06-19t12-58-00-000z.png",
+              "size": 193540,
+              "mtime": "2026-06-19T12:58:30.752Z"
+            }
+          ],
+          "missing": []
+        },
+        "inventoryIndexVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/inventoryindexvisible-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\inventoryindexvisible-2026-06-19t12-58-00-000z.json",
+              "size": 7944,
+              "mtime": "2026-06-19T12:58:58.806Z"
+            }
+          ],
+          "missing": []
+        },
+        "terminalVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/terminalvisible-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\terminalvisible-2026-06-19t12-58-00-000z.json",
+              "size": 7944,
+              "mtime": "2026-06-19T12:58:58.806Z"
+            }
+          ],
+          "missing": []
+        },
+        "holomapVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/holomapvisible-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\holomapvisible-2026-06-19t12-58-00-000z.json",
+              "size": 7944,
+              "mtime": "2026-06-19T12:58:58.806Z"
+            }
+          ],
+          "missing": []
+        },
+        "lensVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/lensvisible-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\lensvisible-2026-06-19t12-58-00-000z.json",
+              "size": 7944,
+              "mtime": "2026-06-19T12:58:58.806Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeTabVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/creativetabvisible-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\creativetabvisible-2026-06-19t12-58-00-000z.json",
+              "size": 7944,
+              "mtime": "2026-06-19T12:58:58.806Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeTabSearchVisible": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/creativetabsearchvisible-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\creativetabsearchvisible-2026-06-19t12-58-00-000z.json",
+              "size": 7944,
+              "mtime": "2026-06-19T12:58:58.806Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeItemSelectable": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/creativeitemselectable-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\creativeitemselectable-2026-06-19t12-58-00-000z.json",
+              "size": 6689,
+              "mtime": "2026-06-19T12:58:58.807Z"
+            }
+          ],
+          "missing": []
+        },
+        "creativeItemPlayable": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/creativeitemplayable-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\creativeitemplayable-2026-06-19t12-58-00-000z.json",
+              "size": 6689,
+              "mtime": "2026-06-19T12:58:58.807Z"
+            }
+          ],
+          "missing": []
+        },
+        "saveReloadVerified": {
+          "ok": true,
+          "files": [
+            {
+              "reference": "proofs/screenshots/savereloadverified-2026-06-19t12-58-00-000z.json",
+              "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\savereloadverified-2026-06-19t12-58-00-000z.json",
+              "size": 4545,
+              "mtime": "2026-06-19T12:58:58.809Z"
+            }
+          ],
+          "missing": []
+        }
+      },
       "claims": {
-        "clientStarted": false,
-        "worldCreatedOrLoaded": false,
-        "hudVisible": false,
-        "inventoryIndexVisible": false,
-        "terminalVisible": false,
-        "holomapVisible": false,
-        "lensVisible": false,
-        "creativeTabVisible": false,
-        "creativeTabSearchVisible": false,
-        "creativeItemSelectable": false,
-        "creativeItemPlayable": false,
-        "saveReloadVerified": false
+        "clientStarted": true,
+        "worldCreatedOrLoaded": true,
+        "hudVisible": true,
+        "inventoryIndexVisible": true,
+        "terminalVisible": true,
+        "holomapVisible": true,
+        "lensVisible": true,
+        "creativeTabVisible": true,
+        "creativeTabSearchVisible": true,
+        "creativeItemSelectable": true,
+        "creativeItemPlayable": true,
+        "saveReloadVerified": true
       },
-      "blockers": [
-        "No runtime log file found under the instance logs directory.",
-        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "Missing gameplay proof: clientStarted",
-        "Missing gameplay proof: worldCreatedOrLoaded",
-        "Missing gameplay proof: hudVisible",
-        "Missing gameplay proof: inventoryIndexVisible",
-        "Missing gameplay proof: terminalVisible",
-        "Missing gameplay proof: holomapVisible",
-        "Missing gameplay proof: lensVisible",
-        "Missing gameplay proof: creativeTabVisible",
-        "Missing gameplay proof: creativeTabSearchVisible",
-        "Missing gameplay proof: creativeItemSelectable",
-        "Missing gameplay proof: creativeItemPlayable",
-        "Missing gameplay proof: saveReloadVerified"
-      ],
+      "blockers": [],
       "warnings": []
     }
   ],
   "blockers": [
-    "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-    "ashfall-native-edition: Missing gameplay proof: mainMenuNativeReplacement",
-    "ashfall-native-edition: Missing gameplay proof: worldCreatedOrLoaded",
-    "ashfall-native-edition: Missing gameplay proof: hudVisible",
-    "ashfall-native-edition: Missing gameplay proof: inventoryIndexVisible",
-    "ashfall-native-edition: Missing gameplay proof: terminalVisible",
-    "ashfall-native-edition: Missing gameplay proof: holomapVisible",
     "ashfall-native-edition: Missing gameplay proof: lensVisible",
-    "ashfall-native-edition: Missing gameplay proof: creativeTabVisible",
     "ashfall-native-edition: Missing gameplay proof: creativeTabSearchVisible",
-    "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable",
-    "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable",
-    "ashfall-native-edition: Missing gameplay proof: saveReloadVerified",
-    "ashfall-neoforge-edition: No runtime log file found under the instance logs directory.",
-    "ashfall-neoforge-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-    "ashfall-neoforge-edition: Missing gameplay proof: clientStarted",
-    "ashfall-neoforge-edition: Missing gameplay proof: worldCreatedOrLoaded",
-    "ashfall-neoforge-edition: Missing gameplay proof: hudVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: inventoryIndexVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: terminalVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: holomapVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: lensVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: creativeTabVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: creativeTabSearchVisible",
-    "ashfall-neoforge-edition: Missing gameplay proof: creativeItemSelectable",
-    "ashfall-neoforge-edition: Missing gameplay proof: creativeItemPlayable",
-    "ashfall-neoforge-edition: Missing gameplay proof: saveReloadVerified",
-    "ashfall-standalone-edition: No runtime log file found under the instance logs directory.",
-    "ashfall-standalone-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-    "ashfall-standalone-edition: Missing gameplay proof: clientStarted",
-    "ashfall-standalone-edition: Missing gameplay proof: worldCreatedOrLoaded",
-    "ashfall-standalone-edition: Missing gameplay proof: hudVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: inventoryIndexVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: terminalVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: holomapVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: lensVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: creativeTabVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: creativeTabSearchVisible",
-    "ashfall-standalone-edition: Missing gameplay proof: creativeItemSelectable",
-    "ashfall-standalone-edition: Missing gameplay proof: creativeItemPlayable",
-    "ashfall-standalone-edition: Missing gameplay proof: saveReloadVerified"
+    "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable"
   ],
   "notes": [
     "This gate does not treat install success, metadata presence, or module class discovery as gameplay proof.",

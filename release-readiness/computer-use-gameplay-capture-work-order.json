@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_work_order.v1",
-  "generatedAt": "2026-06-17T21:52:48.570Z",
+  "generatedAt": "2026-06-20T00:12:25.037Z",
   "status": "OPEN",
   "scope": "public-alpha-visible-gameplay-computer-use-work-order",
   "sourceReports": {
@@ -14,8 +14,8 @@
     "laneCount": 15,
     "openLaneCount": 15,
     "releaseReadyLaneCount": 0,
-    "attemptCount": 5,
-    "targetsWithAttempts": 1,
+    "attemptCount": 13,
+    "targetsWithAttempts": 3,
     "conclusion": "Visible Computer Use verification still requires real screenshots, logs, notes, and save snapshots before gameplay can pass."
   },
   "captureProtocol": [
@@ -37,23 +37,43 @@
       "status": "open",
       "acceptanceStatus": "blocked",
       "releaseReady": false,
-      "blockerCount": 13,
+      "blockerCount": 37,
       "blockerSample": [
-        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "Missing gameplay proof: mainMenuNativeReplacement",
-        "Missing gameplay proof: worldCreatedOrLoaded",
-        "Missing gameplay proof: hudVisible",
-        "Missing gameplay proof: inventoryIndexVisible",
-        "Missing gameplay proof: terminalVisible",
-        "Missing gameplay proof: holomapVisible",
         "Missing gameplay proof: lensVisible",
-        "Missing gameplay proof: creativeTabVisible",
         "Missing gameplay proof: creativeTabSearchVisible",
-        "Missing gameplay proof: creativeItemSelectable",
-        "Missing gameplay proof: creativeItemPlayable"
+        "Missing gameplay proof: creativeItemPlayable",
+        "Computer Use capture attempt: Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.",
+        "Computer Use capture attempt: No input sent after capture failure, per Computer Use safety rule.",
+        "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+        "Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted."
       ],
-      "evidencePath": "",
-      "latestComputerUseAttempt": null,
+      "evidencePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+      "latestComputerUseAttempt": {
+        "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+        "generatedAt": "2026-06-20T00:12:13.0925024Z",
+        "status": "blocked",
+        "screenshotStatus": "failed",
+        "minecraftLauncher": {
+          "observed": false,
+          "selectedProfile": null,
+          "playButtonText": null,
+          "playActivationStatus": "not-attempted"
+        },
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 13,
+          "capturedCount": 0,
+          "blockedCount": 0,
+          "notAttemptedCount": 13
+        },
+        "blockerCount": 17
+      },
       "verificationChecks": [
         {
           "id": "clientStarted",
@@ -66,7 +86,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -79,7 +99,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -92,7 +112,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -105,7 +125,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -118,7 +138,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -131,7 +151,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -144,7 +164,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -157,7 +177,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -170,7 +190,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -183,7 +203,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -196,7 +216,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -211,7 +231,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         },
         {
@@ -225,7 +245,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use transport closed before app discovery."
           }
         }
       ],
@@ -263,42 +283,42 @@
       "status": "open",
       "acceptanceStatus": "blocked",
       "releaseReady": false,
-      "blockerCount": 98,
+      "blockerCount": 149,
       "blockerSample": [
-        "No runtime log file found under the instance logs directory.",
-        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "Missing gameplay proof: clientStarted",
-        "Missing gameplay proof: worldCreatedOrLoaded",
-        "Missing gameplay proof: hudVisible",
-        "Missing gameplay proof: inventoryIndexVisible",
-        "Missing gameplay proof: terminalVisible",
-        "Missing gameplay proof: holomapVisible",
-        "Missing gameplay proof: lensVisible",
-        "Missing gameplay proof: creativeTabVisible",
-        "Missing gameplay proof: creativeTabSearchVisible",
-        "Missing gameplay proof: creativeItemSelectable"
+        "Computer Use capture attempt: The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.",
+        "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted."
       ],
-      "evidencePath": "",
+      "evidencePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
       "latestComputerUseAttempt": {
-        "attemptId": "2026-06-17t21-13-37-696z__ashfall__neoforge__ashfall-neoforge-edition",
-        "generatedAt": "2026-06-17T21:13:37.696Z",
+        "attemptId": "2026-06-19t12-31-24-102z__ashfall__neoforge__ashfall-neoforge-edition",
+        "generatedAt": "2026-06-19T12:31:24.102Z",
         "status": "blocked",
         "screenshotStatus": "failed",
         "minecraftLauncher": {
-          "observed": true,
-          "selectedProfile": "Ashfall NeoForge Edition neoforge-26.1.2.43-beta",
-          "playButtonText": "PLAY JAVA",
-          "playActivationStatus": "blocked"
+          "observed": false,
+          "selectedProfile": null,
+          "playButtonText": null,
+          "playActivationStatus": "not-attempted"
         },
         "acceptedAsGameplayProof": false,
         "claimsPromoted": false,
         "verificationSummary": {
           "checkCount": 12,
           "capturedCount": 0,
-          "blockedCount": 12,
-          "notAttemptedCount": 0
+          "blockedCount": 3,
+          "notAttemptedCount": 9
         },
-        "blockerCount": 19
+        "blockerCount": 16
       },
       "verificationChecks": [
         {
@@ -312,7 +332,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Minecraft Launcher opened, but the Java game client did not start."
+            "note": "Computer Use listed the live Minecraft NeoForge singleplayer window, but screenshot capture failed before visible proof could be recorded."
           }
         },
         {
@@ -325,7 +345,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "No game client or world window was launched."
+            "note": "Runtime log shows EchoDev joined New World, but Computer Use screenshot capture failed before visible proof could be recorded."
           }
         },
         {
@@ -338,7 +358,7 @@
           "currentAttempt": {
             "status": "blocked",
             "evidenceRef": null,
-            "note": "Could not reach in-game HUD."
+            "note": "Screenshot capture failed before HUD proof."
           }
         },
         {
@@ -349,9 +369,9 @@
           ],
           "captureHint": "Open inventory and capture the Index surface.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or open inventory."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -362,9 +382,9 @@
           ],
           "captureHint": "Open Terminal and capture it.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or open Terminal."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -375,9 +395,9 @@
           ],
           "captureHint": "Open HoloMap and capture it.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or open HoloMap."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -388,9 +408,9 @@
           ],
           "captureHint": "Open or equip Lens and capture the visible Lens UI/effect.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or verify Lens."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -401,9 +421,9 @@
           ],
           "captureHint": "Open creative inventory and capture the ECHO/Ashfall creative tab.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or open creative inventory."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -414,9 +434,9 @@
           ],
           "captureHint": "Use creative search and capture the result.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or verify creative search."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -427,9 +447,9 @@
           ],
           "captureHint": "Select an ECHO/Ashfall creative item and capture the selection.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or select creative item."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -442,9 +462,9 @@
           ],
           "captureHint": "Use the selected item in the world and capture the visible effect/log.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "Could not launch game or use item in world."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -456,9 +476,9 @@
           ],
           "captureHint": "Save, reload, and capture the restored world/profile state.",
           "currentAttempt": {
-            "status": "blocked",
+            "status": "not-attempted",
             "evidenceRef": null,
-            "note": "No game session was captured for save/reload."
+            "note": "Computer Use input stopped after screenshot failure."
           }
         }
       ],
@@ -496,23 +516,43 @@
       "status": "open",
       "acceptanceStatus": "blocked",
       "releaseReady": false,
-      "blockerCount": 14,
+      "blockerCount": 15,
       "blockerSample": [
-        "No runtime log file found under the instance logs directory.",
-        "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "Missing gameplay proof: clientStarted",
-        "Missing gameplay proof: worldCreatedOrLoaded",
-        "Missing gameplay proof: hudVisible",
-        "Missing gameplay proof: inventoryIndexVisible",
-        "Missing gameplay proof: terminalVisible",
-        "Missing gameplay proof: holomapVisible",
-        "Missing gameplay proof: lensVisible",
-        "Missing gameplay proof: creativeTabVisible",
-        "Missing gameplay proof: creativeTabSearchVisible",
-        "Missing gameplay proof: creativeItemSelectable"
+        "Computer Use capture attempt: Computer Use screenshot capture failed on the live Standalone OpenGL window: SetIsBorderRequired failed: No such interface supported (0x80004002).",
+        "Computer Use capture attempt: No Computer Use screenshots for Standalone HUD, Index, Terminal, HoloMap, Lens, creative inventory, item placement/use, mobs, models, blocks, textures, or save/reload could be recorded in this environment.",
+        "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Computer Use capture attempt: Computer Use verification check clientStarted (Standalone client window observed) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (Ashfall Standalone world loaded) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible in gameplay) was blocked.",
+        "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Index inventory overlay visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal GUI visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap GUI visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check lensVisible (Lens overlay visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted."
       ],
-      "evidencePath": "",
-      "latestComputerUseAttempt": null,
+      "evidencePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+      "latestComputerUseAttempt": {
+        "attemptId": "2026-06-19t13-05-53-604z__ashfall__standalone__ashfall-standalone-edition",
+        "generatedAt": "2026-06-19T13:05:53.604Z",
+        "status": "blocked",
+        "screenshotStatus": "failed",
+        "minecraftLauncher": {
+          "observed": false,
+          "selectedProfile": null,
+          "playButtonText": null,
+          "playActivationStatus": "not-attempted"
+        },
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 12,
+          "capturedCount": 0,
+          "blockedCount": 3,
+          "notAttemptedCount": 9
+        },
+        "blockerCount": 15
+      },
       "verificationChecks": [
         {
           "id": "clientStarted",
@@ -523,9 +563,9 @@
           ],
           "captureHint": "Launch the lane from ECHO Launcher and capture the game/client start log.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use listed the live ECHO Ashfall Standalone Client window, but screenshot capture failed before Computer Use visual proof could be recorded."
           }
         },
         {
@@ -536,9 +576,9 @@
           ],
           "captureHint": "Create or load a fresh Ashfall world/profile and capture it after load.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": null
+            "note": "Standalone runtime log and imported lane evidence prove world load separately; Computer Use screenshot capture failed before visible proof could be recorded."
           }
         },
         {
@@ -549,9 +589,9 @@
           ],
           "captureHint": "Capture the in-game HUD after world entry.",
           "currentAttempt": {
-            "status": "not-attempted",
+            "status": "blocked",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use screenshot capture failed before HUD proof."
           }
         },
         {
@@ -564,7 +604,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -577,7 +617,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -590,7 +630,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -603,7 +643,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -616,7 +656,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -629,7 +669,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -642,7 +682,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -657,7 +697,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         },
         {
@@ -671,7 +711,7 @@
           "currentAttempt": {
             "status": "not-attempted",
             "evidenceRef": null,
-            "note": null
+            "note": "Computer Use input stopped after screenshot failure."
           }
         }
       ],

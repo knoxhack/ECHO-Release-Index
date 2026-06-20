@@ -1,63 +1,43 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-  "attemptId": "2026-06-17t21-13-37-696z__ashfall__neoforge__ashfall-neoforge-edition",
-  "generatedAt": "2026-06-17T21:13:37.696Z",
+  "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+  "generatedAt": "2026-06-20T00:12:13.0925024Z",
   "status": "blocked",
   "scope": "public-alpha-real-gameplay-capture",
   "target": {
     "family": "Ashfall",
-    "lane": "neoforge",
-    "packId": "ashfall-neoforge-edition",
-    "launcherInstance": "Ashfall NeoForge Edition"
+    "lane": "native",
+    "packId": "ashfall-native-edition",
+    "launcherInstance": "Ashfall Native Edition"
   },
-  "observedApps": [
-    {
-      "displayName": "ECHO Launcher",
-      "windowTitle": "ECHO Launcher",
-      "running": true
-    },
-    {
-      "displayName": "Minecraft",
-      "windowTitle": "Minecraft Launcher",
-      "running": true
-    }
-  ],
+  "observedApps": [],
   "launcherWindow": {
-    "observed": true,
+    "observed": false,
     "accessibility": {
-      "observed": true,
-      "selectedPack": "Ashfall NeoForge Edition",
-      "statusText": "Minecraft Launcher ready; profile opened with 46 mod jars available.",
-      "playButtonText": "Play Ashfall NeoForge Edition via Ctrl+Enter",
+      "observed": false,
+      "selectedPack": null,
+      "statusText": null,
+      "playButtonText": null,
       "preparingText": null,
       "readyText": null
     }
   },
   "minecraftLauncher": {
-    "observed": true,
-    "selectedProfile": "Ashfall NeoForge Edition neoforge-26.1.2.43-beta",
-    "playButtonText": "PLAY JAVA",
+    "observed": false,
+    "selectedProfile": null,
+    "playButtonText": null,
     "playActivation": {
-      "status": "blocked",
-      "method": "keyboard Return; keyboard Space; UIA Invoke; element click; Windows.Graphics.Capture coordinate click",
-      "error": "Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, element click, or screenshot-backed coordinates; no Java client window appeared.",
-      "keyAttempts": [
-        {
-          "key": "Return",
-          "result": "No Java client window appeared."
-        },
-        {
-          "key": "space",
-          "result": "No Java client window appeared."
-        }
-      ]
+      "status": "not-attempted",
+      "method": null,
+      "error": null,
+      "keyAttempts": []
     }
   },
   "screenshotCapture": {
     "attempted": true,
     "status": "failed",
-    "api": "Windows.Graphics.Capture",
-    "error": "Minecraft Launcher screenshot capture failed: SetIsBorderRequired failed: No such interface supported (0x80004002)."
+    "api": "Computer Use bootstrap/list_apps",
+    "error": "Transport closed during Computer Use bootstrap/list_apps; retry returned Transport closed; reset attempt returned Transport closed."
   },
   "inputStoppedAfterCaptureFailure": true,
   "acceptedAsGameplayProof": false,
@@ -67,119 +47,124 @@
     {
       "id": "clientStarted",
       "label": "Client/game window started",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Minecraft Launcher opened, but the Java game client did not start."
+      "note": "Computer Use transport closed before app discovery."
+    },
+    {
+      "id": "mainMenuNativeReplacement",
+      "label": "Native main menu replacement visible",
+      "status": "not-attempted",
+      "evidenceRef": null,
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "worldCreatedOrLoaded",
       "label": "World or profile loaded",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "No game client or world window was launched."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "hudVisible",
       "label": "HUD visible",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not reach in-game HUD."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "inventoryIndexVisible",
       "label": "Inventory Index visible after opening inventory",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or open inventory."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "terminalVisible",
       "label": "Terminal visible",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or open Terminal."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "holomapVisible",
       "label": "HoloMap visible",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or open HoloMap."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "lensVisible",
       "label": "Lens visible",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or verify Lens."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "creativeTabVisible",
       "label": "Creative tab visible",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or open creative inventory."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "creativeTabSearchVisible",
       "label": "Creative tab search visible",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or verify creative search."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "creativeItemSelectable",
       "label": "Creative item selectable",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or select creative item."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "creativeItemPlayable",
       "label": "Creative item usable in world",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "Could not launch game or use item in world."
+      "note": "Computer Use transport closed before app discovery."
     },
     {
       "id": "saveReloadVerified",
       "label": "Save/reload verified",
-      "status": "blocked",
+      "status": "not-attempted",
       "evidenceRef": null,
-      "note": "No game session was captured for save/reload."
+      "note": "Computer Use transport closed before app discovery."
     }
   ],
   "verificationSummary": {
-    "checkCount": 12,
+    "checkCount": 13,
     "capturedCount": 0,
-    "blockedCount": 12,
-    "notAttemptedCount": 0
+    "blockedCount": 0,
+    "notAttemptedCount": 13
   },
   "blockers": [
-    "ECHO Launcher repo build accepted Ctrl+Enter and opened Minecraft Launcher with Ashfall NeoForge Edition selected, but Minecraft Launcher PLAY JAVA could not be activated through keyboard focus, UI Automation Invoke, element click, or screenshot-backed coordinates.",
-    "No Java game client window, in-game HUD, inventory Index, Terminal, HoloMap, Lens, creative tab, logs, or save snapshot were captured.",
+    "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+    "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
     "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
-    "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
-    "Minecraft Launcher accessibility text proves official-launcher handoff/profile selection only; it is not accepted as gameplay proof.",
-    "Minecraft Launcher play activation was blocked before the Java client could start.",
-    "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
-    "Computer Use verification check clientStarted (Client/game window started) was blocked.",
-    "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
-    "Computer Use verification check hudVisible (HUD visible) was blocked.",
-    "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was blocked.",
-    "Computer Use verification check terminalVisible (Terminal visible) was blocked.",
-    "Computer Use verification check holomapVisible (HoloMap visible) was blocked.",
-    "Computer Use verification check lensVisible (Lens visible) was blocked.",
-    "Computer Use verification check creativeTabVisible (Creative tab visible) was blocked.",
-    "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was blocked.",
-    "Computer Use verification check creativeItemSelectable (Creative item selectable) was blocked.",
-    "Computer Use verification check creativeItemPlayable (Creative item usable in world) was blocked.",
-    "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+    "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+    "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+    "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+    "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+    "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+    "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+    "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+    "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+    "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+    "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+    "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+    "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+    "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+    "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
   ],
   "notes": [
-    "Verified repo build process path C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe.",
-    "Minecraft Launcher accessibility text showed PLAY JAVA and selected profile Ashfall NeoForge Edition neoforge-26.1.2.43-beta.",
-    "This structured attempt records official Minecraft Launcher handoff/profile selection and blocked play activation only; it does not prove gameplay.",
+    "This is the third consecutive goal continuation with the same Computer Use transport-closed blocker.",
+    "No Windows UI input was sent after Transport closed.",
+    "Full goal remains unverified because Lens, creative search, and creative item use require real visible gameplay proof.",
     "This report records an attempted visible Computer Use verification session only.",
     "It must not be used to mark gameplay evidence claims true."
   ]

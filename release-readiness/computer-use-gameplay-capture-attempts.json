@@ -1,9 +1,9 @@
 {
   "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempts.v1",
-  "generatedAt": "2026-06-17T21:13:37.795Z",
+  "generatedAt": "2026-06-20T00:12:13.160Z",
   "scope": "public-alpha-real-gameplay-capture-history",
-  "latestAttemptId": "2026-06-17t21-13-37-696z__ashfall__neoforge__ashfall-neoforge-edition",
-  "attemptCount": 5,
+  "latestAttemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+  "attemptCount": 13,
   "attempts": [
     {
       "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
@@ -828,6 +828,1412 @@
         "Verified repo build process path C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe.",
         "Minecraft Launcher accessibility text showed PLAY JAVA and selected profile Ashfall NeoForge Edition neoforge-26.1.2.43-beta.",
         "This structured attempt records official Minecraft Launcher handoff/profile selection and blocked play activation only; it does not prove gameplay.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-19t12-11-57-896z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-19T12:11:57.896Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition",
+        "launcherInstance": "Ashfall NeoForge Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "electron",
+          "windowTitle": "ECHO Launcher",
+          "running": true
+        },
+        {
+          "displayName": "java",
+          "windowTitle": "ECHO Native Loader - Ashfall Beta",
+          "running": true
+        },
+        {
+          "displayName": "EchoStandaloneRuntime",
+          "windowTitle": "ECHO Ashfall - Standalone Client",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": true,
+        "accessibility": {
+          "observed": false,
+          "selectedPack": null,
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use get_window_state(include_screenshot=true, include_text=true)",
+        "error": "foreground window did not report a process id"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "NeoForge client window started",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use screenshot state failed before NeoForge client launch in this capture attempt."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "Ashfall world loaded",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No Computer Use screenshot was returned from the launcher/window state call."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save and reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot state failure."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 1,
+        "notAttemptedCount": 11
+      },
+      "blockers": [
+        "Computer Use get_window_state failed before screenshots could be captured, so no real visible gameplay proof could be imported.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use verification check clientStarted (NeoForge client window started) was not-attempted.",
+        "Computer Use verification check worldCreatedOrLoaded (Ashfall world loaded) was not-attempted.",
+        "Computer Use verification check hudVisible (HUD visible) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
+      ],
+      "notes": [
+        "NeoForge dev-direct runtime evidence exists separately in local logs, but this Computer Use attempt produced no accepted gameplay screenshots.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-19t12-15-14-708z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-19T12:15:14.708Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition",
+        "launcherInstance": "Ashfall NeoForge Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "electron",
+          "windowTitle": "ECHO Launcher",
+          "running": true
+        },
+        {
+          "displayName": "java",
+          "windowTitle": "Minecraft NeoForge* 26.1.2 - Singleplayer",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": true,
+        "accessibility": {
+          "observed": false,
+          "selectedPack": null,
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use get_window_state(include_screenshot=true)",
+        "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "NeoForge client window started",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Computer Use observed the Minecraft NeoForge Singleplayer window title, but screenshot capture failed before accepted gameplay proof could be recorded."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "Ashfall world loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Runtime log proves world load separately; Computer Use could not capture visible gameplay state."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "No Computer Use screenshot was returned from the Minecraft NeoForge window."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save and reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Input stopped after Computer Use screenshot capture failure."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 3,
+        "notAttemptedCount": 9
+      },
+      "blockers": [
+        "Computer Use could target the live Minecraft NeoForge Singleplayer window but Windows.Graphics.Capture failed before screenshots could be captured.",
+        "Earlier launcher snapshot probe also failed with foreground window did not report a process id.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.",
+        "Computer Use verification check clientStarted (NeoForge client window started) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (Ashfall world loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
+      ],
+      "notes": [
+        "No gameplay controls were sent after the Minecraft window screenshot failure.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-19t12-30-02-086z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-19T12:30:02.086Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition",
+        "launcherInstance": "Ashfall NeoForge Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "java",
+          "windowTitle": "Minecraft NeoForge* 26.1.2 - Singleplayer",
+          "running": true
+        },
+        {
+          "displayName": "electron",
+          "windowTitle": "ECHO Launcher",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": true,
+        "accessibility": {
+          "observed": true,
+          "selectedPack": "Ashfall NeoForge Edition",
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use get_window_state(include_screenshot=true)",
+        "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [
+        "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log"
+      ],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "NeoForge client window observed",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Computer Use listed the live Minecraft NeoForge singleplayer window, but screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "Ashfall singleplayer world loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Runtime log shows EchoDev joined New World, but Computer Use screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible in gameplay",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Screenshot capture failed before HUD proof."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Index inventory overlay visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal GUI visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap GUI visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens overlay visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative Ashfall item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative Ashfall item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save and reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 3,
+        "notAttemptedCount": 9
+      },
+      "blockers": [
+        "Computer Use screenshot capture failed on the live Minecraft NeoForge window: SetIsBorderRequired failed: No such interface supported (0x80004002).",
+        "No visible gameplay screenshots for HUD, Index, Terminal, HoloMap, Lens, creative inventory, item placement/use, mobs, models, blocks, textures, or save/reload could be recorded in this environment.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "Computer Use verification check clientStarted (NeoForge client window observed) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (Ashfall singleplayer world loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible in gameplay) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Index inventory overlay visible) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal GUI visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap GUI visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens overlay visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative Ashfall item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative Ashfall item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
+      ],
+      "notes": [
+        "Dev-direct NeoForge release-prep runtime pass started PID 21736 and skipped Minecraft Launcher using ECHO-Launcher-DevDirect.",
+        "Runtime-tested release-prep jars: echopowergrid sha256 028499e10831244773f7344e400d4f0e1f32928718082c705044a38eae76f6cf; echoindustrialnexus sha256 e73560a1d87be9bf4a5d325086ea4708f50b9f6e6a4918c9c6250543551345e3.",
+        "Installed manifest was temporarily patched to match release-prep jar hashes for preflight; restore before leaving the instance in normal raw-patched state.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-19t12-31-24-102z__ashfall__neoforge__ashfall-neoforge-edition",
+      "generatedAt": "2026-06-19T12:31:24.102Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "neoforge",
+        "packId": "ashfall-neoforge-edition",
+        "launcherInstance": "Ashfall NeoForge Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "java",
+          "windowTitle": "Minecraft NeoForge* 26.1.2 - Singleplayer",
+          "running": true
+        },
+        {
+          "displayName": "electron",
+          "windowTitle": "ECHO Launcher",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": true,
+        "accessibility": {
+          "observed": true,
+          "selectedPack": "Ashfall NeoForge Edition",
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use get_window_state(include_screenshot=true)",
+        "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [
+        "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T12-27-55-557Z.log"
+      ],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "NeoForge client window observed",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Computer Use listed the live Minecraft NeoForge singleplayer window, but screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "Ashfall singleplayer world loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Runtime log shows EchoDev joined New World, but Computer Use screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible in gameplay",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Screenshot capture failed before HUD proof."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Index inventory overlay visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal GUI visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap GUI visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens overlay visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative Ashfall item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative Ashfall item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save and reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 3,
+        "notAttemptedCount": 9
+      },
+      "blockers": [
+        "Computer Use screenshot capture failed on the live Minecraft NeoForge window: SetIsBorderRequired failed: No such interface supported (0x80004002).",
+        "No visible gameplay screenshots for HUD, Index, Terminal, HoloMap, Lens, creative inventory, item placement/use, mobs, models, blocks, textures, or save/reload could be recorded in this environment.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Launcher accessibility text is useful context but is not accepted as gameplay proof.",
+        "Computer Use verification check clientStarted (NeoForge client window observed) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (Ashfall singleplayer world loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible in gameplay) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Index inventory overlay visible) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal GUI visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap GUI visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens overlay visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative Ashfall item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative Ashfall item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
+      ],
+      "notes": [
+        "Dev-direct NeoForge release-prep runtime pass started PID 21736 and skipped Minecraft Launcher using ECHO-Launcher-DevDirect.",
+        "Runtime-tested release-prep jars: echopowergrid sha256 028499e10831244773f7344e400d4f0e1f32928718082c705044a38eae76f6cf; echoindustrialnexus sha256 e73560a1d87be9bf4a5d325086ea4708f50b9f6e6a4918c9c6250543551345e3.",
+        "Temporary installed-manifest and mod-jar swap was restored after the packaged-jar runtime pass; the instance is back on raw-patched local hashes.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-19t13-05-53-604z__ashfall__standalone__ashfall-standalone-edition",
+      "generatedAt": "2026-06-19T13:05:53.604Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "standalone",
+        "packId": "ashfall-standalone-edition",
+        "launcherInstance": "Ashfall Standalone Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "EchoStandaloneRuntime",
+          "windowTitle": "ECHO Ashfall - Standalone Client",
+          "running": true
+        },
+        {
+          "displayName": "java",
+          "windowTitle": "Minecraft NeoForge* 26.1.2 - Singleplayer",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": false,
+        "accessibility": {
+          "observed": false,
+          "selectedPack": null,
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use get_window_state(include_screenshot=true)",
+        "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [
+        "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+        "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Standalone Edition\\.echo\\proofs\\screenshots\\standalone-os-window-capture-2026-06-19T1258Z.png"
+      ],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Standalone client window observed",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Computer Use listed the live ECHO Ashfall Standalone Client window, but screenshot capture failed before Computer Use visual proof could be recorded."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "Ashfall Standalone world loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Standalone runtime log and imported lane evidence prove world load separately; Computer Use screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible in gameplay",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Computer Use screenshot capture failed before HUD proof."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Index inventory overlay visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal GUI visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap GUI visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens overlay visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative Ashfall item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative Ashfall item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save and reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 12,
+        "capturedCount": 0,
+        "blockedCount": 3,
+        "notAttemptedCount": 9
+      },
+      "blockers": [
+        "Computer Use screenshot capture failed on the live Standalone OpenGL window: SetIsBorderRequired failed: No such interface supported (0x80004002).",
+        "No Computer Use screenshots for Standalone HUD, Index, Terminal, HoloMap, Lens, creative inventory, item placement/use, mobs, models, blocks, textures, or save/reload could be recorded in this environment.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "Computer Use verification check clientStarted (Standalone client window observed) was blocked.",
+        "Computer Use verification check worldCreatedOrLoaded (Ashfall Standalone world loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible in gameplay) was blocked.",
+        "Computer Use verification check inventoryIndexVisible (Index inventory overlay visible) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal GUI visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap GUI visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens overlay visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative Ashfall item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative Ashfall item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save and reload verified) was not-attempted."
+      ],
+      "notes": [
+        "ECHO Launcher dev mode started Ashfall Standalone directly into Ashfall Crash Site with quickPlayNewWorld.",
+        "Standalone lane claims are green from launcher/runtime logs, OS capture, and strict runtime play evidence; this report records the remaining Computer Use capture blocker only.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-19t13-11-19-942z__ashfall__native__ashfall-native-edition",
+      "generatedAt": "2026-06-19T13:11:19.942Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "native",
+        "packId": "ashfall-native-edition",
+        "launcherInstance": "Ashfall Native Edition"
+      },
+      "observedApps": [
+        {
+          "displayName": "ECHO Native Loader",
+          "windowTitle": "ECHO Native Loader - Ashfall Beta",
+          "running": true
+        },
+        {
+          "displayName": "java",
+          "windowTitle": "Minecraft NeoForge* 26.1.2 - Singleplayer",
+          "running": true
+        },
+        {
+          "displayName": "EchoStandaloneRuntime",
+          "windowTitle": "ECHO Ashfall - Standalone Client",
+          "running": true
+        }
+      ],
+      "launcherWindow": {
+        "observed": false,
+        "accessibility": {
+          "observed": false,
+          "selectedPack": null,
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use get_window_state(include_screenshot=true)",
+        "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Computer Use listed the live ECHO Native Loader window, but screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "mainMenuNativeReplacement",
+          "label": "Native main menu replacement visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Native log shows EchoDev joined ECHO Native Ashfall, but Computer Use screenshot capture failed before visible proof could be recorded."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use input stopped after screenshot failure."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "status": "blocked",
+          "evidenceRef": null,
+          "note": "Native log shows world save activity and the runtime host gate passed, but visible save/reload proof was not captured."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 13,
+        "capturedCount": 0,
+        "blockedCount": 3,
+        "notAttemptedCount": 10
+      },
+      "blockers": [
+        "Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.",
+        "No input sent after capture failure, per Computer Use safety rule.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+        "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+        "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+        "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+        "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+      ],
+      "notes": [
+        "NeoForge comparison window was open during the Native attempt.",
+        "Native runtime host gate passed separately: ashfall native loader runtime host gate PASS.",
+        "Native runtime log path: C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\echo-dev-direct-native-loader-2026-06-19T12-33-00-707Z.log",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-20t00-04-47-3842792z__ashfall__native__ashfall-native-edition",
+      "generatedAt": "2026-06-20T00:04:47.3842792Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "native",
+        "packId": "ashfall-native-edition",
+        "launcherInstance": "Ashfall Native Edition"
+      },
+      "observedApps": [],
+      "launcherWindow": {
+        "observed": false,
+        "accessibility": {
+          "observed": false,
+          "selectedPack": null,
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use bootstrap/list_apps",
+        "error": "Transport closed during Computer Use bootstrap/list_apps; retry also returned Transport closed; reset attempt returned Transport closed."
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "mainMenuNativeReplacement",
+          "label": "Native main menu replacement visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 13,
+        "capturedCount": 0,
+        "blockedCount": 0,
+        "notAttemptedCount": 13
+      },
+      "blockers": [
+        "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+        "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+        "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+        "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+        "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+        "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+      ],
+      "notes": [
+        "This attempt followed the required Computer Use bootstrap, retry, and reset path.",
+        "No Windows UI input was sent after Transport closed.",
+        "Native mission loading was separately validated by dev-direct log echo-dev-direct-native-loader-2026-06-19T23-57-43-106Z.log, but that log proof is not visible gameplay proof.",
+        "This report records an attempted visible Computer Use verification session only.",
+        "It must not be used to mark gameplay evidence claims true."
+      ]
+    },
+    {
+      "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+      "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+      "generatedAt": "2026-06-20T00:12:13.0925024Z",
+      "status": "blocked",
+      "scope": "public-alpha-real-gameplay-capture",
+      "target": {
+        "family": "Ashfall",
+        "lane": "native",
+        "packId": "ashfall-native-edition",
+        "launcherInstance": "Ashfall Native Edition"
+      },
+      "observedApps": [],
+      "launcherWindow": {
+        "observed": false,
+        "accessibility": {
+          "observed": false,
+          "selectedPack": null,
+          "statusText": null,
+          "playButtonText": null,
+          "preparingText": null,
+          "readyText": null
+        }
+      },
+      "minecraftLauncher": {
+        "observed": false,
+        "selectedProfile": null,
+        "playButtonText": null,
+        "playActivation": {
+          "status": "not-attempted",
+          "method": null,
+          "error": null,
+          "keyAttempts": []
+        }
+      },
+      "screenshotCapture": {
+        "attempted": true,
+        "status": "failed",
+        "api": "Computer Use bootstrap/list_apps",
+        "error": "Transport closed during Computer Use bootstrap/list_apps; retry returned Transport closed; reset attempt returned Transport closed."
+      },
+      "inputStoppedAfterCaptureFailure": true,
+      "acceptedAsGameplayProof": false,
+      "claimsPromoted": false,
+      "importedEvidenceFiles": [],
+      "verificationChecks": [
+        {
+          "id": "clientStarted",
+          "label": "Client/game window started",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "mainMenuNativeReplacement",
+          "label": "Native main menu replacement visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "worldCreatedOrLoaded",
+          "label": "World or profile loaded",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "hudVisible",
+          "label": "HUD visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "inventoryIndexVisible",
+          "label": "Inventory Index visible after opening inventory",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "terminalVisible",
+          "label": "Terminal visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "holomapVisible",
+          "label": "HoloMap visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "lensVisible",
+          "label": "Lens visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeTabVisible",
+          "label": "Creative tab visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeTabSearchVisible",
+          "label": "Creative tab search visible",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeItemSelectable",
+          "label": "Creative item selectable",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "creativeItemPlayable",
+          "label": "Creative item usable in world",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        },
+        {
+          "id": "saveReloadVerified",
+          "label": "Save/reload verified",
+          "status": "not-attempted",
+          "evidenceRef": null,
+          "note": "Computer Use transport closed before app discovery."
+        }
+      ],
+      "verificationSummary": {
+        "checkCount": 13,
+        "capturedCount": 0,
+        "blockedCount": 0,
+        "notAttemptedCount": 13
+      },
+      "blockers": [
+        "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+        "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+        "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+        "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+        "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+        "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+        "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+        "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+        "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+        "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+        "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+        "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+      ],
+      "notes": [
+        "This is the third consecutive goal continuation with the same Computer Use transport-closed blocker.",
+        "No Windows UI input was sent after Transport closed.",
+        "Full goal remains unverified because Lens, creative search, and creative item use require real visible gameplay proof.",
         "This report records an attempted visible Computer Use verification session only.",
         "It must not be used to mark gameplay evidence claims true."
       ]

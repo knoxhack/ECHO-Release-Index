@@ -14,7 +14,7 @@ This queue is not gameplay proof. Use it to drive visible UI capture, then impor
 | Families | 5 |
 | Lanes | 15 |
 | Open lanes | 15 |
-| Lanes with Computer Use attempts | 1 |
+| Lanes with Computer Use attempts | 3 |
 
 ## Refresh
 
@@ -32,8 +32,8 @@ node scripts\generate-public-alpha-runtime-acceptance.mjs
 | Repository | `knoxhack/ECHO-Ashfall-Native-Edition` |
 | Status | `open` |
 | Acceptance lane status | `blocked` |
-| Blockers | 13 |
-| Latest Computer Use attempt | `none` |
+| Blockers | 37 |
+| Latest Computer Use attempt | `2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition` |
 
 ### Computer Use Checks
 
@@ -83,18 +83,18 @@ node scripts\verify-gameplay-acceptance.mjs
 
 ### Current Blockers
 
-- Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.
-- Missing gameplay proof: mainMenuNativeReplacement
-- Missing gameplay proof: worldCreatedOrLoaded
-- Missing gameplay proof: hudVisible
-- Missing gameplay proof: inventoryIndexVisible
-- Missing gameplay proof: terminalVisible
-- Missing gameplay proof: holomapVisible
 - Missing gameplay proof: lensVisible
-- Missing gameplay proof: creativeTabVisible
 - Missing gameplay proof: creativeTabSearchVisible
-- Missing gameplay proof: creativeItemSelectable
 - Missing gameplay proof: creativeItemPlayable
+- Computer Use capture attempt: Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.
+- Computer Use capture attempt: No input sent after capture failure, per Computer Use safety rule.
+- Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.
+- Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.
+- Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was blocked.
+- Computer Use capture attempt: Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.
+- Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.
 
 ## Ashfall NeoForge
 
@@ -104,8 +104,8 @@ node scripts\verify-gameplay-acceptance.mjs
 | Repository | `knoxhack/ECHO-Ashfall-NeoForge-Edition` |
 | Status | `open` |
 | Acceptance lane status | `blocked` |
-| Blockers | 98 |
-| Latest Computer Use attempt | `2026-06-17t21-13-37-696z__ashfall__neoforge__ashfall-neoforge-edition` |
+| Blockers | 149 |
+| Latest Computer Use attempt | `2026-06-19t12-31-24-102z__ashfall__neoforge__ashfall-neoforge-edition` |
 
 ### Computer Use Checks
 
@@ -114,15 +114,15 @@ node scripts\verify-gameplay-acceptance.mjs
 | Client/game window started | `blocked` | `launcher-log`, `client-log` |
 | World or profile loaded | `blocked` | `screenshot` |
 | HUD visible | `blocked` | `screenshot` |
-| Inventory Index visible after opening inventory | `blocked` | `screenshot` |
-| Terminal visible | `blocked` | `screenshot` |
-| HoloMap visible | `blocked` | `screenshot` |
-| Lens visible | `blocked` | `screenshot` |
-| Creative tab visible | `blocked` | `screenshot` |
-| Creative tab search visible | `blocked` | `screenshot` |
-| Creative item selectable | `blocked` | `screenshot` |
-| Creative item usable in world | `blocked` | `screenshot`, `client-log`, `save-snapshot` |
-| Save/reload verified | `blocked` | `client-log`, `save-snapshot` |
+| Inventory Index visible after opening inventory | `not-attempted` | `screenshot` |
+| Terminal visible | `not-attempted` | `screenshot` |
+| HoloMap visible | `not-attempted` | `screenshot` |
+| Lens visible | `not-attempted` | `screenshot` |
+| Creative tab visible | `not-attempted` | `screenshot` |
+| Creative tab search visible | `not-attempted` | `screenshot` |
+| Creative item selectable | `not-attempted` | `screenshot` |
+| Creative item usable in world | `not-attempted` | `screenshot`, `client-log`, `save-snapshot` |
+| Save/reload verified | `not-attempted` | `client-log`, `save-snapshot` |
 
 ### Record Attempt
 
@@ -154,18 +154,18 @@ node scripts\verify-gameplay-acceptance.mjs
 
 ### Current Blockers
 
-- No runtime log file found under the instance logs directory.
-- Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.
-- Missing gameplay proof: clientStarted
-- Missing gameplay proof: worldCreatedOrLoaded
-- Missing gameplay proof: hudVisible
-- Missing gameplay proof: inventoryIndexVisible
-- Missing gameplay proof: terminalVisible
-- Missing gameplay proof: holomapVisible
-- Missing gameplay proof: lensVisible
-- Missing gameplay proof: creativeTabVisible
-- Missing gameplay proof: creativeTabSearchVisible
-- Missing gameplay proof: creativeItemSelectable
+- Computer Use capture attempt: The observed Ashfall NeoForge crash report remains evidence that NeoForge gameplay must be re-proven after the renderer/runtime path is fixed.
+- Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.
+- Computer Use capture attempt: Launcher accessibility text is useful context but is not accepted as gameplay proof.
+- Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall NeoForge.
+- Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was blocked.
+- Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.
 
 ## Ashfall Standalone
 
@@ -175,16 +175,16 @@ node scripts\verify-gameplay-acceptance.mjs
 | Repository | `knoxhack/ECHO-Ashfall-Standalone-Edition` |
 | Status | `open` |
 | Acceptance lane status | `blocked` |
-| Blockers | 14 |
-| Latest Computer Use attempt | `none` |
+| Blockers | 15 |
+| Latest Computer Use attempt | `2026-06-19t13-05-53-604z__ashfall__standalone__ashfall-standalone-edition` |
 
 ### Computer Use Checks
 
 | Check | Current Attempt | Required Evidence |
 | --- | --- | --- |
-| Client/game window started | `not-attempted` | `launcher-log`, `client-log` |
-| World or profile loaded | `not-attempted` | `screenshot` |
-| HUD visible | `not-attempted` | `screenshot` |
+| Client/game window started | `blocked` | `launcher-log`, `client-log` |
+| World or profile loaded | `blocked` | `screenshot` |
+| HUD visible | `blocked` | `screenshot` |
 | Inventory Index visible after opening inventory | `not-attempted` | `screenshot` |
 | Terminal visible | `not-attempted` | `screenshot` |
 | HoloMap visible | `not-attempted` | `screenshot` |
@@ -225,18 +225,18 @@ node scripts\verify-gameplay-acceptance.mjs
 
 ### Current Blockers
 
-- No runtime log file found under the instance logs directory.
-- Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.
-- Missing gameplay proof: clientStarted
-- Missing gameplay proof: worldCreatedOrLoaded
-- Missing gameplay proof: hudVisible
-- Missing gameplay proof: inventoryIndexVisible
-- Missing gameplay proof: terminalVisible
-- Missing gameplay proof: holomapVisible
-- Missing gameplay proof: lensVisible
-- Missing gameplay proof: creativeTabVisible
-- Missing gameplay proof: creativeTabSearchVisible
-- Missing gameplay proof: creativeItemSelectable
+- Computer Use capture attempt: Computer Use screenshot capture failed on the live Standalone OpenGL window: SetIsBorderRequired failed: No such interface supported (0x80004002).
+- Computer Use capture attempt: No Computer Use screenshots for Standalone HUD, Index, Terminal, HoloMap, Lens, creative inventory, item placement/use, mobs, models, blocks, textures, or save/reload could be recorded in this environment.
+- Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.
+- Computer Use capture attempt: Computer Use verification check clientStarted (Standalone client window observed) was blocked.
+- Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (Ashfall Standalone world loaded) was blocked.
+- Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible in gameplay) was blocked.
+- Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Index inventory overlay visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal GUI visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap GUI visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check lensVisible (Lens overlay visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.
+- Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.
 
 ## Sky Relay Native
 

@@ -11,32 +11,32 @@
     "pack": {
       "file": "ashfall-standalone-edition-0.1.0.zip",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-0.1.0.zip",
-      "sha256": "a8d3e3b07400c7398954bfa304adccf0fa14b986d22c6c78f4555533434d2ea4",
-      "size": 267965586
+      "sha256": "9ae457bcf88e6021d81a5f3a8f709046f55d1d05855451150a8643c5404055a0",
+      "size": 267166311
     },
     "manifest": {
       "file": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/ashfall-standalone-edition-experimental-0.1.0.pack.json",
-      "sha256": "f0744b8e8464a59eff8f205fca995d57606c3a45fb77dc741cb554f5fe6c3422",
-      "size": 59898
+      "sha256": "3325dd9dcb95a95e582abc7368c5587f0ff4773a4076afcd75319710d4c22b91",
+      "size": 59906
     },
     "checksums": {
       "file": "checksums.txt",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/checksums.txt",
-      "sha256": "a301144c7bac673ec37e4acec4201d2299aa9824d56c4529535e6d183ac79932",
+      "sha256": "10cef695f9e61997a2bde75fd626ce08adf0e9da9b9cb3a6fc345a89fab057e5",
       "size": 394
     },
     "releaseManifest": {
       "file": "echo-release.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/echo-release.json",
-      "sha256": "c84410bbb1f2d8a92dc6bf8a982d2a156f820e4686563b96b99d61ce6db9ee53",
-      "size": 13623
+      "sha256": "148ac28d00aa5ea7598da27c68ca1a0dd8107a7ab26da9f0fea1f83ad8787a1a",
+      "size": 13611
     },
     "releaseAudit": {
       "file": "release-audit.json",
       "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/download/v0.1.0-ashfall-standalone-edition/release-audit.json",
-      "sha256": "c254dce5cd6060bf6d0a7af6f61bce9d627a0ab946c9fb252a33c7755decceda",
-      "size": 992
+      "sha256": "dadb52da6308bd5ff77e0ccbd91af4bbdfde679a31a14d6828f59f5908ac70d8",
+      "size": 980
     }
   },
   "dependencies": [
@@ -53,6 +53,6 @@
   "validation": "warning",
   "validationReason": "Warning-gated for gameplay release-readiness while remaining launcher-installable from checksum-backed GitHub pack and manifest artifacts.",
   "notes": "Installable warning-gated catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
-  "moduleRelease": "modules-mixed-canonical-and-ashfall-hotfixes-20260617",
-  "moduleSourceRevision": "ECHO-Release-Index modules/*.json with ECHO-Modules@d499d0a554e741d58e74183a23a7e360f22721db"
+  "moduleRelease": "modules-ashfall-content-entrypoint-hotfix-20260619",
+  "moduleSourceRevision": "ECHO-Modules local Ashfall content entrypoint rebuild 2026-06-19; restores NeoForge @Mod bytecode for Agriculture Reclamation, WeatherCore, Convoy Protocol, and Stationfall while preserving standalone-neutral artifacts"
 }
