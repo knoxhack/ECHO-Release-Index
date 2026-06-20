@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-20T15:51:15-04:00",
+  "generatedAt": "2026-06-20T15:53:08-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "230ec14071fb",
-        "commitDate": "2026-06-20T15:44:10-04:00",
+        "commit": "a846502a820d",
+        "commitDate": "2026-06-20T15:53:08-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M channels/alpha/launcher-channel.json",
@@ -82,9 +82,9 @@
           " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
           " M release-readiness/public-alpha-runtime-acceptance.json",
           " M scripts/verify-official-pack-launcher-lifecycle-smoke.mjs",
-          "?? release-readiness/ashfall-standalone-engine-lifecycle-smoke.json",
-          "?? release-readiness/ashfall-standalone-engine-local-e2e.json",
-          "?? release-readiness/ashfall-standalone-engine-packaged-electron-smoke.json"
+          "?? release-readiness/ashfall-native-packaged-electron-smoke.json",
+          "?? release-readiness/standalone-engine-runtime-comparison.json",
+          "?? scripts/benchmark-standalone-engine-runtime-comparison.mjs"
         ]
       },
       "canonicalDocs": [
@@ -361,8 +361,11 @@
         "branch": "main",
         "commit": "d00b352e8107",
         "commitDate": "2026-06-20T15:51:15-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/main.cjs",
+          " M scripts/all-modpacks-electron-install-smoke.mjs"
+        ]
       },
       "canonicalDocs": [
         {
@@ -438,8 +441,10 @@
         "branch": "main",
         "commit": "15f6afd166dd",
         "commitDate": "2026-06-20T14:16:37-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssemblySmokeHarness.java"
+        ]
       },
       "canonicalDocs": [
         {

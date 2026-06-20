@@ -1,0 +1,419 @@
+{
+  "schemaVersion": "echo.standalone_engine.runtime_comparison.v1",
+  "generatedAt": "2026-06-20T20:21:17.089Z",
+  "generatedBy": "scripts/benchmark-standalone-engine-runtime-comparison.mjs",
+  "ok": false,
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "osRelease": "10.0.19045",
+    "node": "v26.1.0"
+  },
+  "releaseIndex": {
+    "root": "C:\\Development\\Github\\ECHO-Release-Index",
+    "head": "a846502a820d4d6639f244bb8e180248dced3d6d",
+    "dirty": true,
+    "dirtyFiles": [
+      "M channels/alpha/launcher-channel.json",
+      " M channels/beta/launcher-channel.json",
+      " M channels/beta/release-manifest.json",
+      " M channels/beta/repositories.json",
+      " M modpacks/ashfall-native.json",
+      " M modpacks/ashfall-neoforge.json",
+      " M modpacks/ashfall-standalone.json",
+      " M modules/echoadaptercore.json",
+      " M modules/echoagriculturereclamation.json",
+      " M modules/echoarmory.json",
+      " M modules/echoashfallprotocol.json",
+      " M modules/echoblackboxprotocol.json",
+      " M modules/echoblockworks.json",
+      " M modules/echocommonloot.json",
+      " M modules/echocontentcore.json",
+      " M modules/echoconvoyprotocol.json",
+      " M modules/echocore.json",
+      " M modules/echocreatureroles.json",
+      " M modules/echodatacore.json",
+      " M modules/echofoundationcore.json",
+      " M modules/echoholomap.json",
+      " M modules/echohudcore.json",
+      " M modules/echoindex.json",
+      " M modules/echoindustrialnexus.json",
+      " M modules/echolens.json",
+      " M modules/echologisticsnetwork.json",
+      " M modules/echomaterialcore.json",
+      " M modules/echomissioncore.json",
+      " M modules/echomultiblockcore.json",
+      " M modules/echonetcore.json",
+      " M modules/echonexusprotocol.json",
+      " M modules/echoorbitalremnants.json",
+      " M modules/echoplatformcore.json",
+      " M modules/echopowergrid.json",
+      " M modules/echorecovery.json",
+      " M modules/echorelictech.json",
+      " M modules/echorendercore.json",
+      " M modules/echoruntimeguard.json",
+      " M modules/echoschemacore.json",
+      " M modules/echoscreencore.json",
+      " M modules/echosignalos.json",
+      " M modules/echosoundcore.json",
+      " M modules/echostationcore.json",
+      " M modules/echostationfall.json",
+      " M modules/echoterminal.json",
+      " M modules/echothemecore.json",
+      " M modules/echotoolcore.json",
+      " M modules/echotutorialcore.json",
+      " M modules/echovalidationcore.json",
+      " M modules/echoweathercore.json",
+      " M modules/echowiki.json",
+      " M modules/echoworldcore.json",
+      " M modules/echoworldstarter.json",
+      " M packs/ashfall-native-edition.json",
+      " M packs/ashfall-neoforge-edition.json",
+      " M packs/ashfall-standalone-edition.json",
+      " M products/standalone-runtime.json",
+      " M release-readiness/all-modpacks-electron-install-smoke.json",
+      " M release-readiness/all-modpacks-pipeline-audit.json",
+      " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
+      " M release-readiness/public-alpha-runtime-acceptance.json",
+      " M scripts/verify-official-pack-launcher-lifecycle-smoke.mjs",
+      "?? release-readiness/ashfall-native-packaged-electron-smoke.json",
+      "?? release-readiness/standalone-engine-runtime-comparison.engine-only.json",
+      "?? scripts/benchmark-standalone-engine-runtime-comparison.mjs"
+    ],
+    "errors": []
+  },
+  "inputs": {
+    "root": "C:\\Development\\Github\\ECHO-Release-Index",
+    "cacheRoot": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison",
+    "runtimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+    "modulesRoot": "C:\\Development\\Github\\ECHO-Modules",
+    "engineRuns": 3,
+    "timeoutMs": 900000,
+    "runtimeTasks": [
+      {
+        "task": "runStandaloneContentGraphLoadSmoke",
+        "report": "reports/echo/standalone/content-graph-load.json",
+        "evidenceKind": "contentGraph"
+      },
+      {
+        "task": "runStandalonePlayableVoxelSaveSmoke",
+        "report": "reports/echo/standalone/playable-voxel-save.json",
+        "evidenceKind": "saveLoad"
+      }
+    ]
+  },
+  "lanes": {
+    "standaloneEngine": {
+      "id": "echo-standalone-engine",
+      "packId": "ashfall-standalone-engine-edition",
+      "version": "2.0.0-beta.2",
+      "sourceRepo": "knoxhack/ECHO-Standalone-Engine",
+      "releaseTag": "v2.0.0-standalone-engine-beta.4",
+      "commitSha": "50e039a255b62d3ce04acd80bb9b90dd5f0d5742",
+      "validation": "warning",
+      "warningGated": true,
+      "downloads": [
+        {
+          "role": "engine-edition-pack",
+          "file": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          "sha256": "87237a28a26624962889343feefea5edcfc7343b0bd71c44f11c9434a339f3d8",
+          "size": 276403,
+          "reused": false
+        },
+        {
+          "role": "engine-edition-manifest",
+          "file": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "url": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Engine-Edition/releases/download/v2.0.0-ashfall-standalone-engine-edition-beta.4/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "sha256": "a684f89afee740f4e22ba528c8c3d591427ebc2fa20fb6a41b3df009aceb75ba",
+          "size": 22451,
+          "reused": false
+        }
+      ],
+      "install": {
+        "root": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install",
+        "zipRoot": "",
+        "manifestFile": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+        "verifiedFiles": 24,
+        "moduleRequirements": 18,
+        "engineJar": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\echo-standalone-engine-2.0.0-beta.2.jar",
+        "contentGraphEvidence": {
+          "schemaVersion": "echo.content_graph.evidence.v1",
+          "status": "PASS",
+          "moduleCount": 18,
+          "nodeCount": 133,
+          "edgeCount": 109,
+          "featureCount": 16
+        }
+      },
+      "java": {
+        "command": [
+          "java",
+          "-version"
+        ],
+        "exitCode": 0,
+        "versionText": "openjdk version \"25.0.3\" 2026-04-21 LTS\r\nOpenJDK Runtime Environment Zulu25.34+17-CA (build 25.0.3+9-LTS)\r\nOpenJDK 64-Bit Server VM Zulu25.34+17-CA (build 25.0.3+9-LTS, mixed mode, sharing)"
+      },
+      "runs": [
+        {
+          "iteration": 1,
+          "status": "PASS",
+          "durationMs": 2689,
+          "exitCode": 0,
+          "timedOut": false,
+          "peakWorkingSetBytes": 249573376,
+          "memorySamples": 4,
+          "memoryCollectionError": null,
+          "logPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-1\\engine-headless-smoke.log",
+          "smokeReportPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-1\\saves\\headless-smoke\\headless-smoke-report.json",
+          "smokeReport": {
+            "schema": "echo.engine.headless_smoke.v2",
+            "status": "PASS",
+            "engineVersion": "2.0.0-beta.2",
+            "packId": "ashfall-standalone-engine-edition",
+            "installedModules": 18,
+            "contentGraph": {
+              "nodes": 133,
+              "edges": 109,
+              "modules": 18,
+              "canonical": true,
+              "crossRuntimeParity": true,
+              "fingerprint": "c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330"
+            },
+            "adapterCore": {
+              "ready": true,
+              "accepted": 48,
+              "rejected": 0,
+              "revoked": 0,
+              "canonicalRuntimeBridge": true
+            },
+            "world": {
+              "chunks": 25,
+              "saveReload": true,
+              "contentIdentityVerified": true,
+              "spawnedEntities": 4
+            }
+          },
+          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={crossRuntimeParity=true, canonical=true, mappedNodeCounts={echo_native=78, echo_runtime_standalone=78, neoforge=78}, nodes=133, modules=18, edges=109, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330}, adapterCore={accepted=48, ready=true, acceptedByDomain={worldgen=1, services=1, entities=3, items=24, gameplay=1, recipes=4, blocks=14}, revoked=0, rejected=0, canonicalRuntimeBridge=true}, runtimeContent={entityDefinitions=3, gameExtensions=1, items=24, recipes=4, blocks=16}, world={saveReload=true, chunks=25, spawnedEntities=4, contentIdentityVerified=true}}\r\n",
+          "stderrTail": ""
+        },
+        {
+          "iteration": 2,
+          "status": "PASS",
+          "durationMs": 1604,
+          "exitCode": 0,
+          "timedOut": false,
+          "peakWorkingSetBytes": 232767488,
+          "memorySamples": 2,
+          "memoryCollectionError": null,
+          "logPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-2\\engine-headless-smoke.log",
+          "smokeReportPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-2\\saves\\headless-smoke\\headless-smoke-report.json",
+          "smokeReport": {
+            "schema": "echo.engine.headless_smoke.v2",
+            "status": "PASS",
+            "engineVersion": "2.0.0-beta.2",
+            "packId": "ashfall-standalone-engine-edition",
+            "installedModules": 18,
+            "contentGraph": {
+              "nodes": 133,
+              "edges": 109,
+              "modules": 18,
+              "canonical": true,
+              "crossRuntimeParity": true,
+              "fingerprint": "c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330"
+            },
+            "adapterCore": {
+              "ready": true,
+              "accepted": 48,
+              "rejected": 0,
+              "revoked": 0,
+              "canonicalRuntimeBridge": true
+            },
+            "world": {
+              "chunks": 25,
+              "saveReload": true,
+              "contentIdentityVerified": true,
+              "spawnedEntities": 4
+            }
+          },
+          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={edges=109, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, crossRuntimeParity=true, canonical=true, mappedNodeCounts={neoforge=78, echo_native=78, echo_runtime_standalone=78}, nodes=133, modules=18}, adapterCore={revoked=0, rejected=0, canonicalRuntimeBridge=true, accepted=48, ready=true, acceptedByDomain={worldgen=1, services=1, entities=3, items=24, gameplay=1, recipes=4, blocks=14}}, runtimeContent={blocks=16, entityDefinitions=3, gameExtensions=1, items=24, recipes=4}, world={contentIdentityVerified=true, saveReload=true, chunks=25, spawnedEntities=4}}\r\n",
+          "stderrTail": ""
+        },
+        {
+          "iteration": 3,
+          "status": "PASS",
+          "durationMs": 1432,
+          "exitCode": 0,
+          "timedOut": false,
+          "peakWorkingSetBytes": 231981056,
+          "memorySamples": 2,
+          "memoryCollectionError": null,
+          "logPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-3\\engine-headless-smoke.log",
+          "smokeReportPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-3\\saves\\headless-smoke\\headless-smoke-report.json",
+          "smokeReport": {
+            "schema": "echo.engine.headless_smoke.v2",
+            "status": "PASS",
+            "engineVersion": "2.0.0-beta.2",
+            "packId": "ashfall-standalone-engine-edition",
+            "installedModules": 18,
+            "contentGraph": {
+              "nodes": 133,
+              "edges": 109,
+              "modules": 18,
+              "canonical": true,
+              "crossRuntimeParity": true,
+              "fingerprint": "c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330"
+            },
+            "adapterCore": {
+              "ready": true,
+              "accepted": 48,
+              "rejected": 0,
+              "revoked": 0,
+              "canonicalRuntimeBridge": true
+            },
+            "world": {
+              "chunks": 25,
+              "saveReload": true,
+              "contentIdentityVerified": true,
+              "spawnedEntities": 4
+            }
+          },
+          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={nodes=133, mappedNodeCounts={echo_native=78, neoforge=78, echo_runtime_standalone=78}, canonical=true, crossRuntimeParity=true, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, edges=109, modules=18}, adapterCore={acceptedByDomain={recipes=4, gameplay=1, items=24, entities=3, services=1, worldgen=1, blocks=14}, ready=true, accepted=48, canonicalRuntimeBridge=true, rejected=0, revoked=0}, runtimeContent={items=24, gameExtensions=1, entityDefinitions=3, blocks=16, recipes=4}, world={chunks=25, saveReload=true, contentIdentityVerified=true, spawnedEntities=4}}\r\n",
+          "stderrTail": ""
+        }
+      ],
+      "metrics": {
+        "attempts": 3,
+        "passes": 3,
+        "failures": 0,
+        "durationMs": {
+          "min": 1432,
+          "max": 2689,
+          "mean": 1908,
+          "median": 1604,
+          "samples": 3
+        },
+        "peakWorkingSetBytes": {
+          "min": 231981056,
+          "max": 249573376,
+          "mean": 238107307,
+          "median": 232767488,
+          "samples": 3
+        },
+        "memorySamples": 8
+      }
+    },
+    "legacyStandaloneRuntime": {
+      "id": "echo-standalone-runtime",
+      "sourceRepo": "knoxhack/ECHO-Standalone-Runtime",
+      "root": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+      "modulesRoot": "C:\\Development\\Github\\ECHO-Modules",
+      "blocked": true,
+      "blocker": "Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo.",
+      "git": {
+        "root": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+        "head": "15f6afd166dd57f51fca8ca0f5d1d537a5ebbe82",
+        "dirty": true,
+        "dirtyFiles": [
+          "M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/client/EchoClientRuntimeAssemblySmokeHarness.java"
+        ],
+        "errors": []
+      },
+      "tasks": [
+        {
+          "task": "runStandaloneContentGraphLoadSmoke",
+          "evidenceKind": "contentGraph",
+          "status": "BLOCKED",
+          "reportPath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\reports\\echo\\standalone\\content-graph-load.json",
+          "report": null,
+          "blocker": "Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo."
+        },
+        {
+          "task": "runStandalonePlayableVoxelSaveSmoke",
+          "evidenceKind": "saveLoad",
+          "status": "BLOCKED",
+          "reportPath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\reports\\echo\\standalone\\playable-voxel-save.json",
+          "report": null,
+          "blocker": "Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo."
+        }
+      ],
+      "metrics": {
+        "attempts": 0,
+        "passes": 0,
+        "failures": 0,
+        "durationMs": null,
+        "peakWorkingSetBytes": null,
+        "memorySamples": 0
+      }
+    }
+  },
+  "comparison": {
+    "comparisonStatus": "not_directly_comparable",
+    "replacementDecision": "BLOCKED",
+    "startupTime": {
+      "engineHeadlessSmokeProcessMs": {
+        "min": 1432,
+        "max": 2689,
+        "mean": 1908,
+        "median": 1604,
+        "samples": 3
+      },
+      "legacyRuntimeGradleTaskMs": null,
+      "note": "These values are useful trend evidence but not an apples-to-apples process startup benchmark."
+    },
+    "memoryUse": {
+      "enginePeakWorkingSetBytes": {
+        "min": 231981056,
+        "max": 249573376,
+        "mean": 238107307,
+        "median": 232767488,
+        "samples": 3
+      },
+      "legacyRuntimeGradlePeakWorkingSetBytes": null,
+      "note": "Memory samples track the primary launched process only. Gradle may spawn child JVMs that are not fully represented."
+    },
+    "contentGraphLoad": {
+      "engine": {
+        "nodes": 133,
+        "edges": 109,
+        "modules": 18,
+        "canonical": true,
+        "crossRuntimeParity": true,
+        "fingerprint": "c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330"
+      },
+      "legacyRuntime": null
+    },
+    "saveLoadBehavior": {
+      "engine": {
+        "saveReload": true,
+        "contentIdentityVerified": true,
+        "chunks": 25,
+        "spawnedEntities": 4
+      },
+      "legacyRuntime": null
+    },
+    "launchFailureRate": {
+      "engine": {
+        "failures": 0,
+        "attempts": 3,
+        "rate": 0
+      },
+      "legacyRuntime": null
+    },
+    "blockers": [
+      "Engine Edition remains warning-gated and does not claim full Ashfall gameplay parity.",
+      "Engine smoke is a public packaged headless run; legacy Runtime timings are Gradle task smoke timings and include Gradle/testkit startup overhead.",
+      "Replacement requires broader gameplay evidence, repeated performance runs, and user-facing first-launch/open-play proof.",
+      "Legacy Standalone Runtime worktree was dirty during this comparison; results are evidence for the current local state, not a pristine release commit.",
+      "Legacy Standalone Runtime lane was blocked: Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo."
+    ]
+  },
+  "gates": {
+    "publicEngineAssets": "passed",
+    "engineHeadlessSmoke": "passed",
+    "legacyRuntimeSmoke": "blocked",
+    "contentGraphEvidence": "incomplete",
+    "saveLoadEvidence": "incomplete",
+    "replacement": "blocked"
+  }
+}
