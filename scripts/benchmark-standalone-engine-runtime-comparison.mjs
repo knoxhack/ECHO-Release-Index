@@ -772,6 +772,21 @@ async function runRuntimeLane(args) {
 
 async function blockedRuntimeLane(args, reason, activeProcesses = []) {
   const git = await readGitState(args.runtimeRoot)
+  const tasks = []
+  for (const taskSpec of args.runtimeTasks) {
+    const lastKnown = await lastKnownRuntimeEvidence(args, taskSpec)
+    tasks.push({
+      task: taskSpec.task,
+      evidenceKind: taskSpec.evidenceKind,
+      status: 'BLOCKED',
+      reportPath: lastKnown.reportPath,
+      report: null,
+      ...lastKnown,
+      blocker: reason,
+      activeProcesses,
+    })
+  }
+
   return {
     id: 'echo-standalone-runtime',
     sourceRepo: 'knoxhack/ECHO-Standalone-Runtime',
@@ -781,15 +796,7 @@ async function blockedRuntimeLane(args, reason, activeProcesses = []) {
     blocker: reason,
     activeProcesses,
     git,
-    tasks: args.runtimeTasks.map((taskSpec) => ({
-      task: taskSpec.task,
-      evidenceKind: taskSpec.evidenceKind,
-      status: 'BLOCKED',
-      reportPath: taskSpec.report ? path.join(args.runtimeRoot, ...normalizedPath(taskSpec.report).split('/')) : null,
-      report: null,
-      blocker: reason,
-      activeProcesses,
-    })),
+    tasks,
     metrics: {
       attempts: 0,
       passes: 0,
@@ -798,6 +805,54 @@ async function blockedRuntimeLane(args, reason, activeProcesses = []) {
       peakWorkingSetBytes: null,
       memorySamples: 0,
     },
+  }
+}
+
+async function lastKnownRuntimeEvidence(args, taskSpec) {
+  const reportPath = taskSpec.report ? path.join(args.runtimeRoot, ...normalizedPath(taskSpec.report).split('/')) : null
+  if (!reportPath) {
+    return {
+      reportPath,
+      lastKnownReportExists: false,
+      lastKnownReportFresh: false,
+      lastKnownReportUsableForComparison: false,
+      lastKnownReportReason: 'No report path is configured for this Runtime task.',
+    }
+  }
+
+  const stat = await statIfExists(reportPath)
+  if (!stat) {
+    return {
+      reportPath,
+      lastKnownReportExists: false,
+      lastKnownReportFresh: false,
+      lastKnownReportUsableForComparison: false,
+      lastKnownReportReason: 'No pre-existing Runtime report was found while the fresh Runtime lane was blocked.',
+    }
+  }
+
+  let bytes = null
+  let report = null
+  let parseError = null
+  try {
+    bytes = await fs.readFile(reportPath)
+    report = JSON.parse(bytes.toString('utf8'))
+  } catch (error) {
+    parseError = String(error.message ?? error)
+  }
+
+  return {
+    reportPath,
+    lastKnownReportExists: true,
+    lastKnownReportFresh: false,
+    lastKnownReportUsableForComparison: false,
+    lastKnownReportReason: 'Pre-existing Runtime report only; no fresh Gradle timing or memory sample was captured in this comparison run.',
+    lastKnownReportModifiedAt: new Date(stat.mtimeMs).toISOString(),
+    lastKnownReportSize: bytes?.length ?? stat.size,
+    lastKnownReportSha256: bytes ? sha256Bytes(bytes) : null,
+    lastKnownReportStatus: report?.status ?? null,
+    lastKnownReportSummary: summarizeRuntimeReport(taskSpec.evidenceKind, report),
+    lastKnownReportParseError: parseError,
   }
 }
 
