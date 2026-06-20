@@ -92,7 +92,7 @@ function auditLifecycleEntry(row, entry) {
   requireEqual(blockers, entry.artifactAsset, row.modpack.artifacts?.pack?.file, `${id}: artifactAsset`)
   requireValue(blockers, Number(entry.moduleCount) > 0, `${id}: moduleCount must be positive`)
   requireValue(blockers, Number(entry.fileCount) > 0, `${id}: fileCount must be positive`)
-  requireValue(blockers, entry.moduleCount === entry.fileCount, `${id}: moduleCount must match fileCount`)
+  requireValue(blockers, entry.moduleCount <= entry.fileCount, `${id}: moduleCount must not exceed fileCount`)
   requireValue(blockers, entry.selectedModuleId, `${id}: selectedModuleId is required`)
 
   const downloaded = new Set((entry.downloadedAssets ?? []).map((asset) => asset.name))

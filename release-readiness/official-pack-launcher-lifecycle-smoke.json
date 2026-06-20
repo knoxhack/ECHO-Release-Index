@@ -1,13 +1,13 @@
 {
   "schemaVersion": "echo.official_pack.launcher_lifecycle_smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-20T10:00:32.833Z",
+  "generatedAt": "2026-06-20T19:29:39.218Z",
   "source": "live-github-release-assets",
   "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-downloads",
   "workRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke",
-  "officialPackCount": 15,
-  "coveredPackCount": 15,
+  "officialPackCount": 16,
+  "coveredPackCount": 16,
   "editions": [
     {
       "status": "pass",
@@ -15,49 +15,49 @@
       "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
       "packId": "ashfall-native-edition",
       "pack": "ashfall-native-edition",
-      "releaseTag": "v0.1.1-ashfall-native-edition-beta",
+      "releaseTag": "v0.1.1-ashfall-native-edition-beta.2",
       "validation": "warning",
       "moduleArtifactFamily": "echo-addon",
       "manifestAsset": "ashfall-native-edition-beta-0.1.1.pack.json",
       "artifactAsset": "ashfall-native-edition-0.1.1.zip",
-      "moduleCount": 47,
-      "fileCount": 47,
+      "moduleCount": 46,
+      "fileCount": 46,
       "selectedModuleId": "echoashfallprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
           "name": "ashfall-native-edition-0.1.1.zip",
-          "sha256": "aa7fff6bb7a125008a7bc1ff3319885bd570600e5c999b7e41636f4f1df7c7b5",
-          "size": 280034323,
-          "reused": false
+          "sha256": "f3b8f1d82361b1f79b50f3a648603be437e1de63d68edfc9a7b1e16e4259a073",
+          "size": 270182663,
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "ashfall-native-edition-beta-0.1.1.pack.json",
-          "sha256": "27489cfdead58417dcf045f4e85a0c802bab9cbef9f50699438a1898210e07b9",
-          "size": 59884,
-          "reused": false
+          "sha256": "162b98c92c6071a5ac7981e5d7bd64869296a934c5fb9752e3e3e2ec7f455749",
+          "size": 58813,
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "57c65111aa6f4c797d0420b124ac0fd7cfcf980f01bbbbe77bfbf5b4e17a6fe1",
+          "sha256": "007454aa94aaf50cced6e668d07bc1ec95d10c04adb94c660f264a7907a4c0cb",
           "size": 378,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "b923d3a70654854ea0b003db43ead4e7ce48e69eb48baac3c17b3a63d4677ab0",
-          "size": 13461,
-          "reused": false
+          "sha256": "ca3fe020d8aa76cacf270e4d8077539a7f2a0216f46bbc839e4fac7b73bc1f34",
+          "size": 13233,
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "823e016d4c8b7ced17c9a166e0c24ab0a26fdac9f0633bcda5a81589dda9849c",
-          "size": 900,
-          "reused": false
+          "sha256": "c129b4f3fc28f5378be29fe5602ee3deb129b3d391f97db09b8a36e72c186701",
+          "size": 928,
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -74,50 +74,50 @@
           ".echo/export-report.json",
           ".echo/checksums.sha256"
         ],
-        "embeddedManifestFileCount": 47
+        "embeddedManifestFileCount": 46
       },
       "deepLinks": {
         "update": {
           "url": "echo://update/pack/ashfall-native-edition",
           "resolved": true,
           "artifact": "ashfall-native-edition-beta-0.1.1.pack.json",
-          "dependencyCount": 47
+          "dependencyCount": 46
         },
         "installAddon": {
           "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-native-edition",
           "resolved": true,
           "artifact": "echoashfallprotocol-1.0.0.echo-addon",
-          "dependencyCount": 46
+          "dependencyCount": 45
         }
       },
       "install": {
-        "installed": 47,
-        "verifiedAfterInstall": 47
+        "installed": 46,
+        "verifiedAfterInstall": 46
       },
       "update": {
         "fromVersion": "0.1.1-previous-smoke",
         "toVersion": "0.1.1",
         "versionTransition": true,
         "updated": 1,
-        "verified": 46,
+        "verified": 45,
         "removed": 1,
-        "verifiedAfterUpdate": 47,
+        "verifiedAfterUpdate": 46,
         "sameVersionReconciliation": false
       },
       "rollback": {
         "restoredPreviousTarget": "addons/echoashfallprotocol-1.0.0.echo-addon",
         "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
         "restoredPreviousVersion": "0.1.1-previous-smoke",
-        "verifiedAfterRollback": 48
+        "verifiedAfterRollback": 47
       },
       "postRollbackUpdate": {
         "updated": 1,
         "removed": 1,
-        "verifiedAfterUpdate": 47
+        "verifiedAfterUpdate": 46
       },
       "repair": {
         "repaired": "addons/echoashfallprotocol-1.0.0.echo-addon",
-        "verifiedAfterRepair": 47
+        "verifiedAfterRepair": 46
       },
       "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Native-Edition\\ashfall-native-edition\\install"
     },
@@ -127,7 +127,7 @@
       "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
       "packId": "ashfall-neoforge-edition",
       "pack": "ashfall-neoforge-edition",
-      "releaseTag": "v0.1.1-ashfall-neoforge-edition-beta",
+      "releaseTag": "v0.1.1-ashfall-neoforge-edition-beta.4",
       "validation": "warning",
       "moduleArtifactFamily": "neoforge",
       "manifestAsset": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
@@ -139,36 +139,36 @@
         {
           "role": "pack",
           "name": "ashfall-neoforge-edition-0.1.1.zip",
-          "sha256": "68784193bb7efcfa595820dda5aefed4101aa7992256528104a3d8b4ab29fe76",
-          "size": 269583973,
+          "sha256": "45f46c755f1813b2acbeab7c7ead1d4aef2e67f7d1719c9a1d48c527c036ae98",
+          "size": 269685945,
           "reused": false
         },
         {
           "role": "manifest",
           "name": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
-          "sha256": "9817cb4d7fd7ead940f3a7f97666a5064967af1a5c6b9bf33bd89aeab11326ff",
-          "size": 105315,
+          "sha256": "7517367b3d6b4ae5bc3534b22ad89a9169c9a10858f9b3b66a357bb95919fb5d",
+          "size": 89393,
           "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "c3641850ccdcb35431c6ac66f8ed6774e70f8a0ac7f096f61b730d29d7fc1823",
+          "sha256": "cbf909e10dff78232269fa3bb4c133238aa9a39fcbb5072e53b33cbaecd16de4",
           "size": 382,
           "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "b7eeea333cc73d7c5fc22a5a3674028ccce5243e3bec85b3847759210514c05a",
-          "size": 13322,
+          "sha256": "4059f02dd6c71133834b0c209947518f6f5a421f9e60cb496aa12c81ef1cd0c4",
+          "size": 13597,
           "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "5a287f7ab4a26bd78e87bb8b753c9358e0875ce620ac3ea62b271e043c361914",
-          "size": 913,
+          "sha256": "cfd6ebd4e833ee74ee4a29ff354c69a194dc28fe7fe02524001ae7331ca478db",
+          "size": 942,
           "reused": false
         }
       ],
@@ -239,7 +239,7 @@
       "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
       "packId": "ashfall-standalone-edition",
       "pack": "ashfall-standalone-edition",
-      "releaseTag": "v0.1.2-ashfall-standalone-edition-beta",
+      "releaseTag": "v0.1.2-ashfall-standalone-edition-beta.2",
       "validation": "warning",
       "moduleArtifactFamily": "standalone",
       "manifestAsset": "ashfall-standalone-edition-beta-0.1.2.pack.json",
@@ -251,37 +251,37 @@
         {
           "role": "pack",
           "name": "ashfall-standalone-edition-0.1.2.zip",
-          "sha256": "140b79a637ce99c479744a67d817ea2c1252ba0e13470a25c012721b57587dd8",
-          "size": 269379186,
-          "reused": false
+          "sha256": "e9ce09e84386d2c26668194eafa913020c66ab7054716befc9b34fffc97e417a",
+          "size": 269867486,
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "ashfall-standalone-edition-beta-0.1.2.pack.json",
-          "sha256": "bbd16fe64dcd15d0a984ae1e9b732e01442afe7a8605f685c431d55dec812705",
-          "size": 59462,
-          "reused": false
+          "sha256": "63e2c63740423fadde383b5522328d57b8126ddeb1d727a0194206d27fb0ef97",
+          "size": 59613,
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "bf44986fe672e59fd810ea53bc10999c45ddf2b86cf7e9946ddb1d87cd4d0bb7",
+          "sha256": "621bc9e6ba5196e8d9acba0fd61ed0342983d4dbe8eae9a4a6fcd373b4036c65",
           "size": 386,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "2a85226eec3e8c9886d42a856162126e310ae8f004a21a212d13e58bb9aab416",
-          "size": 13526,
-          "reused": false
+          "sha256": "632c4366f088d6320e5c966dc83ade202b34943d82f1dd17e9cac53eb1e8b50c",
+          "size": 13554,
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "710350d1d989211bab74560c432242fe22152c9bd779c66ef7be11cd30deae8f",
-          "size": 924,
-          "reused": false
+          "sha256": "2db32198086f5e3eb3ff7109bba3536eafad993774bd2e5fc2c07dbbe16fce2b",
+          "size": 952,
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -347,6 +347,118 @@
     },
     {
       "status": "pass",
+      "repoName": "ECHO-Ashfall-Standalone-Engine-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Engine-Edition",
+      "packId": "ashfall-standalone-engine-edition",
+      "pack": "ashfall-standalone-engine-edition",
+      "releaseTag": "v2.0.0-ashfall-standalone-engine-edition-beta.3",
+      "validation": "warning",
+      "moduleArtifactFamily": "standalone",
+      "manifestAsset": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+      "artifactAsset": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+      "moduleCount": 12,
+      "fileCount": 18,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          "sha256": "a9dd8b956e47a959dd4173f996a8ede80be102e6ff281c19d00720f6262f4407",
+          "size": 255102,
+          "reused": true
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "sha256": "1e2e65717f24c5497d42ddb9ec141d4b7d1c7649b3e94a739c1862129d7f7015",
+          "size": 16215,
+          "reused": true
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "8e6f70be6ab4a7c742486333b5d22c8043600f71261fe905ec8a59664fa0db97",
+          "size": 414,
+          "reused": true
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "102febbfa6330bf74a2f776441ee7d132d13c71d7f9c61a3da0126e46911cb6d",
+          "size": 6090,
+          "reused": true
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "3702899c9237c300177f172a39162656b14f77e0f996357974af7cb414e465e1",
+          "size": 1375,
+          "reused": true
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 18
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-standalone-engine-edition",
+          "resolved": true,
+          "artifact": "ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          "dependencyCount": 16
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-standalone-engine-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0-standalone.jar",
+          "dependencyCount": 15
+        }
+      },
+      "install": {
+        "installed": 18,
+        "verifiedAfterInstall": 18
+      },
+      "update": {
+        "fromVersion": "2.0.0-beta.2-previous-smoke",
+        "toVersion": "2.0.0-beta.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 17,
+        "removed": 1,
+        "verifiedAfterUpdate": 18,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "2.0.0-beta.2-previous-smoke",
+        "verifiedAfterRollback": 19
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 18
+      },
+      "repair": {
+        "repaired": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "verifiedAfterRepair": 18
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Standalone-Engine-Edition\\ashfall-standalone-engine-edition\\install"
+    },
+    {
+      "status": "pass",
       "repoName": "ECHO-Sky-Relay-Native-Edition",
       "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
       "packId": "sky-relay-native-edition",
@@ -365,35 +477,35 @@
           "name": "sky-relay-native-edition-0.1.2.zip",
           "sha256": "9aebb1f1500aa7e1b6e3b69ff82c0390c37d9a7825c287f654f003bfa291a46a",
           "size": 155503904,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "sky-relay-native-edition-beta-0.1.2.pack.json",
           "sha256": "e39f4c6d715f2913d2ab2bdafdeadcf3f57470ab98d2c17acac084d332c1e6f7",
           "size": 55301,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "f788c7e42c2a52d8ee2782f32a11bf011d48dfde56be78c06a4a8fccb676e578",
           "size": 382,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "ef330bd9e8c319a624f186dfd5a6211cab21f002496713891d4c8dc6c6aeddf6",
           "size": 12479,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "9a4250f80b6d9a794cc20cf2a03fa78623259bf53cee4c66e3a06bce4d000168",
           "size": 903,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -477,35 +589,35 @@
           "name": "sky-relay-neoforge-edition-0.1.2.zip",
           "sha256": "c565c487d109963761a2900daa183aaf48a22c0a57adb0af7010e0945e275a85",
           "size": 155306696,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "sky-relay-neoforge-edition-beta-0.1.2.pack.json",
           "sha256": "c5848da77dd7afd8a08e2f320517909243946dc902c37d0388cf2de4ebeb34c9",
           "size": 85472,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "84b91a76a9e923c8c015640c33085ef5f90334a601122dda2b8d5318559dce8d",
           "size": 386,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "67ec1544ea3d582fb3162918004c2ef21daaaa3d121ea7e97da77a2cf3671bbb",
           "size": 12588,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "870ee7930ec824e3cd4b302102d0b2e5f1515ce108157586bf6fc3c02c6bb839",
           "size": 915,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -589,35 +701,35 @@
           "name": "sky-relay-standalone-edition-0.1.2.zip",
           "sha256": "d74dd96c0e78edaf895d47095c3f0bf24f0f4ef8ab61f783ade95a08ba38bcaa",
           "size": 155297082,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "sky-relay-standalone-edition-beta-0.1.2.pack.json",
           "sha256": "40cabed36da48e264e8ae1b39196897a7dd671a6efe5c69474ffc9c1cdf45410",
           "size": 55735,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "dba1078cf122b5198d71ba3edb2e253111dc731e373f2e9f2780fec8549989e6",
           "size": 390,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "9504c2fc33b57c4392bdc83b35d907c96bc9d8fef92b9e2e7a429faf3f49b4f2",
           "size": 12782,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "332494ac38afebff6386a1459c316b3a33d6243ebc7583e78fb93309a26b2639",
           "size": 927,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -701,35 +813,35 @@
           "name": "openlands-native-edition-0.1.2.zip",
           "sha256": "21ee7ac2090a67a90d45a6780ca5c46a8efc577c1e622e4d86a7dd97475e80f8",
           "size": 112894816,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "openlands-native-edition-beta-0.1.2.pack.json",
           "sha256": "6cfb4b0c7fd820e372ab8bf5b1607934493d418b05dd40b5d65c5190d5a4920b",
           "size": 54977,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "eb557182f7f05cdf6a1904205a0d5f1130b3bb5766e0634074ea7c86b28e1028",
           "size": 382,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "a54ddd386e390952146e35cbb20b45ff6bf55e5b0af8e7b498661a3f6f86ddc7",
           "size": 12147,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "9f1e3d789a8046215adf4789ff53aa4669c06806a68693e2f7f830f8ea047328",
           "size": 912,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -813,35 +925,35 @@
           "name": "openlands-neoforge-edition-0.1.3.zip",
           "sha256": "80cfe8eeb9981280940f2e26af4a60df53e226a50fcacf5d54b8b77d96c35db5",
           "size": 112719814,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "openlands-neoforge-edition-beta-0.1.3.pack.json",
           "sha256": "36c19661d4d5d65caf9f03876829d9d5503c0cdee318ebbc41065eeef6928f37",
           "size": 85143,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "148e1931e40895265b7eef96bf16596613d28c40adcf79d41c4c592d9c36241c",
           "size": 386,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "2d687836a499959b302dfc3011f32351069b7b0086216f675389079b4d4b8ee0",
           "size": 12254,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "c07f547b82477030ee4d0e4618bf081a9f8c4c500f218e4ee4df61af70209d03",
           "size": 924,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -925,35 +1037,35 @@
           "name": "openlands-standalone-edition-0.1.2.zip",
           "sha256": "26e947191b78b5d3ef5d8ea9b5b8532c3d0e7f72baac9789fcd3997bcded29d9",
           "size": 112715234,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "openlands-standalone-edition-beta-0.1.2.pack.json",
           "sha256": "ae45b1dcc2fa4742feec5d3477625a551fe6de38210199276fc5028cf945fc28",
           "size": 55364,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "44e46aedcdcfcfda89820a204478fe4811dd4c97f48dddc5f97fd3708550aaf2",
           "size": 390,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "eb84ca997f5542612f8e547bf3fe1ecbea444b5e9726c8b8d9146f250637e004",
           "size": 12444,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "a4ac88f8480601af190ea7cf4de42f814ff7984881be795b2c23026cbe941c79",
           "size": 936,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -1037,35 +1149,35 @@
           "name": "arcana-division-native-edition-1.0.2.zip",
           "sha256": "5aa6f105253a025f3be76ac6d10b01afd9b2893e3bf35a8d263d183761c70fa0",
           "size": 117429087,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "arcana-division-native-edition-beta-1.0.2.pack.json",
           "sha256": "5f833348ce2582bdaf6c12745ff57d6469dc2b4de9e57da9e37307756ccbbae2",
           "size": 55357,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "59e700c12e13d38024e0b33c6ed33684e72dd3f49f77e55878d9de97d1d5e843",
           "size": 394,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "18d8084bdc6b194ee5ca9f903f9a74e0db9fb720e197120a4ddea5ff2873ed59",
           "size": 11468,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "8a359287904051b7eab3018b13d47e1398f92e9519cd5665e531a7c657e98135",
           "size": 939,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -1149,35 +1261,35 @@
           "name": "arcana-division-neoforge-edition-1.0.2.zip",
           "sha256": "dcf0e2638a743aae313d840fc59fca3a077b60734e9281b7fae146594db00f5c",
           "size": 117284749,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "arcana-division-neoforge-edition-beta-1.0.2.pack.json",
           "sha256": "1a170a26abf7ec74b870307119b9493ff8a2d7df29697bfd0f6b12f6b5d46fc5",
           "size": 85145,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "8d753498fdff2a0d02ef7c9ea2f50a2b58a8fcecdb823ee2b7d6fad0f45b722f",
           "size": 398,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "9ac9d2ea50109863d515d5f27c74d3c2512ea489fb81d736a962deb998e15b7b",
           "size": 11569,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "a44a4d38afdf5ebe7d6cb6713587f90cf20799edc805d659f1035e9772893bd5",
           "size": 951,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -1261,35 +1373,35 @@
           "name": "arcana-division-standalone-edition-1.0.2.zip",
           "sha256": "8b7270a58b3c355a221875b08d8a0b5d0fe2a61c77713b84f58443d5bf835179",
           "size": 117280815,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "arcana-division-standalone-edition-beta-1.0.2.pack.json",
           "sha256": "cb95130fea97ede58d39eb07eff634f84a6e7aa1a594eadf23d4178ea621bc17",
           "size": 55570,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "b0b134b5e4091585d0aa702c81f3400bac41e55078fe4d5335247bfaa9dcb2d8",
           "size": 402,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "a15396da1b0976227a7d942a624bc7f01506bc2fd15df50e2ebe27fc1f41b54d",
           "size": 11747,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "0170c2a3d5973062c300c43341d203c9260d970671fbff798502fc9d5251d87d",
           "size": 963,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -1373,35 +1485,35 @@
           "name": "galactic-survey-native-edition-0.1.2.zip",
           "sha256": "3c2c0bb63edaefd5758ccbbb7ec005e382df501aa45ce24dc10f14cb50b4ddef",
           "size": 145521344,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "galactic-survey-native-edition-beta-0.1.2.pack.json",
           "sha256": "662f6da6df4445d2e5b4d86ee905d6358b6ba4c86acb47a45a58bb9a92f9b637",
           "size": 52903,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "13e21622bf26eb60bc6f81039c51fae762832d363aef6ace8ef215373a82291d",
           "size": 394,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "38309e6215910c8f9abf816f7969ca54674cf1649c8094ed0f8319373fc97be9",
           "size": 12042,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "bd670d0bfdcfee26781d7aa86bb990357c2a128b3345f30c454765a30e11e02d",
           "size": 939,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -1485,35 +1597,35 @@
           "name": "galactic-survey-neoforge-edition-0.1.2.zip",
           "sha256": "643582fadd07720e972512d6090698febf505eaa5f3a592f8ea35f2753d11eb9",
           "size": 145335986,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "galactic-survey-neoforge-edition-beta-0.1.2.pack.json",
           "sha256": "1ca2a53f50e61e3add6a786f98ef3946613626c4b7c9d798260033e53e982dd2",
           "size": 83058,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "58fac0fca72a8ade73d99e73cc866b5970a7a7c7599adb1bb45842a588084f83",
           "size": 398,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "3a64f17d486a1099546eb5d658ab837aaaee0c37abc1d65cd89a095ece919744",
           "size": 12147,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "2a0a0f79e882a02b67f2ef40ad985479871fa80dbb6df41bdab27c41b401c181",
           "size": 951,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {
@@ -1597,35 +1709,35 @@
           "name": "galactic-survey-standalone-edition-0.1.2.zip",
           "sha256": "0826bea401625b0640f749ed7a852d4826fde28ec10e6dc93ecad370604440de",
           "size": 145332018,
-          "reused": false
+          "reused": true
         },
         {
           "role": "manifest",
           "name": "galactic-survey-standalone-edition-beta-0.1.2.pack.json",
           "sha256": "c86309c3125d23ed94827b573e6d60400b57c95efc057eea2bd34d1ae124dca9",
           "size": 53293,
-          "reused": false
+          "reused": true
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
           "sha256": "dbded09652dde1d14f9b2ae3d9e51e9cc19b843f5b92a6052f4fc1df9caa33ec",
           "size": 402,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
           "sha256": "3896804d9088fdf541508ce47c235af57430e31511fbd2c78a411581d2eb81a7",
           "size": 12333,
-          "reused": false
+          "reused": true
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
           "sha256": "0e0f1a96b0a9fe2bddc6999b4731146a45c107eda9841362e4310b67c497cc57",
           "size": 963,
-          "reused": false
+          "reused": true
         }
       ],
       "topLevelChecksums": {

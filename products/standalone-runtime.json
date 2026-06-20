@@ -1,54 +1,96 @@
 {
   "id": "echo-standalone-runtime",
   "kind": "runtime",
-  "version": "0.1.1-beta.20260620",
+  "version": "0.1.2-beta.20260620",
   "channel": "beta",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Standalone-Runtime",
-  "releaseTag": "v0.1.1-standalone-runtime-beta-20260620",
-  "commitSha": "2acf6cebeb0fc5e60d7dce9ddbe6761bd3220339",
+  "releaseTag": "v0.1.2-standalone-runtime-beta-20260620",
+  "commitSha": "15f6afd166dd57f51fca8ca0f5d1d537a5ebbe82",
   "artifacts": {
     "betaReadinessGate": {
       "file": "beta-readiness-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/beta-readiness-gate.json",
-      "sha256": "8fd7912141bcc745d85345b55fbbcc939aa55f4fa7a6b0dd02d2aa3827d0a287",
-      "size": 6482
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/beta-readiness-gate.json",
+      "sha256": "2f56d7278db52eee6d23866a9f1eedca3745f23aae4921701acf56d052a25cd6",
+      "size": 5251
+    },
+    "betaReadinessChecks": {
+      "file": "beta-readiness-checks.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/beta-readiness-checks.json",
+      "sha256": "a71f84d0926a74cc3d636a5453c49230127a033e28fca101a65b92a528885555",
+      "size": 20414
+    },
+    "betaDistributionReleaseContract": {
+      "file": "beta-distribution-release-contract.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/beta-distribution-release-contract.json",
+      "sha256": "689adf99ec4dfd14f8c8088a70c16ce6cd2b1a24a5ebb31f93d701bf6c5c7bcf",
+      "size": 25224
+    },
+    "betaNativeLoaderExecution": {
+      "file": "beta-native-loader-execution.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/beta-native-loader-execution.json",
+      "sha256": "52e0e51d8b2603812ad8f7ec6318ee6d9bd9620e36ffadc72c33246490c085d2",
+      "size": 1178
     },
     "checksums": {
       "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/checksums.txt",
-      "sha256": "2bc82a1761948f7093e51c519e35e33282b3f7306be49c98d94ec9d9604f72c8",
-      "size": 594
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/checksums.txt",
+      "sha256": "3f56e87de4b31fa5c599b05510dcb061f8e3f5ef3a107f37cd62ffbea6d73c43",
+      "size": 1318
     },
     "distributionVersionMetadata": {
       "file": "distribution-version-metadata.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/distribution-version-metadata.json",
-      "sha256": "d63ffbad756ecb7dcead9ca0f4e95977a5c8ae81febce88186e5a8f7358738f9",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/distribution-version-metadata.json",
+      "sha256": "4fb13cf4652b20c4002909e406efa071742c46d07d34736efa0cf8c6780a1f8f",
       "size": 1749
     },
     "echoReleaseMetadata": {
       "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/echo-release.json",
-      "sha256": "282f1d49257da85d06111ffb327629ad64b081709232f3a5ff09216e30b92319",
-      "size": 3100
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/echo-release.json",
+      "sha256": "73db9474c0200862b558cab9337a3e9ee82229c1b35f1a9f0923bd3c199bdd2c",
+      "size": 6778
     },
     "archive": {
-      "file": "echo-standalone-runtime-0.1.1-beta-20260620.zip",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/echo-standalone-runtime-0.1.1-beta-20260620.zip",
-      "sha256": "c09e1fbd8b8fe61b5c916c69baeca0cadbfddec5c9a8209d0632329456c771be",
-      "size": 52957110
+      "file": "echo-standalone-runtime-0.1.2-beta-20260620.zip",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/echo-standalone-runtime-0.1.2-beta-20260620.zip",
+      "sha256": "989ddafb8e28b35c69180ecc79ad3ca6a27135987c6caf2553baf5f72245ffd7",
+      "size": 52977014
     },
     "fullWorkspaceBuildSmoke": {
       "file": "full-workspace-build-smoke.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/full-workspace-build-smoke.json",
-      "sha256": "8dda19d6bdda496e9965e586e995df55998597c3bcedb21ced1c3a91cc6e49cb",
-      "size": 8308
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/full-workspace-build-smoke.json",
+      "sha256": "f7bc4b1a9f3c7ce1dd812f96c2ad30ebd7b9a2a0150675f90cd07b410a00f710",
+      "size": 8312
     },
     "packagedOpenGlClientImage": {
       "file": "packaged-opengl-client-image.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.1-standalone-runtime-beta-20260620/packaged-opengl-client-image.json",
-      "sha256": "716e8c7207487b6d877051f9dc8ab97dd0022f096a9be36de714531ee6e2c176",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/packaged-opengl-client-image.json",
+      "sha256": "1605653f2a88c770f5ef4511de2ff4a031ff25a352f345a09051c97c38d44b05",
       "size": 1315
+    },
+    "packagedExeWallclockSmoke": {
+      "file": "packaged-exe-wallclock-smoke.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/packaged-exe-wallclock-smoke.json",
+      "sha256": "55397a04b66431575885a59b446612118bb8f98790efc6bad743c10b2c4aa4ed",
+      "size": 2437
+    },
+    "packagedExeWallclockStrictRehearsal": {
+      "file": "packaged-exe-wallclock-strict-rehearsal.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/packaged-exe-wallclock-strict-rehearsal.json",
+      "sha256": "834979a5dc29d9ef16463eade17bd166fe9c6405cc6d49a6f9bd23cddba1371b",
+      "size": 6438
+    },
+    "portableZipInstallSmoke": {
+      "file": "portable-zip-install-smoke.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/portable-zip-install-smoke.json",
+      "sha256": "1a9dc6a4b536184d162fbb6e0d31798c665ddbd848dd3a017dfdfe991f747132",
+      "size": 4795
+    },
+    "ashfallContentGraphRuntimeCatalog": {
+      "file": "ashfall-content-graph-runtime-catalog.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.2-standalone-runtime-beta-20260620/ashfall-content-graph-runtime-catalog.json",
+      "sha256": "3dc983de4645516f2200bc15c693e84a0c745439768d2069916693928ab62588",
+      "size": 5991
     }
   },
   "dependencies": [],
@@ -58,6 +100,6 @@
   ],
   "trust": "source-linked",
   "validation": "approved",
-  "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.1-standalone-runtime-beta-20260620",
-  "validationReason": "Approved for beta catalog/runtime installation: strict installed-pack module bootstrap, packaged OpenGL runtime assets, checksum-pinned GitHub prerelease artifacts, and READY_WITH_WARNINGS beta evidence are available; manual gameplay acceptance remains tracked separately."
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.2-standalone-runtime-beta-20260620",
+  "validationReason": "Approved for beta catalog/runtime installation: strict installed-pack module bootstrap, packaged OpenGL runtime assets, visible-window beta distribution probes, checksum-pinned GitHub prerelease artifacts, and READY_WITH_WARNINGS beta evidence are available; manual gameplay acceptance remains tracked separately."
 }

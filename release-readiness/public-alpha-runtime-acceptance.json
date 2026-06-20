@@ -1,13 +1,13 @@
 {
   "schemaVersion": "echo.release_index.public_alpha_runtime_acceptance.v1",
-  "generatedAt": "2026-06-19T13:12:40.583Z",
+  "generatedAt": "2026-06-20T19:02:16.191Z",
   "status": "fail",
-  "releaseIndexHeadAtGeneration": "8eb35f550f0c1bdd44f896e5e34993279bd7965b",
+  "releaseIndexHeadAtGeneration": "ed44cc4e9e5a032d025448767a3c11647296853d",
   "reportCommitNote": "This report records the Release Index HEAD observed before the report file is committed; use Git history for the commit that contains the report.",
   "summary": {
     "hardGateCount": 10,
-    "hardGatePassCount": 9,
-    "hardGateFailureCount": 1,
+    "hardGatePassCount": 8,
+    "hardGateFailureCount": 2,
     "gameplayWarningCount": 5,
     "conclusion": "Public-alpha runtime acceptance is blocked by hard catalog/install/runtime gate failures."
   },
@@ -16,24 +16,17 @@
     "expectedModuleRows": 133,
     "distribution": [
       {
+        "releaseTag": "modules-beta-full-20260620",
+        "moduleCount": 79,
+        "artifactCount": 396,
+        "contentGraphArtifactCount": 80,
+        "contentGraphEvidenceArtifactCount": 1
+      },
+      {
         "releaseTag": "modules-canonical-full-20260616",
-        "moduleCount": 131,
-        "artifactCount": 656,
-        "contentGraphArtifactCount": 132,
-        "contentGraphEvidenceArtifactCount": 1
-      },
-      {
-        "releaseTag": "modules-ashfall-neoforge-native-route-bridge-20260617",
-        "moduleCount": 1,
-        "artifactCount": 6,
-        "contentGraphArtifactCount": 2,
-        "contentGraphEvidenceArtifactCount": 1
-      },
-      {
-        "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
-        "moduleCount": 1,
-        "artifactCount": 6,
-        "contentGraphArtifactCount": 2,
+        "moduleCount": 54,
+        "artifactCount": 271,
+        "contentGraphArtifactCount": 55,
         "contentGraphEvidenceArtifactCount": 1
       }
     ],
@@ -53,33 +46,26 @@
       "name": "public-alpha-live-channel",
       "status": "fail",
       "sourceReport": "release-readiness/public-alpha-live-channel-proof.json",
-      "generatedAt": "2026-06-17T22:15:35.405Z",
+      "generatedAt": "2026-06-20T15:09:08.397Z",
       "blockers": [
         "Expected public alpha live proof status pass, 0 failed artifacts, 838 artifacts, 131 modules from modules-canonical-full-20260616, and 2 modules from modules-ashfall-renderer-hotfix-20260617."
       ],
-      "artifactCount": 839,
+      "artifactCount": 1305,
       "failedArtifactCount": 0,
-      "totalVerifiedBytes": 6425322915,
+      "totalVerifiedBytes": 10045076696,
       "moduleEvidenceDistribution": [
         {
+          "releaseTag": "modules-beta-full-20260620",
+          "moduleCount": 79,
+          "artifactCount": 396,
+          "contentGraphArtifactCount": 80,
+          "contentGraphEvidenceArtifactCount": 1
+        },
+        {
           "releaseTag": "modules-canonical-full-20260616",
-          "moduleCount": 131,
-          "artifactCount": 656,
-          "contentGraphArtifactCount": 132,
-          "contentGraphEvidenceArtifactCount": 1
-        },
-        {
-          "releaseTag": "modules-ashfall-neoforge-native-route-bridge-20260617",
-          "moduleCount": 1,
-          "artifactCount": 6,
-          "contentGraphArtifactCount": 2,
-          "contentGraphEvidenceArtifactCount": 1
-        },
-        {
-          "releaseTag": "modules-ashfall-renderer-hotfix-20260617",
-          "moduleCount": 1,
-          "artifactCount": 6,
-          "contentGraphArtifactCount": 2,
+          "moduleCount": 54,
+          "artifactCount": 271,
+          "contentGraphArtifactCount": 55,
           "contentGraphEvidenceArtifactCount": 1
         }
       ]
@@ -169,15 +155,16 @@
     },
     {
       "name": "official-pack-launcher-lifecycle",
-      "status": "pass",
+      "status": "fail",
       "sourceReport": "release-readiness/official-pack-launcher-lifecycle-smoke.json",
-      "generatedAt": "2026-06-17T13:23:36.454Z",
-      "officialPackCount": 15,
-      "coveredPackCount": 15,
-      "passCount": 15,
-      "updateCount": 15,
-      "rollbackCount": 15,
-      "repairCount": 15
+      "generatedAt": "2026-06-20T19:01:32.792Z",
+      "blockers": [],
+      "officialPackCount": 16,
+      "coveredPackCount": 16,
+      "passCount": 16,
+      "updateCount": 16,
+      "rollbackCount": 16,
+      "repairCount": 16
     },
     {
       "name": "all-modpacks-electron-install-handoff",
@@ -359,8 +346,8 @@
       "evidenceSchemaVersion": "echo.content_graph.evidence.v1",
       "graphs": 133,
       "moduleCount": 133,
-      "nodes": 4392,
-      "edges": 5911,
+      "nodes": 4397,
+      "edges": 5915,
       "features": 1469,
       "exportPlans": 532,
       "hytaleBlockedNodes": 9,
@@ -373,7 +360,7 @@
     "present": true,
     "schemaVersion": "echo.gameplay.acceptance.v1",
     "status": "BLOCKED",
-    "generatedAt": "2026-06-19T13:11:33.618Z",
+    "generatedAt": "2026-06-20T05:11:59.208Z",
     "strictReady": false,
     "summary": {
       "familyCount": 5,
@@ -381,7 +368,7 @@
       "passedFamilyCount": 0,
       "blockedFamilyCount": 5,
       "passedLaneCount": 0,
-      "blockerCount": 519,
+      "blockerCount": 545,
       "transportProofCount": 2,
       "acceptedTransportProofCount": 2,
       "conclusion": "Public-alpha install/runtime gates may be green, but real gameplay acceptance remains blocked until each family and lane has release-ready evidence."
@@ -1865,7 +1852,7 @@
         "attached": true
       },
       {
-        "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+        "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
         "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
         "attemptId": "2026-06-19t13-11-19-942z__ashfall__native__ashfall-native-edition",
         "generatedAt": "2026-06-19T13:11:19.942Z",
@@ -2018,6 +2005,316 @@
           "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
         ],
         "attached": true
+      },
+      {
+        "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
+        "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+        "attemptId": "2026-06-20t00-04-47-3842792z__ashfall__native__ashfall-native-edition",
+        "generatedAt": "2026-06-20T00:04:47.3842792Z",
+        "status": "blocked",
+        "target": {
+          "family": "Ashfall",
+          "lane": "native",
+          "packId": "ashfall-native-edition"
+        },
+        "launcherWindowObserved": false,
+        "launcherAccessibilityObserved": false,
+        "minecraftLauncher": {
+          "observed": false,
+          "selectedProfile": null,
+          "playButtonText": null,
+          "playActivation": {
+            "status": "not-attempted",
+            "method": null,
+            "error": null,
+            "keyAttempts": []
+          }
+        },
+        "screenshotCapture": {
+          "attempted": true,
+          "status": "failed",
+          "api": "Computer Use bootstrap/list_apps",
+          "error": "Transport closed during Computer Use bootstrap/list_apps; retry also returned Transport closed; reset attempt returned Transport closed."
+        },
+        "inputStoppedAfterCaptureFailure": true,
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "importedEvidenceFileCount": 0,
+        "verificationChecks": [
+          {
+            "id": "clientStarted",
+            "label": "Client/game window started",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "mainMenuNativeReplacement",
+            "label": "Native main menu replacement visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "worldCreatedOrLoaded",
+            "label": "World or profile loaded",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "hudVisible",
+            "label": "HUD visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "inventoryIndexVisible",
+            "label": "Inventory Index visible after opening inventory",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "terminalVisible",
+            "label": "Terminal visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "holomapVisible",
+            "label": "HoloMap visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "lensVisible",
+            "label": "Lens visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeTabVisible",
+            "label": "Creative tab visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeTabSearchVisible",
+            "label": "Creative tab search visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeItemSelectable",
+            "label": "Creative item selectable",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeItemPlayable",
+            "label": "Creative item usable in world",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "saveReloadVerified",
+            "label": "Save/reload verified",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          }
+        ],
+        "verificationSummary": {
+          "checkCount": 13,
+          "capturedCount": 0,
+          "blockedCount": 0,
+          "notAttemptedCount": 13
+        },
+        "blockerCount": 17,
+        "blockers": [
+          "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+          "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+          "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+          "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+          "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+          "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+          "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+          "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+          "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+          "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+          "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+          "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+          "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+          "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+          "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+          "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+          "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+        ],
+        "attached": true
+      },
+      {
+        "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+        "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+        "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+        "generatedAt": "2026-06-20T00:12:13.0925024Z",
+        "status": "blocked",
+        "target": {
+          "family": "Ashfall",
+          "lane": "native",
+          "packId": "ashfall-native-edition"
+        },
+        "launcherWindowObserved": false,
+        "launcherAccessibilityObserved": false,
+        "minecraftLauncher": {
+          "observed": false,
+          "selectedProfile": null,
+          "playButtonText": null,
+          "playActivation": {
+            "status": "not-attempted",
+            "method": null,
+            "error": null,
+            "keyAttempts": []
+          }
+        },
+        "screenshotCapture": {
+          "attempted": true,
+          "status": "failed",
+          "api": "Computer Use bootstrap/list_apps",
+          "error": "Transport closed during Computer Use bootstrap/list_apps; retry returned Transport closed; reset attempt returned Transport closed."
+        },
+        "inputStoppedAfterCaptureFailure": true,
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "importedEvidenceFileCount": 0,
+        "verificationChecks": [
+          {
+            "id": "clientStarted",
+            "label": "Client/game window started",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "mainMenuNativeReplacement",
+            "label": "Native main menu replacement visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "worldCreatedOrLoaded",
+            "label": "World or profile loaded",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "hudVisible",
+            "label": "HUD visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "inventoryIndexVisible",
+            "label": "Inventory Index visible after opening inventory",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "terminalVisible",
+            "label": "Terminal visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "holomapVisible",
+            "label": "HoloMap visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "lensVisible",
+            "label": "Lens visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeTabVisible",
+            "label": "Creative tab visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeTabSearchVisible",
+            "label": "Creative tab search visible",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeItemSelectable",
+            "label": "Creative item selectable",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "creativeItemPlayable",
+            "label": "Creative item usable in world",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          },
+          {
+            "id": "saveReloadVerified",
+            "label": "Save/reload verified",
+            "status": "not-attempted",
+            "evidenceRef": null,
+            "note": "Computer Use transport closed before app discovery."
+          }
+        ],
+        "verificationSummary": {
+          "checkCount": 13,
+          "capturedCount": 0,
+          "blockedCount": 0,
+          "notAttemptedCount": 13
+        },
+        "blockerCount": 17,
+        "blockers": [
+          "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+          "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+          "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+          "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+          "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+          "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+          "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+          "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+          "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+          "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+          "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+          "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+          "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+          "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+          "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+          "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+          "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+        ],
+        "attached": true
       }
     ]
   },
@@ -2025,7 +2322,7 @@
     "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
     "present": true,
     "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-    "generatedAt": "2026-06-19T13:11:19.942Z",
+    "generatedAt": "2026-06-20T00:12:13.0925024Z",
     "status": "blocked",
     "targetFamily": "Ashfall",
     "targetLane": "native",
@@ -2046,8 +2343,8 @@
     "screenshotCapture": {
       "attempted": true,
       "status": "failed",
-      "api": "Computer Use get_window_state(include_screenshot=true)",
-      "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+      "api": "Computer Use bootstrap/list_apps",
+      "error": "Transport closed during Computer Use bootstrap/list_apps; retry returned Transport closed; reset attempt returned Transport closed."
     },
     "inputStoppedAfterCaptureFailure": true,
     "acceptedAsGameplayProof": false,
@@ -2056,109 +2353,109 @@
       {
         "id": "clientStarted",
         "label": "Client/game window started",
-        "status": "blocked",
+        "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use listed the live ECHO Native Loader window, but screenshot capture failed before visible proof could be recorded."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "mainMenuNativeReplacement",
         "label": "Native main menu replacement visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "worldCreatedOrLoaded",
         "label": "World or profile loaded",
-        "status": "blocked",
+        "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Native log shows EchoDev joined ECHO Native Ashfall, but Computer Use screenshot capture failed before visible proof could be recorded."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "hudVisible",
         "label": "HUD visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "inventoryIndexVisible",
         "label": "Inventory Index visible after opening inventory",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "terminalVisible",
         "label": "Terminal visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "holomapVisible",
         "label": "HoloMap visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "lensVisible",
         "label": "Lens visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "creativeTabVisible",
         "label": "Creative tab visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "creativeTabSearchVisible",
         "label": "Creative tab search visible",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "creativeItemSelectable",
         "label": "Creative item selectable",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "creativeItemPlayable",
         "label": "Creative item usable in world",
         "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Computer Use input stopped after screenshot failure."
+        "note": "Computer Use transport closed before app discovery."
       },
       {
         "id": "saveReloadVerified",
         "label": "Save/reload verified",
-        "status": "blocked",
+        "status": "not-attempted",
         "evidenceRef": null,
-        "note": "Native log shows world save activity and the runtime host gate passed, but visible save/reload proof was not captured."
+        "note": "Computer Use transport closed before app discovery."
       }
     ],
     "verificationSummary": {
       "checkCount": 13,
       "capturedCount": 0,
-      "blockedCount": 3,
-      "notAttemptedCount": 10
+      "blockedCount": 0,
+      "notAttemptedCount": 13
     },
     "blockers": [
-      "Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.",
-      "No input sent after capture failure, per Computer Use safety rule.",
+      "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+      "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
       "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
       "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
-      "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+      "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
       "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
-      "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+      "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
       "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
       "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
       "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
@@ -2168,23 +2465,23 @@
       "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
       "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
       "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
-      "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+      "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
     ]
   },
   "computerUseGameplayCaptureHistory": {
     "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
     "present": true,
     "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempts.v1",
-    "generatedAt": "2026-06-19T13:11:19.959Z",
-    "latestAttemptId": "2026-06-19t13-11-19-942z__ashfall__native__ashfall-native-edition",
-    "attemptCount": 11,
+    "generatedAt": "2026-06-20T00:12:13.160Z",
+    "latestAttemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+    "attemptCount": 13,
     "targetCounts": {
       "Ashfall neoforge": 9,
       "Ashfall standalone": 1,
-      "Ashfall native": 1
+      "Ashfall native": 3
     },
     "acceptedAttemptCount": 0,
-    "blockedAttemptCount": 11,
+    "blockedAttemptCount": 13,
     "attempts": [
       {
         "attemptId": "2026-06-17t19-33-21-705z__ashfall__neoforge__ashfall-neoforge-edition",
@@ -2394,6 +2691,44 @@
           "notAttemptedCount": 10
         },
         "blockerCount": 17
+      },
+      {
+        "attemptId": "2026-06-20t00-04-47-3842792z__ashfall__native__ashfall-native-edition",
+        "generatedAt": "2026-06-20T00:04:47.3842792Z",
+        "status": "blocked",
+        "targetFamily": "Ashfall",
+        "targetLane": "native",
+        "targetPackId": "ashfall-native-edition",
+        "screenshotStatus": "failed",
+        "minecraftLauncherPlayActivationStatus": "not-attempted",
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 13,
+          "capturedCount": 0,
+          "blockedCount": 0,
+          "notAttemptedCount": 13
+        },
+        "blockerCount": 17
+      },
+      {
+        "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+        "generatedAt": "2026-06-20T00:12:13.0925024Z",
+        "status": "blocked",
+        "targetFamily": "Ashfall",
+        "targetLane": "native",
+        "targetPackId": "ashfall-native-edition",
+        "screenshotStatus": "failed",
+        "minecraftLauncherPlayActivationStatus": "not-attempted",
+        "acceptedAsGameplayProof": false,
+        "claimsPromoted": false,
+        "verificationSummary": {
+          "checkCount": 13,
+          "capturedCount": 0,
+          "blockedCount": 0,
+          "notAttemptedCount": 13
+        },
+        "blockerCount": 17
       }
     ]
   },
@@ -2407,25 +2742,17 @@
           "present": true,
           "schemaVersion": "echo.ashfall.lane-game-smoke.v1",
           "status": "BLOCKED",
-          "generatedAt": "2026-06-19T12:59:29.649Z"
+          "generatedAt": "2026-06-20T00:05:42.553Z"
         }
       ],
       "current": false,
       "laneCount": 3,
       "passedLaneCount": 0,
-      "blockerCount": 192,
+      "blockerCount": 218,
       "blockerSample": [
-        "ashfall-native-edition: Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-        "ashfall-native-edition: Missing gameplay proof: hudVisible",
-        "ashfall-native-edition: Missing gameplay proof: inventoryIndexVisible",
-        "ashfall-native-edition: Missing gameplay proof: terminalVisible",
-        "ashfall-native-edition: Missing gameplay proof: holomapVisible",
         "ashfall-native-edition: Missing gameplay proof: lensVisible",
-        "ashfall-native-edition: Missing gameplay proof: creativeTabVisible",
         "ashfall-native-edition: Missing gameplay proof: creativeTabSearchVisible",
-        "ashfall-native-edition: Missing gameplay proof: creativeItemSelectable",
         "ashfall-native-edition: Missing gameplay proof: creativeItemPlayable",
-        "ashfall-native-edition: Missing gameplay proof: saveReloadVerified",
         "Computer Use capture attempt: Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.",
         "Computer Use capture attempt: No input sent after capture failure, per Computer Use safety rule.",
         "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
@@ -2434,7 +2761,15 @@
         "Computer Use capture attempt: Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
         "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
         "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.",
-        "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted."
+        "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+        "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
       ],
       "lanes": [
         {
@@ -2444,19 +2779,11 @@
           "workspaceDir": "ECHO-Ashfall-Native-Edition",
           "status": "blocked",
           "releaseReady": false,
-          "blockerCount": 28,
+          "blockerCount": 54,
           "blockers": [
-            "Missing real gameplay evidence JSON for launch/world/UI/creative-tab proof.",
-            "Missing gameplay proof: hudVisible",
-            "Missing gameplay proof: inventoryIndexVisible",
-            "Missing gameplay proof: terminalVisible",
-            "Missing gameplay proof: holomapVisible",
             "Missing gameplay proof: lensVisible",
-            "Missing gameplay proof: creativeTabVisible",
             "Missing gameplay proof: creativeTabSearchVisible",
-            "Missing gameplay proof: creativeItemSelectable",
             "Missing gameplay proof: creativeItemPlayable",
-            "Missing gameplay proof: saveReloadVerified",
             "Computer Use capture attempt: Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.",
             "Computer Use capture attempt: No input sent after capture failure, per Computer Use safety rule.",
             "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
@@ -2473,47 +2800,81 @@
             "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
             "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
             "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
-            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was blocked.",
+            "Computer Use capture attempt: Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+            "Computer Use capture attempt: NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+            "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+            "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+            "Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted.",
+            "Computer Use capture attempt: Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+            "Computer Use capture attempt: NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+            "Computer Use capture attempt: Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+            "Computer Use capture attempt: No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+            "Computer Use capture attempt: Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+            "Computer Use capture attempt: Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
           ],
-          "evidencePath": "",
-          "evidencePresent": false,
+          "evidencePath": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\.echo\\ashfall-lane-game-smoke-evidence.json",
+          "evidencePresent": true,
           "claims": {
             "clientStarted": true,
             "mainMenuNativeReplacement": true,
             "worldCreatedOrLoaded": true,
-            "hudVisible": false,
-            "inventoryIndexVisible": false,
-            "terminalVisible": false,
-            "holomapVisible": false,
+            "hudVisible": true,
+            "inventoryIndexVisible": true,
+            "terminalVisible": true,
+            "holomapVisible": true,
             "lensVisible": false,
-            "creativeTabVisible": false,
+            "creativeTabVisible": true,
             "creativeTabSearchVisible": false,
-            "creativeItemSelectable": false,
+            "creativeItemSelectable": true,
             "creativeItemPlayable": false,
-            "saveReloadVerified": false
+            "saveReloadVerified": true
           },
           "openTaskCount": null,
           "logSummary": {
-            "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\echo-dev-direct-native-loader-2026-06-19T12-33-00-707Z.log",
-            "mtimeMs": 1781872964574.5627,
-            "mtime": "2026-06-19T12:42:44.575Z"
+            "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\logs\\echo-dev-direct-native-loader-2026-06-19T23-42-54-279Z.log",
+            "mtimeMs": 1781912740399.0298,
+            "mtime": "2026-06-19T23:45:40.399Z"
           },
           "crashSummary": [
-            "Time: 2026-06-18 06:28:30",
+            "Time: 2026-06-19 19:28:25",
             "Description: Rendering screen",
-            "java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7",
-            "at net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen.extractTabButton(CreativeModeInventoryScreen.java:949)",
-            "at net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen.extractBackground(CreativeModeInventoryScreen.java:861)",
-            "at net.minecraft.client.gui.screens.Screen.extractRenderStateWithTooltipAndSubtitles(Screen.java:116)",
-            "at net.minecraft.client.renderer.GameRenderer.extractGui(GameRenderer.java:508)",
-            "at net.minecraft.client.renderer.GameRenderer.extract(GameRenderer.java:417)"
+            "java.lang.NoClassDefFoundError: net/neoforged/neoforge/attachment/IAttachmentSerializer",
+            "at com.knoxhack.echonexusprotocol.registry.ModAttachments.<clinit>(ModAttachments.java:10)",
+            "at com.knoxhack.echonexusprotocol.data.NexusPlayerData.get(NexusPlayerData.java:69)",
+            "at com.knoxhack.echonexusprotocol.integration.NexusCoreIntegration.routeRecords(NexusCoreIntegration.java:135)",
+            "at com.echoplatform.echocore.api.EchoCoreServices.routeRecords(EchoCoreServices.java:245)",
+            "at com.knoxhack.echoterminal.client.screencore.TerminalScreenCoreDataProviders.statusSnapshot(TerminalScreenCoreDataProviders.java:1065)"
           ],
-          "crashReport": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\crash-reports\\crash-2026-06-18_06.28.30-client.txt",
+          "crashReport": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall Native Edition\\crash-reports\\crash-2026-06-19_19.28.25-client.txt",
           "computerUseCaptureAttempt": {
             "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
             "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
-            "attemptId": "2026-06-19t13-11-19-942z__ashfall__native__ashfall-native-edition",
-            "generatedAt": "2026-06-19T13:11:19.942Z",
+            "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+            "generatedAt": "2026-06-20T00:12:13.0925024Z",
             "status": "blocked",
             "target": {
               "family": "Ashfall",
@@ -2536,8 +2897,8 @@
             "screenshotCapture": {
               "attempted": true,
               "status": "failed",
-              "api": "Computer Use get_window_state(include_screenshot=true)",
-              "error": "SetIsBorderRequired failed: No such interface supported (0x80004002)"
+              "api": "Computer Use bootstrap/list_apps",
+              "error": "Transport closed during Computer Use bootstrap/list_apps; retry returned Transport closed; reset attempt returned Transport closed."
             },
             "inputStoppedAfterCaptureFailure": true,
             "acceptedAsGameplayProof": false,
@@ -2547,110 +2908,110 @@
               {
                 "id": "clientStarted",
                 "label": "Client/game window started",
-                "status": "blocked",
+                "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use listed the live ECHO Native Loader window, but screenshot capture failed before visible proof could be recorded."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "mainMenuNativeReplacement",
                 "label": "Native main menu replacement visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "worldCreatedOrLoaded",
                 "label": "World or profile loaded",
-                "status": "blocked",
+                "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Native log shows EchoDev joined ECHO Native Ashfall, but Computer Use screenshot capture failed before visible proof could be recorded."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "hudVisible",
                 "label": "HUD visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "inventoryIndexVisible",
                 "label": "Inventory Index visible after opening inventory",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "terminalVisible",
                 "label": "Terminal visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "holomapVisible",
                 "label": "HoloMap visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "lensVisible",
                 "label": "Lens visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "creativeTabVisible",
                 "label": "Creative tab visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "creativeTabSearchVisible",
                 "label": "Creative tab search visible",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "creativeItemSelectable",
                 "label": "Creative item selectable",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "creativeItemPlayable",
                 "label": "Creative item usable in world",
                 "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Computer Use input stopped after screenshot failure."
+                "note": "Computer Use transport closed before app discovery."
               },
               {
                 "id": "saveReloadVerified",
                 "label": "Save/reload verified",
-                "status": "blocked",
+                "status": "not-attempted",
                 "evidenceRef": null,
-                "note": "Native log shows world save activity and the runtime host gate passed, but visible save/reload proof was not captured."
+                "note": "Computer Use transport closed before app discovery."
               }
             ],
             "verificationSummary": {
               "checkCount": 13,
               "capturedCount": 0,
-              "blockedCount": 3,
-              "notAttemptedCount": 10
+              "blockedCount": 0,
+              "notAttemptedCount": 13
             },
             "blockerCount": 17,
             "blockers": [
-              "Computer Use screenshot capture failed for the live Native OpenGL game window with SetIsBorderRequired 0x80004002.",
-              "No input sent after capture failure, per Computer Use safety rule.",
+              "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+              "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
               "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
               "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
-              "Computer Use verification check clientStarted (Client/game window started) was blocked.",
+              "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
               "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
-              "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was blocked.",
+              "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
               "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
               "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
               "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
@@ -2660,12 +3021,12 @@
               "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
               "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
               "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
-              "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+              "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
             ]
           },
           "computerUseCaptureAttempts": [
             {
-              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
               "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
               "attemptId": "2026-06-19t13-11-19-942z__ashfall__native__ashfall-native-edition",
               "generatedAt": "2026-06-19T13:11:19.942Z",
@@ -2816,6 +3177,314 @@
                 "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
                 "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
                 "Computer Use verification check saveReloadVerified (Save/reload verified) was blocked."
+              ]
+            },
+            {
+              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempts.json",
+              "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+              "attemptId": "2026-06-20t00-04-47-3842792z__ashfall__native__ashfall-native-edition",
+              "generatedAt": "2026-06-20T00:04:47.3842792Z",
+              "status": "blocked",
+              "target": {
+                "family": "Ashfall",
+                "lane": "native",
+                "packId": "ashfall-native-edition"
+              },
+              "launcherWindowObserved": false,
+              "launcherAccessibilityObserved": false,
+              "minecraftLauncher": {
+                "observed": false,
+                "selectedProfile": null,
+                "playButtonText": null,
+                "playActivation": {
+                  "status": "not-attempted",
+                  "method": null,
+                  "error": null,
+                  "keyAttempts": []
+                }
+              },
+              "screenshotCapture": {
+                "attempted": true,
+                "status": "failed",
+                "api": "Computer Use bootstrap/list_apps",
+                "error": "Transport closed during Computer Use bootstrap/list_apps; retry also returned Transport closed; reset attempt returned Transport closed."
+              },
+              "inputStoppedAfterCaptureFailure": true,
+              "acceptedAsGameplayProof": false,
+              "claimsPromoted": false,
+              "importedEvidenceFileCount": 0,
+              "verificationChecks": [
+                {
+                  "id": "clientStarted",
+                  "label": "Client/game window started",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "mainMenuNativeReplacement",
+                  "label": "Native main menu replacement visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "worldCreatedOrLoaded",
+                  "label": "World or profile loaded",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "hudVisible",
+                  "label": "HUD visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "inventoryIndexVisible",
+                  "label": "Inventory Index visible after opening inventory",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "terminalVisible",
+                  "label": "Terminal visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "holomapVisible",
+                  "label": "HoloMap visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "lensVisible",
+                  "label": "Lens visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeTabVisible",
+                  "label": "Creative tab visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeTabSearchVisible",
+                  "label": "Creative tab search visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeItemSelectable",
+                  "label": "Creative item selectable",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeItemPlayable",
+                  "label": "Creative item usable in world",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "saveReloadVerified",
+                  "label": "Save/reload verified",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                }
+              ],
+              "verificationSummary": {
+                "checkCount": 13,
+                "capturedCount": 0,
+                "blockedCount": 0,
+                "notAttemptedCount": 13
+              },
+              "blockerCount": 17,
+              "blockers": [
+                "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+                "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+                "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+                "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+                "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+                "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+                "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+                "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+                "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+                "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+                "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+                "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+                "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+                "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+                "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+                "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+                "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
+              ]
+            },
+            {
+              "sourceReport": "release-readiness/computer-use-gameplay-capture-attempt.json",
+              "schemaVersion": "echo.release_index.computer_use_gameplay_capture_attempt.v1",
+              "attemptId": "2026-06-20t00-12-13-0925024z__ashfall__native__ashfall-native-edition",
+              "generatedAt": "2026-06-20T00:12:13.0925024Z",
+              "status": "blocked",
+              "target": {
+                "family": "Ashfall",
+                "lane": "native",
+                "packId": "ashfall-native-edition"
+              },
+              "launcherWindowObserved": false,
+              "launcherAccessibilityObserved": false,
+              "minecraftLauncher": {
+                "observed": false,
+                "selectedProfile": null,
+                "playButtonText": null,
+                "playActivation": {
+                  "status": "not-attempted",
+                  "method": null,
+                  "error": null,
+                  "keyAttempts": []
+                }
+              },
+              "screenshotCapture": {
+                "attempted": true,
+                "status": "failed",
+                "api": "Computer Use bootstrap/list_apps",
+                "error": "Transport closed during Computer Use bootstrap/list_apps; retry returned Transport closed; reset attempt returned Transport closed."
+              },
+              "inputStoppedAfterCaptureFailure": true,
+              "acceptedAsGameplayProof": false,
+              "claimsPromoted": false,
+              "importedEvidenceFileCount": 0,
+              "verificationChecks": [
+                {
+                  "id": "clientStarted",
+                  "label": "Client/game window started",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "mainMenuNativeReplacement",
+                  "label": "Native main menu replacement visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "worldCreatedOrLoaded",
+                  "label": "World or profile loaded",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "hudVisible",
+                  "label": "HUD visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "inventoryIndexVisible",
+                  "label": "Inventory Index visible after opening inventory",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "terminalVisible",
+                  "label": "Terminal visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "holomapVisible",
+                  "label": "HoloMap visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "lensVisible",
+                  "label": "Lens visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeTabVisible",
+                  "label": "Creative tab visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeTabSearchVisible",
+                  "label": "Creative tab search visible",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeItemSelectable",
+                  "label": "Creative item selectable",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "creativeItemPlayable",
+                  "label": "Creative item usable in world",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                },
+                {
+                  "id": "saveReloadVerified",
+                  "label": "Save/reload verified",
+                  "status": "not-attempted",
+                  "evidenceRef": null,
+                  "note": "Computer Use transport closed before app discovery."
+                }
+              ],
+              "verificationSummary": {
+                "checkCount": 13,
+                "capturedCount": 0,
+                "blockedCount": 0,
+                "notAttemptedCount": 13
+              },
+              "blockerCount": 17,
+              "blockers": [
+                "Computer Use transport closed before Windows app discovery, so no launcher/game windows could be selected or captured.",
+                "NeoForge comparison was not opened in this attempt because Computer Use failed before app discovery or input.",
+                "Computer Use window screenshot capture failed before visible gameplay screenshots could be recorded.",
+                "No screenshots, gameplay logs, or save snapshots were imported for Ashfall Native.",
+                "Computer Use verification check clientStarted (Client/game window started) was not-attempted.",
+                "Computer Use verification check mainMenuNativeReplacement (Native main menu replacement visible) was not-attempted.",
+                "Computer Use verification check worldCreatedOrLoaded (World or profile loaded) was not-attempted.",
+                "Computer Use verification check hudVisible (HUD visible) was not-attempted.",
+                "Computer Use verification check inventoryIndexVisible (Inventory Index visible after opening inventory) was not-attempted.",
+                "Computer Use verification check terminalVisible (Terminal visible) was not-attempted.",
+                "Computer Use verification check holomapVisible (HoloMap visible) was not-attempted.",
+                "Computer Use verification check lensVisible (Lens visible) was not-attempted.",
+                "Computer Use verification check creativeTabVisible (Creative tab visible) was not-attempted.",
+                "Computer Use verification check creativeTabSearchVisible (Creative tab search visible) was not-attempted.",
+                "Computer Use verification check creativeItemSelectable (Creative item selectable) was not-attempted.",
+                "Computer Use verification check creativeItemPlayable (Creative item usable in world) was not-attempted.",
+                "Computer Use verification check saveReloadVerified (Save/reload verified) was not-attempted."
               ]
             }
           ]
@@ -2997,9 +3666,9 @@
           },
           "openTaskCount": null,
           "logSummary": {
-            "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\debug.log",
-            "mtimeMs": 1781873470908.6997,
-            "mtime": "2026-06-19T12:51:10.909Z"
+            "path": "C:\\Users\\knox\\ECHOLauncher\\Instances\\Ashfall NeoForge Edition\\logs\\echo-dev-direct-neoforge-2026-06-19T23-31-54-329Z.log",
+            "mtimeMs": 1781912464258.3992,
+            "mtime": "2026-06-19T23:41:04.258Z"
           },
           "crashSummary": [
             "Time: 2026-06-19 06:41:26",
@@ -5524,12 +6193,12 @@
   "recoveryAndLifecycle": {
     "sourceReport": "release-readiness/official-pack-launcher-lifecycle-smoke.json",
     "installUpdateRollbackRepairCovered": true,
-    "officialPackCount": 15,
-    "coveredPackCount": 15,
-    "passCount": 15,
-    "updateCount": 15,
-    "rollbackCount": 15,
-    "repairCount": 15
+    "officialPackCount": 16,
+    "coveredPackCount": 16,
+    "passCount": 16,
+    "updateCount": 16,
+    "rollbackCount": 16,
+    "repairCount": 16
   },
   "nextRequiredProof": [
     "Resolve the Computer Use screenshot capture failure or rerun capture on a machine where visible window screenshots can be recorded, then import screenshots/logs/save snapshots before marking gameplay claims true.",
