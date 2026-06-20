@@ -1,0 +1,168 @@
+{
+  "ok": true,
+  "phase": "completed",
+  "generatedAt": "2026-06-20T23:37:14.625Z",
+  "channelUrl": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index/channels/alpha/launcher-channel.json",
+  "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
+  "standaloneRuntimeRoot": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
+  "executable": "C:\\Development\\Github\\ECHO-Launcher\\installer-artifacts\\win-unpacked\\ECHOLauncher.exe",
+  "workRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke",
+  "userDataDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data",
+  "playerContentRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content",
+  "minecraftRoot": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root",
+  "moduleEvidenceSources": {
+    "primaryReleaseTag": "modules-beta-full-20260620",
+    "releaseTagDistribution": [
+      {
+        "releaseTag": "modules-beta-full-20260620",
+        "moduleRows": 133,
+        "releaseSourceState": "full-release-evidence"
+      }
+    ]
+  },
+  "expectedPackCount": 1,
+  "expectedPacks": [
+    "ashfall-neoforge-edition"
+  ],
+  "packs": [
+    {
+      "profileId": "ashfall-neoforge-edition",
+      "name": "Ashfall NeoForge Edition",
+      "startedAt": "2026-06-20T23:37:18.322Z",
+      "ok": true,
+      "packStateBefore": {
+        "catalog": {
+          "configured": true,
+          "ok": true,
+          "source": "file:///C:/Users/knox/AppData/Local/Temp/echo-all-modpacks-electron-install-smoke/local-release-index/channels/alpha/launcher-channel.json",
+          "releases": 16,
+          "latestVersion": "0.1.1",
+          "fetchedAt": "2026-06-20T23:37:18.462Z",
+          "status": "warning",
+          "diagnostic": "Catalog release is warning-gated; inspect validationReason before install.",
+          "release": {
+            "id": "release-index-channel:ashfall-neoforge-edition:0.1.1",
+            "pack": "ashfall-neoforge-edition",
+            "version": "0.1.1",
+            "channel": "beta",
+            "tagName": "v0.1.1-ashfall-neoforge-edition-beta.6",
+            "name": "ashfall-neoforge-edition 0.1.1",
+            "draft": false,
+            "prerelease": true,
+            "publishedAt": "2026-06-20T23:37:18.154Z",
+            "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.1-ashfall-neoforge-edition-beta.6",
+            "releaseNotes": [
+              "Resolved through launcher channel pack metadata for ashfall-neoforge-edition."
+            ],
+            "manifestAssetName": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+            "manifestUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta.6/ashfall-neoforge-edition-beta-0.1.1.pack.json",
+            "manifestSha256": "215ea1c68331e74c38bcba2324150f44eff365d3297e03b84fc7278806de6b1b",
+            "trust": "verified-metadata",
+            "assets": [
+              {
+                "name": "ashfall-neoforge-edition-0.1.1.zip",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta.6/ashfall-neoforge-edition-0.1.1.zip",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta.6/ashfall-neoforge-edition-0.1.1.zip",
+                "size": 269579209,
+                "sha256": "39a1f297e42c577e21b49c07b1feac74c0a7e577fd8d29f005979bd023f3d891",
+                "releaseTag": "v0.1.1-ashfall-neoforge-edition-beta.6",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.1-ashfall-neoforge-edition-beta.6"
+              },
+              {
+                "name": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+                "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta.6/ashfall-neoforge-edition-beta-0.1.1.pack.json",
+                "browser_download_url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta.6/ashfall-neoforge-edition-beta-0.1.1.pack.json",
+                "size": 0,
+                "sha256": "215ea1c68331e74c38bcba2324150f44eff365d3297e03b84fc7278806de6b1b",
+                "releaseTag": "v0.1.1-ashfall-neoforge-edition-beta.6",
+                "releasePageUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.1-ashfall-neoforge-edition-beta.6"
+              }
+            ]
+          },
+          "warnings": []
+        },
+        "route": {
+          "mode": "neoforge-minecraft",
+          "label": "Minecraft + NeoForge",
+          "shortLabel": "NeoForge",
+          "detail": "Uses the official Minecraft Launcher with the selected NeoForge profile."
+        },
+        "primaryAction": {
+          "kind": "install",
+          "label": "Install Ashfall NeoForge Edition",
+          "enabled": true,
+          "variant": "primary",
+          "reason": ""
+        },
+        "blockers": [
+          {
+            "id": "missingInstall",
+            "title": "Ashfall NeoForge Edition is not installed",
+            "detail": "Install the approved Catalog release.",
+            "status": "missing",
+            "action": "install"
+          }
+        ]
+      },
+      "visibleInstallAction": {
+        "label": "Install Ashfall NeoForge Edition",
+        "disabled": false
+      },
+      "click": {
+        "clicked": true,
+        "label": "Install Ashfall NeoForge Edition"
+      },
+      "completedAt": "2026-06-20T23:37:49.204Z",
+      "durationMs": 30882,
+      "installReportPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\user-data\\ECHO\\launcher-logs\\install-2026-06-20T23-37-19-420Z.json",
+      "installPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
+      "manifestPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition\\.echo\\installed-manifest.json",
+      "manifestPack": "ashfall-neoforge-edition",
+      "manifestVersion": "0.1.1",
+      "fileCount": 46,
+      "moduleReleaseSources": [
+        {
+          "releaseSourceState": "full-release-evidence",
+          "releaseTag": "modules-beta-full-20260620",
+          "fileCount": 46,
+          "moduleCount": 46
+        }
+      ],
+      "repairFixture": null,
+      "standaloneRepair": null,
+      "standaloneUpdate": null,
+      "launchRoute": {
+        "kind": "minecraft-launcher-handoff",
+        "ok": true,
+        "runtimeMode": "neoforge-minecraft",
+        "profileId": "echo-ashfall-neoforge-edition",
+        "profileName": "Ashfall NeoForge Edition",
+        "versionId": "neoforge-26.1.2.43-beta",
+        "versionSource": "installed",
+        "versionMetadataPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\versions\\neoforge-26.1.2.43-beta\\neoforge-26.1.2.43-beta.json",
+        "launcherProfilesPath": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\minecraft-root\\launcher_profiles.json",
+        "gameDir": "C:\\Users\\knox\\AppData\\Local\\Temp\\echo-all-modpacks-electron-install-smoke\\player-content\\Instances\\Ashfall NeoForge Edition",
+        "validatedModsCount": 46,
+        "repair": null,
+        "nativeRuntime": null,
+        "staleNeoForgeMetadata": null,
+        "warnings": [
+          "Minecraft Launcher base version '26.1.2' metadata was missing. ECHO wrote it from Mojang metadata so assets can download.",
+          "Minecraft 26.1.2 client jar was missing or corrupt. ECHO downloaded it so NeoForge can generate its patched client.",
+          "Removed 1 generic NeoForge launcher profile (NeoForge) so Minecraft Launcher uses Ashfall NeoForge Edition with the ECHO-managed instance folder."
+        ]
+      }
+    }
+  ],
+  "failures": [],
+  "stdout": [
+    "\r\n",
+    "Checking for update\n",
+    "Generated new staging user ID: 9a22fb6e-912e-5db6-839a-029a6a1acb2e\n",
+    "Update for version 1.1.19 is not available (latest version: 1.1.16, downgrade is disallowed).\n"
+  ],
+  "stderr": [
+    "\r\nDevTools listening on ws://127.0.0.1:58973/devtools/browser/29a8f24e-5158-4739-a576-2c2a34a24ae2\r\n"
+  ],
+  "completedAt": "2026-06-20T23:37:49.206Z"
+}

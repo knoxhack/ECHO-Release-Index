@@ -12,6 +12,7 @@ import { inflateRawSync } from 'node:zlib'
 const PACK_ID = 'ashfall-standalone-engine-edition'
 const ENGINE_RUNTIME_ID = 'echo-standalone-engine'
 const ENGINE_VERSION = '2.0.0-beta.2'
+const KILL_GRACE_MS = 10_000
 
 const DEFAULT_RUNTIME_TASKS = [
   {
@@ -324,6 +325,8 @@ async function runMeasured({ command, args, cwd, timeoutMs, logPath, collectMemo
   let stdout = ''
   let stderr = ''
   let timedOut = false
+  let forcedClose = false
+  let spawnError = null
   let peakWorkingSetBytes = null
   let memorySamples = 0
   let memoryCollectionError = null
@@ -355,10 +358,6 @@ async function runMeasured({ command, args, cwd, timeoutMs, logPath, collectMemo
 
   await sample()
   const sampler = collectMemory ? setInterval(() => { void sample() }, 500) : null
-  const timeout = setTimeout(() => {
-    timedOut = true
-    killProcessTree(child.pid)
-  }, timeoutMs)
 
   child.stdout.on('data', (chunk) => {
     stdout += chunk.toString('utf8')
@@ -367,11 +366,34 @@ async function runMeasured({ command, args, cwd, timeoutMs, logPath, collectMemo
     stderr += chunk.toString('utf8')
   })
 
-  const exit = await new Promise((resolve, reject) => {
-    child.on('error', reject)
-    child.on('close', (code, signal) => resolve({ code, signal }))
+  const exit = await new Promise((resolve) => {
+    let settled = false
+    let killGrace = null
+    const settle = (value) => {
+      if (settled) return
+      settled = true
+      if (killGrace) clearTimeout(killGrace)
+      resolve(value)
+    }
+    const timeout = setTimeout(() => {
+      timedOut = true
+      killProcessTree(child.pid)
+      killGrace = setTimeout(() => {
+        forcedClose = true
+        killProcessTree(child.pid)
+        settle({ code: null, signal: 'KILL_GRACE_EXPIRED' })
+      }, KILL_GRACE_MS)
+    }, timeoutMs)
+    child.on('error', (error) => {
+      spawnError = String(error.message ?? error)
+      clearTimeout(timeout)
+      settle({ code: null, signal: 'SPAWN_ERROR' })
+    })
+    child.on('close', (code, signal) => {
+      clearTimeout(timeout)
+      settle({ code, signal })
+    })
   })
-  clearTimeout(timeout)
   if (sampler) clearInterval(sampler)
   await sample()
 
@@ -386,6 +408,8 @@ async function runMeasured({ command, args, cwd, timeoutMs, logPath, collectMemo
     exitCode: typeof exit.code === 'number' ? exit.code : null,
     signal: exit.signal || null,
     timedOut,
+    forcedClose,
+    spawnError,
     peakWorkingSetBytes,
     memorySamples,
     memoryCollectionError,
@@ -405,7 +429,7 @@ async function runMeasured({ command, args, cwd, timeoutMs, logPath, collectMemo
         cwd,
         ``,
         `# exit`,
-        JSON.stringify({ exitCode: result.exitCode, signal: result.signal, timedOut, durationMs }),
+        JSON.stringify({ exitCode: result.exitCode, signal: result.signal, timedOut, forcedClose, spawnError, durationMs }),
         ``,
         `# stdout`,
         stdout,
@@ -438,17 +462,34 @@ async function runTiny(command, args, timeoutMs = 10_000) {
   let stderr = ''
   const child = spawn(command, args, { windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] })
   let timedOut = false
-  const timeout = setTimeout(() => {
-    timedOut = true
-    killProcessTree(child.pid)
-  }, timeoutMs)
   child.stdout.on('data', (chunk) => { stdout += chunk.toString('utf8') })
   child.stderr.on('data', (chunk) => { stderr += chunk.toString('utf8') })
   const exitCode = await new Promise((resolve, reject) => {
-    child.on('error', reject)
-    child.on('close', (code) => resolve(code))
+    let settled = false
+    let killGrace = null
+    const settle = (value) => {
+      if (settled) return
+      settled = true
+      if (killGrace) clearTimeout(killGrace)
+      resolve(value)
+    }
+    const timeout = setTimeout(() => {
+      timedOut = true
+      killProcessTree(child.pid)
+      killGrace = setTimeout(() => {
+        killProcessTree(child.pid)
+        settle(null)
+      }, KILL_GRACE_MS)
+    }, timeoutMs)
+    child.on('error', (error) => {
+      clearTimeout(timeout)
+      reject(error)
+    })
+    child.on('close', (code) => {
+      clearTimeout(timeout)
+      settle(code)
+    })
   })
-  clearTimeout(timeout)
   if (timedOut) throw new Error(`${command} timed out after ${timeoutMs}ms`)
   if (exitCode !== 0 && stderr.trim()) throw new Error(stderr.trim())
   return stdout
@@ -736,22 +777,26 @@ async function runRuntimeLane(args) {
     })
     const afterStat = reportPath ? await statIfExists(reportPath) : null
     const report = reportPath ? await readJsonIfExists(reportPath) : null
+    const reportFresh = Boolean(afterStat && (!beforeStat || afterStat.mtimeMs > beforeStat.mtimeMs))
+    const status = runtimeTaskStatus(result, report, reportFresh)
     tasks.push({
       task: taskSpec.task,
       evidenceKind: taskSpec.evidenceKind,
       gradleCommand: [gradle, ...commandArgs],
       command: result.command,
       cwd: result.cwd,
-      status: report?.status || (result.exitCode === 0 ? 'UNKNOWN' : 'FAIL'),
+      status,
       durationMs: result.durationMs,
       exitCode: result.exitCode,
       timedOut: result.timedOut,
+      forcedClose: result.forcedClose,
+      spawnError: result.spawnError,
       peakWorkingSetBytes: result.peakWorkingSetBytes,
       memorySamples: result.memorySamples,
       memoryCollectionError: result.memoryCollectionError,
       logPath,
       reportPath,
-      reportFresh: Boolean(afterStat && (!beforeStat || afterStat.mtimeMs > beforeStat.mtimeMs)),
+      reportFresh,
       reportModifiedAt: afterStat ? new Date(afterStat.mtimeMs).toISOString() : null,
       report: summarizeRuntimeReport(taskSpec.evidenceKind, report),
       stdoutTail: tail(result.stdout),
@@ -768,6 +813,15 @@ async function runRuntimeLane(args) {
     tasks,
     metrics: metricSummary(tasks),
   }
+}
+
+function runtimeTaskStatus(result, report, reportFresh) {
+  if (result.timedOut) return 'TIMEOUT'
+  if (result.spawnError) return 'SPAWN_ERROR'
+  if (result.exitCode !== 0) return 'FAIL'
+  if (report?.status && reportFresh) return report.status
+  if (report?.status) return 'STALE_REPORT'
+  return 'UNKNOWN'
 }
 
 async function blockedRuntimeLane(args, reason, activeProcesses = []) {
@@ -999,7 +1053,11 @@ function firstEngineSaveLoad(engine) {
 }
 
 function firstRuntimeReport(runtime, kind) {
-  return runtime?.tasks?.find((task) => task.evidenceKind === kind)?.report || null
+  return runtime?.tasks?.find((task) => (
+    task.evidenceKind === kind
+    && task.reportFresh
+    && task.report?.status === 'PASS'
+  ))?.report || null
 }
 
 function failureRate(metrics) {
