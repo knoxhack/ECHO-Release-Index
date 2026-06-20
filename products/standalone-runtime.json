@@ -1,48 +1,56 @@
 {
   "id": "echo-standalone-runtime",
   "kind": "runtime",
-  "version": "0.1.0",
-  "channel": "experimental",
+  "version": "0.1.0-beta.20260620",
+  "channel": "beta",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Standalone-Runtime",
-  "releaseTag": "v0.1.0-standalone-runtime-alpha",
-  "commitSha": "cab8a72a42b7a1cd6588dfb8197bdb0c2d8812fb",
+  "releaseTag": "v0.1.0-standalone-runtime-beta-20260620",
+  "commitSha": "8788b046f19bfb92b586a3e49f92e605c9d82168",
   "artifacts": {
     "alphaReadinessGate": {
       "file": "alpha-readiness-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/alpha-readiness-gate.json",
-      "sha256": "bfb6bcdcc1c0584dd17bc5ef5497e6fd334265e2349bf0d720c94de47e573bca",
-      "size": 280
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/alpha-readiness-gate.json",
+      "sha256": "b059c2d426d3ca13ffaeb1fabae85db35badea84c8d02c20879756ee527c03ec",
+      "size": 285
     },
     "ashfallParityMatrix": {
       "file": "ashfall-parity-matrix.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/ashfall-parity-matrix.json",
-      "sha256": "5331edae0a00320cd21cdc22e10153eb7c872144e26a5b40f53e31af20662891",
-      "size": 295
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/ashfall-parity-matrix.json",
+      "sha256": "17f909a8a094967f5dcdfb17bd520ec0a94785f63fbc12f9a23ead61d3bb1312",
+      "size": 300
     },
     "betaReadinessGate": {
       "file": "beta-readiness-gate.json",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/beta-readiness-gate.json",
-      "sha256": "a9f9754b1a0b2fbcd7da697b9a0b89e69e8e6ee46cf9cf027ab1ea6b81d8f6f9",
-      "size": 275
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/beta-readiness-gate.json",
+      "sha256": "e382078badae0d093d10b7a05ce2b6d8c9f59e0e0c9921903d89acefd440017d",
+      "size": 280
     },
     "checksums": {
       "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/checksums.txt",
-      "sha256": "655459bfcce78259d59fc5dbd7fbb9d083699342c7e45127176cc1e5bd3bac78",
-      "size": 386
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/checksums.txt",
+      "sha256": "999c7c6be97093f842d6f073ac86765aff9a17707b4062e46216aaec722f2c02",
+      "size": 391
+    },
+    "echoReleaseMetadata": {
+      "file": "echo-release.json",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/echo-release.json",
+      "sha256": "2ca92ee2399872d11f4c7d8e8179a090158f3904fd58bb046f8983970c2ec283",
+      "size": 4540
     },
     "archive": {
-      "file": "echo-standalone-runtime-0.1.0-alpha.zip",
-      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-alpha/echo-standalone-runtime-0.1.0-alpha.zip",
-      "sha256": "1c31fe5440be1a2ed056cf80baa10676c031882cc20dfe3d26ef55a29d64f07c",
-      "size": 52850287
+      "file": "echo-standalone-runtime-0.1.0-beta-20260620.zip",
+      "url": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/download/v0.1.0-standalone-runtime-beta-20260620/echo-standalone-runtime-0.1.0-beta-20260620.zip",
+      "sha256": "d9fe9abce7227e94229c645a42eea49df014de1da96297298b1a3d5ed662ed89",
+      "size": 52936259
     }
   },
   "dependencies": [],
   "compatibility": [
-    "ashfall-standalone-edition"
+    "standalone"
   ],
   "trust": "source-linked",
-  "validation": "approved"
+  "validation": "approved",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.0-standalone-runtime-beta-20260620",
+  "validationReason": "Approved for beta catalog/runtime installation: packaged runtime assets, smoke harnesses, and checksum-pinned GitHub prerelease artifacts are available; manual gameplay acceptance remains tracked separately."
 }

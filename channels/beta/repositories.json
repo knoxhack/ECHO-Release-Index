@@ -1,21 +1,30 @@
 {
   "schemaVersion": 1,
   "channel": "beta",
-  "generatedAt": "2026-06-12T09:05:00.000Z",
+  "generatedAt": "2026-06-20T05:06:10.776Z",
   "owner": "knoxhack",
-  "releaseTag": "arcana-division-1.0.0-beta",
+  "releaseTag": "echo-beta-release-train-20260620",
   "sourceRepos": {
     "modules": "https://github.com/knoxhack/ECHO-Modules",
-    "arcanaDivisionNativeEdition": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition",
-    "arcanaDivisionNeoForgeEdition": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
-    "arcanaDivisionStandaloneEdition": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition",
-    "skyRelayNativeEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
-    "skyRelayNeoForgeEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
-    "skyRelayStandaloneEdition": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition",
-    "openlandsNativeEdition": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
-    "openlandsNeoForgeEdition": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition",
-    "openlandsStandaloneEdition": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition",
-    "releaseIndex": "https://github.com/knoxhack/ECHO-Release-Index"
+    "launcher": "https://github.com/knoxhack/ECHO-Launcher",
+    "native-Platform": "https://github.com/knoxhack/ECHO-Native-Platform",
+    "standalone-Runtime": "https://github.com/knoxhack/ECHO-Standalone-Runtime",
+    "sDK": "https://github.com/knoxhack/ECHO-SDK",
+    "arcana-Division-Native-Edition": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition",
+    "arcana-Division-NeoForge-Edition": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
+    "arcana-Division-Standalone-Edition": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition",
+    "ashfall-Native-Edition": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition",
+    "ashfall-NeoForge-Edition": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
+    "ashfall-Standalone-Edition": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
+    "galactic-Survey-Native-Edition": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
+    "galactic-Survey-NeoForge-Edition": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+    "galactic-Survey-Standalone-Edition": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+    "openlands-Native-Edition": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
+    "openlands-NeoForge-Edition": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition",
+    "openlands-Standalone-Edition": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition",
+    "sky-Relay-Native-Edition": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
+    "sky-Relay-NeoForge-Edition": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+    "sky-Relay-Standalone-Edition": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition"
   },
   "repositories": [
     {
@@ -23,86 +32,180 @@
       "product": "ECHO Modules",
       "releaseKind": "modules",
       "repoUrl": "https://github.com/knoxhack/ECHO-Modules",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-arcana-division-1.0.0-beta",
-      "assetCount": 102
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Modules/releases/tag/modules-beta-full-20260620",
+      "assetCount": 2,
+      "publicRole": "All-module beta artifact family release for Native, NeoForge, and Standalone lanes."
+    },
+    {
+      "repoName": "ECHO-Launcher",
+      "product": "ECHO Launcher",
+      "releaseKind": "product",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Launcher",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/tag/v1.1.17",
+      "assetCount": 5,
+      "publicRole": "ECHO Launcher beta tester product/runtime feed."
+    },
+    {
+      "repoName": "ECHO-Native-Platform",
+      "product": "ECHO Native Platform",
+      "releaseKind": "runtime",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Native-Platform",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Native-Platform/releases/tag/v1.0.6",
+      "assetCount": 11,
+      "publicRole": "ECHO Native Platform beta tester product/runtime feed."
+    },
+    {
+      "repoName": "ECHO-Standalone-Runtime",
+      "product": "ECHO Standalone Runtime",
+      "releaseKind": "runtime",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Standalone-Runtime/releases/tag/v0.1.0-standalone-runtime-beta-20260620",
+      "assetCount": 6,
+      "publicRole": "ECHO Standalone Runtime beta tester product/runtime feed."
+    },
+    {
+      "repoName": "ECHO-SDK",
+      "product": "ECHO Native Sdk",
+      "releaseKind": "product",
+      "repoUrl": "https://github.com/knoxhack/ECHO-SDK",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-SDK/releases/tag/v1.0.0-RC1",
+      "assetCount": 15,
+      "publicRole": "ECHO Native Sdk beta tester product/runtime feed."
     },
     {
       "repoName": "ECHO-Arcana-Division-Native-Edition",
       "product": "Arcana Division Native Edition",
       "releaseKind": "pack",
       "repoUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.0-beta",
-      "assetCount": 4
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Native-Edition/releases/tag/arcana-division-native-1.0.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official arcana-division-native-edition beta tester pack lane."
     },
     {
       "repoName": "ECHO-Arcana-Division-NeoForge-Edition",
       "product": "Arcana Division NeoForge Edition",
       "releaseKind": "pack",
       "repoUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.0-beta",
-      "assetCount": 4
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-NeoForge-Edition/releases/tag/arcana-division-neoforge-1.0.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official arcana-division-neoforge-edition beta tester pack lane."
     },
     {
       "repoName": "ECHO-Arcana-Division-Standalone-Edition",
       "product": "Arcana Division Standalone Edition",
       "releaseKind": "pack",
       "repoUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.0-beta",
-      "assetCount": 4
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Arcana-Division-Standalone-Edition/releases/tag/arcana-division-standalone-1.0.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official arcana-division-standalone-edition beta tester pack lane."
     },
     {
-      "repoName": "ECHO-Sky-Relay-Native-Edition",
-      "product": "Sky Relay Native Edition",
+      "repoName": "ECHO-Ashfall-Native-Edition",
+      "product": "Ashfall Native Edition",
       "releaseKind": "pack",
-      "repoUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.0-alpha",
-      "assetCount": 7,
-      "publicRole": "Sky Relay Native Edition public prerelease lane."
+      "repoUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Ashfall-Native-Edition/releases/tag/v0.1.1-ashfall-native-edition-beta",
+      "assetCount": 5,
+      "publicRole": "Official ashfall-native-edition beta tester pack lane."
     },
     {
-      "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
-      "product": "Sky Relay NeoForge Edition",
+      "repoName": "ECHO-Ashfall-NeoForge-Edition",
+      "product": "Ashfall NeoForge Edition",
       "releaseKind": "pack",
-      "repoUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.0-alpha",
-      "assetCount": 7,
-      "publicRole": "Sky Relay NeoForge Edition public prerelease lane."
+      "repoUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.1-ashfall-neoforge-edition-beta",
+      "assetCount": 5,
+      "publicRole": "Official ashfall-neoforge-edition beta tester pack lane."
     },
     {
-      "repoName": "ECHO-Sky-Relay-Standalone-Edition",
-      "product": "Sky Relay Standalone Edition",
+      "repoName": "ECHO-Ashfall-Standalone-Edition",
+      "product": "Ashfall Standalone Edition",
       "releaseKind": "pack",
-      "repoUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.0-alpha",
-      "assetCount": 7,
-      "publicRole": "Sky Relay Standalone Edition public prerelease lane."
+      "repoUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Ashfall-Standalone-Edition/releases/tag/v0.1.1-ashfall-standalone-edition-beta",
+      "assetCount": 5,
+      "publicRole": "Official ashfall-standalone-edition beta tester pack lane."
+    },
+    {
+      "repoName": "ECHO-Galactic-Survey-Native-Edition",
+      "product": "Galactic Survey Native Edition",
+      "releaseKind": "pack",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Native-Edition/releases/tag/galactic-survey-native-0.1.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official galactic-survey-native-edition beta tester pack lane."
+    },
+    {
+      "repoName": "ECHO-Galactic-Survey-NeoForge-Edition",
+      "product": "Galactic Survey NeoForge Edition",
+      "releaseKind": "pack",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-NeoForge-Edition/releases/tag/galactic-survey-neoforge-0.1.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official galactic-survey-neoforge-edition beta tester pack lane."
+    },
+    {
+      "repoName": "ECHO-Galactic-Survey-Standalone-Edition",
+      "product": "Galactic Survey Standalone Edition",
+      "releaseKind": "pack",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Galactic-Survey-Standalone-Edition/releases/tag/galactic-survey-standalone-0.1.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official galactic-survey-standalone-edition beta tester pack lane."
     },
     {
       "repoName": "ECHO-Openlands-Native-Edition",
       "product": "Openlands Native Edition",
       "releaseKind": "pack",
       "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases",
-      "assetCount": 0,
-      "publicRole": "Planned Openlands Native Edition release lane. Preview only until artifacts and parity tests are approved."
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.2-openlands-native-edition-beta",
+      "assetCount": 5,
+      "publicRole": "Official openlands-native-edition beta tester pack lane."
     },
     {
       "repoName": "ECHO-Openlands-NeoForge-Edition",
       "product": "Openlands NeoForge Edition",
       "releaseKind": "pack",
       "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases",
-      "assetCount": 0,
-      "publicRole": "Planned Openlands NeoForge Edition release lane. Preview only until artifacts and parity tests are approved."
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-NeoForge-Edition/releases/tag/v0.1.3-openlands-neoforge-edition-beta",
+      "assetCount": 5,
+      "publicRole": "Official openlands-neoforge-edition beta tester pack lane."
     },
     {
       "repoName": "ECHO-Openlands-Standalone-Edition",
       "product": "Openlands Standalone Edition",
       "releaseKind": "pack",
       "repoUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition",
-      "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases",
-      "assetCount": 0,
-      "publicRole": "Planned Openlands Standalone Edition release lane. Preview only until artifacts and parity tests are approved."
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Standalone-Edition/releases/tag/v0.1.2-openlands-standalone-edition-beta",
+      "assetCount": 5,
+      "publicRole": "Official openlands-standalone-edition beta tester pack lane."
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-Native-Edition",
+      "product": "Sky Relay Native Edition",
+      "releaseKind": "pack",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Native-Edition/releases/tag/sky-relay-native-0.1.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official sky-relay-native-edition beta tester pack lane."
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
+      "product": "Sky Relay NeoForge Edition",
+      "releaseKind": "pack",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-NeoForge-Edition/releases/tag/sky-relay-neoforge-0.1.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official sky-relay-neoforge-edition beta tester pack lane."
+    },
+    {
+      "repoName": "ECHO-Sky-Relay-Standalone-Edition",
+      "product": "Sky Relay Standalone Edition",
+      "releaseKind": "pack",
+      "repoUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "releaseUrl": "https://github.com/knoxhack/ECHO-Sky-Relay-Standalone-Edition/releases/tag/sky-relay-standalone-0.1.2-beta",
+      "assetCount": 5,
+      "publicRole": "Official sky-relay-standalone-edition beta tester pack lane."
     }
   ]
 }

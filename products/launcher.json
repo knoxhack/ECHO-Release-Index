@@ -1,36 +1,50 @@
 {
   "id": "echo-launcher",
   "kind": "product",
-  "version": "1.1.16",
-  "channel": "alpha",
+  "version": "1.1.17",
+  "channel": "beta",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Launcher",
-  "releaseTag": "v1.1.16",
-  "commitSha": "de72f49a94b14d2e1862c04eb0d25a52aceb61fd",
+  "releaseTag": "v1.1.17",
+  "commitSha": "874ed8245fdab67d12d0cda0cce0cc326e5e5054",
   "artifacts": {
     "windowsSetup": {
-      "file": "ECHO-Launcher-1.1.16-Setup.exe",
-      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.16/ECHO-Launcher-1.1.16-Setup.exe",
-      "sha256": "807fa054ab1a30e80aab5f608f381ed5d4f84493400d91345f27ed4feba18b09",
-      "size": 116610829
+      "file": "ECHO-Launcher-1.1.17-Setup.exe",
+      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.17/ECHO-Launcher-1.1.17-Setup.exe",
+      "sha256": "037cf8e2680b7e27198e0f43d4451fa990140c945815e49d427d20a34407fc44",
+      "size": 116617754
     },
     "windowsSetupBlockmap": {
-      "file": "ECHO-Launcher-1.1.16-Setup.exe.blockmap",
-      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.16/ECHO-Launcher-1.1.16-Setup.exe.blockmap",
-      "sha256": "668ee9be6af3ca9a223ddca4473b7cfdd6da1c74728eeae0ecad8c84de462f4f",
-      "size": 121646
+      "file": "ECHO-Launcher-1.1.17-Setup.exe.blockmap",
+      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.17/ECHO-Launcher-1.1.17-Setup.exe.blockmap",
+      "sha256": "5df702dec2997c2584d29c3a09c2d905bb018e771b711c92f281e04105d88fc3",
+      "size": 121633
     },
     "latestYml": {
       "file": "latest.yml",
-      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.16/latest.yml",
-      "sha256": "5c39c63db2259e75c4b3cec2e1d84f87889ca04f4eb18d5956a903448636381a",
+      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.17/latest.yml",
+      "sha256": "6c3a3cbc4a4ccd7a2794c846c88311b87769e1e2bd0fbcf0986380fd399f43b5",
       "size": 358
+    },
+    "linuxAppImage": {
+      "file": "ECHO-Launcher-1.1.17-x86_64.AppImage",
+      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.17/ECHO-Launcher-1.1.17-x86_64.AppImage",
+      "sha256": "901d6ce2e1cc6767538361b2eb39871660e788a33a8810d48115e16364c3fa12",
+      "size": 136862528
+    },
+    "latestLinuxYml": {
+      "file": "latest-linux.yml",
+      "url": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.17/latest-linux.yml",
+      "sha256": "22c55273b845a22db77b229b0f87c0e229db9f8513f4a4d4d27450606214b4a7",
+      "size": 395
     }
   },
   "dependencies": [],
   "compatibility": [
-    "windows-x64"
+    "windows-x64",
+    "linux-x64"
   ],
   "trust": "source-linked",
-  "validation": "approved"
+  "validation": "approved",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/tag/v1.1.17"
 }

@@ -1,49 +1,49 @@
 {
   "id": "openlands-native-edition",
   "kind": "modpack",
-  "version": "0.1.1",
-  "channel": "alpha",
+  "version": "0.1.2",
+  "channel": "beta",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
-  "releaseTag": "v0.1.1-openlands-native-edition",
-  "commitSha": "7038f3c",
+  "releaseTag": "v0.1.2-openlands-native-edition-beta",
+  "commitSha": "392ba4a",
   "artifacts": {
     "pack": {
-      "file": "openlands-native-edition-0.1.1.zip",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-0.1.1.zip",
-      "sha256": "988fbd8830315c4f6ef149f0fcffc4bcff3b0167d1673e5a5484979968fbd363",
-      "size": 112808347
+      "file": "openlands-native-edition-0.1.2.zip",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.2-openlands-native-edition-beta/openlands-native-edition-0.1.2.zip",
+      "sha256": "21ee7ac2090a67a90d45a6780ca5c46a8efc577c1e622e4d86a7dd97475e80f8",
+      "size": 112894816
     },
     "manifest": {
-      "file": "openlands-native-edition-alpha-0.1.1.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/openlands-native-edition-alpha-0.1.1.pack.json",
-      "sha256": "2f2ed21bc697f8661dfaa922ffab08f8641b3cd007dd1f31e9705d631147eea2",
-      "size": 55342
+      "file": "openlands-native-edition-beta-0.1.2.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.2-openlands-native-edition-beta/openlands-native-edition-beta-0.1.2.pack.json",
+      "sha256": "6cfb4b0c7fd820e372ab8bf5b1607934493d418b05dd40b5d65c5190d5a4920b",
+      "size": 54977
     },
     "checksums": {
       "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/checksums.txt",
-      "sha256": "52f322067b0a4b56d976f14a9a83aa31cd9d89959a870bdda033964bcc5d7ad3",
-      "size": 383
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.2-openlands-native-edition-beta/checksums.txt",
+      "sha256": "eb557182f7f05cdf6a1904205a0d5f1130b3bb5766e0634074ea7c86b28e1028",
+      "size": 382
     },
     "releaseManifest": {
       "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/echo-release.json",
-      "sha256": "a59f735d0278ead6fe05708a274e606ea72089eb111e4d5bde992c513d1ef850",
-      "size": 12162
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.2-openlands-native-edition-beta/echo-release.json",
+      "sha256": "a54ddd386e390952146e35cbb20b45ff6bf55e5b0af8e7b498661a3f6f86ddc7",
+      "size": 12147
     },
     "releaseAudit": {
       "file": "release-audit.json",
-      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.1-openlands-native-edition/release-audit.json",
-      "sha256": "76959da184969adc036ae61d2ec6a84633822f3f8af84ef86c1164f6fa25c7d5",
-      "size": 919
+      "url": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/download/v0.1.2-openlands-native-edition-beta/release-audit.json",
+      "sha256": "9f1e3d789a8046215adf4789ff53aa4669c06806a68693e2f7f830f8ea047328",
+      "size": 912
     }
   },
   "dependencies": [
     {
       "id": "echo-native-platform",
       "kind": "runtime",
-      "version": ">=1.0.0"
+      "version": ">=1.0.6"
     }
   ],
   "compatibility": [
@@ -54,7 +54,7 @@
   "validation": "approved",
   "notes": "Install-approved catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
   "validationReason": "Approved release metadata now matches the published pack ZIP and selected-pack manifest exactly.",
-  "moduleRelease": "modules-canonical-full-20260616",
-  "moduleSourceRevision": "ECHO-Modules modules-canonical-full-20260616 (9f25b667), 2026-06-16",
-  "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.1-openlands-native-edition"
+  "moduleRelease": "modules-beta-full-20260620",
+  "moduleSourceRevision": "ECHO-Modules modules-beta-full-20260620 (2a1c2ec8), 2026-06-20",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Openlands-Native-Edition/releases/tag/v0.1.2-openlands-native-edition-beta"
 }

@@ -309,6 +309,7 @@ async function createZip(zipPath, stage) {
 async function rebuildPackAssets(args, row, modules) {
   const repoRoot = repoRootFor(args, row)
   const releaseDir = releaseDirFor(args, row)
+  await fs.mkdir(releaseDir, { recursive: true })
   const templatePath = path.join(repoRoot, 'release-manifest.template.json')
   const template = await readJson(templatePath)
   const family = template.moduleArtifactFamily

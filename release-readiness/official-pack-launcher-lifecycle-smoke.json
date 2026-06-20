@@ -1,7 +1,7 @@
 {
   "schemaVersion": "echo.official_pack.launcher_lifecycle_smoke.v1",
   "ok": true,
-  "generatedAt": "2026-06-17T13:23:36.454Z",
+  "generatedAt": "2026-06-20T05:11:28.853Z",
   "source": "live-github-release-assets",
   "releaseIndexRoot": "C:\\Development\\Github\\ECHO-Release-Index",
   "downloadRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-downloads",
@@ -11,1067 +11,59 @@
   "editions": [
     {
       "status": "pass",
-      "repoName": "ECHO-Ashfall-Native-Edition",
-      "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
-      "packId": "ashfall-native-edition",
-      "pack": "ashfall-native-edition",
-      "releaseTag": "v0.1.0-ashfall-native-edition",
-      "validation": "warning",
-      "moduleArtifactFamily": "echo-addon",
-      "manifestAsset": "ashfall-native-edition-alpha-0.1.0.pack.json",
-      "artifactAsset": "ashfall-native-edition-0.1.0.zip",
-      "moduleCount": 46,
-      "fileCount": 46,
-      "selectedModuleId": "echoashfallprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "ashfall-native-edition-0.1.0.zip",
-          "sha256": "9c3a75688d76ad98b2c01d93a47ccbfc62f332ffe8c25191f4d8de35a48a6743",
-          "size": 268244063,
-          "reused": false
-        },
-        {
-          "role": "manifest",
-          "name": "ashfall-native-edition-alpha-0.1.0.pack.json",
-          "sha256": "de2e34e83042ee5dac2730b70dec4567f5d38bdcf7a9bad68ec551601614ddc8",
-          "size": 58901,
-          "reused": false
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "a4565e1b6e3cce432117e301476d5715175da617d2b1df8c9db6f5aebf9e9e07",
-          "size": 379,
-          "reused": false
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "4968216ba7ba6fe4a4fe32f72d71545284bf03c9da9460de72c3400ea5635380",
-          "size": 13215,
-          "reused": false
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "9a4bd127f733d421f1321c41e9f3b7fc452bc58968d17b88ada3a6f30d05ba7d",
-          "size": 902,
-          "reused": false
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "ashfall-native-edition-0.1.0.zip",
-          "ashfall-native-edition-alpha-0.1.0.pack.json",
-          "echo-release.json",
-          "release-audit.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 46
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/ashfall-native-edition",
-          "resolved": true,
-          "artifact": "ashfall-native-edition-alpha-0.1.0.pack.json",
-          "dependencyCount": 46
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-native-edition",
-          "resolved": true,
-          "artifact": "echoashfallprotocol-1.0.0.echo-addon",
-          "dependencyCount": 45
-        }
-      },
-      "install": {
-        "installed": 46,
-        "verifiedAfterInstall": 46
-      },
-      "update": {
-        "fromVersion": "0.1.0-previous-smoke",
-        "toVersion": "0.1.0",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 45,
-        "removed": 1,
-        "verifiedAfterUpdate": 46,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "addons/echoashfallprotocol-1.0.0.echo-addon",
-        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
-        "restoredPreviousVersion": "0.1.0-previous-smoke",
-        "verifiedAfterRollback": 47
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 46
-      },
-      "repair": {
-        "repaired": "addons/echoashfallprotocol-1.0.0.echo-addon",
-        "verifiedAfterRepair": 46
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Native-Edition\\ashfall-native-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Ashfall-NeoForge-Edition",
-      "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
-      "packId": "ashfall-neoforge-edition",
-      "pack": "ashfall-neoforge-edition",
-      "releaseTag": "v0.1.0-ashfall-neoforge-edition",
-      "validation": "warning",
-      "moduleArtifactFamily": "neoforge",
-      "manifestAsset": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-      "artifactAsset": "ashfall-neoforge-edition-0.1.0.zip",
-      "moduleCount": 46,
-      "fileCount": 46,
-      "selectedModuleId": "echoashfallprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "ashfall-neoforge-edition-0.1.0.zip",
-          "sha256": "c23760a9c666234feef47d5b786da6750194d00489863e920728b13923728c2f",
-          "size": 267966443,
-          "reused": false
-        },
-        {
-          "role": "manifest",
-          "name": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-          "sha256": "919ab91ad4fe3c9e63700c0c9cba7c924ce54a6867dd480837fcf8a1ad88f24f",
-          "size": 105579,
-          "reused": false
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "c79f31900de27e48df2d5dcbf42d9e82ecb9592d1c9a5529efc6012d8ba7b99b",
-          "size": 383,
-          "reused": false
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "c12a9189c060469357aacf23b6e29c26741c3b6f17a44e6d03d919dffe5661ae",
-          "size": 13332,
-          "reused": false
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "1e78a9d118b719b7729184243d1c67ad4f76f0ecf4eabd6c635744503abca8db",
-          "size": 915,
-          "reused": false
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "ashfall-neoforge-edition-0.1.0.zip",
-          "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-          "echo-release.json",
-          "release-audit.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 46
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/ashfall-neoforge-edition",
-          "resolved": true,
-          "artifact": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-          "dependencyCount": 46
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-neoforge-edition",
-          "resolved": true,
-          "artifact": "echoashfallprotocol-1.0.0-neoforge.jar",
-          "dependencyCount": 45
-        }
-      },
-      "install": {
-        "installed": 46,
-        "verifiedAfterInstall": 46
-      },
-      "update": {
-        "fromVersion": "0.1.0-previous-smoke",
-        "toVersion": "0.1.0",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 45,
-        "removed": 1,
-        "verifiedAfterUpdate": 46,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-neoforge.jar",
-        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.0-previous-smoke",
-        "verifiedAfterRollback": 47
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 46
-      },
-      "repair": {
-        "repaired": "mods/echoashfallprotocol-1.0.0-neoforge.jar",
-        "verifiedAfterRepair": 46
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-NeoForge-Edition\\ashfall-neoforge-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Ashfall-Standalone-Edition",
-      "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
-      "packId": "ashfall-standalone-edition",
-      "pack": "ashfall-standalone-edition",
-      "releaseTag": "v0.1.0-ashfall-standalone-edition",
-      "validation": "warning",
-      "moduleArtifactFamily": "standalone",
-      "manifestAsset": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
-      "artifactAsset": "ashfall-standalone-edition-0.1.0.zip",
-      "moduleCount": 46,
-      "fileCount": 46,
-      "selectedModuleId": "echoashfallprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "ashfall-standalone-edition-0.1.0.zip",
-          "sha256": "a50346543aa710e45a5b3c248edaad1f9c454dc09aa25dfdcd155c8a1b03be7d",
-          "size": 267961803,
-          "reused": false
-        },
-        {
-          "role": "manifest",
-          "name": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
-          "sha256": "50719305c43eaf5d57abfe80f2d4b884c27eb992c081e34ec9e2a16bb77ae7ee",
-          "size": 59820,
-          "reused": false
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "28f12df5a7e643547917826a05bd3d76e1d5880e69356c4f756c9b55379e930c",
-          "size": 394,
-          "reused": false
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "b44f90633350e3dfabf9108fec6f02d89cb40ce831a59461898ab581428fd0e8",
-          "size": 13571,
-          "reused": false
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "a136e8635b19f17c3ffc646a51edc846df379eb8e74bda59b614a7ecb9b9547f",
-          "size": 940,
-          "reused": false
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "ashfall-standalone-edition-0.1.0.zip",
-          "ashfall-standalone-edition-experimental-0.1.0.pack.json",
-          "echo-release.json",
-          "release-audit.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 46
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/ashfall-standalone-edition",
-          "resolved": true,
-          "artifact": "ashfall-standalone-edition-experimental-0.1.0.pack.json",
-          "dependencyCount": 46
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-standalone-edition",
-          "resolved": true,
-          "artifact": "echoashfallprotocol-1.0.0-standalone.jar",
-          "dependencyCount": 45
-        }
-      },
-      "install": {
-        "installed": 46,
-        "verifiedAfterInstall": 46
-      },
-      "update": {
-        "fromVersion": "0.1.0-previous-smoke",
-        "toVersion": "0.1.0",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 45,
-        "removed": 1,
-        "verifiedAfterUpdate": 46,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-standalone.jar",
-        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.0-previous-smoke",
-        "verifiedAfterRollback": 47
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 46
-      },
-      "repair": {
-        "repaired": "mods/echoashfallprotocol-1.0.0-standalone.jar",
-        "verifiedAfterRepair": 46
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Standalone-Edition\\ashfall-standalone-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Sky-Relay-Native-Edition",
-      "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
-      "packId": "sky-relay-native-edition",
-      "pack": "sky-relay-native-edition",
-      "releaseTag": "sky-relay-native-0.1.1-alpha",
-      "validation": "approved",
-      "moduleArtifactFamily": "echo-addon",
-      "manifestAsset": "sky-relay-native-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "sky-relay-native-edition-0.1.1.zip",
-      "moduleCount": 43,
-      "fileCount": 43,
-      "selectedModuleId": "echoskyrelayprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "sky-relay-native-edition-0.1.1.zip",
-          "sha256": "8563b98499c639dd96cc8033c69a2cef16449eecae2bf8c18e21dff9ae461793",
-          "size": 155403907,
-          "reused": true
-        },
-        {
-          "role": "manifest",
-          "name": "sky-relay-native-edition-alpha-0.1.1.pack.json",
-          "sha256": "601c577d60aafa97e051eb3b70d20294eb2bf70bc3a10452bae7200acc6a851c",
-          "size": 55694,
-          "reused": true
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "7d2abbd733926e2146f608c92bbc9fa7fe0a99f5ce076b4b62d80a6cd544c607",
-          "size": 383,
-          "reused": true
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "3cae08ecbb5fc56dc0559b032b9d78d94a020aa521494990c0d07d4ac07ce762",
-          "size": 12494,
-          "reused": true
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "832efab29062c77b3697f6d08662c32a647153323220f967ee9c6393cd98f7d7",
-          "size": 916,
-          "reused": true
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "echo-release.json",
-          "release-audit.json",
-          "sky-relay-native-edition-0.1.1.zip",
-          "sky-relay-native-edition-alpha-0.1.1.pack.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 43
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/sky-relay-native-edition",
-          "resolved": true,
-          "artifact": "sky-relay-native-edition-alpha-0.1.1.pack.json",
-          "dependencyCount": 43
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-native-edition",
-          "resolved": true,
-          "artifact": "echoskyrelayprotocol-0.1.0.echo-addon",
-          "dependencyCount": 42
-        }
-      },
-      "install": {
-        "installed": 43,
-        "verifiedAfterInstall": 43
-      },
-      "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 42,
-        "removed": 1,
-        "verifiedAfterUpdate": 43,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
-        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
-        "verifiedAfterRollback": 44
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 43
-      },
-      "repair": {
-        "repaired": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
-        "verifiedAfterRepair": 43
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Sky-Relay-Native-Edition\\sky-relay-native-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
-      "sourceRepo": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
-      "packId": "sky-relay-neoforge-edition",
-      "pack": "sky-relay-neoforge-edition",
-      "releaseTag": "sky-relay-neoforge-0.1.1-alpha",
-      "validation": "approved",
-      "moduleArtifactFamily": "neoforge",
-      "manifestAsset": "sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "sky-relay-neoforge-edition-0.1.1.zip",
-      "moduleCount": 43,
-      "fileCount": 43,
-      "selectedModuleId": "echoskyrelayprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "sky-relay-neoforge-edition-0.1.1.zip",
-          "sha256": "29a392a3bd3af6701f901c2ae5ddb516448335185b3dfdc64f04c33c7906abc9",
-          "size": 155207782,
-          "reused": true
-        },
-        {
-          "role": "manifest",
-          "name": "sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
-          "sha256": "5d532b4b0095550322c4ec8e7a234087fc798f02dd4437a832de38138764819e",
-          "size": 85866,
-          "reused": true
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "7aff5ad322aaf2087486bcb94febd9d8f91c0cf1ed6516600cc32d3c334a62f0",
-          "size": 387,
-          "reused": true
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "77d76116d6c0b3d4a0ff859d23a44d8be77d8573dcbf9d0feed96a1b3c625725",
-          "size": 12603,
-          "reused": true
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "a5fce740c3e272378d7f2c35608084fa7f70c45ad16a7726fd2c58be5c58142d",
-          "size": 928,
-          "reused": true
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "echo-release.json",
-          "release-audit.json",
-          "sky-relay-neoforge-edition-0.1.1.zip",
-          "sky-relay-neoforge-edition-alpha-0.1.1.pack.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 43
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/sky-relay-neoforge-edition",
-          "resolved": true,
-          "artifact": "sky-relay-neoforge-edition-alpha-0.1.1.pack.json",
-          "dependencyCount": 43
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-neoforge-edition",
-          "resolved": true,
-          "artifact": "echoskyrelayprotocol-0.1.0-neoforge.jar",
-          "dependencyCount": 42
-        }
-      },
-      "install": {
-        "installed": 43,
-        "verifiedAfterInstall": 43
-      },
-      "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 42,
-        "removed": 1,
-        "verifiedAfterUpdate": 43,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
-        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
-        "verifiedAfterRollback": 44
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 43
-      },
-      "repair": {
-        "repaired": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
-        "verifiedAfterRepair": 43
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Sky-Relay-NeoForge-Edition\\sky-relay-neoforge-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Sky-Relay-Standalone-Edition",
-      "sourceRepo": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
-      "packId": "sky-relay-standalone-edition",
-      "pack": "sky-relay-standalone-edition",
-      "releaseTag": "sky-relay-standalone-0.1.1-alpha",
-      "validation": "approved",
-      "moduleArtifactFamily": "standalone",
-      "manifestAsset": "sky-relay-standalone-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "sky-relay-standalone-edition-0.1.1.zip",
-      "moduleCount": 43,
-      "fileCount": 43,
-      "selectedModuleId": "echoskyrelayprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "sky-relay-standalone-edition-0.1.1.zip",
-          "sha256": "83e3ed7a359b4338ef665ed12487b553fb1f83cdb1a52ca32e10c795d8e69ee5",
-          "size": 155203838,
-          "reused": true
-        },
-        {
-          "role": "manifest",
-          "name": "sky-relay-standalone-edition-alpha-0.1.1.pack.json",
-          "sha256": "77e0c853c408451910c104c3b2fbd4eb88457e38de27e7a9724dc1d30bf0966e",
-          "size": 56129,
-          "reused": true
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "814cb85aae32c3219737f8e7bdd1eb179256c74ad8d24451e1419cf2e13f54f0",
-          "size": 391,
-          "reused": true
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "6be7bcbfeb70fd7bb3396a93cdd499a5a75e1e746f4c4877c8b2e4ba6f9cddb4",
-          "size": 12797,
-          "reused": true
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "63e84010a3cfa625425cb12a63c626cbf8fefbaca73bbc71acc52f54b046ab57",
-          "size": 940,
-          "reused": true
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "echo-release.json",
-          "release-audit.json",
-          "sky-relay-standalone-edition-0.1.1.zip",
-          "sky-relay-standalone-edition-alpha-0.1.1.pack.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 43
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/sky-relay-standalone-edition",
-          "resolved": true,
-          "artifact": "sky-relay-standalone-edition-alpha-0.1.1.pack.json",
-          "dependencyCount": 43
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-standalone-edition",
-          "resolved": true,
-          "artifact": "echoskyrelayprotocol-0.1.0-standalone.jar",
-          "dependencyCount": 42
-        }
-      },
-      "install": {
-        "installed": 43,
-        "verifiedAfterInstall": 43
-      },
-      "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 42,
-        "removed": 1,
-        "verifiedAfterUpdate": 43,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
-        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
-        "verifiedAfterRollback": 44
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 43
-      },
-      "repair": {
-        "repaired": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
-        "verifiedAfterRepair": 43
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Sky-Relay-Standalone-Edition\\sky-relay-standalone-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Openlands-Native-Edition",
-      "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
-      "packId": "openlands-native-edition",
-      "pack": "openlands-native-edition",
-      "releaseTag": "v0.1.1-openlands-native-edition",
-      "validation": "approved",
-      "moduleArtifactFamily": "echo-addon",
-      "manifestAsset": "openlands-native-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "openlands-native-edition-0.1.1.zip",
-      "moduleCount": 42,
-      "fileCount": 42,
-      "selectedModuleId": "echoopenlandsprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "openlands-native-edition-0.1.1.zip",
-          "sha256": "988fbd8830315c4f6ef149f0fcffc4bcff3b0167d1673e5a5484979968fbd363",
-          "size": 112808347,
-          "reused": true
-        },
-        {
-          "role": "manifest",
-          "name": "openlands-native-edition-alpha-0.1.1.pack.json",
-          "sha256": "2f2ed21bc697f8661dfaa922ffab08f8641b3cd007dd1f31e9705d631147eea2",
-          "size": 55342,
-          "reused": true
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "52f322067b0a4b56d976f14a9a83aa31cd9d89959a870bdda033964bcc5d7ad3",
-          "size": 383,
-          "reused": true
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "a59f735d0278ead6fe05708a274e606ea72089eb111e4d5bde992c513d1ef850",
-          "size": 12162,
-          "reused": true
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "76959da184969adc036ae61d2ec6a84633822f3f8af84ef86c1164f6fa25c7d5",
-          "size": 919,
-          "reused": true
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "echo-release.json",
-          "openlands-native-edition-0.1.1.zip",
-          "openlands-native-edition-alpha-0.1.1.pack.json",
-          "release-audit.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 42
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/openlands-native-edition",
-          "resolved": true,
-          "artifact": "openlands-native-edition-alpha-0.1.1.pack.json",
-          "dependencyCount": 42
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoopenlandsprotocol?pack=openlands-native-edition",
-          "resolved": true,
-          "artifact": "echoopenlandsprotocol-0.1.0.echo-addon",
-          "dependencyCount": 41
-        }
-      },
-      "install": {
-        "installed": 42,
-        "verifiedAfterInstall": 42
-      },
-      "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 41,
-        "removed": 1,
-        "verifiedAfterUpdate": 42,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "addons/echoopenlandsprotocol-0.1.0.echo-addon",
-        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
-        "verifiedAfterRollback": 43
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 42
-      },
-      "repair": {
-        "repaired": "addons/echoopenlandsprotocol-0.1.0.echo-addon",
-        "verifiedAfterRepair": 42
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Openlands-Native-Edition\\openlands-native-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Openlands-NeoForge-Edition",
-      "sourceRepo": "knoxhack/ECHO-Openlands-NeoForge-Edition",
-      "packId": "openlands-neoforge-edition",
-      "pack": "openlands-neoforge-edition",
-      "releaseTag": "v0.1.2-openlands-neoforge-edition",
-      "validation": "approved",
-      "moduleArtifactFamily": "neoforge",
-      "manifestAsset": "openlands-neoforge-edition-alpha-0.1.2.pack.json",
-      "artifactAsset": "openlands-neoforge-edition-0.1.2.zip",
-      "moduleCount": 42,
-      "fileCount": 42,
-      "selectedModuleId": "echoopenlandsprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "openlands-neoforge-edition-0.1.2.zip",
-          "sha256": "f5b79f968777a1ab12ea60f7064ecfda0b8a8d6d2a03814d4e8ed31879b9a7d2",
-          "size": 112637980,
-          "reused": true
-        },
-        {
-          "role": "manifest",
-          "name": "openlands-neoforge-edition-alpha-0.1.2.pack.json",
-          "sha256": "b0de83b372821adb9dab749d9e93a0ce21b7ead8a15146dd04e3fb13a279c85e",
-          "size": 85509,
-          "reused": true
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "d36511c7cd14ed276463e89a0f947150f01443ace5b98d15020a9a7c3836697c",
-          "size": 387,
-          "reused": true
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "4e643787327eeafe0b1a83356f2ec07ca283be82790b72a7d12e49e0c8b45379",
-          "size": 12269,
-          "reused": true
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "0dc4f4a8b1590eaa1c85a1dac2cccc3983322d3f3734ed89d1dada0d52012d44",
-          "size": 931,
-          "reused": true
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "echo-release.json",
-          "openlands-neoforge-edition-0.1.2.zip",
-          "openlands-neoforge-edition-alpha-0.1.2.pack.json",
-          "release-audit.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 42
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/openlands-neoforge-edition",
-          "resolved": true,
-          "artifact": "openlands-neoforge-edition-alpha-0.1.2.pack.json",
-          "dependencyCount": 42
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoopenlandsprotocol?pack=openlands-neoforge-edition",
-          "resolved": true,
-          "artifact": "echoopenlandsprotocol-0.1.0-neoforge.jar",
-          "dependencyCount": 41
-        }
-      },
-      "install": {
-        "installed": 42,
-        "verifiedAfterInstall": 42
-      },
-      "update": {
-        "fromVersion": "0.1.2-previous-smoke",
-        "toVersion": "0.1.2",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 41,
-        "removed": 1,
-        "verifiedAfterUpdate": 42,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "mods/echoopenlandsprotocol-0.1.0-neoforge.jar",
-        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.2-previous-smoke",
-        "verifiedAfterRollback": 43
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 42
-      },
-      "repair": {
-        "repaired": "mods/echoopenlandsprotocol-0.1.0-neoforge.jar",
-        "verifiedAfterRepair": 42
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Openlands-NeoForge-Edition\\openlands-neoforge-edition\\install"
-    },
-    {
-      "status": "pass",
-      "repoName": "ECHO-Openlands-Standalone-Edition",
-      "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
-      "packId": "openlands-standalone-edition",
-      "pack": "openlands-standalone-edition",
-      "releaseTag": "v0.1.1-openlands-standalone-edition",
-      "validation": "approved",
-      "moduleArtifactFamily": "standalone",
-      "manifestAsset": "openlands-standalone-edition-experimental-0.1.1.pack.json",
-      "artifactAsset": "openlands-standalone-edition-0.1.1.zip",
-      "moduleCount": 42,
-      "fileCount": 42,
-      "selectedModuleId": "echoopenlandsprotocol",
-      "downloadedAssets": [
-        {
-          "role": "pack",
-          "name": "openlands-standalone-edition-0.1.1.zip",
-          "sha256": "dd0fb7ea70454b3106d40ca64e0e8adb5e3ac475624e6c3ea8009667b8b371a0",
-          "size": 112634016,
-          "reused": true
-        },
-        {
-          "role": "manifest",
-          "name": "openlands-standalone-edition-experimental-0.1.1.pack.json",
-          "sha256": "191b375ced80bbe1a776bcb62cae38f7aa066205985fbd0cb52c151531dc8fc6",
-          "size": 55744,
-          "reused": true
-        },
-        {
-          "role": "checksums",
-          "name": "checksums.txt",
-          "sha256": "96a01c2171e2a0c824264fe7fbe3f773cbe48704bf0ac9dbd434163fa1f42c22",
-          "size": 398,
-          "reused": true
-        },
-        {
-          "role": "releaseManifest",
-          "name": "echo-release.json",
-          "sha256": "362c8895771f82e330d7c57615064f93927c501c614bb97872f588a27abbf9a9",
-          "size": 12494,
-          "reused": true
-        },
-        {
-          "role": "releaseAudit",
-          "name": "release-audit.json",
-          "sha256": "ac7f6294cc4e87bbbde50d9cca658f836d4e72792d5e87396b326b5508d4262b",
-          "size": 957,
-          "reused": true
-        }
-      ],
-      "topLevelChecksums": {
-        "verified": [
-          "echo-release.json",
-          "openlands-standalone-edition-0.1.1.zip",
-          "openlands-standalone-edition-experimental-0.1.1.pack.json",
-          "release-audit.json"
-        ]
-      },
-      "packZip": {
-        "requiredEntries": [
-          ".echo/pack-manifest.json",
-          ".echo/export-report.json",
-          ".echo/checksums.sha256"
-        ],
-        "embeddedManifestFileCount": 42
-      },
-      "deepLinks": {
-        "update": {
-          "url": "echo://update/pack/openlands-standalone-edition",
-          "resolved": true,
-          "artifact": "openlands-standalone-edition-experimental-0.1.1.pack.json",
-          "dependencyCount": 42
-        },
-        "installAddon": {
-          "url": "echo://install/addon/echoopenlandsprotocol?pack=openlands-standalone-edition",
-          "resolved": true,
-          "artifact": "echoopenlandsprotocol-0.1.0-standalone.jar",
-          "dependencyCount": 41
-        }
-      },
-      "install": {
-        "installed": 42,
-        "verifiedAfterInstall": 42
-      },
-      "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
-        "versionTransition": true,
-        "updated": 1,
-        "verified": 41,
-        "removed": 1,
-        "verifiedAfterUpdate": 42,
-        "sameVersionReconciliation": false
-      },
-      "rollback": {
-        "restoredPreviousTarget": "mods/echoopenlandsprotocol-0.1.0-standalone.jar",
-        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
-        "verifiedAfterRollback": 43
-      },
-      "postRollbackUpdate": {
-        "updated": 1,
-        "removed": 1,
-        "verifiedAfterUpdate": 42
-      },
-      "repair": {
-        "repaired": "mods/echoopenlandsprotocol-0.1.0-standalone.jar",
-        "verifiedAfterRepair": 42
-      },
-      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Openlands-Standalone-Edition\\openlands-standalone-edition\\install"
-    },
-    {
-      "status": "pass",
       "repoName": "ECHO-Arcana-Division-Native-Edition",
       "sourceRepo": "knoxhack/ECHO-Arcana-Division-Native-Edition",
       "packId": "arcana-division-native-edition",
       "pack": "arcana-division-native-edition",
-      "releaseTag": "arcana-division-native-1.0.1-beta",
+      "releaseTag": "arcana-division-native-1.0.2-beta",
       "validation": "approved",
       "moduleArtifactFamily": "echo-addon",
-      "manifestAsset": "arcana-division-native-edition-beta-1.0.1.pack.json",
-      "artifactAsset": "arcana-division-native-edition-1.0.1.zip",
+      "manifestAsset": "arcana-division-native-edition-beta-1.0.2.pack.json",
+      "artifactAsset": "arcana-division-native-edition-1.0.2.zip",
       "moduleCount": 39,
       "fileCount": 39,
       "selectedModuleId": "echoarcanadivisionprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
-          "name": "arcana-division-native-edition-1.0.1.zip",
-          "sha256": "973d12f210e95b06af067a5d03a7e9f9acccbb526810315479a2cd7a96376a01",
-          "size": 117350641,
-          "reused": true
+          "name": "arcana-division-native-edition-1.0.2.zip",
+          "sha256": "5aa6f105253a025f3be76ac6d10b01afd9b2893e3bf35a8d263d183761c70fa0",
+          "size": 117429087,
+          "reused": false
         },
         {
           "role": "manifest",
-          "name": "arcana-division-native-edition-beta-1.0.1.pack.json",
-          "sha256": "eac3b7b2ed67bc4ba18a6aecf80d7ce0b9851adc4d04a32ab492a88c6e737288",
-          "size": 55764,
-          "reused": true
+          "name": "arcana-division-native-edition-beta-1.0.2.pack.json",
+          "sha256": "5f833348ce2582bdaf6c12745ff57d6469dc2b4de9e57da9e37307756ccbbae2",
+          "size": 55357,
+          "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "402b9b45d944fcb442eec0349504a9549b49ae5c69d717aa1dd9e677b5be523f",
+          "sha256": "59e700c12e13d38024e0b33c6ed33684e72dd3f49f77e55878d9de97d1d5e843",
           "size": 394,
-          "reused": true
+          "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "0e6339ca85f632920803f21e55202782eddc5ac0b20544f4be92f104765ef642",
-          "size": 11478,
-          "reused": true
+          "sha256": "18d8084bdc6b194ee5ca9f903f9a74e0db9fb720e197120a4ddea5ff2873ed59",
+          "size": 11468,
+          "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "f08ee68d463f99fceb35e8a8d16cdb2fb521f078f5da1dd7d17f19f76ee304f1",
-          "size": 949,
-          "reused": true
+          "sha256": "8a359287904051b7eab3018b13d47e1398f92e9519cd5665e531a7c657e98135",
+          "size": 939,
+          "reused": false
         }
       ],
       "topLevelChecksums": {
         "verified": [
-          "arcana-division-native-edition-1.0.1.zip",
-          "arcana-division-native-edition-beta-1.0.1.pack.json",
+          "arcana-division-native-edition-1.0.2.zip",
+          "arcana-division-native-edition-beta-1.0.2.pack.json",
           "echo-release.json",
           "release-audit.json"
         ]
@@ -1088,7 +80,7 @@
         "update": {
           "url": "echo://update/pack/arcana-division-native-edition",
           "resolved": true,
-          "artifact": "arcana-division-native-edition-beta-1.0.1.pack.json",
+          "artifact": "arcana-division-native-edition-beta-1.0.2.pack.json",
           "dependencyCount": 39
         },
         "installAddon": {
@@ -1103,8 +95,8 @@
         "verifiedAfterInstall": 39
       },
       "update": {
-        "fromVersion": "1.0.1-previous-smoke",
-        "toVersion": "1.0.1",
+        "fromVersion": "1.0.2-previous-smoke",
+        "toVersion": "1.0.2",
         "versionTransition": true,
         "updated": 1,
         "verified": 38,
@@ -1115,7 +107,7 @@
       "rollback": {
         "restoredPreviousTarget": "addons/echoarcanadivisionprotocol-1.0.0.echo-addon",
         "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
-        "restoredPreviousVersion": "1.0.1-previous-smoke",
+        "restoredPreviousVersion": "1.0.2-previous-smoke",
         "verifiedAfterRollback": 40
       },
       "postRollbackUpdate": {
@@ -1135,55 +127,55 @@
       "sourceRepo": "knoxhack/ECHO-Arcana-Division-NeoForge-Edition",
       "packId": "arcana-division-neoforge-edition",
       "pack": "arcana-division-neoforge-edition",
-      "releaseTag": "arcana-division-neoforge-1.0.1-beta",
+      "releaseTag": "arcana-division-neoforge-1.0.2-beta",
       "validation": "approved",
       "moduleArtifactFamily": "neoforge",
-      "manifestAsset": "arcana-division-neoforge-edition-beta-1.0.1.pack.json",
-      "artifactAsset": "arcana-division-neoforge-edition-1.0.1.zip",
+      "manifestAsset": "arcana-division-neoforge-edition-beta-1.0.2.pack.json",
+      "artifactAsset": "arcana-division-neoforge-edition-1.0.2.zip",
       "moduleCount": 39,
       "fileCount": 39,
       "selectedModuleId": "echoarcanadivisionprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
-          "name": "arcana-division-neoforge-edition-1.0.1.zip",
-          "sha256": "c66df4f993d85a3cb33656fb0a0144dbd638124fbd6c2665c0944a2f4bd1b10a",
-          "size": 117201302,
-          "reused": true
+          "name": "arcana-division-neoforge-edition-1.0.2.zip",
+          "sha256": "dcf0e2638a743aae313d840fc59fca3a077b60734e9281b7fae146594db00f5c",
+          "size": 117284749,
+          "reused": false
         },
         {
           "role": "manifest",
-          "name": "arcana-division-neoforge-edition-beta-1.0.1.pack.json",
-          "sha256": "0526b9d338fe142760a0159bd376f1eba2147c07706bb79982b51a670eef5a81",
-          "size": 85553,
-          "reused": true
+          "name": "arcana-division-neoforge-edition-beta-1.0.2.pack.json",
+          "sha256": "1a170a26abf7ec74b870307119b9493ff8a2d7df29697bfd0f6b12f6b5d46fc5",
+          "size": 85145,
+          "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "5737ae3f088e2e5a8b06bf936927531e5545b1f8a47a95668f5d0af6beede8a7",
+          "sha256": "8d753498fdff2a0d02ef7c9ea2f50a2b58a8fcecdb823ee2b7d6fad0f45b722f",
           "size": 398,
-          "reused": true
+          "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "22fabb690193c68c1806194de6d889a130de0ebccd00e850bb7804d47ac5e0a5",
-          "size": 11579,
-          "reused": true
+          "sha256": "9ac9d2ea50109863d515d5f27c74d3c2512ea489fb81d736a962deb998e15b7b",
+          "size": 11569,
+          "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "19b99525ea02bcd174921d087417f3028754619f427dc7fbabf76cff19dd4955",
-          "size": 961,
-          "reused": true
+          "sha256": "a44a4d38afdf5ebe7d6cb6713587f90cf20799edc805d659f1035e9772893bd5",
+          "size": 951,
+          "reused": false
         }
       ],
       "topLevelChecksums": {
         "verified": [
-          "arcana-division-neoforge-edition-1.0.1.zip",
-          "arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+          "arcana-division-neoforge-edition-1.0.2.zip",
+          "arcana-division-neoforge-edition-beta-1.0.2.pack.json",
           "echo-release.json",
           "release-audit.json"
         ]
@@ -1200,7 +192,7 @@
         "update": {
           "url": "echo://update/pack/arcana-division-neoforge-edition",
           "resolved": true,
-          "artifact": "arcana-division-neoforge-edition-beta-1.0.1.pack.json",
+          "artifact": "arcana-division-neoforge-edition-beta-1.0.2.pack.json",
           "dependencyCount": 39
         },
         "installAddon": {
@@ -1215,8 +207,8 @@
         "verifiedAfterInstall": 39
       },
       "update": {
-        "fromVersion": "1.0.1-previous-smoke",
-        "toVersion": "1.0.1",
+        "fromVersion": "1.0.2-previous-smoke",
+        "toVersion": "1.0.2",
         "versionTransition": true,
         "updated": 1,
         "verified": 38,
@@ -1227,7 +219,7 @@
       "rollback": {
         "restoredPreviousTarget": "mods/echoarcanadivisionprotocol-1.0.0-neoforge.jar",
         "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "1.0.1-previous-smoke",
+        "restoredPreviousVersion": "1.0.2-previous-smoke",
         "verifiedAfterRollback": 40
       },
       "postRollbackUpdate": {
@@ -1247,55 +239,55 @@
       "sourceRepo": "knoxhack/ECHO-Arcana-Division-Standalone-Edition",
       "packId": "arcana-division-standalone-edition",
       "pack": "arcana-division-standalone-edition",
-      "releaseTag": "arcana-division-standalone-1.0.1-beta",
+      "releaseTag": "arcana-division-standalone-1.0.2-beta",
       "validation": "approved",
       "moduleArtifactFamily": "standalone",
-      "manifestAsset": "arcana-division-standalone-edition-beta-1.0.1.pack.json",
-      "artifactAsset": "arcana-division-standalone-edition-1.0.1.zip",
+      "manifestAsset": "arcana-division-standalone-edition-beta-1.0.2.pack.json",
+      "artifactAsset": "arcana-division-standalone-edition-1.0.2.zip",
       "moduleCount": 39,
       "fileCount": 39,
       "selectedModuleId": "echoarcanadivisionprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
-          "name": "arcana-division-standalone-edition-1.0.1.zip",
-          "sha256": "52703ee4be6ab1d6b0ead77c1732dbe84d8b4104f63bbbddaca6e094aaf92d75",
-          "size": 117197399,
-          "reused": true
+          "name": "arcana-division-standalone-edition-1.0.2.zip",
+          "sha256": "8b7270a58b3c355a221875b08d8a0b5d0fe2a61c77713b84f58443d5bf835179",
+          "size": 117280815,
+          "reused": false
         },
         {
           "role": "manifest",
-          "name": "arcana-division-standalone-edition-beta-1.0.1.pack.json",
-          "sha256": "81963f32ef75bbe66f354496c49b6323b7505de8480faf09432428af52a97171",
-          "size": 55978,
-          "reused": true
+          "name": "arcana-division-standalone-edition-beta-1.0.2.pack.json",
+          "sha256": "cb95130fea97ede58d39eb07eff634f84a6e7aa1a594eadf23d4178ea621bc17",
+          "size": 55570,
+          "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "3189633a32ce2e7bb753f4ef3540604677d65e26e8f2d0748c98fc8976694f1d",
+          "sha256": "b0b134b5e4091585d0aa702c81f3400bac41e55078fe4d5335247bfaa9dcb2d8",
           "size": 402,
-          "reused": true
+          "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "047b8edfd644f1b93e781157b25f0f157c0ecddc07b4529a081fd7f8e1039b71",
-          "size": 11757,
-          "reused": true
+          "sha256": "a15396da1b0976227a7d942a624bc7f01506bc2fd15df50e2ebe27fc1f41b54d",
+          "size": 11747,
+          "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "7eb96a32d6d3774c4c8085d87290b7745e15a5dc3b18ef6beb9e06139ac3da80",
-          "size": 973,
-          "reused": true
+          "sha256": "0170c2a3d5973062c300c43341d203c9260d970671fbff798502fc9d5251d87d",
+          "size": 963,
+          "reused": false
         }
       ],
       "topLevelChecksums": {
         "verified": [
-          "arcana-division-standalone-edition-1.0.1.zip",
-          "arcana-division-standalone-edition-beta-1.0.1.pack.json",
+          "arcana-division-standalone-edition-1.0.2.zip",
+          "arcana-division-standalone-edition-beta-1.0.2.pack.json",
           "echo-release.json",
           "release-audit.json"
         ]
@@ -1312,7 +304,7 @@
         "update": {
           "url": "echo://update/pack/arcana-division-standalone-edition",
           "resolved": true,
-          "artifact": "arcana-division-standalone-edition-beta-1.0.1.pack.json",
+          "artifact": "arcana-division-standalone-edition-beta-1.0.2.pack.json",
           "dependencyCount": 39
         },
         "installAddon": {
@@ -1327,8 +319,8 @@
         "verifiedAfterInstall": 39
       },
       "update": {
-        "fromVersion": "1.0.1-previous-smoke",
-        "toVersion": "1.0.1",
+        "fromVersion": "1.0.2-previous-smoke",
+        "toVersion": "1.0.2",
         "versionTransition": true,
         "updated": 1,
         "verified": 38,
@@ -1339,7 +331,7 @@
       "rollback": {
         "restoredPreviousTarget": "mods/echoarcanadivisionprotocol-1.0.0-standalone.jar",
         "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "1.0.1-previous-smoke",
+        "restoredPreviousVersion": "1.0.2-previous-smoke",
         "verifiedAfterRollback": 40
       },
       "postRollbackUpdate": {
@@ -1355,60 +347,396 @@
     },
     {
       "status": "pass",
+      "repoName": "ECHO-Ashfall-Native-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Native-Edition",
+      "packId": "ashfall-native-edition",
+      "pack": "ashfall-native-edition",
+      "releaseTag": "v0.1.1-ashfall-native-edition-beta",
+      "validation": "warning",
+      "moduleArtifactFamily": "echo-addon",
+      "manifestAsset": "ashfall-native-edition-beta-0.1.1.pack.json",
+      "artifactAsset": "ashfall-native-edition-0.1.1.zip",
+      "moduleCount": 47,
+      "fileCount": 47,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-native-edition-0.1.1.zip",
+          "sha256": "aa7fff6bb7a125008a7bc1ff3319885bd570600e5c999b7e41636f4f1df7c7b5",
+          "size": 280034323,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-native-edition-beta-0.1.1.pack.json",
+          "sha256": "27489cfdead58417dcf045f4e85a0c802bab9cbef9f50699438a1898210e07b9",
+          "size": 59884,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "57c65111aa6f4c797d0420b124ac0fd7cfcf980f01bbbbe77bfbf5b4e17a6fe1",
+          "size": 378,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "b923d3a70654854ea0b003db43ead4e7ce48e69eb48baac3c17b3a63d4677ab0",
+          "size": 13461,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "823e016d4c8b7ced17c9a166e0c24ab0a26fdac9f0633bcda5a81589dda9849c",
+          "size": 900,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-native-edition-0.1.1.zip",
+          "ashfall-native-edition-beta-0.1.1.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 47
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-native-edition",
+          "resolved": true,
+          "artifact": "ashfall-native-edition-beta-0.1.1.pack.json",
+          "dependencyCount": 47
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-native-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0.echo-addon",
+          "dependencyCount": 46
+        }
+      },
+      "install": {
+        "installed": 47,
+        "verifiedAfterInstall": 47
+      },
+      "update": {
+        "fromVersion": "0.1.1-previous-smoke",
+        "toVersion": "0.1.1",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 46,
+        "removed": 1,
+        "verifiedAfterUpdate": 47,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "addons/echoashfallprotocol-1.0.0.echo-addon",
+        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.1-previous-smoke",
+        "verifiedAfterRollback": 48
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 47
+      },
+      "repair": {
+        "repaired": "addons/echoashfallprotocol-1.0.0.echo-addon",
+        "verifiedAfterRepair": 47
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Native-Edition\\ashfall-native-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Ashfall-NeoForge-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
+      "packId": "ashfall-neoforge-edition",
+      "pack": "ashfall-neoforge-edition",
+      "releaseTag": "v0.1.1-ashfall-neoforge-edition-beta",
+      "validation": "warning",
+      "moduleArtifactFamily": "neoforge",
+      "manifestAsset": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+      "artifactAsset": "ashfall-neoforge-edition-0.1.1.zip",
+      "moduleCount": 46,
+      "fileCount": 46,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-neoforge-edition-0.1.1.zip",
+          "sha256": "68784193bb7efcfa595820dda5aefed4101aa7992256528104a3d8b4ab29fe76",
+          "size": 269583973,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+          "sha256": "9817cb4d7fd7ead940f3a7f97666a5064967af1a5c6b9bf33bd89aeab11326ff",
+          "size": 105315,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "c3641850ccdcb35431c6ac66f8ed6774e70f8a0ac7f096f61b730d29d7fc1823",
+          "size": 382,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "b7eeea333cc73d7c5fc22a5a3674028ccce5243e3bec85b3847759210514c05a",
+          "size": 13322,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "5a287f7ab4a26bd78e87bb8b753c9358e0875ce620ac3ea62b271e043c361914",
+          "size": 913,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-neoforge-edition-0.1.1.zip",
+          "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 46
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-neoforge-edition",
+          "resolved": true,
+          "artifact": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+          "dependencyCount": 46
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-neoforge-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0-neoforge.jar",
+          "dependencyCount": 45
+        }
+      },
+      "install": {
+        "installed": 46,
+        "verifiedAfterInstall": 46
+      },
+      "update": {
+        "fromVersion": "0.1.1-previous-smoke",
+        "toVersion": "0.1.1",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 45,
+        "removed": 1,
+        "verifiedAfterUpdate": 46,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-neoforge.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.1-previous-smoke",
+        "verifiedAfterRollback": 47
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 46
+      },
+      "repair": {
+        "repaired": "mods/echoashfallprotocol-1.0.0-neoforge.jar",
+        "verifiedAfterRepair": 46
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-NeoForge-Edition\\ashfall-neoforge-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Ashfall-Standalone-Edition",
+      "sourceRepo": "knoxhack/ECHO-Ashfall-Standalone-Edition",
+      "packId": "ashfall-standalone-edition",
+      "pack": "ashfall-standalone-edition",
+      "releaseTag": "v0.1.1-ashfall-standalone-edition-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "standalone",
+      "manifestAsset": "ashfall-standalone-edition-beta-0.1.1.pack.json",
+      "artifactAsset": "ashfall-standalone-edition-0.1.1.zip",
+      "moduleCount": 46,
+      "fileCount": 46,
+      "selectedModuleId": "echoashfallprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "ashfall-standalone-edition-0.1.1.zip",
+          "sha256": "a63015a9c09293f93e956cd346099aeac634264bba9bf139153b94eace834374",
+          "size": 269568771,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "ashfall-standalone-edition-beta-0.1.1.pack.json",
+          "sha256": "20f7646ab8620767b29a6fa7c84584cfe860b3d252d600263dd439b35bcaf73f",
+          "size": 59548,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "866228b5228e28e1199ea76f7dafbc573d2d174189e7745dd661bf1671324f3f",
+          "size": 386,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "22f4664594e594545d8979a705dab15ec0f30c685886c7e0b2f185c5513ccdfa",
+          "size": 13526,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "dd26d55d03ddb682c857400afa51a2fba543ff3e667227318cc6a73a2a02675d",
+          "size": 924,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "ashfall-standalone-edition-0.1.1.zip",
+          "ashfall-standalone-edition-beta-0.1.1.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 46
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/ashfall-standalone-edition",
+          "resolved": true,
+          "artifact": "ashfall-standalone-edition-beta-0.1.1.pack.json",
+          "dependencyCount": 46
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoashfallprotocol?pack=ashfall-standalone-edition",
+          "resolved": true,
+          "artifact": "echoashfallprotocol-1.0.0-standalone.jar",
+          "dependencyCount": 45
+        }
+      },
+      "install": {
+        "installed": 46,
+        "verifiedAfterInstall": 46
+      },
+      "update": {
+        "fromVersion": "0.1.1-previous-smoke",
+        "toVersion": "0.1.1",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 45,
+        "removed": 1,
+        "verifiedAfterUpdate": 46,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.1-previous-smoke",
+        "verifiedAfterRollback": 47
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 46
+      },
+      "repair": {
+        "repaired": "mods/echoashfallprotocol-1.0.0-standalone.jar",
+        "verifiedAfterRepair": 46
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Ashfall-Standalone-Edition\\ashfall-standalone-edition\\install"
+    },
+    {
+      "status": "pass",
       "repoName": "ECHO-Galactic-Survey-Native-Edition",
       "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Native-Edition",
       "packId": "galactic-survey-native-edition",
       "pack": "galactic-survey-native-edition",
-      "releaseTag": "galactic-survey-native-0.1.1-alpha",
+      "releaseTag": "galactic-survey-native-0.1.2-beta",
       "validation": "approved",
       "moduleArtifactFamily": "echo-addon",
-      "manifestAsset": "galactic-survey-native-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "galactic-survey-native-edition-0.1.1.zip",
+      "manifestAsset": "galactic-survey-native-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "galactic-survey-native-edition-0.1.2.zip",
       "moduleCount": 41,
       "fileCount": 41,
       "selectedModuleId": "echogalacticsurveyprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
-          "name": "galactic-survey-native-edition-0.1.1.zip",
-          "sha256": "93954afebbaf5789d32e53b159cb5a62ab7034ad2c7466595a9bc804b41190bb",
-          "size": 145436671,
-          "reused": true
+          "name": "galactic-survey-native-edition-0.1.2.zip",
+          "sha256": "3c2c0bb63edaefd5758ccbbb7ec005e382df501aa45ce24dc10f14cb50b4ddef",
+          "size": 145521344,
+          "reused": false
         },
         {
           "role": "manifest",
-          "name": "galactic-survey-native-edition-alpha-0.1.1.pack.json",
-          "sha256": "d69e2732a8521380501cfc35a8659af09b4610dfd1c492f2e14af93f8d545c02",
-          "size": 53276,
-          "reused": true
+          "name": "galactic-survey-native-edition-beta-0.1.2.pack.json",
+          "sha256": "662f6da6df4445d2e5b4d86ee905d6358b6ba4c86acb47a45a58bb9a92f9b637",
+          "size": 52903,
+          "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "86109105705cce6460e56adf5a282ed6575e0efeeeb1b6f9fe7457a03ef9e105",
-          "size": 395,
-          "reused": true
+          "sha256": "13e21622bf26eb60bc6f81039c51fae762832d363aef6ace8ef215373a82291d",
+          "size": 394,
+          "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "4d52fcf858d581cc80481a3233ffd0b828e81b5ba6d31494e0252f75ef231073",
-          "size": 12057,
-          "reused": true
+          "sha256": "38309e6215910c8f9abf816f7969ca54674cf1649c8094ed0f8319373fc97be9",
+          "size": 12042,
+          "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "81b0a4cb288f3ed05014fe66b9830ff45bbabd62ffb2fd728886b8c7e94d6140",
-          "size": 952,
-          "reused": true
+          "sha256": "bd670d0bfdcfee26781d7aa86bb990357c2a128b3345f30c454765a30e11e02d",
+          "size": 939,
+          "reused": false
         }
       ],
       "topLevelChecksums": {
         "verified": [
+          "galactic-survey-native-edition-0.1.2.zip",
+          "galactic-survey-native-edition-beta-0.1.2.pack.json",
           "echo-release.json",
-          "galactic-survey-native-edition-0.1.1.zip",
-          "galactic-survey-native-edition-alpha-0.1.1.pack.json",
           "release-audit.json"
         ]
       },
@@ -1424,7 +752,7 @@
         "update": {
           "url": "echo://update/pack/galactic-survey-native-edition",
           "resolved": true,
-          "artifact": "galactic-survey-native-edition-alpha-0.1.1.pack.json",
+          "artifact": "galactic-survey-native-edition-beta-0.1.2.pack.json",
           "dependencyCount": 41
         },
         "installAddon": {
@@ -1439,8 +767,8 @@
         "verifiedAfterInstall": 41
       },
       "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
         "versionTransition": true,
         "updated": 1,
         "verified": 40,
@@ -1451,7 +779,7 @@
       "rollback": {
         "restoredPreviousTarget": "addons/echogalacticsurveyprotocol-0.1.0.echo-addon",
         "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
         "verifiedAfterRollback": 42
       },
       "postRollbackUpdate": {
@@ -1471,56 +799,56 @@
       "sourceRepo": "knoxhack/ECHO-Galactic-Survey-NeoForge-Edition",
       "packId": "galactic-survey-neoforge-edition",
       "pack": "galactic-survey-neoforge-edition",
-      "releaseTag": "galactic-survey-neoforge-0.1.1-alpha",
+      "releaseTag": "galactic-survey-neoforge-0.1.2-beta",
       "validation": "approved",
       "moduleArtifactFamily": "neoforge",
-      "manifestAsset": "galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "galactic-survey-neoforge-edition-0.1.1.zip",
+      "manifestAsset": "galactic-survey-neoforge-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "galactic-survey-neoforge-edition-0.1.2.zip",
       "moduleCount": 41,
       "fileCount": 41,
       "selectedModuleId": "echogalacticsurveyprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
-          "name": "galactic-survey-neoforge-edition-0.1.1.zip",
-          "sha256": "72430a36b0515593fac3d7e18a166377ffcc8319c8d5c8bfbb703d1927583382",
-          "size": 145245824,
-          "reused": true
+          "name": "galactic-survey-neoforge-edition-0.1.2.zip",
+          "sha256": "643582fadd07720e972512d6090698febf505eaa5f3a592f8ea35f2753d11eb9",
+          "size": 145335986,
+          "reused": false
         },
         {
           "role": "manifest",
-          "name": "galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
-          "sha256": "a83f786ac231eb3351833c0d69b72bd32259e27f3f219f039324d1356122c77b",
-          "size": 83432,
-          "reused": true
+          "name": "galactic-survey-neoforge-edition-beta-0.1.2.pack.json",
+          "sha256": "1ca2a53f50e61e3add6a786f98ef3946613626c4b7c9d798260033e53e982dd2",
+          "size": 83058,
+          "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "f82704e0bad184de8f576122b8d8c38fc8fefedfc54c2e74191b32072c8d1d92",
-          "size": 399,
-          "reused": true
+          "sha256": "58fac0fca72a8ade73d99e73cc866b5970a7a7c7599adb1bb45842a588084f83",
+          "size": 398,
+          "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "05bb09e94f0d1265e2421aa88c8b06dcb430d05d7cefbcc9efb36fc5a54be413",
-          "size": 12162,
-          "reused": true
+          "sha256": "3a64f17d486a1099546eb5d658ab837aaaee0c37abc1d65cd89a095ece919744",
+          "size": 12147,
+          "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "9bbcf8545f2461f3cc9b76ba9cdb8309a3dcb9e3b0896bd4955acd607da3a9bd",
-          "size": 964,
-          "reused": true
+          "sha256": "2a0a0f79e882a02b67f2ef40ad985479871fa80dbb6df41bdab27c41b401c181",
+          "size": 951,
+          "reused": false
         }
       ],
       "topLevelChecksums": {
         "verified": [
+          "galactic-survey-neoforge-edition-0.1.2.zip",
+          "galactic-survey-neoforge-edition-beta-0.1.2.pack.json",
           "echo-release.json",
-          "galactic-survey-neoforge-edition-0.1.1.zip",
-          "galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
           "release-audit.json"
         ]
       },
@@ -1536,7 +864,7 @@
         "update": {
           "url": "echo://update/pack/galactic-survey-neoforge-edition",
           "resolved": true,
-          "artifact": "galactic-survey-neoforge-edition-alpha-0.1.1.pack.json",
+          "artifact": "galactic-survey-neoforge-edition-beta-0.1.2.pack.json",
           "dependencyCount": 41
         },
         "installAddon": {
@@ -1551,8 +879,8 @@
         "verifiedAfterInstall": 41
       },
       "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
         "versionTransition": true,
         "updated": 1,
         "verified": 40,
@@ -1563,7 +891,7 @@
       "rollback": {
         "restoredPreviousTarget": "mods/echogalacticsurveyprotocol-0.1.0-neoforge.jar",
         "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
         "verifiedAfterRollback": 42
       },
       "postRollbackUpdate": {
@@ -1583,56 +911,56 @@
       "sourceRepo": "knoxhack/ECHO-Galactic-Survey-Standalone-Edition",
       "packId": "galactic-survey-standalone-edition",
       "pack": "galactic-survey-standalone-edition",
-      "releaseTag": "galactic-survey-standalone-0.1.1-alpha",
+      "releaseTag": "galactic-survey-standalone-0.1.2-beta",
       "validation": "approved",
       "moduleArtifactFamily": "standalone",
-      "manifestAsset": "galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
-      "artifactAsset": "galactic-survey-standalone-edition-0.1.1.zip",
+      "manifestAsset": "galactic-survey-standalone-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "galactic-survey-standalone-edition-0.1.2.zip",
       "moduleCount": 41,
       "fileCount": 41,
       "selectedModuleId": "echogalacticsurveyprotocol",
       "downloadedAssets": [
         {
           "role": "pack",
-          "name": "galactic-survey-standalone-edition-0.1.1.zip",
-          "sha256": "5ac5bc019344c7471594d9d5e920d6a130fbd19825f8f4d9cca284253b9fc3ff",
-          "size": 145241857,
-          "reused": true
+          "name": "galactic-survey-standalone-edition-0.1.2.zip",
+          "sha256": "0826bea401625b0640f749ed7a852d4826fde28ec10e6dc93ecad370604440de",
+          "size": 145332018,
+          "reused": false
         },
         {
           "role": "manifest",
-          "name": "galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
-          "sha256": "635317b1605cea2628b1c7d8a8a78f2e6c3a6808890673a11be82c8b4e8c75dd",
-          "size": 53667,
-          "reused": true
+          "name": "galactic-survey-standalone-edition-beta-0.1.2.pack.json",
+          "sha256": "c86309c3125d23ed94827b573e6d60400b57c95efc057eea2bd34d1ae124dca9",
+          "size": 53293,
+          "reused": false
         },
         {
           "role": "checksums",
           "name": "checksums.txt",
-          "sha256": "249c9ad2e88a0cb858d372b7107b20f93d8a7782139831e4851e5f0feb04aa3f",
-          "size": 403,
-          "reused": true
+          "sha256": "dbded09652dde1d14f9b2ae3d9e51e9cc19b843f5b92a6052f4fc1df9caa33ec",
+          "size": 402,
+          "reused": false
         },
         {
           "role": "releaseManifest",
           "name": "echo-release.json",
-          "sha256": "816203f1833f991aa050f827d284135a3e3593426202df2fe125006e11d1a232",
-          "size": 12348,
-          "reused": true
+          "sha256": "3896804d9088fdf541508ce47c235af57430e31511fbd2c78a411581d2eb81a7",
+          "size": 12333,
+          "reused": false
         },
         {
           "role": "releaseAudit",
           "name": "release-audit.json",
-          "sha256": "391e91e5c55b42d3c344a298bc660d512019b776a218d6678812ab298752b745",
-          "size": 976,
-          "reused": true
+          "sha256": "0e0f1a96b0a9fe2bddc6999b4731146a45c107eda9841362e4310b67c497cc57",
+          "size": 963,
+          "reused": false
         }
       ],
       "topLevelChecksums": {
         "verified": [
+          "galactic-survey-standalone-edition-0.1.2.zip",
+          "galactic-survey-standalone-edition-beta-0.1.2.pack.json",
           "echo-release.json",
-          "galactic-survey-standalone-edition-0.1.1.zip",
-          "galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
           "release-audit.json"
         ]
       },
@@ -1648,7 +976,7 @@
         "update": {
           "url": "echo://update/pack/galactic-survey-standalone-edition",
           "resolved": true,
-          "artifact": "galactic-survey-standalone-edition-alpha-0.1.1.pack.json",
+          "artifact": "galactic-survey-standalone-edition-beta-0.1.2.pack.json",
           "dependencyCount": 41
         },
         "installAddon": {
@@ -1663,8 +991,8 @@
         "verifiedAfterInstall": 41
       },
       "update": {
-        "fromVersion": "0.1.1-previous-smoke",
-        "toVersion": "0.1.1",
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
         "versionTransition": true,
         "updated": 1,
         "verified": 40,
@@ -1675,7 +1003,7 @@
       "rollback": {
         "restoredPreviousTarget": "mods/echogalacticsurveyprotocol-0.1.0-standalone.jar",
         "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
-        "restoredPreviousVersion": "0.1.1-previous-smoke",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
         "verifiedAfterRollback": 42
       },
       "postRollbackUpdate": {
@@ -1688,6 +1016,678 @@
         "verifiedAfterRepair": 41
       },
       "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Galactic-Survey-Standalone-Edition\\galactic-survey-standalone-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Openlands-Native-Edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-Native-Edition",
+      "packId": "openlands-native-edition",
+      "pack": "openlands-native-edition",
+      "releaseTag": "v0.1.2-openlands-native-edition-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "echo-addon",
+      "manifestAsset": "openlands-native-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "openlands-native-edition-0.1.2.zip",
+      "moduleCount": 42,
+      "fileCount": 42,
+      "selectedModuleId": "echoopenlandsprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "openlands-native-edition-0.1.2.zip",
+          "sha256": "21ee7ac2090a67a90d45a6780ca5c46a8efc577c1e622e4d86a7dd97475e80f8",
+          "size": 112894816,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "openlands-native-edition-beta-0.1.2.pack.json",
+          "sha256": "6cfb4b0c7fd820e372ab8bf5b1607934493d418b05dd40b5d65c5190d5a4920b",
+          "size": 54977,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "eb557182f7f05cdf6a1904205a0d5f1130b3bb5766e0634074ea7c86b28e1028",
+          "size": 382,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "a54ddd386e390952146e35cbb20b45ff6bf55e5b0af8e7b498661a3f6f86ddc7",
+          "size": 12147,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "9f1e3d789a8046215adf4789ff53aa4669c06806a68693e2f7f830f8ea047328",
+          "size": 912,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "openlands-native-edition-0.1.2.zip",
+          "openlands-native-edition-beta-0.1.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 42
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/openlands-native-edition",
+          "resolved": true,
+          "artifact": "openlands-native-edition-beta-0.1.2.pack.json",
+          "dependencyCount": 42
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoopenlandsprotocol?pack=openlands-native-edition",
+          "resolved": true,
+          "artifact": "echoopenlandsprotocol-0.1.0.echo-addon",
+          "dependencyCount": 41
+        }
+      },
+      "install": {
+        "installed": 42,
+        "verifiedAfterInstall": 42
+      },
+      "update": {
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 41,
+        "removed": 1,
+        "verifiedAfterUpdate": 42,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "addons/echoopenlandsprotocol-0.1.0.echo-addon",
+        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
+        "verifiedAfterRollback": 43
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 42
+      },
+      "repair": {
+        "repaired": "addons/echoopenlandsprotocol-0.1.0.echo-addon",
+        "verifiedAfterRepair": 42
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Openlands-Native-Edition\\openlands-native-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Openlands-NeoForge-Edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-NeoForge-Edition",
+      "packId": "openlands-neoforge-edition",
+      "pack": "openlands-neoforge-edition",
+      "releaseTag": "v0.1.3-openlands-neoforge-edition-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "neoforge",
+      "manifestAsset": "openlands-neoforge-edition-beta-0.1.3.pack.json",
+      "artifactAsset": "openlands-neoforge-edition-0.1.3.zip",
+      "moduleCount": 42,
+      "fileCount": 42,
+      "selectedModuleId": "echoopenlandsprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "openlands-neoforge-edition-0.1.3.zip",
+          "sha256": "80cfe8eeb9981280940f2e26af4a60df53e226a50fcacf5d54b8b77d96c35db5",
+          "size": 112719814,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "openlands-neoforge-edition-beta-0.1.3.pack.json",
+          "sha256": "36c19661d4d5d65caf9f03876829d9d5503c0cdee318ebbc41065eeef6928f37",
+          "size": 85143,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "148e1931e40895265b7eef96bf16596613d28c40adcf79d41c4c592d9c36241c",
+          "size": 386,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "2d687836a499959b302dfc3011f32351069b7b0086216f675389079b4d4b8ee0",
+          "size": 12254,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "c07f547b82477030ee4d0e4618bf081a9f8c4c500f218e4ee4df61af70209d03",
+          "size": 924,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "openlands-neoforge-edition-0.1.3.zip",
+          "openlands-neoforge-edition-beta-0.1.3.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 42
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/openlands-neoforge-edition",
+          "resolved": true,
+          "artifact": "openlands-neoforge-edition-beta-0.1.3.pack.json",
+          "dependencyCount": 42
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoopenlandsprotocol?pack=openlands-neoforge-edition",
+          "resolved": true,
+          "artifact": "echoopenlandsprotocol-0.1.0-neoforge.jar",
+          "dependencyCount": 41
+        }
+      },
+      "install": {
+        "installed": 42,
+        "verifiedAfterInstall": 42
+      },
+      "update": {
+        "fromVersion": "0.1.3-previous-smoke",
+        "toVersion": "0.1.3",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 41,
+        "removed": 1,
+        "verifiedAfterUpdate": 42,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoopenlandsprotocol-0.1.0-neoforge.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.3-previous-smoke",
+        "verifiedAfterRollback": 43
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 42
+      },
+      "repair": {
+        "repaired": "mods/echoopenlandsprotocol-0.1.0-neoforge.jar",
+        "verifiedAfterRepair": 42
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Openlands-NeoForge-Edition\\openlands-neoforge-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Openlands-Standalone-Edition",
+      "sourceRepo": "knoxhack/ECHO-Openlands-Standalone-Edition",
+      "packId": "openlands-standalone-edition",
+      "pack": "openlands-standalone-edition",
+      "releaseTag": "v0.1.2-openlands-standalone-edition-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "standalone",
+      "manifestAsset": "openlands-standalone-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "openlands-standalone-edition-0.1.2.zip",
+      "moduleCount": 42,
+      "fileCount": 42,
+      "selectedModuleId": "echoopenlandsprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "openlands-standalone-edition-0.1.2.zip",
+          "sha256": "26e947191b78b5d3ef5d8ea9b5b8532c3d0e7f72baac9789fcd3997bcded29d9",
+          "size": 112715234,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "openlands-standalone-edition-beta-0.1.2.pack.json",
+          "sha256": "ae45b1dcc2fa4742feec5d3477625a551fe6de38210199276fc5028cf945fc28",
+          "size": 55364,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "44e46aedcdcfcfda89820a204478fe4811dd4c97f48dddc5f97fd3708550aaf2",
+          "size": 390,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "eb84ca997f5542612f8e547bf3fe1ecbea444b5e9726c8b8d9146f250637e004",
+          "size": 12444,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "a4ac88f8480601af190ea7cf4de42f814ff7984881be795b2c23026cbe941c79",
+          "size": 936,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "openlands-standalone-edition-0.1.2.zip",
+          "openlands-standalone-edition-beta-0.1.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 42
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/openlands-standalone-edition",
+          "resolved": true,
+          "artifact": "openlands-standalone-edition-beta-0.1.2.pack.json",
+          "dependencyCount": 42
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoopenlandsprotocol?pack=openlands-standalone-edition",
+          "resolved": true,
+          "artifact": "echoopenlandsprotocol-0.1.0-standalone.jar",
+          "dependencyCount": 41
+        }
+      },
+      "install": {
+        "installed": 42,
+        "verifiedAfterInstall": 42
+      },
+      "update": {
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 41,
+        "removed": 1,
+        "verifiedAfterUpdate": 42,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoopenlandsprotocol-0.1.0-standalone.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
+        "verifiedAfterRollback": 43
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 42
+      },
+      "repair": {
+        "repaired": "mods/echoopenlandsprotocol-0.1.0-standalone.jar",
+        "verifiedAfterRepair": 42
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Openlands-Standalone-Edition\\openlands-standalone-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Sky-Relay-Native-Edition",
+      "sourceRepo": "knoxhack/ECHO-Sky-Relay-Native-Edition",
+      "packId": "sky-relay-native-edition",
+      "pack": "sky-relay-native-edition",
+      "releaseTag": "sky-relay-native-0.1.2-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "echo-addon",
+      "manifestAsset": "sky-relay-native-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "sky-relay-native-edition-0.1.2.zip",
+      "moduleCount": 43,
+      "fileCount": 43,
+      "selectedModuleId": "echoskyrelayprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "sky-relay-native-edition-0.1.2.zip",
+          "sha256": "9aebb1f1500aa7e1b6e3b69ff82c0390c37d9a7825c287f654f003bfa291a46a",
+          "size": 155503904,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "sky-relay-native-edition-beta-0.1.2.pack.json",
+          "sha256": "e39f4c6d715f2913d2ab2bdafdeadcf3f57470ab98d2c17acac084d332c1e6f7",
+          "size": 55301,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "f788c7e42c2a52d8ee2782f32a11bf011d48dfde56be78c06a4a8fccb676e578",
+          "size": 382,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "ef330bd9e8c319a624f186dfd5a6211cab21f002496713891d4c8dc6c6aeddf6",
+          "size": 12479,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "9a4250f80b6d9a794cc20cf2a03fa78623259bf53cee4c66e3a06bce4d000168",
+          "size": 903,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "sky-relay-native-edition-0.1.2.zip",
+          "sky-relay-native-edition-beta-0.1.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 43
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/sky-relay-native-edition",
+          "resolved": true,
+          "artifact": "sky-relay-native-edition-beta-0.1.2.pack.json",
+          "dependencyCount": 43
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-native-edition",
+          "resolved": true,
+          "artifact": "echoskyrelayprotocol-0.1.0.echo-addon",
+          "dependencyCount": 42
+        }
+      },
+      "install": {
+        "installed": 43,
+        "verifiedAfterInstall": 43
+      },
+      "update": {
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 42,
+        "removed": 1,
+        "verifiedAfterUpdate": 43,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "restoredObsoletePath": "addons/official-pack-obsolete-smoke.echo-addon",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
+        "verifiedAfterRollback": 44
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 43
+      },
+      "repair": {
+        "repaired": "addons/echoskyrelayprotocol-0.1.0.echo-addon",
+        "verifiedAfterRepair": 43
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Sky-Relay-Native-Edition\\sky-relay-native-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Sky-Relay-NeoForge-Edition",
+      "sourceRepo": "knoxhack/ECHO-Sky-Relay-NeoForge-Edition",
+      "packId": "sky-relay-neoforge-edition",
+      "pack": "sky-relay-neoforge-edition",
+      "releaseTag": "sky-relay-neoforge-0.1.2-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "neoforge",
+      "manifestAsset": "sky-relay-neoforge-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "sky-relay-neoforge-edition-0.1.2.zip",
+      "moduleCount": 43,
+      "fileCount": 43,
+      "selectedModuleId": "echoskyrelayprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "sky-relay-neoforge-edition-0.1.2.zip",
+          "sha256": "c565c487d109963761a2900daa183aaf48a22c0a57adb0af7010e0945e275a85",
+          "size": 155306696,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "sky-relay-neoforge-edition-beta-0.1.2.pack.json",
+          "sha256": "c5848da77dd7afd8a08e2f320517909243946dc902c37d0388cf2de4ebeb34c9",
+          "size": 85472,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "84b91a76a9e923c8c015640c33085ef5f90334a601122dda2b8d5318559dce8d",
+          "size": 386,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "67ec1544ea3d582fb3162918004c2ef21daaaa3d121ea7e97da77a2cf3671bbb",
+          "size": 12588,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "870ee7930ec824e3cd4b302102d0b2e5f1515ce108157586bf6fc3c02c6bb839",
+          "size": 915,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "sky-relay-neoforge-edition-0.1.2.zip",
+          "sky-relay-neoforge-edition-beta-0.1.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 43
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/sky-relay-neoforge-edition",
+          "resolved": true,
+          "artifact": "sky-relay-neoforge-edition-beta-0.1.2.pack.json",
+          "dependencyCount": 43
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-neoforge-edition",
+          "resolved": true,
+          "artifact": "echoskyrelayprotocol-0.1.0-neoforge.jar",
+          "dependencyCount": 42
+        }
+      },
+      "install": {
+        "installed": 43,
+        "verifiedAfterInstall": 43
+      },
+      "update": {
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 42,
+        "removed": 1,
+        "verifiedAfterUpdate": 43,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
+        "verifiedAfterRollback": 44
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 43
+      },
+      "repair": {
+        "repaired": "mods/echoskyrelayprotocol-0.1.0-neoforge.jar",
+        "verifiedAfterRepair": 43
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Sky-Relay-NeoForge-Edition\\sky-relay-neoforge-edition\\install"
+    },
+    {
+      "status": "pass",
+      "repoName": "ECHO-Sky-Relay-Standalone-Edition",
+      "sourceRepo": "knoxhack/ECHO-Sky-Relay-Standalone-Edition",
+      "packId": "sky-relay-standalone-edition",
+      "pack": "sky-relay-standalone-edition",
+      "releaseTag": "sky-relay-standalone-0.1.2-beta",
+      "validation": "approved",
+      "moduleArtifactFamily": "standalone",
+      "manifestAsset": "sky-relay-standalone-edition-beta-0.1.2.pack.json",
+      "artifactAsset": "sky-relay-standalone-edition-0.1.2.zip",
+      "moduleCount": 43,
+      "fileCount": 43,
+      "selectedModuleId": "echoskyrelayprotocol",
+      "downloadedAssets": [
+        {
+          "role": "pack",
+          "name": "sky-relay-standalone-edition-0.1.2.zip",
+          "sha256": "d74dd96c0e78edaf895d47095c3f0bf24f0f4ef8ab61f783ade95a08ba38bcaa",
+          "size": 155297082,
+          "reused": false
+        },
+        {
+          "role": "manifest",
+          "name": "sky-relay-standalone-edition-beta-0.1.2.pack.json",
+          "sha256": "40cabed36da48e264e8ae1b39196897a7dd671a6efe5c69474ffc9c1cdf45410",
+          "size": 55735,
+          "reused": false
+        },
+        {
+          "role": "checksums",
+          "name": "checksums.txt",
+          "sha256": "dba1078cf122b5198d71ba3edb2e253111dc731e373f2e9f2780fec8549989e6",
+          "size": 390,
+          "reused": false
+        },
+        {
+          "role": "releaseManifest",
+          "name": "echo-release.json",
+          "sha256": "9504c2fc33b57c4392bdc83b35d907c96bc9d8fef92b9e2e7a429faf3f49b4f2",
+          "size": 12782,
+          "reused": false
+        },
+        {
+          "role": "releaseAudit",
+          "name": "release-audit.json",
+          "sha256": "332494ac38afebff6386a1459c316b3a33d6243ebc7583e78fb93309a26b2639",
+          "size": 927,
+          "reused": false
+        }
+      ],
+      "topLevelChecksums": {
+        "verified": [
+          "sky-relay-standalone-edition-0.1.2.zip",
+          "sky-relay-standalone-edition-beta-0.1.2.pack.json",
+          "echo-release.json",
+          "release-audit.json"
+        ]
+      },
+      "packZip": {
+        "requiredEntries": [
+          ".echo/pack-manifest.json",
+          ".echo/export-report.json",
+          ".echo/checksums.sha256"
+        ],
+        "embeddedManifestFileCount": 43
+      },
+      "deepLinks": {
+        "update": {
+          "url": "echo://update/pack/sky-relay-standalone-edition",
+          "resolved": true,
+          "artifact": "sky-relay-standalone-edition-beta-0.1.2.pack.json",
+          "dependencyCount": 43
+        },
+        "installAddon": {
+          "url": "echo://install/addon/echoskyrelayprotocol?pack=sky-relay-standalone-edition",
+          "resolved": true,
+          "artifact": "echoskyrelayprotocol-0.1.0-standalone.jar",
+          "dependencyCount": 42
+        }
+      },
+      "install": {
+        "installed": 43,
+        "verifiedAfterInstall": 43
+      },
+      "update": {
+        "fromVersion": "0.1.2-previous-smoke",
+        "toVersion": "0.1.2",
+        "versionTransition": true,
+        "updated": 1,
+        "verified": 42,
+        "removed": 1,
+        "verifiedAfterUpdate": 43,
+        "sameVersionReconciliation": false
+      },
+      "rollback": {
+        "restoredPreviousTarget": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
+        "restoredObsoletePath": "mods/official-pack-obsolete-smoke.jar",
+        "restoredPreviousVersion": "0.1.2-previous-smoke",
+        "verifiedAfterRollback": 44
+      },
+      "postRollbackUpdate": {
+        "updated": 1,
+        "removed": 1,
+        "verifiedAfterUpdate": 43
+      },
+      "repair": {
+        "repaired": "mods/echoskyrelayprotocol-0.1.0-standalone.jar",
+        "verifiedAfterRepair": 43
+      },
+      "installRoot": "C:\\Development\\Github\\ECHO-Launcher\\tmp\\official-pack-launcher-lifecycle-smoke\\ECHO-Sky-Relay-Standalone-Edition\\sky-relay-standalone-edition\\install"
     }
   ],
   "gates": {

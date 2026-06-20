@@ -1,42 +1,42 @@
 {
   "id": "ashfall-neoforge-edition",
   "kind": "modpack",
-  "version": "0.1.0",
-  "channel": "alpha",
+  "version": "0.1.1",
+  "channel": "beta",
   "publisher": "knoxhack",
   "sourceRepo": "knoxhack/ECHO-Ashfall-NeoForge-Edition",
-  "releaseTag": "v0.1.0-ashfall-neoforge-edition",
-  "commitSha": "f062971",
+  "releaseTag": "v0.1.1-ashfall-neoforge-edition-beta",
+  "commitSha": "9d1edc4",
   "artifacts": {
     "pack": {
-      "file": "ashfall-neoforge-edition-0.1.0.zip",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-0.1.0.zip",
-      "sha256": "e54effdae17a7e714fc9157f8bc60a1240401c2f7db6c967722d846fe8a017ab",
-      "size": 269479052
+      "file": "ashfall-neoforge-edition-0.1.1.zip",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta/ashfall-neoforge-edition-0.1.1.zip",
+      "sha256": "68784193bb7efcfa595820dda5aefed4101aa7992256528104a3d8b4ab29fe76",
+      "size": 269583973
     },
     "manifest": {
-      "file": "ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json",
-      "sha256": "d686d4959c2a33a10750e7823b38399c7a3bccf3641b37b4fc8869af6963fbab",
-      "size": 105986
+      "file": "ashfall-neoforge-edition-beta-0.1.1.pack.json",
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta/ashfall-neoforge-edition-beta-0.1.1.pack.json",
+      "sha256": "9817cb4d7fd7ead940f3a7f97666a5064967af1a5c6b9bf33bd89aeab11326ff",
+      "size": 105315
     },
     "checksums": {
       "file": "checksums.txt",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/checksums.txt",
-      "sha256": "844e2ff04b8232c821ac15f61d18d98385861220faa23bbca157731f9e50a407",
-      "size": 383
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta/checksums.txt",
+      "sha256": "c3641850ccdcb35431c6ac66f8ed6774e70f8a0ac7f096f61b730d29d7fc1823",
+      "size": 382
     },
     "releaseManifest": {
       "file": "echo-release.json",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/echo-release.json",
-      "sha256": "50ab3bc4b887287e830cc4ef639b79ae674ccce37040f18489ef0ccebdc0f97f",
-      "size": 13507
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta/echo-release.json",
+      "sha256": "b7eeea333cc73d7c5fc22a5a3674028ccce5243e3bec85b3847759210514c05a",
+      "size": 13322
     },
     "releaseAudit": {
       "file": "release-audit.json",
-      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.0-ashfall-neoforge-edition/release-audit.json",
-      "sha256": "bb449fceb268fe30a4b2b3b1de8b907a6d6bb54d8d165fa4c27597b799747b90",
-      "size": 1090
+      "url": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/download/v0.1.1-ashfall-neoforge-edition-beta/release-audit.json",
+      "sha256": "5a287f7ab4a26bd78e87bb8b753c9358e0875ce620ac3ea62b271e043c361914",
+      "size": 913
     }
   },
   "dependencies": [],
@@ -47,6 +47,7 @@
   "validation": "warning",
   "validationReason": "Warning-gated for gameplay release-readiness while remaining launcher-installable from checksum-backed GitHub pack and manifest artifacts.",
   "notes": "Installable warning-gated catalog entry rebuilt with exact module artifact URLs and lane-correct runtime metadata.",
-  "moduleRelease": "modules-ashfall-content-entrypoint-hotfix-20260619",
-  "moduleSourceRevision": "ECHO-Modules local Ashfall content entrypoint rebuild 2026-06-19; restores NeoForge @Mod bytecode for Agriculture Reclamation, WeatherCore, Convoy Protocol, and Stationfall while preserving standalone-neutral artifacts"
+  "moduleRelease": "modules-beta-full-20260620",
+  "moduleSourceRevision": "ECHO-Modules modules-beta-full-20260620 (2a1c2ec8), 2026-06-20",
+  "releaseUrl": "https://github.com/knoxhack/ECHO-Ashfall-NeoForge-Edition/releases/tag/v0.1.1-ashfall-neoforge-edition-beta"
 }
