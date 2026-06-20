@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.standalone_engine.runtime_comparison.v1",
-  "generatedAt": "2026-06-20T20:21:17.089Z",
+  "generatedAt": "2026-06-20T20:25:55.215Z",
   "generatedBy": "scripts/benchmark-standalone-engine-runtime-comparison.mjs",
   "ok": false,
   "environment": {
@@ -11,7 +11,7 @@
   },
   "releaseIndex": {
     "root": "C:\\Development\\Github\\ECHO-Release-Index",
-    "head": "a846502a820d4d6639f244bb8e180248dced3d6d",
+    "head": "584f838bea5fbaaf876d711d06433a119cb7a323",
     "dirty": true,
     "dirtyFiles": [
       "M channels/alpha/launcher-channel.json",
@@ -75,10 +75,9 @@
       " M release-readiness/all-modpacks-pipeline-audit.json",
       " M release-readiness/official-pack-launcher-lifecycle-smoke.json",
       " M release-readiness/public-alpha-runtime-acceptance.json",
+      " M scripts/benchmark-standalone-engine-runtime-comparison.mjs",
       " M scripts/verify-official-pack-launcher-lifecycle-smoke.mjs",
-      "?? release-readiness/ashfall-native-packaged-electron-smoke.json",
-      "?? release-readiness/standalone-engine-runtime-comparison.engine-only.json",
-      "?? scripts/benchmark-standalone-engine-runtime-comparison.mjs"
+      "?? release-readiness/ashfall-native-packaged-electron-smoke.json"
     ],
     "errors": []
   },
@@ -89,6 +88,30 @@
     "modulesRoot": "C:\\Development\\Github\\ECHO-Modules",
     "engineRuns": 3,
     "timeoutMs": 900000,
+    "allowActiveRuntimeBuild": false,
+    "activeRuntimeBuilds": [
+      {
+        "processId": 19852,
+        "parentProcessId": 604,
+        "name": "cmd.exe",
+        "creationDate": "/Date(1781985424169)/",
+        "commandLine": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Development\\Github\\ECHO-Standalone-Runtime\\gradlew.bat\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true\""
+      },
+      {
+        "processId": 13584,
+        "parentProcessId": 19852,
+        "name": "java.exe",
+        "creationDate": "/Date(1781985424210)/",
+        "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\/bin/java.exe\"  \"-Xmx64m\" \"-Xms64m\"   \"-Dorg.gradle.appname=gradlew\" -classpath \"\" -jar \"C:\\Development\\Github\\ECHO-Standalone-Runtime\\\\gradle\\wrapper\\gradle-wrapper.jar\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true"
+      },
+      {
+        "processId": 5220,
+        "parentProcessId": 21992,
+        "name": "java.exe",
+        "creationDate": "/Date(1781987142659)/",
+        "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\bin\\java.exe\" -Decho.modules.root=C:\\Development\\Github\\ECHO-Modules\\addons --enable-native-access=ALL-UNNAMED -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\classes\\java\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\resources\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-app\\build\\libs\\echo-runtime-app-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-client\\build\\libs\\echo-runtime-client-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-player\\build\\libs\\echo-runtime-player-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-render\\build\\libs\\echo-runtime-render-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-input\\build\\libs\\echo-runtime-input-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-ui\\build\\libs\\echo-runtime-ui-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-audio\\build\\libs\\echo-runtime-audio-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-scripting\\build\\libs\\echo-runtime-scripting-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-compat\\build\\libs\\echo-runtime-compat-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-gameplay\\build\\libs\\echo-runtime-gameplay-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-network\\build\\libs\\echo-runtime-network-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-item\\build\\libs\\echo-runtime-item-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-entity\\build\\libs\\echo-runtime-entity-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-world\\build\\libs\\echo-runtime-world-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-data\\build\\libs\\echo-runtime-data-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-assets\\build\\libs\\echo-runtime-assets-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-packos\\build\\libs\\echo-runtime-packos-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-save\\build\\libs\\echo-runtime-save-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-nbt\\build\\libs\\echo-runtime-nbt-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-core\\build\\libs\\echo-runtime-core-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-modules\\build\\libs\\echo-runtime-modules-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-devtools\\build\\libs\\echo-runtime-devtools-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-contracts\\build\\libs\\echo-runtime-contracts-0.1.2-beta.20260620.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\7119f7d0eeb1e5502ff0ca71d2b4d47317da015\\lwjgl-glfw-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\99ef08056feb9627f90425a4d2a22cd9fae8e39b\\lwjgl-glfw-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\ac2532612a4df374e9a9282bcf8ce2573018ebbb\\lwjgl-opengl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\18dc639ebc94aa5202c2157f7490d28997b697c5\\lwjgl-opengl-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\e2d3739dcfe7b672b626ded66d94f6587083306e\\lwjgl-stb-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\334cf885b39e2db9070c39e70e65efb136435f10\\lwjgl-stb-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\ce7721d30cfaf47feaed10213e0c43eb55c49d68\\lwjgl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\9a29b6a22fc5184604b8cb434ee5d5ecc4bfcbee\\lwjgl-3.3.6-natives-windows.jar dev.echo.standalone.runtime.testkit.EchoRuntimeLauncherSmokeHarness"
+      }
+    ],
     "runtimeTasks": [
       {
         "task": "runStandaloneContentGraphLoadSmoke",
@@ -158,11 +181,11 @@
         {
           "iteration": 1,
           "status": "PASS",
-          "durationMs": 2689,
+          "durationMs": 2050,
           "exitCode": 0,
           "timedOut": false,
-          "peakWorkingSetBytes": 249573376,
-          "memorySamples": 4,
+          "peakWorkingSetBytes": 240295936,
+          "memorySamples": 2,
           "memoryCollectionError": null,
           "logPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-1\\engine-headless-smoke.log",
           "smokeReportPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-1\\saves\\headless-smoke\\headless-smoke-report.json",
@@ -194,16 +217,16 @@
               "spawnedEntities": 4
             }
           },
-          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={crossRuntimeParity=true, canonical=true, mappedNodeCounts={echo_native=78, echo_runtime_standalone=78, neoforge=78}, nodes=133, modules=18, edges=109, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330}, adapterCore={accepted=48, ready=true, acceptedByDomain={worldgen=1, services=1, entities=3, items=24, gameplay=1, recipes=4, blocks=14}, revoked=0, rejected=0, canonicalRuntimeBridge=true}, runtimeContent={entityDefinitions=3, gameExtensions=1, items=24, recipes=4, blocks=16}, world={saveReload=true, chunks=25, spawnedEntities=4, contentIdentityVerified=true}}\r\n",
+          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={nodes=133, mappedNodeCounts={echo_native=78, neoforge=78, echo_runtime_standalone=78}, canonical=true, crossRuntimeParity=true, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, edges=109, modules=18}, adapterCore={acceptedByDomain={recipes=4, gameplay=1, items=24, entities=3, services=1, worldgen=1, blocks=14}, ready=true, accepted=48, canonicalRuntimeBridge=true, rejected=0, revoked=0}, runtimeContent={items=24, gameExtensions=1, entityDefinitions=3, blocks=16, recipes=4}, world={chunks=25, saveReload=true, contentIdentityVerified=true, spawnedEntities=4}}\r\n",
           "stderrTail": ""
         },
         {
           "iteration": 2,
           "status": "PASS",
-          "durationMs": 1604,
+          "durationMs": 1511,
           "exitCode": 0,
           "timedOut": false,
-          "peakWorkingSetBytes": 232767488,
+          "peakWorkingSetBytes": 198758400,
           "memorySamples": 2,
           "memoryCollectionError": null,
           "logPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-2\\engine-headless-smoke.log",
@@ -236,16 +259,16 @@
               "spawnedEntities": 4
             }
           },
-          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={edges=109, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, crossRuntimeParity=true, canonical=true, mappedNodeCounts={neoforge=78, echo_native=78, echo_runtime_standalone=78}, nodes=133, modules=18}, adapterCore={revoked=0, rejected=0, canonicalRuntimeBridge=true, accepted=48, ready=true, acceptedByDomain={worldgen=1, services=1, entities=3, items=24, gameplay=1, recipes=4, blocks=14}}, runtimeContent={blocks=16, entityDefinitions=3, gameExtensions=1, items=24, recipes=4}, world={contentIdentityVerified=true, saveReload=true, chunks=25, spawnedEntities=4}}\r\n",
+          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={nodes=133, mappedNodeCounts={neoforge=78, echo_runtime_standalone=78, echo_native=78}, canonical=true, crossRuntimeParity=true, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, edges=109, modules=18}, adapterCore={acceptedByDomain={items=24, entities=3, services=1, worldgen=1, blocks=14, recipes=4, gameplay=1}, ready=true, accepted=48, canonicalRuntimeBridge=true, rejected=0, revoked=0}, runtimeContent={items=24, gameExtensions=1, entityDefinitions=3, blocks=16, recipes=4}, world={chunks=25, saveReload=true, contentIdentityVerified=true, spawnedEntities=4}}\r\n",
           "stderrTail": ""
         },
         {
           "iteration": 3,
           "status": "PASS",
-          "durationMs": 1432,
+          "durationMs": 1369,
           "exitCode": 0,
           "timedOut": false,
-          "peakWorkingSetBytes": 231981056,
+          "peakWorkingSetBytes": 205508608,
           "memorySamples": 2,
           "memoryCollectionError": null,
           "logPath": "C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-runs\\run-3\\engine-headless-smoke.log",
@@ -278,7 +301,7 @@
               "spawnedEntities": 4
             }
           },
-          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={nodes=133, mappedNodeCounts={echo_native=78, neoforge=78, echo_runtime_standalone=78}, canonical=true, crossRuntimeParity=true, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, edges=109, modules=18}, adapterCore={acceptedByDomain={recipes=4, gameplay=1, items=24, entities=3, services=1, worldgen=1, blocks=14}, ready=true, accepted=48, canonicalRuntimeBridge=true, rejected=0, revoked=0}, runtimeContent={items=24, gameExtensions=1, entityDefinitions=3, blocks=16, recipes=4}, world={chunks=25, saveReload=true, contentIdentityVerified=true, spawnedEntities=4}}\r\n",
+          "stdoutTail": "ECHO Standalone Engine 2.0.0-beta.2\r\npackRoot=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\r\nmanifest=C:\\Development\\Github\\ECHO-Release-Index\\tmp\\standalone-engine-runtime-comparison\\engine-install\\pack.json\r\n[module:echoadaptercore] AdapterCore canonical bridge active; graphNodes=133 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[module:echoashfallprotocol] Ashfall activated from canonical Content Graph; nodes=133 edges=109 modules=18 fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330\r\n[game] Crash Protocol active. Inspect the Field Terminal\r\n[game] World generated from canonical module graph\r\n[game] World loaded with matching content identity\r\nHEADLESS SMOKE PASS {schema=echo.engine.headless_smoke.v2, status=PASS, engineVersion=2.0.0-beta.2, packId=ashfall-standalone-engine-edition, installedModules=18, contentGraph={nodes=133, mappedNodeCounts={echo_native=78, neoforge=78, echo_runtime_standalone=78}, canonical=true, crossRuntimeParity=true, fingerprint=c37b52c8a3bf35c1236a2326c3892bdc61f04a0efb0bda1f7874a428545a7330, edges=109, modules=18}, adapterCore={acceptedByDomain={blocks=14, recipes=4, gameplay=1, items=24, entities=3, services=1, worldgen=1}, ready=true, accepted=48, canonicalRuntimeBridge=true, rejected=0, revoked=0}, runtimeContent={items=24, gameExtensions=1, entityDefinitions=3, blocks=16, recipes=4}, world={chunks=25, saveReload=true, contentIdentityVerified=true, spawnedEntities=4}}\r\n",
           "stderrTail": ""
         }
       ],
@@ -287,20 +310,20 @@
         "passes": 3,
         "failures": 0,
         "durationMs": {
-          "min": 1432,
-          "max": 2689,
-          "mean": 1908,
-          "median": 1604,
+          "min": 1369,
+          "max": 2050,
+          "mean": 1643,
+          "median": 1511,
           "samples": 3
         },
         "peakWorkingSetBytes": {
-          "min": 231981056,
-          "max": 249573376,
-          "mean": 238107307,
-          "median": 232767488,
+          "min": 198758400,
+          "max": 240295936,
+          "mean": 214854315,
+          "median": 205508608,
           "samples": 3
         },
-        "memorySamples": 8
+        "memorySamples": 6
       }
     },
     "legacyStandaloneRuntime": {
@@ -309,7 +332,30 @@
       "root": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
       "modulesRoot": "C:\\Development\\Github\\ECHO-Modules",
       "blocked": true,
-      "blocker": "Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo.",
+      "blocker": "Legacy Standalone Runtime smoke tasks were not run because 3 active Runtime Gradle/client process(es) were detected in C:\\Development\\Github\\ECHO-Standalone-Runtime; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional.",
+      "activeProcesses": [
+        {
+          "processId": 19852,
+          "parentProcessId": 604,
+          "name": "cmd.exe",
+          "creationDate": "/Date(1781985424169)/",
+          "commandLine": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Development\\Github\\ECHO-Standalone-Runtime\\gradlew.bat\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true\""
+        },
+        {
+          "processId": 13584,
+          "parentProcessId": 19852,
+          "name": "java.exe",
+          "creationDate": "/Date(1781985424210)/",
+          "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\/bin/java.exe\"  \"-Xmx64m\" \"-Xms64m\"   \"-Dorg.gradle.appname=gradlew\" -classpath \"\" -jar \"C:\\Development\\Github\\ECHO-Standalone-Runtime\\\\gradle\\wrapper\\gradle-wrapper.jar\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true"
+        },
+        {
+          "processId": 5220,
+          "parentProcessId": 21992,
+          "name": "java.exe",
+          "creationDate": "/Date(1781987142659)/",
+          "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\bin\\java.exe\" -Decho.modules.root=C:\\Development\\Github\\ECHO-Modules\\addons --enable-native-access=ALL-UNNAMED -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\classes\\java\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\resources\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-app\\build\\libs\\echo-runtime-app-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-client\\build\\libs\\echo-runtime-client-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-player\\build\\libs\\echo-runtime-player-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-render\\build\\libs\\echo-runtime-render-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-input\\build\\libs\\echo-runtime-input-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-ui\\build\\libs\\echo-runtime-ui-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-audio\\build\\libs\\echo-runtime-audio-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-scripting\\build\\libs\\echo-runtime-scripting-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-compat\\build\\libs\\echo-runtime-compat-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-gameplay\\build\\libs\\echo-runtime-gameplay-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-network\\build\\libs\\echo-runtime-network-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-item\\build\\libs\\echo-runtime-item-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-entity\\build\\libs\\echo-runtime-entity-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-world\\build\\libs\\echo-runtime-world-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-data\\build\\libs\\echo-runtime-data-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-assets\\build\\libs\\echo-runtime-assets-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-packos\\build\\libs\\echo-runtime-packos-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-save\\build\\libs\\echo-runtime-save-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-nbt\\build\\libs\\echo-runtime-nbt-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-core\\build\\libs\\echo-runtime-core-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-modules\\build\\libs\\echo-runtime-modules-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-devtools\\build\\libs\\echo-runtime-devtools-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-contracts\\build\\libs\\echo-runtime-contracts-0.1.2-beta.20260620.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\7119f7d0eeb1e5502ff0ca71d2b4d47317da015\\lwjgl-glfw-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\99ef08056feb9627f90425a4d2a22cd9fae8e39b\\lwjgl-glfw-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\ac2532612a4df374e9a9282bcf8ce2573018ebbb\\lwjgl-opengl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\18dc639ebc94aa5202c2157f7490d28997b697c5\\lwjgl-opengl-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\e2d3739dcfe7b672b626ded66d94f6587083306e\\lwjgl-stb-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\334cf885b39e2db9070c39e70e65efb136435f10\\lwjgl-stb-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\ce7721d30cfaf47feaed10213e0c43eb55c49d68\\lwjgl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\9a29b6a22fc5184604b8cb434ee5d5ecc4bfcbee\\lwjgl-3.3.6-natives-windows.jar dev.echo.standalone.runtime.testkit.EchoRuntimeLauncherSmokeHarness"
+        }
+      ],
       "git": {
         "root": "C:\\Development\\Github\\ECHO-Standalone-Runtime",
         "head": "15f6afd166dd57f51fca8ca0f5d1d537a5ebbe82",
@@ -326,7 +372,30 @@
           "status": "BLOCKED",
           "reportPath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\reports\\echo\\standalone\\content-graph-load.json",
           "report": null,
-          "blocker": "Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo."
+          "blocker": "Legacy Standalone Runtime smoke tasks were not run because 3 active Runtime Gradle/client process(es) were detected in C:\\Development\\Github\\ECHO-Standalone-Runtime; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional.",
+          "activeProcesses": [
+            {
+              "processId": 19852,
+              "parentProcessId": 604,
+              "name": "cmd.exe",
+              "creationDate": "/Date(1781985424169)/",
+              "commandLine": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Development\\Github\\ECHO-Standalone-Runtime\\gradlew.bat\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true\""
+            },
+            {
+              "processId": 13584,
+              "parentProcessId": 19852,
+              "name": "java.exe",
+              "creationDate": "/Date(1781985424210)/",
+              "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\/bin/java.exe\"  \"-Xmx64m\" \"-Xms64m\"   \"-Dorg.gradle.appname=gradlew\" -classpath \"\" -jar \"C:\\Development\\Github\\ECHO-Standalone-Runtime\\\\gradle\\wrapper\\gradle-wrapper.jar\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true"
+            },
+            {
+              "processId": 5220,
+              "parentProcessId": 21992,
+              "name": "java.exe",
+              "creationDate": "/Date(1781987142659)/",
+              "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\bin\\java.exe\" -Decho.modules.root=C:\\Development\\Github\\ECHO-Modules\\addons --enable-native-access=ALL-UNNAMED -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\classes\\java\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\resources\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-app\\build\\libs\\echo-runtime-app-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-client\\build\\libs\\echo-runtime-client-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-player\\build\\libs\\echo-runtime-player-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-render\\build\\libs\\echo-runtime-render-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-input\\build\\libs\\echo-runtime-input-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-ui\\build\\libs\\echo-runtime-ui-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-audio\\build\\libs\\echo-runtime-audio-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-scripting\\build\\libs\\echo-runtime-scripting-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-compat\\build\\libs\\echo-runtime-compat-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-gameplay\\build\\libs\\echo-runtime-gameplay-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-network\\build\\libs\\echo-runtime-network-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-item\\build\\libs\\echo-runtime-item-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-entity\\build\\libs\\echo-runtime-entity-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-world\\build\\libs\\echo-runtime-world-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-data\\build\\libs\\echo-runtime-data-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-assets\\build\\libs\\echo-runtime-assets-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-packos\\build\\libs\\echo-runtime-packos-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-save\\build\\libs\\echo-runtime-save-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-nbt\\build\\libs\\echo-runtime-nbt-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-core\\build\\libs\\echo-runtime-core-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-modules\\build\\libs\\echo-runtime-modules-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-devtools\\build\\libs\\echo-runtime-devtools-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-contracts\\build\\libs\\echo-runtime-contracts-0.1.2-beta.20260620.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\7119f7d0eeb1e5502ff0ca71d2b4d47317da015\\lwjgl-glfw-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\99ef08056feb9627f90425a4d2a22cd9fae8e39b\\lwjgl-glfw-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\ac2532612a4df374e9a9282bcf8ce2573018ebbb\\lwjgl-opengl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\18dc639ebc94aa5202c2157f7490d28997b697c5\\lwjgl-opengl-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\e2d3739dcfe7b672b626ded66d94f6587083306e\\lwjgl-stb-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\334cf885b39e2db9070c39e70e65efb136435f10\\lwjgl-stb-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\ce7721d30cfaf47feaed10213e0c43eb55c49d68\\lwjgl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\9a29b6a22fc5184604b8cb434ee5d5ecc4bfcbee\\lwjgl-3.3.6-natives-windows.jar dev.echo.standalone.runtime.testkit.EchoRuntimeLauncherSmokeHarness"
+            }
+          ]
         },
         {
           "task": "runStandalonePlayableVoxelSaveSmoke",
@@ -334,7 +403,30 @@
           "status": "BLOCKED",
           "reportPath": "C:\\Development\\Github\\ECHO-Standalone-Runtime\\reports\\echo\\standalone\\playable-voxel-save.json",
           "report": null,
-          "blocker": "Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo."
+          "blocker": "Legacy Standalone Runtime smoke tasks were not run because 3 active Runtime Gradle/client process(es) were detected in C:\\Development\\Github\\ECHO-Standalone-Runtime; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional.",
+          "activeProcesses": [
+            {
+              "processId": 19852,
+              "parentProcessId": 604,
+              "name": "cmd.exe",
+              "creationDate": "/Date(1781985424169)/",
+              "commandLine": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Development\\Github\\ECHO-Standalone-Runtime\\gradlew.bat\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true\""
+            },
+            {
+              "processId": 13584,
+              "parentProcessId": 19852,
+              "name": "java.exe",
+              "creationDate": "/Date(1781985424210)/",
+              "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\/bin/java.exe\"  \"-Xmx64m\" \"-Xms64m\"   \"-Dorg.gradle.appname=gradlew\" -classpath \"\" -jar \"C:\\Development\\Github\\ECHO-Standalone-Runtime\\\\gradle\\wrapper\\gradle-wrapper.jar\" --no-daemon build -PechoStandaloneAllowWindowLaunch=true"
+            },
+            {
+              "processId": 5220,
+              "parentProcessId": 21992,
+              "name": "java.exe",
+              "creationDate": "/Date(1781987142659)/",
+              "commandLine": "\"C:\\Program Files\\Zulu\\zulu-25\\bin\\java.exe\" -Decho.modules.root=C:\\Development\\Github\\ECHO-Modules\\addons --enable-native-access=ALL-UNNAMED -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\classes\\java\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-testkit\\build\\resources\\main;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-app\\build\\libs\\echo-runtime-app-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-client\\build\\libs\\echo-runtime-client-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-player\\build\\libs\\echo-runtime-player-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-render\\build\\libs\\echo-runtime-render-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-input\\build\\libs\\echo-runtime-input-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-ui\\build\\libs\\echo-runtime-ui-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-audio\\build\\libs\\echo-runtime-audio-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-scripting\\build\\libs\\echo-runtime-scripting-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-compat\\build\\libs\\echo-runtime-compat-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-gameplay\\build\\libs\\echo-runtime-gameplay-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-network\\build\\libs\\echo-runtime-network-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-item\\build\\libs\\echo-runtime-item-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-entity\\build\\libs\\echo-runtime-entity-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-world\\build\\libs\\echo-runtime-world-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-data\\build\\libs\\echo-runtime-data-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-assets\\build\\libs\\echo-runtime-assets-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-packos\\build\\libs\\echo-runtime-packos-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-save\\build\\libs\\echo-runtime-save-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-nbt\\build\\libs\\echo-runtime-nbt-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-core\\build\\libs\\echo-runtime-core-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-modules\\build\\libs\\echo-runtime-modules-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-devtools\\build\\libs\\echo-runtime-devtools-0.1.2-beta.20260620.jar;C:\\Development\\Github\\ECHO-Standalone-Runtime\\echo-runtime-contracts\\build\\libs\\echo-runtime-contracts-0.1.2-beta.20260620.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\7119f7d0eeb1e5502ff0ca71d2b4d47317da015\\lwjgl-glfw-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-glfw\\3.3.6\\99ef08056feb9627f90425a4d2a22cd9fae8e39b\\lwjgl-glfw-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\ac2532612a4df374e9a9282bcf8ce2573018ebbb\\lwjgl-opengl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-opengl\\3.3.6\\18dc639ebc94aa5202c2157f7490d28997b697c5\\lwjgl-opengl-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\e2d3739dcfe7b672b626ded66d94f6587083306e\\lwjgl-stb-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl-stb\\3.3.6\\334cf885b39e2db9070c39e70e65efb136435f10\\lwjgl-stb-3.3.6-natives-windows.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\ce7721d30cfaf47feaed10213e0c43eb55c49d68\\lwjgl-3.3.6.jar;C:\\Users\\knox\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl\\lwjgl\\3.3.6\\9a29b6a22fc5184604b8cb434ee5d5ecc4bfcbee\\lwjgl-3.3.6-natives-windows.jar dev.echo.standalone.runtime.testkit.EchoRuntimeLauncherSmokeHarness"
+            }
+          ]
         }
       ],
       "metrics": {
@@ -352,10 +444,10 @@
     "replacementDecision": "BLOCKED",
     "startupTime": {
       "engineHeadlessSmokeProcessMs": {
-        "min": 1432,
-        "max": 2689,
-        "mean": 1908,
-        "median": 1604,
+        "min": 1369,
+        "max": 2050,
+        "mean": 1643,
+        "median": 1511,
         "samples": 3
       },
       "legacyRuntimeGradleTaskMs": null,
@@ -363,10 +455,10 @@
     },
     "memoryUse": {
       "enginePeakWorkingSetBytes": {
-        "min": 231981056,
-        "max": 249573376,
-        "mean": 238107307,
-        "median": 232767488,
+        "min": 198758400,
+        "max": 240295936,
+        "mean": 214854315,
+        "median": 205508608,
         "samples": 3
       },
       "legacyRuntimeGradlePeakWorkingSetBytes": null,
@@ -405,7 +497,7 @@
       "Engine smoke is a public packaged headless run; legacy Runtime timings are Gradle task smoke timings and include Gradle/testkit startup overhead.",
       "Replacement requires broader gameplay evidence, repeated performance runs, and user-facing first-launch/open-play proof.",
       "Legacy Standalone Runtime worktree was dirty during this comparison; results are evidence for the current local state, not a pristine release commit.",
-      "Legacy Standalone Runtime lane was blocked: Legacy Standalone Runtime smoke tasks were not run because an existing gradlew build was active in C:\\Development\\Github\\ECHO-Standalone-Runtime; avoiding concurrent Gradle work in the same repo."
+      "Legacy Standalone Runtime lane was blocked: Legacy Standalone Runtime smoke tasks were not run because 3 active Runtime Gradle/client process(es) were detected in C:\\Development\\Github\\ECHO-Standalone-Runtime; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional."
     ]
   },
   "gates": {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import crypto from 'node:crypto'
-import { spawn } from 'node:child_process'
+import { spawn, spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import fs from 'node:fs/promises'
 import os from 'node:os'
@@ -42,6 +42,7 @@ function parseArgs(argv) {
     skipEngine: false,
     skipRuntime: false,
     runtimeBlocker: null,
+    allowActiveRuntimeBuild: false,
     runtimeTasks: [],
   }
 
@@ -65,6 +66,7 @@ function parseArgs(argv) {
     else if (arg === '--clean') args.clean = true
     else if (arg === '--skip-engine') args.skipEngine = true
     else if (arg === '--skip-runtime') args.skipRuntime = true
+    else if (arg === '--allow-active-runtime-build') args.allowActiveRuntimeBuild = true
     else throw new Error(`Unknown argument: ${arg}`)
   }
 
@@ -343,7 +345,7 @@ async function runMeasured({ command, args, cwd, timeoutMs, logPath, collectMemo
   const sampler = collectMemory ? setInterval(() => { void sample() }, 500) : null
   const timeout = setTimeout(() => {
     timedOut = true
-    child.kill('SIGTERM')
+    killProcessTree(child.pid)
   }, timeoutMs)
 
   child.stdout.on('data', (chunk) => {
@@ -426,7 +428,7 @@ async function runTiny(command, args, timeoutMs = 10_000) {
   let timedOut = false
   const timeout = setTimeout(() => {
     timedOut = true
-    child.kill('SIGTERM')
+    killProcessTree(child.pid)
   }, timeoutMs)
   child.stdout.on('data', (chunk) => { stdout += chunk.toString('utf8') })
   child.stderr.on('data', (chunk) => { stderr += chunk.toString('utf8') })
@@ -438,6 +440,60 @@ async function runTiny(command, args, timeoutMs = 10_000) {
   if (timedOut) throw new Error(`${command} timed out after ${timeoutMs}ms`)
   if (exitCode !== 0 && stderr.trim()) throw new Error(stderr.trim())
   return stdout
+}
+
+function killProcessTree(pid) {
+  if (!pid) return
+  if (process.platform === 'win32') {
+    spawnSync('taskkill.exe', ['/PID', String(pid), '/T', '/F'], {
+      windowsHide: true,
+      stdio: 'ignore',
+    })
+    return
+  }
+  try {
+    process.kill(pid, 'SIGTERM')
+  } catch {
+    // Best effort only. The measured command will still report a timeout.
+  }
+}
+
+async function activeRuntimeProcesses(runtimeRoot) {
+  if (process.platform !== 'win32') return []
+  const escapedRoot = runtimeRoot.replace(/'/gu, "''")
+  const script = `
+$root = '${escapedRoot}'
+$matches = Get-CimInstance Win32_Process |
+  Where-Object {
+    $_.CommandLine -and
+    $_.ProcessId -ne $PID -and
+    $_.CommandLine.Contains($root) -and
+    ($_.CommandLine -match 'gradlew|Gradle|runStandalone|EchoClient|EchoRuntime')
+  } |
+  Select-Object ProcessId, ParentProcessId, Name, CreationDate, CommandLine
+if ($matches) { $matches | ConvertTo-Json -Compress }
+`
+  try {
+    const text = await runTiny('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', script], 10_000)
+    const trimmed = text.trim()
+    if (!trimmed) return []
+    const parsed = JSON.parse(trimmed)
+    return (Array.isArray(parsed) ? parsed : [parsed]).map((item) => ({
+      processId: item.ProcessId,
+      parentProcessId: item.ParentProcessId,
+      name: item.Name,
+      creationDate: item.CreationDate,
+      commandLine: item.CommandLine,
+    }))
+  } catch (error) {
+    return [{
+      processId: null,
+      parentProcessId: null,
+      name: 'active-runtime-process-detection-error',
+      creationDate: new Date().toISOString(),
+      commandLine: String(error.message ?? error),
+    }]
+  }
 }
 
 function tail(text, max = 4000) {
@@ -645,7 +701,7 @@ async function runRuntimeLane(args) {
   }
 }
 
-async function blockedRuntimeLane(args, reason) {
+async function blockedRuntimeLane(args, reason, activeProcesses = []) {
   const git = await readGitState(args.runtimeRoot)
   return {
     id: 'echo-standalone-runtime',
@@ -654,6 +710,7 @@ async function blockedRuntimeLane(args, reason) {
     modulesRoot: args.modulesRoot,
     blocked: true,
     blocker: reason,
+    activeProcesses,
     git,
     tasks: args.runtimeTasks.map((taskSpec) => ({
       task: taskSpec.task,
@@ -662,6 +719,7 @@ async function blockedRuntimeLane(args, reason) {
       reportPath: taskSpec.report ? path.join(args.runtimeRoot, ...normalizedPath(taskSpec.report).split('/')) : null,
       report: null,
       blocker: reason,
+      activeProcesses,
     })),
     metrics: {
       attempts: 0,
@@ -849,11 +907,19 @@ async function main() {
 
   const releaseIndexGit = await readGitState(args.root)
   const engine = args.skipEngine ? null : await runEngineLane(args, { product, modpack })
+  const activeRuntimeBuilds = !args.skipRuntime && !args.runtimeBlocker && !args.allowActiveRuntimeBuild
+    ? await activeRuntimeProcesses(args.runtimeRoot)
+    : []
+  const autoRuntimeBlocker = activeRuntimeBuilds.length > 0
+    ? `Legacy Standalone Runtime smoke tasks were not run because ${activeRuntimeBuilds.length} active Runtime Gradle/client process(es) were detected in ${args.runtimeRoot}; rerun with --allow-active-runtime-build only when concurrent Gradle work is intentional.`
+    : null
   const runtime = args.skipRuntime
     ? null
     : args.runtimeBlocker
       ? await blockedRuntimeLane(args, args.runtimeBlocker)
-      : await runRuntimeLane(args)
+      : autoRuntimeBlocker
+        ? await blockedRuntimeLane(args, autoRuntimeBlocker, activeRuntimeBuilds)
+        : await runRuntimeLane(args)
   const comparison = buildComparison(engine, runtime)
   const report = {
     schemaVersion: 'echo.standalone_engine.runtime_comparison.v1',
@@ -877,6 +943,8 @@ async function main() {
       modulesRoot: args.modulesRoot,
       engineRuns: args.engineRuns,
       timeoutMs: args.timeoutMs,
+      allowActiveRuntimeBuild: args.allowActiveRuntimeBuild,
+      activeRuntimeBuilds,
       runtimeTasks: args.runtimeTasks.map(({ task, report, evidenceKind }) => ({ task, report, evidenceKind })),
     },
     lanes: {
