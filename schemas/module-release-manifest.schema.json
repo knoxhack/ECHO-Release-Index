@@ -4,7 +4,7 @@
   "title": "ECHO Module Release Manifest",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "provenance", "contentGraphEvidence", "modules"],
+  "required": ["schemaVersion", "releaseId", "generatedAt", "sourceRepo", "provenance", "contentGraphEvidence", "runtimeConformanceEvidence", "modules"],
   "properties": {
     "schemaVersion": { "const": "echo.module.release.v1" },
     "releaseId": { "type": "string", "minLength": 1 },
@@ -48,6 +48,37 @@
         "runtimeTarget": { "const": "content-graph" },
         "buildMode": { "const": "generated" },
         "schemaVersion": { "const": "echo.content_graph.evidence.v1" }
+      }
+    },
+    "runtimeConformanceEvidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["kind", "filename", "sha256", "size", "runtimeTarget", "hostId", "buildMode", "schemaVersion", "summary"],
+        "properties": {
+          "kind": { "const": "runtime-conformance" },
+          "filename": { "pattern": "^[a-z0-9_-]+-runtime-conformance\\.json$" },
+          "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "size": { "type": "integer", "minimum": 0 },
+          "downloadUrl": { "type": "string" },
+          "runtimeTarget": { "enum": ["echo_native", "neoforge", "echo_runtime_standalone", "standalone_engine"] },
+          "hostId": { "enum": ["echo_native", "neoforge", "echo_runtime_standalone", "standalone_engine"] },
+          "buildMode": { "const": "generated" },
+          "schemaVersion": { "const": "echo.runtime.conformance.v1" },
+          "summary": {
+            "type": "object",
+            "required": ["status", "supported", "adapted", "fallback", "blocked"],
+            "properties": {
+              "status": { "enum": ["pass", "warning", "fail"] },
+              "supported": { "type": "integer", "minimum": 0 },
+              "adapted": { "type": "integer", "minimum": 0 },
+              "fallback": { "type": "integer", "minimum": 0 },
+              "blocked": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
       }
     },
     "modules": {

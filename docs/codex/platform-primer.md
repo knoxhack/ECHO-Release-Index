@@ -23,6 +23,10 @@ The Release Index does not own binaries. It points clients at approved source-re
 
 Public alpha entries may remain `source-linked` while GitHub release assets are exact and approved but not yet attested. Strict validation reserves higher trust tiers for entries that include the required provenance and attestation metadata.
 
+## Unified Player Runtime
+
+The four-host player runtime goal is documented in [unified-echo-native-player-runtime-goal.md](unified-echo-native-player-runtime-goal.md). It defines the canonical host IDs, conformance policy, and cross-repo ownership rules that unblock `playerReady` promotion.
+
 ## Codex Operating Rule
 
 Use this context system to avoid broad rediscovery. Still inspect task-relevant files directly before editing, testing, reviewing, or publishing changes.

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/knoxhack/ECHO-SDK/main/schemas/echo-runtime-conformance.schema.json",
+  "title": "ECHO Runtime Conformance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "hostId", "generatedAt", "moduleGraphFingerprint", "surfaceResults", "actionResults", "summary"],
+  "properties": {
+    "schemaVersion": { "const": "echo.runtime.conformance.v1" },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9_-]*:[a-zA-Z0-9_/.-]+$"
+    },
+    "hostId": { "enum": ["echo_native", "neoforge", "echo_runtime_standalone", "standalone_engine"] },
+    "generatedAt": { "type": "string", "minLength": 1 },
+    "moduleGraphFingerprint": { "type": "string", "minLength": 1 },
+    "surfaceResults": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "ownerModule", "status", "hostEvidence"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "ownerModule": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["supported", "adapted", "fallback", "blocked"] },
+          "hostEvidence": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "actionResults": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "ownerModule", "status", "receiptEvidence"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "ownerModule": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["supported", "adapted", "fallback", "blocked"] },
+          "receiptEvidence": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "supported", "adapted", "fallback", "blocked"],
+      "properties": {
+        "status": { "enum": ["pass", "warning", "fail"] },
+        "supported": { "type": "integer", "minimum": 0 },
+        "adapted": { "type": "integer", "minimum": 0 },
+        "fallback": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

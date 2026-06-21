@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-21T02:48:36-04:00",
+  "generatedAt": "2026-06-21T04:24:44-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,45 +16,52 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "1cf34311af50",
-        "commitDate": "2026-06-21T02:01:36-04:00",
+        "commit": "3aad68095e45",
+        "commitDate": "2026-06-21T02:55:34-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M channels/alpha/launcher-channel.json",
-          " M channels/alpha/release-manifest.json",
-          " M channels/alpha/repositories.json",
           " M channels/beta/launcher-channel.json",
-          " M channels/beta/release-manifest.json",
-          " M channels/beta/repositories.json",
-          " M modpacks/ashfall-neoforge.json",
-          " M modules/echoashfallprotocol.json",
-          " M modules/echoscreencore.json",
-          " M modules/echoterminal.json",
-          " M packs/ashfall-neoforge-edition.json",
-          " M release-readiness/ashfall-standalone-engine-local-e2e.json"
+          " M docs/ecosystem-artifact-ownership.md",
+          " M modpacks/ashfall-standalone-engine.json",
+          " M packs/ashfall-standalone-engine-edition.json",
+          " M release-readiness/ashfall-standalone-engine-local-e2e.json",
+          " M schemas/module-release-manifest.schema.json",
+          " M schemas/release-index-entry.schema.json",
+          " M scripts/docs-audit.mjs",
+          " M scripts/import-module-release.mjs",
+          " M scripts/test-validate-index.mjs",
+          " M scripts/validate-index.mjs",
+          "?? schemas/echo-runtime-conformance.schema.json"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 31070,
+          "bytes": 33313,
           "heading": "ECHO Release Index",
           "excerpt": "Public catalog, channel, and release index metadata used by the launcher, website, and ecosystem tooling."
         },
         {
           "path": "docs/ecosystem-artifact-ownership.md",
           "exists": true,
-          "bytes": 5365,
+          "bytes": 5491,
           "heading": "ECHO Artifact Ownership",
           "excerpt": "The Release Index owns catalog records, trust policy, and channel routing. It does not own binary release assets. Each source repository publishes its own artifacts, then the Release Index records the approved artifact URLs, SHA-256 hashes, trust tier, validation state, depend..."
         },
         {
           "path": "docs/codex/platform-primer.md",
           "exists": true,
-          "bytes": 1944,
+          "bytes": 2209,
           "heading": "ECHO Platform Primer",
           "excerpt": "ECHO is a multi-repository platform for first-party experiences, modules, runtimes, launcher distribution, creator tooling, and public release metadata."
+        },
+        {
+          "path": "docs/codex/unified-echo-native-player-runtime-goal.md",
+          "exists": true,
+          "bytes": 13374,
+          "heading": "Unified ECHO Native Player Runtime Goal",
+          "excerpt": "This is the durable Codex goal for the cross-repo ECHO Native player runtime cutover."
         },
         {
           "path": "docs/codex/repo-routing.md",
@@ -119,22 +126,43 @@
           " M .github/workflows/docs-audit.yml",
           " M README.md",
           " M addons/echoindex/src/main/resources/assets/echoindex/eui/eui_manifest.json",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/AbstractEchoComponent.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/EchoComponent.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/engine/EchoScreenEngine.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreScreen.java",
           " M addons/echoterminal/src/main/resources/assets/echoterminal/eui/eui_manifest.json",
+          " M build.gradle",
           " M docs/content-graph.md",
+          " M docs/module-artifact-contract.md",
+          " M schemas/module-release-manifest.schema.json",
           " M scripts/generate-content-graph.mjs",
+          " M scripts/generate-module-release.mjs",
           " M scripts/generate-module-release.test.mjs",
           " M scripts/generate-runtime-export-plan.mjs",
           " M scripts/test-generate-content-graph.mjs",
           " M scripts/validate-content-graph.mjs",
           " M scripts/verify-module-release.mjs",
-          "?? docs/UNIFIED_ECHO_NATIVE_PLAYER_RUNTIME.md"
+          "?? addons/echoadaptercore/src/main/resources/data/",
+          "?? addons/echohudcore/src/main/resources/data/",
+          "?? addons/echoindex/src/main/resources/data/echoindex/echo_native/",
+          "?? addons/echoinputcore/src/main/resources/data/",
+          "?? addons/echomissioncore/src/main/resources/data/",
+          "?? addons/echoplaytestcore/src/main/resources/data/echoplaytestcore/echo_native/",
+          "?? addons/echoscreencore/src/main/resources/data/",
+          "?? addons/echosessioncore/src/main/resources/data/echosessioncore/echo_native/",
+          "?? addons/echoterminal/src/main/resources/data/echoterminal/echo_native/",
+          "?? addons/echothemecore/src/main/resources/data/echothemecore/echo_native/",
+          "?? docs/UNIFIED_ECHO_NATIVE_PLAYER_RUNTIME.md",
+          "?? reports/runtime-parity/neoforge-runtime-conformance.json",
+          "?? scripts/generate-neoforge-runtime-conformance.mjs",
+          "?? scripts/test-generate-neoforge-runtime-conformance.mjs"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5671,
+          "bytes": 5964,
           "heading": "ECHO Modules",
           "excerpt": "Canonical source for all shared ECHO module code, module descriptors, generated per-module docs, and module release artifact contracts."
         },
@@ -162,7 +190,7 @@
         {
           "path": "docs/module-artifact-contract.md",
           "exists": true,
-          "bytes": 7130,
+          "bytes": 7625,
           "heading": "ECHO Module Release Contract",
           "excerpt": "`knoxhack/ECHO-Modules` is the canonical source for module artifacts consumed by Ashfall editions."
         },
@@ -183,7 +211,7 @@
         {
           "path": "docs/content-graph.md",
           "exists": true,
-          "bytes": 5759,
+          "bytes": 6591,
           "heading": ".ECHO Content Graph",
           "excerpt": "ECHO-Modules generates a runtime-neutral `.ECHO Content Graph` for every first-party module."
         }
@@ -220,6 +248,7 @@
           " M schemas/content-graph-edge.schema.json",
           " M schemas/content-graph-export-plan.schema.json",
           " M schemas/content-graph-node.schema.json",
+          " M schemas/module-release-manifest.schema.json",
           " M templates/echo-addon-ui-surface/files/addons/{{module_id}}/src/main/resources/data/{{module_id}}/ui/{{module_id}}_surface.json.tpl",
           " M tools/test_echo_contract_schemas.py",
           " M tools/validate_echo_contracts.py",
@@ -230,16 +259,20 @@
           "?? schemas/echo-input-binding.schema.json",
           "?? schemas/echo-inventory-surface.schema.json",
           "?? schemas/echo-native-host.schema.json",
+          "?? schemas/echo-player-surface-manifest.schema.json",
+          "?? schemas/echo-playtest-scenario.schema.json",
           "?? schemas/echo-runtime-conformance.schema.json",
           "?? schemas/echo-save-session.schema.json",
-          "?? schemas/echo-ui-surface.schema.json"
+          "?? schemas/echo-theme-tokens.schema.json",
+          "?? schemas/echo-ui-surface.schema.json",
+          "?? templates/echo-addon-player-surface/"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5816,
+          "bytes": 5955,
           "heading": "ECHO SDK",
           "excerpt": "Source of truth for ECHO schemas, contracts, templates, API docs, and developer/creator onboarding."
         },
@@ -260,7 +293,7 @@
         {
           "path": "docs/schemas/index.md",
           "exists": true,
-          "bytes": 2411,
+          "bytes": 2635,
           "heading": "Schemas",
           "excerpt": "Schemas define the machine-readable contracts used by launchers, modules, packs, and tools."
         },
@@ -306,11 +339,18 @@
         "dirty": true,
         "dirtyFiles": [
           " M electron/main.cjs",
+          " M electron/release-index-resolver.d.mts",
+          " M electron/release-index-resolver.mjs",
           " M scripts/ashfall-standalone-engine-local-e2e.mjs",
-          " M scripts/lib/pack-export.mjs",
           " M src/app/EchoLauncher.tsx",
           " M src/components/shell/navigation.ts",
-          " M src/types/launcher.ts"
+          " M src/data/officialModpacks.test.ts",
+          " M src/data/officialModpacks.ts",
+          " M src/types/launcher.ts",
+          " M src/types/native.ts",
+          " M src/types/releases.ts",
+          " M src/utils/releaseValidation.test.ts",
+          " M src/utils/releaseValidation.ts"
         ]
       },
       "canonicalDocs": [
@@ -350,23 +390,21 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "eab2172c8d55",
-        "commitDate": "2026-06-20T00:20:32-04:00",
+        "commit": "c54c495a5f09",
+        "commitDate": "2026-06-21T04:24:38-04:00",
         "dirty": true,
         "dirtyFiles": [
+          " M .github/workflows/attest-release-assets.yml",
+          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
           " M README.md",
-          " M build.gradle",
-          " M docs/echo/native/README.md",
-          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeModuleClassLoader.java",
-          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeSharedApiClassLoaderGateMain.java",
-          "?? docs/echo/native/UNIFIED_PLAYER_RUNTIME.md"
+          " M build.gradle"
         ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 8876,
+          "bytes": 8931,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
@@ -392,18 +430,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "7083425c003b",
-        "commitDate": "2026-06-20T20:35:38-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M build.gradle",
-          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreStandaloneContentBridge.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelBlock.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelCollisionBox.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelLightRuntime.java",
-          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelWorld.java",
-          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoAshfallBlockBehaviorWiredSmokeHarness.java"
-        ]
+        "commit": "e3c94e0a38c0",
+        "commitDate": "2026-06-21T04:24:44-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -435,97 +465,31 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "be28f92375b1",
-        "commitDate": "2026-06-20T20:08:40-04:00",
+        "commit": "ca323c588953",
+        "commitDate": "2026-06-21T03:05:00-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M CHANGELOG.md",
-          " M README.md",
-          " M SOURCE_FILE_INDEX.txt",
-          " M build/classes/dev/echo/engine/game/EngineMain.class",
-          " D build/classes/dev/echo/engine/game/GameClient$1.class",
-          " M build/classes/dev/echo/engine/game/GameClient.class",
-          " M build/classes/dev/echo/engine/game/GameSession.class",
-          " D build/classes/dev/echo/engine/game/GameState.class",
-          " M build/classes/dev/echo/engine/game/HeadlessSmoke.class",
-          " M build/classes/dev/echo/engine/game/HudRenderer.class",
-          " M build/classes/dev/echo/engine/game/InputState.class",
-          " M build/classes/dev/echo/engine/game/LaunchOptions.class",
-          " M build/main-sources.txt",
+          " M build/classes/dev/echo/engine/game/VerifyCommand.class",
           " M build/smoke-saves-a/headless-smoke/headless-smoke-report.json",
           " M build/smoke-saves-a/headless-smoke/smoke-world/world.json",
           " M build/smoke-saves-b/headless-smoke/headless-smoke-report.json",
           " M build/smoke-saves-b/headless-smoke/smoke-world/world.json",
           " M build/test-classes/dev/echo/engine/test/AllTests.class",
           " M build/test-sources.txt",
-          " M dist/README.txt",
-          " D dist/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
-          " D dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          " M dist/ashfall-standalone-engine-edition-2.0.0-beta.5.zip",
+          " M dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.5.pack.json",
           " M dist/checksums.sha256",
-          " M dist/content-graph-evidence.json",
-          " D dist/echo-engine-api-2.0.0-beta.2.jar",
-          " D dist/echo-standalone-engine-2.0.0-beta.2.jar",
-          " M dist/mods/echoadaptercore-1.0.0-standalone.jar",
-          " M dist/mods/echoashfallprotocol-1.0.0-standalone.jar",
-          " M dist/mods/echocommonloot-1.0.0-standalone.jar",
-          " M dist/mods/echocontentcore-1.0.0-standalone.jar",
-          " M dist/mods/echocore-1.0.0-standalone.jar",
-          " M dist/mods/echocreatureroles-1.0.0-standalone.jar",
-          " M dist/mods/echofoundationcore-1.0.0-standalone.jar",
-          " M dist/mods/echohealthcore-1.0.0-standalone.jar",
-          " M dist/mods/echohudcore-1.0.0-standalone.jar",
-          " M dist/mods/echomaterialcore-1.0.0-standalone.jar",
-          " M dist/mods/echoplatformcore-1.0.0-standalone.jar",
-          " M dist/mods/echoschemacore-1.0.0-standalone.jar",
-          " M dist/mods/echoscreencore-1.0.0-standalone.jar",
-          " M dist/mods/echostationcore-1.0.0-standalone.jar",
-          " M dist/mods/echoterminal-1.0.0-standalone.jar",
-          " M dist/mods/echotoolcore-1.0.0-standalone.jar",
-          " M dist/mods/echovalidationcore-1.0.0-standalone.jar",
-          " M dist/mods/echoweathercore-1.0.0-standalone.jar",
-          " M dist/mods/echoworldstarter-1.0.0-standalone.jar",
-          " M dist/pack.json",
-          " M docs/ARCHITECTURE.md",
-          " M docs/MODULE_AUTHORING.md",
-          " M docs/RELEASE_CHECKLIST.md",
+          " M dist/echo-standalone-engine-2.0.0-beta.5.jar",
+          " M dist/repair-manifest.json",
+          " M dist/verify-report.json",
           " M reports/BUILD_VERIFICATION.md",
-          " M reports/PHASE6_PERFORMANCE_COMPARISON.json",
-          " M run.ps1",
-          " M run.sh",
-          " M schemas/echo-module.schema.json",
-          " M schemas/echo-pack.schema.json",
+          " M scripts/__pycache__/build.cpython-314.pyc",
           " M scripts/build.py",
-          " M scripts/compare_runtime_performance.py",
-          " M src/main/java/dev/echo/engine/game/EngineMain.java",
-          " M src/main/java/dev/echo/engine/game/GameClient.java",
-          " M src/main/java/dev/echo/engine/game/GameSession.java",
-          " D src/main/java/dev/echo/engine/game/GameState.java",
-          " M src/main/java/dev/echo/engine/game/InputState.java",
-          " M src/main/java/dev/echo/engine/game/LaunchOptions.java",
+          " M src/main/java/dev/echo/engine/game/VerifyCommand.java",
           " M src/test/java/dev/echo/engine/test/AllTests.java",
-          "?? build/classes/dev/echo/engine/api/ui/",
-          "?? build/classes/dev/echo/engine/game/EngineMain$1.class",
-          "?? build/classes/dev/echo/engine/game/LaunchOptions$Mode.class",
-          "?? build/classes/dev/echo/engine/game/LauncherInfo.class",
-          "?? build/classes/dev/echo/engine/game/RepairCommand.class",
-          "?? build/classes/dev/echo/engine/game/VerifyCommand.class",
-          "?? build/classes/dev/echo/engine/ui/",
-          "?? build/classes/dev/echo/engine/util/TeeOutputStream.class",
-          "?? build/test-classes/dev/echo/engine/game/EngineCliTest.class",
-          "?? dist/ashfall-standalone-engine-edition-2.0.0-beta.5.zip",
-          "?? dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.5.pack.json",
-          "?? dist/echo-engine-api-2.0.0-beta.5.jar",
-          "?? dist/echo-standalone-engine-2.0.0-beta.5.jar",
-          "?? dist/repair-manifest.json",
-          "?? dist/verify-report.json",
-          "?? docs/ASHFALL_PARITY_CHECKLIST.md",
-          "?? src/main/java/dev/echo/engine/api/ui/",
-          "?? src/main/java/dev/echo/engine/game/LauncherInfo.java",
-          "?? src/main/java/dev/echo/engine/game/RepairCommand.java",
-          "?? src/main/java/dev/echo/engine/game/VerifyCommand.java",
-          "?? src/main/java/dev/echo/engine/ui/",
-          "?? src/main/java/dev/echo/engine/util/TeeOutputStream.java",
-          "?? src/test/java/dev/echo/engine/game/EngineCliTest.java"
+          "?? build/test-classes/dev/echo/engine/runtime/conformance/",
+          "?? dist/runtime-conformance.json",
+          "?? src/test/java/dev/echo/engine/runtime/conformance/"
         ]
       },
       "canonicalDocs": [
@@ -539,7 +503,7 @@
         {
           "path": "reports/BUILD_VERIFICATION.md",
           "exists": true,
-          "bytes": 537,
+          "bytes": 617,
           "heading": "Build Verification",
           "excerpt": "- Version: `2.0.0-beta.5`"
         },
@@ -659,14 +623,20 @@
         "branch": "main",
         "commit": "9fe4365e6259",
         "commitDate": "2026-06-16T11:24:29-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M README.md",
+          " M src/shared/__tests__/validation.test.ts",
+          " M src/shared/constants.ts",
+          " M src/shared/moduleCatalog.ts",
+          " M src/shared/validation.ts"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2944,
+          "bytes": 3401,
           "heading": "ECHO Studio",
           "excerpt": "Desktop app for building ECHO experiences, addons, modules, local dev workspaces, validation runs, release assets, and publishing handoffs."
         },
@@ -995,17 +965,14 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "be1b82cacfe9",
-        "commitDate": "2026-06-20T18:44:59-04:00",
+        "commit": "8901663b9ecb",
+        "commitDate": "2026-06-21T03:05:54-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " D release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
-          " D release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-2.0.0-beta.5.zip",
+          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-beta-2.0.0-beta.5.pack.json",
           " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/checksums.txt",
-          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/echo-release.json",
-          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/release-audit.json",
-          "?? release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-2.0.0-beta.5.zip",
-          "?? release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-beta-2.0.0-beta.5.pack.json"
+          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/echo-release.json"
         ]
       },
       "canonicalDocs": [
@@ -1019,7 +986,7 @@
         {
           "path": "PUBLIC_ALPHA_RELEASE_STATUS.md",
           "exists": true,
-          "bytes": 867,
+          "bytes": 741,
           "heading": "Public Alpha Release Status",
           "excerpt": "Ashfall Standalone Engine Edition is warning-gated."
         },
@@ -1047,9 +1014,9 @@
         {
           "path": "docs/runtime-evidence.md",
           "exists": true,
-          "bytes": 886,
+          "bytes": 892,
           "heading": "Runtime Evidence",
-          "excerpt": "The current release payload is generated from `ECHO-Standalone-Engine` version `2.0.0-beta.2`."
+          "excerpt": "The current release payload is generated from `ECHO-Standalone-Engine` version `2.0.0-beta.5`."
         },
         {
           "path": "docs/gameplay-evidence.md",

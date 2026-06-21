@@ -97,6 +97,26 @@
       ]
     },
     "validation": { "enum": ["approved", "warning", "rejected", "blocked"] },
+    "playerReady": {
+      "type": "boolean",
+      "description": "True only when the entry is promoted as player-ready by real gameplay and ECHO Native runtime conformance evidence."
+    },
+    "playerReadyStatus": {
+      "enum": ["player-ready", "install-ready", "warning-gated", "blocked"],
+      "description": "Separates player-ready parity from installable, warning-gated, and blocked catalog states."
+    },
+    "runtimeConformancePolicy": {
+      "enum": ["required", "approved-fallback", "legacy-metadata-only"],
+      "description": "Controls how ECHO Native runtime conformance evidence is interpreted for module, addon, and modpack entries."
+    },
+    "requiredRuntimeHosts": {
+      "type": "array",
+      "description": "Host ids that must be covered by runtime-conformance evidence before a player-ready parity claim is accepted.",
+      "items": {
+        "enum": ["echo_native", "neoforge", "echo_runtime_standalone", "standalone_engine"]
+      },
+      "uniqueItems": true
+    },
     "contentGraphEvidencePolicy": {
       "enum": ["legacy-fallback-only"],
       "description": "Marks a historical module/addon catalog row that intentionally has only per-entry content-graph sidecar evidence; current release-level aggregate evidence must come from a replacement release row."

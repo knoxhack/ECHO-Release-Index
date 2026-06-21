@@ -8,7 +8,7 @@ Public catalog, channel, and release index metadata used by the launcher, websit
 
 ## What Lives Here
 
-Release catalog JSON, channel metadata, public status docs, validation notes, download/index references, and `content-graph` artifact roles for module/addon entries.
+Release catalog JSON, channel metadata, public status docs, validation notes, download/index references, `content-graph` artifact roles for module/addon entries, and ECHO Native runtime conformance evidence for player-ready promotions.
 
 The canonical catalog is organized by install/update lane:
 
@@ -84,6 +84,7 @@ Run commands from the repository root.
 - `node scripts/test-ingest-release-local-e2e.mjs`
 - `node scripts/test-publish-ingest-install-local-e2e.mjs`
 - `node scripts/test-ingest-webhook-service.mjs`
+- `node scripts/import-module-release.mjs --dry-run --manifest ../ECHO-Modules/dist/echo-module-release/echo-release.json --release-tag <tag> --commit-sha <sha> --require-runtime-host neoforge`
 - `node scripts/import-module-release.mjs --manifest ../ECHO-Modules/dist/echo-module-release/echo-release.json --release-tag <tag> --commit-sha <sha>`
 - `node scripts/ingest-release.mjs --owner knoxhack --repo ECHO-Modules --tag <tag> --write-index-entry --out validation-result.json`
 - `node scripts/ingest-webhook-service.mjs`
@@ -127,6 +128,37 @@ The ECHO-Modules release referenced by `channels/alpha/release-manifest.json` is
 `scripts/verify-gameplay-acceptance.mjs` generates `release-readiness/gameplay-acceptance-matrix.json` with schema `echo.gameplay.acceptance.v1`. This is the public-alpha gameplay evidence contract for Ashfall, Sky Relay, Galactic Survey, Openlands, and Arcana Division across Native, NeoForge, and Standalone lanes. It is intentionally separate from content graph evidence and install/runtime load gates: a green install path or content graph load does not mean gameplay is release-ready. Run it without `--strict` to refresh warning-level acceptance evidence, and run it with `--strict` only when every family/lane has real release-ready gameplay proof.
 
 The aggregate gameplay reducer independently verifies source-repo-local evidence files before accepting pass-shaped family reports. A release-ready lane must point at a non-empty local gameplay evidence JSON plus non-empty notes/supporting files, screenshots, logs, and save snapshots. Boolean gameplay claims with no local proof file remain blocked even if a source report marks the claim true.
+
+## ECHO Native Runtime Conformance Evidence
+
+Player-ready catalog promotion must be backed by `echo.runtime.conformance.v1` evidence, not descriptor-only metadata, source packaging, install success, content graph load success, or runtime smoke output alone. Module, addon, and modpack rows may index a `runtime-conformance` artifact:
+
+```json
+{
+  "playerReady": true,
+  "playerReadyStatus": "player-ready",
+  "runtimeConformancePolicy": "required",
+  "requiredRuntimeHosts": ["native_loader", "neoforge", "standalone_runtime", "standalone_engine"],
+  "artifacts": {
+    "runtime-conformance": {
+      "artifactRole": "runtime-conformance",
+      "file": "runtime-conformance.json",
+      "sha256": "...",
+      "url": "https://github.com/knoxhack/example/releases/download/v1.0.0/runtime-conformance.json",
+      "schemaVersion": "echo.runtime.conformance.v1",
+      "hostId": "native_loader",
+      "runtimeTarget": "native_loader",
+      "summaryStatus": "pass",
+      "fallbackSurfaceCount": 0,
+      "blockedSurfaceCount": 0
+    }
+  }
+}
+```
+
+`scripts/validate-index.mjs --strict` rejects player-ready rows that omit runtime conformance evidence, omit the required host list, report blocked surfaces, report fallback surfaces for full parity, or use `runtimeConformancePolicy: "legacy-metadata-only"`. `playerReadyStatus: "warning-gated"` with `runtimeConformancePolicy: "approved-fallback"` may index fallback evidence for launch warnings, but fallback-only required surfaces still block the claim. Approved rows without this evidence remain installable/cataloged only; they must not be described as ECHO Native player-ready.
+
+Module release imports must carry release-root `runtimeConformanceEvidence[]`. Use `scripts/import-module-release.mjs --dry-run --require-runtime-host <host>` before writing catalog rows so CI can prove the imported module entries would expose the `runtime-conformance` artifact for the expected ECHO Native host without rewriting `modules/*.json`.
 
 `scripts/generate-family-gameplay-evidence.mjs` writes fail-closed source reports for families that do not yet have dedicated gameplay importers. Today it owns `release-readiness/openlands-gameplay-evidence.json` and `release-readiness/arcana-division-gameplay-evidence.json`; both are blocker reports until real lane captures replace the false claims and missing evidence paths.
 

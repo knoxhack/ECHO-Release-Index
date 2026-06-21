@@ -86,7 +86,7 @@ function approvedEntry(overrides = {}) {
       },
     },
     dependencies: [],
-    compatibility: ['ashfall-native-edition'],
+    compatibility: ['fixture-native'],
     trust: 'source-linked',
     validation: 'approved',
     ...overrides,
@@ -112,6 +112,44 @@ function approvedModpackEntry(overrides = {}) {
     compatibility: ['fixture-pack'],
     ...overrides,
   })
+}
+
+function runtimeConformanceArtifact(overrides = {}) {
+  return {
+    artifactRole: 'runtime-conformance',
+    file: 'runtime-conformance.json',
+    sha256: sha,
+    url: 'https://github.com/knoxhack/ECHO-Fixture-Pack/releases/download/v1.0.0/runtime-conformance.json',
+    runtimeTarget: 'echo_native',
+    hostId: 'echo_native',
+    schemaVersion: 'echo.runtime.conformance.v1',
+    summaryStatus: 'pass',
+    fallbackSurfaceCount: 0,
+    blockedSurfaceCount: 0,
+    ...overrides,
+  }
+}
+
+function moduleReleaseRuntimeConformance(overrides = {}) {
+  return {
+    kind: 'runtime-conformance',
+    filename: 'neoforge-runtime-conformance.json',
+    sha256: sha,
+    size: 200,
+    downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-fixture/neoforge-runtime-conformance.json',
+    runtimeTarget: 'neoforge',
+    hostId: 'neoforge',
+    buildMode: 'generated',
+    schemaVersion: 'echo.runtime.conformance.v1',
+    summary: {
+      status: 'warning',
+      supported: 0,
+      adapted: 20,
+      fallback: 27,
+      blocked: 0,
+    },
+    ...overrides,
+  }
 }
 
 async function writeLauncherChannel(root, catalogUrls, packs = []) {
@@ -323,6 +361,97 @@ await runFixture('approved-modpack-missing-manifest-role', async (root) => {
   }))
 }, 1, 'has no exact indexed artifact for role manifest')
 
+await runFixture('player-ready-requires-runtime-conformance', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    playerReady: true,
+    playerReadyStatus: 'player-ready',
+    runtimeConformancePolicy: 'required',
+    requiredRuntimeHosts: ['echo_native'],
+  }))
+}, 1, 'has no runtime-conformance artifact for ECHO Native player-ready evidence')
+
+await runFixture('player-ready-requires-host-list', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    artifacts: {
+      ...approvedModpackEntry().artifacts,
+      'runtime-conformance': runtimeConformanceArtifact(),
+    },
+    playerReady: true,
+    playerReadyStatus: 'player-ready',
+    runtimeConformancePolicy: 'required',
+  }))
+}, 1, 'player-ready entries must list requiredRuntimeHosts')
+
+await runFixture('player-ready-runtime-conformance-pass', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    artifacts: {
+      ...approvedModpackEntry().artifacts,
+      'runtime-conformance': runtimeConformanceArtifact(),
+    },
+    playerReady: true,
+    playerReadyStatus: 'player-ready',
+    runtimeConformancePolicy: 'required',
+    requiredRuntimeHosts: ['echo_native'],
+  }))
+}, 0, 'validation passed')
+
+await runFixture('player-ready-runtime-conformance-blocked', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    artifacts: {
+      ...approvedModpackEntry().artifacts,
+      'runtime-conformance': runtimeConformanceArtifact({
+        summaryStatus: 'fail',
+        blockedSurfaceCount: 1,
+      }),
+    },
+    playerReady: true,
+    playerReadyStatus: 'player-ready',
+    runtimeConformancePolicy: 'required',
+    requiredRuntimeHosts: ['echo_native'],
+  }))
+}, 1, 'runtime conformance evidence reports blocked surfaces')
+
+await runFixture('player-ready-runtime-conformance-fallback-only', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    artifacts: {
+      ...approvedModpackEntry().artifacts,
+      'runtime-conformance': runtimeConformanceArtifact({
+        summaryStatus: 'warning',
+        fallbackSurfaceCount: 3,
+        requiredFallbackOnly: true,
+      }),
+    },
+    playerReady: true,
+    playerReadyStatus: 'player-ready',
+    runtimeConformancePolicy: 'required',
+    requiredRuntimeHosts: ['echo_native'],
+  }))
+}, 1, 'full player-ready runtime conformance evidence must not be fallback-only')
+
+await runFixture('warning-gated-runtime-conformance-allows-approved-fallback', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    artifacts: {
+      ...approvedModpackEntry().artifacts,
+      'runtime-conformance': runtimeConformanceArtifact({
+        summaryStatus: 'warning',
+        fallbackSurfaceCount: 2,
+      }),
+    },
+    playerReadyStatus: 'warning-gated',
+    runtimeConformancePolicy: 'approved-fallback',
+    requiredRuntimeHosts: ['echo_native'],
+  }))
+}, 0, 'validation passed')
+
+await runFixture('metadata-only-cannot-be-player-ready', async (root) => {
+  await writeJson(root, 'modpacks/fixture-pack.json', approvedModpackEntry({
+    playerReady: true,
+    playerReadyStatus: 'player-ready',
+    runtimeConformancePolicy: 'legacy-metadata-only',
+    requiredRuntimeHosts: ['echo_native'],
+  }))
+}, 1, 'runtimeConformancePolicy legacy-metadata-only cannot be used for player-ready entries')
+
 await runFixture('warning-runtime-missing-archive-role', async (root) => {
   await writeJson(root, 'products/fixture-runtime.json', approvedEntry({
     id: 'fixture-runtime',
@@ -462,6 +591,7 @@ await runFixture('module-import', async (root) => {
       buildMode: 'generated',
       schemaVersion: 'echo.content_graph.evidence.v1',
     },
+    runtimeConformanceEvidence: [moduleReleaseRuntimeConformance()],
     modules: [
       {
         moduleId: 'echocore',
@@ -499,6 +629,9 @@ await runFixture('module-import', async (root) => {
   if (imported.validation !== 'warning' || imported.trust !== 'unverified') {
     throw new Error('source-packaged module import must be warning/unverified')
   }
+  if (imported.artifacts?.['runtime-conformance']?.artifactRole !== 'runtime-conformance') {
+    throw new Error('source-packaged module import must expose runtime-conformance role')
+  }
 }, 0, 'validation passed')
 
 await runFixture('module-import-approved', async (root) => {
@@ -519,6 +652,9 @@ await runFixture('module-import-approved', async (root) => {
       buildMode: 'generated',
       schemaVersion: 'echo.content_graph.evidence.v1',
     },
+    runtimeConformanceEvidence: [moduleReleaseRuntimeConformance({
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-compiled-fixture/neoforge-runtime-conformance.json',
+    })],
     modules: [
       {
         moduleId: 'echocore',
@@ -552,6 +688,126 @@ await runFixture('module-import-approved', async (root) => {
   }
   if (imported.artifacts?.['content-graph-evidence']?.artifactRole !== 'content-graph-evidence') {
     throw new Error('compiled approved module import must expose content-graph-evidence role')
+  }
+  if (imported.artifacts?.['runtime-conformance']?.artifactRole !== 'runtime-conformance') {
+    throw new Error('compiled approved module import must expose runtime-conformance role')
+  }
+  if (imported.artifacts?.['runtime-conformance']?.hostId !== 'neoforge') {
+    throw new Error('compiled approved module import must preserve runtime-conformance host id')
+  }
+}, 0, 'validation passed')
+
+await runFixture('module-import-dry-run-requires-runtime-host', async (root) => {
+  const manifestPath = path.join(root, 'fixture-dry-run-module-release.json')
+  await writeJson(root, 'fixture-dry-run-module-release.json', {
+    schemaVersion: 'echo.module.release.v1',
+    releaseId: 'modules-dry-run-fixture',
+    generatedAt: '2026-06-09T00:00:00Z',
+    sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+    provenance: moduleReleaseProvenance,
+    contentGraphEvidence: {
+      kind: 'content-graph-evidence',
+      filename: 'content-graph-evidence.json',
+      sha256: sha,
+      size: 100,
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-dry-run-fixture/content-graph-evidence.json',
+      runtimeTarget: 'content-graph',
+      buildMode: 'generated',
+      schemaVersion: 'echo.content_graph.evidence.v1',
+    },
+    runtimeConformanceEvidence: [moduleReleaseRuntimeConformance({
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-dry-run-fixture/neoforge-runtime-conformance.json',
+    })],
+    modules: [
+      {
+        moduleId: 'echocore',
+        version: '1.0.0',
+        descriptor: { path: 'META-INF/echo.mod.json', sha256: sha },
+        requires: [],
+        optional: [],
+        artifacts: [
+          { kind: 'echo-addon', filename: 'echocore-1.0.0.echo-addon', sha256: sha, size: 10, runtimeTarget: 'echo-native', buildMode: 'compiled-runtime' },
+          { kind: 'content-graph', filename: 'echocore-1.0.0-content-graph.json', sha256: sha, size: 10, runtimeTarget: 'content-graph', buildMode: 'generated' },
+        ],
+      },
+    ],
+  })
+  const result = spawnSync(process.execPath, [
+    importer,
+    '--root', root,
+    '--manifest', manifestPath,
+    '--release-tag', 'modules-dry-run-fixture',
+    '--commit-sha', 'abc1234',
+    '--asset-base-url', 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-dry-run-fixture',
+    '--approved',
+    '--dry-run',
+    '--require-runtime-host', 'neoforge',
+  ], {
+    encoding: 'utf8',
+    windowsHide: true,
+  })
+  const output = `${result.stdout}\n${result.stderr}`
+  if (result.status !== 0 || !output.includes('Validated 1 module release entry for import (dry run): modules/echocore.json')) {
+    throw new Error(`dry-run module import should validate required host: ${output}`)
+  }
+  try {
+    await fs.stat(path.join(root, 'modules', 'echocore.json'))
+    throw new Error('dry-run module import must not write module catalog entries')
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error
+  }
+}, 0, 'validation passed')
+
+await runFixture('module-import-dry-run-missing-required-runtime-host', async (root) => {
+  const manifestPath = path.join(root, 'fixture-missing-runtime-host-module-release.json')
+  await writeJson(root, 'fixture-missing-runtime-host-module-release.json', {
+    schemaVersion: 'echo.module.release.v1',
+    releaseId: 'modules-missing-runtime-host-fixture',
+    generatedAt: '2026-06-09T00:00:00Z',
+    sourceRepo: 'https://github.com/knoxhack/ECHO-Modules',
+    provenance: moduleReleaseProvenance,
+    contentGraphEvidence: {
+      kind: 'content-graph-evidence',
+      filename: 'content-graph-evidence.json',
+      sha256: sha,
+      size: 100,
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-missing-runtime-host-fixture/content-graph-evidence.json',
+      runtimeTarget: 'content-graph',
+      buildMode: 'generated',
+      schemaVersion: 'echo.content_graph.evidence.v1',
+    },
+    runtimeConformanceEvidence: [moduleReleaseRuntimeConformance({
+      downloadUrl: 'https://github.com/knoxhack/ECHO-Modules/releases/download/modules-missing-runtime-host-fixture/neoforge-runtime-conformance.json',
+    })],
+    modules: [
+      {
+        moduleId: 'echocore',
+        version: '1.0.0',
+        descriptor: { path: 'META-INF/echo.mod.json', sha256: sha },
+        requires: [],
+        optional: [],
+        artifacts: [
+          { kind: 'echo-addon', filename: 'echocore-1.0.0.echo-addon', sha256: sha, size: 10, runtimeTarget: 'echo-native', buildMode: 'compiled-runtime' },
+        ],
+      },
+    ],
+  })
+  const result = spawnSync(process.execPath, [
+    importer,
+    '--root', root,
+    '--manifest', manifestPath,
+    '--release-tag', 'modules-missing-runtime-host-fixture',
+    '--commit-sha', 'abc1234',
+    '--approved',
+    '--dry-run',
+    '--require-runtime-host', 'standalone_engine',
+  ], {
+    encoding: 'utf8',
+    windowsHide: true,
+  })
+  const output = `${result.stdout}\n${result.stderr}`
+  if (result.status === 0 || !output.includes('runtimeConformanceEvidence is missing required host standalone_engine')) {
+    throw new Error(`dry-run module import should reject missing required runtime host: ${output}`)
   }
 }, 0, 'validation passed')
 

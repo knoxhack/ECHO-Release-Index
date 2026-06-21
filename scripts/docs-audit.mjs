@@ -112,6 +112,29 @@ if (repoName === "ECHO-Release-Index") {
       if (!ownership.includes(term)) errors.push("docs/ecosystem-artifact-ownership.md missing " + term);
     }
   }
+
+  const runtimeGoalPath = path.join(root, "docs", "codex", "unified-echo-native-player-runtime-goal.md");
+  if (!exists(runtimeGoalPath)) {
+    errors.push("Missing docs/codex/unified-echo-native-player-runtime-goal.md");
+  } else {
+    const runtimeGoal = fs.readFileSync(runtimeGoalPath, "utf8");
+    const requiredRuntimeGoalTerms = [
+      "native_loader",
+      "neoforge",
+      "standalone_runtime",
+      "standalone_engine",
+      "ECHO-SDK",
+      "ECHO-Native-Platform",
+      "ECHO-Modules",
+      "ECHO-Release-Index",
+      "runtimeConformanceEvidence",
+      "playerReady",
+      "echo.runtime.conformance.v1",
+    ];
+    for (const term of requiredRuntimeGoalTerms) {
+      if (!runtimeGoal.includes(term)) errors.push("docs/codex/unified-echo-native-player-runtime-goal.md missing " + term);
+    }
+  }
 }
 
 const stalePatterns = [/echolabs/i, /ECHOLauncher/, /ECHODEVELOPERSTUDIO/, /standalone showcase/i];

@@ -7,7 +7,8 @@ This folder is the central orientation layer for Codex work across the ECHO plat
 1. `generated/ECHO_PLATFORM_CONTEXT.md` for the current cross-repo snapshot.
 2. `repo-routing.md` to decide which repository owns the requested change.
 3. `platform-primer.md` for stable platform boundaries and terms.
-4. `maintenance.md` before changing this context system.
+4. `unified-echo-native-player-runtime-goal.md` for the active 10-phase ECHO Native player runtime cutover.
+5. `maintenance.md` before changing this context system.
 
 ## Generated Outputs
 

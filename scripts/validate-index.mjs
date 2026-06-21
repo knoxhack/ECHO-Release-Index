@@ -29,6 +29,15 @@ const nativeLoaderDirectArtifactFile = 'echo-native-loader-1.0.6.jar'
 const nativeLoaderDirectDescriptorFile = 'native-loader-direct-install.json'
 const nativeLoaderLibraryRole = 'native-loader-library'
 const nativeLoaderDescriptorRole = 'native-loader-direct-install-descriptor'
+const runtimeConformanceRole = 'runtime-conformance'
+const runtimeConformanceSchemaVersion = 'echo.runtime.conformance.v1'
+const runtimeConformanceHosts = new Set(['echo_native', 'neoforge', 'echo_runtime_standalone', 'standalone_engine'])
+const runtimeConformanceTargets = new Set([
+  'echo_native',
+  'neoforge',
+  'echo_runtime_standalone',
+  'standalone_engine',
+])
 const requiredSchemas = [
   'block.schema.json',
   'channel.schema.json',
@@ -40,6 +49,7 @@ const requiredSchemas = [
   'content-feature-list.schema.json',
   'echo-addon-package.schema.json',
   'echo-pack.schema.json',
+  'echo-runtime-conformance.schema.json',
   'module-release-manifest.schema.json',
   'product-update-entry.schema.json',
   'publisher.schema.json',
@@ -218,8 +228,13 @@ function artifactRoleRecords(artifacts) {
         moduleArtifact: node.moduleArtifact,
         packContent: node.packContent,
         runtimeTarget: node.runtimeTarget,
+        hostId: node.hostId,
         buildMode: node.buildMode,
         schemaVersion: node.schemaVersion,
+        summaryStatus: node.summaryStatus ?? node.conformanceStatus ?? node.status ?? node.summary?.status,
+        fallbackSurfaceCount: node.fallbackSurfaceCount ?? node.fallbackCount ?? node.summary?.fallback,
+        blockedSurfaceCount: node.blockedSurfaceCount ?? node.blockedCount ?? node.summary?.blocked,
+        requiredFallbackOnly: node.requiredFallbackOnly,
       })
     }
     Object.entries(node).forEach(([key, value]) => visit(value, key))
@@ -392,6 +407,135 @@ function validateContentGraphEvidenceRole(errors, warnings, filePath, entry) {
   }
 }
 
+function runtimeConformanceRecords(entry) {
+  return artifactRoleRecords(entry.artifacts).filter((artifact) =>
+    artifact.role === runtimeConformanceRole ||
+    artifact.artifactRole === runtimeConformanceRole ||
+    artifact.schemaVersion === runtimeConformanceSchemaVersion ||
+    artifact.file === 'runtime-conformance.json' ||
+    artifact.name === 'runtime-conformance.json' ||
+    /(^|-)runtime-conformance(-|\.json$)/u.test(String(artifact.file ?? artifact.name ?? ''))
+  )
+}
+
+function claimsPlayerReady(entry) {
+  return entry.playerReady === true ||
+    entry.playerReadyStatus === 'player-ready' ||
+    entry.runtimeConformancePolicy === 'required'
+}
+
+function requiresRuntimeConformanceEvidence(entry) {
+  return claimsPlayerReady(entry) ||
+    entry.playerReadyStatus === 'warning-gated' ||
+    entry.runtimeConformancePolicy === 'approved-fallback'
+}
+
+function integerOrZero(value) {
+  if (Number.isInteger(value)) return value
+  if (typeof value === 'string' && /^\d+$/u.test(value)) return Number(value)
+  return 0
+}
+
+function validateRuntimeConformancePolicy(errors, warnings, filePath, entry) {
+  const appliesToEntry = ['module', 'addon', 'modpack'].includes(entry.kind)
+  const records = runtimeConformanceRecords(entry)
+  const requiresEvidence = requiresRuntimeConformanceEvidence(entry)
+  const fullPlayerReady = claimsPlayerReady(entry)
+
+  if (entry.runtimeConformancePolicy !== undefined && !appliesToEntry) {
+    errors.push(`${rel(filePath)} runtimeConformancePolicy can only be used on module, addon, or modpack entries`)
+  }
+  if (entry.runtimeConformancePolicy === 'legacy-metadata-only') {
+    if (entry.playerReady === true || entry.playerReadyStatus === 'player-ready') {
+      errors.push(`${rel(filePath)} runtimeConformancePolicy legacy-metadata-only cannot be used for player-ready entries`)
+    }
+    if (hasExactArtifactRole(entry, runtimeConformanceRole)) {
+      errors.push(`${rel(filePath)} runtimeConformancePolicy legacy-metadata-only cannot be used when a live runtime-conformance artifact URL is indexed`)
+    }
+  }
+  if (entry.playerReadyStatus === 'player-ready' && entry.validation !== 'approved') {
+    errors.push(`${rel(filePath)} player-ready entries must have approved validation`)
+  }
+  if (fullPlayerReady && (!Array.isArray(entry.requiredRuntimeHosts) || entry.requiredRuntimeHosts.length === 0)) {
+    errors.push(`${rel(filePath)} player-ready entries must list requiredRuntimeHosts for ECHO Native parity`)
+  }
+
+  if (!records.length) {
+    if (requiresEvidence) {
+      errors.push(`${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no runtime-conformance artifact for ECHO Native player-ready evidence`)
+    } else if (appliesToEntry && entry.validation === 'approved' && entry.runtimeConformancePolicy !== 'legacy-metadata-only') {
+      warnings.push(`${rel(filePath)} ${entry.kind} entry ${entry.id ?? '(unknown)'} has no ECHO Native runtime-conformance artifact; it cannot be promoted player-ready until one is indexed`)
+    }
+    return
+  }
+
+  const coveredHosts = new Set()
+  for (const artifact of records) {
+    const name = String(artifact.file ?? artifact.name ?? '')
+    if (artifact.role !== runtimeConformanceRole && artifact.artifactRole !== runtimeConformanceRole) {
+      errors.push(`${rel(filePath)} runtime conformance artifact must use role ${runtimeConformanceRole}`)
+    }
+    if (!name.endsWith('.json') || !name.includes('runtime-conformance')) {
+      errors.push(`${rel(filePath)} runtime conformance artifact file must be runtime-conformance JSON`)
+    }
+    if (!artifact.url || !/^https:\/\/github\.com\/|^https:\/\/raw\.githubusercontent\.com\//.test(String(artifact.url))) {
+      errors.push(`${rel(filePath)} runtime conformance artifact must use a GitHub HTTPS URL`)
+    }
+    if (!sha256Pattern.test(String(artifact.sha256 ?? ''))) {
+      errors.push(`${rel(filePath)} runtime conformance artifact must include a valid sha256`)
+    }
+    if (artifact.schemaVersion !== runtimeConformanceSchemaVersion) {
+      errors.push(`${rel(filePath)} runtime conformance artifact schemaVersion must be ${runtimeConformanceSchemaVersion}`)
+    }
+    if (artifact.hostId !== undefined) {
+      if (!runtimeConformanceHosts.has(String(artifact.hostId))) {
+        errors.push(`${rel(filePath)} runtime conformance hostId must be one of ${[...runtimeConformanceHosts].join(', ')}`)
+      } else {
+        coveredHosts.add(String(artifact.hostId))
+      }
+    }
+    if (artifact.runtimeTarget !== undefined && !runtimeConformanceTargets.has(String(artifact.runtimeTarget))) {
+      errors.push(`${rel(filePath)} runtime conformance runtimeTarget must be an ECHO Native host target`)
+    }
+
+    const summaryStatus = artifact.summaryStatus === undefined ? undefined : String(artifact.summaryStatus).toLowerCase()
+    const fallbackSurfaceCount = integerOrZero(artifact.fallbackSurfaceCount)
+    const blockedSurfaceCount = integerOrZero(artifact.blockedSurfaceCount)
+
+    if (requiresEvidence && summaryStatus === undefined) {
+      errors.push(`${rel(filePath)} runtime conformance artifact must include summaryStatus for player-ready or warning-gated claims`)
+    }
+    if (summaryStatus !== undefined && !['pass', 'warning', 'fail', 'supported', 'adapted', 'fallback', 'blocked'].includes(summaryStatus)) {
+      errors.push(`${rel(filePath)} runtime conformance summaryStatus must be pass, warning, fail, supported, adapted, fallback, or blocked`)
+    }
+    if (requiresEvidence && blockedSurfaceCount > 0) {
+      errors.push(`${rel(filePath)} runtime conformance evidence reports blocked surfaces`)
+    }
+    if (requiresEvidence && ['fail', 'blocked'].includes(summaryStatus)) {
+      errors.push(`${rel(filePath)} runtime conformance evidence must not be failed or blocked for launchable player evidence`)
+    }
+    if (fullPlayerReady && summaryStatus !== 'pass') {
+      errors.push(`${rel(filePath)} full player-ready runtime conformance evidence must report summaryStatus=pass`)
+    }
+    if (fullPlayerReady && fallbackSurfaceCount > 0) {
+      errors.push(`${rel(filePath)} full player-ready runtime conformance evidence must not report fallback surfaces`)
+    }
+    if (fullPlayerReady && artifact.requiredFallbackOnly === true) {
+      errors.push(`${rel(filePath)} full player-ready runtime conformance evidence must not be fallback-only`)
+    }
+    if (!fullPlayerReady && requiresEvidence && artifact.requiredFallbackOnly === true) {
+      errors.push(`${rel(filePath)} warning-gated runtime conformance evidence cannot be fallback-only for required surfaces`)
+    }
+  }
+
+  for (const host of entry.requiredRuntimeHosts ?? []) {
+    if (!runtimeConformanceHosts.has(String(host))) continue
+    if (!coveredHosts.has(String(host))) {
+      errors.push(`${rel(filePath)} runtime conformance evidence missing required host ${host}`)
+    }
+  }
+}
+
 function validateAttestedProvenance(errors, filePath, entry) {
   if (entry.validation !== 'approved' || !attestedTrustTiers.has(entry.trust)) return
   const provenance = entry.provenance
@@ -538,6 +682,7 @@ function validateEntry(errors, warnings, filePath, entry, context) {
   validateContentGraphArtifactPolicy(errors, filePath, entry)
   validateRequiredArtifactRoles(errors, warnings, filePath, entry)
   validateContentGraphEvidenceRole(errors, warnings, filePath, entry)
+  validateRuntimeConformancePolicy(errors, warnings, filePath, entry)
   validateAttestedProvenance(errors, filePath, entry)
 }
 
