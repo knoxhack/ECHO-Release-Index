@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-20T20:30:48-04:00",
+  "generatedAt": "2026-06-21T02:48:36-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,8 +16,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "caf73527b662",
-        "commitDate": "2026-06-20T19:55:30-04:00",
+        "commit": "1cf34311af50",
+        "commitDate": "2026-06-21T02:01:36-04:00",
         "dirty": true,
         "dirtyFiles": [
           " M channels/alpha/launcher-channel.json",
@@ -26,7 +26,12 @@
           " M channels/beta/launcher-channel.json",
           " M channels/beta/release-manifest.json",
           " M channels/beta/repositories.json",
-          " M products/launcher.json"
+          " M modpacks/ashfall-neoforge.json",
+          " M modules/echoashfallprotocol.json",
+          " M modules/echoscreencore.json",
+          " M modules/echoterminal.json",
+          " M packs/ashfall-neoforge-edition.json",
+          " M release-readiness/ashfall-standalone-engine-local-e2e.json"
         ]
       },
       "canonicalDocs": [
@@ -79,14 +84,14 @@
         {
           "path": "channels/alpha/release-manifest.json",
           "exists": true,
-          "bytes": 62202,
+          "bytes": 62169,
           "summary": "release manifest v0.1.0-native-public-alpha; repositories: 24"
         },
         {
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
-          "bytes": 44508,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-21T00:32:07.293Z"
+          "bytes": 44535,
+          "summary": "launcher channel alpha; generatedAt: 2026-06-21T06:52:07.906Z"
         },
         {
           "path": "trust/tiers.json",
@@ -107,16 +112,29 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3d3c255cfeda",
-        "commitDate": "2026-06-20T20:20:54-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "5089d33344c4",
+        "commitDate": "2026-06-21T02:38:34-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M .github/workflows/docs-audit.yml",
+          " M README.md",
+          " M addons/echoindex/src/main/resources/assets/echoindex/eui/eui_manifest.json",
+          " M addons/echoterminal/src/main/resources/assets/echoterminal/eui/eui_manifest.json",
+          " M docs/content-graph.md",
+          " M scripts/generate-content-graph.mjs",
+          " M scripts/generate-module-release.test.mjs",
+          " M scripts/generate-runtime-export-plan.mjs",
+          " M scripts/test-generate-content-graph.mjs",
+          " M scripts/validate-content-graph.mjs",
+          " M scripts/verify-module-release.mjs",
+          "?? docs/UNIFIED_ECHO_NATIVE_PLAYER_RUNTIME.md"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5234,
+          "bytes": 5671,
           "heading": "ECHO Modules",
           "excerpt": "Canonical source for all shared ECHO module code, module descriptors, generated per-module docs, and module release artifact contracts."
         },
@@ -165,7 +183,7 @@
         {
           "path": "docs/content-graph.md",
           "exists": true,
-          "bytes": 5182,
+          "bytes": 5759,
           "heading": ".ECHO Content Graph",
           "excerpt": "ECHO-Modules generates a runtime-neutral `.ECHO Content Graph` for every first-party module."
         }
@@ -194,14 +212,34 @@
         "branch": "main",
         "commit": "e9ed7df57740",
         "commitDate": "2026-06-20T20:08:40-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M README.md",
+          " M docs/schemas/content-graph.md",
+          " M docs/schemas/index.md",
+          " M schemas/content-graph-edge.schema.json",
+          " M schemas/content-graph-export-plan.schema.json",
+          " M schemas/content-graph-node.schema.json",
+          " M templates/echo-addon-ui-surface/files/addons/{{module_id}}/src/main/resources/data/{{module_id}}/ui/{{module_id}}_surface.json.tpl",
+          " M tools/test_echo_contract_schemas.py",
+          " M tools/validate_echo_contracts.py",
+          "?? docs/UNIFIED_ECHO_NATIVE_PLAYER_RUNTIME.md",
+          "?? docs/schemas/unified-native-player-runtime.md",
+          "?? fixtures/unified-native/",
+          "?? schemas/echo-gameplay-action.schema.json",
+          "?? schemas/echo-input-binding.schema.json",
+          "?? schemas/echo-inventory-surface.schema.json",
+          "?? schemas/echo-native-host.schema.json",
+          "?? schemas/echo-runtime-conformance.schema.json",
+          "?? schemas/echo-save-session.schema.json",
+          "?? schemas/echo-ui-surface.schema.json"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 5003,
+          "bytes": 5816,
           "heading": "ECHO SDK",
           "excerpt": "Source of truth for ECHO schemas, contracts, templates, API docs, and developer/creator onboarding."
         },
@@ -222,14 +260,14 @@
         {
           "path": "docs/schemas/index.md",
           "exists": true,
-          "bytes": 1626,
+          "bytes": 2411,
           "heading": "Schemas",
           "excerpt": "Schemas define the machine-readable contracts used by launchers, modules, packs, and tools."
         },
         {
           "path": "docs/schemas/content-graph.md",
           "exists": true,
-          "bytes": 16895,
+          "bytes": 17794,
           "heading": "ECHO Content Graph",
           "excerpt": "The `.ECHO Content Graph` is a runtime-neutral, portable semantic model of ECHO modules, addons, and gameplay content."
         },
@@ -265,8 +303,15 @@
         "branch": "main",
         "commit": "307465945705",
         "commitDate": "2026-06-20T20:30:48-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M electron/main.cjs",
+          " M scripts/ashfall-standalone-engine-local-e2e.mjs",
+          " M scripts/lib/pack-export.mjs",
+          " M src/app/EchoLauncher.tsx",
+          " M src/components/shell/navigation.ts",
+          " M src/types/launcher.ts"
+        ]
       },
       "canonicalDocs": [
         {
@@ -307,21 +352,28 @@
         "branch": "main",
         "commit": "eab2172c8d55",
         "commitDate": "2026-06-20T00:20:32-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M README.md",
+          " M build.gradle",
+          " M docs/echo/native/README.md",
+          " M echo-native-loader/src/main/java/dev/echo/nativeplatform/loader/EchoNativeModuleClassLoader.java",
+          " M echo-native-loader/src/qa/java/dev/echo/nativeplatform/loader/EchoNativeSharedApiClassLoaderGateMain.java",
+          "?? docs/echo/native/UNIFIED_PLAYER_RUNTIME.md"
+        ]
       },
       "canonicalDocs": [
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 8455,
+          "bytes": 8876,
           "heading": "ECHO Native Platform",
           "excerpt": "Native runtime, loader, platform services, and adapter support for `.echo-addon` modules."
         },
         {
           "path": "docs/echo/native/README.md",
           "exists": true,
-          "bytes": 1484,
+          "bytes": 1536,
           "heading": "ECHO Native SDK",
           "excerpt": "This folder is the author-facing documentation for writing ECHO Native addons without importing NeoForge or depending on Native Loader internals."
         }
@@ -340,12 +392,17 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "b8498d1d12d6",
-        "commitDate": "2026-06-20T19:41:27-04:00",
+        "commit": "7083425c003b",
+        "commitDate": "2026-06-20T20:35:38-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneAlphaReadinessGate.java",
-          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java"
+          " M build.gradle",
+          " M echo-runtime-compat/src/main/java/dev/echo/standalone/runtime/compat/EchoAdapterCoreStandaloneContentBridge.java",
+          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelBlock.java",
+          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelCollisionBox.java",
+          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelLightRuntime.java",
+          " M echo-runtime-world/src/main/java/dev/echo/standalone/runtime/world/EchoVoxelWorld.java",
+          "?? echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoAshfallBlockBehaviorWiredSmokeHarness.java"
         ]
       },
       "canonicalDocs": [
@@ -380,8 +437,96 @@
         "branch": "main",
         "commit": "be28f92375b1",
         "commitDate": "2026-06-20T20:08:40-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M CHANGELOG.md",
+          " M README.md",
+          " M SOURCE_FILE_INDEX.txt",
+          " M build/classes/dev/echo/engine/game/EngineMain.class",
+          " D build/classes/dev/echo/engine/game/GameClient$1.class",
+          " M build/classes/dev/echo/engine/game/GameClient.class",
+          " M build/classes/dev/echo/engine/game/GameSession.class",
+          " D build/classes/dev/echo/engine/game/GameState.class",
+          " M build/classes/dev/echo/engine/game/HeadlessSmoke.class",
+          " M build/classes/dev/echo/engine/game/HudRenderer.class",
+          " M build/classes/dev/echo/engine/game/InputState.class",
+          " M build/classes/dev/echo/engine/game/LaunchOptions.class",
+          " M build/main-sources.txt",
+          " M build/smoke-saves-a/headless-smoke/headless-smoke-report.json",
+          " M build/smoke-saves-a/headless-smoke/smoke-world/world.json",
+          " M build/smoke-saves-b/headless-smoke/headless-smoke-report.json",
+          " M build/smoke-saves-b/headless-smoke/smoke-world/world.json",
+          " M build/test-classes/dev/echo/engine/test/AllTests.class",
+          " M build/test-sources.txt",
+          " M dist/README.txt",
+          " D dist/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          " D dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          " M dist/checksums.sha256",
+          " M dist/content-graph-evidence.json",
+          " D dist/echo-engine-api-2.0.0-beta.2.jar",
+          " D dist/echo-standalone-engine-2.0.0-beta.2.jar",
+          " M dist/mods/echoadaptercore-1.0.0-standalone.jar",
+          " M dist/mods/echoashfallprotocol-1.0.0-standalone.jar",
+          " M dist/mods/echocommonloot-1.0.0-standalone.jar",
+          " M dist/mods/echocontentcore-1.0.0-standalone.jar",
+          " M dist/mods/echocore-1.0.0-standalone.jar",
+          " M dist/mods/echocreatureroles-1.0.0-standalone.jar",
+          " M dist/mods/echofoundationcore-1.0.0-standalone.jar",
+          " M dist/mods/echohealthcore-1.0.0-standalone.jar",
+          " M dist/mods/echohudcore-1.0.0-standalone.jar",
+          " M dist/mods/echomaterialcore-1.0.0-standalone.jar",
+          " M dist/mods/echoplatformcore-1.0.0-standalone.jar",
+          " M dist/mods/echoschemacore-1.0.0-standalone.jar",
+          " M dist/mods/echoscreencore-1.0.0-standalone.jar",
+          " M dist/mods/echostationcore-1.0.0-standalone.jar",
+          " M dist/mods/echoterminal-1.0.0-standalone.jar",
+          " M dist/mods/echotoolcore-1.0.0-standalone.jar",
+          " M dist/mods/echovalidationcore-1.0.0-standalone.jar",
+          " M dist/mods/echoweathercore-1.0.0-standalone.jar",
+          " M dist/mods/echoworldstarter-1.0.0-standalone.jar",
+          " M dist/pack.json",
+          " M docs/ARCHITECTURE.md",
+          " M docs/MODULE_AUTHORING.md",
+          " M docs/RELEASE_CHECKLIST.md",
+          " M reports/BUILD_VERIFICATION.md",
+          " M reports/PHASE6_PERFORMANCE_COMPARISON.json",
+          " M run.ps1",
+          " M run.sh",
+          " M schemas/echo-module.schema.json",
+          " M schemas/echo-pack.schema.json",
+          " M scripts/build.py",
+          " M scripts/compare_runtime_performance.py",
+          " M src/main/java/dev/echo/engine/game/EngineMain.java",
+          " M src/main/java/dev/echo/engine/game/GameClient.java",
+          " M src/main/java/dev/echo/engine/game/GameSession.java",
+          " D src/main/java/dev/echo/engine/game/GameState.java",
+          " M src/main/java/dev/echo/engine/game/InputState.java",
+          " M src/main/java/dev/echo/engine/game/LaunchOptions.java",
+          " M src/test/java/dev/echo/engine/test/AllTests.java",
+          "?? build/classes/dev/echo/engine/api/ui/",
+          "?? build/classes/dev/echo/engine/game/EngineMain$1.class",
+          "?? build/classes/dev/echo/engine/game/LaunchOptions$Mode.class",
+          "?? build/classes/dev/echo/engine/game/LauncherInfo.class",
+          "?? build/classes/dev/echo/engine/game/RepairCommand.class",
+          "?? build/classes/dev/echo/engine/game/VerifyCommand.class",
+          "?? build/classes/dev/echo/engine/ui/",
+          "?? build/classes/dev/echo/engine/util/TeeOutputStream.class",
+          "?? build/test-classes/dev/echo/engine/game/EngineCliTest.class",
+          "?? dist/ashfall-standalone-engine-edition-2.0.0-beta.5.zip",
+          "?? dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.5.pack.json",
+          "?? dist/echo-engine-api-2.0.0-beta.5.jar",
+          "?? dist/echo-standalone-engine-2.0.0-beta.5.jar",
+          "?? dist/repair-manifest.json",
+          "?? dist/verify-report.json",
+          "?? docs/ASHFALL_PARITY_CHECKLIST.md",
+          "?? src/main/java/dev/echo/engine/api/ui/",
+          "?? src/main/java/dev/echo/engine/game/LauncherInfo.java",
+          "?? src/main/java/dev/echo/engine/game/RepairCommand.java",
+          "?? src/main/java/dev/echo/engine/game/VerifyCommand.java",
+          "?? src/main/java/dev/echo/engine/ui/",
+          "?? src/main/java/dev/echo/engine/util/TeeOutputStream.java",
+          "?? src/test/java/dev/echo/engine/game/EngineCliTest.java"
+        ]
       },
       "canonicalDocs": [
         {
@@ -396,12 +541,12 @@
           "exists": true,
           "bytes": 537,
           "heading": "Build Verification",
-          "excerpt": "- Version: `2.0.0-beta.2`"
+          "excerpt": "- Version: `2.0.0-beta.5`"
         },
         {
           "path": "docs/MODULE_AUTHORING.md",
           "exists": true,
-          "bytes": 3020,
+          "bytes": 3051,
           "heading": "Module Authoring",
           "excerpt": "Build against:"
         }
@@ -410,12 +555,12 @@
       "metadata": [
         {
           "path": "dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
-          "exists": true,
-          "bytes": 23494,
-          "summary": "JSON keys: schemaVersion, pack, id, name, version, channel, minecraft, loader, runtimeTarget, runtime"
+          "exists": false
         }
       ],
-      "warnings": []
+      "warnings": [
+        "ECHO-Standalone-Engine missing metadata dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json"
+      ]
     },
     {
       "id": "platform-website",
@@ -752,8 +897,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "ccdda628472b",
-        "commitDate": "2026-06-20T19:09:11-04:00",
+        "commit": "915038c011d4",
+        "commitDate": "2026-06-21T02:48:36-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -761,7 +906,7 @@
         {
           "path": "README.md",
           "exists": true,
-          "bytes": 2620,
+          "bytes": 2709,
           "heading": "ECHO Ashfall NeoForge Edition",
           "excerpt": "Minecraft/NeoForge Ashfall pack distribution. It consumes `-neoforge.jar` module artifacts."
         },
@@ -782,7 +927,7 @@
         {
           "path": "docs/module-requirements.md",
           "exists": true,
-          "bytes": 2517,
+          "bytes": 2450,
           "heading": "Ashfall NeoForge Edition Module Requirements",
           "excerpt": "The pack manifest declares module requirements instead of hard-coding every module file by hand. The current `release-assets/v0.1.0-ashfall-neoforge-edition/ashfall-neoforge-edition-alpha-0.1.0.pack.json` declares 46 requirements for the `neoforge` module artifact family."
         }
@@ -852,8 +997,16 @@
         "branch": "main",
         "commit": "be1b82cacfe9",
         "commitDate": "2026-06-20T18:44:59-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " D release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-2.0.0-beta.2.zip",
+          " D release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
+          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/checksums.txt",
+          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/echo-release.json",
+          " M release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/release-audit.json",
+          "?? release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-2.0.0-beta.5.zip",
+          "?? release-assets/v2.0.0-ashfall-standalone-engine-edition-beta.5/ashfall-standalone-engine-edition-beta-2.0.0-beta.5.pack.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -1579,6 +1732,7 @@
     "ECHO-Native-Platform-RC1-3d6e810"
   ],
   "warnings": [
+    "ECHO-Standalone-Engine missing metadata dist/ashfall-standalone-engine-edition-beta-2.0.0-beta.2.pack.json",
     "Unconfigured local ECHO repository ECHO-Native-Platform-RC1-3d6e810"
   ]
 }
