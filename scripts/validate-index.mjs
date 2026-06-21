@@ -25,17 +25,17 @@ const rawIndexPrefix = 'https://raw.githubusercontent.com/knoxhack/ECHO-Release-
 const validKinds = new Set(['product', 'modpack', 'module', 'addon', 'runtime', 'studio', 'website'])
 const validValidationStates = new Set(['approved', 'warning', 'rejected', 'blocked'])
 const attestedTrustTiers = new Set(['official', 'reproducible-build', 'echo-workflow-built', 'provenance-attested'])
-const nativeLoaderDirectArtifactFile = 'echo-native-loader-1.0.6.jar'
+const nativeLoaderDirectArtifactFile = 'echo-native-loader-1.0.7.jar'
 const nativeLoaderDirectDescriptorFile = 'native-loader-direct-install.json'
 const nativeLoaderLibraryRole = 'native-loader-library'
 const nativeLoaderDescriptorRole = 'native-loader-direct-install-descriptor'
 const runtimeConformanceRole = 'runtime-conformance'
 const runtimeConformanceSchemaVersion = 'echo.runtime.conformance.v1'
-const runtimeConformanceHosts = new Set(['echo_native', 'neoforge', 'echo_runtime_standalone', 'standalone_engine'])
+const runtimeConformanceHosts = new Set(['native_loader', 'neoforge', 'standalone_runtime', 'standalone_engine'])
 const runtimeConformanceTargets = new Set([
-  'echo_native',
+  'native_loader',
   'neoforge',
-  'echo_runtime_standalone',
+  'standalone_runtime',
   'standalone_engine',
 ])
 const requiredSchemas = [

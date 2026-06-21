@@ -120,8 +120,8 @@ function runtimeConformanceArtifact(overrides = {}) {
     file: 'runtime-conformance.json',
     sha256: sha,
     url: 'https://github.com/knoxhack/ECHO-Fixture-Pack/releases/download/v1.0.0/runtime-conformance.json',
-    runtimeTarget: 'echo_native',
-    hostId: 'echo_native',
+    runtimeTarget: 'native_loader',
+    hostId: 'native_loader',
     schemaVersion: 'echo.runtime.conformance.v1',
     summaryStatus: 'pass',
     fallbackSurfaceCount: 0,
@@ -366,7 +366,7 @@ await runFixture('player-ready-requires-runtime-conformance', async (root) => {
     playerReady: true,
     playerReadyStatus: 'player-ready',
     runtimeConformancePolicy: 'required',
-    requiredRuntimeHosts: ['echo_native'],
+    requiredRuntimeHosts: ['native_loader'],
   }))
 }, 1, 'has no runtime-conformance artifact for ECHO Native player-ready evidence')
 
@@ -391,7 +391,7 @@ await runFixture('player-ready-runtime-conformance-pass', async (root) => {
     playerReady: true,
     playerReadyStatus: 'player-ready',
     runtimeConformancePolicy: 'required',
-    requiredRuntimeHosts: ['echo_native'],
+    requiredRuntimeHosts: ['native_loader'],
   }))
 }, 0, 'validation passed')
 
@@ -407,7 +407,7 @@ await runFixture('player-ready-runtime-conformance-blocked', async (root) => {
     playerReady: true,
     playerReadyStatus: 'player-ready',
     runtimeConformancePolicy: 'required',
-    requiredRuntimeHosts: ['echo_native'],
+    requiredRuntimeHosts: ['native_loader'],
   }))
 }, 1, 'runtime conformance evidence reports blocked surfaces')
 
@@ -424,7 +424,7 @@ await runFixture('player-ready-runtime-conformance-fallback-only', async (root) 
     playerReady: true,
     playerReadyStatus: 'player-ready',
     runtimeConformancePolicy: 'required',
-    requiredRuntimeHosts: ['echo_native'],
+    requiredRuntimeHosts: ['native_loader'],
   }))
 }, 1, 'full player-ready runtime conformance evidence must not be fallback-only')
 
@@ -439,7 +439,7 @@ await runFixture('warning-gated-runtime-conformance-allows-approved-fallback', a
     },
     playerReadyStatus: 'warning-gated',
     runtimeConformancePolicy: 'approved-fallback',
-    requiredRuntimeHosts: ['echo_native'],
+    requiredRuntimeHosts: ['native_loader'],
   }))
 }, 0, 'validation passed')
 
@@ -448,7 +448,7 @@ await runFixture('metadata-only-cannot-be-player-ready', async (root) => {
     playerReady: true,
     playerReadyStatus: 'player-ready',
     runtimeConformancePolicy: 'legacy-metadata-only',
-    requiredRuntimeHosts: ['echo_native'],
+    requiredRuntimeHosts: ['native_loader'],
   }))
 }, 1, 'runtimeConformancePolicy legacy-metadata-only cannot be used for player-ready entries')
 

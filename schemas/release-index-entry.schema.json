@@ -113,7 +113,7 @@
       "type": "array",
       "description": "Host ids that must be covered by runtime-conformance evidence before a player-ready parity claim is accepted.",
       "items": {
-        "enum": ["echo_native", "neoforge", "echo_runtime_standalone", "standalone_engine"]
+        "enum": ["native_loader", "neoforge", "standalone_runtime", "standalone_engine"]
       },
       "uniqueItems": true
     },

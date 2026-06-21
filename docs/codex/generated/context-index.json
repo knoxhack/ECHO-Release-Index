@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-21T04:24:44-04:00",
+  "generatedAt": "2026-06-21T04:48:27-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,22 +16,15 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "3aad68095e45",
-        "commitDate": "2026-06-21T02:55:34-04:00",
+        "commit": "c0ed46f25201",
+        "commitDate": "2026-06-21T04:48:27-04:00",
         "dirty": true,
         "dirtyFiles": [
-          " M channels/beta/launcher-channel.json",
-          " M docs/ecosystem-artifact-ownership.md",
-          " M modpacks/ashfall-standalone-engine.json",
-          " M packs/ashfall-standalone-engine-edition.json",
-          " M release-readiness/ashfall-standalone-engine-local-e2e.json",
-          " M schemas/module-release-manifest.schema.json",
+          " M products/native-platform.json",
           " M schemas/release-index-entry.schema.json",
-          " M scripts/docs-audit.mjs",
-          " M scripts/import-module-release.mjs",
           " M scripts/test-validate-index.mjs",
           " M scripts/validate-index.mjs",
-          "?? schemas/echo-runtime-conformance.schema.json"
+          "?? scripts/update-native-platform-product.mjs"
         ]
       },
       "canonicalDocs": [
@@ -128,7 +121,17 @@
           " M addons/echoindex/src/main/resources/assets/echoindex/eui/eui_manifest.json",
           " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/AbstractEchoComponent.java",
           " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/EchoComponent.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/data/OptionComponent.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/layout/ContainerComponent.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/layout/ScrollPanelComponent.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/component/layout/TabsComponent.java",
           " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/engine/EchoScreenEngine.java",
+          " M addons/echoscreencore/src/main/java/com/knoxhack/echoscreencore/client/overlay/EchoOverlayManager.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/EchoTerminalClient.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screen/EchoTerminalScreen.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screen/EchoTerminalScreens.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreActions.java",
+          " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreBridge.java",
           " M addons/echoterminal/src/main/java/com/knoxhack/echoterminal/client/screencore/TerminalScreenCoreScreen.java",
           " M addons/echoterminal/src/main/resources/assets/echoterminal/eui/eui_manifest.json",
           " M build.gradle",
@@ -255,6 +258,7 @@
           "?? docs/UNIFIED_ECHO_NATIVE_PLAYER_RUNTIME.md",
           "?? docs/schemas/unified-native-player-runtime.md",
           "?? fixtures/unified-native/",
+          "?? gradle-plugin/echo-addon-gradle-plugin/bin/",
           "?? schemas/echo-gameplay-action.schema.json",
           "?? schemas/echo-input-binding.schema.json",
           "?? schemas/echo-inventory-surface.schema.json",
@@ -390,15 +394,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c54c495a5f09",
-        "commitDate": "2026-06-21T04:24:38-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M .github/workflows/attest-release-assets.yml",
-          " M PUBLIC_ALPHA_RELEASE_STATUS.md",
-          " M README.md",
-          " M build.gradle"
-        ]
+        "commit": "7755f84ad40c",
+        "commitDate": "2026-06-21T04:48:12-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
