@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "channel": "beta",
-  "generatedAt": "2026-06-20T23:38:49.148Z",
+  "generatedAt": "2026-06-21T00:32:07.293Z",
   "releaseManifestUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/beta/release-manifest.json",
   "repositoryCatalogUrl": "https://raw.githubusercontent.com/knoxhack/ECHO-Release-Index/main/channels/beta/repositories.json",
   "catalogUrls": {
@@ -510,22 +510,31 @@
   ],
   "launcherAssets": [
     {
-      "name": "ECHO-Launcher-1.1.19-Setup.exe",
-      "size": 116623917,
-      "sha256": "fe63e93e0c3ee42a28a6f9c40f26b07d1ec77ff7c935ea4e4d0044f10f510f89",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.19/ECHO-Launcher-1.1.19-Setup.exe"
+      "name": "ECHO-Launcher-1.1.21-Setup.exe",
+      "size": 116623940,
+      "sha256": "d341a5a09f476e9f1952d1c8ace72d89cd1360ee2f85cdf272f4388f3f10c6b8",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.21/ECHO-Launcher-1.1.21-Setup.exe"
     },
     {
-      "name": "ECHO-Launcher-1.1.19-Setup.exe.blockmap",
-      "size": 121884,
-      "sha256": "49751cf1c4b96ea37b10e3893d6ace0054fd7d1de44281e5841a9e7cf22f6256",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.19/ECHO-Launcher-1.1.19-Setup.exe.blockmap"
+      "name": "ECHO-Launcher-1.1.21-Setup.exe.blockmap",
+      "size": 121611,
+      "sha256": "34425968ac53fe70d55c51f2d443d14d6a9349e72be7f32335232df73e958394",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.21/ECHO-Launcher-1.1.21-Setup.exe.blockmap"
     },
     {
       "name": "latest.yml",
       "size": 358,
-      "sha256": "100795f9d437c838f8d63e11ebe03c5282c152516bf87e6789ef5b3ccf224f7e",
-      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.19/latest.yml"
+      "sha256": "b41dfff55bfed9f249b7d1475de0705195f3f3449975acac4c2b759d7e1f0506",
+      "browserDownloadUrl": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.21/latest.yml"
     }
-  ]
+  ],
+  "launcherUpdateFeed": {
+    "provider": "github",
+    "owner": "knoxhack",
+    "repo": "ECHO-Launcher",
+    "includePrereleases": true,
+    "releaseType": "release",
+    "tag": "v1.1.21",
+    "latestYml": "https://github.com/knoxhack/ECHO-Launcher/releases/download/v1.1.21/latest.yml"
+  }
 }

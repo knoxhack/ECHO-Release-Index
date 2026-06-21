@@ -1,6 +1,6 @@
 {
   "schemaVersion": "echo.codex.context-index.v1",
-  "generatedAt": "2026-06-20T19:41:28-04:00",
+  "generatedAt": "2026-06-20T20:30:48-04:00",
   "sourceConfig": "docs/codex/context-sources.json",
   "repoRoot": "C:\\Development\\Github",
   "centralRepoId": "release-index",
@@ -16,10 +16,18 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c5f64f67ffd0",
-        "commitDate": "2026-06-20T19:40:31-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "commit": "caf73527b662",
+        "commitDate": "2026-06-20T19:55:30-04:00",
+        "dirty": true,
+        "dirtyFiles": [
+          " M channels/alpha/launcher-channel.json",
+          " M channels/alpha/release-manifest.json",
+          " M channels/alpha/repositories.json",
+          " M channels/beta/launcher-channel.json",
+          " M channels/beta/release-manifest.json",
+          " M channels/beta/repositories.json",
+          " M products/launcher.json"
+        ]
       },
       "canonicalDocs": [
         {
@@ -78,7 +86,7 @@
           "path": "channels/alpha/launcher-channel.json",
           "exists": true,
           "bytes": 44508,
-          "summary": "launcher channel alpha; generatedAt: 2026-06-20T23:38:49.148Z"
+          "summary": "launcher channel alpha; generatedAt: 2026-06-21T00:32:07.293Z"
         },
         {
           "path": "trust/tiers.json",
@@ -99,8 +107,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "c2c93a31a5f7",
-        "commitDate": "2026-06-20T19:41:28-04:00",
+        "commit": "3d3c255cfeda",
+        "commitDate": "2026-06-20T20:20:54-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -184,14 +192,10 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "68b9d07a633f",
-        "commitDate": "2026-06-16T11:23:46-04:00",
-        "dirty": true,
-        "dirtyFiles": [
-          " M docs/schemas/content-graph.md",
-          " M schemas/content-graph-edge.schema.json",
-          " M schemas/content-graph-node.schema.json"
-        ]
+        "commit": "e9ed7df57740",
+        "commitDate": "2026-06-20T20:08:40-04:00",
+        "dirty": false,
+        "dirtyFiles": []
       },
       "canonicalDocs": [
         {
@@ -259,8 +263,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "a9ae88aaa033",
-        "commitDate": "2026-06-20T19:38:04-04:00",
+        "commit": "307465945705",
+        "commitDate": "2026-06-20T20:30:48-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
@@ -285,8 +289,8 @@
         {
           "path": "package.json",
           "exists": true,
-          "bytes": 7140,
-          "summary": "package echo-launcher 1.1.19; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
+          "bytes": 7141,
+          "summary": "package echo-launcher 1.1.21; scripts: dev, desktop, dev:chat, desktop:chat, desktop:prod, chat:dev, chat:install, chat:test"
         }
       ],
       "warnings": []
@@ -338,8 +342,11 @@
         "branch": "main",
         "commit": "b8498d1d12d6",
         "commitDate": "2026-06-20T19:41:27-04:00",
-        "dirty": false,
-        "dirtyFiles": []
+        "dirty": true,
+        "dirtyFiles": [
+          " M echo-runtime-app/src/main/java/dev/echo/standalone/runtime/app/EchoStandaloneAlphaReadinessGate.java",
+          " M echo-runtime-testkit/src/main/java/dev/echo/standalone/runtime/testkit/EchoRuntimeAlphaReadinessSmokeHarness.java"
+        ]
       },
       "canonicalDocs": [
         {
@@ -371,8 +378,8 @@
       "git": {
         "available": true,
         "branch": "main",
-        "commit": "9606d70885e4",
-        "commitDate": "2026-06-20T19:41:27-04:00",
+        "commit": "be28f92375b1",
+        "commitDate": "2026-06-20T20:08:40-04:00",
         "dirty": false,
         "dirtyFiles": []
       },
